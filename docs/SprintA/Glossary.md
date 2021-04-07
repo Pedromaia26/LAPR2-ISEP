@@ -12,7 +12,8 @@
 | **Diagnosis** | **Diagnóstico** | It refers to the process of identifying a disease or a condition from its symptoms. |
 | **e-mail** | **e-mail** | It refers to a message sent from one computer to another. |
 | **Hemogram** | **Hemograma** | It refers to an exam that evaluates the blood cells from the patient. |
-| **Lab order** | **...** | ... |
+| **Lab** | **Laboratório** | It refers to an abbreviation of Laboratory. |
+| **Lab order** | **Autorização médica** | It refers to a medical order for the patient to do a specific exam. |
 | **Laboratory coordinator** | **Coordenador de laboratório** | It refers to a professional that coordinates the daily activities in a laboratory, and guides the work of technicians. |
 | **NHS** | **SNS** | Acronym for National Healthcare Service. It is a structure that gives the citizens the rights to health protection care.  |
 | **Object serialization** | **Serialização de objetos** | It refers to the process of storing the object in memory, database or file, by converting it to a group of bytes. |
