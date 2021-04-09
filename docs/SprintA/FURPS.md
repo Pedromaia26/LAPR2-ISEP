@@ -10,23 +10,23 @@ _Specifies functionalities that:_
 
 
 * Email
-* “The client must receive an email/SMS alerting that the results are already available.”
+  * “The client must receive an email/SMS alerting that the results are already available.”
 * Evaluation
-* “To verify if the number of tests waiting for results are decreasing, the system should do the difference between the number of new tests and the number of results available in a interval of time.”
+  * “To verify if the number of tests waiting for results are decreasing, the system should do the difference between the number of new tests and the number of results available in a interval of time.”
 * Register
-* “The receptionist must add the regist of a new client’s data (citizen card number, NHS number, birth date, sex, TIF, phone number, e-mail and name) to the system.”
+  * “The receptionist must add the regist of a new client’s data (citizen card number, NHS number, birth date, sex, TIF, phone number, e-mail and name) to the system.”
 * Security
-* “Only the specialist doctor is allowed to access all client data.”
-* “Everyone should have a password holding seven alphanumeric characters, including three capital letters and two digits.”
-* “The laboratory coordinator validates the clinical analyses and the report.”
+  * “Only the specialist doctor is allowed to access all client data.”
+  * “Everyone should have a password holding seven alphanumeric characters, including three capital letters and two digits.”
+  * “The laboratory coordinator validates the clinical analyses and the report.”
 * ?Localization?
-* “The application must support the English language only.”
+  * “The application must support the English language only.”
 * Counting
-* “Counting the numer of covid 19 tests performed, identifying all the positive ones and report the total number of covid 19 cases per day, week and per month.”
+  * “Counting the numer of covid 19 tests performed, identifying all the positive ones and report the total number of covid 19 cases per day, week and per month.”
 * Reporting
-* “Generate daily and automatic reports with all the information demanded by NHS.”
+  * “Generate daily and automatic reports with all the information demanded by NHS.”
 * ?Test Register?
-* “The medical lab technicians who collect the samples have to register all tests perfomed.”
+  * “The medical lab technicians who collect the samples have to register all tests perfomed.”
 
 
 
@@ -38,9 +38,9 @@ documentation; consistency and standards._
 
 
 * User Manual
-* “The accuracy of the prediction models and the time complexity analysis of the algorithms should be properly documented in the application user manual (in the annexes) that must be delivered with the application.”
+  * “The accuracy of the prediction models and the time complexity analysis of the algorithms should be properly documented in the application user manual (in the annexes) that must be delivered with the application.”
 * Javadoc
-* “Use of Javadoc to generate useful documentation for Java code.”
+  * “Use of Javadoc to generate useful documentation for Java code.”
 
 ## Reliability
 _Refers to the integrity, compliance and interoperability of the software. The requirements to be considered are: frequency and severity of failure, possibility of recovery, possibility of prediction, accuracy, average time between failures._
@@ -54,7 +54,7 @@ _Evaluates the performance requirements of the software, namely: response time, 
 
 
 * Execution Time
-* “It is intended that the choice of the ordering algorithm (name or TIF) is based on the algorithm complexity (mainly the execution time).”
+  * “It is intended that the choice of the ordering algorithm (name or TIF) is based on the algorithm complexity (mainly the execution time).”
 
 ## Supportability
 _The supportability requirements gathers several characteristics, such as:
@@ -64,13 +64,13 @@ configurability, installability, scalability and more._
 
 
 * Configuration
-* “The ordering algorithm to be used by the application must be defined through a configuration file.”
+  * “The ordering algorithm to be used by the application must be defined through a configuration file.”
 * Testability
-* “The development team must implement unit tests for all methods except methods that implement Input/Output operations.”
+  * “The development team must implement unit tests for all methods except methods that implement Input/Output operations.”
 * Adaptability
-* “The system should be developed having in mind the need to easily support other kinds of tests.”
+  * “The system should be developed having in mind the need to easily support other kinds of tests.”
 * Unit Test
-* “The development team must implement unit tests for all methods except methods that implement Input/Output operations. The unit tests should be implemented using the JUnit 4 framework. The JaCoCo plugin should be used to generate the coverage report.”
+  * “The development team must implement unit tests for all methods except methods that implement Input/Output operations. The unit tests should be implemented using the JUnit 4 framework. The JaCoCo plugin should be used to generate the coverage report.”
 
 
 ## +
@@ -81,7 +81,7 @@ _Specifies or constraints the system design process. Examples may include: progr
   
 
 * Programming Language
-* “The application must be developed in Java language using the IntelliJ IDE or Netbeans.”
+  * “The application must be developed in Java language using the IntelliJ IDE or Netbeans.”
 
 
 ### Implementation Constraints
@@ -92,11 +92,11 @@ database integrity, resource limits, operating system._
 
 
 * Images
-* “All the images/figures produced during the software development process should be recorded in SVG format.”
+  * “All the images/figures produced during the software development process should be recorded in SVG format.”
 * Object Serialization
-* “The application should use object serialization to ensure data persistence between two runs of the application.”
+  * “The application should use object serialization to ensure data persistence between two runs of the application.”
 * Ordering
-* “To facilitate the access to the results, the application must allow ordering the clients by TIF and by name.”
+  * “To facilitate the access to the results, the application must allow ordering the clients by TIF and by name.”
 
 
 ### Interface Constraints
@@ -105,11 +105,11 @@ system being developed with other external systems._
 
 
 * Validation
-* “The application uses an external module that is responsible for doing an automatic validation using test reference values.”
+  * “The application uses an external module that is responsible for doing an automatic validation using test reference values.”
 * JavaFX11
-* “The application graphical interface is to be developed in JavaFX 11.”
+  * “The application graphical interface is to be developed in JavaFX 11.”
 * Barcode
-* “A barcode identifying a sample must be generated using an external API.”
+  * “A barcode identifying a sample must be generated using an external API.”
 
 ### Physical Constraints
 
