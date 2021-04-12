@@ -4,11 +4,13 @@
 |:------------------------|:-----------------|:--------------------------------------------|
 | **Algorithm** | **Algoritmo** | It refers to a group of instructions performed to solve a problem. |
 | **API** | **IPA** | Acronym for Application Programming Interface. It is a software intermediary that allows two applications to communicate with each other. |
+| **CamelCase** | **CamelCase** | It refers to a practice of writing phrases, where each word starts with an upper case letter, and all words are connected without spaces. |
 | **Chemical analysis** | **Análise química** | It refers to a type of analysis that is used to determine a chemical’s identity or the identity of its components. |
 | **Client** | **Cliente** | It refers to the person requesting a clinical analysis test. |
 | **Clinical analysis laboratory** | **Laboratório de análises clínicas** | It refers to a type of laboratory, which performs blood analysis and Covid-19 tests. |
 | **Clinical chemistry technologist** | **Tecnologista de química clínica** | It refers to a professional that analyzes the chemical and hormonal contents of body fluids. |
 | **Company** | **Empresa** | It refers to a legal entity formed by a group of professionals, that makes services in an organized manner and sells them to the public. |
+| **Courier** | **Estafeta** | It refers to the person that transports commercial packages, medical samples, and documents. |
 | **Diagnosis** | **Diagnóstico** | It refers to the process of identifying a disease or a condition from its symptoms. |
 | **e-mail** | **e-mail** | It refers to a message sent from one computer to another. |
 | **Hemogram** | **Hemograma** | It refers to an exam that evaluates the blood cells from the patient. |

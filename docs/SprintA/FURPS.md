@@ -33,7 +33,7 @@ _Specifies functionalities that:_
   
  Counting
  
-  * “Counting the numer of covid 19 tests performed, identifying all the positive ones and report the total number of covid 19 cases per day, week and per month.”
+  * “Counting the number of covid 19 tests performed, identifying all the positive ones and report the total number of covid 19 cases per day, week and per month.”
   
  Reporting
  
