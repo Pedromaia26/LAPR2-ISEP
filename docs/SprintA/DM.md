@@ -14,7 +14,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 ---
 
-**Transaction Line Itemss**
+**Transaction Line Items**
 
 *
 
@@ -39,14 +39,22 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * 
 
 
----
+Receptionist
+Medical lab technician
+Courier
+Clinical chemistry technologist
+Specialist doctor
+Laboratory coordinator
+Client
 
 
 **Places**
 
 *  
 
----
+Clinical analysis laboratories
+Chemical laboratory
+
 
 ** Noteworthy Events**
 
@@ -95,7 +103,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 *  
 
----
+Many Labs
 
 **Other External/Collaborating Systems**
 
@@ -121,7 +129,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Documents mentioned/used to perform some work/**
 
-* 
+Medical Report
 ---
 
 
