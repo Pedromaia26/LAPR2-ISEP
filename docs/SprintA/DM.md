@@ -51,6 +51,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Clinical analysis laboratories
 * Chemical laboratory
+* Company's headquarters
 
 
 ** Noteworthy Events**
@@ -148,7 +149,29 @@ An association is a relationship between instances of objects that indicates a r
 
 | Concept (A) 		|  Association   	|  Concept (B) |
 |----------	   		|:-------------:		|------:       |
-| C1  	| verb1    		 	| C2  |
+|Many Labs   | Has | Employees |
+|----------	   		|:-------------:		|------:       |
+| Receptionist  	|    		 	|   |
+| Medical lab technician |                   |             |
+| Clinical chemistry technologist | Is         | Employee      |
+| Specialist doctor |            |                |
+| Laboratory coordinator  |             |                 |
+|----------	   		|:-------------:		|------:       |
+| Clinical chemistry technologist   |   Works at             |   Company's headquarters            |
+| Clinical chemistry technologist   |               		 | Company's headquarters            |
+|Receptionist |    | clinical analysis laboratories |
+|----------	   		|:-------------:		|------:       |
+|Receptionist  | Interacts with | Client |
+|----------	   		|:-------------:		|------:       |
+|Medical Lab Technician | Colects | Sample|
+|----------	   		|:-------------:		|------:       |
+|Clinical chemestry technologist | analysis | Sample|
+|                                |Record | Results| 
+|----------	   		|:-------------:		|------:       |
+|Specialist doctor           | Analysis |Results  |
+|                            | writes | Report |
+|----------	   		|:-------------:		|------:       |
+|Client          | Recieves | Report |
 | ...  	| ...    		 	| ...  |
 
 
