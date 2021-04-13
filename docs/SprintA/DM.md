@@ -22,7 +22,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-*  
+* Samples
 
 ---
 
@@ -100,9 +100,11 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Many Labs
 
+---
+
 **Other External/Collaborating Systems**
 
-*  
+*  NHS reports generator API
 
 
 ---
