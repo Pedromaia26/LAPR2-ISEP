@@ -16,13 +16,13 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Transaction Line Items**
 
-*
+* Sample
 
 ---
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-* Samples
+* Chemical analyzes, diagnosis and report of the samples
 
 ---
 
