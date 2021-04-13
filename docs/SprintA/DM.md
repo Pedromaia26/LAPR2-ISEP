@@ -36,24 +36,20 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Roles of People or Organizations**
 
-* 
 
-
-Receptionist
-Medical lab technician
-Courier
-Clinical chemistry technologist
-Specialist doctor
-Laboratory coordinator
-Client
+* Receptionist
+* Medical lab technician
+* Courier
+* Clinical chemistry technologist
+* Specialist doctor
+* Laboratory coordinator
+* Client
 
 
 **Places**
 
-*  
-
-Clinical analysis laboratories
-Chemical laboratory
+* Clinical analysis laboratories
+* Chemical laboratory
 
 
 ** Noteworthy Events**
@@ -101,9 +97,7 @@ Chemical laboratory
 
 **Organizations**
 
-*  
-
-Many Labs
+* Many Labs
 
 **Other External/Collaborating Systems**
 
@@ -129,7 +123,8 @@ Many Labs
 
 **Documents mentioned/used to perform some work/**
 
-Medical Report
+* Medical Report
+
 ---
 
 
