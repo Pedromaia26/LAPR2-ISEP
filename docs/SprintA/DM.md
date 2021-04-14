@@ -22,7 +22,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-* Chemical analyzes, diagnosis and report of the samples
+* Diagnosis and report of the samples
 
 ---
 
@@ -56,7 +56,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 ** Noteworthy Events**
 
-* 
+* Chemical analyzes
 
 ---
 
