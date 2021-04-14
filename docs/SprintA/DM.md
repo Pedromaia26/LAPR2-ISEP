@@ -53,6 +53,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * Chemical laboratory
 * Company's headquarters
 
+---
 
 ** Noteworthy Events**
 
