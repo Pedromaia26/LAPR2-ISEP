@@ -10,7 +10,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Business Transactions**
 
-*
+* Test
 
 ---
 
@@ -22,14 +22,15 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-* Diagnosis and report of the samples
+* Diagnosis
+* Parameter
 
 ---
 
 
 **Transaction Records**
 
-*  
+* Report of the samples
 
 ---  
 
@@ -44,6 +45,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * Specialist doctor
 * Laboratory coordinator
 * Client
+* Administrator
 
 ---
 
@@ -55,9 +57,9 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 ---
 
-** Noteworthy Events**
+**Noteworthy Events**
 
-* Chemical analyzes
+* Chemical analysis
 
 ---
 
@@ -71,7 +73,8 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Descriptions of Things**
 
-*  Type of test
+* Type of test
+* Category
 
 
 ---
@@ -100,14 +103,13 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Organizations**
 
-* Many Labs
+* Company
 
 ---
 
 **Other External/Collaborating Systems**
 
 *  NHS reports generator API
-
 
 ---
 
@@ -129,6 +131,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 **Documents mentioned/used to perform some work/**
 
 * Medical Report
+* Lab order
 
 ---
 
