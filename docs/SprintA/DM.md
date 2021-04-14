@@ -70,7 +70,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Descriptions of Things**
 
-*  
+*  Type of test
 
 
 ---
