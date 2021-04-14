@@ -12,7 +12,7 @@
 | **Company** | **Empresa** | It refers to a legal entity formed by a group of professionals, that makes services in an organized manner and sells them to the public. |
 | **Courier** | **Estafeta** | It refers to the person that transports commercial packages, medical samples, and documents. |
 | **Diagnosis** | **Diagnóstico** | It refers to the process of identifying a disease or a condition from its symptoms. |
-| **e-mail** | **e-mail** | It refers to a message sent from one computer to another. |
+| **e-mail** | **e-mail** | It may refer to a message sent from one computer to another or the adress used to send/receive that message. |
 | **Hemogram** | **Hemograma** | It refers to an exam that evaluates the blood cells from the patient. |
 | **Lab** | **Laboratório** | It refers to an abbreviation of Laboratory. |
 | **Lab order** | **Autorização médica** | It refers to a medical order for the patient to do a specific exam. |
