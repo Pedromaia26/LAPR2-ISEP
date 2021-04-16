@@ -154,30 +154,22 @@ An association is a relationship between instances of objects that indicates a r
 
 
 | Concept (A) 		|  Association   	|  Concept (B) |
-|----------	   		|:-------------:		|------:       |
-|Many Labs   | Has | Employees |
-|----------	   		|:-------------:		|------:       |
-| Receptionist  	|    		 	|   |
-| Medical lab technician |                   |             |
-| Clinical chemistry technologist | Is         | Employee      |
-| Specialist doctor |            |                |
-| Laboratory coordinator  |             |                 |
-|----------	   		|:-------------:		|------:       |
-| Clinical chemistry technologist   |   Works at             |   Company's headquarters            |
-| Clinical chemistry technologist   |               		 | Company's headquarters            |
-|Receptionist |    | clinical analysis laboratories |
-|----------	   		|:-------------:		|------:       |
-|Receptionist  | Interacts with | Client |
-|----------	   		|:-------------:		|------:       |
-|Medical Lab Technician | Colects | Sample|
-|----------	   		|:-------------:		|------:       |
-|Clinical chemestry technologist | analysis | Sample|
-|                                |Record | Results| 
-|----------	   		|:-------------:		|------:       |
-|Specialist doctor           | Analysis |Results  |
-|                            | writes | Report |
-|----------	   		|:-------------:		|------:       |
-|Client          | Recieves | Report |
+-|----------	   		|:-------------:		|------:       |
+| Client   | Recieves | Report |
+| Clinical chemistry technologist  |   Is  		 	| Employee  |
+|                                  |   Works at     | Company's headquarters   |  
+|                                  |   Analysis     | Sample     |
+|                                  |   Record       | Results               |
+| Laboratory coordinator  |   Is           | Employee                |
+| Many Labs	   		|   Has             | Employees     |
+| Medical Lab Technician  |   Is             | Employee           |
+|                         |   Collects       | Sample             |
+| Receptionist       |   Is              | Employee    |
+|            		|   Works at   		| Clinical analysis laboratories       |
+|                   |   Interacts with  | Client |
+| Specialist doctor           |   Is           | Employee  |
+|                            |   Analysis     | Results  |
+|                            |   writes       | Report |
 | ...  	| ...    		 	| ...  |
 
 
