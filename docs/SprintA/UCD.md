@@ -14,13 +14,11 @@ However, be aware, this is a pedagogical simplification. On further projects and
 # Use Cases / User Stories
 | UC/US  | Description                                                               |                   
 |:----|:------------------------------------------------------------------------|
-| UC1 | Chemical Analysis(UC1.md)   |
-| UC2 | Test Register(UC2.md)  |
-| UC3 | Client Register(UC3.md)|
-| UC4 | Diagnosis(UC4.md)|
-| UC5 | Report(UC5.md)|
-| UC6 | Automatic Association(UC6.md)|
-| UC7 | Samples(UC7.md)|
-| UC8 | Test Validation(UC8.md)|
-| UC9 | Notification(UC9.md)|
-| UC10 | Register the results(UC10.md)|
+| UC1 | Make Chemical Analysis(UC1.md)   |
+| UC2 | Register the test to be performed(UC2.md)  |
+| UC3 | Register the client(UC3.md)|
+| UC4 | Make a Diagnosis about the chemical results(UC4.md)|
+| UC5 | Validate a test(UC5.md)|
+| UC6 | Colect the samples(UC6.md)|
+| UC7 | Summarize the tests(UC7.md)|
+
