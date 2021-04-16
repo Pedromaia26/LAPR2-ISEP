@@ -59,12 +59,22 @@ documentation; consistency and standards._
  Javadoc
  
   * “Use of Javadoc to generate useful documentation for Java code.”
+  
+ User interface design
+ 
+  * "The user interface must be simple, intuitive and consistent."
 
 ## Reliability
 _Refers to the integrity, compliance and interoperability of the software. The requirements to be considered are: frequency and severity of failure, possibility of recovery, possibility of prediction, accuracy, average time between failures._
 
 
-(fill in here )
+ Frequency of system failure
+
+  * "The system should not fail more than 5 days in one year."
+  
+ Data loss prevention
+ 
+  * "Whenever the system fails, there should be no data loss."
 
 ## Performance
 _Evaluates the performance requirements of the software, namely: response time, start-up time, recovery time, memory consumption, CPU usage, load capacity and application availability._
@@ -74,6 +84,18 @@ _Evaluates the performance requirements of the software, namely: response time, 
  Execution Time
  
   * “It is intended that the choice of the ordering algorithm (name or TIF) is based on the algorithm complexity (mainly the execution time).”
+  
+ Response Time
+ 
+  * "Any interface between a user and the system shall have a maximum response time of 3 seconds."
+  
+ Start-up Time
+ 
+  * "The system should start up in less than 10 seconds."
+  
+ Memory Consumption
+ 
+  * "The application will be deployed to a machine with 8GB of RAM."
 
 ## Supportability
 _The supportability requirements gathers several characteristics, such as:
@@ -129,6 +151,10 @@ database integrity, resource limits, operating system._
  Ordering
  
   * “To facilitate the access to the results, the application must allow ordering the clients by TIF and by name.”
+  
+ Operating System
+ 
+  * "The application should run on all platforms for which there exists a Java Virtual Machine."
 
 
 ### Interface Constraints

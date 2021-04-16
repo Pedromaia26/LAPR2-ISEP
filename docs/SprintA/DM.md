@@ -75,6 +75,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Type of test
 * Category
+* Result
 
 
 ---
@@ -141,12 +142,16 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 An association is a relationship between instances of objects that indicates a relevant connection and that is worth of remembering, or it is derivable from the List of Common Associations: 
 
-+ **_A_** is physically or logically part of **_B_**
-+ **_A_** is physically or logically contained in/on **_B_**
-+ **_A_** is a description for **_B_**
++ **_Clinical analysis laboratories_** is physically or logically part of **_Company_**
++ **_Chemical laboratory_** is physically or logically part of **_Company_**
++ **_Company's headquarter_** is physically or logically part of **_Company_**
++ **_Parameter_** is physically or logically contained in/on **_Lab order_**
++ **_Parameter_** is physically or logically contained in/on **_Category_**
++ **_Type of test_** is a description for **_Test_**
 + **_A_** known/logged/recorded/reported/captured in **_B_**
 + **_A_** uses or manages or owns **_B_**
-+ **_A_** is related with a transaction (item) of **_B_**
++ **_Diagnosis_** is related with a transaction (item) of **_Sample_**
++ **_Parameter_** is related with a transaction (item) of **_Sample_**
 + etc.
 
 

@@ -14,9 +14,13 @@ However, be aware, this is a pedagogical simplification. On further projects and
 # Use Cases / User Stories
 | UC/US  | Description                                                               |                   
 |:----|:------------------------------------------------------------------------|
-| US1 | [ShortNameOfUS1](US1.md)   |
-| US2 | [ShortNameOfUS2](US2.md)  |
-| US3 | [ShortNameOfUS3](US3.md)|
-| US4 | [ShortNameOfUS4](US4.md)|
-| ... | ...|
-| US326 | [ShortNameOfUS4](US326.md)|
+| UC1 | Chemical Analysis(UC1.md)   |
+| UC2 | Test Register(UC2.md)  |
+| UC3 | Client Register(UC3.md)|
+| UC4 | Diagnosis(UC4.md)|
+| UC5 | Report(UC5.md)|
+| UC6 | Automatic Association(UC6.md)|
+| UC7 | Samples(UC7.md)|
+| UC8 | Test Validation(UC8.md)|
+| UC9 | Notification(UC9.md)|
+| UC10 | Register the results(UC10.md)|
