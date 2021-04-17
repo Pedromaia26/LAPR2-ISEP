@@ -155,11 +155,15 @@ An association is a relationship between instances of objects that indicates a r
 
 | Concept (A) 		|  Association   	|  Concept (B) |
 -|----------	   		|:-------------:		|------:       |
+| Category        |   Created by    | Administrator      |
+| Chemical laboratory   |   Located at    | Company's headquarters  |
 | Client   | Recieves | Report |
 | Clinical chemistry technologist  |   Is  		 	| Employee  |
 |                                  |   Works at     | Company's headquarters   |  
 |                                  |   Analysis     | Sample     |
 |                                  |   Record       | Results               |
+| Lab order               |   Contains      | Test Type    |
+|                         |   Contains      | Parameter    |
 | Laboratory coordinator  |   Is           | Employee                |
 | Many Labs	   		|   Has             | Employees     |
 | Medical Lab Technician  |   Is             | Employee           |
@@ -167,9 +171,14 @@ An association is a relationship between instances of objects that indicates a r
 | Receptionist       |   Is              | Employee    |
 |            		|   Works at   		| Clinical analysis laboratories       |
 |                   |   Interacts with  | Client |
+| Results           |   Validated by    | Laboratory coordinator    |
 | Specialist doctor           |   Is           | Employee  |
 |                            |   Analysis     | Results  |
 |                            |   writes       | Report |
+| Test                       |   Is of        | Test Type |
+|                            |   Performed by | Medical lab technician  |
+|                            |   Measures     | Parameter          |
+|                            |   Requested by | Client             |
 | ...  	| ...    		 	| ...  |
 
 
