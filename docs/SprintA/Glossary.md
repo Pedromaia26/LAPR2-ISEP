@@ -6,6 +6,7 @@
 | **API** | **IPA** | Acronym for Application Programming Interface. It is a software intermediary that allows two applications to communicate with each other. |
 | **Barcode** | **Código de barras** | It refers to a numeric or alphanumeric code applied to products as a means of quick identification. |
 | **Benchmark** | **Referência** | It refers to a methodology of comparing algorithms with respect to a certain performance measure. |
+| **Blood tests** | **Testes de sangue** | It refers to a laboratory analisis performed on a blood sample that help doctors check for certain diseases and conditions. |
 | **CamelCase** | **CamelCase** | It refers to a practice of writing phrases, where each word starts with an upper case letter, and all words are connected without spaces. |
 | **Chemical analysis** | **Análise química** | It refers to a type of analysis that is used to determine a chemical’s identity or the identity of its components. |
 | **Client** | **Cliente** | It refers to the person requesting a clinical analysis test. |
