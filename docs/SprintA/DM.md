@@ -157,29 +157,32 @@ An association is a relationship between instances of objects that indicates a r
 -|----------	   		|:-------------:		|------:       |
 | Category        |   created by    | Administrator      |
 | Chemical laboratory   |   located at    | Company's headquarters  |
-| Client   | Recieves | Report |
+| Client   | can see | Result |
 | Clinical chemistry technologist  |   is a  		 	| Employee  |
-|                                  |   works at     | Company's headquarters   |  
+|                                  |   works at     | Company's headquarter   |  
 |                                  |   analysis     | Sample     |
-|                                  |   record       | Results               |
+|                                  |   record       | Result               |
 | Lab order               |   contains      | Test Type    |
 |                         |   contains      | Parameter    |
-| Laboratory coordinator  |   is a           | Employee                |
+| Laboratory coordinator  |   is a           | Employee    |
+|                         |   validates      | Result      |
+|                         |   validates      | Report      |
 | Many Labs	   		|   has             | Employees     |
 | Medical Lab Technician  |   is a             | Employee           |
 |                         |   collects       | Sample             |
+|                         |   works at       | Clinical analysis laboratory
 | Receptionist       |   is              | Employee    |
-|            		|   works at   		| Clinical analysis laboratories       |
+|            		|   works at   		| Clinical analysis laboratory       |
 |                   |   interacts with  | Client |
-| Results           |   validated by    | Laboratory coordinator    |
-| Specialist doctor           |   is           | Employee  |
-|                            |   analysis     | Results  |
+| Specialist doctor           |   is a          | Employee  |
+|                            |   analysis     | Result  |
 |                            |   writes       | Report |
 | Test                       |   is of        | Test Type |
 |                            |   performed by | Medical lab technician  |
 |                            |   measures     | Parameter          |
 |                            |   requested by | Client             |
-| ...  	| ...    		 	| ...  |
+|                            |   performed in | Clinical analysis laboratory |
+|                            |   registered by | Receptionist      |
 
 
 
