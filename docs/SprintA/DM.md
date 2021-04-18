@@ -158,12 +158,12 @@ An association is a relationship between instances of objects that indicates a r
 | Category        |   created by    | Administrator      |
 | Chemical laboratory   |   located at    | Company's headquarter  |
 |                       |   is a          | Laboratory   |
-| Client   | can see | Result |
+| Client   | checks | Result |
 | Clinical analysis laboratory     | is a           | Laboratory    |
 | Clinical chemistry technologist  |   is a  		 	| Employee  |
 |                                  |   works at     | Company's headquarters   |  
 |                                  |   analysis     | Sample     |
-|                                  |   record       | Result               |
+|                                  |   records       | Result               |
 | Company                 |   owns          | Laboratory   |
 |                         |   has             | Employee  |
 | Lab order               |   contains      | Parameter    |
