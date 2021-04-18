@@ -161,7 +161,7 @@ An association is a relationship between instances of objects that indicates a r
 | Client   | can see | Result |
 | Clinical analysis laboratory     | is a           | Laboratory    |
 | Clinical chemistry technologist  |   is a  		 	| Employee  |
-|                                  |   works at     | Company's headquarter   |  
+|                                  |   works at     | Company's headquarters   |  
 |                                  |   analysis     | Sample     |
 |                                  |   record       | Result               |
 | Company                 |   owns          | Laboratory   |
