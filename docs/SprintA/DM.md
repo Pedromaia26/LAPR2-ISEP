@@ -155,30 +155,30 @@ An association is a relationship between instances of objects that indicates a r
 
 | Concept (A) 		|  Association   	|  Concept (B) |
 -|----------	   		|:-------------:		|------:       |
-| Category        |   Created by    | Administrator      |
-| Chemical laboratory   |   Located at    | Company's headquarters  |
+| Category        |   created by    | Administrator      |
+| Chemical laboratory   |   located at    | Company's headquarters  |
 | Client   | Recieves | Report |
-| Clinical chemistry technologist  |   Is  		 	| Employee  |
-|                                  |   Works at     | Company's headquarters   |  
-|                                  |   Analysis     | Sample     |
-|                                  |   Record       | Results               |
-| Lab order               |   Contains      | Test Type    |
-|                         |   Contains      | Parameter    |
-| Laboratory coordinator  |   Is           | Employee                |
-| Many Labs	   		|   Has             | Employees     |
-| Medical Lab Technician  |   Is             | Employee           |
-|                         |   Collects       | Sample             |
-| Receptionist       |   Is              | Employee    |
-|            		|   Works at   		| Clinical analysis laboratories       |
-|                   |   Interacts with  | Client |
-| Results           |   Validated by    | Laboratory coordinator    |
-| Specialist doctor           |   Is           | Employee  |
-|                            |   Analysis     | Results  |
+| Clinical chemistry technologist  |   is a  		 	| Employee  |
+|                                  |   works at     | Company's headquarters   |  
+|                                  |   analysis     | Sample     |
+|                                  |   record       | Results               |
+| Lab order               |   contains      | Test Type    |
+|                         |   contains      | Parameter    |
+| Laboratory coordinator  |   is a           | Employee                |
+| Many Labs	   		|   has             | Employees     |
+| Medical Lab Technician  |   is a             | Employee           |
+|                         |   collects       | Sample             |
+| Receptionist       |   is              | Employee    |
+|            		|   works at   		| Clinical analysis laboratories       |
+|                   |   interacts with  | Client |
+| Results           |   validated by    | Laboratory coordinator    |
+| Specialist doctor           |   is           | Employee  |
+|                            |   analysis     | Results  |
 |                            |   writes       | Report |
-| Test                       |   Is of        | Test Type |
-|                            |   Performed by | Medical lab technician  |
-|                            |   Measures     | Parameter          |
-|                            |   Requested by | Client             |
+| Test                       |   is of        | Test Type |
+|                            |   performed by | Medical lab technician  |
+|                            |   measures     | Parameter          |
+|                            |   requested by | Client             |
 | ...  	| ...    		 	| ...  |
 
 
