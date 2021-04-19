@@ -10,8 +10,8 @@
 | **Chemical analysis** | **Análise química** | It refers to a type of analysis that is used to determine a chemical’s identity or the identity of its components. |
 | **Client** | **Cliente** | It refers to the person requesting a clinical analysis test. |
 | **Clinical analysis laboratory** | **Laboratório de análises clínicas** | It refers to a type of laboratory, which performs blood analysis and Covid-19 tests. |
-| **Clinical blood test** | **Exame de sangue clínico** | It refers to a laboratory analisis performed on a blood sample that help doctors check for certain diseases and conditions. |
-| **Clinical chemistry technologist** | **Tecnologista de química clínica** | It refers to a professional that analyzes the chemical and hormonal contents of body fluids. |
+| **Clinical blood test** | **Exame de sangue clínico** | It refers to a laboratory analysis performed on a blood sample that help doctors check for certain diseases and conditions. |
+| **Clinical chemistry technologist** | **Tecnologista de química clínica** | It refers to a professional that analyzes the chemical and hormonal contents of the liquids in the human body. |
 | **Company** | **Empresa** | It refers to a legal entity formed by a group of professionals, that makes services in an organized manner and sells them to the public. |
 | **Courier** | **Estafeta** | It refers to the person that transports commercial packages, medical samples, and documents. |
 | **Covid-19 test** | **Teste de Covid-19** | It refers to a test that detect the virus itself and diagnose COVID-19. |
@@ -25,7 +25,7 @@
 | **NHS** | **SNS** | Acronym for National Healthcare Service. It is a structure that gives the citizens the rights to health protection care.  |
 | **Object serialization** | **Serialização de objetos** | It refers to the process of storing the object in memory, database or file, by converting it to a group of bytes. |
 | **OO** | **OO** | Acronym for Object-oriented. It refers to Object-oriented Programmation. |
-| **Parameter** | **Parâmetro** |It referts to a measurable factor forming one of a set that defines a system or sets the conditions of its operation. |
+| **Parameter** | **Parâmetro** |It refers to a measurable factor forming one of a set that defines a system or sets the conditions of its operation. |
 | **Platelet** | **Plaqueta** | It refers to a type of cell that helps blood clot when existing a blood vessel injuries. |
 | **Receptionist** | **Rececionista** | It refers to an employee taking an office or administrative support position. |
 | **Red Blood Cell** | **Glóbulo vermelho** | It refers to a type of cell, which has the role of carrying oxygen and remove de carbon dioxide from the human body. |
@@ -33,7 +33,7 @@
 | **Sample** | **Amostra** | It refers to a small quantity of something we intend to analyze. |
 | **SMS** | **SMC** | Acronym for Short Messaging Service. It is a method to communicate with another person through text. |
 | **Software application** | **Aplicação software** | It refers to a computing software designed to execute a group of functions or tasks. |
-| **SVG** | **SVG** | Acronym for Scalable Vector Graphics. It refers to a file format that allows you to display vector images on your website. |
+| **SVG** | **SVG** | Acronym for Scalable Vector Graphics. It refers to a file format that allows you to display vector images in a website. |
 | **System** | **Sistema** | It refers to an organized collection of elements that work toward a common goal. |
 | **Test** | **Teste** | It refers to a procedure performed to identify, detect and diagnose diseases, susceptibility, or determine a specific treatment. |
 | **TIN** | **NIF** | Acronym for Tax Identification Number. It refers to an identification number that is used to identify taxpayers and help the countries with the administration of tax affairs. |
