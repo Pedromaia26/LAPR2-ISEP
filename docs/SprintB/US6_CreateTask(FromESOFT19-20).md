@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
+As a receptionist of the laboratory, I want to register a client.
 
 
 
@@ -15,24 +15,21 @@ As an organization employee, I want to create a new task in order to be further 
 
 **From the specifications document:**
 
->	Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category. 
-
-
->	As long as it is not published, access to the task is exclusive to the employees of the respective organization. 
+>	A client is defined by his citizencard number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIN), phone number, e-mail and name.
 
 
 
 **From the client clarifications:**
 
-> **Question:** Which is the unit of measurement used to estimate duration?
+> **Question:** Does the receptionist need to be logged in the app to preform the regist?
 >  
-> **Answer:** Duration is estimated in days.
+> **Answer:** 
 
 -
 
-> **Question:** Monetary data is expressed in any particular currency?
+> **Question:** Relative to registering a new user, how should the system respond in the event of creating a new user with the same attributes of an already existing user?
 >  
-> **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
+> **Answer:** 
 
 
 ### 1.3. Acceptance Criteria
