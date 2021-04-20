@@ -67,7 +67,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Output Data:**
 
-	* (In)Success of the operation
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
