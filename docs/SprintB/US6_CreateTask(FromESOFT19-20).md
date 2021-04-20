@@ -52,21 +52,22 @@ As a receptionist of the laboratory, I want to register a client.
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+	* Citizen card number
+	* National Healthcare Service (NHS) number
+	* Birth date
+	* Sex
+	* Tax Identification number (TIF)
+	* E-mail
+	* Name
+	* Phone number(Opcional)
 	
 * Selected data:
-	* Classifying task category 
+	* Classifying task category (por fazer)
 
 
 **Output Data:**
 
-* List of existing task categories
-* (In)Success of the operation
+	* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
