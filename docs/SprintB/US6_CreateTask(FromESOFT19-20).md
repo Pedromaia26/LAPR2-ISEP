@@ -15,7 +15,8 @@ As a receptionist of the laboratory, I want to register a client.
 
 **From the specifications document:**
 
->	A client is defined by his citizencard number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIN), phone number, e-mail and name.
+> "In case of a new client, the receptionist registers the client in the application. To register a client, the receptionist needs the client’s citizen card number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIF), phone number, e-mail and name."
+
 
 
 
@@ -31,19 +32,23 @@ As a receptionist of the laboratory, I want to register a client.
 >  
 > **Answer:** 
 
+> **Question:**  "Also, are all the fields required/mandatory?"
+>  
+> **Answer:**  "The phone number is opcional. All other fields are required."
+
 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
+* **AC1:** All required fiels must be filled in, except the phone number.
+* **AC2:** The client must become a system user.
+* **AC3:** ??The "auth" component available on the repository must be reused (without modifications)??
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* There is no dependency found.
 
 
 ### 1.5 Input and Output Data
@@ -51,15 +56,8 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Input Data:**
 
-* Typed data:
-	* Citizen card number
-	* National Healthcare Service (NHS) number
-	* Birth date
-	* Sex
-	* Tax Identification number (TIF)
-	* E-mail
-	* Name
-	* Phone number(Opcional)
+* Typed data: Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex, Tax Identification number (TIF), E-mail, Name, Phone number(Opcional)
+	
 	
 * Selected data:
 	* Classifying task category (por fazer)
