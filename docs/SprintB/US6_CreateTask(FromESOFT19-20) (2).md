@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 009 - To create a New Type of Test and its collecting methods 
 
 ## 1. Requirements Engineering
 
@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
+As an administrator, I want to specify a new type of test and its collecting methods.
 
 
 
@@ -15,24 +15,55 @@ As an organization employee, I want to create a new task in order to be further 
 
 **From the specifications document:**
 
->	Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category. 
-
-
->	As long as it is not published, access to the task is exclusive to the employees of the respective organization. 
-
-
+>	Each type of test is characterized by its designation and a description that identifies the sample collection method. 
 
 **From the client clarifications:**
 
-> **Question:** Which is the unit of measurement used to estimate duration?
+> **Question:** Is there a feature where you add collection methods or is there an already existent list where you choose from not having the option to add another.
 >  
-> **Answer:** Duration is estimated in days.
+> **Answer:** 
 
 -
 
-> **Question:** Monetary data is expressed in any particular currency?
+> **Question:** When the administrator is creating a test type does he select the parameters to be associated with it from a list or does he select the categories?
 >  
-> **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
+> **Answer:**
+
+-
+
+> **Question:** What other type of input does a test type need besides its designation and sample collection method?
+>  
+> **Answer:** 
+
+-
+
+> **Question:** Does the admin select the sample collection method from a pre-existent list or does he write it?
+>  
+> **Answer:**
+
+-
+
+> **Question:** Is there any kind of rules that the admin should be restricted to, when he is creating a new test type?
+> **Answer:** 
+
+-
+
+> **Question:** Does a type of test holds any atributte besides it's name and collecting methods?
+>  
+> **Answer:**
+
+-
+
+> **Question:** Are there any different collecting methods other than the ones currently known? Which ones?
+>  
+> **Answer:** 
+
+-
+
+> **Question:**	Are the collecting methods stored simpled as a word or a sentence, or does it also must contain it's description, and/or another attributes?
+>  
+> **Answer:** 
+
 
 
 ### 1.3. Acceptance Criteria
@@ -45,9 +76,7 @@ As an organization employee, I want to create a new task in order to be further 
 
 ### 1.4. Found out Dependencies
 
-
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
-
+* No dependencies were found.
 
 ### 1.5 Input and Output Data
 
@@ -55,16 +84,11 @@ As an organization employee, I want to create a new task in order to be further 
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+	* a designation 
+	* a description 
 	
 * Selected data:
-	* Classifying task category 
-
+	* 
 
 **Output Data:**
 
