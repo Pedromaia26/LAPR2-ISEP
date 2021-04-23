@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 010 - To create a parameter and categorize it.
 
 ## 1. Requirements Engineering
 
@@ -7,11 +7,25 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As an administrator, I want to specify a new parameter and categorize it.
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 
 *Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+
+###   From the specifications document:
+  
+   "Blood tests are frequently characterized by measuring several parameters which for presentation/reporting purposes are organized by categories."
+  
+###   From the client clarifications:
+    
+      Question: "What is the data that characterize a parameter?"
+      
+      Answer:
+      
+  
+  
+
 
 ### 1.3. Acceptance Criteria
 
@@ -20,6 +34,8 @@
 ### 1.4. Found out Dependencies
 
 *Identify here any found out dependency to other US and/or requirements.*
+
+There is a dependency to "US11: As an administrator, I want to specify a new parameter category." since at least a parameter category must exist to classify the parameter being created.
 
 ### 1.5 Input and Output Data
 
