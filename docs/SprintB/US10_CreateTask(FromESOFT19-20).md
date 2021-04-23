@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 010 - To create a parameter and categorize it.
 
 ## 1. Requirements Engineering
 
@@ -18,6 +18,11 @@ As an administrator, I want to specify a new parameter and categorize it.
    "Blood tests are frequently characterized by measuring several parameters which for presentation/reporting purposes are organized by categories."
   
 ###   From the client clarifications:
+    
+      Question: "What is the data that characterize a parameter?"
+      
+      Answer:
+      
   
   
 
