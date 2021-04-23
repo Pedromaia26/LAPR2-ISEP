@@ -29,8 +29,14 @@ Throughout the project's development period, the distribution of _tasks / requir
 | Domain Model  |  [all](SprintA/DM.md)   |   [all](SprintB/DM.md)  |   [all](SprintC/DM.md)  | [all](SprintD/DM.md)  |
 | US 1 (SDP Activities)  |  [1190001](SprintA/US1.md)   |    |   |  |
 | US 2 (SDP Activities)  |  [1190002](SprintA/US2.md)   |    |   |  |
-| US 3 (SDP Activities)  |  [1190003](SprintA/US3.md)   |    |   |  |
+| US 3 (SDP Activities)  |  [1201371](SprintA/US3.md)   |    |   |  |
 | US 4 (SDP Activities)  |  [1190004](SprintA/US4.md)   |    |   |  |
+| US 5 (SDP Activities)  |  [1190004](SprintA/US4.md)   |    |   |  |
+| US 6 (SDP Activities)  |  [1190004](SprintA/US4.md)   |    |   |  |
+| US 7 (SDP Activities)  |  [1201381](SprintA/US4.md)   |    |   |  |
+| US 8 (SDP Activities)  |  [1201384](SprintA/US4.md)   |    |   |  |
+| US 9 (SDP Activities)  |  [1201276](SprintA/US4.md)   |    |   |  |
+| US 10 (SDP Activities)  |  [1201000](SprintA/US4.md)   |    |   |  |
 | ...  |  ...   | ...   | ...  | ... |
 | US 326 (SDP Activities)  |    |    |   | [1190004](SprintA/US326.md) |
 
