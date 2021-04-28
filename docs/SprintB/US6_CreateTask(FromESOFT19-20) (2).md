@@ -19,12 +19,6 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 **From the client clarifications:**
 
-> **Question:** Is there a feature where you add collection methods or is there an already existent list where you choose from not having the option to add another.
->  
-> **Answer:** 
-
--
-
 > **Question:** When the administrator is creating a test type does he select the parameters to be associated with it from a list or does he select the categories?
 >  
 > **Answer:**
@@ -43,11 +37,6 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 -
 
-> **Question:** Is there any kind of rules that the admin should be restricted to, when he is creating a new test type?
-> **Answer:** 
-
--
-
 > **Question:** Does a type of test holds any atributte besides it's name and collecting methods?
 >  
 > **Answer:**
@@ -56,27 +45,34 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 > **Question:** Are there any different collecting methods other than the ones currently known? Which ones?
 >  
-> **Answer:** 
+> **Answer:** Each collecting method is associated with a test type. Whenever a test type is created a collecting method should be defined.
 
 -
 
-> **Question:**	Are the collecting methods stored simpled as a word or a sentence, or does it also must contain it's description, and/or another attributes?
+> **Question:** Does a type of test holds any atributte besides it's name and collecting methods?
 >  
-> **Answer:** 
+> **Answer:** The attributes for a new test type are: Code: five alphanumeric characters; The code is not automatically generated; Description: a string with no more than 15 characters; Collecting Method: a string with no more than 20 characters; Each test type should have a set of categories. Each category should be chosen from a list of categories.
 
+-
+
+> **Question:** Are the collecting methods stored simpled as a word or a sentence, or does it also must contain it's description, and/or another attributes?
+>  
+> **Answer:** To make a Covid test you need a swab to collect a sample. To make a blood test you need sample tubes and a syringe.
+When the administrator specifies a new type of test, the administrator also specifies the method to collect a sample. The administrator introduces a brief description for specifying the collecting method.
 
 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
+* **AC1:** The test type code must have 5 alphanumeric chars and it is not automatically generated.
+* **AC2:** The test type description must be a string with no more than 15 chars.
+* **AC3:** The collection method must be a string with no more than 20 chars.
+* **AC4:** Each test type must have a set of categories.
 
 
 ### 1.4. Found out Dependencies
 
-* No dependencies were found.
+* There is a dependency to "UC 11 Create Parameter Category" since at least one parameter category must exist to create a new test type.
 
 ### 1.5 Input and Output Data
 
@@ -85,14 +81,15 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 * Typed data:
 	* a designation 
-	* a description 
+	* two descriptions (test type and collecting method)
+	* a code
 	
 * Selected data:
-	* 
+	* a category
 
 **Output Data:**
 
-* List of existing task categories
+* List of existing parameter	 categories
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
