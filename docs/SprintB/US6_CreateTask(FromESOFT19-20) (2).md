@@ -96,12 +96,12 @@ When the administrator specifies a new type of test, the administrator also spec
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
+![US009_SSD.svg](US009_SSD.svg)
 
 
 **Alternative 2**
 
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US009_SSD_v2.svg](US009_SSD_v2.svg)
 
 
 **Other alternatives might exist.**
