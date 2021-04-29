@@ -21,6 +21,10 @@ As an administrator, I want to resgister a new employee.
 > **Question:** Which attributes a employee have?
 >  
 > **Answer:** Employee ID, Organization Role, Name, Address, Phone Number, E-Mail, Standard Occupational Classification (SOC) code.
+>
+> **Question:** "When creating a new employee, the attributes 'Employee ID' and 'Doctor Index Number', are implemented by the administrator or incremented by the system?"
+>
+> **Answer:** Only the employee ID should be generated. The Doctor Index Number should be introduced by the administrator.
 
 
 ### 1.3. Acceptance Criteria
@@ -28,6 +32,7 @@ As an administrator, I want to resgister a new employee.
 
 * **AC1:** "Each user must have a single role defined in the system."
 * **AC2:** "The "auth" component available on the repository must be reused (without modifications)."
+* **AC3:** "The employee ID should be generated from the initials of the employee name and should include a number. The number has 5 digits and is increases automatically when a new employee is registered in the system."
 
 
 ### 1.4. Found out Dependencies
