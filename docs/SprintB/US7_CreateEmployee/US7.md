@@ -22,7 +22,7 @@ As an administrator, I want to resgister a new employee.
 >  
 > **Answer:** Employee ID, Organization Role, Name, Address, Phone Number, E-Mail, Standard Occupational Classification (SOC) code.
 >
-> **Question:** "When creating a new employee, the attributes 'Employee ID' and 'Doctor Index Number', are implemented by the administrator or incremented by the system?"
+> **Question:** "When creating a new employee, the attributes 'Employee ID' and 'Doctor Index Number', are implemented by the administrator or incremented by the system?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7547#p10159]
 >
 > **Answer:** Only the employee ID should be generated. The Doctor Index Number should be introduced by the administrator.
 
@@ -47,15 +47,15 @@ As an administrator, I want to resgister a new employee.
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+	* a employee id???, 
+	* a name, 
+	* an adress,
+	* a phone number,
+	* an e-mail,
+	* an standard occupational classification code.
 	
 * Selected data:
-	* Classifying task category 
+	* Organization role.
 
 
 **Output Data:**
