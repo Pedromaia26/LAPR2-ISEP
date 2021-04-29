@@ -66,12 +66,12 @@ As an administrator, I want to resgister a new employee.
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
+![US007_SSD](US007_SSD.svg)
 
 
 **Alternative 2**
 
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US007_SSD_v2](US007_SSD_v2.svg)
 
 
 **Other alternatives might exist.**
