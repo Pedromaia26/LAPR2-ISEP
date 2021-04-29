@@ -1,4 +1,4 @@
-# US 006 - To resgister a new Employee 
+# US 007 - To resgister a new Employee 
 
 ## 1. Requirements Engineering
 
@@ -38,7 +38,7 @@ As an administrator, I want to resgister a new employee.
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* 
 
 
 ### 1.5 Input and Output Data
@@ -60,7 +60,6 @@ As an administrator, I want to resgister a new employee.
 
 **Output Data:**
 
-* List of existing task categories
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
