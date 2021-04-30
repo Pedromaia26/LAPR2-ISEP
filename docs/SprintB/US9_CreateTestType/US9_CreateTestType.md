@@ -137,12 +137,12 @@ n/a
 | Step 2  		 |							 |             |                              |
 | Step 3  		 |	...saving the inputted data? | TestType  | IE: object created in step 1 has its own data.  |
 | Step 4  		 |	...knowing the parameter categories to show? | System | IE: Parameter categories are registered in the System. |
-| Step 5  		 |	... saving the selected category? | ? | ?  |
+| Step 5  		 |	... saving the selected category? | TestType | IE: object created in step 1 contains one or more Categories.  |
 | Step 6  		 |							 |             |                              |              
 | Step 7  		 |	... validating all data (local validation)? | TestType | IE: owns its data.| 
 | 			  		 |	... validating all data (global validation)? | Company | IE: knows all its parameter categories.| 
 | 			  		 |	... saving the created type of test? | Company | IE: owns all its test types.| 
-| Step 8  		 |	... informing operation success?| CreateTaskUI  | IE: is responsible for user interactions.  | 
+| Step 8  		 |	... informing operation success?| CreateTestTypeUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
