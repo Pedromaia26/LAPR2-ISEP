@@ -2,8 +2,6 @@
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
 
 ### 1.1. User Story Description
 
@@ -11,20 +9,33 @@ As an administrator, I want to specify a new parameter and categorize it.
 
 ### 1.2. Customer Specifications and Clarifications
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
 
 ###   From the specifications document:
   
    "Blood tests are frequently characterized by measuring several parameters which for presentation/reporting purposes are organized by categories."
   
 ###   From the client clarifications:
+
     
-      Question: "What is the data that characterize a parameter?"
+>   **Question:** "What is the data that characterize a parameter?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7507#p9763]
+
+>   **Answer:** A Code, a Short Name and a Description.
+       <br><br/>   
+>   **Question:** "Is the categorization of a parameter mandatory or optional?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7649#p9973]
+
+>   **Answer:**
+      <br><br/>
       
-      Answer:
+>   **Question:** "How does the assignment of a parameter category works?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7649#p9973]
       
-  
-  
+>   **Answer:** The administrator should select one category when creating a parameter.
+      <br><br/>
+      
+>   **Question:** "Can a parameter be classified in more than one parameter category?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7749#p10099]
+      
+>   **Answer:** No. Each parameter has only one category.
+      
+      
 
 
 ### 1.3. Acceptance Criteria
