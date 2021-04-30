@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Administrator" as A
+participant ":System" as S
+activate A
+
+A -> S: asks to create a new test type
+activate S
+S --> A: requests data (designation, test type description, collecting method description, code)
+deactivate S
+
+A -> S: types requested data
+activate S
+S --> A: shows parameter category list and asks to select one or more
+deactivate S
+
+loop
+A -> S: selects a parameter category
+activate S
+S --> A: shows all data and requests confirmation
+deactivate S
+end
+
+A -> S: confirms the data
+activate S
+S --> A: informs operation sucess
+deactivate S
+
+
+@enduml
