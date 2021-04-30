@@ -133,7 +133,7 @@ n/a
 | Step 1  		 |	... interacting with the actor? | CreateTestTypeUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
 | 			  		 |	... coordinating the US? | CreateTestTypeController | Controller                             |
 | 			  		 |	... instantiating a new TestType? | Company | Creator (Rule 1): in the DM Company performs type of tests.   |
-| 			  		 | ... knowing the user using the system?  | System  | IE: knows all its users. |
+| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation. |
 | Step 2  		 |							 |             |                              |
 | Step 3  		 |	...saving the inputted data? | TestType  | IE: object created in step 1 has its own data.  |
 | Step 4  		 |	...knowing the parameter categories to show? | System | IE: Parameter categories are registered in the System. |
