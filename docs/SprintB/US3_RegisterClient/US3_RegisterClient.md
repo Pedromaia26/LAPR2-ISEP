@@ -15,7 +15,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 **From the specifications document:**
 
-> "In case of a new client, the receptionist registers the client in the application. To register a client, the receptionist needs the clientâ€™s citizen card number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIF), phone number, e-mail and name."
+> "In case of a new client, the receptionist registers the client in the application. To register a client, the receptionist needs the client’s citizen card number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIF), phone number, e-mail and name."
 
 
 
@@ -71,12 +71,12 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
+![US003_SSD](US003_SSD.svg)
 
 
 **Alternative 2**
 
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US003_SSD_v2](US003_SSD_v2.svg)
 
 
 **Other alternatives might exist.**
