@@ -132,11 +132,11 @@ n/a
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1  		 |	... interacting with the actor? | CreateTestTypeUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
 | 			  		 |	... coordinating the US? | CreateTestTypeController | Controller                             |
-| 			  		 |	... instantiating a new Task? | Company   | Creator (Rule 1): in the DM Company performs type of tests.   |
-| 			  		 | ... knowing the user using the system?  | Platform  | IE: knows all its users. |
+| 			  		 |	... instantiating a new TestType? | Company | Creator (Rule 1): in the DM Company performs type of tests.   |
+| 			  		 | ... knowing the user using the system?  | System  | IE: knows all its users. |
 | Step 2  		 |							 |             |                              |
 | Step 3  		 |	...saving the inputted data? | TestType  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the parameter categories to show? | Administrator(?)| IE: Parameter categories are defined by the Administrator. |
+| Step 4  		 |	...knowing the parameter categories to show? | System | IE: Parameter categories are registered in the System. |
 | Step 5  		 |	... saving the selected category? | ? | ?  |
 | Step 6  		 |							 |             |                              |              
 | Step 7  		 |	... validating all data (local validation)? | TestType | IE: owns its data.| 
