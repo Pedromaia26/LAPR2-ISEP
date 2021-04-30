@@ -40,11 +40,11 @@ As an administrator, I want to specify a new parameter and categorize it.
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+  * **AC1:** The Code are five alphanumeric characters.
+  * **AC2:** The Short Name is a String with no more than 8 characters.
+  * **AC3:** The Description is a String with no more than 20 characters.
 
 ### 1.4. Found out Dependencies
-
-*Identify here any found out dependency to other US and/or requirements.*
 
 There is a dependency to "US11: As an administrator, I want to specify a new parameter category." since at least a parameter category must exist to classify the parameter being created.
 
