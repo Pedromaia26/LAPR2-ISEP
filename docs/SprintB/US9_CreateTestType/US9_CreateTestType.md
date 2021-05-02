@@ -172,7 +172,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US006_CD](US006_CD.svg)
+![US009_CD.svg](US009_CD.svg)
 
 # 4. Tests 
 
