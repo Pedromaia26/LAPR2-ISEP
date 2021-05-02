@@ -67,12 +67,12 @@ When the administrator specifies a new type of test, the administrator also spec
 * **AC1:** The test type code must have 5 alphanumeric chars and it is not automatically generated.
 * **AC2:** The test type description must be a string with no more than 15 chars.
 * **AC3:** The collection method must be a string with no more than 20 chars.
-* **AC4:** Each test type must have a set of categories.
+
 
 
 ### 1.4. Found out Dependencies
 
-* There is a dependency to "UC 11 Create Parameter Category" since at least one parameter category must exist to create a new test type.
+* There is a dependency to "US11 Create a Parameter Category" since at least one parameter category must exist to create a new test type.
 
 ### 1.5 Input and Output Data
 
@@ -89,7 +89,7 @@ When the administrator specifies a new type of test, the administrator also spec
 
 **Output Data:**
 
-* List of existing parameter	 categories
+* List of existing parameter categories
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
@@ -151,7 +151,6 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Company
  * Platform
  * TestType
- * Administrator ? 
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
