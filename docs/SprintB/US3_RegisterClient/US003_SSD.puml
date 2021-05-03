@@ -14,7 +14,7 @@ System --> Adm: shows the data and request a confirmation
 deactivate System
 Adm -> System: confirms the data
 activate System
-System --> Adm: informs operation success
+System --> Adm: informs operation success 
 deactivate System
 deactivate Adm
 @enduml

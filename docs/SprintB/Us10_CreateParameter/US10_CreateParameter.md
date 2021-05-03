@@ -50,7 +50,23 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
+
+* Typed data:
+	* a code
+    * a short name
+    * a description
+    
+	
+* Selected data:
+	* Parameter Category.
+
+
+**Output Data:**
+
+* List of existing parameter categories
+* (In)Success of the operation
+
 
 
 ### 1.6. System Sequence Diagram (SSD)
