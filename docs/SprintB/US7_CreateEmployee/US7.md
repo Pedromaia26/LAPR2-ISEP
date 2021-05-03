@@ -25,7 +25,18 @@ As an administrator, I want to resgister a new employee.
 > **Question:** "When creating a new employee, the attributes 'Employee ID' and 'Doctor Index Number', are implemented by the administrator or incremented by the system?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7547#p10159]
 >
 > **Answer:** Only the employee ID should be generated. The Doctor Index Number should be introduced by the administrator.
-
+>
+> **Question:** "Regarding the registration of a new employee, which is the organization role's format?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7928#p10353]
+> 
+> **Answer:**
+> 
+> **Question:** When the application is delivered, should it have default employees, ex:administrator, or should be completly empty (without any user or employee)? - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7668#p9993]
+> 
+> **Answer:** "One Administrator must be registered before starting the application for the first time."
+> 
+> **Question:** "Are there any other employee roles than the ones specified in the documents?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7738#p10084]
+> 
+> **Answer:** "No."
 
 ### 1.3. Acceptance Criteria
 
@@ -47,8 +58,7 @@ As an administrator, I want to resgister a new employee.
 **Input Data:**
 
 * Typed data:
-	* a employee id???, 
-	* a name, 
+	* a name,
 	* an adress,
 	* a phone number,
 	* an e-mail,
@@ -56,6 +66,9 @@ As an administrator, I want to resgister a new employee.
 	
 * Selected data:
 	* Organization role.
+	
+* Generated data:
+	* EmployeeID
 
 
 **Output Data:**
