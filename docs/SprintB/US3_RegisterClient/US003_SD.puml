@@ -42,9 +42,9 @@ deactivate ML
 ML-->ML:addNewClient(NC)
 activate ML
 deactivate ML
-ML-->ML:sendEmail(NC)
-activate ML
-deactivate ML
+ML-->NC:sendEmail(NC)
+activate NC
+deactivate NC
 deactivate ML
 deactivate RCC
 System --> Adm: informs operation success
