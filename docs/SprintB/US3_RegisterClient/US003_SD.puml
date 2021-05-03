@@ -1,0 +1,53 @@
+@startuml
+actor Receptionist as Adm
+participant ":RegistClient UI" as System
+participant ":RegistClientCrontroller" as RCC
+participant ":ManyLabs" as ML
+
+
+
+autonumber
+activate Adm
+Adm -> System: starts new Client
+activate System
+System --> Adm: request data(Citizen card number, National Healthcare Service (NHS) number,\n Birth date, Sex, Tax Identification number (TIF), E-mail, Name, Phone number(Opcional))
+deactivate System
+
+
+
+
+Adm -> System: types requested data
+activate System
+System-->RCC: createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber)
+activate RCC
+RCC-->ML: nc=createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber)
+activate ML
+create "NewClient" as NC
+ML-->NC: createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber) 
+deactivate ML
+deactivate RCC
+System --> Adm: shows the data and request a confirmation
+deactivate System
+
+
+Adm -> System: confirms the data
+activate System
+System-->RCC: saveNewClient()
+activate RCC
+RCC-->ML:saveNewClient(NC)
+activate ML
+ML-->ML:validateNewClient(NC)
+activate ML
+deactivate ML
+ML-->ML:addNewClient(NC)
+activate ML
+deactivate ML
+ML-->ML:sendEmail(NC)
+activate ML
+deactivate ML
+deactivate ML
+deactivate RCC
+System --> Adm: informs operation success
+deactivate System
+deactivate Adm
+@enduml
