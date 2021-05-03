@@ -14,8 +14,7 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 
 **From the specifications document:**
-
->	Each type of test is characterized by its designation and a description that identifies the sample collection method. 
+ 
 
 **From the client clarifications:**
 
@@ -80,7 +79,6 @@ When the administrator specifies a new type of test, the administrator also spec
 **Input Data:**
 
 * Typed data:
-	* a designation 
 	* two descriptions (test type and collecting method)
 	* a code
 	
@@ -115,7 +113,7 @@ When the administrator specifies a new type of test, the administrator also spec
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US009_MD.svg](US009_MD.svg)
 
 ### 2.2. Other Remarks
 
