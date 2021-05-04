@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 006 - To register a new Laboratory 
 
 ## 1. Requirements Engineering
 
@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
+As an administrator, I want to register a new laboratory.
 
 
 
@@ -73,14 +73,7 @@ As an organization employee, I want to create a new task in order to be further 
 
 ### 1.6. System Sequence Diagram (SSD)
 
-**Alternative 1**
-
-![US006_SSD](US006_SSD.svg)
-
-
-**Alternative 2**
-
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US008_SSD](US008_SSD.svg)
 
 
 **Other alternatives might exist.**
@@ -94,7 +87,6 @@ As an organization employee, I want to create a new task in order to be further 
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
 
 ### 2.2. Other Remarks
 
