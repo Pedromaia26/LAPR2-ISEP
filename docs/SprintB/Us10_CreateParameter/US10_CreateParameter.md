@@ -86,7 +86,7 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 ### 2.1. Relevant Domain Model Excerpt 
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US10_DM](US10_DM.svg)
 
 ### 2.2. Other Remarks
 
