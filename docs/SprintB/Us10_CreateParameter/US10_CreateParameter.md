@@ -104,15 +104,16 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1         |... interacting with the actor?| CreateParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.|
 |         		 |... coordinating the US? | CreateParameterController |                              |
-|        		 |... instantiating a new Parameter? | ParameterStore | Creator (Rule 1): in the DM Company conducts type of tests. |
+|        		 |... instantiating a new Parameter? | Parameter |  |
 | Step 2 		 |							 |             |                              |
 | Step 3  		 |...saving the inputted data? | ParameterStore |                              |
-| Step 4  		 |...knowing parameter category to show	| Many Labs |                              |  
-| Step 5  		 |... saving the selected category?	 | Parameter |                              | 
+| Step 4  		 |...knowing parameter category to show	| Many Labs |  	IE: Parameter categories are adopted by the Company.  |  
+| Step 5  		 |... saving the selected category?	 | ParameterStore |                              | 
 | Step 6  		 |							 |             |                              | 
-| Step 7  		 |... validating all data (local validation)?	| Parameter |                              | 
-|        		 |... validating all data (global validation)? | Many Labs  |                              | 
-| Step 8  		 |							 |             |                              | 
+| Step 7  		 |... validating all data (local validation)?	| ParameterStore |                              | 
+|        		 |... validating all data (global validation)? | Many Labs  |                              |
+|       		 |... saving the created parameter?	 | ParameterStore            |                              | 
+| Step 8  		 |... informing operation success?	| CreateParameterUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
