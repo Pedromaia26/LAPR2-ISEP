@@ -102,12 +102,17 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step 1         |... interacting with the actor?| CreateParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.|
+|         		 |... coordinating the US? | CreateParameterController |                              |
+|        		 |... instantiating a new Parameter? | ParameterStore | Creator (Rule 1): in the DM Company conducts type of tests. |
+| Step 2 		 |							 |             |                              |
+| Step 3  		 |...saving the inputted data? | ParameterStore |                              |
+| Step 4  		 |...knowing parameter category to show	| Many Labs |                              |  
+| Step 5  		 |... saving the selected category?	 | Parameter |                              | 
+| Step 6  		 |							 |             |                              | 
+| Step 7  		 |... validating all data (local validation)?	| Parameter |                              | 
+|        		 |... validating all data (global validation)? | Many Labs  |                              | 
+| Step 8  		 |							 |             |                              | 
 
 ### Systematization ##
 
