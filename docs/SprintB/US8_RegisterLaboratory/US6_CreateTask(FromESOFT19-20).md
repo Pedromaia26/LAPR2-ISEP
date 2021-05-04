@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 006 - To register a new Laboratory 
 
 ## 1. Requirements Engineering
 
