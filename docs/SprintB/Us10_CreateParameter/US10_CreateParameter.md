@@ -86,7 +86,7 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 ### 2.1. Relevant Domain Model Excerpt 
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US10_DM](US10_DM.svg)
 
 ### 2.2. Other Remarks
 
@@ -102,12 +102,18 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step 1         |... interacting with the actor?| CreateParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.|
+|         		 |... coordinating the US? | CreateParameterController |                              |
+|        		 |... instantiating a new Parameter? | Parameter |  |
+| Step 2 		 |							 |             |                              |
+| Step 3  		 |...saving the inputted data? | ParameterStore |                              |
+| Step 4  		 |...knowing parameter category to show	| Many Labs |  	IE: Parameter categories are adopted by the Company.  |  
+| Step 5  		 |... saving the selected category?	 | ParameterStore |                              | 
+| Step 6  		 |							 |             |                              | 
+| Step 7  		 |... validating all data (local validation)?	| ParameterStore |                              | 
+|        		 |... validating all data (global validation)? | Many Labs  |                              |
+|       		 |... saving the created parameter?	 | ParameterStore            |                              | 
+| Step 8  		 |... informing operation success?	| CreateParameterUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
@@ -125,7 +131,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
 
-![USXX-SD](USXX-SD.svg)
+![US10_SD](US10_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
