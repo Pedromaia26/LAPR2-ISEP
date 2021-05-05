@@ -2,15 +2,16 @@
 actor Receptionist as Adm
 participant ":RegistClient UI" as System
 participant ":RegistClientCrontroller" as RCC
-participant ":ManyLabs" as ML
-
+participant ":Company" as ML
+participant ":ClientMapper" as cm
+participant "dto:ClientDTO" as cdto
 
 
 autonumber
 activate Adm
 Adm -> System: starts new Client
 activate System
-System --> Adm: request data(Citizen card number, National Healthcare Service (NHS) number,\n Birth date, Sex, Tax Identification number (TIF), E-mail, Name, Phone number(Opcional))
+System --> Adm: request data(CCN, National Healthcare Service (NHS) number,\n Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
 deactivate System
 
 
@@ -18,14 +19,72 @@ deactivate System
 
 Adm -> System: types requested data
 activate System
-System-->RCC: createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber)
+System-->RCC: createNewClient(dto)
 activate RCC
-RCC-->ML: nc=createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber)
+RCC-->ML: nc=createNewClient(dto)
 activate ML
-create "NewClient" as NC
-ML-->NC: createNewClient(CitizenCardNumber, NHS,\n BirthDate, Sex, TIF, Email, Name, PhoneNumber) 
+
+
+ML-->cm: toModel(dto)
+activate cm
+cm-->cdto: ccn=getCCN()
+activate cdto
+deactivate cdto
+cm-->cdto: nhs=getNHS()
+activate cdto
+deactivate cdto
+cm-->cdto: birthDate=getBirthDate()
+activate cdto
+deactivate cdto
+cm-->cdto: sex=getSex()
+activate cdto
+deactivate cdto
+cm-->cdto: tif=getTIF()
+activate cdto
+deactivate cdto
+cm-->cdto: email=getEmail()
+activate cdto
+deactivate cdto
+cm-->cdto: name=getName()
+activate cdto
+deactivate cdto
+cm-->cdto: phoneNumber=getPhoneNumber()
+activate cdto
+deactivate cdto
+
+
+create "nc: NewClient" as NC
+cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
+NC-->NC: validateAge(birthDate)
+activate NC
+deactivate NC
+NC-->NC: validateName(name)
+activate NC
+deactivate NC
+NC-->NC: validateEmail(email)
+activate NC
+deactivate NC
+NC-->NC: validateSex(sex)
+activate NC
+deactivate NC
+NC-->NC: validateNhs(nhs)
+activate NC
+deactivate NC
+NC-->NC: validateTif(tif)
+activate NC
+deactivate NC
+NC-->NC: validatePhoneNumber(phoneNumber)
+activate NC
+deactivate NC
+NC-->NC: validateCcn(ccn)
+activate NC
+deactivate NC
+
+
+
 deactivate ML
 deactivate RCC
+deactivate cm
 System --> Adm: shows the data and request a confirmation
 deactivate System
 
