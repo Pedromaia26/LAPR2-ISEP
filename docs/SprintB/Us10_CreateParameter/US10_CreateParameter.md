@@ -107,7 +107,7 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 |        		 |... instantiating a new Parameter? | Parameter |  |
 | Step 2 		 |							 |             |                              |
 | Step 3  		 |...saving the inputted data? | ParameterStore |                              |
-| Step 4  		 |...knowing parameter category to show	| Many Labs |  	IE: Parameter categories are adopted by the Company.  |  
+| Step 4  		 |...knowing parameter category to show	| ParameterCategoryStore |  	IE: Parameter categories are adopted by the Company.  |  
 | Step 5  		 |... saving the selected category?	 | ParameterStore |                              | 
 | Step 6  		 |							 |             |                              | 
 | Step 7  		 |... validating all data (local validation)?	| ParameterStore |                              | 
@@ -119,13 +119,13 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * Parameter
+ * ParameterStore
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateParameterUI  
+ * CreateParameterController
 
 ## 3.2. Sequence Diagram (SD)
 
