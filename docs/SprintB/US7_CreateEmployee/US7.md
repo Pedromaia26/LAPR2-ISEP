@@ -65,10 +65,10 @@ As an administrator, I want to resgister a new employee.
 	* an standard occupational classification code.
 	
 * Selected data:
-	* Organization role.
+	* an organization role.
 	
 * Generated data:
-	* EmployeeID
+	* an employeeID.
 
 
 **Output Data:**
@@ -81,13 +81,6 @@ As an administrator, I want to resgister a new employee.
 
 ![US007_SSD](US007_SSD.svg)
 
-
-**Alternative 2**
-
-![US007_SSD_v2](US007_SSD_v2.svg)
-
-
-**Other alternatives might exist.**
 
 ### 1.7 Other Relevant Remarks
 
@@ -108,8 +101,6 @@ n/a
 ## 3. Design - User Story Realization 
 
 ### 3.1. Rationale
-
-**SSD - Alternative 1 is adopted.**
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
