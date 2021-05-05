@@ -53,7 +53,7 @@ activate cdto
 deactivate cdto
 
 
-create "nc: NewClient" as NC
+create "nc: Client" as NC
 cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
 NC-->NC: validateAge(birthDate)
 activate NC
