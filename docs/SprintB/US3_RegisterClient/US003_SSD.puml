@@ -6,7 +6,7 @@ autonumber
 activate Adm
 Adm -> System: starts new Client
 activate System
-System --> Adm: request data(Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex, Tax Identification number (TIF), E-mail, Name, Phone number(Opcional))
+System --> Adm: request data(Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
 deactivate System
 Adm -> System: types requested data
 activate System
