@@ -83,7 +83,9 @@ deactivate Company
 deactivate Controller
 
 Interface -> Adm: shows the data and requests a confirmation
+deactivate Interface
 Adm -> Interface: confirms the data
+
 activate Interface
 Interface -> Controller: saveEmployee()
 activate Controller
