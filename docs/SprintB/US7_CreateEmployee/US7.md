@@ -28,7 +28,7 @@ As an administrator, I want to resgister a new employee.
 >
 > **Question:** "Regarding the registration of a new employee, which is the organization role's format?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7928#p10353]
 > 
-> **Answer:**
+> **Answer:** "Organization Role: a string with no more than 15 characters."
 > 
 > **Question:** When the application is delivered, should it have default employees, ex:administrator, or should be completly empty (without any user or employee)? - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7668#p9993]
 > 
@@ -37,6 +37,10 @@ As an administrator, I want to resgister a new employee.
 > **Question:** "Are there any other employee roles than the ones specified in the documents?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7738#p10084]
 > 
 > **Answer:** "No."
+>
+> **Question:** "Is there any size limit to the employee's name?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7973]
+>
+> **Answer:** "Employee Name: 'a string with no more than 35 characters'."
 
 ### 1.3. Acceptance Criteria
 
@@ -44,6 +48,8 @@ As an administrator, I want to resgister a new employee.
 * **AC1:** "Each user must have a single role defined in the system."
 * **AC2:** "The "auth" component available on the repository must be reused (without modifications)."
 * **AC3:** "The employee ID should be generated from the initials of the employee name and should include a number. The number has 5 digits and is increases automatically when a new employee is registered in the system."
+* **AC4:** "Employee Name: a string with no more than 35 characters."
+* **AC5:** "Organization Role: a string with no more than 15 characters."
 
 
 ### 1.4. Found out Dependencies
