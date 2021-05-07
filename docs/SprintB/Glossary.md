@@ -6,7 +6,7 @@
 | **API** | **-** | Acronym for Application Programming Interface. It is a software intermediary that allows two applications to communicate with each other. |
 | **Barcode** | **Código de barras** | It refers to a numeric or alphanumeric code that identifies a sample. |
 | **Benchmark** | **Referência** | It refers to a methodology of comparing algorithms with respect to a certain performance measure. |
-| **CamelCase** | **CamelCase** | It refers to a practice of writing phrases, where each word starts with an upper case letter, and all words are connected without spaces. |
+| **CamelCase** | **-** | It refers to a practice of writing phrases, where each word starts with an upper case letter, and all words are connected without spaces. |
 | **Chemical analysis** | **Análise química** | It refers to a type of analysis that is used to determine a chemical’s identity or the identity of its components. |
 | **Client** | **Cliente** | It refers to the person requesting a clinical analysis test. |
 | **Clinical analysis laboratory** | **Laboratório de análises clínicas** | It refers to a type of laboratory, which performs blood analysis and Covid-19 tests. |
