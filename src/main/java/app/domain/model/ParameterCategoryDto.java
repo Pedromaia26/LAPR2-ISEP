@@ -7,7 +7,7 @@ public class ParameterCategoryDto {
 
 
     public ParameterCategoryDto(ParameterCategory category){
-        this.code = category.getCode(   );
+        this.code = category.getCode();
         this.name = category.getName();
     }
 }
