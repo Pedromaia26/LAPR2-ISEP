@@ -3,21 +3,35 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- *
- * @author Bruno Ribeiro
- */
+
 
 public class Parameter {
 
     /**
-     *
+     * String that contains the parameter code.
      */
     private String code;
+    /**
+     * String that contains the parameter short name.
+     */
     private String shortName;
+    /**
+     * String that contains the parameter description.
+     */
     private String description;
+    /**
+     * Object ParameterCategory corresponding to the category that categorizes the parameter
+     */
     private ParameterCategory category;
 
+    /**
+     * Constructs an instance of Parameter receiving the code, the short name, the description and the parameter category.
+     *
+     * @param code The parameter code
+     * @param shortName The parameter short name
+     * @param description The parameter description
+     * @param category The parameter category
+     */
     public Parameter(String code, String shortName, String description, ParameterCategory category){
         checkCodeRules(code);
         checkShortNameRules(shortName);
@@ -29,6 +43,12 @@ public class Parameter {
 
     }
 
+
+    /**
+     * Check the code assignment restrictions.
+     *
+     * @param code The code to be validated
+     */
     private void checkCodeRules(String code) {
         if (StringUtils.isBlank(code)) {
             throw new IllegalArgumentException("Code cannot be blank.");
@@ -38,6 +58,11 @@ public class Parameter {
         }
     }
 
+    /**
+     * Check the short name assignment restrictions.
+     *
+     * @param shortName The short name to be validated
+     */
     private void checkShortNameRules(String shortName) {
         if (StringUtils.isBlank(shortName)) {
             throw new IllegalArgumentException("Code cannot be blank.");
@@ -47,6 +72,11 @@ public class Parameter {
         }
     }
 
+    /**
+     * Check the description assignment restrictions.
+     *
+     * @param description The description to be validated
+     */
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description)) {
             throw new IllegalArgumentException("Code cannot be blank.");
