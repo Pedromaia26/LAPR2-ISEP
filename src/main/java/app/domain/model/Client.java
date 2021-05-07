@@ -42,7 +42,7 @@ public class Client {
 
         //Ver verificacao email
 
-        if(sex!="Male" && sex != "Female")
+        if(!sex.equals("Male") && !sex.equals("Female"))
             throw new IllegalArgumentException("Incorrect sex");
 
         this.sex=sex;
@@ -50,4 +50,8 @@ public class Client {
         //ver verificacao nascimento
 
     }
+    public static int soma(int a, int b){
+        return a+b;
+    }
+
 }

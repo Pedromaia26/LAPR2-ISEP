@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.controller.RegistClientController;
+
 import java.util.Scanner;
 
 public class Interface {
@@ -34,7 +36,10 @@ public class Interface {
 
             switch (escolha) {
                 case 1:
+                     ClientDTO teste = new ClientDTO(1234567891234567L,1234567891L,"12/12/2000","Male",1234567891L,"teste@gmail.com","teste",91345678912L);
 
+                     RegistClientController cliente= new RegistClientController();
+                     cliente.createNewClient(teste);
                     break;
                 case 2:
 
