@@ -3,6 +3,9 @@ package app.domain.model;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>
@@ -21,6 +24,8 @@ public class Company {
 
         this.designation = designation;
         this.authFacade = new AuthFacade();
+        this.testTypeStore = new TestTypeStore();
+        this.parameterCategoryStore = new ParameterCategoryStore();
     }
 
     public String getDesignation() {
@@ -31,7 +36,7 @@ public class Company {
         return authFacade;
     }
 
-    public TestTypeStore getTypeTestStore() {
+    public TestTypeStore getTestTypeStore() {
         return testTypeStore;
     }
     public ParameterCategoryStore getParameterCategoryStore() {
