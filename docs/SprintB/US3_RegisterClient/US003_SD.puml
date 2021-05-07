@@ -55,36 +55,18 @@ deactivate cdto
 
 create "nc: Client" as NC
 cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
-NC-->NC: validateAge(birthDate)
-activate NC
-deactivate NC
-NC-->NC: validateName(name)
-activate NC
-deactivate NC
-NC-->NC: validateEmail(email)
-activate NC
-deactivate NC
-NC-->NC: validateSex(sex)
-activate NC
-deactivate NC
-NC-->NC: validateNhs(nhs)
-activate NC
-deactivate NC
-NC-->NC: validateTif(tif)
-activate NC
-deactivate NC
-NC-->NC: validatePhoneNumber(phoneNumber)
-activate NC
-deactivate NC
-NC-->NC: validateCcn(ccn)
-activate NC
-deactivate NC
 
 
 
-deactivate ML
-deactivate RCC
 deactivate cm
+deactivate ML
+
+RCC-->ML:validateNewClient(NC)
+Activate ML
+deactivate ML
+
+deactivate RCC
+
 System --> Adm: shows the data and request a confirmation
 deactivate System
 
