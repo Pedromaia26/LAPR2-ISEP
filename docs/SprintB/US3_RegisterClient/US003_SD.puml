@@ -2,15 +2,20 @@
 actor Receptionist as Adm
 participant ":RegistClient UI" as System
 participant ":RegistClientCrontroller" as RCC
+participant "session: \nUser session" as US
 participant ":Company" as ML
+participant "store: \nClientStore" as CS
 participant ":ClientMapper" as cm
 participant "dto:ClientDTO" as cdto
+
 
 
 autonumber
 activate Adm
 Adm -> System: starts new Client
 activate System
+
+
 System --> Adm: request data(CCN, National Healthcare Service (NHS) number,\n Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
 deactivate System
 
@@ -21,11 +26,11 @@ Adm -> System: types requested data
 activate System
 System-->RCC: createNewClient(dto)
 activate RCC
-RCC-->ML: nc=createNewClient(dto)
-activate ML
+RCC-->CS: nc=createNewClient(dto)
+activate CS
 
 
-ML-->cm: toModel(dto)
+CS-->cm: toModel(dto)
 activate cm
 cm-->cdto: ccn=getCCN()
 activate cdto
@@ -59,11 +64,11 @@ cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
 
 
 deactivate cm
-deactivate ML
+deactivate CS
 
-RCC-->ML:validateNewClient(NC)
-Activate ML
-deactivate ML
+RCC-->CS:validateNewClient(NC)
+Activate CS
+deactivate CS
 
 deactivate RCC
 
@@ -75,15 +80,15 @@ Adm -> System: confirms the data
 activate System
 System-->RCC: saveNewClient()
 activate RCC
-RCC-->ML:saveNewClient(NC)
-activate ML
-ML-->ML:validateNewClient(NC)
-activate ML
-deactivate ML
-ML-->ML:addNewClient(NC)
-activate ML
-deactivate ML
-ML-->NC:sendEmail(NC)
+RCC-->CS:saveNewClient(NC)
+activate CS
+CS-->CS:validateNewClient(NC)
+activate CS
+deactivate CS
+CS-->CS:addNewClient(NC)
+activate CS
+deactivate CS
+CS-->NC:sendEmail(NC)
 activate NC
 deactivate NC
 deactivate ML
