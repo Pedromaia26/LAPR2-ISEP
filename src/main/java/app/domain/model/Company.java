@@ -11,6 +11,7 @@ public class Company {
 
     private String designation;
     private AuthFacade authFacade;
+    private TestTypeStore testTypeStore;
 
     public Company(String designation)
     {
@@ -27,5 +28,9 @@ public class Company {
 
     public AuthFacade getAuthFacade() {
         return authFacade;
+    }
+
+    public TestTypeStore getTypeTestStore() {
+        return testTypeStore;
     }
 }
