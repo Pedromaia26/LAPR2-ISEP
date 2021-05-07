@@ -42,12 +42,76 @@ public class Client {
 
         //Ver verificacao email
 
-        if(sex!="Male" && sex != "Female")
+        if(!sex.equals("Male") && !sex.equals("Female"))
             throw new IllegalArgumentException("Incorrect sex");
 
         this.sex=sex;
 
         //ver verificacao nascimento
 
+    }
+
+    public long getCcn() {
+        return ccn;
+    }
+
+    public void setCcn(long ccn) {
+        this.ccn = ccn;
+    }
+
+    public long getNhs() {
+        return nhs;
+    }
+
+    public void setNhs(long nhs) {
+        this.nhs = nhs;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public long getTif() {
+        return tif;
+    }
+
+    public void setTif(long tif) {
+        this.tif = tif;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
