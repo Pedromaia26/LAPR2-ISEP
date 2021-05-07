@@ -14,7 +14,7 @@ Adm -> Interface: starts registering a new employee
 activate Interface
 Interface -> Controller: IRolesDto = getRoles()
 activate Controller
-Controller -> Company: lRolesDto = getRoles()
+Controller -> Company: lRoles = getRoles()
 activate Company
 deactivate Company
 Controller -> RolesMapper: lRolesDto = toDTO(lRoles)
