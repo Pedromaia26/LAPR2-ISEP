@@ -9,7 +9,7 @@ public class TestType {
     private String code;
     private List<ParameterCategory> listPC;
 
-    public TestType (String description, String collectingMethod, String code) {
+    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) {
 
         if (description.trim().length() > 15)
             throw new IllegalArgumentException("Description cannot have more than 15 characters");
@@ -17,7 +17,7 @@ public class TestType {
             this.description = description;
 
 
-        if (description.trim().length() > 20)
+        if (collectingMethod.trim().length() > 20)
             throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
 
         this.collectingMethod = collectingMethod;
@@ -25,6 +25,9 @@ public class TestType {
         if (code.trim().length() != 5)
             throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
 
+        this.code = code;
 
+
+        this.listPC = listPC;
     }
 }
