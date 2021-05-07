@@ -67,20 +67,19 @@ As an administrator, I want to register a new laboratory.
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+	* a laboratory ID, 
+	* a name, 
+	* an address
+	* a phone number
+	* a taxpayer identification numbers (TIN)
 	
 * Selected data:
-	* Classifying task category 
+	* a type of test
 
 
 **Output Data:**
 
-* List of existing task categories
+* List of existing types of tests
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
