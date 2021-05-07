@@ -16,14 +16,17 @@ public class Parameter {
     private String code;
     private String shortName;
     private String description;
+    private ParameterCategory category;
 
-    public Parameter(String code, String shortName, String description){
+    public Parameter(String code, String shortName, String description, ParameterCategory category){
         checkCodeRules(code);
         checkShortNameRules(shortName);
         checkDescriptionRules(description);
         this.code = code;
         this.shortName = shortName;
         this.description = description;
+        this.category = category;
+
     }
 
     private void checkCodeRules(String code) {

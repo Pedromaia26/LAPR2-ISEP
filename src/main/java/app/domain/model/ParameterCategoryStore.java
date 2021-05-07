@@ -14,4 +14,5 @@ public class ParameterCategoryStore {
         throw new IllegalArgumentException("There is no Parameter Category with such code!");
     }
 
+
 }

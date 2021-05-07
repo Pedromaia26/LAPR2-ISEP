@@ -16,6 +16,7 @@ public class ParameterCategory {
             throw new IllegalArgumentException("The code must have 5 alphanumeric characters");
 
         this.code = code;
+
     }
 
     public String getCode() {
