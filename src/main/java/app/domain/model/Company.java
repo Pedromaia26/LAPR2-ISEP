@@ -13,6 +13,7 @@ public class Company {
     private AuthFacade authFacade;
     private TestTypeStore testTypeStore;
     private ParameterCategoryStore parameterCategoryStore;
+    private ParameterStore parameterStore;
 
     public Company(String designation)
     {
@@ -36,5 +37,8 @@ public class Company {
     }
     public ParameterCategoryStore getParameterCategoryStore() {
         return parameterCategoryStore;
+    }
+    public ParameterStore getParameterStore() {
+        return parameterStore;
     }
 }

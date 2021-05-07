@@ -14,5 +14,7 @@ public class ParameterCategoryStore {
         throw new IllegalArgumentException("There is no Parameter Category with such code!");
     }
 
-
+    public List<ParameterCategory> getParameterCategories(){
+        return cat;
+    }
 }
