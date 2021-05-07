@@ -47,5 +47,6 @@ public class Company {
     public ParameterStore getParameterStore() {
         return parameterStore;
     }
-    public ClientStore getClientStore(){return clientStore;}
+    public ClientStore getClientStore(){
+        return clientStore;}
 }

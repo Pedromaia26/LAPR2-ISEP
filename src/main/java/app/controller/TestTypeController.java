@@ -10,6 +10,7 @@ public class TestTypeController {
     private TestTypeStore testTypeStore;
     private ParameterCategoryStore parameterCategoryStore;
     private TestType tt;
+    private List <ParameterCategory> cat;
 
 
     public TestTypeController() {
@@ -20,8 +21,10 @@ public class TestTypeController {
 
     }
 
-    public boolean createTestType(String description, String collectingMethod, String code, List<ParameterCategory> cat) {
-        this.pc = this.company.getParameterCategoryStore().getParameterCategoryByCode(code);
+    public boolean createTestType(String description, String collectingMethod, String code, String categoryCode) {
+        this.pc = this.company.getParameterCategoryStore().getParameterCategoryByCode(categoryCode);
+        cat.add(pc);
+        this.tt = this.company.getTestTypeStore().createTestType(description, collectingMethod, code, cat);
         return this.company.getTestTypeStore().validateTestType(tt);
     }
 
