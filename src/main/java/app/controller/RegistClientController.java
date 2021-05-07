@@ -2,6 +2,8 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.util.List;
+
 public class RegistClientController {
     private ClientStore clientStore;
 
@@ -22,7 +24,19 @@ public class RegistClientController {
 
 
     public boolean createNewClient(ClientDTO dto) {
-        this.nc = this.clientStore.createNewClient(dto);
+        this.nc = clientStore.createNewClient(dto);
         return this.clientStore.validateClient(nc);
     }
+
+    public boolean saveClient () {
+        return this.company.getClientStore().saveClient(nc);
+    }
+
+    public List<Client> getClientList () {
+        return this.company.getClientStore().getClientList();
+    }
+
+    public boolean validateClient() { return this.company.getClientStore().validateClient(nc); }
+
+
 }

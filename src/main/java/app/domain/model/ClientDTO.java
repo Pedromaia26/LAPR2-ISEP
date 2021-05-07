@@ -54,4 +54,18 @@ public class ClientDTO {
     public long getPhoneNumber() {
         return phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "ClientDTO{" +
+                "ccn=" + ccn +
+                ", nhs=" + nhs +
+                ", birth='" + birth + '\'' +
+                ", sex='" + sex + '\'' +
+                ", tif=" + tif +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
+    }
 }

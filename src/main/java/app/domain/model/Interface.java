@@ -2,6 +2,8 @@ package app.domain.model;
 
 import app.controller.RegistClientController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Interface {
@@ -40,6 +42,16 @@ public class Interface {
 
                      RegistClientController cliente= new RegistClientController();
                      cliente.createNewClient(teste);
+
+                    List<Client> clientList = new ArrayList<Client>();
+                    cliente.validateClient();
+                    cliente.saveClient();
+                    clientList=cliente.getClientList();
+
+                    for (Client cat : clientList) {
+                        System.out.println(cat);
+                    }
+
                     break;
                 case 2:
 

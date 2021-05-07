@@ -54,4 +54,17 @@ public class Client {
         return a+b;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "ccn=" + ccn +
+                ", nhs=" + nhs +
+                ", birth='" + birth + '\'' +
+                ", sex='" + sex + '\'' +
+                ", tif=" + tif +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
+    }
 }

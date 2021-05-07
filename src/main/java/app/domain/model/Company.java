@@ -28,6 +28,7 @@ public class Company {
         this.authFacade = new AuthFacade();
         this.testTypeStore = new TestTypeStore();
         this.parameterCategoryStore = new ParameterCategoryStore();
+        this.clientStore= new ClientStore();
     }
 
     public String getDesignation() {
@@ -47,6 +48,5 @@ public class Company {
     public ParameterStore getParameterStore() {
         return parameterStore;
     }
-    public ClientStore getClientStore(){
-        return clientStore;}
+    public ClientStore getClientStore() { return clientStore; }
 }
