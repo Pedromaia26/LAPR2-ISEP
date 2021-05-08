@@ -2,7 +2,6 @@
 actor Receptionist as Adm
 participant ":RegistClient UI" as System
 participant ":RegistClientCrontroller" as RCC
-participant "session: \nUser session" as US
 participant ":Company" as ML
 participant "store: \nClientStore" as CS
 participant ":ClientMapper" as cm
@@ -88,9 +87,10 @@ deactivate CS
 CS-->CS:addNewClient(NC)
 activate CS
 deactivate CS
-CS-->NC:sendEmail(NC)
-activate NC
-deactivate NC
+CS-->CS:sendEmail(NC)
+activate CS
+deactivate CS
+deactivate CS
 deactivate ML
 deactivate RCC
 System --> Adm: informs operation success
