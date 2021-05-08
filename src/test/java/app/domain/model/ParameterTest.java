@@ -18,8 +18,9 @@ public class ParameterTest {
         Parameter p6 = new Parameter("11111", "test3", "this is a test", pc1);
         Parameter p7 = new Parameter("11111", "test", "this is test", pc1);
         Parameter p8 = new Parameter("11135", "test", "this is test", pc1);
+        Parameter p9 = new Parameter("11111", "test3", "this is test", pc1);
 
-
+        Assert.assertNotEquals(p1, p9);
         Assert.assertNotEquals(p1, p8);
         Assert.assertNotEquals(p1, p7);
         Assert.assertNotEquals(p1, p5);
@@ -43,13 +44,16 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCheckShortNameRules() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-        Parameter p1 = new Parameter("11111", "thisIsATest", "this is a test", pc1);
+        //Parameter p1 = new Parameter("11111", "thisIsATest", "this is a test", pc1);
+        Parameter p2 = new Parameter("11111", null, "this is a test", pc1);
+
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testCheckDescriptionRules() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-        Parameter p1 = new Parameter("11111", "test", "this is a test of check description", pc1);
+       // Parameter p1 = new Parameter("11111", "test", "this is a test of check description", pc1);
+        Parameter p3 = new Parameter("11111", "test", null, pc1);
     }
 
 
