@@ -35,8 +35,9 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCheckCodeRules() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-        Parameter p1 = new Parameter("1111111", "test", "this is a test", pc1);
-        Parameter p2 = new Parameter("", "test", "this is a test", pc1);
+        //Parameter p1 = new Parameter("1111111", "test", "this is a test", pc1);
+        Parameter p2 = new Parameter(null, "test", "this is a test", pc1);
+
     }
 
     @Test(expected = IllegalArgumentException.class)
