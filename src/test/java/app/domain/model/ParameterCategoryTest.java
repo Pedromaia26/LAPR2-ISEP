@@ -1,5 +1,6 @@
-package app.domain.model;
+package java.app.domain.model;
 
+import app.domain.model.ParameterCategory;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
