@@ -13,9 +13,21 @@ public class ParameterTest {
         Parameter p1 = new Parameter("11111", "test", "this is a test", pc1);
         Parameter p2 = new Parameter("11111", "test", "this is a test", pc1);
         Parameter p3 = new Parameter("12345", "test3", "this is test", pc1);
+        Parameter p4 = null;
+        Parameter p5 = new Parameter("12345", "test", "this is a test", pc1);
+        Parameter p6 = new Parameter("11111", "test3", "this is a test", pc1);
+        Parameter p7 = new Parameter("11111", "test", "this is test", pc1);
 
-        assertEquals(p1,p2);
-        assertNotEquals(p1,p3);
+
+        Assert.assertNotEquals(p1, p7);
+        Assert.assertNotEquals(p1, p5);
+        Assert.assertNotEquals(p1, p6);
+        Assert.assertNotEquals(pc1,p1);
+        Assert.assertNotEquals(p1,p4);
+        Assert.assertEquals(p1, p1);
+        Assert.assertEquals(p1,p2);
+        Assert.assertNotEquals(p1,p3);
+
     }
 
     @Test(expected = IllegalArgumentException.class)
