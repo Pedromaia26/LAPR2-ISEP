@@ -45,8 +45,7 @@ public class Interface {
                      RegistClientController cliente= new RegistClientController();
                      cliente.createNewClient(teste);
 
-                    List<Client> clientList = new ArrayList<Client>();
-                    cliente.validateClient();
+                    List<Client> clientList;
                     cliente.saveClient();
                     clientList=cliente.getClientList();
 

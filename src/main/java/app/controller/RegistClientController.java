@@ -30,18 +30,13 @@ public class RegistClientController {
     }
 
     public boolean saveClient () throws IOException {
-        this.clientStore.validateClient(nc);
 
-        this.clientStore.sendEmail(nc);
-
-        return this.company.getClientStore().addNewClient(nc);
+        return this.company.getClientStore().saveClient(nc);
     }
 
     public List<Client> getClientList () {
         return this.company.getClientStore().getClientList();
     }
-
-    public boolean validateClient() { return this.company.getClientStore().validateClient(nc); }
 
 
 }

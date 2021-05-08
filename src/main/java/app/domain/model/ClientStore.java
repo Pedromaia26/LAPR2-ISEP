@@ -10,7 +10,7 @@ import auth.domain.model.Password;
 
 public class ClientStore {
 
-    private List<Client> clientList = new ArrayList<Client>();
+    private List<Client> clientList = new ArrayList<>();
 
     public Client createNewClient(ClientDTO dto) {
         return ClientMapper.toModel(dto);
@@ -31,6 +31,14 @@ public class ClientStore {
 
     public List<Client> getClientList() {
         return clientList;
+    }
+
+    public boolean saveClient(Client nc) throws IOException {
+        validateClient(nc);
+
+        sendEmail(nc);
+
+        return addNewClient(nc);
     }
 
     public void sendEmail(Client nc) throws IOException {
