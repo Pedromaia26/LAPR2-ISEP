@@ -2,13 +2,14 @@ package app.domain.model;
 
 import app.controller.RegistClientController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Interface {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int escolha;
         do {
             Scanner ler = new Scanner(System.in);
