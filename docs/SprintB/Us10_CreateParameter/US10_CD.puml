@@ -1,34 +1,73 @@
 @startuml
-hide methods
-left to right direction
 skinparam classAttributeIconSize 0
 
-
-class Company {
-  -designation
+class Company
+{
+  -String designation
+  +getParameterCategoryStore()
+  +getParameterCategory()
+  +getParameterStore()
 }
 
-class Administrator {
-
-}
 
 class Parameter {
-  -code
-  -shortName
-  -description
+  -String code
+  -String shortName
+  -String description
+  -ParameterCategory category
+  +Parameter(code, shortName, description, cat)
+}
+
+class ParameterStore {
+  +createParameter(code, shortName, description, cat)
+  +validateParameter(parameter)
+  +saveParameter(parameter)
+}
+
+class ParameterCategoryStore {
+  +getParameterCategoryByCode(categoryCode)
+  +getParameterCategories()
+}
+
+
+class CreateParameterController {
+  +getParameterCategories()
+  +createParameter(code, shortName, description, cat)
+  +saveParameter()
+}
+
+class CreateParameterUI {
+
+}
+
+class ParameterCategoryMapper {
+   +toDto()
+}
+
+class ParameterCategoryDto {
+  -String code
+  -String name
+  +ParameterCategoryDto(category)
 }
 
 class ParameterCategory {
-  -code
-  -description
-  -nhsId
+   -String name
+   -String code
+   +ParameterCategory(name, code)
 }
 
-
-
-Company "1" -- "*" Administrator : has  >
-Company "1" -- "*" ParameterCategory : adopts >
-Company "1" -- "*" Parameter : capable of analysing >
-Parameter "*" -- "1" ParameterCategory: presented under >
-ParameterCategory "*" -- "1" Administrator: created by >
+CreateParameterUI ..> CreateParameterController
+CreateParameterController ..> Parameter
+CreateParameterController ..> ParameterStore
+CreateParameterController ..> ParameterCategoryStore
+CreateParameterController ..> Company
+CreateParameterController ..> ParameterCategoryMapper
+ParameterCategoryMapper ..> ParameterCategoryStore
+ParameterCategoryMapper ..> ParameterCategoryDto
+ParameterCategoryDto ..> ParameterCategory
+ParameterCategoryStore "1" --> "*" ParameterCategory : capable of analysing
+Company "1" --> "1" ParameterStore : uses
+Company "1" --> "1" ParameterCategoryStore : uses
+ParameterStore "1" --> "*" Parameter : adopts
+Parameter "1" --> "1" ParameterCategory : categorized by
 @enduml
