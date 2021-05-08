@@ -3,6 +3,7 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Objects;
 
 
 public class Parameter {
@@ -67,7 +68,7 @@ public class Parameter {
         if (StringUtils.isBlank(shortName)) {
             throw new IllegalArgumentException("Code cannot be blank.");
         }
-        if (code.length() > 8) {
+        if (shortName.length() > 8 ) {
             throw new IllegalArgumentException("Code must have 4 to 8 chars.");
         }
     }
@@ -81,9 +82,21 @@ public class Parameter {
         if (StringUtils.isBlank(description)) {
             throw new IllegalArgumentException("Code cannot be blank.");
         }
-        if (!(description.length() > 20)) {
+        if ((description.length() > 20)) {
             throw new IllegalArgumentException("Description must have 20 or less characters.");
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Parameter parameter = (Parameter) o;
+        return this.category.equals(parameter.category) && this.description.equals(parameter.description) && this.code.equals(parameter.code) && this.shortName.equals(parameter.shortName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, shortName, description, category);
+    }
 }
