@@ -92,7 +92,7 @@ public class ParameterCategoryTest {
     @Test
     public void testEqualsNull() {
         ParameterCategory pc = new ParameterCategory("Hemogram", "okjn7");
-        ParameterCategory pc1 = new ParameterCategory();
+        ParameterCategory pc1 = null;
 
         Assert.assertNotEquals(pc, pc1);
     }
