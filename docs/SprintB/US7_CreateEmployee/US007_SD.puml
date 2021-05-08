@@ -4,7 +4,9 @@ participant ":RegisterEmployeeUI" as Interface
 participant ":RegisterEmployeeController" as Controller
 participant ":Company" as Company
 participant ":RolesMapper" as RolesMapper
+participant "store \n :EmployeeStore" as estore
 participant "empDto: EmployeeDto" as EmployeeDto
+participant "store \n :RolesStore" as rstore
 participant "role:OrgRole" as OrgRole
 
 
@@ -14,9 +16,9 @@ Adm -> Interface: starts registering a new employee
 activate Interface
 Interface -> Controller: IRolesDto = getRoles()
 activate Controller
-Controller -> Company: lRoles = getRoles()
-activate Company
-deactivate Company
+Controller -> rstore: lRoles = getRoles()
+activate rstore
+deactivate rstore
 Controller -> RolesMapper: lRolesDto = toDTO(lRoles)
 activate RolesMapper
 deactivate RolesMapper
@@ -36,40 +38,40 @@ Adm -> Interface: types requested data
 activate Interface
 Interface --> Controller: createEmployee(empDto)
 activate Controller
-Controller -> Company: emp = createEmployee(empDto)
-activate Company
-Company -> EmployeeDto: roleId = getRoleId()
+Controller -> estore: emp = createEmployee(empDto)
+activate estore
+estore -> EmployeeDto: roleId = getRoleId()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> Company: role = getRoleById(roleId)
-activate Company
-deactivate Company
-Company -> EmployeeDto: id = getId()
+estore -> rstore: role = getRoleById(roleId)
+activate rstore
+deactivate rstore
+estore -> EmployeeDto: id = getId()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> EmployeeDto: name = getName()
+estore -> EmployeeDto: name = getName()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> EmployeeDto: adress = getAdress()
+estore -> EmployeeDto: adress = getAdress()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> EmployeeDto: phoneNumber = getphoneNumber()
+estore -> EmployeeDto: phoneNumber = getphoneNumber()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> EmployeeDto: emailAdress = getEmailAdress()
+estore -> EmployeeDto: emailAdress = getEmailAdress()
 activate EmployeeDto
 deactivate EmployeeDto
-Company -> EmployeeDto: socCode = getsocCode()
+estore -> EmployeeDto: socCode = getsocCode()
 activate EmployeeDto
 deactivate EmployeeDto
 alt role != SpecialistDoctor
-    Company -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
+    estore -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
     activate OrgRole
 else
-    Company -> EmployeeDto: doctorIndexNumber = getDoctorIndexNumber()
+    estore -> EmployeeDto: doctorIndexNumber = getDoctorIndexNumber()
     activate EmployeeDto
     deactivate EmployeeDto
-    Company -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+    estore -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
 end
 alt role != SpecialistDoctor
     create "emp:Employee" as Employee
@@ -79,7 +81,10 @@ else
     OrgRole -> Doctor:create(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
 end
 deactivate OrgRole
-deactivate Company
+deactivate estore
+Controller -> estore: validateEmployee(emp)
+activate estore
+deactivate estore
 deactivate Controller
 
 Interface -> Adm: shows the data and requests a confirmation
@@ -89,15 +94,15 @@ Adm -> Interface: confirms the data
 activate Interface
 Interface -> Controller: saveEmployee()
 activate Controller
-Controller -> Company: saveEmployee(emp)
-activate Company
-Company -> Company: validateEmployee(emp)
-activate Company
-deactivate Company
-Company -> Company: addEmployee(emp)
-activate Company
-deactivate Company
-deactivate Company
+Controller -> estore: saveEmployee(emp)
+activate estore
+estore -> estore: validateEmployee(emp)
+activate estore
+deactivate estore
+estore -> estore: addEmployee(emp)
+activate estore
+deactivate estore
+deactivate estore
 deactivate Controller
 Interface -> Adm: informs operation success
 deactivate Interface
