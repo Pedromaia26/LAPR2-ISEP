@@ -2,6 +2,7 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public class RegistClientController {
@@ -28,8 +29,12 @@ public class RegistClientController {
         return this.clientStore.validateClient(nc);
     }
 
-    public boolean saveClient () {
-        return this.company.getClientStore().saveClient(nc);
+    public boolean saveClient () throws IOException {
+        this.clientStore.validateClient(nc);
+
+        this.clientStore.sendEmail(nc);
+
+        return this.company.getClientStore().addNewClient(nc);
     }
 
     public List<Client> getClientList () {

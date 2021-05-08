@@ -1,6 +1,8 @@
 package app.domain.model;
 
 
+import auth.domain.model.Password;
+
 import java.util.List;
 
 public class Client {
@@ -13,6 +15,7 @@ public class Client {
     private String email;
     private String name;
     private long phoneNumber;
+    private Password password;
 
 
     public Client (long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
@@ -54,6 +57,13 @@ public class Client {
         return a+b;
     }
 
+
+
+
+    public void setPassword(Password password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -65,6 +75,7 @@ public class Client {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", phoneNumber=" + phoneNumber +
+                ", password=" + password +
                 '}';
     }
 }
