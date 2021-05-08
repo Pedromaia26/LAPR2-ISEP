@@ -15,12 +15,9 @@ public class TestTypeTest {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        List<ParameterCategory> cat = new ArrayList<>();
-
         c.getParameterCategoryStore().addToList(pc1);
 
-
-        TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", cat);
+        TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -29,12 +26,30 @@ public class TestTypeTest {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
         List<ParameterCategory> cat = new ArrayList<>();
+        cat.add(pc1);
+        cat.add(pc2);
 
-        c.getParameterCategoryStore().addToList(pc1);
 
-
-        TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", cat);
+        TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", c.getParameterCategoryStore().getParameterCategories());
 
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void createTestTypeWithInvalidCode() {
+
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
+        List<ParameterCategory> cat = new ArrayList<>();
+        cat.add(pc1);
+        cat.add(pc2);
+
+
+        TestType tt = new TestType("Tests for COVID", "Sample", "abcdefwq", c.getParameterCategoryStore().getParameterCategories());
+    }
+
 }
