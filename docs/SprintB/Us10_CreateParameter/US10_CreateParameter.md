@@ -31,6 +31,11 @@ As an administrator, I want to specify a new parameter and categorize it.
 >   **Answer:** The administrator should select one category when creating a parameter.
       <br><br/>
       
+>   **Question:** "Does the client want to specify more than one new parameter at a time?" - [https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7616#p10189]
+
+>   **Answer:** "Yes."
+       <br><br/>   
+      
 >   **Question:** "Can a parameter be classified in more than one parameter category?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7749#p10099]
       
 >   **Answer:** No. Each parameter has only one category.

@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.CreateParameterController;
 import app.controller.RegistClientController;
 
 import java.io.IOException;
@@ -64,6 +65,36 @@ public class Interface {
 
                     break;
                 case 5:
+
+                    Company c = new Company("Many Labs");
+                    CreateParameterController createParameterController = new CreateParameterController(c);
+
+
+                    int optn;
+                    do {
+                        System.out.println("Insert the code of the parameter, please.");
+                        ler.nextLine();
+                        String code = ler.nextLine();
+                        System.out.println("Insert the short name of the parameter, please.");
+                        String shortName = ler.nextLine();
+                        System.out.println("Insert the description of the parameter, please.");
+                        String description = ler.nextLine();
+                        System.out.println("Insert code of the category that categorize the parameter");
+                        System.out.println(createParameterController.getParameterCategoryDto());
+                        String categoryCode = ler.nextLine();
+
+                        if (createParameterController.createParameter(code, shortName, description, categoryCode)) {
+                            System.out.println("Parameter created successfully.");
+                        } else {
+                            System.out.println("Parameter creation error.");
+                        }
+
+                        System.out.println("Do you want to create a new parameter?");
+                        System.out.println(" 1 --> Yes");
+                        System.out.println(" 2 --> No");
+                        optn = ler.nextInt();
+                    }while(optn == 1);
+
 
                     break;
                 case 6:

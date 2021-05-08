@@ -8,8 +8,8 @@ participant "store \n :EmployeeStore" as estore
 participant "empDto: EmployeeDto" as EmployeeDto
 participant "store \n :RolesStore" as rstore
 participant "role:OrgRole" as OrgRole
-
-
+ 
+ 
 autonumber
 activate Adm
 Adm -> Interface: starts registering a new employee
@@ -27,22 +27,25 @@ Interface --> Adm: ask to select the employee role
 deactivate Interface
 Adm -> Interface: selects the intended role
 activate Interface
-Interface --> Adm: request data (name, address, phoneNumber, emailAddress, socCode)
+Interface --> Adm: request data (userRole, name, address, phoneNumber, emailAddress, socCode)
 opt role = Specialist Doctor
     Interface --> Adm: request data(doctorIndexNumber)
 end
 deactivate Interface
-
-
+ 
+ 
 Adm -> Interface: types requested data
 activate Interface
 Interface --> Controller: createEmployee(empDto)
 activate Controller
 Controller -> estore: emp = createEmployee(empDto)
 activate estore
-estore -> EmployeeDto: role = getRole()
+estore -> EmployeeDto: roleId = getRoleId()
 activate EmployeeDto
 deactivate EmployeeDto
+estore -> rstore: role = getRoleById(roleId)
+activate rstore
+deactivate rstore
 estore -> EmployeeDto: id = getId()
 activate EmployeeDto
 deactivate EmployeeDto
