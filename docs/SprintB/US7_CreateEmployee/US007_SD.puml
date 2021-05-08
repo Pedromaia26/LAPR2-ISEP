@@ -27,7 +27,7 @@ Interface --> Adm: ask to select the employee role
 deactivate Interface
 Adm -> Interface: selects the intended role
 activate Interface
-Interface --> Adm: request data (name, address, phoneNumber, emailAddress, socCode)
+Interface --> Adm: request data (userRole, name, address, phoneNumber, emailAddress, socCode)
 opt role = Specialist Doctor
     Interface --> Adm: request data(doctorIndexNumber)
 end
