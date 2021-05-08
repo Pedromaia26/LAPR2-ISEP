@@ -65,9 +65,6 @@ public class Client {
         this.birth=birth;
 
     }
-    public static int soma(int a, int b){
-        return a+b;
-    }
 
 
 
