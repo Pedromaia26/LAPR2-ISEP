@@ -25,7 +25,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("12345");
 
-        assertEquals(pc1, pca);
+        Assert.assertEquals(pc1, pca);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -43,7 +43,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("00982");
 
-        assertEquals(pc1, pca);
+        Assert.assertEquals(pc1, pca);
     }
 
     @Test
