@@ -51,7 +51,7 @@ public class ParameterCategoryStoreTest {
     }
 
     @Test
-    public void validateParameterCategory() {
+    public void validateParameterCategoryNull() {
         ParameterCategory pc = new ParameterCategory();
 
         Company c = new Company("Many Labs");
@@ -59,6 +59,17 @@ public class ParameterCategoryStoreTest {
 
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void validateParameterCategory() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "12345");
+
+        Company c = new Company("Many Labs");
+        c.getParameterCategoryStore().validateParameterCategory(pc);
+
+        Assert.assertTrue(true);
+    }
+
 
     @Test
     public void saveParameterCategory() {
