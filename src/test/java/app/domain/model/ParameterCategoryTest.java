@@ -15,6 +15,10 @@ public class ParameterCategoryTest {
     public void createParameterCategoryWithInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void createParameterCategoryWith10Chars() {
+        ParameterCategory pc = new ParameterCategory("Blood Count", "12345");
+    }
 
 
 }
