@@ -10,4 +10,9 @@ public class ParameterCategoryDto {
         this.code = category.getCode();
         this.name = category.getName();
     }
+
+    @Override
+    public String toString() {
+        return String.format("--------------------------\nCode: %s\n Name: %s\n--------------------------\n",code, name);
+    }
 }

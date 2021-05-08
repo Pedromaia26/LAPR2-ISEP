@@ -70,6 +70,7 @@ public class Interface {
                     CreateParameterController createParameterController = new CreateParameterController(c);
 
 
+
                     int optn;
                     do {
                         System.out.println("Insert the code of the parameter, please.");
@@ -80,8 +81,14 @@ public class Interface {
                         System.out.println("Insert the description of the parameter, please.");
                         String description = ler.nextLine();
                         System.out.println("Insert code of the category that categorize the parameter");
-                        System.out.println(createParameterController.getParameterCategoryDto());
+
+                        for( ParameterCategoryDto cat : createParameterController.getParameterCategoryDto()){
+                            System.out.println(cat);
+                        }
+
                         String categoryCode = ler.nextLine();
+
+
 
                         if (createParameterController.createParameter(code, shortName, description, categoryCode)) {
                             System.out.println("Parameter created successfully.");
