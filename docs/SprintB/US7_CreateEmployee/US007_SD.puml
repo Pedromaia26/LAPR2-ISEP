@@ -40,12 +40,9 @@ Interface --> Controller: createEmployee(empDto)
 activate Controller
 Controller -> estore: emp = createEmployee(empDto)
 activate estore
-estore -> EmployeeDto: roleId = getRoleId()
+estore -> EmployeeDto: role = getRole()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> rstore: role = getRoleById(roleId)
-activate rstore
-deactivate rstore
 estore -> EmployeeDto: id = getId()
 activate EmployeeDto
 deactivate EmployeeDto
