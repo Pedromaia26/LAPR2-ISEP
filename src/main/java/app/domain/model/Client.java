@@ -47,6 +47,7 @@ public class Client {
             throw new IllegalArgumentException("Name cannot be longer then 35 characters");
             this.name=name;
 
+
         //Ver verificacao email
 
         this.email= new Email(email);
