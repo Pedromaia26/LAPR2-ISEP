@@ -37,12 +37,4 @@ public class ParameterStoreTest {
     public void saveParameter() {
     }
 
-    @Test
-    public void multiplicacao() {
-        int a = 3;
-        int b = 2;
-        int resultado = 6;
-        int resultado2 = ParameterStore.multiplicacao(a,b);
-        Assert.assertEquals(resultado, resultado2);
-    }
 }

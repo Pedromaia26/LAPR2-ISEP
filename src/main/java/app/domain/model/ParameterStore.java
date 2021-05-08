@@ -47,9 +47,5 @@ public class ParameterStore {
         return this.parameterList.add(parameter);
     }
 
-    public static int multiplicacao(int a, int b){
-        return a*b;
-    }
-
 
 }
