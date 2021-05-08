@@ -23,7 +23,7 @@ As an administrator, I want to specify a new parameter and categorize it.
        <br><br/>   
 >   **Question:** "Is the categorization of a parameter mandatory or optional?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7649#p9973]
 
->   **Answer:**
+>   **Answer:** Mandatory.
       <br><br/>
       
 >   **Question:** "How does the assignment of a parameter category works?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7649#p9973]
@@ -103,15 +103,15 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1         |... interacting with the actor?| CreateParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.|
-|         		 |... coordinating the US? | CreateParameterController |                              |
-|        		 |... instantiating a new Parameter? | Parameter |  |
+|         		 |... coordinating the US? | CreateParameterController | Controller                             |
+|        		 |... instantiating a new Parameter? | ParameterStore | High Cohesion: prevent the Company from doing many different things.  | 
 | Step 2 		 |							 |             |                              |
-| Step 3  		 |...saving the inputted data? | ParameterStore |                              |
-| Step 4  		 |...knowing parameter category to show	| ParameterCategoryStore |  	IE: Parameter categories are adopted by the Company.  |  
-| Step 5  		 |... saving the selected category?	 | ParameterStore |                              | 
+| Step 3  		 |...saving the inputted data? | ParameterStore |  High Cohesion: prevent the Company from doing many different things.                |
+| Step 4  		 |...knowing parameter category to show	| ParameterCategoryStore |  High Cohesion: prevent the Company from doing many different things. |  
+| Step 5  		 |... saving the selected category?	 | ParameterCategoryStore | High Cohesion: prevent the Company from doing many different things.                             | 
 | Step 6  		 |							 |             |                              | 
-| Step 7  		 |... validating all data (local validation)?	| ParameterStore |                              | 
-|        		 |... validating all data (global validation)? | Many Labs  |                              |
+| Step 7  		 |... validating all data (local validation)?	| ParameterStore | IE: owns its data.             | 
+|        		 |... validating all data (global validation)? | Company  | IE: knows all its parameters                             |
 |       		 |... saving the created parameter?	 | ParameterStore            |                              | 
 | Step 8  		 |... informing operation success?	| CreateParameterUI  | IE: is responsible for user interactions.  | 
 
