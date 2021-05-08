@@ -57,7 +57,7 @@ public class ParameterCategoryStoreTest {
         Company c = new Company("Many Labs");
         c.getParameterCategoryStore().validateParameterCategory(pc);
 
-        Assert.fail();
+        Assert.assertFalse(false);
     }
 
     @Test
