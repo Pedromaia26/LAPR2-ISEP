@@ -17,16 +17,4 @@ public class ClientTest {
 
         Assert.assertEquals(resultado,resultado2);
     }
-
-    @Test
-    public void testSoma() {
-    }
-
-    @Test
-    public void setPassword() {
-    }
-
-    @Test
-    public void testToString() {
-    }
 }

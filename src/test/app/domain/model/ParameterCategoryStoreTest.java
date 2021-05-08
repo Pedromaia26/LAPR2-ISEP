@@ -25,7 +25,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("12345");
 
-        assertEquals(pc1, pca);
+        Assert.assertEquals(pc1, pca);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -43,35 +43,10 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("00982");
 
-        assertEquals(pc1, pca);
+        Assert.assertEquals(pc1, pca);
     }
 
     @Test
     public void getParameterCategories() {
-    }
-
-    @Test
-    public void validateParameterCategoryNull() {
-        ParameterCategory pc = new ParameterCategory();
-
-        Company c = new Company("Many Labs");
-        c.getParameterCategoryStore().validateParameterCategory(pc);
-
-        Assert.assertFalse(false);
-    }
-
-    @Test
-    public void validateParameterCategory() {
-        ParameterCategory pc = new ParameterCategory("Hemogram", "12345");
-
-        Company c = new Company("Many Labs");
-        c.getParameterCategoryStore().validateParameterCategory(pc);
-
-        Assert.assertTrue(true);
-    }
-
-
-    @Test
-    public void saveParameterCategory() {
     }
 }

@@ -8,7 +8,7 @@ public class ParameterCategoryStore {
     /**
      * List that contains the parameters categories.
      */
-    private List<ParameterCategory> cat = new ArrayList<>();
+    private final List<ParameterCategory> cat = new ArrayList<>();
 
     public void addToList (ParameterCategory category){
         if (!cat.contains(category))
@@ -16,8 +16,8 @@ public class ParameterCategoryStore {
     }
 
     public ParameterCategory createParameterCategory(String name, String code) {
-        ParameterCategory pc = new ParameterCategory(name, code);
         return new ParameterCategory(name, code);
+
     }
     public boolean validateParameterCategory(ParameterCategory pc) {
         if (pc == null)

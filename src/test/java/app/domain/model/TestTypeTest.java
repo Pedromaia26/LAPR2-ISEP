@@ -1,8 +1,5 @@
 package app.domain.model;
 
-import app.domain.model.Company;
-import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
 import org.junit.Test;
 
 import java.util.ArrayList;

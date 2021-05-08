@@ -1,6 +1,6 @@
 package app.domain.model;
 
-import app.domain.model.ParameterCategory;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -16,6 +16,48 @@ public class ParameterCategoryTest {
     public void createParameterCategoryWithInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void createParameterCategoryWith10Chars() {
+        ParameterCategory pc = new ParameterCategory("Blood Count", "12345");
+    }
 
 
+    @Test
+    public void getCode() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "0a98h");
+        Company c = new Company("Many Labs");
+        String a = pc.getCode();
+
+        Assert.assertEquals("0a98h", a);
+    }
+
+    @Test
+    public void getName() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "0a98h");
+        Company c = new Company("Many Labs");
+        String name = pc.getName();
+
+        Assert.assertEquals("Hemogram", name);
+    }
+
+    @Test
+    public void setName() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "ap190");
+
+        pc.setName("Antibodies");
+        String name = pc.getName();
+
+        Assert.assertEquals ("Antibodies", name);
+    }
+
+    @Test
+    public void setCode() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "ap190");
+
+        pc.setCode("09kkl");
+        String code = pc.getCode();
+
+        Assert.assertEquals ("09kkl", code);
+
+    }
 }
