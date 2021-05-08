@@ -1,5 +1,7 @@
-package app.domain.model;
+package java.app.domain.model;
 
+import app.domain.model.Company;
+import app.domain.model.ParameterCategory;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -10,7 +10,6 @@ public class ParameterCategoryStore {
      */
     private List<ParameterCategory> cat = new ArrayList<>();
 
-
     public void addToList (ParameterCategory category){
         if (!cat.contains(category))
             cat.add(category);

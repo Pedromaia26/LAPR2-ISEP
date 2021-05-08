@@ -1,5 +1,6 @@
-package app.domain.model;
+package java.app.domain.model;
 
+import app.domain.model.Client;
 import org.junit.Assert;
 import org.junit.Test;
 
