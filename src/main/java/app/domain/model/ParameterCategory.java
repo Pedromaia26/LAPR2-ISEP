@@ -1,7 +1,5 @@
 package app.domain.model;
 
-import java.util.Objects;
-
 public class ParameterCategory {
 
     /**
@@ -88,8 +86,4 @@ public class ParameterCategory {
         return this.name.equals(that.name) && this.code.equals(that.code);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, code);
-    }
 }

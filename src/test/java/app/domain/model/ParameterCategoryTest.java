@@ -3,7 +3,6 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class ParameterCategoryTest {
 
@@ -13,11 +12,11 @@ public class ParameterCategoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createParameterCategoryWithInvalidName(){
+    public void createParameterCategoryNameWithMoreThan10CharsInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
     @Test(expected = IllegalArgumentException.class)
-    public void createParameterCategoryWith10Chars() {
+    public void createParameterCategoryNameWith10Chars() {
         ParameterCategory pc = new ParameterCategory("Blood Count", "12345");
     }
 
@@ -59,5 +58,42 @@ public class ParameterCategoryTest {
 
         Assert.assertEquals ("09kkl", code);
 
+    }
+
+    @Test
+    public void testToString() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "ap190");
+        String a = pc.toString();
+
+        Assert.assertEquals("Name: Hemogram; Code: ap190", a);
+    }
+
+    @Test
+    public void testEquals() {
+        ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
+        ParameterCategory pc1 = new ParameterCategory("BloodC", "okjn7");
+
+        Assert.assertEquals(pc, pc1);
+
+    }
+
+    @Test
+    public void testEqualsDifferentClass(){
+
+        Company c = new Company("Many Labs");
+        ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
+        c.getParameterCategoryStore().addToList(pc);
+
+        TestType tt = new TestType("Covid-19 test", "Swab", "katm1", c.getParameterCategoryStore().getParameterCategories());
+
+        Assert.assertNotEquals(pc, tt);
+    }
+
+    @Test
+    public void testEqualsNull() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "okjn7");
+        ParameterCategory pc1 = new ParameterCategory();
+
+        Assert.assertNotEquals(pc, pc1);
     }
 }
