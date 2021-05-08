@@ -31,6 +31,8 @@ public class ParameterCategory {
 
     }
 
+
+
     /**
      * Returns the code of the parameter category.
      *
@@ -70,7 +72,5 @@ public class ParameterCategory {
     @Override
     public String toString() {
         return String.format("Name: %s; Code: %s", name, code);
-
-
     }
 }
