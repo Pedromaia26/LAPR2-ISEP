@@ -15,6 +15,7 @@ public class ParameterCategoryStore {
             cat.add(category);
     }
 
+
     /**
      * Returns the parameter category corresponding to the received code.
      *

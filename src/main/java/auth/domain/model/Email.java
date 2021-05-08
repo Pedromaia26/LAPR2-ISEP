@@ -13,6 +13,7 @@ public class Email {
 
     private String email;
 
+
     public Email(String email)
     {
         if (!validate(email))
