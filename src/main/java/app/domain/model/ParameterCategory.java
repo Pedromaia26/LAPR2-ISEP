@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import java.util.Objects;
+
 public class ParameterCategory {
 
     /**
@@ -72,5 +74,18 @@ public class ParameterCategory {
     @Override
     public String toString() {
         return String.format("Name: %s; Code: %s", name, code);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ParameterCategory that = (ParameterCategory) o;
+        return this.name.equals(that.name) && this.code.equals(that.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, code);
     }
 }

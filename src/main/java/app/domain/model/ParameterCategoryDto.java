@@ -13,6 +13,6 @@ public class ParameterCategoryDto {
 
     @Override
     public String toString() {
-        return String.format("--------------------------\nCode: %s\n Name: %s\n--------------------------\n",code, name);
+        return String.format("--------------------------\nCode: %s\nName: %s\n--------------------------\n",code, name);
     }
 }

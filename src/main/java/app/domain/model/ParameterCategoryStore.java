@@ -15,6 +15,25 @@ public class ParameterCategoryStore {
             cat.add(category);
     }
 
+    public ParameterCategory createParameterCategory(String name, String code) {
+        ParameterCategory pc = new ParameterCategory(name, code);
+        return new ParameterCategory(name, code);
+    }
+    public boolean validateParameterCategory(ParameterCategory pc) {
+        if (pc == null)
+            return false;
+        return (!this.cat.contains(pc));
+    }
+
+    public boolean saveParameterCategory(ParameterCategory pc) {
+        if (!validateParameterCategory(pc)) {
+            return false;
+        }else {
+            return this.cat.add(pc);
+        }
+    }
+
+
     /**
      * Returns the parameter category corresponding to the received code.
      *
