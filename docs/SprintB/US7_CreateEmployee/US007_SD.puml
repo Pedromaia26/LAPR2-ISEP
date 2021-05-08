@@ -1,7 +1,7 @@
 @startuml
 actor Administrator as Adm
-participant ":RegisterEmployeeUI" as Interface
-participant ":RegisterEmployeeController" as Controller
+participant ":RegistEmployeeUI" as Interface
+participant ":RegistEmployeeController" as Controller
 participant ":Company" as Company
 participant ":RolesMapper" as RolesMapper
 participant "store \n :EmployeeStore" as estore
