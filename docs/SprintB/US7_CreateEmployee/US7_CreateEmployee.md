@@ -50,12 +50,12 @@ As an administrator, I want to resgister a new employee.
 * **AC3:** "The employee ID should be generated from the initials of the employee name and should include a number. The number has 5 digits and is increases automatically when a new employee is registered in the system."
 * **AC4:** "Employee Name: a string with no more than 35 characters."
 * **AC5:** "Organization Role: a string with no more than 15 characters."
+* **AC6:** "SOC code: a number with 4 digits."
+* **AC7:** "Doctor Index Number: a number with 6 digits."
 
 
 ### 1.4. Found out Dependencies
 
-
-* 
 
 
 ### 1.5 Input and Output Data
@@ -64,11 +64,13 @@ As an administrator, I want to resgister a new employee.
 **Input Data:**
 
 * Typed data:
+	* an user role,
 	* a name,
 	* an adress,
 	* a phone number,
 	* an e-mail,
-	* an standard occupational classification code.
+	* a standard occupational classification code,
+	* a doctor index number.
 	
 * Selected data:
 	* an organization role.
