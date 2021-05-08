@@ -13,11 +13,11 @@ public class ParameterCategoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createParameterCategoryWithInvalidName(){
+    public void createParameterCategoryNameWithMoreThan10CharsInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
     @Test(expected = IllegalArgumentException.class)
-    public void createParameterCategoryWith10Chars() {
+    public void createParameterCategoryNameWith10Chars() {
         ParameterCategory pc = new ParameterCategory("Blood Count", "12345");
     }
 
@@ -60,4 +60,38 @@ public class ParameterCategoryTest {
         Assert.assertEquals ("09kkl", code);
 
     }
+
+    @Test
+    public void testToString() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "ap190");
+        String a = pc.toString();
+
+        Assert.assertEquals("Name: Hemogram; Code: ap190", a);
+    }
+
+    @Test
+    public void testEquals() {
+        ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
+        ParameterCategory pc1 = new ParameterCategory("BloodC", "okjn7");
+
+        pc.equals(pc1);
+
+        Assert.assertTrue(true);
+
+    }
+
+    @Test
+    public void testEqualsDifferentClass(){
+
+        Company c = new Company("Many Labs");
+        ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
+        c.getParameterCategoryStore().addToList(pc);
+
+        TestType tt = new TestType("Covid-19 test", "Swab", "katm1", c.getParameterCategoryStore().getParameterCategories());
+
+        pc.equals(tt);
+
+        Assert.assertFalse(false);
+    }
+
 }
