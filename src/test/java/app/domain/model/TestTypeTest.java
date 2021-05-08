@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeWithInvalidDescription() {
+    public void createTestTypeDescriptionWithMoreThan15chars() {
 
         Company c = new Company("Many Labs");
 
@@ -19,6 +19,19 @@ public class TestTypeTest {
 
         TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void createTestTypeDescriptionWith15chars() {
+
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        c.getParameterCategoryStore().addToList(pc1);
+
+        TestType tt = new TestType("Sars-cov-2 tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+    }
+
+
 
     @Test(expected = IllegalArgumentException.class)
     public void createTestTypeWithInvalidCollectingMethod() {
