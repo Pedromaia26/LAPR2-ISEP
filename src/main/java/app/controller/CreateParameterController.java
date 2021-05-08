@@ -44,17 +44,6 @@ public class CreateParameterController {
 
     public List<ParameterCategoryDto> getParameterCategoryDto(){
         return this.parameterCategoryMapper.toDto(getParameterCategory());
-//        pcDtoList.add(new ParameterCategoryDto(new ParameterCategory("test1", "12345")));
-//        pcDtoList.add(new ParameterCategoryDto(new ParameterCategory("test2", "45678")));
-//        return pcDtoList;
     }
-
-
-
-
-
-
-
-
 
 }
