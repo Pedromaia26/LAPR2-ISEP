@@ -5,6 +5,9 @@ RegistEmployeeController ..>Employee
 RegistEmployeeController ..>SpecialistDoctor
 RegistEmployeeController ..>RolesMapper
 RegistEmployeeController ..>EmployeeDto
+RegistEmployeeController ..>RolesStore
+RegistEmployeeController ..>EmployeeStore
+
 OrgRole ..> Employee
 OrgRole ..> SpecialistDoctor
 Employee <|-- SpecialistDoctor
@@ -15,7 +18,9 @@ RegistEmployeeController : +saveEmployee()
 
 Company "1" --> "*" Employee: has
 
-Company ..> RolesMapper
+EmployeeStore ..>EmployeeDto
+EmployeeStore ..>RolesStore
+EmployeeStore ..>OrgRole 
 
 RolesMapper ..> EmployeeDto
 
@@ -23,12 +28,12 @@ RolesMapper ..> Employee
 
 RolesMapper : +toDTO(lRoles)
 
-Company : +getRoles()
-Company : +createEmployee(empDto)
-Company : +getRoleById(roleId)
-Company : +saveEmployee(emp)
-Company : +validateEmployee(emp)
-Company : +addEmployee(emp)
+RolesStore : +getRoles()
+EmployeeStore : +createEmployee(empDto)
+RolesStore : +getRoleById(roleId)
+EmployeeStore : +saveEmployee(emp)
+EmployeeStore : +validateEmployee(emp)
+EmployeeStore : +addEmployee(emp)
 
 OrgRole : +createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
 OrgRole : +createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
