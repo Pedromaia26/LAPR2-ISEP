@@ -8,7 +8,9 @@ RegistClientController ..>ClientDTO
 RegistClientController : +createNewClient(dto)
 RegistClientController : +saveNewClient()
 
-Company --> Client: has
+Company --> ClientStore: have
+
+ClientStore --> Client: has
 
 Company ..> ClientMapper
 
@@ -41,14 +43,6 @@ ClientDTO : -email
 ClientDTO : -name
 ClientDTO : -phoneNumber
 
-Client : +validateCCN()
-Client : +validateNHS()
-Client : +validateBirthDate()
-Client : +validateSex()
-Client : +validateTIF()
-Client : +validateEmail()
-Client : +validateName()
-Client : +validatePhoneNumber()
 
 Client : +Client(ccn,nhs,birtDate,sex,tif,email,name,phoneNumber)
 Client : -ccn
