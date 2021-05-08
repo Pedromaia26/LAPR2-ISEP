@@ -33,6 +33,10 @@ public class ParameterCategory {
 
     }
 
+    public ParameterCategory(){
+
+    }
+
 
 
     /**

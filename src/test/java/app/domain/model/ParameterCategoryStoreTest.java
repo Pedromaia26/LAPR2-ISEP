@@ -49,4 +49,18 @@ public class ParameterCategoryStoreTest {
     @Test
     public void getParameterCategories() {
     }
+
+    @Test
+    public void validateParameterCategory() {
+        ParameterCategory pc = new ParameterCategory();
+
+        Company c = new Company("Many Labs");
+        c.getParameterCategoryStore().validateParameterCategory(pc);
+
+        Assert.fail();
+    }
+
+    @Test
+    public void saveParameterCategory() {
+    }
 }
