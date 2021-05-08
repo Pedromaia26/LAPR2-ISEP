@@ -1,7 +1,5 @@
 package app.domain.model;
 
-import java.util.Objects;
-
 public class ParameterCategory {
 
     /**

@@ -3,7 +3,6 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class ParameterCategoryTest {
 
@@ -74,9 +73,7 @@ public class ParameterCategoryTest {
         ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
         ParameterCategory pc1 = new ParameterCategory("BloodC", "okjn7");
 
-        pc.equals(pc1);
-
-        Assert.assertTrue(true);
+        Assert.assertEquals(pc, pc1);
 
     }
 
@@ -89,9 +86,14 @@ public class ParameterCategoryTest {
 
         TestType tt = new TestType("Covid-19 test", "Swab", "katm1", c.getParameterCategoryStore().getParameterCategories());
 
-        pc.equals(tt);
-
-        Assert.assertFalse(false);
+        Assert.assertNotEquals(pc, tt);
     }
 
+    @Test
+    public void testEqualsNull() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "okjn7");
+        ParameterCategory pc1 = new ParameterCategory();
+
+        Assert.assertNotEquals(pc, pc1);
+    }
 }
