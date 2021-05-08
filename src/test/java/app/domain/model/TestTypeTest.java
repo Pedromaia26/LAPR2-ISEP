@@ -1,4 +1,4 @@
-package java.app.domain.model;
+package app.domain.model;
 
 import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
