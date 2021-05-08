@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterStore {
@@ -7,7 +8,8 @@ public class ParameterStore {
     /**
      * List that contains the parameters.
      */
-    private List<Parameter> parameterList;
+    private List<Parameter> parameterList = new ArrayList<>();
+
 
     /**
      * Create a new parameter with the attributes received.
@@ -31,7 +33,7 @@ public class ParameterStore {
         if (parameter == null){
             return false;
         }
-        return ! this.parameterList.contains(parameter);
+        return (!(this.parameterList.contains(parameter)));
     }
 
     /**
@@ -44,6 +46,7 @@ public class ParameterStore {
             return false;
         return this.parameterList.add(parameter);
     }
+
 
 
 }

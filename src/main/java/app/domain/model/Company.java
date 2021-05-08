@@ -19,6 +19,7 @@ public class Company {
     private ParameterStore parameterStore;
     private ClientStore clientStore;
 
+
     public Company(String designation)
     {
         if (StringUtils.isBlank(designation))
@@ -29,6 +30,7 @@ public class Company {
         this.testTypeStore = new TestTypeStore();
         this.parameterCategoryStore = new ParameterCategoryStore();
         this.clientStore= new ClientStore();
+        this.parameterStore = new ParameterStore();
     }
 
     public String getDesignation() {
