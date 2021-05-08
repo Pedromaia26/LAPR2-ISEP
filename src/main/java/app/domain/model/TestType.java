@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TestType {
 
@@ -56,4 +57,17 @@ public class TestType {
 
         this.listPC = listPC;
     }
+    public String toString(){
+        return String.format("Description: %s; Collecting Method: %s; Code: %s; Categories: %s", description, collectingMethod, code, listPC);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TestType testType = (TestType) o;
+        return Objects.equals(description, testType.description) && Objects.equals(collectingMethod, testType.collectingMethod) && Objects.equals(code, testType.code) && Objects.equals(listPC, testType.listPC);
+    }
+
 }

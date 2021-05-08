@@ -66,4 +66,11 @@ public class ParameterCategory {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s; Code: %s", name, code);
+
+
+    }
 }

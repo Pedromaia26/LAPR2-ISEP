@@ -19,8 +19,9 @@ public class TestTypeStore {
      */
 
     public TestType createTestType (String description, String collectingMethod, String code, List<ParameterCategory> cat) {
-        return new TestType(code, description, code, cat);
+        return new TestType(description, collectingMethod, code, cat);
     }
+
 
     /**
      * Validates the type of test received.

@@ -13,7 +13,4 @@ public class ParameterCategoryMapper{
         }
         return listParameterCategoryDto;
     }
-
-
-
 }
