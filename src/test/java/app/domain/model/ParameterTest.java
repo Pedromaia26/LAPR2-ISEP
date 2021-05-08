@@ -17,12 +17,14 @@ public class ParameterTest {
         Parameter p5 = new Parameter("12345", "test", "this is a test", pc1);
         Parameter p6 = new Parameter("11111", "test3", "this is a test", pc1);
         Parameter p7 = new Parameter("11111", "test", "this is test", pc1);
+        Parameter p8 = new Parameter("11135", "test", "this is test", pc1);
 
 
+        Assert.assertNotEquals(p1, p8);
         Assert.assertNotEquals(p1, p7);
         Assert.assertNotEquals(p1, p5);
         Assert.assertNotEquals(p1, p6);
-        Assert.assertNotEquals(pc1,p1);
+        Assert.assertNotEquals(p1,pc1);
         Assert.assertNotEquals(p1,p4);
         Assert.assertEquals(p1, p1);
         Assert.assertEquals(p1,p2);
