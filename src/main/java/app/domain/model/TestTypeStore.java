@@ -10,6 +10,10 @@ public class TestTypeStore {
      */
     private List <TestType> testTypeList = new ArrayList<>();
 
+    /**
+     * Adds a new type of test to the list of test types.
+     * @param tt receives an instance of TestType.
+     */
     public void addToList (TestType tt){
             testTypeList.add(tt);
     }

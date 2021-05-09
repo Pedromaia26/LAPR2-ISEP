@@ -46,12 +46,21 @@ public class TestTypeStoreTest {
         c.getParameterCategoryStore().saveParameterCategory(pc2);
 
         TestType tt = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt1 = null;
+        TestType tt2 = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
 
-        c.getTestTypeStore().validateTestType(tt);
+        boolean flag1 = c.getTestTypeStore().validateTestType(tt);
         c.getTestTypeStore().addToList(tt);
         c.getTestTypeStore().saveTestType(tt);
+        boolean flag2 = c.getTestTypeStore().validateTestType(tt1);
+        c.getTestTypeStore().addToList(tt1);
+        c.getTestTypeStore().saveTestType(tt1);
+        boolean flag3 = c.getTestTypeStore().validateTestType(tt2);
 
-        Assert.assertTrue(true);
+        Assert.assertTrue(flag1);
+        Assert.assertFalse(flag2);
+        Assert.assertFalse(flag3);
+
     }
 
     @Test
