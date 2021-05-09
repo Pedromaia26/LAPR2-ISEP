@@ -12,13 +12,13 @@ public class ParameterTest {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
         Parameter p1 = new Parameter("11111", "test", "this is a test", pc1);
         Parameter p2 = new Parameter("11111", "test", "this is a test", pc1);
-        Parameter p3 = new Parameter("12345", "test3", "this is test", pc1);
-        Parameter p4 = null;
-        Parameter p5 = new Parameter("12345", "test", "this is a test", pc1);
-        Parameter p6 = new Parameter("11111", "test3", "this is a test", pc1);
-        Parameter p7 = new Parameter("11111", "test", "this is test", pc1);
+        Parameter p3 = new Parameter("12345", "test", "this is a test", pc1);
+        Parameter p5 = new Parameter("11111", "test3", "this is a test", pc1);
+        Parameter p6 = new Parameter("11111", "test", "this is test", pc1);
+        Parameter p7 = new Parameter("11123", "test3", "this is a test", pc1);
         Parameter p8 = new Parameter("11135", "test", "this is test", pc1);
         Parameter p9 = new Parameter("11111", "test3", "this is test", pc1);
+        Parameter p4 = null;
 
         Assert.assertNotEquals(p1, p9);
         Assert.assertNotEquals(p1, p8);
@@ -47,9 +47,21 @@ public class ParameterTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCheckShortNameRules3() {
+    public void testCheckShortNameRules1() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
         Parameter p2 = new Parameter("11111", null, "this is a test", pc1);
+    }
+
+    @Test
+    public void testCheckShortNameRules2() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p2 = new Parameter("11111", "88888888", "this is a test", pc1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckShortNameRules3() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p2 = new Parameter("11111", "awrgddvtyh", "this is a test", pc1);
     }
 
     @Test(expected = IllegalArgumentException.class)
