@@ -67,7 +67,7 @@ public class TestTypeTest {
 
     }
 
-
+    @Test
     public void createTestTypeCollectingMethodWith20Chars() {
         Company c = new Company("Many Labs");
 
