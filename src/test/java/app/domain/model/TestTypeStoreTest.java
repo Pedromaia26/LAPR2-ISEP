@@ -98,4 +98,35 @@ public class TestTypeStoreTest {
     @Test
     public void saveTestType() {
     }
+
+    @Test
+    public void testCreateTestType() {
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc = new ParameterCategory("Hemogram", "kl172");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "imm90");
+        ParameterCategory pc2 = new ParameterCategory("Antibodies", "81nma");
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPCtt = new ArrayList<>();
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc02 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPCtt.add(pc01);
+        listPCtt.add(pc02);
+
+        TestType tt = new TestType("COVID", "Swab", "imao1", listPCtt);
+        TestType tt2 = c.getTestTypeStore().createTestType("COVID","Swab", "imao1", listPCtt);
+        TestType tt3 = c.getTestTypeStore().createTestType("Blood","Syringe", "imao1", listPCtt);
+
+        Assert.assertEquals(tt,tt2);
+        Assert.assertNotEquals(tt2,tt3);
+
+
+
+
+    }
 }
