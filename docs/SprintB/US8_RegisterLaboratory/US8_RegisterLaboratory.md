@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an administrator, I want to register a new laboratory.
+As an administrator, I want to register a new Clinical Analysis Laboratory.
 
 
 
@@ -144,19 +144,15 @@ Other software classes identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-**Alternative 1**
 
-![US006_SD](US006_SD.svg)
+![US008_SD](US008_SD.svg)
 
-**Alternative 2**
-
-![US006_SD](US006_SD_v2.svg)
 
 ## 3.3. Class Diagram (CD)
 
 **From alternative 1**
 
-![US006_CD](US006_CD.svg)
+![US008_CD](US008_CD.svg)
 
 # 4. Tests 
 
