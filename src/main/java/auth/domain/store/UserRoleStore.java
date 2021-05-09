@@ -55,4 +55,8 @@ public class UserRoleStore {
     {
         return this.store.contains(role);
     }
+
+    public Set<UserRole> getStore() {
+        return store;
+    }
 }

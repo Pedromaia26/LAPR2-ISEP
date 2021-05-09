@@ -10,6 +10,7 @@ import auth.domain.model.Email;
 import auth.domain.model.User;
 import auth.domain.model.UserRole;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +56,19 @@ public class CreateEmployeeUI  implements Runnable{
                 System.out.printf("Doctor Index Number: ");
                 int docIndexNumber = ler.nextInt();
                 employeeControler.createSpecialistDoctor(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode, docIndexNumber));
-                employeeControler.saveSpecialistDoctor();
+                try {
+                    employeeControler.saveSpecialistDoctor();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
             else{
                 employeeControler.createEmployee(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode));
-                employeeControler.saveEmployee();
+                try {
+                    employeeControler.saveEmployee();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
 
             /*List<SpecialistDoctor> list;
