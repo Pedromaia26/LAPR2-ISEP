@@ -53,7 +53,20 @@ public class ParameterTest {
     public void testCheckDescriptionRules() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
        // Parameter p1 = new Parameter("11111", "test", "this is a test of check description", pc1);
-        Parameter p3 = new Parameter("11111", "test", null, pc1);
+        //Parameter p3 = new Parameter("11111", "test", null, pc1);
+        Parameter p4 = new Parameter("11111", "test", "qwertyuiolpkjhgfdsazx", pc1);
+    }
+
+    @Test
+    public void testToString() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p1 = new Parameter("11111", "test", "this is a test", pc1);
+
+        String expected = "Short Name: test; Code: 11111; Description: this is a test; Parameter Category: Name: test; Code: 12345";
+        String notExpected = "asdasdsad";
+
+        Assert.assertEquals(expected, p1.toString());
+        Assert.assertNotEquals(notExpected, p1.toString());
     }
 
 
