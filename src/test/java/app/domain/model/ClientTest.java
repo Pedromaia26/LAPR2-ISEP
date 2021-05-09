@@ -176,7 +176,7 @@ public class ClientTest {
         Company c = new Company("Many Labs");
         Email email = nc.getEmail();
 
-        Assert.assertEquals(email, "asd@gmail.com");
+        Assert.assertEquals(String.valueOf(email), "asd@gmail.com");
     }
 
     @Test
