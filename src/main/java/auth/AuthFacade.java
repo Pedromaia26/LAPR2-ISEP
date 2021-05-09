@@ -71,7 +71,10 @@ public class AuthFacade {
         Optional<User> result = this.users.getById(email);
         if (result.isPresent())
         {
+
             User user = result.get();
+
+
             if (user.hasPassword(password)){
                 this.userSession = new UserSession(user);
             }

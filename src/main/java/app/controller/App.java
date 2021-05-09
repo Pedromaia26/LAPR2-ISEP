@@ -65,7 +65,7 @@ public class App {
             props.load(in);
             in.close();
         }
-        catch(IOException ex)
+        catch(IOException ignored)
         {
 
         }
@@ -81,6 +81,8 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_CCT,Constants.ROLE_CCT);
         this.authFacade.addUserRole(Constants.ROLE_LC,Constants.ROLE_LC);
         this.authFacade.addUserRole(Constants.ROLE_SD,Constants.ROLE_SD);
+        this.authFacade.addUserRole(Constants.ROLE_C,Constants.ROLE_C);
+
 
         this.rolesStore.addRole(Constants.ORGROLE_ADMIN);
         this.rolesStore.addRole(Constants.ORGROLE_REC);
@@ -90,6 +92,9 @@ public class App {
         this.rolesStore.addRole(Constants.ORGROLE_SD);
 
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
+
+        this.authFacade.addUserWithRole("Receptionist", "rec@lei.sem2.pt", "123456",Constants.ROLE_REC);
+
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

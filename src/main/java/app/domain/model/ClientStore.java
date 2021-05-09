@@ -6,7 +6,9 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.controller.App;
 import auth.domain.model.Password;
+import auth.domain.model.User;
 
 public class ClientStore {
 
@@ -38,7 +40,8 @@ public class ClientStore {
 
         sendEmail(nc);
 
-        return addNewClient(nc);
+        addNewClient(nc);
+        return CreateUser(nc);
     }
     public String generatePassword(){
         int num= 10;
@@ -72,12 +75,12 @@ public class ClientStore {
 
 
         out.close();
+        nc.setPassword(password);
 
-        Password pass = new Password(password);
+    }
 
-        nc.setPassword(pass);
-
-
+    public boolean CreateUser(Client nc){
+        return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
 
 

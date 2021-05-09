@@ -2,12 +2,10 @@ package app.domain.model;
 
 
 import auth.domain.model.Email;
-import auth.domain.model.Password;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 public class Client {
@@ -20,7 +18,7 @@ public class Client {
     private Email email;
     private String name;
     private long phoneNumber;
-    private Password password;
+    private String password;
 
 
     public Client (long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
@@ -86,7 +84,7 @@ public class Client {
 
 
 
-    public void setPassword(Password password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -135,4 +133,15 @@ public class Client {
         return Objects.equals(ccn, client.ccn) && Objects.equals(nhs, client.nhs) && Objects.equals(birth, client.birth) && Objects.equals(sex, client.sex) && Objects.equals(tif, client.tif) && Objects.equals(email, client.email) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(name, client.name);
     }
 
+    public Email getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

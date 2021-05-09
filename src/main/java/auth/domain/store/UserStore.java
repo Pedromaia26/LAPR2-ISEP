@@ -13,7 +13,7 @@ import java.util.Set;
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class UserStore {
-    private Set<User> store = new HashSet<User>();
+    private Set<User> store = new HashSet<>();
 
 
     public User create(String name, String email, String password)
@@ -21,11 +21,16 @@ public class UserStore {
         return new User(new Email(email), new Password(password), name);
     }
 
+    public Set<User> getStore() {
+        return store;
+    }
+
     public boolean add(User user)
     {
         if (user != null) {
-            if (!exists(user))
+            if (!exists(user)) {
                 return this.store.add(user);
+            }
         }
         return false;
     }
@@ -46,8 +51,11 @@ public class UserStore {
     {
         for(User user: this.store)
         {
-            if(user.hasId(email))
+
+            if(user.hasId(email)) {
+
                 return Optional.of(user);
+            }
         }
         return Optional.empty();
     }
