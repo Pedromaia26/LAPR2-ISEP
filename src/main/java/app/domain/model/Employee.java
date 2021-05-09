@@ -7,6 +7,7 @@ import auth.domain.store.UserRoleStore;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Employee {
@@ -102,5 +103,14 @@ public class Employee {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee client = (Employee) o;
+        return Objects.equals(userRole, client.userRole) && Objects.equals(employeeId, client.employeeId) && Objects.equals(name, client.name) && Objects.equals(address, client.address) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(email, client.email) && Objects.equals(socCode, client.socCode);
     }
 }
