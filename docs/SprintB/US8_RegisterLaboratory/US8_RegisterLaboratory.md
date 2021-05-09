@@ -50,15 +50,19 @@ As an administrator, I want to register a new laboratory.
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
-
+* **AC1:** All Clinical Analysis Laboratory must perform blood tests
+* **AC2:** LaboratoryID has 5 alphanumeric characters.
+* **AC3:** The name must have no more than 20 characters.
+* **AC4:** The address must have no more than 30 characters.
+* **AC5:** The phone number is an 11-digit number.
+* **AC6:** TIN is a 10-digit number.
+* **AC7:** Every field is required.
+* **AC8:** Only the name of two Clinical Analysis Laboratory can be same.
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* There is a dependency to "US09 Create a new Test Type" since at least one type of test must exist to create Laboratory.
 
 
 ### 1.5 Input and Output Data
