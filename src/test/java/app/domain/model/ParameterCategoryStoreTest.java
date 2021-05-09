@@ -53,11 +53,20 @@ public class ParameterCategoryStoreTest {
     @Test
     public void validateParameterCategoryNull() {
         ParameterCategory pc = null;
+        ParameterCategory pc1 = new ParameterCategory("Hemogram", "12345");
+
 
         Company c = new Company("Many Labs");
-        c.getParameterCategoryStore().validateParameterCategory(pc);
+        boolean flag = c.getParameterCategoryStore().validateParameterCategory(pc);
+        boolean flag2 = c.getParameterCategoryStore().validateParameterCategory(pc1);
+        c.getParameterCategoryStore().addToList(pc1);
+        boolean flag3 = c.getParameterCategoryStore().validateParameterCategory(pc1);
 
-        Assert.assertFalse(false);
+
+
+        Assert.assertFalse(flag3);
+        Assert.assertFalse(flag);
+        Assert.assertTrue(flag2);
     }
 
     @Test
@@ -73,5 +82,26 @@ public class ParameterCategoryStoreTest {
 
     @Test
     public void saveParameterCategory() {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc = new ParameterCategory("Hemogram", "12345");
+
+        boolean flag = c.getParameterCategoryStore().saveParameterCategory(pc);
+        boolean flag1 = c.getParameterCategoryStore().saveParameterCategory(pc);
+
+        Assert.assertFalse(flag1);
+        Assert.assertTrue(flag);
+    }
+
+    @Test
+    public void createParameterCategory(){
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram", "12345");
+        ParameterCategory pc2 = new ParameterCategory("Covid","11111");
+        ParameterCategoryStore store = new ParameterCategoryStore();
+
+        ParameterCategory pc3 = store.createParameterCategory("Hemogram", "12345");
+
+        Assert.assertNotEquals(pc2, pc3);
+        Assert.assertEquals(pc1, pc3);
     }
 }
