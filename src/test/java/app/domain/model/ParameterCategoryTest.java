@@ -73,11 +73,13 @@ public class ParameterCategoryTest {
         ParameterCategory pc1 = new ParameterCategory("BloodC", "okjn7");
         ParameterCategory pc2 = new ParameterCategory("Blood", "okjn7");
         ParameterCategory pc3 = new ParameterCategory("BloodC", "11111");
+        ParameterCategory pc4 = new ParameterCategory("Blood", "22111");
 
 
         Assert.assertEquals(pc, pc1);
         Assert.assertNotEquals(pc,pc2);
         Assert.assertNotEquals(pc1, pc3);
+        Assert.assertNotEquals(pc,pc4);
 
     }
 
