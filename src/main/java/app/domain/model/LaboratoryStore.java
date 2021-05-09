@@ -21,7 +21,6 @@ public class LaboratoryStore {
      */
 
     public Laboratory createLaboratory (String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List<TestType> test) {
-
         return new Laboratory(laboratoryID, name, address, phoneNumber, tinNumber, test);
     }
 

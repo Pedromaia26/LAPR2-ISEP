@@ -40,7 +40,7 @@ public class Company {
         this.employeeStore = new EmployeeStore();
         this.userStore= new UserStore();
         this.userRoleStore = new UserRoleStore();
-        this.laboratoryStore=new LaboratoryStore();
+        this.laboratoryStore = new LaboratoryStore();
     }
 
     public String getDesignation() {
@@ -70,6 +70,9 @@ public class Company {
         return userStore;
     }
     public UserRoleStore getUserRoleStore() { return userRoleStore; }
-    public LaboratoryStore getLaboratoryStore() {return laboratoryStore;}
 
+
+    public LaboratoryStore getLaboratoryStore() {
+        return laboratoryStore;
+    }
 }
