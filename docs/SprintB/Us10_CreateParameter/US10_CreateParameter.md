@@ -125,12 +125,17 @@ There is a dependency to "US11: As an administrator, I want to specify a new par
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
+ * ParameterCategory
+ * ParameterCategoryStore
+ * ParameterCategoryMapper
  * Parameter
  * ParameterStore
+ 
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * CreateParameterUI  
+
  * CreateParameterController
+ * CreateParameterUI
 
 ## 3.2. Sequence Diagram (SD)
 
