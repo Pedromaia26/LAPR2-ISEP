@@ -22,19 +22,43 @@ As a receptionist of the laboratory, I want to register a client.
 
 **From the client clarifications:**
 
-> **Question:** Does the receptionist need to be logged in the app to preform the regist?
+> **Question:** "After being registered by the receptionist, should the client receive some kind of confirmation e-mail in order to finish his registration?"
 >  
-> **Answer:** 
+> **Answer:** "The client only receives an e-mail informing that the registration was successful and that he can start to use the system. The e-mail includes the client password." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7736#p10133]
 
--
-
-> **Question:** Relative to registering a new user, how should the system respond in the event of creating a new user with the same attributes of an already existing user?
+> **Question:**  "The receptionist needs mandatorily of all client data described on the project description?"
 >  
-> **Answer:** 
+> **Answer:**  "The sex is opcional. All other fields are required." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7563#p10179] 
 
-> **Question:**  "Also, are all the fields required/mandatory?"
+> **Question:**  "To register a Client which is the format of each attribute?"
 >  
-> **Answer:**  "The phone number is opcional. All other fields are required."
+> **Answer:**  "Citizen Card: 16 digit number
+				NHS: 10 digit number
+				TIN: 10 digit number
+				Birth day - in which format: DD/MM/YY
+				Sex - should only be Male/Female or include more options. Male/Female
+				Phone number: 11 digit number" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7563#p10179]
+
+> **Question:** "Does the receptionist need to be logged in the app to preform the regist?"
+>  
+> **Answer:** "Yes" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7462#p9872]
+
+> **Question:** "What parameter (asked by the receptionist) should the system use to create the password of the new client"
+>  
+> **Answer:** "The password should be randomly generated. It should have ten alphanumeric characters." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7462#p9872]
+
+> **Question:** "How should the system send a email to the client with the password"
+>  
+> **Answer:** "Considering a set of technical restrictions, during the development of the Integrative Project we will not use any e-mail or SMS API services to send messages. All the e-mail and SMS messages should be written to a file with the name emailAndSMSMessages.txt. This file simulates the use of e-mail and SMS API services." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7808#p10545]
+
+> **Question:** "Does the client need to tell his age to the recepcionis. Im asking because before you didnt especified that that would be a parameter?"
+>  
+> **Answer:** "No, only needs to tell the birth day (from a previous post). The application must validate and should not accept clients who have more than 150 years of age" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7954#p10405]
+
+> **Question:** "What should be the maximum length of the String with the name of the Client?"
+>  
+> **Answer:** "A string with no more than 35 characters." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7945#p10383]
+
 
 
 ### 1.3. Acceptance Criteria
@@ -42,7 +66,16 @@ As a receptionist of the laboratory, I want to register a client.
 
 * **AC1:** All required fiels must be filled in, except the phone number.
 * **AC2:** The client must become a system user.
-* **AC3:** ??The "auth" component available on the repository must be reused (without modifications)??
+* **AC3:** The "auth" component available on the repository must be reused (without modifications)
+* **AC4** Citizen Card: 16 digit number
+* **AC5** NHS: 10 digit number
+* **AC6** TIN: 10 digit number
+* **AC7** Birth day - in which format: DD/MM/YY
+* **AC8** Sex - should only be Male/Female or include more options. Male/Female
+* **AC9** Phone number: 11 digit number"
+* **AC10** The user cant be older than 150 years
+* **AC11** The name cant be longer than 35 characters
+* **AC12** The password should be random generated
 
 
 ### 1.4. Found out Dependencies
@@ -56,12 +89,8 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Input Data:**
 
-* Typed data: Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex, Tax Identification number (TIF), E-mail, Name, Phone number(Opcional)
+* Typed data: Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex(Opcional), Tax Identification number (TIN), E-mail, Name, Phone number
 	
-	
-* Selected data:
-	* Classifying task category (por fazer)
-
 
 **Output Data:**
 
