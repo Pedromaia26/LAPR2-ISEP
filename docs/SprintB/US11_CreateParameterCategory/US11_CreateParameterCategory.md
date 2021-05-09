@@ -1,53 +1,59 @@
-# US XXX - XXXX XXXX
+# US 011 - Create Parameter Category
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
 
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As an administrator, I want to specify a new parameter category.
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+  * **AC1:** The Code are five alphanumeric characters.
+  * **AC2:** The Name is a String with no more than 10 characters.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
+
+* Typed data:
+	* a code
+    * a name
+  
+
+
+**Output Data:**
+
+* (In)Success of the operation
+
 
 
 ### 1.6. System Sequence Diagram (SSD)
 
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
+![US11_SSD](US11_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
 
 
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US11_MD](US11_MD.svg)
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
 
 
 
@@ -75,14 +81,13 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Class3
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateParameterCategoryUI  
+ * CreateParameterCategoryController
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
 
-![USXX-SD](USXX-SD.svg)
+![U11_SD](US11_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
