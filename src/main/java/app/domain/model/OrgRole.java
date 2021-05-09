@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import auth.domain.model.Email;
+import auth.domain.model.UserRole;
 
 public class OrgRole {
 
@@ -12,7 +13,7 @@ public class OrgRole {
         this.description = orgRole;
     }
 
-    public void create(String role, String employeeId, String name, String address, long phoneNumber, Email email, int socCode){
+    public void create(UserRole role, String employeeId, String name, String address, long phoneNumber, Email email, int socCode){
         new Employee(role, employeeId, name, address, phoneNumber, email, socCode);
     }
 

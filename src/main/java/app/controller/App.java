@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.domain.model.Company;
+import app.domain.model.RolesStore;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;
@@ -18,6 +19,7 @@ public class App {
 
     private Company company;
     private AuthFacade authFacade;
+    private RolesStore rolesStore;
 
     private App()
     {
@@ -74,7 +76,18 @@ public class App {
     private void bootstrap()
     {
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
+        this.authFacade.addUserRole(Constants.ROLE_REC,Constants.ROLE_REC);
+        this.authFacade.addUserRole(Constants.ROLE_MLT,Constants.ROLE_MLT);
+        this.authFacade.addUserRole(Constants.ROLE_CCT,Constants.ROLE_CCT);
+        this.authFacade.addUserRole(Constants.ROLE_LC,Constants.ROLE_LC);
+        this.authFacade.addUserRole(Constants.ROLE_SD,Constants.ROLE_SD);
 
+        this.rolesStore.addRole(Constants.ORGROLE_ADMIN);
+        this.rolesStore.addRole(Constants.ORGROLE_REC);
+        this.rolesStore.addRole(Constants.ORGROLE_MLT);
+        this.rolesStore.addRole(Constants.ORGROLE_CCT);
+        this.rolesStore.addRole(Constants.ORGROLE_LC);
+        this.rolesStore.addRole(Constants.ORGROLE_SD);
 
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
     }
