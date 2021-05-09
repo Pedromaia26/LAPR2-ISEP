@@ -2,6 +2,7 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,11 +38,13 @@ public class RegistEmployeeController {
         return App.getInstance().getCompany().getEmployeeStore().getSpecialistDoctors();
     }
 
-    public void saveEmployee(){
+    public void saveEmployee() throws FileNotFoundException {
         App.getInstance().getCompany().getEmployeeStore().saveEmployee(emp);
+        App.getInstance().getCompany().getEmployeeStore().createUser(emp);
     }
 
-    public void saveSpecialistDoctor(){
+    public void saveSpecialistDoctor() throws FileNotFoundException {
         App.getInstance().getCompany().getEmployeeStore().saveSpecialistDoctor(empsd);
+        App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(empsd);
     }
 }

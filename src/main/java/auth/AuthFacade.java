@@ -5,6 +5,7 @@ import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
 import auth.domain.store.UserStore;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Optional;
 public class AuthFacade {
     private UserSession userSession;
 
-    private UserRoleStore roles ;
+    private UserRoleStore roles;
     private UserStore users;
 
     public AuthFacade()
@@ -71,7 +72,7 @@ public class AuthFacade {
         Optional<User> result = this.users.getById(email);
         if (result.isPresent())
         {
-
+            System.out.println("OLA");
             User user = result.get();
 
 
@@ -92,4 +93,7 @@ public class AuthFacade {
         return this.userSession;
     }
 
+    public UserRoleStore getRoles() {
+        return roles;
+    }
 }

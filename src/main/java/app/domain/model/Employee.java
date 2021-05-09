@@ -5,23 +5,31 @@ import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Employee {
 
     private UserRole userRole;
     private String employeeId;
     private String name;
-    private String adress;
+    private String address;
     private long phoneNumber;
     private Email email;
     private int socCode;
+    private String password;
 
     public Employee(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
-        Company c = new Company("Many Labs");
-        c.getUserRoleStore().add(userRole);
-        System.out.println(c.getUserRoleStore().getById(userRole.getId()));
-        if (!c.getUserRoleStore().exists(userRole)){
-            throw new IllegalArgumentException("User role invalid");
+        /*Company c = new Company("Many Labs");
+        List<UserRoleStore> store = c.getAuthFacade().getRoles();
+        for (UserRole ur : store){
+            System.out.println("OLA");
+            System.out.println(ur);
         }
+        if (c.getAuthFacade().addUserRole(userRole.getId(), userRole.getDescription())){
+            throw new IllegalArgumentException("User role invalid");
+        } */
         this.userRole = userRole;
 
         this.employeeId = employeeId;
@@ -32,7 +40,7 @@ public class Employee {
 
         if (adress.isEmpty())
             throw new IllegalArgumentException("Adress cannot be empty");
-        this.adress = adress;
+        this.address = adress;
 
         if (String.valueOf(phoneNumber).length() != 11)
             throw new IllegalArgumentException("Phone number should have 11 digits");
@@ -60,7 +68,7 @@ public class Employee {
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
     public long getPhoneNumber() {
@@ -75,16 +83,24 @@ public class Employee {
         return socCode;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "userRole=" + userRole +
                 ", employeeId='" + employeeId + '\'' +
                 ", name='" + name + '\'' +
-                ", adress='" + adress + '\'' +
+                ", adress='" + address + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", email=" + email +
                 ", socCode=" + socCode +
                 '}';
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

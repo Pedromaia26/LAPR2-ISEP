@@ -1,5 +1,10 @@
 package app.domain.model;
 
+import app.controller.App;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +19,19 @@ public class EmployeeStore {
 
     public static SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
         return EmployeeMapper.toDto(SpecialistDoctors, specdocdto);
+    }
+
+    public String generatePassword(){
+        int num= 10;
+        String a="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+        StringBuilder fim= new StringBuilder();
+        for (int i=0;i<num;i++){
+            fim.append(a.charAt((int) (Math.random() * (60))));
+        }
+
+
+
+        return String.valueOf(fim);
     }
 
     public boolean validateEmployee(Employee emp){
@@ -32,11 +50,43 @@ public class EmployeeStore {
         return Employees;
     }
 
-    public void saveEmployee(Employee emp){
+    public void saveEmployee(Employee emp) throws FileNotFoundException {
+        String pwd = System.getProperty("user.dir");
+
+
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        if (!emailAndSMSMessages.exists()) {
+            emailAndSMSMessages.mkdirs();
+        }
+
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+
+        String password =  generatePassword();
+
+        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
+        emp.setPassword(password);
+
+
+
+        out.close();
         Employees.add(emp);
     }
 
-    public void saveSpecialistDoctor(SpecialistDoctor emp){
+    public void saveSpecialistDoctor(SpecialistDoctor emp) throws FileNotFoundException {
+        String pwd = System.getProperty("user.dir");
+
+
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        if (!emailAndSMSMessages.exists()) {
+            emailAndSMSMessages.mkdirs();
+        }
+
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+
+        String password =  generatePassword();
+
+        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
+        emp.setPassword(password);
         SpecialistDoctors.add(emp);
     }
 
@@ -48,6 +98,14 @@ public class EmployeeStore {
         if(emp == null)
             return false;
         return !this.SpecialistDoctors.contains(emp);
+    }
+
+    public boolean createUser(Employee emp){
+        return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole().getId()));
+    }
+
+    public boolean createSpecialistDoctor(SpecialistDoctor emp){
+        return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole().getId()));
     }
 
 }
