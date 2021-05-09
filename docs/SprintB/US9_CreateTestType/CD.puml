@@ -1,0 +1,78 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+
+
+
+class TestType {
+  -String description
+  -String collectingMethod
+  -String code
+  -List <ParameterCategory> listOfParameterCategory
+  +TestType(description, collectingMethod, code, cat)
+}
+
+class ParameterCategoryStore{
+ +getParameterCategoryByCode(code)
+}
+
+class TestTypeStore{
+   +createTestType(description, collectingMethod, code, cat)
+   +validateTestType(tt)
+   +addTestType(tt)
+   +saveTestType(tt)
+   }
+
+class ParameterCategory {
+  -String name
+  -String code
+  +ParameterCategory(name, code)
+}
+
+
+class Company {
+  -String designation
+  +getParameterCategoryStore()
+  +getTestTypeStore()
+
+}
+
+
+class TestTypeController {
+    +getParameterCategoryStore()
+    +createTestType(description, collectingMethod, code, categories)
+    +saveTestType()
+}
+
+
+class TestTypeUI {
+
+}
+
+class ParameterCategoryMapper{
++toDto()
+}
+
+class ParameterCategoryDto{
+-String code
+-String name
++ParameterCategoryDto(categories)
+}
+
+TestTypeUI ..> TestTypeController
+TestTypeController ..> TestTypeStore
+TestTypeController ..> Company
+TestTypeController ..> ParameterCategoryStore
+Company "1" --> "1" ParameterCategoryStore: uses
+Company "1" --> "1" TestTypeStore: uses
+TestTypeStore "1" --> "1..*" TestType: conducts
+ParameterCategoryStore "1" -> "*" ParameterCategory: adopts
+TestType "1" --> "1..*" ParameterCategory: has a set of
+TestTypeController ..> ParameterCategoryMapper
+ParameterCategoryMapper ..> ParameterCategoryDto
+ParameterCategoryDto ..> ParameterCategory
+ParameterCategoryMapper ..> ParameterCategoryStore
+
+
+@enduml
