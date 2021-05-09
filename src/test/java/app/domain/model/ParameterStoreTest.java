@@ -29,6 +29,8 @@ public class ParameterStoreTest {
         boolean flag = c.getParameterStore().validateParameter(p1);
         boolean flag2 = c.getParameterStore().validateParameter(p2);
         c.getParameterStore().addParameter(p1);
+        c.getParameterStore().saveParameter(p1);
+        c.getParameterStore().saveParameter(p2);
         boolean flag3 = c.getParameterStore().validateParameter(p1);
 
         Assert.assertFalse(flag3);
