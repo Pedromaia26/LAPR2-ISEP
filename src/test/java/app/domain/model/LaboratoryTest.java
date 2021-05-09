@@ -133,4 +133,8 @@ public class LaboratoryTest {
 
         Assert.assertEquals("LaboratoryID: ZOOPL\nName: Citylab\nAddress: Porto\nPhone Number: 93323546212\nTax Identification Number: 1234567890\nTest Type(s)\n[Description: Immunity; Collecting Method: Swab; Code: 56555; Parameter Category: Sea]", l.toString());
     }
+
+    @Test
+    public void testEquals() {
+    }
 }
