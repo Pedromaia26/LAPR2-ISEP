@@ -3,6 +3,8 @@ package app.domain.model;
 import app.controller.CreateParameterCategoryController;
 import app.controller.CreateParameterController;
 import app.controller.RegistClientController;
+import app.controller.RegistEmployeeController;
+import auth.domain.model.Email;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +60,6 @@ public class Interface {
 
                     break;
                 case 2:
-
 
                     break;
                 case 3:
