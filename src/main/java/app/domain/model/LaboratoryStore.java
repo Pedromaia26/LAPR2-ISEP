@@ -20,7 +20,7 @@ public class LaboratoryStore {
      * @return The test type created.
      */
 
-    public Laboratory createLaboratory (String laboratoryID, String name, String address, int phoneNumber, int tinNumber, List<TestType> test) {
+    public Laboratory createLaboratory (String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List<TestType> test) {
 
         return new Laboratory(laboratoryID, name, address, phoneNumber, tinNumber, test);
     }
