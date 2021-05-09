@@ -1,0 +1,44 @@
+@startuml
+RegistLaboratoryUI ..> RegistLaboratoryController
+RegistLaboratoryController ..>Company
+RegistLaboratoryController ..>StoreTestType
+RegistLaboratoryController ..>StoreLaboratory
+
+
+RegistLaboratoryController : +getTestType()
+RegistLaboratoryController : +createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, testType)
+RegistLaboratoryController : +saveLaboratory()
+
+Company ..> StoreLaboratory
+Company ..> StoreTestType
+
+Company : +getTestType()
+Company : +getStoreLaboratory()
+
+
+StoreTestType : +getTestTypeByCode(code)
+
+StoreLaboratory : +createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
+StoreLaboratory : +validateLaboratory(cl)
+StoreLaboratory : +addLaboratory(cl)
+StoreLaboratory : +saveLaboratory(cl)
+
+StoreLaboratory ..> Laboratory
+
+Laboratory : -Int laboratoryID
+Laboratory : -String name
+Laboratory : -String address
+Laboratory : -Int phoneNumber
+Laboratory : -Int tinNumber
+Laboratory : -List <TestType> listTestType
+Laboratory : +Laboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, test)
+
+StoreTestType ..> TestType
+Laboratory ..> TestType
+
+TestType : -String description
+TestType : -String collectingMethod
+TestType : -String code
+TestType : -List category
+TestType : +TestType(description,collectingMethod,code,category)
+@enduml
