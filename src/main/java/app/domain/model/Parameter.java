@@ -87,6 +87,11 @@ public class Parameter {
         }
     }
 
+    /**
+     * Compares the object that evokes the method with another
+     * @param o The object to compare
+     * @return True if objects are equal and false if different
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,4 +100,8 @@ public class Parameter {
         return this.category.equals(parameter.category) && this.description.equals(parameter.description) && this.code.equals(parameter.code) && this.shortName.equals(parameter.shortName);
     }
 
+    @Override
+    public String toString() {
+        return String.format("Short Name: %s; Code: %s; Description: %s; Parameter Category: %s",shortName, code, description, category);
+    }
 }

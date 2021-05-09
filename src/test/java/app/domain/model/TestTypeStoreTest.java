@@ -79,19 +79,54 @@ public class TestTypeStoreTest {
 
         boolean flag1 = c.getTestTypeStore().validateTestType(tt);
         c.getTestTypeStore().addToList(tt);
-        c.getTestTypeStore().saveTestType(tt);
-        boolean flag2 = c.getTestTypeStore().validateTestType(tt1);
+        boolean flag2 = c.getTestTypeStore().saveTestType(tt);
+        boolean flag3 = c.getTestTypeStore().validateTestType(tt1);
         c.getTestTypeStore().addToList(tt1);
         c.getTestTypeStore().saveTestType(tt1);
-        boolean flag3 = c.getTestTypeStore().validateTestType(tt2);
+        boolean flag4 = c.getTestTypeStore().validateTestType(tt2);
+        c.getTestTypeStore().addToList(tt2);
+        boolean flag5 = c.getTestTypeStore().saveTestType(tt2);
+
 
         Assert.assertTrue(flag1);
-        Assert.assertFalse(flag2);
+        Assert.assertTrue(flag2);
         Assert.assertFalse(flag3);
-
+        Assert.assertFalse(flag4);
+        Assert.assertFalse(flag5);
     }
 
     @Test
     public void saveTestType() {
+    }
+
+    @Test
+    public void testCreateTestType() {
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc = new ParameterCategory("Hemogram", "kl172");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "imm90");
+        ParameterCategory pc2 = new ParameterCategory("Antibodies", "81nma");
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPCtt = new ArrayList<>();
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc02 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPCtt.add(pc01);
+        listPCtt.add(pc02);
+
+        TestType tt = new TestType("COVID", "Swab", "imao1", listPCtt);
+        TestType tt2 = c.getTestTypeStore().createTestType("COVID","Swab", "imao1", listPCtt);
+        TestType tt3 = c.getTestTypeStore().createTestType("Blood","Syringe", "imao1", listPCtt);
+
+        Assert.assertEquals(tt,tt2);
+        Assert.assertNotEquals(tt2,tt3);
+
+
+
+
     }
 }

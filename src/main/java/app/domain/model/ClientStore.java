@@ -45,7 +45,7 @@ public class ClientStore {
         String a="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
         StringBuilder fim= new StringBuilder();
         for (int i=0;i<num;i++){
-            fim.append(a.charAt((int) (Math.random() * (62))));
+            fim.append(a.charAt((int) (Math.random() * (60))));
         }
 
 

@@ -5,6 +5,7 @@ import auth.domain.model.Email;
 import auth.domain.model.Password;
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -58,8 +59,11 @@ public class Client {
 
         this.email= new Email(email);
 
+        if (StringUtils.isBlank(sex)){
+            sex="Undifined";
+        }
 
-        if(!sex.equalsIgnoreCase("MALE") && !sex.equalsIgnoreCase("FEMALE"))
+        if(!sex.equalsIgnoreCase("MALE") && !sex.equalsIgnoreCase("FEMALE") && !sex.equalsIgnoreCase("UNDIFINED"))
             throw new IllegalArgumentException("Incorrect sex");
 
         this.sex=sex;
@@ -68,6 +72,13 @@ public class Client {
 
         if(!birth.matches("^\\d{2}/\\d{2}/\\d{4}$"))
             throw new IllegalArgumentException("Format of the data is incorrect");
+
+          int anosdif=calculateAge(birth);
+
+        if (anosdif>150)
+            throw new IllegalArgumentException("Client older than 150 years");
+
+
         this.birth=birth;
 
     }
@@ -77,6 +88,30 @@ public class Client {
 
     public void setPassword(Password password) {
         this.password = password;
+    }
+
+    public int calculateAge(String birth){
+        Date date = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String data=formatter.format(date);
+
+        String[] array = data.split("/");
+
+        String[] array2 = birth.split("/");
+        int anosdif=Integer.parseInt(array[2])-Integer.parseInt(array2[2])-1;
+
+        if (Integer.parseInt(array[1])>Integer.parseInt(array2[1])){
+            anosdif++;
+        }
+        else {
+            if (Integer.parseInt(array[1])==Integer.parseInt(array2[1])){
+                if (Integer.parseInt(array[0])>=Integer.parseInt(array2[0])){
+                    anosdif++;
+                }
+            }
+        }
+        return anosdif;
     }
 
     @Override

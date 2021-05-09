@@ -45,4 +45,30 @@ public class ParameterCategoryDtoTest {
         Assert.assertEquals(expected, actual);
         Assert.assertNotEquals(notExpected, actual);
     }
+
+    @Test
+    public void setName() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "12345");
+        ParameterCategoryDto pcDto = new ParameterCategoryDto(pc);
+
+        String expected = "Test";
+        String notExpected = "Hemogram";
+        pcDto.setName("Test");
+
+        Assert.assertEquals(expected, pcDto.getName());
+        Assert.assertNotEquals(notExpected, pcDto.getName());
+    }
+
+    @Test
+    public void setCode() {
+        ParameterCategory pc = new ParameterCategory("Hemogram", "12345");
+        ParameterCategoryDto pcDto = new ParameterCategoryDto(pc);
+
+        String expected = "55555";
+        String notExpected = "12345";
+        pcDto.setCode("55555");
+
+        Assert.assertEquals(expected, pcDto.getCode());
+        Assert.assertNotEquals(notExpected, pcDto.getCode());
+    }
 }

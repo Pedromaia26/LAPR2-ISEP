@@ -37,7 +37,6 @@ public class ParameterCategoryStore {
 
         if (validateParameterCategory(pc)) {
             cat.add(pc);
-            System.out.println("PC = " + cat.toString());
             return true;
         } else {
             return false;

@@ -21,7 +21,9 @@ public class ParameterCategoryMapper{
      * @return The transformed list
      */
     public List<ParameterCategoryDto> toDto(List<ParameterCategory> listParameterCategory) {
+        listParameterCategoryDto = new ArrayList<>();
         for (ParameterCategory cat : listParameterCategory) {
+            new ParameterCategoryDto(cat);
             listParameterCategoryDto.add(new ParameterCategoryDto(cat));
         }
         return listParameterCategoryDto;
