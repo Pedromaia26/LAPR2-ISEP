@@ -12,7 +12,6 @@ public class ParameterCategoryStore {
 
 
     public void addToList (ParameterCategory category){
-        if (!cat.contains(category))
             cat.add(category);
     }
 

@@ -36,13 +36,20 @@ public class TestTypeStoreTest {
         ParameterCategory pc1 = new ParameterCategory("Immunity", "imm90");
         ParameterCategory pc2 = new ParameterCategory("Antibodies", "81nma");
 
+        c.getParameterCategoryStore().validateParameterCategory(pc);
+        c.getParameterCategoryStore().validateParameterCategory(pc1);
+        c.getParameterCategoryStore().validateParameterCategory(pc2);
         c.getParameterCategoryStore().addToList(pc);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+        c.getParameterCategoryStore().saveParameterCategory(pc1);
+        c.getParameterCategoryStore().saveParameterCategory(pc2);
 
         TestType tt = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
 
-        c.getTestTypeStore().getTestTypes();
+        c.getTestTypeStore().validateTestType(tt);
+        c.getTestTypeStore().addToList(tt);
+        c.getTestTypeStore().saveTestType(tt);
 
         Assert.assertTrue(true);
     }

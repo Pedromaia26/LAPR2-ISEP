@@ -11,7 +11,6 @@ public class TestTypeStore {
     private List <TestType> testTypeList = new ArrayList<>();
 
     public void addToList (TestType tt){
-        if (!testTypeList.contains(tt))
             testTypeList.add(tt);
     }
 
