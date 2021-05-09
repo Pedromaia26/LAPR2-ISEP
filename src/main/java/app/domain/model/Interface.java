@@ -3,6 +3,8 @@ package app.domain.model;
 import app.controller.CreateParameterCategoryController;
 import app.controller.CreateParameterController;
 import app.controller.RegistClientController;
+import app.controller.RegistEmployeeController;
+import auth.domain.model.Email;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +15,10 @@ public class Interface {
 
     public static void main(String[] args) throws IOException {
         int escolha;
+
+        Company c = new Company("Many Labs");
+        CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+        CreateParameterController createParameterController = new CreateParameterController(c);
         do {
             Scanner ler = new Scanner(System.in);
 
@@ -39,7 +45,8 @@ public class Interface {
             escolha = ler.nextInt();
             System.out.println();
 
-            Company c = new Company("Many Labs");
+
+
 
             switch (escolha) {
                 case 1:
@@ -62,7 +69,6 @@ public class Interface {
                     break;
                 case 2:
 
-
                     break;
                 case 3:
 
@@ -72,7 +78,7 @@ public class Interface {
                 case 5:
 
                     //Company c = new Company("Many Labs");
-                    CreateParameterController createParameterController = new CreateParameterController(c);
+
 
 
 
@@ -111,7 +117,7 @@ public class Interface {
                     break;
                 case 6:
 
-                    CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+
 
                     System.out.println("Insert the code of the parameter category, please.");
                     ler.nextLine();

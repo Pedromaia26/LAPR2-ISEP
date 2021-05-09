@@ -21,10 +21,7 @@ public class UserRole {
         this.description = description;
     }
 
-    private String extractId(String id)
-    {
-        return id.trim().toUpperCase();
-    }
+    private String extractId(String id) { return id.trim().toUpperCase(); }
 
     public String getId() {
         return id;

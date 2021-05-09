@@ -8,7 +8,12 @@ public class ParameterCategoryStore {
     /**
      * List that contains the parameters categories.
      */
-    private List<ParameterCategory> cat = new ArrayList<>();
+    private List<ParameterCategory> cat;
+
+    public ParameterCategoryStore(){
+        cat = new ArrayList<>();
+
+    }
 
 
     public void addToList (ParameterCategory category){
@@ -26,11 +31,19 @@ public class ParameterCategoryStore {
     }
 
     public boolean saveParameterCategory(ParameterCategory pc) {
-        if (!validateParameterCategory(pc)) {
-            return false;
-        }else {
-            return this.cat.add(pc);
+        if(cat == null) {
+            cat = new ArrayList<>();
         }
+
+        if (validateParameterCategory(pc)) {
+            cat.add(pc);
+            System.out.println("PC = " + cat.toString());
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 
 
