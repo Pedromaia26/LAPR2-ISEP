@@ -40,6 +40,18 @@ public class ClientStore {
 
         return addNewClient(nc);
     }
+    public String generatePassword(){
+        int num= 10;
+        String a="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+        StringBuilder fim= new StringBuilder();
+        for (int i=0;i<num;i++){
+            fim.append(a.charAt((int) (Math.random() * (62))));
+        }
+
+
+
+        return String.valueOf(fim);
+    }
 
     public void sendEmail(Client nc) throws IOException {
         String pwd = System.getProperty("user.dir");
@@ -52,16 +64,16 @@ public class ClientStore {
 
         PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
 
-        long password = (long) ((Math.random() * (9999999999L - 1000000000L)) + 1000000000L);
+        String password =  generatePassword();
 
-        out.printf("Cliente registado com sucesso a sua password de acesso é : %d",password);
+        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
 
 
 
 
         out.close();
 
-        Password pass = new Password(String.valueOf(password));
+        Password pass = new Password(password);
 
         nc.setPassword(pass);
 

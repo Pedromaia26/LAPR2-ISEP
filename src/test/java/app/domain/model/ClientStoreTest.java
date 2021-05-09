@@ -3,6 +3,8 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 public class ClientStoreTest {
