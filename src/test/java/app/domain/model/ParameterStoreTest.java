@@ -24,6 +24,7 @@ public class ParameterStoreTest {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
         Parameter p1 = new Parameter("11111", "test", "this is a test", pc1);
         Parameter p2 = null;
+        Parameter p3 = new Parameter("11151", "test4", "this is test", pc1);
 
         Company c = new Company("Many Labs");
         boolean flag = c.getParameterStore().validateParameter(p1);
@@ -31,6 +32,7 @@ public class ParameterStoreTest {
         c.getParameterStore().addParameter(p1);
         c.getParameterStore().saveParameter(p1);
         c.getParameterStore().saveParameter(p2);
+        c.getParameterStore().saveParameter(p3);
         boolean flag3 = c.getParameterStore().validateParameter(p1);
 
         Assert.assertFalse(flag3);
