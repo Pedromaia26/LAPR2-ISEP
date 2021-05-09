@@ -1,5 +1,7 @@
-package app.domain.model;
+package java.app.domain.model;
 
+import app.domain.model.Company;
+import app.domain.model.Employee;
 import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 import org.junit.Assert;
