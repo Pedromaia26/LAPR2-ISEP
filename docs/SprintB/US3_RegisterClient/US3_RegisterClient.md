@@ -113,7 +113,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US003_MD](US003_MD.svg)
 
 ### 2.2. Other Remarks
 
