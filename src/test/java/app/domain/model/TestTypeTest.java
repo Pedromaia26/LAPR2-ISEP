@@ -125,8 +125,6 @@ public class TestTypeTest {
         TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
 
         Assert.assertFalse(false);
-
-
     }
 
 }
