@@ -103,12 +103,6 @@ As a receptionist of the laboratory, I want to register a client.
 ![US003_SSD](US003_SSD.svg)
 
 
-**Alternative 2**
-
-![US003_SSD_v2](US003_SSD_v2.svg)
-
-
-**Other alternatives might exist.**
 
 ### 1.7 Other Relevant Remarks
 
@@ -171,9 +165,6 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ![US003_SD](US003_SD.svg)
 
-**Alternative 2**
-
-![US006_SD](US006_SD_v2.svg)
 
 ## 3.3. Class Diagram (CD)
 
