@@ -187,5 +187,4 @@ public class ClientTest {
 
         Assert.assertEquals(name, "Moirane");
     }
-
 }

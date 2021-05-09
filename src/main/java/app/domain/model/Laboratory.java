@@ -36,20 +36,22 @@ public class Laboratory {
 
         this.address = address;
 
-        if (String.valueOf(tinNumber).length() != 11)
-            throw new IllegalArgumentException("Phone number should have 11 digits");
-
-        this.tinNumber = tinNumber;
-
         if (String.valueOf(tinNumber).length() != 10)
             throw new IllegalArgumentException("Tax Identification Number should have 10 digits");
 
-        this.laboratoryID = laboratoryID;
+        this.tinNumber = tinNumber;
+
+        if (String.valueOf(phoneNumber).length() != 11)
+            throw new IllegalArgumentException("Phone number should have 11 digits");
+
+        this.phoneNumber = phoneNumber;
+
 
         if (laboratoryID.trim().length() != 5)
             throw new IllegalArgumentException("LaboratoryID must have 5 alphanumeric characters");
 
-        this.phoneNumber = phoneNumber;
+        this.laboratoryID = laboratoryID;
+
         this.listPC = listPC;
     }
     public String toString(){

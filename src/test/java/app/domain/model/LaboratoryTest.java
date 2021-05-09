@@ -29,7 +29,7 @@ public class LaboratoryTest {
         Laboratory l = new Laboratory("A4RLD", "UniversityExeterLaboratory", "Manchester", 11111111111L, 9811111111L, ttPC);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void createLaboratoryAdressWithMoreThan20chars() {
 
         Company c = new Company("Many Labs");
@@ -50,7 +50,7 @@ public class LaboratoryTest {
 
 
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void createLaboratoryIDWithMoreThan5alphanumeric() {
 
         Company c = new Company("Many Labs");
@@ -72,7 +72,7 @@ public class LaboratoryTest {
 
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void createLaboratorytinNumberWithNot10numbers() {
         Company c = new Company("Many Labs");
 
@@ -92,7 +92,7 @@ public class LaboratoryTest {
         Laboratory l = new Laboratory("ZZLMR", "Vulab", "Manchester", 93323546277L, 9930230123451L, ttPC);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void createLaboratoryPhoneNumberWithNot10Numbers() {
 
         Company c = new Company("Many Labs");
@@ -118,20 +118,27 @@ public class LaboratoryTest {
 
         Company c = new Company("Many Labs");
 
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+
         List<ParameterCategory> listPC = new ArrayList<>();
+
         ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        listPC.add(pc);
 
         TestType tt1 = new TestType("Immunity", "Swab", "56555", listPC);
+
         c.getTestTypeStore().addToList(tt1);
 
         List<TestType> ttPC = new ArrayList<>();
-        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("56555");
 
         ttPC.add(tt);
 
         Laboratory l = new Laboratory("ZOOPL", "Citylab", "Porto", 93323546212L, 1234567890L, ttPC);
 
-        Assert.assertEquals("LaboratoryID: ZOOPL\nName: Citylab\nAddress: Porto\nPhone Number: 93323546212\nTax Identification Number: 1234567890\nTest Type(s)\n[Description: Immunity; Collecting Method: Swab; Code: 56555; Parameter Category: Sea]", l.toString());
+        Assert.assertEquals("laboratoryID: ZOOPL; Name: Citylab; Address: Porto; Phone Number: 93323546212; tinNumber: 1234567890; Test Types: [Description: Immunity\nCollecting Method: Swab\nCode: 56555\nCategories:\n[Name: Hemogram; Code: 11111]];", l.toString());
     }
 
     @Test

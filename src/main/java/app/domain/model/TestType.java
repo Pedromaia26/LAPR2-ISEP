@@ -142,4 +142,5 @@ public class TestType {
     public void setListPC(List<ParameterCategory> listPC) {
         this.listPC = listPC;
     }
+
 }

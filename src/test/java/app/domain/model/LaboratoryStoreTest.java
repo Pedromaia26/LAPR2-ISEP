@@ -27,17 +27,17 @@ public class LaboratoryStoreTest {
         TestType tt = new TestType("Hemogram", "Swab", "12313", listPC);
         TestType tt1 = new TestType("Immunity", "Tube", "12314", listPC);
 
+        c.getTestTypeStore().addToList(tt);
+        c.getTestTypeStore().addToList(tt1);
+
+
         TestType tt0 = c.getTestTypeStore().getTestTypeByCode("12314");
-        TestType tt01 = c.getTestTypeStore().getTestTypeByCode("12313");
 
         List<TestType> typeTest = new ArrayList<>();
         typeTest.add(tt0);
 
-        List<TestType> typeTest2 = new ArrayList<>();
-        typeTest2.add(tt01);
-
-        Laboratory lb = new Laboratory("adad", "adada", "PortoGaiaPT", 91111111111L, 999999999L, typeTest);
-        Laboratory lb2 = c.getLaboratoryStore().createLaboratory("adad", "adada","PortoGaiaPT", 91111111111L, 999999999L, typeTest2);
+        Laboratory lb = new Laboratory("adada", "adada", "PortoGaiaPT", 11111111111L, 9999999999L, typeTest);
+        Laboratory lb2 = c.getLaboratoryStore().createLaboratory("adada", "adada","PortoGaiaPT", 11111111111L, 9999999999L, typeTest);
 
         Assert.assertEquals(lb, lb2);
 

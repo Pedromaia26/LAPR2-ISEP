@@ -18,9 +18,11 @@ public class TestTypeStore {
      * Adds a new type of test to the list of test types.
      * @param tt receives an instance of TestType.
      */
-    public void addToList (TestType tt){
+    public boolean addToList (TestType tt){
         if (!validateTestType(tt))
-            testTypeList.add(tt);
+            return false;
+
+        return testTypeList.add(tt);
     }
 
     /**
@@ -62,7 +64,7 @@ public class TestTypeStore {
         return testTypeList.add(tt);
     }
     public TestType getTestTypeByCode(String code) {
-        for (TestType tt: testTypeList) {
+        for (TestType tt: this.testTypeList) {
             if (code.equals(tt.getCode()))
                 return tt;
         }
