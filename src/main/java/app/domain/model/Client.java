@@ -59,7 +59,7 @@ public class Client {
         this.email= new Email(email);
 
 
-        if(!sex.toUpperCase().equals("MALE") && !sex.toUpperCase().equals("FEMALE"))
+        if(!sex.equalsIgnoreCase("MALE") && !sex.equalsIgnoreCase("FEMALE"))
             throw new IllegalArgumentException("Incorrect sex");
 
         this.sex=sex;

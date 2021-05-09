@@ -39,6 +39,10 @@ public class ClientTest {
         Client client6 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567895L,"asde@gmail.com","Moirane",44123456789L);
         Client client7 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Random",44123456789L);
         Client client8 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456723L);
+
+        Client client11 = new Client(1234567890123459L,1234567899L,"12/12/2016","Female",1234567897L,"asde@gmail.com","Random",44123456723L);
+
+
         Client client9 = null;
 
         ClientDTO client10 = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
@@ -56,6 +60,8 @@ public class ClientTest {
         Assert.assertNotEquals(client,client9);
         Assert.assertNotEquals(client,client10);
         Assert.assertEquals(client,client);
+        Assert.assertNotEquals(client,client11);
+
 
 
     }
