@@ -3,6 +3,7 @@ package app.domain.model;
 
 import auth.domain.model.Email;
 import auth.domain.model.Password;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -43,9 +44,13 @@ public class Client {
             throw new IllegalArgumentException("Phone Number must be 11 characters long");
 
         this.phoneNumber = phoneNumber;
+        if (StringUtils.isBlank(name))
+            throw new IllegalArgumentException("Name cannot be Blank");
 
         if (name.length()>35)
             throw new IllegalArgumentException("Name cannot be longer then 35 characters");
+
+
             this.name=name;
 
 
