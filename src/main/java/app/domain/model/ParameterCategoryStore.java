@@ -12,7 +12,6 @@ public class ParameterCategoryStore {
 
     public ParameterCategoryStore(){
         cat = new ArrayList<>();
-
     }
 
 

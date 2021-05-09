@@ -8,7 +8,11 @@ public class TestTypeStore {
     /**
      * List that contains the types of tests.
      */
-    private List <TestType> testTypeList = new ArrayList<>();
+    private List <TestType> testTypeList;
+
+    public TestTypeStore() {
+        testTypeList = new ArrayList<>();
+    }
 
     /**
      * Adds a new type of test to the list of test types.
