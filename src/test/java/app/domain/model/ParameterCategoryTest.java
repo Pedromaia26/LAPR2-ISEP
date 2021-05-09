@@ -15,7 +15,8 @@ public class ParameterCategoryTest {
     public void createParameterCategoryNameWithMoreThan10CharsInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
-    @Test(expected = IllegalArgumentException.class)
+
+    @Test
     public void createParameterCategoryNameWith10Chars() {
         ParameterCategory pc = new ParameterCategory("COVID Test", "12345");
     }

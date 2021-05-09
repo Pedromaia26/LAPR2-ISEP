@@ -26,7 +26,7 @@ public class TestTypeTest {
         TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", listPC);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void createTestTypeDescriptionWith15chars() {
 
         Company c = new Company("Many Labs");
