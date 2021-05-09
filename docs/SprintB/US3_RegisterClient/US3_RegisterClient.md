@@ -66,7 +66,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 * **AC1:** All required fiels must be filled in, except the phone number.
 * **AC2:** The client must become a system user.
-* **AC3:** ??The "auth" component available on the repository must be reused (without modifications)??
+* **AC3:** The "auth" component available on the repository must be reused (without modifications)
 * **AC4** Citizen Card: 16 digit number
 * **AC5** NHS: 10 digit number
 * **AC6** TIN: 10 digit number
