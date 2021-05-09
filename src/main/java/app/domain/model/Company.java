@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import auth.AuthFacade;
+import auth.domain.store.UserRoleStore;
 import auth.domain.store.UserStore;
 import org.apache.commons.lang3.StringUtils;
 
@@ -21,6 +22,7 @@ public class Company {
     private ClientStore clientStore;
     private EmployeeStore employeeStore;
     private UserStore userStore;
+    private UserRoleStore userRoleStore;
 
 
     public Company(String designation)
@@ -36,6 +38,7 @@ public class Company {
         this.parameterStore = new ParameterStore();
         this.employeeStore = new EmployeeStore();
         this.userStore= new UserStore();
+        this.userRoleStore = new UserRoleStore();
     }
 
     public String getDesignation() {
@@ -64,6 +67,6 @@ public class Company {
     public UserStore getUserStore() {
         return userStore;
     }
-
+    public UserRoleStore getUserRoleStore() { return userRoleStore; }
 
 }

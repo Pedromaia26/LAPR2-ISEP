@@ -17,8 +17,9 @@ public class Employee {
 
     public Employee(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
         Company c = new Company("Many Labs");
-        if(!(c.getAuthFacade().addUserRole(userRole.getId(), userRole.getDescription()))){
-            System.out.println("OLA");
+        c.getUserRoleStore().add(userRole);
+        System.out.println(c.getUserRoleStore().getById(userRole.getId()));
+        if (!c.getUserRoleStore().exists(userRole)){
             throw new IllegalArgumentException("User role invalid");
         }
         this.userRole = userRole;
