@@ -16,8 +16,12 @@ public class Password {
     public Password(String password)
     {
         if (!validate(password))
-            throw new IllegalArgumentException("Invalid Email Address.");
+            throw new IllegalArgumentException("Invalid Password.");
         this.password = createHash(password);
+
+
+
+
     }
 
     private boolean validate(String password) {

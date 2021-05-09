@@ -99,7 +99,7 @@ As an administrator, I want to resgister a new employee.
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US007_MD](US007_MD.svg)
 
 ### 2.2. Other Remarks
 

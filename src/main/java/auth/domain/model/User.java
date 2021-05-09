@@ -15,7 +15,7 @@ public class User {
     private Email id;
     private Password password;
     private String name;
-    private Set<UserRole> roles = new HashSet<UserRole>();
+    private Set<UserRole> roles = new HashSet<>();
 
     public User(Email id, Password pwd, String name)
     {
@@ -109,6 +109,6 @@ public class User {
     @Override
     public String toString()
     {
-        return String.format("%s - %s", this.id.toString(), this.name);
+        return String.format("%s - %s - %s", this.id.toString(), this.name, this.password);
     }
 }
