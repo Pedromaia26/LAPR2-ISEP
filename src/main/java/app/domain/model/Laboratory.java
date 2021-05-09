@@ -8,8 +8,8 @@ public class Laboratory {
     private final String laboratoryID;
     private final String name;
     private final String address;
-    private int phoneNumber;
-    private int tinNumber;
+    private long phoneNumber;
+    private long tinNumber;
     private final List<TestType> listPC;
 
 
@@ -24,7 +24,7 @@ public class Laboratory {
      * @param listPC Types of tests list
      * @return The test type created.
      */
-    public Laboratory (String laboratoryID, String name, String address, int phoneNumber, int tinNumber, List <TestType> listPC) {
+    public Laboratory (String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List <TestType> listPC) {
 
         if (name.trim().length() > 20)
             throw new IllegalArgumentException("Description cannot have more than 20 characters");

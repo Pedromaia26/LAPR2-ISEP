@@ -61,7 +61,13 @@ public class TestTypeStore {
             return false;
         return testTypeList.add(tt);
     }
-
+    public TestType getTestTypeByCode(String code) {
+        for (TestType tt: testTypeList) {
+            if (code.equals(tt.getCode()))
+                return tt;
+        }
+        throw new IllegalArgumentException("There is no Test Type with such code!");
+    }
     /**
      * Returns the list of test types.
      * @return list of test types.

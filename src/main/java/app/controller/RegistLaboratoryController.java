@@ -21,7 +21,7 @@ public class RegistLaboratoryController {
         this.company = company;
     }
 
-    public boolean createLaboratory(String laboratoryID, String name, String address, int phoneNumber, int tinNumber, List <TestType> TestTypes) {
+    public boolean createLaboratory(String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List <TestType> TestTypes) {
         List <TestType> tt = new ArrayList<>();
         for (TestType tts: TestTypes){
             tt.add(this.company.getTestTypeStore().getTestTypeByCode(tts.getCode()));
