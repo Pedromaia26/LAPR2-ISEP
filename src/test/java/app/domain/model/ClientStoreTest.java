@@ -26,15 +26,19 @@ public class ClientStoreTest {
     @Test
     public void validateClient() {
         Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client2 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Client client1= null;
         Company comp= new Company("ManyLabs");
 
         boolean test1= comp.getClientStore().validateClient(client);
         boolean test2= comp.getClientStore().validateClient(client1);
+        comp.getClientStore().addNewClient(client);
+        boolean test3= comp.getClientStore().validateClient(client2);
 
         assertTrue(test1);
         assertFalse(test2);
+        assertFalse(test3);
 
     }
 
@@ -54,5 +58,6 @@ public class ClientStoreTest {
 
 
     }
+
 
 }

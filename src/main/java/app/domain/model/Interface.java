@@ -15,6 +15,10 @@ public class Interface {
 
     public static void main(String[] args) throws IOException {
         int escolha;
+
+        Company c = new Company("Many Labs");
+        CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+        CreateParameterController createParameterController = new CreateParameterController(c);
         do {
             Scanner ler = new Scanner(System.in);
 
@@ -41,18 +45,22 @@ public class Interface {
             escolha = ler.nextInt();
             System.out.println();
 
-            Company c = new Company("Many Labs");
+
+
 
             switch (escolha) {
                 case 1:
                      ClientDTO teste = new ClientDTO(1234567891234567L,1234567891L,"12/12/2000","Male",1234567891L,"teste@gmail.com","teste",91345678912L);
+                    ClientDTO teste1 = new ClientDTO(1234567891234567L,1234567891L,"12/12/2000","Male",1234567891L,"teste@gmail.com","teste",91345678912L);
 
                      RegistClientController cliente= new RegistClientController();
-                     cliente.createNewClient(teste);
-
+                    cliente.createNewClient(teste);
                     List<Client> clientList;
-                    cliente.saveClient();
+                    System.out.println("1"+cliente.saveClient());
+                    cliente.createNewClient(teste1);
+                    System.out.println("2"+cliente.saveClient());
                     clientList=cliente.getClientList();
+
 
                     for (Client cat : clientList) {
                         System.out.println(cat);
@@ -70,7 +78,7 @@ public class Interface {
                 case 5:
 
                     //Company c = new Company("Many Labs");
-                    CreateParameterController createParameterController = new CreateParameterController(c);
+
 
 
 
@@ -109,7 +117,7 @@ public class Interface {
                     break;
                 case 6:
 
-                    CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+
 
                     System.out.println("Insert the code of the parameter category, please.");
                     ler.nextLine();

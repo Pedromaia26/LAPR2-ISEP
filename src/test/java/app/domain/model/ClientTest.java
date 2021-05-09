@@ -32,7 +32,93 @@ public class ClientTest {
     public void testEquals() {
         Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Client client1 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client2 = new Client(1234567890123457L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client3 = new Client(1234567890123456L,1234567899L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client4 = new Client(1234567890123456L,1234567890L,"12/12/2013","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client5 = new Client(1234567890123456L,1234567890L,"12/12/2012","Female",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client6 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567895L,"asde@gmail.com","Moirane",44123456789L);
+        Client client7 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Random",44123456789L);
+        Client client8 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456723L);
+        Client client9 = null;
 
+        ClientDTO client10 = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+
+
+        Assert.assertNotEquals(client,client2);
+        Assert.assertNotEquals(client,client3);
+        Assert.assertNotEquals(client,client4);
+        Assert.assertNotEquals(client,client5);
+        Assert.assertNotEquals(client,client6);
+        Assert.assertNotEquals(client,client7);
+        Assert.assertNotEquals(client,client8);
         Assert.assertEquals(client,client1);
+        Assert.assertNotEquals(client,client9);
+        Assert.assertNotEquals(client,client10);
+        Assert.assertEquals(client,client);
+
+
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckNHSRules() {
+        Client client = new Client(1234567890123451L,123456789L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckBirthRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12-2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckTifRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckPhoneNumberRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",4412345689L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckNameNullRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com",null,44123456789L);
+
+    }
+    @Test
+    public void ClientCheckName35Rules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuiopasdfghjklçzxcvbnmqwertyui",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckNamemore35Rules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuiopasdfghjklçzxcvbnmqwertyuia",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckCCNRules() {
+        Client client = new Client(123456789012345L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckEmailRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,null,"Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckEmailBlankRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","Male",1234567890L,"asd","Moirane",44123456789L);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckSexRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","ASD",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+    @Test
+    public void ClientCheckSexlowercaseRules() {
+        Client client = new Client(1234567890123451L,1234567890L,"12/12/2012","male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+    }
+
 }

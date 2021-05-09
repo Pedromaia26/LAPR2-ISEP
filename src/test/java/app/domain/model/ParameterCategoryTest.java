@@ -15,16 +15,16 @@ public class ParameterCategoryTest {
     public void createParameterCategoryNameWithMoreThan10CharsInvalidName(){
         ParameterCategory pc = new ParameterCategory("Hemogram/Blood Count", "12345");
     }
-    @Test(expected = IllegalArgumentException.class)
+
+    @Test
     public void createParameterCategoryNameWith10Chars() {
-        ParameterCategory pc = new ParameterCategory("Blood Count", "12345");
+        ParameterCategory pc = new ParameterCategory("COVID Test", "12345");
     }
 
 
     @Test
     public void getCode() {
         ParameterCategory pc = new ParameterCategory("Hemogram", "0a98h");
-        Company c = new Company("Many Labs");
         String a = pc.getCode();
 
         Assert.assertEquals("0a98h", a);
@@ -33,7 +33,6 @@ public class ParameterCategoryTest {
     @Test
     public void getName() {
         ParameterCategory pc = new ParameterCategory("Hemogram", "0a98h");
-        Company c = new Company("Many Labs");
         String name = pc.getName();
 
         Assert.assertEquals("Hemogram", name);

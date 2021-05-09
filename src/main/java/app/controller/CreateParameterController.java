@@ -14,7 +14,7 @@ import java.util.List;
 public class CreateParameterController {
 
     private Company company;
-    private List<ParameterCategoryDto> pcDtoList = new ArrayList<>();
+    private List<ParameterCategoryDto> pcDtoList ;
     private Parameter parameter;
     private ParameterCategory cat;
     private ParameterCategoryMapper parameterCategoryMapper;
@@ -22,9 +22,13 @@ public class CreateParameterController {
 
     public CreateParameterController(){
         this(App.getInstance().getCompany());
+        this.pcDtoList = new ArrayList<>();
+        this.parameterCategoryMapper = new ParameterCategoryMapper();
     }
 
     public CreateParameterController(Company company){
+        this.pcDtoList = new ArrayList<>();
+        this.parameterCategoryMapper = new ParameterCategoryMapper();
         this.company = company;
     }
 

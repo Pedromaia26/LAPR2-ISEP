@@ -22,8 +22,22 @@ public class TestTypeStoreTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
-        TestType tt = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
-        TestType tt1 = c.getTestTypeStore().createTestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc02 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPC.add(pc01);
+        listPC.add(pc02);
+
+        List<ParameterCategory> listPC2 = new ArrayList<>();
+        ParameterCategory pc03 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc04 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPC2.add(pc03);
+        listPC2.add(pc04);
+
+        TestType tt = new TestType("COVID-19", "swab/blood", "89nja", listPC);
+        TestType tt1 = c.getTestTypeStore().createTestType("COVID-19", "swab/blood", "89nja", listPC2);
 
         Assert.assertEquals(tt, tt1);
     }
@@ -45,9 +59,23 @@ public class TestTypeStoreTest {
         c.getParameterCategoryStore().saveParameterCategory(pc1);
         c.getParameterCategoryStore().saveParameterCategory(pc2);
 
-        TestType tt = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPCtt = new ArrayList<>();
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc02 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPCtt.add(pc01);
+        listPCtt.add(pc02);
+
+        List<ParameterCategory> listPCtt2 = new ArrayList<>();
+        ParameterCategory pc03 = c.getParameterCategoryStore().getParameterCategoryByCode("kl172");
+        ParameterCategory pc04 = c.getParameterCategoryStore().getParameterCategoryByCode("81nma");
+
+        listPCtt2.add(pc03);
+        listPCtt2.add(pc04);
+
+        TestType tt = new TestType("COVID-19", "swab/blood", "89nja", listPCtt);
         TestType tt1 = null;
-        TestType tt2 = new TestType("COVID-19", "swab/blood", "89nja", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt2 = new TestType("COVID-19", "swab/blood", "89nja", listPCtt2);
 
         boolean flag1 = c.getTestTypeStore().validateTestType(tt);
         c.getTestTypeStore().addToList(tt);
