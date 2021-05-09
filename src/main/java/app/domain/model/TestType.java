@@ -58,7 +58,7 @@ public class TestType {
         this.listPC = listPC;
     }
     public String toString(){
-        return String.format("Description: %s; Collecting Method: %s; Code: %s; Categories: %s", description, collectingMethod, code, listPC);
+        return String.format("Description: %s\nCollecting Method: %s\nCode: %s\nCategories:\n%s", description, collectingMethod, code, listPC.toString());
     }
 
     @Override
