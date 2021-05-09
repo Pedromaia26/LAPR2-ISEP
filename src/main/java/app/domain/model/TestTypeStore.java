@@ -19,6 +19,7 @@ public class TestTypeStore {
      */
 
     public TestType createTestType (String description, String collectingMethod, String code, List<ParameterCategory> cat) {
+
         return new TestType(description, collectingMethod, code, cat);
     }
 

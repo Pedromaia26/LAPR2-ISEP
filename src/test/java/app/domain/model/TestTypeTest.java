@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
 public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeWithInvalidDescription() {
+    public void createTestTypeDescriptionWithMoreThan15chars() {
 
         Company c = new Company("Many Labs");
 
@@ -21,6 +22,19 @@ public class TestTypeTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void createTestTypeDescriptionWith15chars() {
+
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        c.getParameterCategoryStore().addToList(pc1);
+
+        TestType tt = new TestType("Sars-cov-2 tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+    }
+
+
+
+    @Test(expected = IllegalArgumentException.class)
     public void createTestTypeWithInvalidCollectingMethod() {
 
         Company c = new Company("Many Labs");
@@ -28,9 +42,8 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
 
-        List<ParameterCategory> cat = new ArrayList<>();
-        cat.add(pc1);
-        cat.add(pc2);
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
 
 
         TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", c.getParameterCategoryStore().getParameterCategories());
@@ -44,12 +57,52 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
 
-        List<ParameterCategory> cat = new ArrayList<>();
-        cat.add(pc1);
-        cat.add(pc2);
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
 
 
-        TestType tt = new TestType("Tests for COVID", "Sample", "abcdefwq", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt = new TestType("Tests for COVID", "Swab", "abcdefwq", c.getParameterCategoryStore().getParameterCategories());
     }
 
+    @Test
+    public void testToString() {
+
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
+
+    }
+
+    @Test
+    public void testEquals() {
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+
+        Assert.assertEquals(tt, tt1);
+    }
+    @Test
+    public void testEqualsDifferentClass() {
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+
+        Assert.assertNotEquals(tt, pc2);
+    }
 }

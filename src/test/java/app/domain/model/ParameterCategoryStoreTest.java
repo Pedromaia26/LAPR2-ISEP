@@ -52,7 +52,7 @@ public class ParameterCategoryStoreTest {
 
     @Test
     public void validateParameterCategoryNull() {
-        ParameterCategory pc = new ParameterCategory();
+        ParameterCategory pc = null;
 
         Company c = new Company("Many Labs");
         c.getParameterCategoryStore().validateParameterCategory(pc);
