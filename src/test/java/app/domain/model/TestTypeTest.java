@@ -58,8 +58,12 @@ public class TestTypeTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
-        TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        listPC.add(pc);
+
+        TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", listPC);
 
     }
     @Test(expected = IllegalArgumentException.class)
@@ -73,8 +77,16 @@ public class TestTypeTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
 
-        TestType tt = new TestType("Tests for COVID", "Swab", "abcdefwq", c.getParameterCategoryStore().getParameterCategories());
+
+        listPC.add(pc);
+        listPC.add(pc01);
+
+
+        TestType tt = new TestType("Tests for COVID", "Swab", "abcdefwq", listPC);
     }
 
     @Test
@@ -88,12 +100,12 @@ public class TestTypeTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
-        List<ParameterCategory> pclist = new ArrayList<>();
-        ParameterCategory pc0 = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
 
-        pclist.add(pc0);
+        listPC.add(pc);
 
-        TestType tt = new TestType("Blood test", "Tubes and syringe", "abcde", pclist);
+        TestType tt = new TestType("Blood test", "Tubes and syringe", "abcde", listPC);
 
         Assert.assertEquals("Description: Blood test\nCollecting Method: Tubes and syringe\nCode: abcde\nCategories:\n[Name: Immunity; Code: 11111]", tt.toString());
     }
@@ -108,10 +120,16 @@ public class TestTypeTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pc);
+        listPC.add(pc01);
 
 
-        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
-        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
+        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
 
         Assert.assertTrue(true);
     }
@@ -120,13 +138,20 @@ public class TestTypeTest {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "l91ma");
 
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
-        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
-        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("l91ma");
+
+        listPC.add(pc);
+        listPC.add(pc01);
+
+        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
+        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
 
         Assert.assertNotEquals(tt, pc2);
     }
@@ -136,13 +161,22 @@ public class TestTypeTest {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        ParameterCategory pc2 = null;
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "l91ma");
+        ParameterCategory pc3 = new ParameterCategory("Antibodies", "ak1il");
 
         c.getParameterCategoryStore().addToList(pc1);
-        c.getParameterCategoryStore().addToList(null);
+        c.getParameterCategoryStore().addToList(pc2);
+        c.getParameterCategoryStore().addToList(pc3);
 
-        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
-        TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        ParameterCategory pc01 = c.getParameterCategoryStore().getParameterCategoryByCode("ak1il");
+
+        listPC.add(pc);
+        listPC.add(pc01);
+
+        TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
+        TestType tt1 = null;
 
         Assert.assertFalse(false);
     }
