@@ -13,6 +13,10 @@ public class Interface {
 
     public static void main(String[] args) throws IOException {
         int escolha;
+
+        Company c = new Company("Many Labs");
+        CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+        CreateParameterController createParameterController = new CreateParameterController(c);
         do {
             Scanner ler = new Scanner(System.in);
 
@@ -39,7 +43,8 @@ public class Interface {
             escolha = ler.nextInt();
             System.out.println();
 
-            Company c = new Company("Many Labs");
+
+
 
             switch (escolha) {
                 case 1:
@@ -69,7 +74,7 @@ public class Interface {
                 case 5:
 
                     //Company c = new Company("Many Labs");
-                    CreateParameterController createParameterController = new CreateParameterController(c);
+
 
 
 
@@ -108,7 +113,7 @@ public class Interface {
                     break;
                 case 6:
 
-                    CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController(c);
+
 
                     System.out.println("Insert the code of the parameter category, please.");
                     ler.nextLine();

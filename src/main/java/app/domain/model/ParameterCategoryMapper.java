@@ -8,7 +8,11 @@ public class ParameterCategoryMapper{
     /**
      * List that stores the categories of the type ParameterCategoryDto.
      */
-    private List<ParameterCategoryDto> listParameterCategoryDto = new ArrayList<>();
+    private List<ParameterCategoryDto> listParameterCategoryDto;
+
+    public ParameterCategoryMapper(){
+        this.listParameterCategoryDto= new ArrayList<>();
+    }
 
 
     /**

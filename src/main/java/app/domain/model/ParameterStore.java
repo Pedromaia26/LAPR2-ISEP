@@ -8,7 +8,11 @@ public class ParameterStore {
     /**
      * List that contains the parameters.
      */
-    private List<Parameter> parameterList = new ArrayList<>();
+    private List<Parameter> parameterList;
+
+    public ParameterStore(){
+        parameterList = new ArrayList<>();
+    }
 
 
     /**

@@ -19,6 +19,7 @@ public class ParameterCategory {
      * @param code The parameter category code
      */
     public ParameterCategory (String name, String code){
+
         if (name.trim().length() > 10)
             throw new IllegalArgumentException("Name must have no more than 10 characters");
 
@@ -82,7 +83,7 @@ public class ParameterCategory {
     /**
      * Compares the object that evokes the method with another
      * @param o The object to compare
-     * @return
+     * @return True if objects are equal and false if different
      */
     @Override
     public boolean equals(Object o) {
