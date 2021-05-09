@@ -97,15 +97,28 @@ public class Interface {
                             System.out.println(cat);
                         }
 
+
+
                         String categoryCode = ler.nextLine();
+                        int confirm;
 
-
-
-                        if (createParameterController.createParameter(code, shortName, description, categoryCode)) {
-                            System.out.println("Parameter created successfully.");
-                        } else {
-                            System.out.println("Parameter creation error.");
+                        if(createParameterController.createParameter(code, shortName, description, categoryCode)); {
+                            System.out.println("--------------------------");
+                            System.out.println("Please confirm the data:");
+                            System.out.println(String.format("Code: %s\nShort Name: %s\nDescription: %s\nParameter Category Code: %S", code, shortName, description, categoryCode));
+                            System.out.println("--------------------------");
+                            System.out.println(" 1 --> Confirm");
+                            System.out.println(" 2 --> Cancel");
+                            confirm = ler.nextInt();
+                            if(confirm == 1){
+                                if(createParameterController.saveParameter()){
+                                    System.out.println("Parameter category created successfully.");
+                                }else{
+                                    System.out.println("Parameter category creation error.");
+                                }
+                            }
                         }
+
 
                         System.out.println("Do you want to create a new parameter?");
                         System.out.println(" 1 --> Yes");
@@ -152,7 +165,7 @@ public class Interface {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Escolha enexistente.");
+                    System.out.println("Invalid option");
                     break;
             }
         } while (escolha != 7);

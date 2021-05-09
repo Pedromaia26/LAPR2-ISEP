@@ -135,9 +135,12 @@ public class TestTypeTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        ParameterCategory pc3 = new ParameterCategory("Antibodies", "ma1la");
+
 
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+        c.getParameterCategoryStore().addToList(pc3);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
@@ -146,11 +149,34 @@ public class TestTypeTest {
         listPC.add(pc);
         listPC.add(pc01);
 
+        List<ParameterCategory> listPC2 = new ArrayList<>();
+        ParameterCategory pc02 = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+        ParameterCategory pc03 = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+        ParameterCategory pc04 = c.getParameterCategoryStore().getParameterCategoryByCode("ma1la");
+
+
+        listPC2.add(pc02);
+        listPC2.add(pc03);
+        listPC2.add(pc04);
+
 
         TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
         TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", listPC);
+        TestType tt2 = new TestType("COVID-19 Tests", "Swab", "yoda1", listPC);
+        TestType tt3 = new TestType("COVID-19 Tests", "Blood", "yoda1", listPC);
+        TestType tt4 = new TestType("COVID-19 Tests", "Blood", "yoda1", listPC2);
+        TestType tt5 = new TestType("COVID-19", "Swab", "abcde", listPC);
+        TestType tt6 = null;
 
-        Assert.assertTrue(true);
+
+        Assert.assertEquals(tt,tt1);
+        Assert.assertNotEquals(tt1,tt2);
+        Assert.assertNotEquals(tt2,tt3);
+        Assert.assertNotEquals(tt3,tt4);
+        Assert.assertNotEquals(tt5, tt1);
+        Assert.assertNotEquals(tt, tt6);
+
+
     }
     @Test
     public void testEqualsDifferentClass() {

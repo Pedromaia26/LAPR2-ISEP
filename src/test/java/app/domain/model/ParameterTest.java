@@ -52,8 +52,31 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCheckDescriptionRules() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-       // Parameter p1 = new Parameter("11111", "test", "this is a test of check description", pc1);
+        Parameter p1 = new Parameter("11111", "test", "this is a test of check description", pc1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckDescriptionRulest() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
         Parameter p3 = new Parameter("11111", "test", null, pc1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckDescriptionRulesy() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p4 = new Parameter("11111", "test", "qwertyuiolpkjhgfdsazx", pc1);
+    }
+
+    @Test
+    public void testToString() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p1 = new Parameter("11111", "test", "this is a test", pc1);
+
+        String expected = "Short Name: test; Code: 11111; Description: this is a test; Parameter Category: Name: test; Code: 12345";
+        String notExpected = "asdasdsad";
+
+        Assert.assertEquals(expected, p1.toString());
+        Assert.assertNotEquals(notExpected, p1.toString());
     }
 
 

@@ -12,6 +12,11 @@ public class ParameterCategoryDto {
      */
     private String name;
 
+    public ParameterCategoryDto(){
+        this.code = "";
+        this.name = "";
+    }
+
 
     /**
      * Constructs an instance of ParameterCategoryDto with the same attributes as the received ParameterCategory.
@@ -48,5 +53,23 @@ public class ParameterCategoryDto {
      */
     public String getName(){
         return name;
+    }
+
+    /**
+     * Change the name of the parameter category Dto.
+     *
+     * @param name The new name of the parameter category Dto
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Change the name of the parameter category Dto.
+     *
+     * @param code The new code of the parameter category Dto
+     */
+    public void setCode(String code) {
+        this.code = code;
     }
 }
