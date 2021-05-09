@@ -109,6 +109,6 @@ public class User {
     @Override
     public String toString()
     {
-        return String.format("%s - %s - %s", this.id.toString(), this.name, this.password);
+        return String.format("%s - %s", this.id.toString(), this.name);
     }
 }

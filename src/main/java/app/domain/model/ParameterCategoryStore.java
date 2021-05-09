@@ -9,10 +9,13 @@ public class ParameterCategoryStore {
      * List that contains the parameters categories.
      */
     private List<ParameterCategory> cat;
+    private List<ParameterCategory> pc;
+
+
 
     public ParameterCategoryStore(){
         cat = new ArrayList<>();
-
+        pc = new ArrayList<>();
     }
 
 
@@ -69,5 +72,12 @@ public class ParameterCategoryStore {
         return cat;
     }
 
-
+    public List<ParameterCategory> getParameterCategoryByCode(List<String> categories) {
+        for (String cats: categories){
+            pc.add(getParameterCategoryByCode(cats));
+        }
+            if (pc.isEmpty())
+            throw new IllegalArgumentException("There is no Parameter Category with such code!");
+            return pc;
+    }
 }

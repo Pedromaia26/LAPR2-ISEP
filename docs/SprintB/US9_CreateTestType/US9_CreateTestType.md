@@ -130,16 +130,15 @@ n/a
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1  		 |	... interacting with the actor? | CreateTestTypeUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
 | 			  		 |	... coordinating the US? | CreateTestTypeController | Controller                             |
-| 			  		 |	... instantiating a new TestType? | Company | Creator (Rule 1): in the DM Company conducts type of tests.   |
-| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation. |
+| 			  		 |	... instantiating a new TestType? | TestTypeStore | High Cohesion: prevent the Company from doing many different things. |
 | Step 2  		 |							 |             |                              |
-| Step 3  		 |	...saving the inputted data? | TestType  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the parameter categories to show? | Company | IE: Parameter categories are adopted by the Company. |
-| Step 5  		 |	... saving the selected category? | TestType | IE: object created in step 1 contains one or more Categories.  |
+| Step 3  		 |	...saving the inputted data? | TestTypeStore  | High Cohesion: prevent the Company from doing many different things.   |
+| Step 4  		 |	...knowing the parameter categories to show? | ParameterCategoryStore | High Cohesion: prevent the Company from doing many different things. |
+| Step 5  		 |	... saving the selected category? | ParameterCategoryStore | High Cohesion: prevent the Company from doing many different things.  |
 | Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | TestType | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Company | IE: knows all its test types.| 
-| 			  		 |	... saving the created type of test? | Company | IE: owns all its test types.| 
+| Step 7  		 |	... validating all data (local validation)? | TestTypeStore | owns its data.| 
+| 			  		 |	... validating all data (global validation)? | Company | knows all its test types.| 
+| 			  		 |	... saving the created type of test? | TestTypeStore | High Cohesion: prevent the Company from doing many different things. | 
 | Step 8  		 |	... informing operation success?| CreateTestTypeUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
@@ -148,6 +147,9 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Company
  * TestType
+ * TestTypeStore
+ * ParameterCategoryStore
+ * ParameterCategoryMapper
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
