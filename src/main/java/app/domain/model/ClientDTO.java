@@ -57,15 +57,13 @@ public class ClientDTO {
 
     @Override
     public String toString() {
-        return "ClientDTO{" +
-                "ccn=" + ccn +
+        return  "ccn=" + ccn +
                 ", nhs=" + nhs +
                 ", birth='" + birth + '\'' +
                 ", sex='" + sex + '\'' +
                 ", tif=" + tif +
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+                ", phoneNumber=" + phoneNumber;
     }
 }

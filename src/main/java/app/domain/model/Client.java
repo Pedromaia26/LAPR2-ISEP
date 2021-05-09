@@ -6,6 +6,7 @@ import auth.domain.model.Password;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Client {
 
@@ -75,8 +76,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "ccn=" + ccn +
+        return  "ccn=" + ccn +
                 ", nhs=" + nhs +
                 ", birth='" + birth + '\'' +
                 ", sex='" + sex + '\'' +
@@ -84,7 +84,15 @@ public class Client {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", phoneNumber=" + phoneNumber +
-                ", password=" + password +
-                '}';
+                ", password=" + password;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return Objects.equals(ccn, client.ccn) && Objects.equals(nhs, client.nhs) && Objects.equals(birth, client.birth) && Objects.equals(sex, client.sex) && Objects.equals(tif, client.tif) && Objects.equals(email, client.email) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(name, client.name);
+    }
+
 }

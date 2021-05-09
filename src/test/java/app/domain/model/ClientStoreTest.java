@@ -17,7 +17,7 @@ public class ClientStoreTest {
 
         Client client1=comp.getClientStore().createNewClient(clientDTO);
 
-        assertEquals(client,client1);
+        Assert.assertEquals(client,client1);
 
     }
 
@@ -52,4 +52,5 @@ public class ClientStoreTest {
 
 
     }
+
 }

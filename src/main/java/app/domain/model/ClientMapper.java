@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import java.util.Objects;
+
 public class ClientMapper{
 
     public static Client toModel(ClientDTO dto) {
@@ -14,5 +16,8 @@ public class ClientMapper{
         long phoneNumber = dto.getPhoneNumber();
 
         return new Client(ccn, nhs, birth, sex, tif, email, name, phoneNumber);
+
+
     }
+
 }

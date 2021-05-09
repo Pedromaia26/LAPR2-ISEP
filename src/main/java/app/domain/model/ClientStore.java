@@ -68,10 +68,5 @@ public class ClientStore {
 
     }
 
-    @Override
-    public String toString() {
-        return "ClientStore{" +
-                "clientList=" + clientList +
-                '}';
-    }
+
 }
