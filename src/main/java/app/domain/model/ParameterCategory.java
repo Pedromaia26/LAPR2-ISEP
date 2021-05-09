@@ -70,11 +70,20 @@ public class ParameterCategory {
         this.code = code;
     }
 
+    /**
+     * Returns the textual description of parameter category.
+     * @return Characteristics of the parameter category
+     */
     @Override
     public String toString() {
         return String.format("Name: %s; Code: %s", name, code);
     }
 
+    /**
+     * Compares the object that evokes the method with another
+     * @param o The object to compare
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
