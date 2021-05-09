@@ -12,10 +12,6 @@ public class ParameterCategoryDto {
      */
     private String name;
 
-    public ParameterCategoryDto(){
-        this.code = "";
-        this.name = "";
-    }
 
 
     /**
