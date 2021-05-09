@@ -57,6 +57,10 @@ public class TestTypeStore {
         return testTypeList.add(tt);
     }
 
+    /**
+     * Returns the list of test types.
+     * @return list of test types.
+     */
     public List<TestType> getTestTypes(){
         return testTypeList;
     }

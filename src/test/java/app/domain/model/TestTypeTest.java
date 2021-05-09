@@ -18,7 +18,12 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         c.getParameterCategoryStore().addToList(pc1);
 
-        TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pc);
+
+        TestType tt = new TestType("Antibody or seroly test to determine if you have been infected by the virus that causes COVID-19", "Swab", "abcde", listPC);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -27,9 +32,17 @@ public class TestTypeTest {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
 
-        TestType tt = new TestType("Sars-cov-2 tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pc);
+
+
+        TestType tt = new TestType("Sars-cov-2 tests", "Swab", "abcde", listPC);
     }
 
 
@@ -75,9 +88,14 @@ public class TestTypeTest {
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
-        TestType tt = new TestType("Blood test", "Tubes and syringe", "abcde", c.getParameterCategoryStore().getParameterCategories());
+        List<ParameterCategory> pclist = new ArrayList<>();
+        ParameterCategory pc0 = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
 
-        Assert.assertEquals("Description: Blood test\nCollecting Method: Tubes and syringe\nCode: abcde\nCategories:\n[Name: Immunity; Code: 11111, Name: Hemogram; Code: 10019]", tt.toString());
+        pclist.add(pc0);
+
+        TestType tt = new TestType("Blood test", "Tubes and syringe", "abcde", pclist);
+
+        Assert.assertEquals("Description: Blood test\nCollecting Method: Tubes and syringe\nCode: abcde\nCategories:\n[Name: Immunity; Code: 11111]", tt.toString());
     }
 
     @Test
@@ -89,6 +107,8 @@ public class TestTypeTest {
 
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+
+
 
         TestType tt = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());
         TestType tt1 = new TestType("COVID-19 Tests", "Swab", "abcde", c.getParameterCategoryStore().getParameterCategories());

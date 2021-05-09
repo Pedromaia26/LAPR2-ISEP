@@ -18,6 +18,7 @@ public class TestTypeController {
     }
 
     public TestTypeController(Company company) {
+        this.company = company;
 
     }
 

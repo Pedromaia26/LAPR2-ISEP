@@ -8,22 +8,22 @@ public class TestType {
     /**
      * String that contains the description of a type of test
      */
-    private final String description;
+    private String description;
 
     /**
      * String that contains the description of a collecting method
      */
-    private final String collectingMethod;
+    private String collectingMethod;
 
     /**
      * String that contains the code of a type of test
      */
-    private final String code;
+    private String code;
 
     /**
      * List that contains the parameter categories.
      */
-    private final List<ParameterCategory> listPC;
+    private List<ParameterCategory> listPC;
 
 
     /**
@@ -57,6 +57,11 @@ public class TestType {
 
         this.listPC = listPC;
     }
+
+    /**
+     * Returns the textual description of a test type.
+     * @return characteristics of a test type.
+     */
     public String toString(){
         return String.format("Description: %s\nCollecting Method: %s\nCode: %s\nCategories:\n%s", description, collectingMethod, code, listPC.toString());
     }
@@ -70,4 +75,71 @@ public class TestType {
         return Objects.equals(description, testType.description) && Objects.equals(collectingMethod, testType.collectingMethod) && Objects.equals(code, testType.code) && Objects.equals(listPC, testType.listPC);
     }
 
+    /**
+     * Returns the description of a test type.
+     * @return the description of a test type.
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Change the description of a test type.
+     * @param description the new description of a test type.
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * Returns the collecting method of a test type.
+     * @return the collecting method the test type.
+     */
+
+    public String getCollectingMethod() {
+        return collectingMethod;
+    }
+
+    /**
+     * Change the collecting method of a test type.
+     * @param collectingMethod the new collecting method of the test type.
+     */
+
+    public void setCollectingMethod(String collectingMethod) {
+        this.collectingMethod = collectingMethod;
+    }
+
+    /**
+     * Returns the code of a test type.
+     * @return the code of the test type.
+     */
+
+    public String getCode() {
+        return code;
+    }
+
+    /**
+     * Change the code of a test type.
+     * @param code the new code of the test type.
+     */
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    /**
+     * Returns the parameter categories of a test type.
+     * @return list of parameter categories of the test type.
+     */
+    public List<ParameterCategory> getListPC() {
+        return listPC;
+    }
+
+    /**
+     * Change the list of parameter categories of a test type.
+     * @param listPC the new list of parameter categories of the test type.
+     */
+    public void setListPC(List<ParameterCategory> listPC) {
+        this.listPC = listPC;
+    }
 }
