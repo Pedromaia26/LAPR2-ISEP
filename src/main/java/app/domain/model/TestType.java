@@ -8,22 +8,22 @@ public class TestType {
     /**
      * String that contains the description of a type of test
      */
-    private String description;
+    private final String description;
 
     /**
      * String that contains the description of a collecting method
      */
-    private String collectingMethod;
+    private final String collectingMethod;
 
     /**
      * String that contains the code of a type of test
      */
-    private String code;
+    private final String code;
 
     /**
      * List that contains the parameter categories.
      */
-    private List<ParameterCategory> listPC;
+    private final List<ParameterCategory> listPC;
 
 
     /**

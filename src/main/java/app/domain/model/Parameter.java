@@ -68,8 +68,8 @@ public class Parameter {
         if (StringUtils.isBlank(shortName)) {
             throw new IllegalArgumentException("Code cannot be blank.");
         }
-        if (shortName.length() > 8 ) {
-            throw new IllegalArgumentException("Code must have 4 to 8 chars.");
+        if (shortName.length() > 8) {
+            throw new IllegalArgumentException("Short name must have 8 or less characters.");
         }
     }
 
@@ -95,8 +95,4 @@ public class Parameter {
         return this.category.equals(parameter.category) && this.description.equals(parameter.description) && this.code.equals(parameter.code) && this.shortName.equals(parameter.shortName);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(code, shortName, description, category);
-    }
 }

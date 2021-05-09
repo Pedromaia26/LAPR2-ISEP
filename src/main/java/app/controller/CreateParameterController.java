@@ -7,13 +7,14 @@ import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryDto;
 import app.domain.model.ParameterCategoryMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class CreateParameterController {
 
     private Company company;
-    private List<ParameterCategoryDto> pcDtoList;
+    private List<ParameterCategoryDto> pcDtoList = new ArrayList<>();
     private Parameter parameter;
     private ParameterCategory cat;
     private ParameterCategoryMapper parameterCategoryMapper;
@@ -44,13 +45,5 @@ public class CreateParameterController {
     public List<ParameterCategoryDto> getParameterCategoryDto(){
         return this.parameterCategoryMapper.toDto(getParameterCategory());
     }
-
-
-
-
-
-
-
-
 
 }

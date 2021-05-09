@@ -33,6 +33,7 @@ public class ParameterCategory {
 
 
 
+
     /**
      * Returns the code of the parameter category.
      *
@@ -73,4 +74,13 @@ public class ParameterCategory {
     public String toString() {
         return String.format("Name: %s; Code: %s", name, code);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ParameterCategory that = (ParameterCategory) o;
+        return this.name.equals(that.name) && this.code.equals(that.code);
+    }
+
 }

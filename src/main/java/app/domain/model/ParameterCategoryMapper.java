@@ -1,10 +1,11 @@
 package app.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterCategoryMapper{
 
-    private List<ParameterCategoryDto> listParameterCategoryDto;
+    private List<ParameterCategoryDto> listParameterCategoryDto = new ArrayList<>();
 
 
     public List<ParameterCategoryDto> toDto(List<ParameterCategory> listParameterCategory) {

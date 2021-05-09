@@ -5,6 +5,7 @@ participant ":RegistEmployeeController" as Controller
 participant ":Company" as Company
 participant ":RolesMapper" as RolesMapper
 participant "store \n :EmployeeStore" as estore
+participant ":EmployeeMapper" as eMapper
 participant "empDto: EmployeeDto" as EmployeeDto
 participant "store \n :RolesStore" as rstore
 participant "role:OrgRole" as OrgRole
@@ -38,40 +39,42 @@ Adm -> Interface: types requested data
 activate Interface
 Interface --> Controller: createEmployee(empDto)
 activate Controller
-Controller -> estore: emp = createEmployee(empDto)
+Controller -> estore: createEmployee(empDto)
 activate estore
-estore -> EmployeeDto: roleId = getRoleId()
+estore -> eMapper: toDTO(empDto)
+activate eMapper
+eMapper -> EmployeeDto: roleId = getRoleId()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> rstore: role = getRoleById(roleId)
+eMapper -> rstore: role = getRoleById(roleId)
 activate rstore
 deactivate rstore
-estore -> EmployeeDto: id = getId()
+eMapper -> EmployeeDto: id = getId()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> EmployeeDto: name = getName()
+eMapper -> EmployeeDto: name = getName()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> EmployeeDto: adress = getAdress()
+eMapper -> EmployeeDto: adress = getAdress()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> EmployeeDto: phoneNumber = getphoneNumber()
+eMapper -> EmployeeDto: phoneNumber = getphoneNumber()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> EmployeeDto: emailAdress = getEmailAdress()
+eMapper -> EmployeeDto: emailAdress = getEmailAdress()
 activate EmployeeDto
 deactivate EmployeeDto
-estore -> EmployeeDto: socCode = getsocCode()
+eMapper -> EmployeeDto: socCode = getsocCode()
 activate EmployeeDto
 deactivate EmployeeDto
 alt role != SpecialistDoctor
-    estore -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
+    eMapper -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
     activate OrgRole
 else
-    estore -> EmployeeDto: doctorIndexNumber = getDoctorIndexNumber()
+    eMapper -> EmployeeDto: doctorIndexNumber = getDoctorIndexNumber()
     activate EmployeeDto
     deactivate EmployeeDto
-    estore -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+    eMapper -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
 end
 alt role != SpecialistDoctor
     create "emp:Employee" as Employee
@@ -80,6 +83,7 @@ else
     create "emp:SpecialistDoctor" as Doctor
     OrgRole -> Doctor:create(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
 end
+deactivate eMapper
 deactivate OrgRole
 deactivate estore
 Controller -> estore: validateEmployee(emp)
