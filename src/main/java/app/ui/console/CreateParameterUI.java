@@ -24,16 +24,15 @@ public class CreateParameterUI implements Runnable{
             String description = ler.nextLine();
             System.out.println("Insert code of the category that categorize the parameter");
 
-            for( ParameterCategoryDto cat : createParameterController.getParameterCategoryDto()){
+            for(ParameterCategoryDto cat : createParameterController.getParameterCategoryDto()){
                 System.out.println(cat);
             }
-
-
 
             String categoryCode = ler.nextLine();
             int confirm;
 
-            if(createParameterController.createParameter(code, shortName, description, categoryCode)); {
+            if(createParameterController.createParameter(code, shortName, description, categoryCode));
+            {
                 System.out.println("--------------------------");
                 System.out.println("Please confirm the data:");
                 System.out.println(String.format("Code: %s\nShort Name: %s\nDescription: %s\nParameter Category Code: %S", code, shortName, description, categoryCode));
