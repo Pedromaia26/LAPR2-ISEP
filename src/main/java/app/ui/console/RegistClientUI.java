@@ -47,17 +47,9 @@ public class RegistClientUI implements Runnable {
 
         cliente.createNewClient(new ClientDTO(ccn,nhs,birth,sex,tif,email,name,phoneNumber));
 
-        try {
-            System.out.println(cliente.saveClient());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        Set<User> list;
-            list = App.getInstance().getCompany().getUserStore().getStore();
-            for(User emp : list){
-                System.out.println(emp);
-            }
+
+
 
     }
 }

@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import auth.domain.model.Email;
 import auth.domain.model.Password;
 import org.junit.Assert;
 import org.junit.Test;
@@ -168,4 +169,23 @@ public class ClientTest {
         Assert.assertEquals(anosdif,21);
 
     }
+
+    @Test
+    public void getEmail() {
+        Client nc = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Company c = new Company("Many Labs");
+        Email email = nc.getEmail();
+
+        Assert.assertEquals(email, "asd@gmail.com");
+    }
+
+    @Test
+    public void getName() {
+        Client nc = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Company c = new Company("Many Labs");
+        String name = nc.getName();
+
+        Assert.assertEquals(name, "Moirane");
+    }
+
 }
