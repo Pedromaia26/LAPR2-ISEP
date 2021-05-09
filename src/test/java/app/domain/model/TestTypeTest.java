@@ -42,7 +42,7 @@ public class TestTypeTest {
         listPC.add(pc);
 
 
-        TestType tt = new TestType("Sars-cov-2 tests", "Swab", "abcde", listPC);
+        TestType tt = new TestType("Sars-cov-2 test", "Swab", "abcde", listPC);
     }
 
 
