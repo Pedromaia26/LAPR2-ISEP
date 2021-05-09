@@ -1,11 +1,11 @@
 @startuml
 actor Administrator as Adm
 participant ":RegistLaboratory UI" as System
-participant ":RegistLaboratoryCrontroller" as RLC
+participant ":RegistLaboratoryController" as RLC
 participant ":Company" as ML
-participant ":TestType" as tt
+participant "store\n:TestTypeStore" as tt
 participant ":listPCMapper" as lpc
-participant "Laboratory" as lab
+participant "store\n:LaboratoryStore" as lab
 
 
 autonumber
@@ -38,16 +38,17 @@ deactivate lpc
 deactivate RLC
 deactivate System
 
-
 loop
+
 System --> Adm: shows the data and request a confirmation
 Adm --> System: selects a type of test
 activate System
-
 System --> RLC: createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
 activate RLC
 RLC --> tt: test=getTestTypeByCode(code)
+
 end
+
 activate tt
 deactivate tt
 RLC --> tt: cl=createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
@@ -61,6 +62,7 @@ deactivate tt
 System --> Adm: shows all data and requests a confirmation
 deactivate RLC
 deactivate System
+
 Adm --> System: confirms all data
 activate System
 System --> RLC: saveLaboratory()
