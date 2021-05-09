@@ -27,9 +27,7 @@ public class User {
         this.name = name.trim();
     }
 
-    public Email getId() {
-        return id;
-    }
+    public Email getId() { return id; }
 
     public String getName() {
         return name;

@@ -79,16 +79,20 @@ public class TestTypeStoreTest {
 
         boolean flag1 = c.getTestTypeStore().validateTestType(tt);
         c.getTestTypeStore().addToList(tt);
-        c.getTestTypeStore().saveTestType(tt);
-        boolean flag2 = c.getTestTypeStore().validateTestType(tt1);
+        boolean flag2 = c.getTestTypeStore().saveTestType(tt);
+        boolean flag3 = c.getTestTypeStore().validateTestType(tt1);
         c.getTestTypeStore().addToList(tt1);
         c.getTestTypeStore().saveTestType(tt1);
-        boolean flag3 = c.getTestTypeStore().validateTestType(tt2);
+        boolean flag4 = c.getTestTypeStore().validateTestType(tt2);
+        c.getTestTypeStore().addToList(tt2);
+        boolean flag5 = c.getTestTypeStore().saveTestType(tt2);
+
 
         Assert.assertTrue(flag1);
-        Assert.assertFalse(flag2);
+        Assert.assertTrue(flag2);
         Assert.assertFalse(flag3);
-
+        Assert.assertFalse(flag4);
+        Assert.assertFalse(flag5);
     }
 
     @Test

@@ -6,13 +6,15 @@ import java.util.List;
 public class RolesStore {
 
     static List<OrgRole> lRoles = new ArrayList<>();
-    public void addjoiasjoifdasj() {
-        lRoles.add(new OrgRole("Administrator"));
-        lRoles.add(new OrgRole("Receptionist"));
-        lRoles.add(new OrgRole("Medical Lab Technician"));
-        lRoles.add(new OrgRole("Clinical Chemestry Technologist"));
-        lRoles.add(new OrgRole("Laboratory Coordinator"));
-        lRoles.add(new OrgRole("SpecialistDoctor"));
+    public static void addDefaultRoles() {
+        if (lRoles.isEmpty()){
+            lRoles.add(new OrgRole("Administrator"));
+            lRoles.add(new OrgRole("Receptionist"));
+            lRoles.add(new OrgRole("MLT"));
+            lRoles.add(new OrgRole("CCT"));
+            lRoles.add(new OrgRole("LC"));
+            lRoles.add(new OrgRole("SD"));
+        }
     }
 
     public static List<OrgRole> getRoles(){

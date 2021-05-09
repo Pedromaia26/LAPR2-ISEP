@@ -18,6 +18,7 @@ public class Company {
     private ParameterCategoryStore parameterCategoryStore;
     private ParameterStore parameterStore;
     private ClientStore clientStore;
+    private EmployeeStore employeeStore;
 
 
     public Company(String designation)
@@ -31,6 +32,7 @@ public class Company {
         this.parameterCategoryStore = new ParameterCategoryStore();
         this.clientStore= new ClientStore();
         this.parameterStore = new ParameterStore();
+        this.employeeStore = new EmployeeStore();
     }
 
     public String getDesignation() {
@@ -50,5 +52,11 @@ public class Company {
     public ParameterStore getParameterStore() {
         return parameterStore;
     }
-    public ClientStore getClientStore() { return clientStore; }
+    public ClientStore getClientStore() {
+        return clientStore;
+    }
+    public EmployeeStore getEmployeeStore() {
+        return employeeStore;
+    }
+
 }
