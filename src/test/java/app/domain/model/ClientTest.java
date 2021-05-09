@@ -141,4 +141,31 @@ public class ClientTest {
 
     }
 
+    @Test
+    public void calculateAge150() {
+        Company c= new Company("ManyLabs");
+        Client client = new Client(1234567890123451L,1234567890L,"09/05/1871","male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        int anosdif= client.calculateAge("09/05/1871");
+
+        Assert.assertEquals(anosdif,150);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void calculateAge150plus() {
+        Company c= new Company("ManyLabs");
+        Client client = new Client(1234567890123451L,1234567890L,"09/05/1870","male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        int anosdif= client.calculateAge("09/05/1871");
+
+        Assert.assertEquals(anosdif,151);
+
+    }
+    @Test
+    public void calculateAge() {
+        Company c= new Company("ManyLabs");
+        Client client = new Client(1234567890123451L,1234567890L,"09/05/1871","male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        int anosdif= client.calculateAge("09/05/2000");
+
+        Assert.assertEquals(anosdif,21);
+
+    }
 }
