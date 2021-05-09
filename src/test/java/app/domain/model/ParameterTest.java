@@ -34,19 +34,22 @@ public class ParameterTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCheckCodeRules() {
+    public void testCheckCodeRules1() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-        //Parameter p1 = new Parameter("1111111", "test", "this is a test", pc1);
-        Parameter p2 = new Parameter(null, "test", "this is a test", pc1);
-
+        Parameter p1 = new Parameter("1111111", "test", "this is a test", pc1);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCheckShortNameRules() {
+    public void testCheckCodeRules2() {
         ParameterCategory pc1 = new ParameterCategory("test", "12345");
-        //Parameter p1 = new Parameter("11111", "thisIsATest", "this is a test", pc1);
-        Parameter p2 = new Parameter("11111", null, "this is a test", pc1);
+        Parameter p2 = new Parameter(null, "test", "this is a test", pc1);
+    }
 
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCheckShortNameRules3() {
+        ParameterCategory pc1 = new ParameterCategory("test", "12345");
+        Parameter p2 = new Parameter("11111", null, "this is a test", pc1);
     }
 
     @Test(expected = IllegalArgumentException.class)
