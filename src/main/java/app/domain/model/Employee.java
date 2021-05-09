@@ -1,10 +1,13 @@
 package app.domain.model;
 
+import app.controller.App;
 import auth.domain.model.Email;
+import auth.domain.model.UserRole;
+import auth.domain.store.UserRoleStore;
 
 public class Employee {
 
-    private String userRole;
+    private UserRole userRole;
     private String employeeId;
     private String name;
     private String adress;
@@ -12,7 +15,14 @@ public class Employee {
     private Email email;
     private int socCode;
 
-    public Employee(String userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
+    public Employee(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
+        Company c = new Company("Many Labs");
+        if(!(c.getAuthFacade().addUserRole(userRole.getId(), userRole.getDescription()))){
+            System.out.println("OLA");
+            throw new IllegalArgumentException("User role invalid");
+        }
+        this.userRole = userRole;
+
         this.employeeId = employeeId;
 
         if (name.length() > 35)
@@ -23,20 +33,20 @@ public class Employee {
             throw new IllegalArgumentException("Adress cannot be empty");
         this.adress = adress;
 
-        if (String.valueOf(socCode).length() != 11)
-            throw new IllegalArgumentException("Phone number cannot have more than 11 digits");
+        if (String.valueOf(phoneNumber).length() != 11)
+            throw new IllegalArgumentException("Phone number should have 11 digits");
         this.phoneNumber = phoneNumber;
 
         this.email = new Email(email.toString());
 
         if (String.valueOf(socCode).length() != 4)
-            throw new IllegalArgumentException("Soc code cannot have more than 4 characters");
+            throw new IllegalArgumentException("Soc code should have 4 characters");
         this.socCode = socCode;
 
         this.userRole = userRole;
     }
 
-    public String getUserRole() {
+    public UserRole getUserRole() {
         return userRole;
     }
 
@@ -62,5 +72,18 @@ public class Employee {
 
     public int getSocCode() {
         return socCode;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "userRole=" + userRole +
+                ", employeeId='" + employeeId + '\'' +
+                ", name='" + name + '\'' +
+                ", adress='" + adress + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", email=" + email +
+                ", socCode=" + socCode +
+                '}';
     }
 }

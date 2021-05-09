@@ -11,20 +11,37 @@ public class RegistEmployeeController {
     private List<OrgRole> lRolesDto = new ArrayList<>();
 
     private Employee emp;
+    private SpecialistDoctor empsd;
 
     public List<OrgRole> getRoles(){
-        RolesStore.addDefaultRoles();
         lRoles = RolesStore.getRoles();
         lRolesDto = RolesMapper.toDTO(lRoles);
         return lRolesDto;
     }
 
-    public boolean createEmployee(Employee empDto){
+    public boolean createEmployee(EmployeeDto empDto){
         this.emp = EmployeeStore.createEmployee(empDto);
         return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
     }
 
+    public boolean createSpecialistDoctor(EmployeeDto spedocdto){
+        this.empsd = EmployeeStore.createSpecialistDoctor(spedocdto);
+        return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
+    }
+
+    public List<Employee> getEmployeeList(){
+        return App.getInstance().getCompany().getEmployeeStore().getEmployeeList();
+    }
+
+    public List<SpecialistDoctor> getSpecialistDoctorList(){
+        return App.getInstance().getCompany().getEmployeeStore().getSpecialistDoctors();
+    }
+
     public void saveEmployee(){
         App.getInstance().getCompany().getEmployeeStore().saveEmployee(emp);
+    }
+
+    public void saveSpecialistDoctor(){
+        App.getInstance().getCompany().getEmployeeStore().saveSpecialistDoctor(empsd);
     }
 }
