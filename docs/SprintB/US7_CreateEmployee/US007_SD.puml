@@ -9,6 +9,7 @@ participant ":EmployeeMapper" as eMapper
 participant "empDto: EmployeeDto" as EmployeeDto
 participant "store \n :RolesStore" as rstore
 participant "role:OrgRole" as OrgRole
+participant "AuthFacade" as AuthFacade
  
  
 autonumber
@@ -106,6 +107,9 @@ deactivate estore
 estore -> estore: addEmployee(emp)
 activate estore
 deactivate estore
+estore -> AuthFacade: createUser(emp)
+activate AuthFacade
+deactivate AuthFacade
 deactivate estore
 deactivate Controller
 Interface -> Adm: informs operation success
