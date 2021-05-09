@@ -48,7 +48,7 @@ public class TestTypeTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeWithInvalidCollectingMethod() {
+    public void createTestTypeCollectingMethodWithMoreThan20Chars() {
 
         Company c = new Company("Many Labs");
 
@@ -66,6 +66,25 @@ public class TestTypeTest {
         TestType tt = new TestType("Tests for COVID", "To make a Covid test you need a swab to collect a sample", "abcde", listPC);
 
     }
+
+
+    public void createTestTypeCollectingMethodWith20Chars() {
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pc);
+
+        TestType tt = new TestType("Blood", "Swab or syringe/tube", "abcde", listPC);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void createTestTypeWithInvalidCode() {
 
