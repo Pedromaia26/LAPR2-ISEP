@@ -34,6 +34,7 @@ public class CreateParameterController {
 
     public boolean createParameter(String code, String shortName, String description, String categoryCode){
         this.cat = this.company.getParameterCategoryStore().getParameterCategoryByCode(categoryCode);
+        System.out.println("asdasd = " + cat);
         this.parameter = this.company.getParameterStore().createParameter(code, shortName, description, cat);
         return this.company.getParameterStore().validateParameter(parameter);
     }
