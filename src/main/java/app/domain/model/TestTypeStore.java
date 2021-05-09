@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestTypeStore {
@@ -7,7 +8,12 @@ public class TestTypeStore {
     /**
      * List that contains the types of tests.
      */
-    private List <TestType> testTypeList;
+    private List <TestType> testTypeList = new ArrayList<>();
+
+    public void addToList (TestType tt){
+        if (!testTypeList.contains(tt))
+            testTypeList.add(tt);
+    }
 
     /**
      * Create a new type of test with the attributes received.
@@ -46,5 +52,9 @@ public class TestTypeStore {
         if (!validateTestType(tt))
             return false;
         return testTypeList.add(tt);
+    }
+
+    public List<TestType> getTestTypes(){
+        return testTypeList;
     }
 }
