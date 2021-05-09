@@ -15,6 +15,7 @@ public class TestTypeStore {
      * @param tt receives an instance of TestType.
      */
     public void addToList (TestType tt){
+        if (!validateTestType(tt))
             testTypeList.add(tt);
     }
 
