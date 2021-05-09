@@ -15,7 +15,7 @@ public class ParameterStoreTest {
         Company c = new Company("Many Labs");
         Parameter p2 = c.getParameterStore().createParameter("11111","test", "this is a test", pc1);
 
-        assertEquals(p1, p2);
+        Assert.assertEquals(p1, p2);
 
     }
 
@@ -28,13 +28,18 @@ public class ParameterStoreTest {
         Company c = new Company("Many Labs");
         boolean flag = c.getParameterStore().validateParameter(p1);
         boolean flag2 = c.getParameterStore().validateParameter(p2);
+        c.getParameterStore().addParameter(p1);
+        boolean flag3 = c.getParameterStore().validateParameter(p1);
 
-        assertTrue(flag);
-        assertFalse(flag2);
+        Assert.assertFalse(flag3);
+        Assert.assertTrue(flag);
+        Assert.assertFalse(flag2);
     }
 
     @Test
     public void saveParameter() {
     }
+
+
 
 }

@@ -47,5 +47,9 @@ public class ParameterStore {
         return this.parameterList.add(parameter);
     }
 
+    public void addParameter(Parameter parameter) {
+        parameterList.add(parameter);
+    }
+
 
 }

@@ -8,7 +8,8 @@ public class ParameterCategoryStore {
     /**
      * List that contains the parameters categories.
      */
-    private final List<ParameterCategory> cat = new ArrayList<>();
+    private List<ParameterCategory> cat = new ArrayList<>();
+
 
     public void addToList (ParameterCategory category){
         if (!cat.contains(category))
