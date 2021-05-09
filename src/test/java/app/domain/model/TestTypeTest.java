@@ -166,6 +166,7 @@ public class TestTypeTest {
         TestType tt3 = new TestType("COVID-19 Tests", "Blood", "yoda1", listPC);
         TestType tt4 = new TestType("COVID-19 Tests", "Blood", "yoda1", listPC2);
         TestType tt5 = new TestType("COVID-19", "Swab", "abcde", listPC);
+        TestType tt6 = null;
 
 
         Assert.assertEquals(tt,tt1);
@@ -173,6 +174,8 @@ public class TestTypeTest {
         Assert.assertNotEquals(tt2,tt3);
         Assert.assertNotEquals(tt3,tt4);
         Assert.assertNotEquals(tt5, tt1);
+        Assert.assertNotEquals(tt, tt6);
+
 
     }
     @Test
