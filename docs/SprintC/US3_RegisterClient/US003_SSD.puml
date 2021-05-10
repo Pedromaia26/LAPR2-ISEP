@@ -1,0 +1,20 @@
+@startuml
+actor Receptionist as Adm
+participant ":System" as System
+
+autonumber
+activate Adm
+Adm -> System: starts new Client
+activate System
+System --> Adm: request data(Citizen card number, National Healthcare Service (NHS) number, Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
+deactivate System
+Adm -> System: types requested data
+activate System
+System --> Adm: shows the data and request a confirmation
+deactivate System
+Adm -> System: confirms the data
+activate System
+System --> Adm: informs operation success 
+deactivate System
+deactivate Adm
+@enduml

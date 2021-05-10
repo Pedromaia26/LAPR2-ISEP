@@ -1,0 +1,37 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class ParameterCategory {
+  -code
+  -description
+  -nhsId
+}
+
+class Administrator {
+
+}
+
+class TestType {
+   -code
+   -description
+   -collectingMethod
+}
+
+
+
+Company "1" -- "1..*" TestType: conducts >
+TestType "1" -- "1..*" ParameterCategory: has a set of >
+Administrator "1..*" -- "*" ParameterCategory: created by <
+Company "1" -- "*" Administrator: has >
+Administrator "*" -- "*" TestType: specifies >
+Company "1" -- "*" ParameterCategory: adopts >
+
+
+@enduml
