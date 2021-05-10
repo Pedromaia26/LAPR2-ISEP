@@ -128,8 +128,8 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateTestTypeUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateTestTypeController | Controller                             |
+| Step 1  		 |	... interacting with the actor? | TestTypeUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  		 |	... coordinating the US? | TestTypeController | Controller                             |
 | 			  		 |	... instantiating a new TestType? | TestTypeStore | High Cohesion: prevent the Company from doing many different things. |
 | Step 2  		 |							 |             |                              |
 | Step 3  		 |	...saving the inputted data? | TestTypeStore  | High Cohesion: prevent the Company from doing many different things.   |
@@ -139,7 +139,7 @@ n/a
 | Step 7  		 |	... validating all data (local validation)? | TestTypeStore | owns its data.| 
 | 			  		 |	... validating all data (global validation)? | Company | knows all its test types.| 
 | 			  		 |	... saving the created type of test? | TestTypeStore | High Cohesion: prevent the Company from doing many different things. | 
-| Step 8  		 |	... informing operation success?| CreateTestTypeUI  | IE: is responsible for user interactions.  | 
+| Step 8  		 |	... informing operation success?| TestTypeUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
@@ -153,8 +153,8 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateTaskUI  
- * CreateTaskController
+ * TestTypeUI 
+ * TestTypeController
 
 
 ## 3.2. Sequence Diagram (SD)
