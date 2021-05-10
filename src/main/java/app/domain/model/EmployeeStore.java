@@ -55,16 +55,16 @@ public class EmployeeStore {
         String pwd = System.getProperty("user.dir");
 
 
-        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessagesEmployees");
         if (!emailAndSMSMessages.exists()) {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt");
 
         String password =  generatePassword();
 
-        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
+        out.printf("Funcionario registado com sucesso a sua password de acesso é : %s",password);
         emp.setPassword(password);
 
 
@@ -77,17 +77,21 @@ public class EmployeeStore {
         String pwd = System.getProperty("user.dir");
 
 
-        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessagesEmployees");
         if (!emailAndSMSMessages.exists()) {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt");
 
         String password =  generatePassword();
 
-        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
+        out.printf("Funcionario registado com sucesso a sua password de acesso é : %s",password);
+
+        out.close();
+
         emp.setPassword(password);
+
         SpecialistDoctors.add(emp);
     }
 

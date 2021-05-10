@@ -41,8 +41,10 @@ public class ClientStore {
         sendEmail(nc);
 
         addNewClient(nc);
+
         return CreateUser(nc);
     }
+
     public String generatePassword(){
         int num= 10;
         String a="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
@@ -65,16 +67,16 @@ public class ClientStore {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
 
         String password =  generatePassword();
-
-        out.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
-
-
+        System.out.println("asd");
+        asd.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
 
 
-        out.close();
+
+
+        asd.close();
         nc.setPassword(password);
 
     }

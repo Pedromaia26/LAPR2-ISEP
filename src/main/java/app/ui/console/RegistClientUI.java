@@ -47,8 +47,11 @@ public class RegistClientUI implements Runnable {
 
         cliente.createNewClient(new ClientDTO(ccn,nhs,birth,sex,tif,email,name,phoneNumber));
 
-
-
+        try {
+            cliente.saveClient();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
