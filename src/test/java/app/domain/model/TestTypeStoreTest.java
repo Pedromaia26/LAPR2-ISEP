@@ -78,7 +78,6 @@ public class TestTypeStoreTest {
         TestType tt2 = new TestType("COVID-19", "swab/blood", "89nja", listPCtt2);
 
         boolean flag1 = c.getTestTypeStore().validateTestType(tt);
-        c.getTestTypeStore().addToList(tt);
         boolean flag2 = c.getTestTypeStore().saveTestType(tt);
         boolean flag3 = c.getTestTypeStore().validateTestType(tt1);
         c.getTestTypeStore().addToList(tt1);
