@@ -1,0 +1,103 @@
+@startuml
+actor Receptionist as Adm
+participant ":RegistClient UI" as System
+participant ":RegistClientCrontroller" as RCC
+participant ":Company" as ML
+participant "store: \nClientStore" as CS
+participant ":ClientMapper" as cm
+participant "dto:ClientDTO" as cdto
+participant "AuthFacade" as AF
+
+
+
+autonumber
+activate Adm
+Adm -> System: starts new Client
+activate System
+
+
+System --> Adm: request data(CCN, National Healthcare Service (NHS) number,\n Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
+deactivate System
+
+
+
+
+Adm -> System: types requested data
+activate System
+System-->RCC: createNewClient(dto)
+activate RCC
+RCC-->CS: nc=createNewClient(dto)
+activate CS
+
+
+CS-->cm: toModel(dto)
+activate cm
+cm-->cdto: ccn=getCCN()
+activate cdto
+deactivate cdto
+cm-->cdto: nhs=getNHS()
+activate cdto
+deactivate cdto
+cm-->cdto: birthDate=getBirthDate()
+activate cdto
+deactivate cdto
+cm-->cdto: sex=getSex()
+activate cdto
+deactivate cdto
+cm-->cdto: tif=getTIF()
+activate cdto
+deactivate cdto
+cm-->cdto: email=getEmail()
+activate cdto
+deactivate cdto
+cm-->cdto: name=getName()
+activate cdto
+deactivate cdto
+cm-->cdto: phoneNumber=getPhoneNumber()
+activate cdto
+deactivate cdto
+
+
+create "nc: Client" as NC
+cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
+
+
+
+deactivate cm
+deactivate CS
+
+RCC-->CS:validateNewClient(nc)
+Activate CS
+deactivate CS
+
+deactivate RCC
+
+System --> Adm: shows the data and request a confirmation
+deactivate System
+
+
+Adm -> System: confirms the data
+activate System
+System-->RCC: saveNewClient()
+activate RCC
+RCC-->CS:saveNewClient(nc)
+activate CS
+CS-->CS:validateNewClient(nc)
+activate CS
+deactivate CS
+CS-->CS:addNewClient(nc)
+activate CS
+deactivate CS
+CS-->CS:sendEmail(nc)
+activate CS
+deactivate CS
+CS-->AF:CreateUser(nc)
+activate AF
+deactivate AF
+deactivate CS
+deactivate ML
+deactivate RCC
+System --> Adm: informs operation success
+deactivate System
+deactivate Adm
+@enduml

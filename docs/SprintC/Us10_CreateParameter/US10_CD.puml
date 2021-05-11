@@ -1,0 +1,73 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Company
+{
+  -String designation
+  +getParameterCategoryStore()
+  +getParameterCategory()
+  +getParameterStore()
+}
+
+
+class Parameter {
+  -String code
+  -String shortName
+  -String description
+  -ParameterCategory category
+  +Parameter(code, shortName, description, cat)
+}
+
+class ParameterStore {
+  +createParameter(code, shortName, description, cat)
+  +validateParameter(parameter)
+  +saveParameter(parameter)
+}
+
+class ParameterCategoryStore {
+  +getParameterCategoryByCode(categoryCode)
+  +getParameterCategories()
+}
+
+
+class CreateParameterController {
+  +getParameterCategories()
+  +createParameter(code, shortName, description, cat)
+  +saveParameter()
+}
+
+class CreateParameterUI {
+
+}
+
+class ParameterCategoryMapper {
+   +toDto()
+}
+
+class ParameterCategoryDto {
+  -String code
+  -String name
+  +ParameterCategoryDto(category)
+}
+
+class ParameterCategory {
+   -String name
+   -String code
+   +ParameterCategory(name, code)
+}
+
+CreateParameterUI ..> CreateParameterController
+CreateParameterController ..> Parameter
+CreateParameterController ..> ParameterStore
+CreateParameterController ..> ParameterCategoryStore
+CreateParameterController ..> Company
+CreateParameterController ..> ParameterCategoryMapper
+ParameterCategoryMapper ..> ParameterCategoryStore
+ParameterCategoryMapper ..> ParameterCategoryDto
+ParameterCategoryDto ..> ParameterCategory
+ParameterCategoryStore "1" --> "*" ParameterCategory : capable of analysing
+Company "1" --> "1" ParameterStore : uses
+Company "1" --> "1" ParameterCategoryStore : uses
+ParameterStore "1" --> "*" Parameter : adopts
+Parameter "1" --> "1" ParameterCategory : categorized by
+@enduml

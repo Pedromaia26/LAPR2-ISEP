@@ -1,0 +1,56 @@
+@startuml
+RegistClientUI ..> RegistClientController
+RegistClientController ..>Company
+RegistClientController ..>Client
+RegistClientController ..>ClientMapper
+RegistClientController ..>ClientDTO
+
+RegistClientController : +createNewClient(dto)
+RegistClientController : +saveNewClient()
+
+Company --> ClientStore: have
+
+ClientStore --> Client: has
+
+Company ..> ClientMapper
+
+ClientMapper ..> ClientDTO
+
+ClientMapper ..> Client
+
+ClientMapper : +toModel()
+
+Company : +createNewClient(tdo)
+Company : +saveNewClient(NC)
+Company : +validateNewClient(NC)
+Company : +addNewClient(NC)
+
+ClientDTO : +getCCN()
+ClientDTO : +getNHS()
+ClientDTO : +getBirthDate()
+ClientDTO : +getSex()
+ClientDTO : +getTIF()
+ClientDTO : +getEmail()
+ClientDTO : +getName()
+ClientDTO : +getPhoneNumber()
+
+ClientDTO : -ccn
+ClientDTO : -nhs
+ClientDTO : -birtDate
+ClientDTO : -sex
+ClientDTO : -tif
+ClientDTO : -email
+ClientDTO : -name
+ClientDTO : -phoneNumber
+
+
+Client : +Client(ccn,nhs,birtDate,sex,tif,email,name,phoneNumber)
+Client : -ccn
+Client : -nhs
+Client : -birtDate
+Client : -sex
+Client : -tif
+Client : -email
+Client : -name
+Client : -phoneNumber
+@enduml
