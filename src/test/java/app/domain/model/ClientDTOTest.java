@@ -84,7 +84,7 @@ public class ClientDTOTest {
         ClientDTO client = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         String a = client.toString();
 
-        Assert.assertEquals("ccn=1234567890123456, nhs=1234567890, birth='12/12/2012', sex='Male', tif=1234567890, email='asd@gmail.com', name='Moirane', phoneNumber=44123456789", a);
+        Assert.assertEquals("ccn=1234567890123456, nhs=1234567890, birth=12/12/2012, sex=Male, tif=1234567890, email=asd@gmail.com, name=Moirane, phoneNumber=44123456789", a);
     }
 
 

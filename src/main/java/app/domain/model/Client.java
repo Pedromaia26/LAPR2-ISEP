@@ -162,15 +162,7 @@ public class Client {
      */
     @Override
     public String toString() {
-        return  "ccn=" + ccn +
-                ", nhs=" + nhs +
-                ", birth='" + birth + '\'' +
-                ", sex='" + sex + '\'' +
-                ", tif=" + tif +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                ", password=" + password;
+        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tif=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
     }
 
     @Override
