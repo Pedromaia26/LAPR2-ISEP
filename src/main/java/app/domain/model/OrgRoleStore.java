@@ -1,26 +1,18 @@
 package app.domain.model;
 
-import auth.domain.model.UserRole;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrgRoleStore {
 
-    List<OrgRole> listOrgRoles = new ArrayList<OrgRole>();
+    private List<OrgRole> store = new ArrayList<>();
 
-    public OrgRole create(String description)
-    {
-        return new OrgRole(description);
+    public void addOrgRole(OrgRole orgRole){
+        store.add(orgRole);
     }
 
-    /*public boolean add(OrgRole role)
-    {
-        if (role != null) {
-            if (!exists(role))
-                return this.store.add(role);
-        }
-        return false;
-    }*/
+    public List<OrgRole> getOrgRoleStore(){
+        return store;
+    }
 
 }

@@ -1,5 +1,6 @@
 package app.ui.console;
 
+import app.controller.App;
 import app.controller.RegistEmployeeController;
 import app.domain.model.Employee;
 import app.domain.model.EmployeeDto;
@@ -9,6 +10,7 @@ import app.ui.console.utils.Utils;
 import auth.domain.model.Email;
 import auth.domain.model.User;
 import auth.domain.model.UserRole;
+import auth.domain.store.UserRoleStore;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,15 +27,17 @@ public class CreateEmployeeUI  implements Runnable{
         Scanner ler = new Scanner(System.in);
         RegistEmployeeController employeeControler = new RegistEmployeeController();
 
-        List<OrgRole> lRolesDto = new ArrayList<>();
+        List<UserRole> lRolesDto = new ArrayList<>();
         lRolesDto = employeeControler.getRoles();
 
-        for(OrgRole orgRole : lRolesDto){
-            System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole);
+        System.out.printf("List of employee roles:\n");
+
+        for(UserRole orgRole : lRolesDto){
+            System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDescription());
         }
-        System.out.printf("Select a role (number): ");
-        int num = ler.nextInt();
-        if (num <= 6){
+        System.out.printf("Select a role:\n");
+        String role = ler.next();
+        if (lRolesDto.contains(new UserRole(role, role))){
             ler.nextLine();
             System.out.printf("Name: ");
             String name = ler.nextLine();
@@ -48,11 +52,9 @@ public class CreateEmployeeUI  implements Runnable{
             System.out.printf("SOC code: ");
             int socCode = ler.nextInt();
             ler.nextLine();
-            System.out.printf("User Role: ");
-            String userRole = ler.nextLine();
-            UserRole UserRole = new UserRole(userRole, userRole);
+            OrgRole UserRole = new OrgRole(role);
             String employeeIddefault = "default";
-            if (num == 6){
+            if (role.equalsIgnoreCase("specialist doctor")){
                 System.out.printf("Doctor Index Number: ");
                 int docIndexNumber = ler.nextInt();
                 employeeControler.createSpecialistDoctor(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode, docIndexNumber));

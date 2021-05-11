@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.App;
 import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
@@ -11,7 +12,7 @@ import java.util.List;
 public class EmployeeMapper extends UserRoleStore{
 
     public static Employee toDto(EmployeeDto empDto, List<Employee> Employees){
-        UserRole userRole = empDto.getUserRole();
+        OrgRole orgRole = empDto.getUserRole();
         String name = empDto.getName();
         StringBuilder employeeId = new StringBuilder();
         for (int i = 0; i < name.length(); i++){
@@ -29,11 +30,11 @@ public class EmployeeMapper extends UserRoleStore{
         Email email = empDto.getEmail();
         int socCode = empDto.getSocCode();
 
-        return new Employee(userRole, employeeId.toString(), name, address, phoneNumber, email, socCode);
+        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId.toString(), name, address, phoneNumber, email, socCode);
     }
 
     public static SpecialistDoctor toDto(List<SpecialistDoctor> SpecialistDoctors, EmployeeDto empDto){
-        UserRole userRole = empDto.getUserRole();
+        OrgRole orgRole = empDto.getUserRole();
         String name = empDto.getName();
         String employeeId = "";
         for (int i = 0; i < name.length(); i++){
@@ -49,7 +50,7 @@ public class EmployeeMapper extends UserRoleStore{
         int socCode = empDto.getSocCode();
         int docIndexNumber = empDto.getDocIndexNumber();
 
-        return new SpecialistDoctor(userRole, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
+        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
     }
 
 }

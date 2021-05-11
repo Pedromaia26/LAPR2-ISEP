@@ -1,15 +1,17 @@
 package app.domain.model;
 
+import auth.domain.model.UserRole;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RolesMapper {
 
-    private static List<OrgRole> lRolesDto = new ArrayList<>();
+    private static List<UserRole> lRolesDto = new ArrayList<>();
 
-    public static List<OrgRole> toDTO(List<OrgRole> lRoles){
+    public static List<UserRole> toDTO(List<UserRole> lRoles){
         if (lRolesDto.isEmpty()){
-            for (OrgRole role : lRoles){
+            for (UserRole role : lRoles){
                 lRolesDto.add(role);
             }
         }

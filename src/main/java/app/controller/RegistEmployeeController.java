@@ -10,14 +10,19 @@ import java.util.List;
 
 public class RegistEmployeeController {
 
-    private List<OrgRole> lRoles = new ArrayList<>();
-    private List<OrgRole> lRolesDto = new ArrayList<>();
+    private UserRoleStore userRoleStore;
+
+    private List<UserRole> lRoles = new ArrayList<>();
+    private List<UserRole> lRolesDto = new ArrayList<>();
 
     private Employee emp;
     private SpecialistDoctor empsd;
 
-    public List<OrgRole> getRoles(){
-        lRoles = RolesStore.getRoles();
+    public List<UserRole> getRoles(){
+        userRoleStore = App.getInstance().getCompany().getAuthFacade().getRoles();
+        for (UserRole userRole : userRoleStore.getStore()){
+            lRoles.add(userRole);
+        }
         lRolesDto = RolesMapper.toDTO(lRoles);
         return lRolesDto;
     }

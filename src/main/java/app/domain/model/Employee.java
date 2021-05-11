@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class Employee {
 
-    private UserRole userRole;
+    private OrgRole userRole;
     private String employeeId;
     private String name;
     private String address;
@@ -21,7 +21,7 @@ public class Employee {
     private int socCode;
     private String password;
 
-    public Employee(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
+    public Employee(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
         /*Company c = new Company("Many Labs");
         List<UserRoleStore> store = c.getAuthFacade().getRoles();
         for (UserRole ur : store){
@@ -56,8 +56,8 @@ public class Employee {
         this.userRole = userRole;
     }
 
-    public UserRole getUserRole() {
-        return userRole;
+    public String getUserRole() {
+        return userRole.getDesignation();
     }
 
     public String getEmployeeId() {

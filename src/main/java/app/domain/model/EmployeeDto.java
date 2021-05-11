@@ -6,7 +6,7 @@ import auth.domain.model.UserRole;
 
 public class EmployeeDto {
 
-    private UserRole userRole;
+    private OrgRole userRole;
     private String employeeId;
     private String name;
     private String adress;
@@ -15,7 +15,7 @@ public class EmployeeDto {
     private int socCode;
     private int docIndexNumber;
 
-    public EmployeeDto(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
+    public EmployeeDto(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
         this.userRole = userRole;
         this.employeeId = employeeId;
         this.name = name;
@@ -25,7 +25,7 @@ public class EmployeeDto {
         this.socCode = socCode;
     }
 
-    public EmployeeDto(UserRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode, int docIndexNumber) {
+    public EmployeeDto(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode, int docIndexNumber) {
         this.userRole = userRole;
         this.employeeId = employeeId;
         this.name = name;
@@ -36,7 +36,7 @@ public class EmployeeDto {
         this.docIndexNumber = docIndexNumber;
     }
 
-    public UserRole getUserRole() {
+    public OrgRole getUserRole() {
         return userRole;
     }
 
