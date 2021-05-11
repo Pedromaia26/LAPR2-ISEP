@@ -1,6 +1,11 @@
 @startuml
 actor Receptionist as Adm
-participant ":System" as System
+participant ":RegistTest UI" as System
+participant ":RegistTestCrontroller" as RTC
+participant ":Company" as ML
+participant "store\n:TestType" as tt
+participant ":listTTMapper" as ltc
+participant "store\n:storeTest" as test
 
 autonumber
 activate Adm
@@ -8,19 +13,61 @@ Adm -> System: starts a new test to be performed to a client
 activate System
 System --> Adm: request data(code, nhsCode, testType)
 deactivate System
-Adm -> System: types the requested data
+
+Adm -> System: types requested data
 activate System
+System-->RTC: m=getTestType()
+activate RTC
+RTC-->ML: m=getTestType()
+activate ML
+create "listTT :List<TestType>" as listtt
+ML --> listtt: create()
+ML --> RTC: listTT
+deactivate ML
+activate ltc
+RTC --> ltc: toDTO(listTT)
+create "listTTDto\n:List<TestTypeDto" as ltcdt
+ltc --> ltcdt: create()
+ltc --> RTC: listTTDto
+RTC --> System: listTTDto
+deactivate ltc
+deactivate RTC
+deactivate System
+
 
 loop
 System --> Adm: shows list of the parameters to be analised in accordance with the test type
-Adm -> System: select parameter
-end
-
-System --> Adm: shows the data and request confirmation
-deactivate System
-Adm -> System: confirms data
+Adm --> System: select parameter
 activate System
-Adm -> System: informs operation success
+
+System --> RTC: createTest(code, nhsCode, testType)
+activate RTC
+RTC --> tt: test=getTestTypeByCode(code)
+end
+activate tt
+deactivate tt
+RTC --> tt: ct=createTest(code, nhsCode, testType)
+activate tt
+create "ct: \nTest" as CT
+tt --> CT: create(code, nhsCode, testType)
+deactivate tt
+RTC --> tt: validateTest(ct)
+activate tt
+deactivate tt
+System --> Adm: shows data and requests a confirmation
+deactivate RTC
+deactivate System
+Adm --> System: confirms all data
+activate System
+System --> RTC: saveTest()
+activate RTC
+RTC --> test: saveTest(ct)
+activate test
+test --> test: validateTest(ct)
+test --> test: addTest(ct)
+deactivate RTC
+System --> Adm: informs operation success
+deactivate test
 deactivate System
 deactivate Adm
 @enduml
