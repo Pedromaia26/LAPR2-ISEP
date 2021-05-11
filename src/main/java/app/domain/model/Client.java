@@ -9,18 +9,58 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Client {
-
+    /**
+     * String that contains the Citizen card number
+     */
     private long ccn;
+    /**
+     * String that contains the National Health Service Number
+     */
     private long nhs;
+    /**
+     * String that contains the date of birth
+     */
     private String birth;
+    /**
+     * String that contains the sex of a client
+     */
     private String sex;
+    /**
+     * String that contains the Tax Identification Number
+     */
     private long tif;
+    /**
+     * String that contains the email of a client
+     */
     private Email email;
+    /**
+     * String that contains the name of a client
+     */
     private String name;
+    /**
+     * String that contains the Phone Number of a client
+     */
     private long phoneNumber;
+    /**
+     * String that contains the Password of a client
+     */
     private String password;
 
 
+    /**
+     * Regists a client, receiving by parameter The Citizen Card Number, The National Health Service Number,
+     * The date of birth, The sex of a client, The Tax Identification Number, The email of a client, The name of a client, The Phone Number of a client.
+     * Checks all parameters rules to see if the inputted data is valid.
+     *
+     * @param ccn The Citizen Card Number
+     * @param nhs The National Health Service Number
+     * @param birth The date of birth
+     * @param sex The sex of a client
+     * @param tif The Tax Identification Number
+     * @param email The email of a client
+     * @param name The name of a client
+     * @param phoneNumber The Phone Number of a client
+     */
     public Client (long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
 
         if (String.valueOf(ccn).length()!=16)
@@ -81,13 +121,17 @@ public class Client {
 
     }
 
-
-
-
+    /**
+     * Change the password of a client.
+     * @param password the new password of a client.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-
+    /**
+     * Returns the integral Age of a client.
+     * @return Age of a client.
+     */
     public int calculateAge(String birth){
         Date date = new Date();
 
@@ -112,6 +156,10 @@ public class Client {
         return anosdif;
     }
 
+    /**
+     * Returns the textual description of a client.
+     * @return characteristics of a client.
+     */
     @Override
     public String toString() {
         return  "ccn=" + ccn +
@@ -124,6 +172,7 @@ public class Client {
                 ", phoneNumber=" + phoneNumber +
                 ", password=" + password;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -133,14 +182,26 @@ public class Client {
         return Objects.equals(ccn, client.ccn) && Objects.equals(nhs, client.nhs) && Objects.equals(birth, client.birth) && Objects.equals(sex, client.sex) && Objects.equals(tif, client.tif) && Objects.equals(email, client.email) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(name, client.name);
     }
 
+    /**
+     * Returns the email of a client.
+     * @return the email of a client.
+     */
     public Email getEmail() {
         return email;
     }
 
+    /**
+     * Returns the Name of a client.
+     * @return the name of a client.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Returns the password of a client.
+     * @return the password of a client.
+     */
     public String getPassword() {
         return password;
     }
