@@ -19,7 +19,7 @@ public class EmployeeMapperTest {
         UserRole userRole = emp.getUserRole();
 
         Assert.assertEquals(userRole, usrole);
-        Employee emp2= c.getEmployeeStore().createEmployee(emp1);
+        Employee emp2= EmployeeStore.createEmployee(emp1);
         assertEquals(emp,emp2);
     }
 }
