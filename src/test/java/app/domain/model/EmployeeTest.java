@@ -89,7 +89,7 @@ public class EmployeeTest {
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         String a = emp.toString();
 
-        Assert.assertEquals("Employee{userRole=ADM - adm, employeeId='P00001', name='Pedro', adress='Porto', phoneNumber=91291291212, email=pedro@gmail.com, socCode=1234}", a);
+        Assert.assertEquals("Employee{userRole=adm, employeeId='P00001', name='Pedro', adress='Porto', phoneNumber=91291291212, email=pedro@gmail.com, socCode=1234}", a);
     }
 
     @Test

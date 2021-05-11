@@ -8,7 +8,7 @@ public class OrgRole {
 
     private String designation;
 
-    public OrgRole(){};
+    public OrgRole(){}
 
     public OrgRole(String designation){
         this.designation = designation;
@@ -24,5 +24,11 @@ public class OrgRole {
 
     public String getDesignation() {
         return designation;
+    }
+
+    @Override
+    public String toString() {
+        return designation;
+
     }
 }
