@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 012 - To record the results of a given test
 
 ## 1. Requirements Engineering
 
@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
+As a clinical chemistry technologist, I intend to record the results of a given test
 
 
 
@@ -38,15 +38,15 @@ As an organization employee, I want to create a new task in order to be further 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
+* **AC1:** The application should use an external module that is responsible for providing the test reference values.
+* **AC2:** The application can use an external module for each type of test.
+* **AC3:** The API request should include, at most: (i) a key to access the module; (ii) a parameter identifier; (iii) the reference date; and (iv) reference measurement unit.
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* No dependecies were found for now.
 
 
 ### 1.5 Input and Output Data
@@ -55,21 +55,18 @@ As an organization employee, I want to create a new task in order to be further 
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+	* result value, 
+	* metric.
+
 	
 * Selected data:
-	* Classifying task category 
+	* test parameter
 
 
 **Output Data:**
 
-* List of existing task categories
-* (In)Success of the operation
+* List of test parameters.
+* (In)Success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
 
