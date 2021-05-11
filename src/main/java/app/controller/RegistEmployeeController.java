@@ -21,12 +21,12 @@ public class RegistEmployeeController {
     }
 
     public boolean createEmployee(EmployeeDto empDto){
-        this.emp = EmployeeStore.createEmployee(empDto);
+        this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto);
         return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
     }
 
     public boolean createSpecialistDoctor(EmployeeDto spedocdto){
-        this.empsd = EmployeeStore.createSpecialistDoctor(spedocdto);
+        this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto);
         return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
     }
 

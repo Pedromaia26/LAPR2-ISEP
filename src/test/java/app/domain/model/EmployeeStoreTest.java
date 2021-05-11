@@ -18,7 +18,7 @@ public class EmployeeStoreTest {
 
         EmployeeDto empDTO = new EmployeeDto(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
 
-        Employee emp2= EmployeeStore.createEmployee(empDTO);
+        Employee emp2= comp.getEmployeeStore().createEmployee(empDTO);
 
         Assert.assertEquals(emp,emp2);
     }

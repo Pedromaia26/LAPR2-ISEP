@@ -10,15 +10,15 @@ import java.util.List;
 
 public class EmployeeStore {
 
-    static List<Employee> Employees = new ArrayList<>();
-    static List<SpecialistDoctor> SpecialistDoctors = new ArrayList<>();
+    private List<Employee> Employees = new ArrayList<>();
+    private List<SpecialistDoctor> SpecialistDoctors = new ArrayList<>();
 
 
-    public static Employee createEmployee(EmployeeDto empDto){
+    public Employee createEmployee(EmployeeDto empDto){
         return EmployeeMapper.toDto(empDto, Employees);
     }
 
-    public static SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
         return EmployeeMapper.toDto(SpecialistDoctors, specdocdto);
     }
 
