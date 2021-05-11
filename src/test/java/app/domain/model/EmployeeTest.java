@@ -91,4 +91,46 @@ public class EmployeeTest {
 
         Assert.assertEquals("Employee{userRole=ADM - adm, employeeId='P00001', name='Pedro', adress='Porto', phoneNumber=91291291212, email=pedro@gmail.com, socCode=1234}", a);
     }
+
+    @Test
+    public void testEquals() {
+        UserRole usrole = new UserRole("ADM", "adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp1 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp2 = new Employee(usrole, "P00002", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp3 = new Employee(usrole, "P00001", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp4 = new Employee(usrole, "P00001", "Pedro", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp5 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291213L, new Email("pedro@gmail.com"), 1234);
+        Employee emp6 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedross@gmail.com"), 1234);
+        Employee emp7 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1243);
+
+        Employee emp8 = new Employee(usrole, "P00002", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp9 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp10 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedro@gmail.com"), 1234);
+        Employee emp11 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1234);
+        Employee emp12 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1243);
+
+        Client emp13 = null;
+
+
+
+
+        Assert.assertNotEquals(emp,emp2);
+        Assert.assertNotEquals(emp,emp3);
+        Assert.assertNotEquals(emp,emp4);
+        Assert.assertNotEquals(emp,emp5);
+        Assert.assertNotEquals(emp,emp6);
+        Assert.assertNotEquals(emp,emp7);
+        Assert.assertNotEquals(emp,emp8);
+        Assert.assertEquals(emp,emp1);
+        Assert.assertNotEquals(emp,emp9);
+        Assert.assertNotEquals(emp,emp10);
+        Assert.assertEquals(emp,emp);
+        Assert.assertNotEquals(emp,emp11);
+        Assert.assertNotEquals(emp,emp12);
+        Assert.assertNotEquals(emp,emp13);
+
+
+
+    }
 }
