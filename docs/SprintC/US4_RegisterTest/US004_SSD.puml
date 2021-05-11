@@ -1,0 +1,26 @@
+@startuml
+actor Receptionist as Adm
+participant ":System" as System
+
+autonumber
+activate Adm
+Adm -> System: starts a new test to be performed to a client
+activate System
+System --> Adm: request data(code, nhsCode, testType)
+deactivate System
+Adm -> System: types the requested data
+activate System
+
+loop
+System --> Adm: shows list of the parameters to be analised in accordance with the test type
+Adm -> System: select parameter
+end
+
+System --> Adm: shows the data and request confirmation
+deactivate System
+Adm -> System: confirms data
+activate System
+Adm -> System: informs operation success
+deactivate System
+deactivate Adm
+@enduml
