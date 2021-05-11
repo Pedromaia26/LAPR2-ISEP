@@ -3,7 +3,11 @@ package app.domain.model;
 import java.util.Objects;
 
 public class ClientMapper{
-
+    /**
+     * Recieves the ClientDTO and returns the new Client.
+     * @param dto The ClientDTO
+     * @return new client.
+     */
     public static Client toModel(ClientDTO dto) {
 
         long ccn = dto.getCcn();
