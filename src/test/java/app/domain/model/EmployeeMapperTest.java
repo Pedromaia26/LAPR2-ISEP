@@ -11,14 +11,14 @@ public class EmployeeMapperTest {
 
     @Test
     public void toDto() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         EmployeeDto emp1 = new EmployeeDto(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
 
-        UserRole userRole = emp.getUserRole();
+        String userRole = emp.getUserRole();
 
-        Assert.assertEquals(userRole, usrole);
+        Assert.assertEquals(userRole, usrole.getDesignation());
         Employee emp2= c.getEmployeeStore().createEmployee(emp1);
         assertEquals(emp,emp2);
     }

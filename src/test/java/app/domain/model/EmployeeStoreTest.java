@@ -11,7 +11,7 @@ public class EmployeeStoreTest {
 
     @Test
     public void createEmployee() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
 
         Company comp= new Company("ManyLabs");
@@ -25,7 +25,7 @@ public class EmployeeStoreTest {
 
     @Test
     public void validateEmployee() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp2 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp3= null;
