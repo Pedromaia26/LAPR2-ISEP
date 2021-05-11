@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import auth.domain.model.UserRole;
+import auth.domain.store.UserRoleStore;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

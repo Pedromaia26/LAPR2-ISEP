@@ -5,6 +5,8 @@ import app.domain.model.RolesStore;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;
+import auth.domain.model.UserRole;
+import auth.domain.store.UserRoleStore;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class App {
     private Company company;
     private AuthFacade authFacade;
     private RolesStore rolesStore;
+    private UserRoleStore userRoleStore;
 
     private App()
     {
