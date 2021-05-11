@@ -13,18 +13,18 @@ public class EmployeeTest {
 
     @Test
     public void getUserRole() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
-        UserRole userRole = emp.getUserRole();
+        String userRole = emp.getUserRole();
 
-        Assert.assertEquals(userRole, usrole);
+        Assert.assertEquals(userRole, usrole.getDesignation());
     }
 
     @Test
     public void getEmployeeId() {
 
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         String employeeId = emp.getEmployeeId();
@@ -34,7 +34,7 @@ public class EmployeeTest {
 
     @Test
     public void getName() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         String name = emp.getName();
@@ -44,7 +44,7 @@ public class EmployeeTest {
 
     @Test
     public void getAdress() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         String address = emp.getAdress();
@@ -54,7 +54,7 @@ public class EmployeeTest {
 
     @Test
     public void getPhoneNumber() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         long phoneNumer = emp.getPhoneNumber();
@@ -64,7 +64,7 @@ public class EmployeeTest {
 
     @Test
     public void getEmail() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Email e = new Email("pedro@gmail.com");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, e, 1234);
         Company c = new Company("Many Labs");
@@ -75,7 +75,7 @@ public class EmployeeTest {
 
     @Test
     public void getSocCode() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
         int socCode = emp.getSocCode();
@@ -85,7 +85,7 @@ public class EmployeeTest {
 
     @Test
     public void testToString() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         String a = emp.toString();
 
@@ -94,7 +94,7 @@ public class EmployeeTest {
 
     @Test
     public void testEquals() {
-        UserRole usrole = new UserRole("ADM", "adm");
+        OrgRole usrole = new OrgRole("adm");
         Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp1 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp2 = new Employee(usrole, "P00002", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
