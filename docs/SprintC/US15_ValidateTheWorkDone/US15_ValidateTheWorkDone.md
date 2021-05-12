@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
+  As a laboratory coordinator, I want to validate the work done by the clinical chemistry technologist and specialist doctor. 
 
 
 
@@ -15,10 +15,9 @@ As an organization employee, I want to create a new task in order to be further 
 
 **From the specifications document:**
 
->	Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category. 
+>	"After the specialist doctor has completed the diagnosis, the results of the clinical analyses and the report become available in the system and must be validated by the laboratory coordinator. To validate the work done, the laboratory coordinator checks the chemical test/result and associated diagnosis made and confirms that everything was done correctly."
 
 
->	As long as it is not published, access to the task is exclusive to the employees of the respective organization. 
 
 
 
@@ -38,15 +37,14 @@ As an organization employee, I want to create a new task in order to be further 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
+* **AC1:** The system does not show client personal information but shows all dates (test registration date, chemical analysis date and diagnosis date).4
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* There is a dependency to "US012 Record the results of a given test" since the clinical chemistry technologist must have recorded the test results.
+* There is a dependency to "US014 Make the diagnosis and write a report" since the specialist doctor must have made the diagnosis and written the report.
 
 
 ### 1.5 Input and Output Data
