@@ -35,14 +35,14 @@ public class LaboratoryUI implements Runnable{
         System.out.println("Insert the Tax Identification Number:");
         long tinNumber = ler.nextLong();
         System.out.println("Insert the code of the Test Type you want to use:");
-        String testType = ler.next();
 
         List<String> testtypes = new ArrayList<>();
 
         int a;
+        String testTypeCode;
 
         do {
-            String testTypeCode = ler.next();
+            testTypeCode = ler.next();
             testtypes.add(testTypeCode);
             System.out.println("Do you want to add another type test to your Laboratory?:\n1 ---> Yes\n2 ---> No");
             a = ler.nextInt();
@@ -56,7 +56,7 @@ public class LaboratoryUI implements Runnable{
             tt.add(store.getTestTypeByCode(code));
         }
 
-        createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testType);
+        createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
 
 
 

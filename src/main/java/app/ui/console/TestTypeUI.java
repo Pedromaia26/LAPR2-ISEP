@@ -21,9 +21,9 @@ public class TestTypeUI implements Runnable{
         TestTypeController createTestTypeController = new TestTypeController();
 
         System.out.println("Insert the description of the new test of test you want to create:");
-        String description = ler.next();
+        String description = ler.nextLine();
         System.out.println("Insert its collecting method:");
-        String collectingMethod = ler.next();
+        String collectingMethod = ler.nextLine();
         System.out.println("Insert its code:");
         String code = ler.next();
         System.out.println("Insert the code of the category that you want to add:");

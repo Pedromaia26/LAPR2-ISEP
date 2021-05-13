@@ -72,7 +72,6 @@ public class AuthFacade {
         Optional<User> result = this.users.getById(email);
         if (result.isPresent())
         {
-            System.out.println("OLA");
             User user = result.get();
 
 
