@@ -11,6 +11,13 @@ import java.util.List;
 
 public class EmployeeMapper extends UserRoleStore{
 
+    /**
+     * Divide into attributes the Employee received by parameter.
+     * Returns a new Employee.
+     * @param empDto A EmployeeDto instance
+     * @param Employees A List of Employees
+     * @return A new Employee
+     */
     public static Employee toDto(EmployeeDto empDto, List<Employee> Employees){
         OrgRole orgRole = empDto.getUserRole();
         String name = empDto.getName();
@@ -33,6 +40,13 @@ public class EmployeeMapper extends UserRoleStore{
         return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId.toString(), name, address, phoneNumber, email, socCode);
     }
 
+    /**
+     * Divide into attributes the Specialist Doctor received by parameter.
+     * Returns a new Specialist Doctor.
+     * @param SpecialistDoctors A List of Specialist Doctors
+     * @param empDto A EmployeeDto instance
+     * @return A new Specialist Doctor
+     */
     public static SpecialistDoctor toDto(List<SpecialistDoctor> SpecialistDoctors, EmployeeDto empDto){
         OrgRole orgRole = empDto.getUserRole();
         String name = empDto.getName();
