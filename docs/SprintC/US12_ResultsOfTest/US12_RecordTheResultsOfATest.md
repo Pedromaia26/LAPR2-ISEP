@@ -72,7 +72,7 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
+![US012_SSD.svg](US012_SSD.svg)
 
 
 **Alternative 2**
