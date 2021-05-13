@@ -10,31 +10,33 @@ import java.util.List;
 
 public class RegistEmployeeController {
 
-    private UserRoleStore userRoleStore;
+    private OrgRoleStore orgRoleStore = new OrgRoleStore();
 
-    private List<UserRole> lRoles = new ArrayList<>();
-    private List<UserRole> lRolesDto = new ArrayList<>();
+    private List<OrgRole> lRoles = new ArrayList<>();
+    private List<OrgRole> lRolesDto = new ArrayList<>();
 
     private Employee emp;
     private SpecialistDoctor empsd;
 
-    public List<UserRole> getRoles(){
-        userRoleStore = App.getInstance().getCompany().getAuthFacade().getRoles();
-        for (UserRole userRole : userRoleStore.getStore()){
-            lRoles.add(userRole);
+    public List<OrgRole> getRoles(){
+        orgRoleStore.addDefaultRoles();
+        for (OrgRole orgRole : orgRoleStore.getOrgRoleStore()){
+            lRoles.add(orgRole);
         }
         lRolesDto = RolesMapper.toDTO(lRoles);
         return lRolesDto;
     }
 
-    public boolean createEmployee(EmployeeDto empDto){
+    public Employee createEmployee(EmployeeDto empDto){
         this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto);
-        return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
+        App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
+        return emp;
     }
 
-    public boolean createSpecialistDoctor(EmployeeDto spedocdto){
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto spedocdto){
         this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto);
-        return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
+        App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
+        return empsd;
     }
 
     public List<Employee> getEmployeeList(){

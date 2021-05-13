@@ -2,10 +2,7 @@ package app.ui.console;
 
 import app.controller.App;
 import app.controller.RegistEmployeeController;
-import app.domain.model.Employee;
-import app.domain.model.EmployeeDto;
-import app.domain.model.OrgRole;
-import app.domain.model.SpecialistDoctor;
+import app.domain.model.*;
 import app.ui.console.utils.Utils;
 import auth.domain.model.Email;
 import auth.domain.model.User;
@@ -14,6 +11,7 @@ import auth.domain.store.UserRoleStore;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,20 +23,26 @@ public class CreateEmployeeUI  implements Runnable{
 
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RegistEmployeeController employeeControler = new RegistEmployeeController();
+        RegistEmployeeController employeeController = new RegistEmployeeController();
 
-        List<UserRole> lRolesDto = new ArrayList<>();
-        lRolesDto = employeeControler.getRoles();
+        List<OrgRole> lRolesDto = employeeController.getRoles();
+
+        String op;
+        boolean exists = false;
 
         System.out.printf("List of employee roles:\n");
 
-        for(UserRole orgRole : lRolesDto){
-            System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDescription());
+        for(OrgRole orgRole : lRolesDto){
+            System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDesignation());
         }
-        System.out.printf("Select a role:\n");
-        String role = ler.next();
-        if (lRolesDto.contains(new UserRole(role, role))){
-            ler.nextLine();
+        System.out.printf("Type a role:\n");
+        String role = ler.nextLine();
+        for(OrgRole orgRole : lRolesDto){
+            if (orgRole.getDesignation().equals(role)) {
+                exists = true;
+            }
+        }
+        if (exists){
             System.out.printf("Name: ");
             String name = ler.nextLine();
             System.out.printf("Address: ");
@@ -57,27 +61,49 @@ public class CreateEmployeeUI  implements Runnable{
             if (role.equalsIgnoreCase("specialist doctor")){
                 System.out.printf("Doctor Index Number: ");
                 int docIndexNumber = ler.nextInt();
-                employeeControler.createSpecialistDoctor(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode, docIndexNumber));
-                try {
-                    employeeControler.saveSpecialistDoctor();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                SpecialistDoctor sp = employeeController.createSpecialistDoctor(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode, docIndexNumber));
+                System.out.println("Data confirmation:");
+                System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", sp.getEmployeeId(), sp.getUserRole(), sp.getName(), sp.getAdress(), sp.getEmail(), sp.getPhoneNumber(), sp.getSocCode(), sp.getDocIndexNumber());
+                System.out.println("Do you want to create the employee?(Y/N)");
+                op = ler.next();
+                if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")){
+                    if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(sp.getEmail()))) {
+                        try {
+                            employeeController.saveSpecialistDoctor();
+                            System.out.println("Employee created with success.");
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else{
+                        throw new IllegalArgumentException("Employee already created.");
+                    }
                 }
+                else System.out.println("Employee regist canceled.");
             }
             else{
-                employeeControler.createEmployee(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode));
-                try {
-                    employeeControler.saveEmployee();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                Employee emp = employeeController.createEmployee(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode));
+                System.out.println("Data confirmation:");
+                System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", emp.getEmployeeId(), emp.getUserRole(), emp.getName(), emp.getAdress(), emp.getEmail(), emp.getPhoneNumber(), emp.getSocCode());
+                System.out.println("Do you want to create the employee?(Y/N)");
+                op = ler.next();
+                if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
+                    if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(emp.getEmail()))) {
+                        try {
+                            employeeController.saveEmployee();
+                            System.out.println("Employee created with success.");
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        throw new IllegalArgumentException("Employee already created.");
+                    }
                 }
+                else System.out.println("Employee regist canceled.");
             }
-
-            /*List<SpecialistDoctor> list;
-            list = employeeControler.getSpecialistDoctorList();
-            for(SpecialistDoctor emp : list){
-                System.out.println(emp);
-            }*/
+        }
+        else{
+            throw new IllegalArgumentException("The selected role does not exist.");
         }
     }
 }

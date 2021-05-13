@@ -1,12 +1,14 @@
 package app.domain.model;
 
 import app.controller.App;
+import auth.domain.model.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class EmployeeStore {
 
@@ -111,6 +113,19 @@ public class EmployeeStore {
 
     public boolean createSpecialistDoctor(SpecialistDoctor emp){
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
+    }
+
+    public boolean exists(String email)
+    {
+        for(Employee emp: this.Employees)
+        {
+
+            if(emp.getEmail().equals(email)) {
+
+                return true;
+            }
+        }
+        return false;
     }
 
 }

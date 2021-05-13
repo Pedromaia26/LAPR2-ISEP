@@ -36,21 +36,24 @@ public class EmployeeMapper extends UserRoleStore{
     public static SpecialistDoctor toDto(List<SpecialistDoctor> SpecialistDoctors, EmployeeDto empDto){
         OrgRole orgRole = empDto.getUserRole();
         String name = empDto.getName();
-        String employeeId = "";
+        StringBuilder employeeId = new StringBuilder();
         for (int i = 0; i < name.length(); i++){
+            if (i == 0){
+                employeeId.append(Character.toUpperCase(name.charAt(i)));
+            }
             if(name.charAt(i) == ' '){
-                employeeId += Character.toUpperCase(name.charAt(i+1));
+                employeeId.append(Character.toUpperCase(name.charAt(i + 1)));
             }
         }
         String numEmployees = String.format("%05d", SpecialistDoctors.size()+1);
-        employeeId += numEmployees;
+        employeeId.append(numEmployees);
         String address = empDto.getAdress();
         long phoneNumber = empDto.getPhoneNumber();
         Email email = empDto.getEmail();
         int socCode = empDto.getSocCode();
         int docIndexNumber = empDto.getDocIndexNumber();
 
-        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
+        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId.toString(), name, address, phoneNumber, email, socCode, docIndexNumber);
     }
 
 }

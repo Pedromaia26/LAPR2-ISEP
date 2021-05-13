@@ -7,11 +7,11 @@ import java.util.List;
 
 public class RolesMapper {
 
-    private static List<UserRole> lRolesDto = new ArrayList<>();
+    private static List<OrgRole> lRolesDto = new ArrayList<>();
 
-    public static List<UserRole> toDTO(List<UserRole> lRoles){
+    public static List<OrgRole> toDTO(List<OrgRole> lRoles){
         if (lRolesDto.isEmpty()){
-            for (UserRole role : lRoles){
+            for (OrgRole role : lRoles){
                 lRolesDto.add(role);
             }
         }

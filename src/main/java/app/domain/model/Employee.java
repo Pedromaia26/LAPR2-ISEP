@@ -22,15 +22,6 @@ public class Employee {
     private String password;
 
     public Employee(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
-        /*Company c = new Company("Many Labs");
-        List<UserRoleStore> store = c.getAuthFacade().getRoles();
-        for (UserRole ur : store){
-            System.out.println("OLA");
-            System.out.println(ur);
-        }
-        if (c.getAuthFacade().addUserRole(userRole.getId(), userRole.getDescription())){
-            throw new IllegalArgumentException("User role invalid");
-        } */
         this.userRole = userRole;
 
         this.employeeId = employeeId;

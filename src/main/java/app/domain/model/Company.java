@@ -24,6 +24,7 @@ public class Company {
     private UserStore userStore;
     private UserRoleStore userRoleStore;
     private LaboratoryStore laboratoryStore;
+    private OrgRoleStore orgRoleStore;
     private OrgRole orgRole;
 
 
@@ -42,6 +43,7 @@ public class Company {
         this.userStore= new UserStore();
         this.userRoleStore = new UserRoleStore();
         this.laboratoryStore = new LaboratoryStore();
+        this.orgRoleStore = new OrgRoleStore();
         this.orgRole = new OrgRole();
     }
 
@@ -75,5 +77,6 @@ public class Company {
     public LaboratoryStore getLaboratoryStore() {
         return laboratoryStore;
     }
-    public OrgRole getOrgRole() { return orgRole; }
+    public OrgRoleStore getOrgRoleStore() { return orgRoleStore; }
+    public OrgRole getOrgRole(){ return orgRole; }
 }
