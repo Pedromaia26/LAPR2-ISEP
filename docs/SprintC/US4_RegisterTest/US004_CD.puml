@@ -1,0 +1,41 @@
+@startuml
+RegistTestUI ..> RegistTestController
+RegistTestController ..>Company
+RegistTestController ..>StoreTestType
+RegistTestController ..>StoreTest
+
+
+RegistTestController : +getTestType()
+RegistTestController : +createTest(code, nhsCode, testType)
+RegistTestController : +saveTest()
+
+Company ..> StoreTest
+Company ..> StoreTestType
+
+Company : +getTestType()
+Company : +getStoreTest()
+
+
+StoreTestType : +getTestTypeByCode(code)
+
+StoreTest : +createTest(code, nhsCode, testType)
+StoreTest : +validateTest(cl)
+StoreTest : +addTest(cl)
+StoreTest : +saveTest(cl)
+
+StoreTest ..> Test
+
+Test : -Int code
+Test : -String nhsCode
+Test : -List <TestType> listTestType
+Test : +Test(code, nhsCode, testType)
+
+StoreTestType ..> TestType
+Test ..> TestType
+
+TestType : -String description
+TestType : -String collectingMethod
+TestType : -String code
+TestType : -List category
+TestType : +TestType(description,collectingMethod,code,category)
+@enduml
