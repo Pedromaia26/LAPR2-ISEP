@@ -45,14 +45,26 @@ public class RegistClientUI implements Runnable {
         String sex = ler.nextLine();
 
 
-        cliente.createNewClient(new ClientDTO(ccn,nhs,birth,sex,tif,email,name,phoneNumber));
-
-        try {
-            cliente.saveClient();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(cliente.createNewClient(new ClientDTO(ccn,nhs,birth,sex,tif,email,name,phoneNumber))){
+            System.out.println("--------------------------");
+            System.out.println("Please confirm the data:");
+            System.out.println(String.format("CCN: %d\nNHS: %d\nBirth date: %s\nSex: %s\nTIN: %d\nEmail: %s\nName: %s\nPhone Number: %s", ccn, nhs, birth,sex,tif,email,name,phoneNumber));
+            System.out.println("--------------------------");
+            System.out.println(" 1 --> Confirm");
+            System.out.println(" 2 --> Cancel");
+            int confirm = ler.nextInt();
+            if(confirm == 1){
+                try {
+                    if(cliente.saveClient()){
+                        System.out.println("Client registered successfully.");
+                    }else{
+                        System.out.println("Client register error.");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
 
     }
 }
