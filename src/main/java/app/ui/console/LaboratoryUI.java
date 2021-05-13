@@ -50,17 +50,12 @@ public class LaboratoryUI implements Runnable{
 
         List<TestType> tt = new ArrayList<>();
 
-        TestTypeStore store = new TestTypeStore();
-
         for(String code : testtypes){
-            tt.add(store.getTestTypeByCode(code));
+            tt.add(createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(code));
         }
 
         createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
-
-
-
-
+        
         if (createRegistLaboratoryController.createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, tt)){
             System.out.println("--------------------------");
             System.out.println("Please confirm the data:");

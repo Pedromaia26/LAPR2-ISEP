@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LaboratoryStore {
@@ -7,7 +8,7 @@ public class LaboratoryStore {
     /**
      * List that contains the Laboratories.
      */
-    private List<Laboratory> LaboratoryList;
+    private List<Laboratory> LaboratoryList = new ArrayList<>();
 
     /**
      * Create a new Clynical Analysis Laboratory with the kind of test it operates.

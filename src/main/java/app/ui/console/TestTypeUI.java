@@ -20,7 +20,7 @@ public class TestTypeUI implements Runnable{
         Scanner ler = new Scanner(System.in);
         TestTypeController createTestTypeController = new TestTypeController();
 
-        System.out.println("Insert the description of the new test of test you want to create:");
+        System.out.println("Insert the description of the new type of test you want to create:");
         String description = ler.nextLine();
         System.out.println("Insert its collecting method:");
         String collectingMethod = ler.nextLine();
@@ -46,7 +46,7 @@ public class TestTypeUI implements Runnable{
         }while (a==1);
 
 
-        createTestTypeController.getParameterCategoryStore().getParameterCategoryByCode(categories);
+        //createTestTypeController.getParameterCategoryStore().getParameterCategoryByCode(categories);
 
 
 
