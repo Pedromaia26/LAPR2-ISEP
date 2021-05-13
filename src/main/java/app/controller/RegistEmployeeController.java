@@ -54,6 +54,6 @@ public class RegistEmployeeController {
 
     public void saveSpecialistDoctor() throws FileNotFoundException {
         App.getInstance().getCompany().getEmployeeStore().saveSpecialistDoctor(empsd);
-        App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(empsd);
+        App.getInstance().getCompany().getEmployeeStore().createUser(empsd);
     }
 }
