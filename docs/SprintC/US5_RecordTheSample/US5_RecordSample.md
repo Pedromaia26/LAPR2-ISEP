@@ -81,7 +81,7 @@ As a receptionist of the laboratory, I want to register a client.
 ### 1.4. Found out Dependencies
 
 
-* There is no dependency found.
+* There is a dependency to "US004 Create a test to be registered" since at least a test must exist to record the sample.
 
 
 ### 1.5 Input and Output Data
@@ -100,7 +100,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Alternative 1**
 
-![US003_SSD](US003_SSD.svg)
+![US005_SSD](US005_SSD.svg)
 
 
 
@@ -113,7 +113,7 @@ As a receptionist of the laboratory, I want to register a client.
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US003_MD](US003_MD.svg)
+![US005_MD](US005_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -163,14 +163,14 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US003_SD](US003_SD.svg)
+![US005_SD](US005_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
 
 **From alternative 1**
 
-![US006_CD](US003_CD.svg)
+![US005_CD](US005_CD.svg)
 
 # 4. Tests 
 
