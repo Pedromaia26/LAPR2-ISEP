@@ -17,17 +17,7 @@ class Employee {
   -socCode
 }
 
-class OrganizationRole {
-  -description
-}
 
-class SpecialistDoctor {
-  -docIndexNumber
-}
-
-class Administrator {
-
-}
 
 class User{
   -name
@@ -35,12 +25,30 @@ class User{
   -password
 }
 
+class Test{
+
+-testType
+-sample
+}
+
+class Sample{
+
+-dateCollection
+-timeCollection
+}
+class TestType{
+-designation
+-description
+-internalCode
+-nhsCode
+}
 
 
-Company "1" -- "*" Employee : employ  >
-Company "1" -- "*" OrganizationRole : comprehends >
-Employee "*" -- "1" OrganizationRole : plays >
-Employee <|-- SpecialistDoctor
+Company "1" -- "*" Test: does>
+Test "1" -- "1" Sample : originated by>
+Test "*" -- "1" Employee : is performed by>
+Test "1" -- "1" TestType : is of>
 Employee "0..1" -- "1" User: relates to >
-Administrator "1" -- "1..*" Employee: registers >
+Sample "*" -- "1..*" Employee : is recorded by>
+LabOrder "1" -- "1" Test : gives rise>
 @enduml

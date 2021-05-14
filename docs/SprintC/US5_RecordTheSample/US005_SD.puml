@@ -1,13 +1,13 @@
 @startuml
-actor Administrator as Adm
+actor "Medical Lab Technician" as Adm
 participant ":RecordSampleUI" as Interface
 participant ":RecordSampleController" as Controller
 participant ":Company" as Company
-participant ":TestMapper" as TM
+participant ":LabOrderMapper" as TM
 participant "store \n :SampleStore" as SS
 participant "SampleMapper" as SM
 participant "SampDto: SampleDto" as SD
-participant "store \n :TestStore" as TS
+participant "store \n :LabOrderStore" as TS
 
 
 
@@ -18,16 +18,22 @@ autonumber
 activate Adm
 Adm -> Interface: starts recording a new sample
 activate Interface
-Interface -> Controller: testsDto = getTest()
+Interface -> Controller: orderDto = getTest()
 activate Controller
-Controller -> TS: tests = getTest()
+Controller -> Company : orderStore=getLabOrderStore()
+activate Company
+deactivate Company
+Controller -> TS: order = getLabOrder()
 activate TS
 deactivate TS
-Controller -> TM: testsDto = toDTO(tests)
+Controller -> TM: OrderDto = toDTO(order)
 activate TM
+
+TM-->Controller : OrderDto 
 deactivate TM
+Controller-->Interface : OrderDto 
 deactivate Controller
-Interface --> Adm: ask to select the test to record the sample
+Interface --> Adm: shows the list of tests registered to be performed and requests to select one of them
 deactivate Interface
 
 
@@ -40,24 +46,30 @@ deactivate Interface
 
 Adm -> Interface: types requested data
 activate Interface
-Interface-->Controller: createNewClient(dto)
+Interface->Controller: RecordNewSample(dto)
 activate Controller
-Controller-->SS: nc=createNewClient(dto)
+Controller -> Company : sampleStore=getSampleStore()
+activate Company
+Deactivate Company
+Controller->SS: samp=RecordNewSample(dto)
 activate SS
 
 
-SS-->SM: toModel(dto)
+SS->SM: toModel(dto)
 activate SM
-SM-->SD: description=getDescription()
+SM->SD: description=getDescription()
 activate SD
 deactivate SD
-SM-->SD: dataColl=getDataColl()
+SM->SD: dataColl=getDataColl()
 activate SD
 deactivate SD
-SM-->SD: timeColl=getTimeColl()
+SM->SD: timeColl=getTimeColl()
 activate SD
 deactivate SD
-SM-->TS: test=getTestByCode()
+SM->SD: orderid=getOrderId()
+activate SD
+deactivate SD
+SM->TS: testype=getTestTypeByOrderId(order)
 activate TS
 deactivate TS
 
@@ -65,14 +77,14 @@ deactivate TS
 
 
 create "samp: Sample" as samp
-SM-->samp:  create(description,dataColl,timeColl,test)
+SM->samp:  create(description,dataColl,timeColl,testype)
 
 
 
 deactivate SM
 deactivate SS
 
-Controller-->SS:validateNewClient(nc)
+Controller->SS:validateNewSample(samp)
 Activate SS
 deactivate SS
 
@@ -84,17 +96,14 @@ deactivate Interface
 
 Adm -> Interface: confirms the data
 activate Interface
-Interface-->Controller: saveNewClient()
+Interface->Controller: saveNewSample()
 activate Controller
-Controller-->SS:saveNewClient(nc)
+Controller->SS:saveNewSample(samp)
 activate SS
-SS-->SS:validateNewClient(nc)
-activate SS
-deactivate SS
-SS-->SS:addNewClient(nc)
+SS->SS:validateNewSample(samp)
 activate SS
 deactivate SS
-SS-->SS:sendEmail(nc)
+SS->SS:addNewSample(samp)
 activate SS
 deactivate SS
 
