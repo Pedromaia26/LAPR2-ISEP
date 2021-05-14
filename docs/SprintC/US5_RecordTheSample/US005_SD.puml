@@ -1,103 +1,107 @@
 @startuml
-actor Receptionist as Adm
-participant ":RegistClient UI" as System
-participant ":RegistClientCrontroller" as RCC
-participant ":Company" as ML
-participant "store: \nClientStore" as CS
-participant ":ClientMapper" as cm
-participant "dto:ClientDTO" as cdto
-participant "AuthFacade" as AF
+actor Administrator as Adm
+participant ":RecordSampleUI" as Interface
+participant ":RecordSampleController" as Controller
+participant ":Company" as Company
+participant ":TestMapper" as TM
+participant "store \n :SampleStore" as SS
+participant "SampleMapper" as SM
+participant "SampDto: SampleDto" as SD
+participant "store \n :TestStore" as TS
 
 
 
+
+ 
+ 
 autonumber
 activate Adm
-Adm -> System: starts new Client
-activate System
-
-
-System --> Adm: request data(CCN, National Healthcare Service (NHS) number,\n Birth date, Sex(Opcional), Tax Identification number (TIF), E-mail, Name, Phone number)
-deactivate System
-
-
-
-
-Adm -> System: types requested data
-activate System
-System-->RCC: createNewClient(dto)
-activate RCC
-RCC-->CS: nc=createNewClient(dto)
-activate CS
-
-
-CS-->cm: toModel(dto)
-activate cm
-cm-->cdto: ccn=getCCN()
-activate cdto
-deactivate cdto
-cm-->cdto: nhs=getNHS()
-activate cdto
-deactivate cdto
-cm-->cdto: birthDate=getBirthDate()
-activate cdto
-deactivate cdto
-cm-->cdto: sex=getSex()
-activate cdto
-deactivate cdto
-cm-->cdto: tif=getTIF()
-activate cdto
-deactivate cdto
-cm-->cdto: email=getEmail()
-activate cdto
-deactivate cdto
-cm-->cdto: name=getName()
-activate cdto
-deactivate cdto
-cm-->cdto: phoneNumber=getPhoneNumber()
-activate cdto
-deactivate cdto
-
-
-create "nc: Client" as NC
-cm-->NC:  create(ccn, nhs, birthDate, sex, tif,\n email, name, phoneNumber)
+Adm -> Interface: starts recording a new sample
+activate Interface
+Interface -> Controller: testsDto = getTest()
+activate Controller
+Controller -> TS: tests = getTest()
+activate TS
+deactivate TS
+Controller -> TM: testsDto = toDTO(tests)
+activate TM
+deactivate TM
+deactivate Controller
+Interface --> Adm: ask to select the test to record the sample
+deactivate Interface
 
 
 
-deactivate cm
-deactivate CS
-
-RCC-->CS:validateNewClient(nc)
-Activate CS
-deactivate CS
-
-deactivate RCC
-
-System --> Adm: shows the data and request a confirmation
-deactivate System
+Adm -> Interface: selects the intended test
+activate Interface
+Interface --> Adm: request data (descriptionMethod, dateCollection, timeCollection)
+deactivate Interface
 
 
-Adm -> System: confirms the data
-activate System
-System-->RCC: saveNewClient()
-activate RCC
-RCC-->CS:saveNewClient(nc)
-activate CS
-CS-->CS:validateNewClient(nc)
-activate CS
-deactivate CS
-CS-->CS:addNewClient(nc)
-activate CS
-deactivate CS
-CS-->CS:sendEmail(nc)
-activate CS
-deactivate CS
-CS-->AF:CreateUser(nc)
-activate AF
-deactivate AF
-deactivate CS
-deactivate ML
-deactivate RCC
-System --> Adm: informs operation success
-deactivate System
+Adm -> Interface: types requested data
+activate Interface
+Interface-->Controller: createNewClient(dto)
+activate Controller
+Controller-->SS: nc=createNewClient(dto)
+activate SS
+
+
+SS-->SM: toModel(dto)
+activate SM
+SM-->SD: description=getDescription()
+activate SD
+deactivate SD
+SM-->SD: dataColl=getDataColl()
+activate SD
+deactivate SD
+SM-->SD: timeColl=getTimeColl()
+activate SD
+deactivate SD
+SM-->TS: test=getTestByCode()
+activate TS
+deactivate TS
+
+
+
+
+create "samp: Sample" as samp
+SM-->samp:  create(description,dataColl,timeColl,test)
+
+
+
+deactivate SM
+deactivate SS
+
+Controller-->SS:validateNewClient(nc)
+Activate SS
+deactivate SS
+
+deactivate Controller
+
+Interface--> Adm: shows the data and request a confirmation
+deactivate Interface
+
+
+Adm -> Interface: confirms the data
+activate Interface
+Interface-->Controller: saveNewClient()
+activate Controller
+Controller-->SS:saveNewClient(nc)
+activate SS
+SS-->SS:validateNewClient(nc)
+activate SS
+deactivate SS
+SS-->SS:addNewClient(nc)
+activate SS
+deactivate SS
+SS-->SS:sendEmail(nc)
+activate SS
+deactivate SS
+
+deactivate SS
+deactivate Controller
+Interface--> Adm: informs operation success
+
+deactivate Interface
 deactivate Adm
 @enduml
