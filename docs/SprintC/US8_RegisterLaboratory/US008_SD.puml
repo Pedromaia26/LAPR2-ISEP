@@ -1,11 +1,10 @@
 @startuml
 actor Administrator as Adm
 participant ":RegistLaboratory UI" as System
-participant ":RegistLaboratoryController" as RLC
+participant ":RegistLaboratoryCrontroller" as RLC
 participant ":Company" as ML
-participant "store\n:TestTypeStore" as tt
-participant ":listPCMapper" as lpc
-participant "store\n:LaboratoryStore" as lab
+participant ":TestType" as tt
+participant "Laboratory" as lab
 
 
 autonumber
@@ -24,31 +23,22 @@ System-->RLC: m=getTestType()
 activate RLC
 RLC-->ML: m=getTestType()
 activate ML
-create "listPC :List<TestType>" as listpc
-ML --> listpc: create()
-ML --> RLC: listPC
-deactivate ML
-activate lpc
-RLC --> lpc: toDTO(listPC)
-create "listPCDto\n:List<TestTypeDto" as lpcdt
-lpc --> lpcdt: create()
-lpc --> RLC: listPCDto
-RLC --> System: listPCDto
-deactivate lpc
-deactivate RLC
-deactivate System
+create "listTT :List<TestType>" as listtt
+ML --> listtt: create()
+listtt --> ML: listTT
+
 
 loop
-
 System --> Adm: shows the data and request a confirmation
+deactivate ML
+deactivate RLC
+deactivate System
 Adm --> System: selects a type of test
 activate System
 System --> RLC: createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
 activate RLC
 RLC --> tt: test=getTestTypeByCode(code)
-
 end
-
 activate tt
 deactivate tt
 RLC --> tt: cl=createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
@@ -62,7 +52,6 @@ deactivate tt
 System --> Adm: shows all data and requests a confirmation
 deactivate RLC
 deactivate System
-
 Adm --> System: confirms all data
 activate System
 System --> RLC: saveLaboratory()
