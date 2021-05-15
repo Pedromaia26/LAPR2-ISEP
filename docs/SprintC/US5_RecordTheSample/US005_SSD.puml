@@ -17,7 +17,7 @@ deactivate sys
 MLT->sys : select a test registered to be performed
 activate sys
 
-sys-->MLT : requests data()
+sys-->MLT : requests data(descriptionMethod, dateCollection, timeCollection)
 deactivate sys
 
 MLT->sys : types requested data

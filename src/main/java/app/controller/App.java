@@ -91,6 +91,9 @@ public class App {
 
         this.authFacade.addUserWithRole("Receptionist", "rec@lei.sem2.pt", "123456",Constants.ROLE_REC);
 
+        this.authFacade.addUserWithRole("Medical Lab Technician", "mlt@lei.sem2.pt", "123456",Constants.ROLE_MLT);
+
+
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
@@ -106,4 +109,5 @@ public class App {
         }
         return singleton;
     }
+
 }

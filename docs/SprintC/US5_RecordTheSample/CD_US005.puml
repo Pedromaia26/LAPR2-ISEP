@@ -1,56 +1,69 @@
 @startuml
-RegistClientUI ..> RegistClientController
-RegistClientController ..>Company
-RegistClientController ..>Client
-RegistClientController ..>ClientMapper
-RegistClientController ..>ClientDTO
-
-RegistClientController : +createNewClient(dto)
-RegistClientController : +saveNewClient()
-
-Company --> ClientStore: have
-
-ClientStore --> Client: has
-
-Company ..> ClientMapper
-
-ClientMapper ..> ClientDTO
-
-ClientMapper ..> Client
-
-ClientMapper : +toModel()
-
-Company : +createNewClient(tdo)
-Company : +saveNewClient(NC)
-Company : +validateNewClient(NC)
-Company : +addNewClient(NC)
-
-ClientDTO : +getCCN()
-ClientDTO : +getNHS()
-ClientDTO : +getBirthDate()
-ClientDTO : +getSex()
-ClientDTO : +getTIF()
-ClientDTO : +getEmail()
-ClientDTO : +getName()
-ClientDTO : +getPhoneNumber()
-
-ClientDTO : -ccn
-ClientDTO : -nhs
-ClientDTO : -birtDate
-ClientDTO : -sex
-ClientDTO : -tif
-ClientDTO : -email
-ClientDTO : -name
-ClientDTO : -phoneNumber
+RecordSampleUI ..> RecordSampleController
+RecordSampleController..>Company
+RecordSampleController..>Sample
+RecordSampleController..>LabOrderMapper 
+RecordSampleController..>SampleDTO
+RecordSampleController..>SampleStore
+RecordSampleController..>SampleMapper
+RecordSampleController..>LabOrderStore
 
 
-Client : +Client(ccn,nhs,birtDate,sex,tif,email,name,phoneNumber)
-Client : -ccn
-Client : -nhs
-Client : -birtDate
-Client : -sex
-Client : -tif
-Client : -email
-Client : -name
-Client : -phoneNumber
+
+
+RecordSampleController : +RecordNewSample(dto)
+RecordSampleController : +saveNewSample()
+RecordSampleController : +getTest()
+
+
+Company --> SampleStore : have
+
+SampleStore --> Sample: has
+
+Company --> LabOrderStore
+
+LabOrderStore : +getTestByTestTypeCode(testid)
+
+LabOrderMapper ..> LabOrderDTO
+LabOrderDTO..> LabOrder
+Sample --> LabOrder: originated from
+
+
+LabOrderStore --> LabOrder : Has
+SampleMapper ..> SampleDTO
+
+
+LabOrderMapper ..> LabOrderStore
+
+
+LabOrder : -testType
+
+
+LabOrderMapper : +toDTO(tests)
+
+SampleMapper : +toModel()
+
+
+
+
+Company : +getTestStore()
+Company : +getSampleStore()
+
+SampleStore : +RecordNewSample(tdo)
+SampleStore : +validateNewSample(samp)
+SampleStore : +saveNewSample(samp)
+SampleStore : +addNewSample(samp)
+
+SampleDTO : +getTimeColl()
+SampleDTO : +getDataColl()
+SampleDTO : +getgetTestId()
+
+
+SampleDTO : -timeCollection
+SampleDTO : -dateCollection
+
+
+Sample : +Sample(dataCollection, timeCollection, test)
+Sample : -timeCollection
+Sample : -dateCollection
 @enduml

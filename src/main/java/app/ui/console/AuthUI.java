@@ -57,6 +57,8 @@ public class AuthUI implements Runnable{
         List<MenuItem> rolesUI = new ArrayList<>();
         rolesUI.add(new MenuItem(Constants.ROLE_ADMIN, new AdminUI()));
         rolesUI.add(new MenuItem(Constants.ROLE_REC, new ReceptionistUI()));
+        rolesUI.add(new MenuItem(Constants.ROLE_MLT, new MltUI()));
+
         // To complete with other user roles and related RoleUI
 
         //
@@ -68,7 +70,7 @@ public class AuthUI implements Runnable{
         System.out.println("\nLogin UI:");
 
         int maxAttempts = 3;
-        boolean success = false;
+        boolean success;
         do
         {
             maxAttempts--;
