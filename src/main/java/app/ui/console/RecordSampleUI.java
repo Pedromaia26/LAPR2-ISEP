@@ -36,11 +36,16 @@ public class RecordSampleUI implements Runnable {
 
         App.getInstance().getCompany().getLabOrderStore().addToList(labOrder);
 
-        for(LabOrderDTO loDTO : controller.getLabOrderDto()){
-            System.out.println(loDTO);
+        Test nteste=new Test(labOrder);
+
+        App.getInstance().getCompany().getTestStore().addToList(nteste);
+
+        for(TestDTO loDTO : controller.getTestDto()){
+            if (loDTO.getSample()==null)
+                System.out.println(loDTO);
         }
 
-        String testTypeLO = ler.nextLine();
+        String testTypeofTest = ler.nextLine();
 
         System.out.println("Insert the date of collection of the sample.");
         String dataColl = ler.nextLine();
@@ -48,11 +53,11 @@ public class RecordSampleUI implements Runnable {
         String timeColl = ler.nextLine();
         int confirm;
 
-        if(controller.createNewSample(new SampleDTO(dataColl,timeColl,testTypeLO))){
+        if(controller.createNewSample(new SampleDTO(testTypeofTest))){
 
             System.out.println("--------------------------");
             System.out.println("Please confirm the data:");
-            System.out.printf("Data of Collecting the sample: %s\nTime of Collecting the sample: %s\nLabOrderCode: %s\n%n", dataColl, timeColl, testTypeLO);
+            System.out.printf("Data of Collecting the sample: %s\nTime of Collecting the sample: %s\nTestCode: %s\n%n", dataColl, timeColl, testTypeofTest);
             System.out.println("--------------------------");
             System.out.println(" 1 --> Confirm");
             System.out.println(" 2 --> Cancel");
@@ -64,9 +69,13 @@ public class RecordSampleUI implements Runnable {
                     System.out.println("Sample recording error.");
                 }
             }
-
         }
 
+        for(TestDTO loDTO : controller.getTestDto()){
+            if (loDTO.getSample()==null) {
+                System.out.println(loDTO);
+            }
+        }
 
     }
 }

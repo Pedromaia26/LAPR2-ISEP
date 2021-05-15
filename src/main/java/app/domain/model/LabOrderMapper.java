@@ -5,17 +5,18 @@ import java.util.List;
 
 public class LabOrderMapper {
 
-    private List<LabOrderDTO> listLabOrderDto= new ArrayList<>();
+    private List<TestDTO> listLabOrderDto;
 
     /**
      * Transforms a list of objects of type ParameterCategory into a list of objects of type ParameterCategoryDto
      * @param listParameterCategory The list to be transformed
      * @return The transformed list
      */
-    public List<LabOrderDTO> toDto(List<LabOrder> listParameterCategory) {
+    public List<TestDTO> toDto(List<Test> listParameterCategory) {
+        listLabOrderDto= new ArrayList<>();
+        for (Test cat : listParameterCategory) {
 
-        for (LabOrder cat : listParameterCategory) {
-            listLabOrderDto.add(new LabOrderDTO(cat));
+            listLabOrderDto.add(new TestDTO(cat));
         }
         return listLabOrderDto;
     }

@@ -1,17 +1,19 @@
 package app.domain.model;
 
-public class Sample {
+public class Sample extends Test{
 
-    private String dataColl;
+    private String barcode;
 
-    private String timeColl;
+    public Sample(LabOrder labOrder) {
+        super(labOrder);
+        this.barcode="asd";
+    }
 
-    private TestType test;
-
-    public Sample(String dataColl, String timeColl, TestType test) {
-        this.dataColl = dataColl;
-        this.timeColl = timeColl;
-        this.test = test;
+    @Override
+    public String toString() {
+        return "Sample{" +
+                "barcode='" + barcode + '\'' +
+                '}';
     }
 
 }

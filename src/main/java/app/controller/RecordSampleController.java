@@ -40,11 +40,11 @@ public class RecordSampleController {
         return this.company.getSampleStore().saveSample(samp);
     }
 
-    public List<LabOrder> getLabOrder(){
-        return this.company.getLabOrderStore().getLabOrders();
+    public List<Test> getTest(){
+        return this.company.getTestStore().getTests();
     }
 
-    public List<LabOrderDTO> getLabOrderDto(){
-        return this.labOrderMapper.toDto(getLabOrder());
+    public List<TestDTO> getTestDto(){
+        return this.labOrderMapper.toDto(getTest());
     }
 }

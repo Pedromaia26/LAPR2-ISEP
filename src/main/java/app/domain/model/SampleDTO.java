@@ -8,9 +8,8 @@ public class SampleDTO {
 
     private String orderid;
 
-    public SampleDTO(String dataColl, String timeColl, String orderid) {
-        this.dataColl = dataColl;
-        this.timeColl = timeColl;
+    public SampleDTO(String orderid) {
+
         this.orderid = orderid;
     }
 

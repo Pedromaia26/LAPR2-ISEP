@@ -12,15 +12,16 @@ public class SampleMapper {
         String dataColl = dto.getDataColl();
         String timeColl = dto.getTimeColl();
 
-        TestType test= App.getInstance().getCompany().getTestTypeStore().getTestTypeByCode(orderid);
+        LabOrder test= App.getInstance().getCompany().getLabOrderStore().getLabOrderByCode(orderid);
 
         List<ParameterCategory> listPC = new ArrayList<>();
+
 
         TestType testesss = new TestType("asd","asd","12345",listPC) ;//orderid.getTestTypebycode.....
 
 
 
-        return new Sample(dataColl, timeColl,test);
+        return new Sample(test);
 
 
     }

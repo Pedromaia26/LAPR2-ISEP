@@ -28,6 +28,7 @@ public class Company {
     private OrgRole orgRole;
     private SampleStore sampleStore;
     private LabOrderStore labOrderStore;
+    private TestStore testStore;
 
 
     public Company(String designation)
@@ -49,6 +50,7 @@ public class Company {
         this.orgRole = new OrgRole();
         this.sampleStore=new SampleStore();
         this.labOrderStore=new LabOrderStore();
+        this.testStore=new TestStore();
     }
 
     public String getDesignation() {
@@ -85,5 +87,6 @@ public class Company {
     public OrgRole getOrgRole(){ return orgRole; }
     public SampleStore getSampleStore(){return sampleStore; }
     public LabOrderStore getLabOrderStore(){return labOrderStore; }
+    public TestStore getTestStore(){return testStore;}
 
 }
