@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 015 - To validate the work done by the clinical chemistry technologist and specialist doctor
 
 ## 1. Requirements Engineering
 
@@ -23,15 +23,27 @@
 
 **From the client clarifications:**
 
-> **Question:** Which is the unit of measurement used to estimate duration?
+> **Question:** "Regarding the process of validating a certain test/result, what validation states should be considered by the laboratory coordinator? For example, can "Valid" or "Invalid" be accepted as a confirmation for the chemical test/result and its diagnosis?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8251#p10789]
 >  
-> **Answer:** Duration is estimated in days.
+> **Answer:** Only valid state. The system shows all tests ready to validate and the laboratory coordinator selects one or more tests to mark as validated. 
 
 -
 
-> **Question:** Monetary data is expressed in any particular currency?
+> **Question:** "Should the laboratory coordinator validate the test results one by one or should he do only one validation of all of them?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8180#p10708]
 >  
-> **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
+> **Answer:** The coordinator can validate all or a subset of test results.
+
+-
+
+> **Question:** "When the laboratory coordinator wants to validate a test does all the tests available show up for him or does he search using a code that identifies a specific test?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8177#p10704]
+>  
+> **Answer:** The system shows all tests ready to validate and the laboratory coordinator selects one or more tests to mark as validated.
+
+-
+
+> **Question:** "What should happen to a test if either the test report or the results are invalid?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8177#p10704]
+>  
+> **Answer:** The laboratory coordinator only sees the test dates of tests that already have all dates registered in the system.
 
 
 ### 1.3. Acceptance Criteria
@@ -61,24 +73,19 @@
 	* an estimated cost
 	
 * Selected data:
-	* Classifying task category 
+	* Test to be validated 
 
 
 **Output Data:**
 
-* List of existing task categories
+* List of tests ready to validate
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
-
-
-**Alternative 2**
-
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US15_SSD](US15_SSD.svg)
 
 
 **Other alternatives might exist.**
