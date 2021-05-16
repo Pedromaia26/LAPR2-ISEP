@@ -90,17 +90,7 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 
 ![US014_SSD](US014_SSD.svg)
 
-
-**Alternative 2**
-
-![US006_SSD_v2](US006_SSD_v2.svg)
-
-
-**Other alternatives might exist.**
-
 ### 1.7 Other Relevant Remarks
-
-* The created task stays in a "not published" state in order to distinguish from "published" tasks.
 
 
 ## 2. OO Analysis
