@@ -24,15 +24,15 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 
 **From the client clarifications:**
 
-> **Question:** Which is the unit of measurement used to estimate duration?
+> **Question:** When the Clinical Chemistry Technologist wants to record the results of a test, how does he has access to that test? By internal code, NHS code?
 >  
-> **Answer:** Duration is estimated in days.
+> **Answer:** Each sample has a unique barcode. The clinical chemistry technologist should use the sample barcode number to find the test for which the sample was collected.
 
 -
 
-> **Question:** Monetary data is expressed in any particular currency?
+> **Question:** Should the system present a result for each test parameter or a single result for the test to be recorded?
 >  
-> **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
+> **Answer:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
 
 
 ### 1.3. Acceptance Criteria
@@ -60,11 +60,13 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 
 	
 * Selected data:
-	* test parameter
+	* test,
+	* test parameter.
 
 
 **Output Data:**
 
+* List of tests.
 * List of test parameters.
 * (In)Success of the operation.
 
@@ -73,6 +75,10 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 **Alternative 1**
 
 ![US012_SSD.svg](US012_SSD.svg)
+
+**Some Details**
+
+![US012_SSD_SomeDetails.svg](US012_SSD_SomeDetails.svg)
 
 
 **Alternative 2**
