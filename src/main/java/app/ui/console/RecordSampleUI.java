@@ -41,40 +41,46 @@ public class RecordSampleUI implements Runnable {
         App.getInstance().getCompany().getTestStore().addToList(nteste);
 
         for(TestDTO loDTO : controller.getTestDto()){
-            if (loDTO.getSample()==null)
+            if (loDTO.getSample().isEmpty())
                 System.out.println(loDTO);
         }
-
         String testTypeofTest = ler.nextLine();
 
-        System.out.println("Insert the date of collection of the sample.");
-        String dataColl = ler.nextLine();
-        System.out.println("Insert the time of collection of the sample.");
-        String timeColl = ler.nextLine();
+        System.out.println("Insert how many samples want to collect.");
+
+        int number = ler.nextInt();
+
+
         int confirm;
+        for (int i=1;i<=number;i++) {
+            if (controller.createNewSample(new SampleDTO(testTypeofTest))) {
 
-        if(controller.createNewSample(new SampleDTO(testTypeofTest))){
-
-            System.out.println("--------------------------");
-            System.out.println("Please confirm the data:");
-            System.out.printf("Data of Collecting the sample: %s\nTime of Collecting the sample: %s\nTestCode: %s\n%n", dataColl, timeColl, testTypeofTest);
-            System.out.println("--------------------------");
-            System.out.println(" 1 --> Confirm");
-            System.out.println(" 2 --> Cancel");
-            confirm = ler.nextInt();
-            if(confirm == 1){
-                if(controller.saveSample()){
-                    System.out.println("Sample recorded successfully.");
-                }else{
-                    System.out.println("Sample recording error.");
+                System.out.println("--------------------------");
+                System.out.println("Please confirm the data:");
+                System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", testTypeofTest, i,controller.getSamp().toString());
+                System.out.println("--------------------------");
+                System.out.println(" 1 --> Confirm");
+                System.out.println(" 2 --> Cancel");
+                confirm = ler.nextInt();
+                if (confirm == 1) {
+                    if (controller.saveSample()) {
+                        System.out.println("Sample recorded successfully.");
+                        System.out.println("--------------------------");
+                    } else {
+                        System.out.println("Sample recording error.");
+                        System.out.println("--------------------------");
+                    }
                 }
             }
+            else{
+                System.out.printf("Sample number:%d Creation error\n",i);
+            }
+
         }
 
         for(TestDTO loDTO : controller.getTestDto()){
-            if (loDTO.getSample()==null) {
-                System.out.println(loDTO);
-            }
+            System.out.println(loDTO);
+
         }
 
     }

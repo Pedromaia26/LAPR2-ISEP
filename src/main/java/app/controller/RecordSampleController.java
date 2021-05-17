@@ -2,42 +2,44 @@ package app.controller;
 
 import app.domain.model.*;
 
-import java.io.IOException;
 import java.util.List;
 
 public class RecordSampleController {
-    private SampleStore sampleStore;
+    private TestStore testStore;
 
     private Company company;
 
     private Sample samp;
 
-    private LabOrderMapper labOrderMapper;
+    private TestMapper testMapper;
 
 
     public RecordSampleController(){
         this(App.getInstance().getCompany());
-        this.sampleStore=App.getInstance().getCompany().getSampleStore();
-        this.labOrderMapper = new LabOrderMapper();
+        this.testStore=App.getInstance().getCompany().getTestStore();
+        this.testMapper = new TestMapper();
 
     }
 
     public RecordSampleController(Company company) {
-        this.sampleStore=company.getSampleStore();
+        this.testStore=company.getTestStore();
         this.company= company;
-        this.labOrderMapper = new LabOrderMapper();
+        this.testMapper = new TestMapper();
 
     }
 
+    public Sample getSamp() {
+        return samp;
+    }
 
     public boolean createNewSample(SampleDTO dto) {
-        this.samp = sampleStore.RecordNewSample(dto);
-        return this.sampleStore.validateSample(samp);
+        this.samp = testStore.RecordNewSample(dto);
+        return this.testStore.validateSample(samp);
     }
 
     public boolean saveSample (){
 
-        return this.company.getSampleStore().saveSample(samp);
+        return this.company.getTestStore().saveSample(samp);
     }
 
     public List<Test> getTest(){
@@ -45,6 +47,6 @@ public class RecordSampleController {
     }
 
     public List<TestDTO> getTestDto(){
-        return this.labOrderMapper.toDto(getTest());
+        return this.testMapper.toDto(getTest());
     }
 }
