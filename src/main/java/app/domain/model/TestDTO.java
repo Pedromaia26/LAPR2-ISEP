@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.util.List;
+
 public class TestDTO {
     private LabOrder labOrder;
 
-    private Sample sample;
+    private List<Sample> sample;
 
     public TestDTO(Test test) {
         this.labOrder=test.getLabOrder();
@@ -12,17 +14,14 @@ public class TestDTO {
 
     @Override
     public String toString() {
-        return "TestDTO{" +
-                "labOrder=" + labOrder.toString() +
-                ", sample=" + sample +
-                '}';
+        return "TestDTO:" + labOrder.toString() + ", sample=" + sample;
     }
 
     public LabOrder getLabOrder() {
         return labOrder;
     }
 
-    public Sample getSample() {
+    public List<Sample> getSample() {
         return sample;
     }
 }

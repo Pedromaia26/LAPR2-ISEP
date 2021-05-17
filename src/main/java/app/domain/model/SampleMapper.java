@@ -17,8 +17,6 @@ public class SampleMapper {
         List<ParameterCategory> listPC = new ArrayList<>();
 
 
-        TestType testesss = new TestType("asd","asd","12345",listPC) ;//orderid.getTestTypebycode.....
-
 
 
         return new Sample(test);

@@ -93,7 +93,7 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US012_DM.svg](US012_DM.svg)
 
 ### 2.2. Other Remarks
 
