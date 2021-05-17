@@ -1,4 +1,4 @@
-# US 007 - To resgister a new Employee 
+# US 014 - To make a Diagnosis and write a Report 
 
 ## 1. Requirements Engineering
 
@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an administrator, I want to resgister a new employee.
+As a specialist doctor, I intend to make the diagnosis and write a report for a given test.
 
 
 
@@ -16,47 +16,56 @@ As an administrator, I want to resgister a new employee.
 **From the specifications document:**
 
 
+>	"The results of all chemical analyses are analysed by a specialist doctor who makes a diagnosis and writes a report that afterwards will be delivered to the client."
+
+
 **From the client clarifications:**
 
-> **Question:** Which attributes a employee have?
+> **Question:** "Should the specialist doctor make the diagnosis and report at the same time?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
 >  
-> **Answer:** Employee ID, Organization Role, Name, Address, Phone Number, E-Mail, Standard Occupational Classification (SOC) code.
+> **Answer:** 
+
+-
+
+> **Question:** "Should the application have a specific order for the "documents" to be made by the specialist doctor?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
+>  
+> **Answer:**
+
+-
+
+> **Question:** "How should the specialist doctor choose the test to work on?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
+> 
+> **Answer:**
+
+-
+
+> **Question:** "What characterizes a diagnosis? What it needs to have in it to be a valid diagnosis?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8292#p10845]
 >
-> **Question:** "When creating a new employee, the attributes 'Employee ID' and 'Doctor Index Number', are implemented by the administrator or incremented by the system?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7547#p10159]
+> **Answer:** "The report contains the diagnosis. The report is free text and should have no more than 400 words."
+
+- 
+
+> **Question:** "Regarding the tests that the Specialist Doctor can write a report about. Should the SD chose from a list of tests? and Should him only receive a list of test that have completed all the previous steps?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8250#p10889]
+> 
+> **Answer:** "The system shows all tests ready (that have completed all the previous steps) to make the diagnosys and the Specialist Doctor selects one test. Then, the Specialist Doctor writes the report for the selected test."
+
+-
+
+> **Question:** "Can the Specialist Doctor edit a report once it has already been written?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8268#p10898]
 >
-> **Answer:** Only the employee ID should be generated. The Doctor Index Number should be introduced by the administrator.
->
-> **Question:** "Regarding the registration of a new employee, which is the organization role's format?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7928#p10353]
-> 
-> **Answer:** "Organization Role: a string with no more than 15 characters."
-> 
-> **Question:** When the application is delivered, should it have default employees, ex:administrator, or should be completly empty (without any user or employee)? - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7668#p9993]
-> 
-> **Answer:** "One Administrator must be registered before starting the application for the first time."
-> 
-> **Question:** "Are there any other employee roles than the ones specified in the documents?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7738#p10084]
-> 
 > **Answer:** "No."
->
-> **Question:** "Is there any size limit to the employee's name?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7973]
->
-> **Answer:** "Employee Name: 'a string with no more than 35 characters'."
 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** "Each user must have a single role defined in the system."
-* **AC2:** "The "auth" component available on the repository must be reused (without modifications)."
-* **AC3:** "The employee ID should be generated from the initials of the employee name and should include a number. The number has 5 digits and is increases automatically when a new employee is registered in the system."
-* **AC4:** "Employee Name: a string with no more than 35 characters."
-* **AC5:** "Organization Role: a string with no more than 15 characters."
-* **AC6:** "SOC code: a number with 4 digits."
-* **AC7:** "Doctor Index Number: a number with 6 digits."
+* **AC1:** The report is free text and should have no more than 400 words.
 
 
 ### 1.4. Found out Dependencies
 
-* No dependecies founded.
+
+* There is a dependency to "US012 Record the results of a test" since at least a result of a test must recorded to create the corresponding report and diagnosis.
+
 
 ### 1.5 Input and Output Data
 
@@ -64,42 +73,31 @@ As an administrator, I want to resgister a new employee.
 **Input Data:**
 
 * Typed data:
-	* an user role,
-	* a name,
-	* an adress,
-	* a phone number,
-	* an e-mail,
-	* a standard occupational classification code,
-	* a doctor index number.
+	* a Report.
 	
 * Selected data:
-	* an organization role.
-	
-* Generated data:
-	* an employeeID.
+	* Test to be perfomed a report and diagnosis.
 
 
 **Output Data:**
 
-* (In)Success of the operation
+* List of tests;
+* (In)success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
 
 **Alternative 1**
 
-![US007_SSD](US007_SSD.svg)
-
+![US014_SSD](US014_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
-
-n/a
 
 
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US007_MD](US007_MD.svg)
+![US006_MD](US006_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -110,38 +108,56 @@ n/a
 
 ### 3.1. Rationale
 
+**SSD - Alternative 1 is adopted.**
+
+| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
+|:-------------  |:--------------------- |:------------|:---------------------------- |
+| Step 1  		 |	... interacting with the actor? | CreateTaskUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  		 |	... coordinating the US? | CreateTaskController | Controller                             |
+| 			  		 |	... instantiating a new Task? | Organization   | Creator (Rule 1): in the DM Organization has a Task.   |
+| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation.  |
+| 			  		 |	... knowing to which organization the user belongs to? | Platform  | IE: has registed all Organizations |
+| 			  		 |							 | Organization   | IE: knows/has its own Employees|
+| 			  		 |							 | Employee  | IE: knows its own data (e.g. email) |
+| Step 2  		 |							 |             |                              |
+| Step 3  		 |	...saving the inputted data? | Task  | IE: object created in step 1 has its own data.  |
+| Step 4  		 |	...knowing the task categories to show? | Platform  | IE: Task Categories are defined by the Platform. |
+| Step 5  		 |	... saving the selected category? | Task  | IE: object created in step 1 is classified in one Category.  |
+| Step 6  		 |							 |             |                              |              
+| Step 7  		 |	... validating all data (local validation)? | Task | IE: owns its data.| 
+| 			  		 |	... validating all data (global validation)? | Organization | IE: knows all its tasks.| 
+| 			  		 |	... saving the created task? | Organization | IE: owns all its tasks.| 
+| Step 8  		 |	... informing operation success?| CreateTaskUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Company
- * AuthFacade
- * Employee
+ * Organization
+ * Platform
+ * Task
 
-Other software classes identified: 
+Other software classes (i.e. Pure Fabrication) identified: 
 
- * RegistEmployeeUI  
- * RegistEmployeeController
- * RolesMapper
- * EmployeeStore
- * EmployeeMapper
- * EmployeeDto
- * RolesStore
- * OrgRole
+ * CreateTaskUI  
+ * CreateTaskController
 
 
 ## 3.2. Sequence Diagram (SD)
 
 **Alternative 1**
 
-![US006_SD](US007_SD.svg)
+![US006_SD](US006_SD.svg)
+
+**Alternative 2**
+
+![US006_SD](US006_SD_v2.svg)
 
 ## 3.3. Class Diagram (CD)
 
 **From alternative 1**
 
-![US007_CD](US007_CD.svg)
+![US006_CD](US006_CD.svg)
 
 # 4. Tests 
 

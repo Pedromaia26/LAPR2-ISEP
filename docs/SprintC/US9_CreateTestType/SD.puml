@@ -3,10 +3,10 @@ actor Administrator as Adm
 participant ":TestTypeUI" as UI
 participant ":TestTypeController" as TTC
 participant ":Company" as ML
-participant "store\n:ParameterCategoryStore" as PCS
+participant "pcStore\n:ParameterCategoryStore" as PCS
 participant "listPC\n:List<ParameterCategory> " as LPC
 participant ":listPCMapper" as MAP
-participant "store\n:TestTypeStore" as TTS
+participant "ttStore\n:TestTypeStore" as TTS
 participant "tt\n:TestType" as TT
 participant "listPCDto\n:List<ParameterCategoryDto>" as DTO
 autonumber
@@ -21,18 +21,18 @@ deactivate UI
 
 Adm -> UI: types requested data
 activate UI
-UI->TTC: pcs = getParameterCategoryStore()
+UI->TTC: listPCDto = getParameterCategories()
 activate TTC
-TTC->ML: pcs = getParameterCategoryStore()
+TTC->ML: pcStore = getParameterCategoryStore()
 activate ML
-
 deactivate ML
-    TTC -> MAP: listPCDto = toDTO(pcs)
+TTC -> PCS: pcs = getParameterCategories()
+activate PCS
+deactivate PCS
+TTC -> MAP: listPCDto = toDTO(pcs)
 activate MAP
-
-MAP --> TTC: listPCDto
 deactivate MAP
-TTC --> UI: listPCDto
+
 deactivate TTC
 loop
 UI --> Adm: shows parameter category list and asks to select one
@@ -47,7 +47,7 @@ TTC -> PCS: cat = getParameterCategoryByCode(code)
 activate PCS
 deactivate PCS
 end
-TTC -> ML: store = getTestTypeStore()
+TTC -> ML: ttStore = getTestTypeStore()
 activate ML
 deactivate ML
 TTC -> TTS: tt = createTestType(description, \n collectingMethod, code, cat)

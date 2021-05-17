@@ -72,16 +72,14 @@ As an administrator, I want to resgister a new employee.
 	* a standard occupational classification code,
 	* a doctor index number.
 	
-* Selected data:
-	* an organization role.
-	
 * Generated data:
 	* an employeeID.
 
 
 **Output Data:**
 
-* (In)Success of the operation
+* List of Roles,
+* (In)Success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
 
@@ -116,7 +114,6 @@ n/a
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
- * AuthFacade
  * Employee
 
 Other software classes identified: 
