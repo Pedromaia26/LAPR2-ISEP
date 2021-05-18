@@ -21,6 +21,9 @@ public class Sample extends Test{
                 "barcode='" + barcode + '\'';
     }
 
+    public String getBarcode() {
+        return barcode;
+    }
 
     @Override
     public boolean equals(Object o) {

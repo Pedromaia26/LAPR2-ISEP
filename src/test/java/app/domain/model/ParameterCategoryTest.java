@@ -88,7 +88,7 @@ public class ParameterCategoryTest {
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");
-        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().saveParameterCategory(pc);
 
         TestType tt = new TestType("Covid-19 test", "Swab", "katm1", c.getParameterCategoryStore().getParameterCategories());
 
