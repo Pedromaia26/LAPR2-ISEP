@@ -49,7 +49,7 @@ public class Test {
     /**
      * Returns the test parameter from a test.
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
-     * @return the test parameter intended if the code exists. If not, informs the user that the code does not exists.
+     * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
 
     public Parameter getTestParameterFor(String parameterCode){

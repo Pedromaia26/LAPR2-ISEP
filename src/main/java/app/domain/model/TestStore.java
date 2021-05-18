@@ -10,8 +10,11 @@ public class TestStore {
     /**
      * List that contains the tests.
      */
-    private List<Test> tests= new ArrayList<>();
+    private List<Test> tests;
 
+    public TestStore(){
+        tests = new ArrayList<>();
+    }
     /**
      * Returns the list of existing tests.
      * @return list of tests.
@@ -90,8 +93,9 @@ public class TestStore {
     public Test getTestByBarcode(int barcode){
         for (Test test: tests) {
             for (Sample samples : test.getSample()) {
-                if (barcode==samples.getBarcode())
-                    return test;
+                    if (barcode==samples.getBarcode())
+                        return test;
+
             }
         }
         throw new IllegalArgumentException("There is no Sample with such barcode!");
