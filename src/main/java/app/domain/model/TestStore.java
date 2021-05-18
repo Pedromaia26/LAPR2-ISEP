@@ -6,13 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestStore {
+
+    /**
+     * List that contains the tests.
+     */
     private List<Test> tests= new ArrayList<>();
 
-
+    /**
+     * Returns the list of existing tests.
+     * @return list of tests.
+     */
     public List<Test> getTests() {
         return tests;
     }
 
+    /**
+     * Adding a test to the tests list.
+     * @param test receives by parameter the test to be added to the list.
+     */
     public void addToList (Test test){
         tests.add(test);
     }
@@ -52,6 +63,7 @@ public class TestStore {
 
         return false;
     }
+
     /**
      * Create a new sample with the dto received.
      * @param dto The SampleDTO
@@ -59,7 +71,6 @@ public class TestStore {
      */
     public Sample RecordNewSample(SampleDTO dto) {
         return SampleMapper.toModel(dto);
-
     }
 
     /**

@@ -104,4 +104,36 @@ public class Parameter {
     public String toString() {
         return String.format("Short Name: %s; Code: %s; Description: %s; Parameter Category: %s",shortName, code, description, category);
     }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ParameterCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ParameterCategory category) {
+        this.category = category;
+    }
 }
