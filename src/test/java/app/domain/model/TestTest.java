@@ -50,6 +50,7 @@ public class TestTest {
 
         Sample s = new Sample(lO);
 
+
         c.getTestStore().saveSample(s);
 
         app.domain.model.Test a = c.getTestStore().getTestByBarcode(2);

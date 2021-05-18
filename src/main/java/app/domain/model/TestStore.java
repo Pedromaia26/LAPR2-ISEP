@@ -64,6 +64,14 @@ public class TestStore {
         return false;
     }
 
+    public void addSample (Sample samp) {
+        for (Test testss : tests) {
+            if (testss.getLabOrder() == samp.getLabOrder()) {
+                testss.getSample().add(samp);
+            }
+        }
+    }
+
     /**
      * Create a new sample with the dto received.
      * @param dto The SampleDTO
