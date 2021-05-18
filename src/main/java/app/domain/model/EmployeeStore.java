@@ -105,7 +105,8 @@ public class EmployeeStore {
 
         String password =  generatePassword();
 
-        out.printf("Employee registered with success.The password is: %s",password);
+
+        out.printf("Employee registered with success. The password is: %s",password);
         emp.setPassword(password);
 
 
@@ -132,7 +133,7 @@ public class EmployeeStore {
 
         String password =  generatePassword();
 
-        out.printf("Employee registered with success.The password is: %s",password);
+        out.printf("Employee registered with success. The password is: %s",password);
 
         out.close();
 
