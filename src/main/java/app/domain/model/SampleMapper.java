@@ -6,11 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SampleMapper {
+
+    /**
+     * Recieves the SampleDTO and returns the new Sample.
+     * @param dto The SampleDTO
+     * @return new Sample.
+     */
     public static Sample toModel(SampleDTO dto) {
 
         String orderid = dto.getOrderid();
-        String dataColl = dto.getDataColl();
-        String timeColl = dto.getTimeColl();
+
 
         LabOrder test= App.getInstance().getCompany().getLabOrderStore().getLabOrderByCode(orderid);
 

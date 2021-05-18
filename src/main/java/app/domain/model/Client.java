@@ -111,7 +111,10 @@ public class Client {
         if(!birth.matches("^\\d{2}/\\d{2}/\\d{4}$"))
             throw new IllegalArgumentException("Format of the data is incorrect");
 
-          int anosdif=calculateAge(birth);
+        int anosdif=calculateAge(birth);
+
+        if (anosdif<=0)
+            throw new IllegalArgumentException("Incorrect data");
 
         if (anosdif>150)
             throw new IllegalArgumentException("Client older than 150 years");

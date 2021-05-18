@@ -18,7 +18,7 @@ public class ClientStore {
     /**
      * Create a new client with the dto received.
      * @param dto The clientDTO
-     * @return The test type created.
+     * @return The client created.
      */
     public Client createNewClient(ClientDTO dto) {
         return ClientMapper.toModel(dto);

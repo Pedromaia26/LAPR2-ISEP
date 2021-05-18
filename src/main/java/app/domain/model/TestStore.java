@@ -16,13 +16,17 @@ public class TestStore {
     public void addToList (Test test){
         tests.add(test);
     }
-
-    public boolean validateSample(Sample nc){
-        if (nc == null)
+    /**
+     * Validates the sample received.
+     * @param samp the sample to be validated.
+     * @return True if the sample is successfully validated, false if it is not.
+     */
+    public boolean validateSample(Sample samp){
+        if (samp == null)
             return false;
         for(Test testss : tests){
             for (Sample samples : testss.getSample()) {
-                if (samples.equals(nc)) {
+                if (samples.getBarcode()==samp.getBarcode()) {
                     return false;
 
                 }
@@ -30,21 +34,29 @@ public class TestStore {
         }
         return true;
     }
-
-    public boolean saveSample(Sample nc) {
-        if (!validateSample(nc))
+    /**
+     * Saves the sample received in the test.
+     * @param samp the sample to be saved.
+     * @return True if the sample is successfully saved, false if it is not.
+     */
+    public boolean saveSample(Sample samp) {
+        if (!validateSample(samp))
             return false;
 
         for(Test testss : tests){
-            if(testss.getLabOrder()==nc.getLabOrder()) {
-                testss.getSample().add(nc);
+            if(testss.getLabOrder()==samp.getLabOrder()) {
+                testss.getSample().add(samp);
                 return true;
             }
         }
 
         return false;
     }
-
+    /**
+     * Create a new sample with the dto received.
+     * @param dto The SampleDTO
+     * @return The Sample created.
+     */
     public Sample RecordNewSample(SampleDTO dto) {
         return SampleMapper.toModel(dto);
 
@@ -56,10 +68,10 @@ public class TestStore {
      * @return test selected by its sample's barcode.
      */
 
-    public Test getTestByBarcode(String barcode){
+    public Test getTestByBarcode(int barcode){
         for (Test test: tests) {
             for (Sample samples : test.getSample()) {
-                if (barcode.equals(samples.getBarcode()))
+                if (barcode==samples.getBarcode())
                     return test;
             }
         }

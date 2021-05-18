@@ -34,7 +34,8 @@ public class RecordSampleController {
 
     public boolean createNewSample(SampleDTO dto) {
         this.samp = testStore.RecordNewSample(dto);
-        return this.testStore.validateSample(samp);
+       return this.testStore.validateSample(samp);
+
     }
 
     public boolean saveSample (){
