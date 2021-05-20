@@ -25,7 +25,7 @@ public class OrgRoleStore {
     }
 
 
-    public List<OrgRole> getOrgRoleStore(){
+    public List<OrgRole> getRoles(){
         return store;
     }
 

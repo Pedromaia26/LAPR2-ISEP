@@ -28,7 +28,7 @@ public class EmployeeStore {
      * @return the EmployeeMapper.toDto() method
      */
     public Employee createEmployee(EmployeeDto empDto){
-        return EmployeeMapper.toDto(empDto, Employees);
+        return EmployeeMapper.toDtoE(empDto);
     }
 
     /**
@@ -37,7 +37,7 @@ public class EmployeeStore {
      * @return the EmployeeMapper.toDto() method
      */
     public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
-        return EmployeeMapper.toDto(SpecialistDoctors, specdocdto);
+        return EmployeeMapper.toDtoSD(specdocdto);
     }
 
     /**
@@ -51,9 +51,6 @@ public class EmployeeStore {
         for (int i=0;i<num;i++){
             fim.append(a.charAt((int) (Math.random() * (60))));
         }
-
-
-
         return String.valueOf(fim);
     }
 

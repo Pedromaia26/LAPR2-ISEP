@@ -14,11 +14,13 @@ public class OrgRole {
         this.designation = designation;
     }
 
-    public  Employee createEmployee(OrgRole role, String employeeId, String name, String address, long phoneNumber, Email email, int socCode){
+    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode){
+        OrgRole role = new OrgRole(Orole);
         return new Employee(role, employeeId, name, address, phoneNumber, email, socCode);
     }
 
-    public SpecialistDoctor createEmployee(OrgRole role, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber){
+    public SpecialistDoctor createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber){
+        OrgRole role = new OrgRole(Orole);
         return new SpecialistDoctor(role, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
     }
 

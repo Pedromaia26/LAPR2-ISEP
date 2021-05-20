@@ -28,6 +28,8 @@ public class CreateEmployeeUI  implements Runnable{
         List<OrgRole> lRolesDto = employeeController.getRoles();
 
         String op;
+        String role = null;
+        EmployeeDto empdto;
         boolean exists = false;
 
         System.out.printf("List of employee roles:\n");
@@ -35,14 +37,14 @@ public class CreateEmployeeUI  implements Runnable{
         for(OrgRole orgRole : lRolesDto){
             System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDesignation());
         }
-        System.out.printf("Type a role:\n");
-        String role = ler.nextLine();
-        for(OrgRole orgRole : lRolesDto){
-            if (orgRole.getDesignation().equals(role)) {
-                exists = true;
-            }
+        System.out.printf("Select a role (number):\n");
+        int Orgop = ler.nextInt();
+        if (Orgop <= lRolesDto.size()) {
+            role = lRolesDto.get(Orgop-1).getDesignation();
+            exists = true;
         }
         if (exists){
+            ler.nextLine();
             System.out.printf("Name: ");
             String name = ler.nextLine();
             System.out.printf("Address: ");
@@ -56,12 +58,11 @@ public class CreateEmployeeUI  implements Runnable{
             System.out.printf("SOC code: ");
             int socCode = ler.nextInt();
             ler.nextLine();
-            OrgRole UserRole = new OrgRole(role);
-            String employeeIddefault = "default";
             if (role.equalsIgnoreCase("specialist doctor")){
                 System.out.printf("Doctor Index Number: ");
                 int docIndexNumber = ler.nextInt();
-                SpecialistDoctor sp = employeeController.createSpecialistDoctor(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode, docIndexNumber));
+                empdto = new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber);
+                SpecialistDoctor sp = employeeController.createSpecialistDoctor(empdto);
                 System.out.println("Data confirmation:");
                 System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", sp.getEmployeeId(), sp.getUserRole(), sp.getName(), sp.getAdress(), sp.getEmail(), sp.getPhoneNumber(), sp.getSocCode(), sp.getDocIndexNumber());
                 System.out.println("Do you want to create the employee?(Y/N)");
@@ -82,7 +83,8 @@ public class CreateEmployeeUI  implements Runnable{
                 else System.out.println("Employee regist canceled.");
             }
             else{
-                Employee emp = employeeController.createEmployee(new EmployeeDto(UserRole, employeeIddefault, name, address, phoneNumber, email, socCode));
+                empdto = new EmployeeDto(role, name, address, phoneNumber, email, socCode);
+                Employee emp = employeeController.createEmployee(empdto);
                 System.out.println("Data confirmation:");
                 System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", emp.getEmployeeId(), emp.getUserRole(), emp.getName(), emp.getAdress(), emp.getEmail(), emp.getPhoneNumber(), emp.getSocCode());
                 System.out.println("Do you want to create the employee?(Y/N)");

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RegistEmployeeController {
 
-    private OrgRoleStore orgRoleStore = new OrgRoleStore();
+    private OrgRoleStore rStore;
 
     private List<OrgRole> lRoles = new ArrayList<>();
     private List<OrgRole> lRolesDto = new ArrayList<>();
@@ -19,10 +19,9 @@ public class RegistEmployeeController {
     private SpecialistDoctor empsd;
 
     public List<OrgRole> getRoles(){
-        orgRoleStore.addDefaultRoles();
-        for (OrgRole orgRole : orgRoleStore.getOrgRoleStore()){
-            lRoles.add(orgRole);
-        }
+        rStore = App.getInstance().getCompany().getOrgRoleStore();
+        rStore.addDefaultRoles();
+        lRoles = rStore.getRoles();
         lRolesDto = RolesMapper.toDTO(lRoles);
         return lRolesDto;
     }
