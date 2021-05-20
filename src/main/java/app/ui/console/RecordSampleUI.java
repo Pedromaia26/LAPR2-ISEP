@@ -4,6 +4,8 @@ import app.controller.App;
 import app.controller.RecordSampleController;
 import app.controller.RegistClientController;
 import app.domain.model.*;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,27 +55,33 @@ public class RecordSampleUI implements Runnable {
 
         int confirm;
         for (int i=1;i<=number;i++) {
-            if (controller.createNewSample(new SampleDTO(testTypeofTest))) {
+            try {
+                if (controller.createNewSample(new SampleDTO(testTypeofTest))) {
 
-                System.out.println("--------------------------");
-                System.out.println("Please confirm the data:");
-                System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", testTypeofTest, i,controller.getSamp().toString());
-                System.out.println("--------------------------");
-                System.out.println(" 1 --> Confirm");
-                System.out.println(" 2 --> Cancel");
-                confirm = ler.nextInt();
-                if (confirm == 1) {
-                    if (controller.saveSample()) {
-                        System.out.println("Sample recorded successfully.");
-                        System.out.println("--------------------------");
-                    } else {
-                        System.out.println("Sample recording error.");
-                        System.out.println("--------------------------");
+                    System.out.println("--------------------------");
+                    System.out.println("Please confirm the data:");
+                    System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", testTypeofTest, i,controller.getSamp().toString());
+                    System.out.println("--------------------------");
+                    System.out.println(" 1 --> Confirm");
+                    System.out.println(" 2 --> Cancel");
+                    confirm = ler.nextInt();
+                    if (confirm == 1) {
+                        if (controller.saveSample()) {
+                            System.out.println("Sample recorded successfully.");
+                            System.out.println("--------------------------");
+                        } else {
+                            System.out.println("Sample recording error.");
+                            System.out.println("--------------------------");
+                        }
                     }
                 }
-            }
-            else{
-                System.out.printf("Sample number:%d Creation error\n",i);
+                else{
+                    System.out.printf("Sample number:%d Creation error\n",i);
+                }
+            } catch (OutputException e) {
+                e.printStackTrace();
+            } catch (BarcodeException e) {
+                e.printStackTrace();
             }
 
         }
