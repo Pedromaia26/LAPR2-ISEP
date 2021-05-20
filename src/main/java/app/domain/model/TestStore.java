@@ -1,6 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,23 +59,20 @@ public class TestStore {
         if (!validateSample(samp))
             return false;
 
+
+        return addSample(samp);
+    }
+
+    public boolean addSample(Sample samp){
         for(Test testss : tests){
             if(testss.getLabOrder()==samp.getLabOrder()) {
                 testss.getSample().add(samp);
                 return true;
             }
         }
-
         return false;
     }
 
-    public void addSample (Sample samp) {
-        for (Test testss : tests) {
-            if (testss.getLabOrder() == samp.getLabOrder()) {
-                testss.getSample().add(samp);
-            }
-        }
-    }
 
 
 
@@ -82,7 +81,7 @@ public class TestStore {
      * @param dto The SampleDTO
      * @return The Sample created.
      */
-    public Sample RecordNewSample(SampleDTO dto) {
+    public Sample RecordNewSample(SampleDTO dto) throws OutputException, BarcodeException {
         return SampleMapper.toModel(dto);
     }
 
@@ -92,10 +91,10 @@ public class TestStore {
      * @return test selected by its sample's barcode.
      */
 
-    public Test getTestByBarcode(int barcode){
+    public Test getTestByBarcode(String barcode){
         for (Test test: tests) {
             for (Sample samples : test.getSample()) {
-                    if (barcode==samples.getBarcode())
+                    if (barcode.equals(samples.getBarcode()))
                         return test;
 
             }

@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class RecordSampleController {
         return samp;
     }
 
-    public boolean createNewSample(SampleDTO dto) {
+    public boolean createNewSample(SampleDTO dto) throws OutputException, BarcodeException {
         this.samp = testStore.RecordNewSample(dto);
        return this.testStore.validateSample(samp);
 

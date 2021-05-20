@@ -1,6 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class SampleMapper {
      * @param dto The SampleDTO
      * @return new Sample.
      */
-    public static Sample toModel(SampleDTO dto) {
+    public static Sample toModel(SampleDTO dto) throws OutputException, BarcodeException {
 
         String orderid = dto.getOrderid();
 
