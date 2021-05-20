@@ -124,8 +124,5 @@ public class TestTypeStoreTest {
         Assert.assertEquals(tt,tt2);
         Assert.assertNotEquals(tt2,tt3);
 
-
-
-
     }
 }

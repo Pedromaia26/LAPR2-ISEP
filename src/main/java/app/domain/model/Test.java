@@ -46,18 +46,11 @@ public class Test {
         return sample;
     }
 
-    /**
-     * Returns the test parameter from a test.
-     * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
-     * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
-     */
 
-    public Parameter getTestParameterFor(String parameterCode){
-        for (Parameter testParam: labOrder.getParameters()) {
-            if (parameterCode.equals(testParam.getCode()))
-                return testParam;
-        }
-        throw new IllegalArgumentException ("There is no parameter with such code");
+
+
+    public void addTestResult (String parameterCode, String result, String metric){
+
     }
 
     /**
