@@ -45,7 +45,7 @@ class TestType{
 
 
 Company "1" -- "*" Test: does>
-Test "1" -- "1" Sample : originated by>
+Test "1" -- "1" Sample : has>
 Test "*" -- "1" Employee : is performed by>
 Test "1" -- "1" TestType : is of>
 Employee "0..1" -- "1" User: relates to >

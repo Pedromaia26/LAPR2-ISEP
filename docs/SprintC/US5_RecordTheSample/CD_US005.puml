@@ -2,11 +2,11 @@
 RecordSampleUI ..> RecordSampleController
 RecordSampleController..>Company
 RecordSampleController..>Sample
-RecordSampleController..>LabOrderMapper 
+RecordSampleController..>TestMapper
 RecordSampleController..>SampleDTO
 RecordSampleController..>SampleStore
 RecordSampleController..>SampleMapper
-RecordSampleController..>LabOrderStore
+RecordSampleController..>TestStore
 
 
 
@@ -20,26 +20,26 @@ Company --> SampleStore : have
 
 SampleStore --> Sample: has
 
-Company --> LabOrderStore
+Company --> TestStore
 
-LabOrderStore : +getTestByTestTypeCode(testid)
+TestStore : +getTestByTestTypeCode(testid)
 
-LabOrderMapper ..> LabOrderDTO
-LabOrderDTO..> LabOrder
-Sample --> LabOrder: originated from
+TestMapper ..> TestDTO
+TestDTO..> Test
+Sample --> Test: originated from
 
 
-LabOrderStore --> LabOrder : Has
+TestStore --> Test : Has
 SampleMapper ..> SampleDTO
 
 
-LabOrderMapper ..> LabOrderStore
+TestMapper ..> TestStore
 
-
+Test ..> Laborder
 LabOrder : -testType
 
 
-LabOrderMapper : +toDTO(tests)
+TestMapper : +toDTO(tests)
 
 SampleMapper : +toModel()
 
