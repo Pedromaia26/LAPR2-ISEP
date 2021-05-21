@@ -1,6 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ import static org.junit.Assert.*;
 public class TestStoreTest {
 
     @Test
-    public void getTestByBarcode() {
+    public void getTestByBarcode() throws OutputException, BarcodeException {
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");
 
@@ -69,8 +71,8 @@ public class TestStoreTest {
         App.getInstance().getCompany().getTestStore().saveSample(s1);
 
 
-        app.domain.model.Test a = App.getInstance().getCompany().getTestStore().getTestByBarcode(1);
-        app.domain.model.Test b = App.getInstance().getCompany().getTestStore().getTestByBarcode(2);
+        app.domain.model.Test a = App.getInstance().getCompany().getTestStore().getTestByBarcode("00000000001");
+        app.domain.model.Test b = App.getInstance().getCompany().getTestStore().getTestByBarcode("00000000002");
 
 
         String expected = "Test: labOrder, sample= + sample";

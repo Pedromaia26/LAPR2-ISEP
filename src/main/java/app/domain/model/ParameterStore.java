@@ -56,5 +56,9 @@ public class ParameterStore {
         parameterList.add(parameter);
     }
 
+    public List<Parameter> getParameterList (){
+        return parameterList;
+    }
+
 
 }

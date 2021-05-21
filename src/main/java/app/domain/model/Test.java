@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.controller.App;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,8 @@ public class Test {
      *
      */
     private LabOrder labOrder;
+
+    private List<TestParameter> testParameterList;
 
     /**
      * List containing the samples.
@@ -51,16 +55,20 @@ public class Test {
     /**
      * Returns the test parameter from a test.
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
-     * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
 
+    public void addTestResult(String parameterCode, String result, String metric){
+        TestParameter tParam =  getTestParameterFor(parameterCode);
 
-    public Parameter getTestParameterFor(String parameterCode){
-        for (Parameter testParam: labOrder.getParameters()) {
-            if (parameterCode.equals(testParam.getCode()))
-                return testParam;
+    }
+
+    private TestParameter getTestParameterFor(String parameterCode){
+        for (TestParameter tParam : testParameterList) {
+            if (tParam.getParameter().getCode().equals(parameterCode)) {
+                return tParam;
+            }
         }
-        throw new IllegalArgumentException ("There is no parameter with such code");
+        throw new IllegalArgumentException("There is no parameter with such code!");
     }
 
     /**
