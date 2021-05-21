@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title SD_AddTestResult(parameterCode, result, metric)
+
+
+participant "test\n:Test" as T
+participant "testParam\n:TestParameter" as TP
+participant "param\n:Parameter" as P
+participant "type\n:TestType" as TT
+participant "em\n:ExternalModule" as EM
+participant "refValue\n:ReferenceValue" as RF
+participant "testResult\n:TestParameterResult" as TR
+
+activate T
+?o-> T: addTestResult(parameterCode, result, metric)
+    T -> T: getTestParameterFor(parameterCode)
+activate T
+T -->T: testParam
+deactivate T
+    T -> TP: getParameter()
+activate TP
+TP --> T: param
+deactivate TP
+
+T -> TT: getExternalModule()
+activate TT
+TT --> T: em
+deactivate TT
+T -> EM: getReferenceValue(param)
+activate EM
+EM -> RF**: create(param)
+EM --> T: refValue
+deactivate EM
+T -> TP: addResult (result, metric, refValue)
+activate TP
+TP -> TR**: create(result, metric, refValue)
+TP --> T: ok
+deactivate TP
+<--T: ok
+deactivate T
+
+@enduml

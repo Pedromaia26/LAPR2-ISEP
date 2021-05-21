@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+Company "1" -- "1..*" Test: performs >
+Company "1" -- "1..*" TestType: conducts >
+Test "1..*" -- "1" TestType: is of >
+Test "1..*" -- "1..*" Parameter: requests analysis of >
+ReferenceValue "1" -- "*" ExternalModule: provided by >
+TestParameterResult "1" -- "1" ReferenceValue: records >
+TestParameter "1" -- "1" TestParameterResult: contains >
+Company "1" -- "1..*" Parameter: capable of analysing >
+(Test, Parameter) . TestParameter
+
+TestType "1..*" -- "1" ExternalModule: makes use of >
+
+class Company{
+ -designation
+}
+
+class ExternalModule{
+}
+
+class Test{
+
+}
+
+class TestParameterResult{
+ -result
+ -value
+ -metric
+}
+
+class ReferenceValue{
+
+}
+
+class Parameter{
+ -code
+ -shortName
+ -description
+}
+
+class TestType{
+ -code
+ -description
+ -collectingMethod
+}
+
+class TestParameter{
+
+}
+
+
+
+
+@enduml
