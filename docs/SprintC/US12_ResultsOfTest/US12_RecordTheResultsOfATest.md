@@ -143,7 +143,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US006_SD](US006_SD.svg)
+![US012_SD.svg](US012_SD.svg)
 
 **Some Details**
 
