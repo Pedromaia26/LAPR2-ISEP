@@ -87,6 +87,13 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_SD,Constants.ROLE_SD);
         this.authFacade.addUserRole(Constants.ROLE_C,Constants.ROLE_C);
 
+        /*this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_ADMIN));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_REC));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_MLT));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_CCT));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_LC));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_SD));*/
+
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
 
         this.authFacade.addUserWithRole("Receptionist", "rec@lei.sem2.pt", "123456",Constants.ROLE_REC);

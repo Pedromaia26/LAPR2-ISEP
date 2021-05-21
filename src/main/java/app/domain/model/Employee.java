@@ -183,7 +183,7 @@ public class Employee {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Employee client = (Employee) o;
-        return Objects.equals(userRole, client.userRole) && Objects.equals(employeeId, client.employeeId) && Objects.equals(name, client.name) && Objects.equals(address, client.address) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(email, client.email) && Objects.equals(socCode, client.socCode);
+        Employee emp = (Employee) o;
+        return Objects.equals(userRole, emp.userRole) && Objects.equals(employeeId, emp.employeeId) && Objects.equals(name, emp.name) && Objects.equals(address, emp.address) && Objects.equals(phoneNumber, emp.phoneNumber) && Objects.equals(email, emp.email) && Objects.equals(socCode, emp.socCode);
     }
 }

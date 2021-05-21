@@ -35,12 +35,18 @@ public class RecordSampleController {
     }
 
     public boolean createNewSample(SampleDTO dto) throws OutputException, BarcodeException {
-        this.samp = testStore.RecordNewSample(dto);
+        //var=testStore.getTestByCode();
+        //this.samp = var.RecordNewSample(dto);
+
        return this.testStore.validateSample(samp);
 
     }
 
     public boolean saveSample (){
+        //var=testStore.getTestByCode();
+        //this.samp = var.RecordNewSample(dto);
+
+        //criar e "guardar" sample na classe test
 
         return this.company.getTestStore().saveSample(samp);
     }
