@@ -97,7 +97,7 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US014_MD](US014_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -147,17 +147,11 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US006_SD](US006_SD.svg)
-
-**Alternative 2**
-
-![US006_SD](US006_SD_v2.svg)
+![US014_SD](US014_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
-**From alternative 1**
-
-![US006_CD](US006_CD.svg)
+![US014_CD](US014_CD.svg)
 
 # 4. Tests 
 
