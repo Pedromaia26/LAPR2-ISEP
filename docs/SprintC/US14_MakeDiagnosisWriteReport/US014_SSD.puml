@@ -14,7 +14,7 @@ deactivate SY
 SD -> SY : select a test to be reported
 
 activate SY
-SY --> SD : requests data(reportText)
+SY --> SD : shows the list of parameters results and request data (diagnosisText)
 deactivate SY
 
 SD -> SY : types requested data
@@ -26,7 +26,7 @@ deactivate SY
 SD -> SY : confirms the data 
 
 activate SY
-SY --> SD : informs operations success 
+SY --> SD : informs operations success
 deactivate SY
 
 deactivate SD
