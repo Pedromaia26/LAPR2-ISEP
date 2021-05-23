@@ -43,7 +43,7 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 >
 > **Answer:** "The report contains the diagnosis. The report is free text and should have no more than 400 words."
 
-- 
+-
 
 > **Question:** "Regarding the tests that the Specialist Doctor can write a report about. Should the SD chose from a list of tests? and Should him only receive a list of test that have completed all the previous steps?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8250#p10889]
 > 
@@ -54,6 +54,18 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 > **Question:** "Can the Specialist Doctor edit a report once it has already been written?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8268#p10898]
 >
 > **Answer:** "No."
+
+-
+
+> **Question:** "Once the specialist doctor decides to write the report for a given test, should the results of the chemical analysis and the reference values be presented on the screen?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8497#p11183]
+
+> **Answer:** "After selecting a test (to make the diagnosis/report) the results of the chemical analysis and the reference values should be presented on the screen. Then the Specialist Doctor should write the report."
+
+-
+
+> **Question:** "While in the 'Make a diagnosis and write a report' option of the main menu, should the specialist doctor be able to make a diagnosis and write a report for more than one test?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8497#p11183]
+
+> **Answer:** "After writing a report the SD can choose to write other reports without leaving the use case."
 
 ### 1.3. Acceptance Criteria
 
