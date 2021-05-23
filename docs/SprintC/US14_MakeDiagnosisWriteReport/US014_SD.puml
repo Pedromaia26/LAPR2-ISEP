@@ -47,14 +47,14 @@ deactivate Test
 Controller -> RLmapper: lResultParametersDto = toDto(lResultParameters)
 activate RLmapper
 deactivate RLmapper
-Interface --> SD: shows the list of parameters results
+Interface --> SD: shows the list of parameters results and request data (diagnosisText)
 deactivate Controller
 deactivate Interface
-SD -> Interface: confirms the data
-activate Interface
-Interface --> SD: request data (diagnosisText)
-deactivate Interface
 SD -> Interface: types requested data
+activate Interface
+Interface --> SD: shows the data and requests a confirmation
+deactivate Interface
+SD -> Interface: confirms the data
 activate Interface
 Interface -> Controller: createReport(diagnosisText)
 activate Controller
@@ -62,6 +62,9 @@ Controller -> Test: report = addReport(diagnosisText)
 activate Test
 Test -> Report**: create(diagnosisText)
 activate Report
+Report -> Report: submittedData = getData()
+activate Report
+deactivate Report
 Report -> Report: validate(diagnosisText)
 activate Report
 deactivate Report

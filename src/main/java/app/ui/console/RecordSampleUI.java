@@ -38,7 +38,7 @@ public class RecordSampleUI implements Runnable {
 
         App.getInstance().getCompany().getLabOrderStore().addToList(labOrder);
 
-        Test nteste=new Test(labOrder);
+        Test nteste=new Test("1234567890",1234123412L,labOrder);
 
         App.getInstance().getCompany().getTestStore().addToList(nteste);
 
@@ -46,7 +46,7 @@ public class RecordSampleUI implements Runnable {
             if (loDTO.getSample().isEmpty())
                 System.out.println(loDTO);
         }
-        String testTypeofTest = ler.nextLine();
+        String codeTest = ler.nextLine();
 
         System.out.println("Insert how many samples want to collect.");
 
@@ -56,11 +56,11 @@ public class RecordSampleUI implements Runnable {
         int confirm;
         for (int i=1;i<=number;i++) {
             try {
-                if (controller.createNewSample(new SampleDTO(testTypeofTest))) {
+                if (controller.createNewSample(new SampleDTO(codeTest))) {
 
                     System.out.println("--------------------------");
                     System.out.println("Please confirm the data:");
-                    System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", testTypeofTest, i,controller.getSamp().toString());
+                    System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", codeTest, i,controller.getSamp().toString());
                     System.out.println("--------------------------");
                     System.out.println(" 1 --> Confirm");
                     System.out.println(" 2 --> Cancel");
@@ -78,9 +78,7 @@ public class RecordSampleUI implements Runnable {
                 else{
                     System.out.printf("Sample number:%d Creation error\n",i);
                 }
-            } catch (OutputException e) {
-                e.printStackTrace();
-            } catch (BarcodeException e) {
+            } catch (OutputException | BarcodeException e) {
                 e.printStackTrace();
             }
 
