@@ -58,17 +58,17 @@ public class TestStoreTest {
         LabOrder lO = new LabOrder(tt, param);
         LabOrder lO1 = new LabOrder(tt2, param2);
 
-        app.domain.model.Test t = new app.domain.model.Test(lO);
-        app.domain.model.Test t2 = new app.domain.model.Test(lO1);
+        app.domain.model.Test t = new app.domain.model.Test("1231231231",1231231231L,lO);
+        app.domain.model.Test t2 = new app.domain.model.Test("1231231231",1231231231L,lO1);
 
         App.getInstance().getCompany().getTestStore().addToList(t);
         App.getInstance().getCompany().getTestStore().addToList(t2);
 
 
-        Sample s = new Sample(lO);
-        App.getInstance().getCompany().getTestStore().saveSample(s);
-        Sample s1 = new Sample(lO1);
-        App.getInstance().getCompany().getTestStore().saveSample(s1);
+        Sample s = new Sample();
+        t.saveSample(s);
+        Sample s1 = new Sample();
+        t2.saveSample(s1);
 
 
         app.domain.model.Test a = App.getInstance().getCompany().getTestStore().getTestByBarcode("00000000001");

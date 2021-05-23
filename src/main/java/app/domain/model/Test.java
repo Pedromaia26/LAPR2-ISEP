@@ -1,5 +1,9 @@
 package app.domain.model;
 
+import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -100,5 +104,54 @@ public class Test {
     public String toString() {
         return "Test:" + labOrder + ", sample=" + sample;
     }
+
+
+    /**
+     * Validates the sample received.
+     * @param samp the sample to be validated.
+     * @return True if the sample is successfully validated, false if it is not.
+     */
+    public boolean validateSample(Sample samp){
+        if (samp == null)
+            return false;
+
+        List<Test> tests= App.getInstance().getCompany().getTestStore().getTests();
+        for(Test testss : tests){
+            for (Sample samples : testss.getSample()) {
+                if (samples.getBarcode().equals(samp.getBarcode())) {
+                    return false;
+
+                }
+            }
+        }
+        return true;
+    }
+    /**
+     * Saves the sample received in the test.
+     * @param samp the sample to be saved.
+     * @return True if the sample is successfully saved, false if it is not.
+     */
+    public boolean saveSample(Sample samp) throws BarcodeException, OutputException {
+        if (!validateSample(samp))
+            return false;
+
+        samp.imageIoWrite(samp.makeUPCABarcode(samp.getBarcode()), samp.getBarcode());
+        return addSample(samp);
+    }
+
+    public boolean addSample(Sample samp){
+
+        return this.sample.add(samp);
+
+    }
+
+    /**
+     * Create a new sample with the dto received.
+     * @return The Sample created.
+     */
+    public Sample RecordNewSample() {
+        return new Sample();
+    }
+
 
 }

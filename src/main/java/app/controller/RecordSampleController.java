@@ -15,6 +15,8 @@ public class RecordSampleController {
 
     private TestMapper testMapper;
 
+    private Test test;
+
 
     public RecordSampleController(){
         this(App.getInstance().getCompany());
@@ -34,21 +36,22 @@ public class RecordSampleController {
         return samp;
     }
 
-    public boolean createNewSample(SampleDTO dto) throws OutputException, BarcodeException {
-        //var=testStore.getTestByCode();
-        //this.samp = var.RecordNewSample(dto);
+    public boolean createNewSample(SampleDTO dto) {
+        this.test=testStore.getTestByCode(dto.getOrderid());
+        this.samp = this.test.RecordNewSample();
 
-       return this.testStore.validateSample(samp);
+       return this.test.validateSample(samp);
 
     }
 
-    public boolean saveSample (){
+    public boolean saveSample () throws BarcodeException, OutputException {
+
         //var=testStore.getTestByCode();
         //this.samp = var.RecordNewSample(dto);
 
         //criar e "guardar" sample na classe test
 
-        return this.company.getTestStore().saveSample(samp);
+        return this.test.saveSample(samp);
     }
 
     public List<Test> getTest(){
