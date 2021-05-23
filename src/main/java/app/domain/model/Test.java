@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import com.example3.CovidReferenceValues1API;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,6 +11,8 @@ public class Test {
     private String code;
     private long nhsCode;
     private LabOrder labOrder;
+    private List<TestParameter> testParameterList;
+    private ExternalModule em;
 
     /**
      * List containing the samples.
@@ -73,22 +77,18 @@ public class Test {
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
 
-    public Parameter getTestParameterFor(String parameterCode){
-        for (Parameter testParam: labOrder.getParameters()) {
-            if (parameterCode.equals(testParam.getCode()))
+    public TestParameter getTestParameterFor(String parameterCode){
+        for (TestParameter testParam: testParameterList) {
+            if (parameterCode.equals(testParam.getParameter().getCode()))
                 return testParam;
         }
         throw new IllegalArgumentException ("There is no parameter with such code");
     }
 
-    /**
-     * Returns the textual description of a test.
-     * @return characteristics of a test.
-     */
+
 
 
     @Override
-
     public boolean equals(Object o) {
         if (this == o)
             return true;
@@ -97,8 +97,22 @@ public class Test {
         return Objects.equals(code, test.code) && Objects.equals(nhsCode, test.nhsCode) && Objects.equals(labOrder, test.labOrder);
     }
 
+    /**
+     * Returns the textual description of a test.
+     * @return characteristics of a test.
+     */
+
     public String toString() {
         return "Test:" + labOrder + ", sample=" + sample;
     }
 
+    public ExternalModule getExternalModule (){
+        return em;
+    }
+
+    public void addTestResult (String parameterCode, String result, String metric){
+        TestParameter tp = getTestParameterFor(parameterCode);
+        ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
+        tp.addResult(result, metric, refValue);
+    }
 }
