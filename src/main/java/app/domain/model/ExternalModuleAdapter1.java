@@ -1,9 +1,6 @@
 package app.domain.model;
 
-import com.example2.EMRefValue;
 import com.example3.CovidReferenceValues1API;
-
-import java.lang.ref.Reference;
 
 public class ExternalModuleAdapter1 implements ExternalModule{
     CovidReferenceValues1API covid;
@@ -14,8 +11,6 @@ public class ExternalModuleAdapter1 implements ExternalModule{
        Double max = covid.getMaxReferenceValue(parameter.getCode(), 12345);
        String metric = covid.usedMetric(parameter.getCode(), 12345);
 
-       ReferenceValue ref = new ReferenceValue(min, max);
-
-       return ref;
+        return new ReferenceValue(min, max);
     }
 }
