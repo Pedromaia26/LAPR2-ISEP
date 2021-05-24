@@ -13,8 +13,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -22,6 +22,7 @@
 		    <artifactId>maven-surefire-plugin</artifactId>
 		    <version>2.22.0</version>
 				<configuration>
+					<useSystemClassLoader>false</useSystemClassLoader>
 					<forkCount>0</forkCount>
 				</configuration>
 			<dependencies>
@@ -150,6 +151,11 @@
 			<version>1.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/ExternalModule3API.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
 		</dependency>
 	</dependencies>
 </project>
