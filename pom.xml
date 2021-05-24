@@ -120,5 +120,13 @@
 	    <version>4.12</version>
 	    <scope>test</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>net.sourceforge.barbecue</groupId>
+			<artifactId>barbecue</artifactId>
+			<version>1.5-beta1</version>
+		</dependency>
+
+
+
+	</dependencies>
 </project>
