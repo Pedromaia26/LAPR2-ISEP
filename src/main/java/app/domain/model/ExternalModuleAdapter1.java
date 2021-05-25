@@ -1,5 +1,5 @@
 package app.domain.model;
-
+/*
 import com.example3.CovidReferenceValues1API;
 
 public class ExternalModuleAdapter1 implements ExternalModule{
@@ -14,3 +14,4 @@ public class ExternalModuleAdapter1 implements ExternalModule{
         return new ReferenceValue(min, max);
     }
 }
+*/

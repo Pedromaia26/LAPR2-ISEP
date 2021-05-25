@@ -1,5 +1,5 @@
 package app.domain.model;
-
+/*
 import com.example1.ExternalModule3API;
 
 public class ExternalModuleAdapter3 {
@@ -15,4 +15,4 @@ public class ExternalModuleAdapter3 {
             return new ReferenceValue(min, max);
         }
     }
-}
+}*/
