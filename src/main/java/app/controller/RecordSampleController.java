@@ -19,7 +19,7 @@ public class RecordSampleController {
 
 
     public RecordSampleController(){
-        this(App.getInstance().getCompany());
+        this.company=App.getInstance().getCompany();
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
 
@@ -38,9 +38,9 @@ public class RecordSampleController {
 
     public boolean createNewSample(SampleDTO dto) {
         this.test=testStore.getTestByCode(dto.getOrderid());
-        this.samp = this.test.RecordNewSample();
+        this.samp = this.test.RecordNewSample(company);
 
-       return this.test.validateSample(samp);
+       return this.test.validateSample(samp );
 
     }
 

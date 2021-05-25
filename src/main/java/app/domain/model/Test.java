@@ -156,8 +156,8 @@ public class Test {
      * Create a new sample with the dto received.
      * @return The Sample created.
      */
-    public Sample RecordNewSample() {
-        return new Sample();
+    public Sample RecordNewSample(Company c) {
+        return new Sample(c);
     }
 
     public ExternalModule getExternalModule (){

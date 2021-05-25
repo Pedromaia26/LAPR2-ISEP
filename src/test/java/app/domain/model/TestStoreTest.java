@@ -14,7 +14,8 @@ import static org.junit.Assert.*;
 public class TestStoreTest {
 
     @Test
-    public void getTestByBarcode() throws OutputException, BarcodeException {
+    public void getTestByBarcode() {
+        Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");
 
@@ -25,8 +26,8 @@ public class TestStoreTest {
         param.add(p);
         param.add(p1);
 
-        App.getInstance().getCompany().getParameterCategoryStore().saveParameterCategory(pc);
-        App.getInstance().getCompany().getParameterCategoryStore().saveParameterCategory(pc2);
+        c.getParameterCategoryStore().saveParameterCategory(pc);
+        c.getParameterCategoryStore().saveParameterCategory(pc2);
 
         List<Parameter> param2 = new ArrayList<>();
 
@@ -35,15 +36,15 @@ public class TestStoreTest {
 
         List<ParameterCategory> listPC = new ArrayList<>();
 
-        ParameterCategory pca = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("09090");
-        ParameterCategory pca2 = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("09091");
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("09090");
+        ParameterCategory pca2 = c.getParameterCategoryStore().getParameterCategoryByCode("09091");
 
         listPC.add(pca);
         listPC.add(pca2);
 
         List<ParameterCategory> listPC2 = new ArrayList<>();
 
-        ParameterCategory pcb = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("09090");
+        ParameterCategory pcb = c.getParameterCategoryStore().getParameterCategoryByCode("09090");
 
         listPC2.add(pcb);
 
@@ -61,18 +62,25 @@ public class TestStoreTest {
         app.domain.model.Test t = new app.domain.model.Test("1231231231",1231231231L,lO);
         app.domain.model.Test t2 = new app.domain.model.Test("1231231231",1231231231L,lO1);
 
-        App.getInstance().getCompany().getTestStore().addToList(t);
-        App.getInstance().getCompany().getTestStore().addToList(t2);
+        c.getTestStore().addToList(t);
+        c.getTestStore().addToList(t2);
 
 
-        Sample s = new Sample();
-        t.saveSample(s);
-        Sample s1 = new Sample();
-        t2.saveSample(s1);
+        Sample s = new Sample(c);
+        t.addSample(s);
+        Sample s1 = new Sample(c);
+        t2.addSample(s1);
 
 
-        app.domain.model.Test a = App.getInstance().getCompany().getTestStore().getTestByBarcode("00000000001");
-        app.domain.model.Test b = App.getInstance().getCompany().getTestStore().getTestByBarcode("00000000002");
+        List<app.domain.model.Test> samples = c.getTestStore().getTests();
+
+        for(app.domain.model.Test loDTO : samples){
+            for (Sample sample : loDTO.getSample())
+                System.out.println(loDTO);
+        }
+
+        app.domain.model.Test a = c.getTestStore().getTestByBarcode("00000000001");
+        app.domain.model.Test b = c.getTestStore().getTestByBarcode("00000000002");
 
 
         String expected = "Test: labOrder, sample= + sample";
