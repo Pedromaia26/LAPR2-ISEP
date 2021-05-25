@@ -6,12 +6,9 @@ import app.domain.model.*;
 import app.ui.console.utils.Utils;
 import auth.domain.model.Email;
 import auth.domain.model.User;
-import auth.domain.model.UserRole;
-import auth.domain.store.UserRoleStore;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +26,7 @@ public class CreateEmployeeUI  implements Runnable{
 
         String op;
         String role = null;
-        EmployeeDto empdto;
+        int num;
         boolean exists = false;
 
         System.out.printf("List of employee roles:\n");
@@ -37,14 +34,36 @@ public class CreateEmployeeUI  implements Runnable{
         for(OrgRole orgRole : lRolesDto){
             System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDesignation());
         }
-        System.out.printf("Select a role (number):\n");
-        int Orgop = ler.nextInt();
-        if (Orgop <= lRolesDto.size()) {
-            role = lRolesDto.get(Orgop-1).getDesignation();
+        System.out.printf("Select a role:\n");
+        String Orgop = ler.nextLine();
+        try {
+            num = Integer.parseInt(Orgop);
+            if (Integer.parseInt(Orgop) <= lRolesDto.size() && Integer.parseInt(Orgop) >=1) {
+                role = lRolesDto.get(Integer.parseInt(Orgop)-1).getDesignation();
+                exists = true;
+            }
+
+        } catch (NumberFormatException e) {
+            for (OrgRole orgRole : lRolesDto){
+                if (Orgop.equalsIgnoreCase(orgRole.getDesignation())){
+                    role = orgRole.getDesignation();
+                    exists = true;
+                }
+            }
+        }
+        /*if (Integer.parseInt(Orgop) <= lRolesDto.size() && Integer.parseInt(Orgop) >=1) {
+            role = lRolesDto.get(Integer.parseInt(Orgop)-1).getDesignation();
             exists = true;
         }
+        else{
+            for (OrgRole orgRole : lRolesDto){
+                if (Orgop.equalsIgnoreCase(orgRole.getDesignation())){
+                    role = orgRole.getDesignation();
+                    exists = true;
+                }
+            }
+        }*/
         if (exists){
-            ler.nextLine();
             System.out.printf("Name: ");
             String name = ler.nextLine();
             System.out.printf("Address: ");
@@ -61,47 +80,44 @@ public class CreateEmployeeUI  implements Runnable{
             if (role.equalsIgnoreCase("specialist doctor")){
                 System.out.printf("Doctor Index Number: ");
                 int docIndexNumber = ler.nextInt();
-                empdto = new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber);
-                SpecialistDoctor sp = employeeController.createSpecialistDoctor(empdto);
-                System.out.println("Data confirmation:");
-                System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", sp.getEmployeeId(), sp.getUserRole(), sp.getName(), sp.getAdress(), sp.getEmail(), sp.getPhoneNumber(), sp.getSocCode(), sp.getDocIndexNumber());
-                System.out.println("Do you want to create the employee?(Y/N)");
-                op = ler.next();
-                if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")){
-                    if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(sp.getEmail()))) {
-                        try {
-                            employeeController.saveSpecialistDoctor();
-                            System.out.println("Employee created with success.");
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
+                if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
+                    System.out.println("Data confirmation:");
+                    System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", role, name, address, email, phoneNumber, socCode, docIndexNumber);
+                    System.out.println("Do you want to create the employee?(Y/N)");
+                    op = ler.next();
+                    if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
+                        if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {
+                            try {
+                                employeeController.saveSpecialistDoctor();
+                                System.out.println("Employee created with success.");
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            throw new IllegalArgumentException("Employee already created.");
                         }
-                    }
-                    else{
-                        throw new IllegalArgumentException("Employee already created.");
-                    }
-                }
-                else System.out.println("Employee regist canceled.");
+                    } else System.out.println("Employee regist canceled.");
+                } else System.out.println("Employee created without success.");
             }
             else{
-                empdto = new EmployeeDto(role, name, address, phoneNumber, email, socCode);
-                Employee emp = employeeController.createEmployee(empdto);
-                System.out.println("Data confirmation:");
-                System.out.printf("Employee ID: %s\nUser Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", emp.getEmployeeId(), emp.getUserRole(), emp.getName(), emp.getAdress(), emp.getEmail(), emp.getPhoneNumber(), emp.getSocCode());
-                System.out.println("Do you want to create the employee?(Y/N)");
-                op = ler.next();
-                if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
-                    if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(emp.getEmail()))) {
-                        try {
-                            employeeController.saveEmployee();
-                            System.out.println("Employee created with success.");
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
+                if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
+                    System.out.println("Data confirmation:");
+                    System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", role, name, address, email, phoneNumber, socCode);
+                    System.out.println("Do you want to create the employee?(Y/N)");
+                    op = ler.next();
+                    if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
+                        if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {
+                            try {
+                                employeeController.saveEmployee();
+                                System.out.println("Employee created with success.");
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            throw new IllegalArgumentException("Employee already created.");
                         }
-                    } else {
-                        throw new IllegalArgumentException("Employee already created.");
-                    }
-                }
-                else System.out.println("Employee regist canceled.");
+                    } else System.out.println("Employee regist canceled.");
+                } else System.out.println("Employee created without success.");
             }
         }
         else{

@@ -21,7 +21,6 @@ public class EmployeeMapperTest {
 
         Assert.assertEquals(userRole, usrole.getDesignation());
         Employee emp2= c.getEmployeeStore().createEmployee(emp1);
-        assertEquals(emp,emp2);
-        */
+        assertEquals(emp,emp2);*/
     }
 }

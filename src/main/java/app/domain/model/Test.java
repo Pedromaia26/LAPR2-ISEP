@@ -118,11 +118,11 @@ public class Test {
      * @param samp the sample to be validated.
      * @return True if the sample is successfully validated, false if it is not.
      */
-    public boolean validateSample(Sample samp){
+    public boolean validateSample(Sample samp, Company company){
         if (samp == null)
             return false;
 
-        List<Test> tests= App.getInstance().getCompany().getTestStore().getTests();
+        List<Test> tests= company.getTestStore().getTests();
         for(Test testss : tests){
             for (Sample samples : testss.getSample()) {
                 if (samples.getBarcode().equals(samp.getBarcode())) {
@@ -138,8 +138,8 @@ public class Test {
      * @param samp the sample to be saved.
      * @return True if the sample is successfully saved, false if it is not.
      */
-    public boolean saveSample(Sample samp) throws BarcodeException, OutputException {
-        if (!validateSample(samp))
+    public boolean saveSample(Sample samp, Company company) throws BarcodeException, OutputException {
+        if (!validateSample(samp,company))
             return false;
 
         samp.imageIoWrite(samp.makeUPCABarcode(samp.getBarcode()), samp.getBarcode());
@@ -156,8 +156,8 @@ public class Test {
      * Create a new sample with the dto received.
      * @return The Sample created.
      */
-    public Sample RecordNewSample() {
-        return new Sample();
+    public Sample RecordNewSample(Company c) {
+        return new Sample(c);
     }
 
     public ExternalModule getExternalModule (){

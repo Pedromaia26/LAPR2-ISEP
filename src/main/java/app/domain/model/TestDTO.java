@@ -15,6 +15,8 @@ public class TestDTO {
         this.code=test.getCode();
     }
 
+    public String getCode() { return code; }
+
     @Override
     public String toString() {
         return "TestDTO:"+"code: " +code  +" ,"+ labOrder.toString() + ", sample=" + sample;

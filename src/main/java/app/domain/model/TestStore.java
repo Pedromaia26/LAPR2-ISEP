@@ -14,15 +14,29 @@ public class TestStore {
      */
     private List<Test> tests;
 
+    /**
+     * List that contains the tests to be reported.
+     */
+    private List<Test> testsToBeReported;
+
     public TestStore(){
         tests = new ArrayList<>();
     }
+
     /**
      * Returns the list of existing tests.
      * @return list of tests.
      */
     public List<Test> getTests() {
         return tests;
+    }
+
+    /**
+     * Returns the list of existing tests to be reported.
+     * @return list of tests to be reported.
+     */
+    public List<Test> getTestsToBeReported(){
+        return testsToBeReported;
     }
 
     /**
