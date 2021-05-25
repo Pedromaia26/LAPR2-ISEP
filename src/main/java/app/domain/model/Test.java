@@ -113,9 +113,6 @@ public class Test {
         return "Test:" + labOrder + ", sample=" + sample;
     }
 
-
-
-
     /**
      * Validates the sample received.
      * @param samp the sample to be validated.
