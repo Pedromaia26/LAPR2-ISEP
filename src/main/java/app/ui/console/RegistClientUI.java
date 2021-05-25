@@ -2,12 +2,7 @@ package app.ui.console;
 
 import app.controller.App;
 import app.controller.RegistClientController;
-import app.controller.RegistEmployeeController;
-import app.domain.model.Client;
 import app.domain.model.ClientDTO;
-import app.domain.model.OrgRole;
-import auth.domain.model.Email;
-import auth.domain.model.User;
 
 import java.io.IOException;
 import java.util.List;

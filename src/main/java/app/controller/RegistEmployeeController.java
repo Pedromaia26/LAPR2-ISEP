@@ -26,16 +26,14 @@ public class RegistEmployeeController {
         return lRolesDto;
     }
 
-    public Employee createEmployee(EmployeeDto empDto){
+    public boolean createEmployee(EmployeeDto empDto){
         this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto);
-        App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
-        return emp;
+        return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
     }
 
-    public SpecialistDoctor createSpecialistDoctor(EmployeeDto spedocdto){
+    public boolean createSpecialistDoctor(EmployeeDto spedocdto){
         this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto);
-        App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
-        return empsd;
+        return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
     }
 
     public List<Employee> getEmployeeList(){
