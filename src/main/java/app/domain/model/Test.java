@@ -13,6 +13,8 @@ public class Test {
     private String code;
     private long nhsCode;
     private LabOrder labOrder;
+    private ExternalModule em;
+    private List<TestParameter> testParameterList;
 
     /**
      * List containing the samples.
@@ -77,13 +79,14 @@ public class Test {
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
 
-    public Parameter getTestParameterFor(String parameterCode){
-        for (Parameter testParam: labOrder.getParameters()) {
-            if (parameterCode.equals(testParam.getCode()))
+    public TestParameter getTestParameterFor(String parameterCode){
+        for (TestParameter testParam: testParameterList) {
+            if (parameterCode.equals(testParam.getParameter().getCode()))
                 return testParam;
         }
         throw new IllegalArgumentException ("There is no parameter with such code");
     }
+
 
     /**
      * Returns the textual description of a test.
@@ -101,21 +104,25 @@ public class Test {
         return Objects.equals(code, test.code) && Objects.equals(nhsCode, test.nhsCode) && Objects.equals(labOrder, test.labOrder);
     }
 
+    /**
+     * Returns the textual description of a test.
+     * @return characteristics of a test.
+     */
+
     public String toString() {
         return "Test:" + labOrder + ", sample=" + sample;
     }
-
 
     /**
      * Validates the sample received.
      * @param samp the sample to be validated.
      * @return True if the sample is successfully validated, false if it is not.
      */
-    public boolean validateSample(Sample samp){
+    public boolean validateSample(Sample samp, Company company){
         if (samp == null)
             return false;
 
-        List<Test> tests= App.getInstance().getCompany().getTestStore().getTests();
+        List<Test> tests= company.getTestStore().getTests();
         for(Test testss : tests){
             for (Sample samples : testss.getSample()) {
                 if (samples.getBarcode().equals(samp.getBarcode())) {
@@ -131,8 +138,8 @@ public class Test {
      * @param samp the sample to be saved.
      * @return True if the sample is successfully saved, false if it is not.
      */
-    public boolean saveSample(Sample samp) throws BarcodeException, OutputException {
-        if (!validateSample(samp))
+    public boolean saveSample(Sample samp, Company company) throws BarcodeException, OutputException {
+        if (!validateSample(samp,company))
             return false;
 
         samp.imageIoWrite(samp.makeUPCABarcode(samp.getBarcode()), samp.getBarcode());
@@ -149,9 +156,19 @@ public class Test {
      * Create a new sample with the dto received.
      * @return The Sample created.
      */
-    public Sample RecordNewSample() {
-        return new Sample();
+    public Sample RecordNewSample(Company c) {
+        return new Sample(c);
+    }
+
+    public ExternalModule getExternalModule (){
+        return em;
     }
 
 
+    public void addTestResult (String parameterCode, String result, String metric){
+        TestParameter tp = getTestParameterFor(parameterCode);
+        ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
+        tp.addResult(result, metric, refValue);
+    }
 }
+

@@ -27,9 +27,9 @@ public class Sample{
      * Checks all parameters rules to see if the inputted data is valid.
      *
      */
-    public Sample() {
+    public Sample(Company c) {
 
-        this.barcode=createBarcode();
+        this.barcode=createBarcode(c);
 
         //Criar barcode automatico e fazer verificacao se nao existe igual
     }
@@ -37,12 +37,12 @@ public class Sample{
     /**
      * Counts all the samples already on the system +1 (starts on 1) to generate the sequential barcode number
      */
-    public String createBarcode(){
+    public String createBarcode(Company company){
 
-        List<Test> tests=App.getInstance().getCompany().getTestStore().getTests();
+        List<Test> tests=company.getTestStore().getTests();
         int c=1;
         for(Test testss : tests){
-            for (Sample samples : testss.getSample()) {
+            for (Sample ignored : testss.getSample()) {
                 c++;
                 }
             }
@@ -53,7 +53,7 @@ public class Sample{
 
     public BufferedImage makeUPCABarcode(String barcodeText) throws OutputException, BarcodeException {
         Barcode barcode = BarcodeFactory.createUPCA(barcodeText);
-        barcode.setPreferredBarHeight(150);
+       // barcode.setPreferredBarHeight(150);
         return BarcodeImageHandler.getImage(barcode);
     }
 

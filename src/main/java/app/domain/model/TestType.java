@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class TestType {
 
+
     /**
      * String that contains the description of a type of test
      */
@@ -24,6 +25,7 @@ public class TestType {
      * List that contains the parameter categories.
      */
     private List<ParameterCategory> listPC;
+
 
 
     /**
@@ -142,5 +144,6 @@ public class TestType {
     public void setListPC(List<ParameterCategory> listPC) {
         this.listPC = listPC;
     }
+
 
 }
