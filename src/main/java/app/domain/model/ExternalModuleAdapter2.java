@@ -1,10 +1,11 @@
 package app.domain.model;
 
+/*
 import com.example2.EMRefValue;
 import com.example2.ExternalModule2API;
 import com.example3.CovidReferenceValues1API;
 
-public class ExternalModuleAdapter2 {
+ public class ExternalModuleAdapter2 {
 
     public class ExternalModuleAdapter1 implements ExternalModule{
         ExternalModule2API blood;
@@ -20,4 +21,4 @@ public class ExternalModuleAdapter2 {
             return ref;
         }
     }
-}
+} */

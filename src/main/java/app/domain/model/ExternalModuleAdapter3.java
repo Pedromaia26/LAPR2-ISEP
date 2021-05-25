@@ -1,5 +1,6 @@
 package app.domain.model;
 
+/*
 import com.example1.ExternalModule3API;
 import com.example3.CovidReferenceValues1API;
 
@@ -18,4 +19,4 @@ public class ExternalModuleAdapter3 {
             return ref;
         }
     }
-}
+} */
