@@ -40,7 +40,7 @@ public class RecordSampleController {
         this.test=testStore.getTestByCode(dto.getOrderid());
         this.samp = this.test.RecordNewSample(company);
 
-       return this.test.validateSample(samp );
+       return this.test.validateSample(samp,company );
 
     }
 
@@ -51,7 +51,7 @@ public class RecordSampleController {
 
         //criar e "guardar" sample na classe test
 
-        return this.test.saveSample(samp);
+        return this.test.saveSample(samp, company);
     }
 
     public List<Test> getTest(){

@@ -42,7 +42,7 @@ public class Sample{
         List<Test> tests=company.getTestStore().getTests();
         int c=1;
         for(Test testss : tests){
-            for (Sample samples : testss.getSample()) {
+            for (Sample ignored : testss.getSample()) {
                 c++;
                 }
             }

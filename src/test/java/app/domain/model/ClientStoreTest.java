@@ -61,4 +61,17 @@ public class ClientStoreTest {
 
     }
 
+    @Test
+    public void getClientList() {
+        Company comp= new Company("ManyLabs");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        comp.getClientStore().addNewClient(client);
+
+        List<Client> clients = new ArrayList<>();
+
+        clients.add(client);
+
+        Assert.assertEquals(clients,comp.getClientStore().getClientList());
+
+    }
 }
