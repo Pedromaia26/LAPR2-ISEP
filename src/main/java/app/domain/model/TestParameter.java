@@ -7,7 +7,9 @@ public class TestParameter {
     private Parameter parameter;
     private TestParameterResult tpr;
 
-    public TestParameter(){
+
+    public TestParameter(Parameter parameter){
+        this.parameter = parameter;
 
     }
 
@@ -17,7 +19,7 @@ public class TestParameter {
     }
 
     public void addResult(String result, String metric, ReferenceValue refValue){
-        TestParameterResult testResult = new TestParameterResult(result, metric, refValue);
+        tpr = new TestParameterResult(result, metric, refValue);
     }
 
     public TestParameterResult getTpr() {
