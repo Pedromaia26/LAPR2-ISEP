@@ -70,12 +70,12 @@ public class CreateEmployeeUI  implements Runnable{
                 System.out.printf("Doctor Index Number: ");
                 docIndexNumber = ler.nextInt();
                 if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
-                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber);
+                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
                 } else System.out.println("Employee created without success.");
             }
             else{
                 if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
-                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber);
+                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
                 } else System.out.println("Employee created without success.");
             }
         }
@@ -84,10 +84,9 @@ public class CreateEmployeeUI  implements Runnable{
         }
     }
 
-    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber){
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController){
         String op;
         Scanner ler = new Scanner(System.in);
-        RegistEmployeeController employeeController = new RegistEmployeeController();
 
         if (docIndexNumber == 0){
             System.out.println("Data confirmation:");
