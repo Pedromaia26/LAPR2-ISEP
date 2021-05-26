@@ -1,8 +1,11 @@
 package app.controller;
 
 import app.domain.model.*;
+import app.domain.model.dto.ParameterCategoryDto;
+import app.domain.model.mappers.ParameterCategoryMapper;
+import app.domain.model.stores.ParameterCategoryStore;
+import app.domain.model.stores.TestTypeStore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestTypeController {

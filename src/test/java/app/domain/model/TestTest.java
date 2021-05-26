@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.domain.model.dto.SampleDTO;
 import org.junit.Assert;
 import org.junit.Test;
 

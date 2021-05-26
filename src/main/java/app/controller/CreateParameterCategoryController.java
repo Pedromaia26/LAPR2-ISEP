@@ -2,7 +2,7 @@ package app.controller;
 
 import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
+import app.domain.model.stores.ParameterCategoryStore;
 
 public class CreateParameterCategoryController {
 

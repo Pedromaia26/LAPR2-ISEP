@@ -1,4 +1,8 @@
-package app.domain.model;
+package app.domain.model.dto;
+
+import app.domain.model.LabOrder;
+import app.domain.model.Parameter;
+import app.domain.model.TestType;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

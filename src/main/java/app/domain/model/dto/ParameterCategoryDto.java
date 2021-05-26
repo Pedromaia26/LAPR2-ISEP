@@ -1,4 +1,6 @@
-package app.domain.model;
+package app.domain.model.dto;
+
+import app.domain.model.ParameterCategory;
 
 public class ParameterCategoryDto {
 
