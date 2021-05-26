@@ -27,6 +27,7 @@ public class CreateEmployeeUI  implements Runnable{
         String op;
         String role = null;
         int num;
+        int docIndexNumber = 0;
         boolean exists = false;
 
         System.out.printf("List of employee roles:\n");
@@ -51,18 +52,6 @@ public class CreateEmployeeUI  implements Runnable{
                 }
             }
         }
-        /*if (Integer.parseInt(Orgop) <= lRolesDto.size() && Integer.parseInt(Orgop) >=1) {
-            role = lRolesDto.get(Integer.parseInt(Orgop)-1).getDesignation();
-            exists = true;
-        }
-        else{
-            for (OrgRole orgRole : lRolesDto){
-                if (Orgop.equalsIgnoreCase(orgRole.getDesignation())){
-                    role = orgRole.getDesignation();
-                    exists = true;
-                }
-            }
-        }*/
         if (exists){
             System.out.printf("Name: ");
             String name = ler.nextLine();
@@ -79,49 +68,49 @@ public class CreateEmployeeUI  implements Runnable{
             ler.nextLine();
             if (role.equalsIgnoreCase("specialist doctor")){
                 System.out.printf("Doctor Index Number: ");
-                int docIndexNumber = ler.nextInt();
+                docIndexNumber = ler.nextInt();
                 if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
-                    System.out.println("Data confirmation:");
-                    System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", role, name, address, email, phoneNumber, socCode, docIndexNumber);
-                    System.out.println("Do you want to create the employee?(Y/N)");
-                    op = ler.next();
-                    if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
-                        if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {
-                            try {
-                                employeeController.saveSpecialistDoctor();
-                                System.out.println("Employee created with success.");
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            throw new IllegalArgumentException("Employee already created.");
-                        }
-                    } else System.out.println("Employee regist canceled.");
+                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber);
                 } else System.out.println("Employee created without success.");
             }
             else{
                 if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
-                    System.out.println("Data confirmation:");
-                    System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", role, name, address, email, phoneNumber, socCode);
-                    System.out.println("Do you want to create the employee?(Y/N)");
-                    op = ler.next();
-                    if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
-                        if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {
-                            try {
-                                employeeController.saveEmployee();
-                                System.out.println("Employee created with success.");
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            throw new IllegalArgumentException("Employee already created.");
-                        }
-                    } else System.out.println("Employee regist canceled.");
+                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber);
                 } else System.out.println("Employee created without success.");
             }
         }
         else{
             throw new IllegalArgumentException("The selected role does not exist.");
         }
+    }
+
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber){
+        String op;
+        Scanner ler = new Scanner(System.in);
+        RegistEmployeeController employeeController = new RegistEmployeeController();
+
+        if (docIndexNumber == 0){
+            System.out.println("Data confirmation:");
+            System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n", role, name, address, email, phoneNumber, socCode);
+        }
+        else{
+            System.out.println("Data confirmation:");
+            System.out.printf("User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n", role, name, address, email, phoneNumber, socCode, docIndexNumber);
+        }
+        System.out.println("Do you want to create the employee?(Y/N)");
+        op = ler.next();
+        if (op.equalsIgnoreCase("Y") || op.equalsIgnoreCase("yes")) {
+            if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {
+                try {
+                    if (docIndexNumber == 0) employeeController.saveEmployee();
+                    else employeeController.saveSpecialistDoctor();
+                    System.out.println("Employee created with success.");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                throw new IllegalArgumentException("Employee already created.");
+            }
+        } else System.out.println("Employee regist canceled.");
     }
 }
