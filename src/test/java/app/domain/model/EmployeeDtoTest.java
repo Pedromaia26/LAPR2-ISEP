@@ -31,7 +31,7 @@ public class EmployeeDtoTest {
     public void getName() {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
-        String name = emp.getName();
+        String name = emp.getNameDto();
 
         Assert.assertEquals(name, "Pedro");
     }
@@ -40,7 +40,7 @@ public class EmployeeDtoTest {
     public void getAdress() {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
-        String address = emp.getAdress();
+        String address = emp.getAdressDto();
 
         Assert.assertEquals(address, "Porto");
     }
@@ -49,7 +49,7 @@ public class EmployeeDtoTest {
     public void getPhoneNumber() {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
-        long phoneNumer = emp.getPhoneNumber();
+        long phoneNumer = emp.getPhoneNumberDto();
 
         Assert.assertEquals(phoneNumer, 91291291212L);
     }
@@ -59,7 +59,7 @@ public class EmployeeDtoTest {
         Email e = new Email("pedro@gmail.com");
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, e, 1234);
         Company c = new Company("Many Labs");
-        Email email = emp.getEmail();
+        Email email = emp.getEmailDto();
 
         Assert.assertEquals(email, e);
     }
@@ -68,7 +68,7 @@ public class EmployeeDtoTest {
     public void getSocCode() {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Company c = new Company("Many Labs");
-        int socCode = emp.getSocCode();
+        int socCode = emp.getSocCodeDto();
 
         Assert.assertEquals(socCode, 1234);
     }
@@ -77,7 +77,7 @@ public class EmployeeDtoTest {
     public void getDocIndexNumber() {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,123456);
         Company c = new Company("Many Labs");
-        int socCode = emp.getDocIndexNumber();
+        int socCode = emp.getDocIndexNumberDto();
 
         Assert.assertEquals(socCode, 123456);
     }

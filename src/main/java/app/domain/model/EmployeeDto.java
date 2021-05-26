@@ -108,7 +108,7 @@ public class EmployeeDto {
      * Returns the Name of a Employee
      * @return the Name of a Employee
      */
-    public String getName() {
+    public String getNameDto() {
         return name;
     }
 
@@ -116,7 +116,7 @@ public class EmployeeDto {
      * Returns the Address of a Employee
      * @return the Address of a Employee
      */
-    public String getAdress() {
+    public String getAdressDto() {
         return address;
     }
 
@@ -124,7 +124,7 @@ public class EmployeeDto {
      * Returns the Phone Number of a Employee
      * @return the Phone Number of a Employee
      */
-    public long getPhoneNumber() {
+    public long getPhoneNumberDto() {
         return phoneNumber;
     }
 
@@ -132,7 +132,7 @@ public class EmployeeDto {
      * Returns the Email of a Employee
      * @return the Email of a Employee
      */
-    public Email getEmail() {
+    public Email getEmailDto() {
         return email;
     }
 
@@ -140,7 +140,7 @@ public class EmployeeDto {
      * Returns the SOC code of a Employee
      * @return the SOC code of a Employee
      */
-    public int getSocCode() {
+    public int getSocCodeDto() {
         return socCode;
     }
 
@@ -148,7 +148,7 @@ public class EmployeeDto {
      * Returns the Doctor Index Number of a Specialist Doctor
      * @return the Doctor Index Number of a Specialist Doctor
      */
-    public int getDocIndexNumber() { return docIndexNumber; }
+    public int getDocIndexNumberDto() { return docIndexNumber; }
 
     @Override
     public String toString() {

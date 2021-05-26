@@ -19,12 +19,12 @@ public class EmployeeMapper extends UserRoleStore{
      */
     public static Employee toDtoE(EmployeeDto empDto){
         String orgRole = empDto.getUserRole();
-        String name = empDto.getName();
+        String name = empDto.getNameDto();
         String employeeId = empDto.getId();
-        String address = empDto.getAdress();
-        long phoneNumber = empDto.getPhoneNumber();
-        Email email = empDto.getEmail();
-        int socCode = empDto.getSocCode();
+        String address = empDto.getAdressDto();
+        long phoneNumber = empDto.getPhoneNumberDto();
+        Email email = empDto.getEmailDto();
+        int socCode = empDto.getSocCodeDto();
 
         return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode);
     }
@@ -37,13 +37,13 @@ public class EmployeeMapper extends UserRoleStore{
      */
     public static SpecialistDoctor toDtoSD(EmployeeDto empDto){
         String orgRole = empDto.getUserRole();
-        String name = empDto.getName();
+        String name = empDto.getNameDto();
         String employeeId = empDto.getId();
-        String address = empDto.getAdress();
-        long phoneNumber = empDto.getPhoneNumber();
-        Email email = empDto.getEmail();
-        int socCode = empDto.getSocCode();
-        int docIndexNumber = empDto.getDocIndexNumber();
+        String address = empDto.getAdressDto();
+        long phoneNumber = empDto.getPhoneNumberDto();
+        Email email = empDto.getEmailDto();
+        int socCode = empDto.getSocCodeDto();
+        int docIndexNumber = empDto.getDocIndexNumberDto();
 
         return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
     }
