@@ -33,4 +33,14 @@ public class TestParameterResult {
     public String getMetric() {
         return metric;
     }
+
+    @Override
+    public String toString() {
+        return "TestParameterResult{" +
+                "refValue=" + refValue +
+                ", createdAt=" + createdAt +
+                ", value='" + value + '\'' +
+                ", metric='" + metric + '\'' +
+                '}';
+    }
 }

@@ -25,4 +25,12 @@ public class TestParameter {
     public TestParameterResult getTpr() {
         return tpr;
     }
+
+    @Override
+    public String toString() {
+        return "TestParameter{" +
+                "parameter=" + parameter +
+                ", tpr=" + tpr +
+                '}';
+    }
 }

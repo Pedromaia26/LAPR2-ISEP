@@ -103,17 +103,13 @@ public class EmployeeTest {
         Employee emp5 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291213L, new Email("pedro@gmail.com"), 1234);
         Employee emp6 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedross@gmail.com"), 1234);
         Employee emp7 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1243);
-
         Employee emp8 = new Employee(usrole, "P00002", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp9 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234);
         Employee emp10 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedro@gmail.com"), 1234);
         Employee emp11 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1234);
         Employee emp12 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1243);
 
-        Client emp13 = null;
-
-
-
+        Employee emp13 = null;
 
         Assert.assertNotEquals(emp,emp2);
         Assert.assertNotEquals(emp,emp3);
@@ -129,8 +125,5 @@ public class EmployeeTest {
         Assert.assertNotEquals(emp,emp11);
         Assert.assertNotEquals(emp,emp12);
         Assert.assertNotEquals(emp,emp13);
-
-
-
     }
 }

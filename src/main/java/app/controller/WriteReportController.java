@@ -12,6 +12,7 @@ public class WriteReportController {
     private TestStore tStore;
 
     private List<Test> lTests = new ArrayList<>();
+    private List<Test> lTestsToBeReported = new ArrayList<>();
     private List<TestDTO> lTestsDto = new ArrayList<>();
     private List<TestParameter> lResultParameters = new ArrayList<>();
     private List<TestParameterDto> lResultParameterDto = new ArrayList<>();
@@ -22,8 +23,15 @@ public class WriteReportController {
     }
 
     public List<TestDTO> getTests(){
-        lTests = tStore.getTestsToBeReported();
-        lTestsDto = testMapper.toDto(lTests);
+        lTests = tStore.getTests();
+        for(Test test : lTests){
+            for (TestParameter testparameter : test.getTestParameter()){
+                if(testparameter.getTpr().getValue().equals(null)){
+                    lTestsToBeReported.add(test);
+                }
+            }
+        }
+        lTestsDto = testMapper.toDto(lTestsToBeReported);
         return lTestsDto;
     }
 

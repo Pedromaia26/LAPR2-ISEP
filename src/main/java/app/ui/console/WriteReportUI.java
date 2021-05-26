@@ -5,6 +5,7 @@ import app.controller.WriteReportController;
 import app.domain.model.*;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -53,5 +54,9 @@ public class WriteReportUI implements Runnable {
         else{
             throw new IllegalArgumentException("The selected test does not exist.");
         }
+        /*
+        long time = createdAt.getTime();
+        Timestamp ts = new Timestamp(time);
+        System.out.println(ts); */
     }
 }

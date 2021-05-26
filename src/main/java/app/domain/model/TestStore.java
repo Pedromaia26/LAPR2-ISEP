@@ -17,7 +17,7 @@ public class TestStore {
     /**
      * List that contains the tests to be reported.
      */
-    private List<Test> testsToBeReported;
+    /*private List<Test> testsToBeReported;*/
 
     public TestStore(){
         tests = new ArrayList<>();
@@ -35,9 +35,9 @@ public class TestStore {
      * Returns the list of existing tests to be reported.
      * @return list of tests to be reported.
      */
-    public List<Test> getTestsToBeReported(){
+    /*public List<Test> getTestsToBeReported(){
         return testsToBeReported;
-    }
+    }*/
 
     /**
      * Adding a test to the tests list.
