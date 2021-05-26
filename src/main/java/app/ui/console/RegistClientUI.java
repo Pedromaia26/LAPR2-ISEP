@@ -1,13 +1,10 @@
 package app.ui.console;
 
-import app.controller.App;
 import app.controller.RegistClientController;
-import app.domain.model.ClientDTO;
+import app.domain.model.dto.ClientDTO;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class RegistClientUI implements Runnable {
     public RegistClientUI()

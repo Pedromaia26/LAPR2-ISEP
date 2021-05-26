@@ -95,6 +95,13 @@ public class Test {
     }
 
     /**
+     * Returns the list of parameters of a test.
+     * @return list of parameters of a test.
+     */
+
+    public List<TestParameter> getTestParameter(){ return testParameterList; }
+
+    /**
      * Returns the test parameter from a test.
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.

@@ -1,6 +1,7 @@
-package app.domain.model;
+package app.domain.model.mappers;
 
-import java.util.Objects;
+import app.domain.model.Client;
+import app.domain.model.dto.ClientDTO;
 
 public class ClientMapper{
     /**

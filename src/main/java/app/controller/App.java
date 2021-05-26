@@ -1,13 +1,9 @@
 package app.controller;
 
 import app.domain.model.Company;
-import app.domain.model.OrgRole;
-import app.domain.model.OrgRoleStore;
-import app.domain.model.RolesStore;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;
-import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
 
 import java.io.FileInputStream;

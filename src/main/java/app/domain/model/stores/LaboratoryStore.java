@@ -1,4 +1,7 @@
-package app.domain.model;
+package app.domain.model.stores;
+
+import app.domain.model.Laboratory;
+import app.domain.model.TestType;
 
 import java.util.ArrayList;
 import java.util.List;

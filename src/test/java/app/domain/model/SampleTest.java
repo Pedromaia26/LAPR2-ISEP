@@ -1,8 +1,6 @@
 package app.domain.model;
 
-import app.controller.App;
-import net.sourceforge.barbecue.BarcodeException;
-import net.sourceforge.barbecue.output.OutputException;
+import app.domain.model.dto.SampleDTO;
 import org.junit.Assert;
 import org.junit.Test;
 

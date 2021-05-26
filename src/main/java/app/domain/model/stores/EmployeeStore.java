@@ -1,14 +1,16 @@
-package app.domain.model;
+package app.domain.model.stores;
 
 import app.controller.App;
-import auth.domain.model.User;
+import app.domain.model.Employee;
+import app.domain.model.SpecialistDoctor;
+import app.domain.model.dto.EmployeeDto;
+import app.domain.model.mappers.EmployeeMapper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class EmployeeStore {
 
