@@ -3,6 +3,8 @@ package app.domain.model;
 import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 
+import java.util.Objects;
+
 public class SpecialistDoctor extends Employee {
 
     private int docIndexNumber;
@@ -23,5 +25,14 @@ public class SpecialistDoctor extends Employee {
         return "SpecialistDoctor{" +
                 "docIndexNumber=" + docIndexNumber +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SpecialistDoctor that = (SpecialistDoctor) o;
+        return docIndexNumber == that.docIndexNumber;
     }
 }

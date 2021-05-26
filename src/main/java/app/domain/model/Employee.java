@@ -184,6 +184,6 @@ public class Employee {
             return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee emp = (Employee) o;
-        return Objects.equals(userRole, emp.userRole) && Objects.equals(employeeId, emp.employeeId) && Objects.equals(name, emp.name) && Objects.equals(address, emp.address) && Objects.equals(phoneNumber, emp.phoneNumber) && Objects.equals(email, emp.email) && Objects.equals(socCode, emp.socCode);
+        return Objects.equals(userRole.getDesignation(), emp.userRole.getDesignation()) && Objects.equals(employeeId, emp.employeeId) && Objects.equals(name, emp.name) && Objects.equals(address, emp.address) && Objects.equals(phoneNumber, emp.phoneNumber) && Objects.equals(email, emp.email) && Objects.equals(socCode, emp.socCode);
     }
 }
