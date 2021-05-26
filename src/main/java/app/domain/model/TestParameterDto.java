@@ -6,6 +6,9 @@ import app.domain.model.TestParameterResult;
 
 public class TestParameterDto {
 
+    /**
+     *
+     */
     private Parameter parameterdto;
     private TestParameterResult tprdto;
 

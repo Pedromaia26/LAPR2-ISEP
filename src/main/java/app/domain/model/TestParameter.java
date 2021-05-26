@@ -4,28 +4,49 @@ import app.controller.App;
 
 public class TestParameter {
 
+    /**
+     * Parameter of a test.
+     */
     private Parameter parameter;
+    /**
+     * Result of a given test parameter.
+     */
     private TestParameterResult tpr;
 
-
+    /**
+     * Constructs an instance of TestParameter, receiving a parameter.
+     * @param parameter a parameter of the test.
+     */
     public TestParameter(Parameter parameter){
         this.parameter = parameter;
 
     }
 
+    /**
+     * Returns a parameter of the test.
+     * @return the parameter.
+     */
     public Parameter getParameter(){
         return parameter;
 
     }
 
+
     public void addResult(Double result, String metric, ReferenceValue refValue){
         tpr = new TestParameterResult(result, metric, refValue);
     }
 
+    /**
+     * Returns the parameter result of a given test.
+     * @return
+     */
     public TestParameterResult getTpr() {
         return tpr;
     }
-
+    /**
+     * Returns the textual description of a test parameter.
+     * @return characteristics of a test parameter.
+     */
     @Override
     public String toString() {
         return "TestParameter{" +

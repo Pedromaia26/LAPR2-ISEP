@@ -3,10 +3,20 @@ package app.domain.model;
 import java.util.List;
 
 public class TestDTO {
+
+    /**
+     * Lab order of a given test.
+     */
     private LabOrder labOrder;
 
+    /**
+     * String that contains the code of a given test.
+     */
     private String code;
 
+    /**
+     * List containing the samples of a test.
+     */
     private List<Sample> sample;
 
     /**
