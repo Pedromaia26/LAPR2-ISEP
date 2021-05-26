@@ -11,23 +11,53 @@ import java.util.Objects;
 
 public class Test {
 
+    /**
+     * String that contains the code of a test.
+     */
     private String code;
+    /**
+     * The National Healthcare Service.
+     */
     private long nhsCode;
+    /**
+     * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
+     */
     private LabOrder labOrder;
+    /**
+     * The external module that provides reference values to be compared to the results of a parameter.
+     */
     private ExternalModule em;
+    /**
+     * A list containing the parameters of a test.
+     */
     private List<TestParameter> testParameterList;
+    /**
+     * An object of type Date used to obtain the date when a result of a test was recorded.
+     */
     private Date createdAt;
+    /**
+     * The report associated to each test.
+     */
     private Report report;
-
     /**
      * List containing the samples.
      */
     private List<Sample> sample = new ArrayList<>();
 
+    /**
+     * Empty constructor that initializes a list of parameters test.
+     */
     public Test (){
         testParameterList = new ArrayList<>();
     }
 
+    /**
+     * Creates an instance of Test, receiving by parameter its code, its National Healthcare Service code
+     * and the lab order associated to the test.
+     * @param code code of the test.
+     * @param nhsCode National Healthcare Service code of the test.
+     * @param labOrder lab order prescribed by the doctor for a given test.
+     */
     public Test(String code, long nhsCode, LabOrder labOrder){
 
         if (code.trim().length() != 10)
@@ -115,7 +145,6 @@ public class Test {
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
-
     public TestParameter getTestParameterFor(String parameterCode){
         for (TestParameter testParam: testParameterList) {
             if (parameterCode.equals(testParam.getParameter().getCode()))
@@ -125,14 +154,13 @@ public class Test {
     }
 
 
+
     /**
-     * Returns the textual description of a test.
-     * @return characteristics of a test.
+     * Compares an object of test that evokes the method with another.
+     * @param o The object to compare.
+     * @return True if both objects are equal and false if not.
      */
-
-
     @Override
-
     public boolean equals(Object o) {
         if (this == o)
             return true;
@@ -145,7 +173,6 @@ public class Test {
      * Returns the textual description of a test.
      * @return characteristics of a test.
      */
-
     public String toString() {
         return "Test:" + labOrder + ", sample=" + sample;
     }
@@ -183,12 +210,21 @@ public class Test {
         return addSample(samp);
     }
 
+    /**
+     * Adds a sample to the list of samples.
+     * @param samp the sample to be added.
+     * @return
+     */
     public boolean addSample(Sample samp){
 
         return this.sample.add(samp);
 
     }
 
+    /**
+     * Creates a report of the test.
+     * @param report the report of the test.
+     */
     public void addReport(Report report){
         this.report = report;
     }
@@ -201,11 +237,20 @@ public class Test {
         return new Sample(c);
     }
 
+    /**
+     * Returns the external module being used to obtain the reference values.
+     * @return the external module.
+     */
     public ExternalModule getExternalModule (){
         return em;
     }
 
-
+    /**
+     * Adds a result to a parameter of a test, comparing the value received by parameter
+     * and the existing reference values provided by the external module.
+     * @param parameterCode the code of the parameter for which we pretend to add a result.
+     * @param result the value obtained from a test parameter of a given client.
+     */
     public void addTestResult (String parameterCode, Double result){
         checkResultRules(result);
         TestParameter tp = getTestParameterFor(parameterCode);
@@ -218,6 +263,7 @@ public class Test {
         System.out.println(ts);
     }
 
+
     public List<TestParameter> addToList (List <Parameter> p){
         for (Parameter par: p){
             testParameterList.add(new TestParameter(par));
@@ -225,10 +271,13 @@ public class Test {
         return testParameterList;
     }
 
-    public boolean checkResultRules (Double result){
+    /**
+     * Checks the parameter result restrictions
+     * @param result the result of a given parameter of a test.
+     */
+    public void checkResultRules (Double result){
         if (result<0)
             throw new IllegalArgumentException("The result cannot be negative!");
-        return true;
     }
 
 
