@@ -6,11 +6,11 @@ public class TestParameterResult {
 
     private ReferenceValue refValue;
     private Date createdAt;
-    private String value;
+    private Double value;
     private String metric;
 
 
-    public TestParameterResult(String value, String metric, ReferenceValue refValue){
+    public TestParameterResult(Double value, String metric, ReferenceValue refValue){
         this.value = value;
         this.metric = metric;
         this.refValue = refValue;
@@ -26,7 +26,7 @@ public class TestParameterResult {
         return createdAt;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 

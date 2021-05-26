@@ -205,5 +205,6 @@ public class TestTest {
         assertEquals(sample,test2);
         assertNotEquals(sample, test3);
 
+        test.addTestResult("01981", 10D);
     }
 }

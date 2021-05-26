@@ -206,7 +206,8 @@ public class Test {
     }
 
 
-    public void addTestResult (String parameterCode, String result){
+    public void addTestResult (String parameterCode, Double result){
+        checkResultRules(result);
         TestParameter tp = getTestParameterFor(parameterCode);
         ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
         String metric = em.getMetric(tp.getParameter());
@@ -222,6 +223,12 @@ public class Test {
             testParameterList.add(new TestParameter(par));
         }
         return testParameterList;
+    }
+
+    public boolean checkResultRules (Double result){
+        if (result<0)
+            throw new IllegalArgumentException("The result cannot be negative!");
+        return true;
     }
 
 

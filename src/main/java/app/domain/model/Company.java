@@ -30,6 +30,7 @@ public class Company {
     private TestStore testStore;
 
 
+
     public Company(String designation)
     {
         if (StringUtils.isBlank(designation))
@@ -85,5 +86,6 @@ public class Company {
     public OrgRole getOrgRole(){ return orgRole; }
     public LabOrderStore getLabOrderStore(){return labOrderStore; }
     public TestStore getTestStore(){return testStore;}
+
 
 }

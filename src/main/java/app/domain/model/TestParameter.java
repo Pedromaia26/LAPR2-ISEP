@@ -18,7 +18,7 @@ public class TestParameter {
 
     }
 
-    public void addResult(String result, String metric, ReferenceValue refValue){
+    public void addResult(Double result, String metric, ReferenceValue refValue){
         tpr = new TestParameterResult(result, metric, refValue);
     }
 
