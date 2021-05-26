@@ -20,15 +20,17 @@ public class WriteReportController {
     private List<TestParameterDto> lResultParameterDto = new ArrayList<>();
     private TestMapper testMapper;
 
+    public WriteReportController() {
+        this.tStore = App.getInstance().getCompany().getTestStore();
+    }
+
     public List<TestDTO> getTests(){
-        tStore = App.getInstance().getCompany().getTestStore();
         lTests = tStore.getTestsToBeReported();
         lTestsDto = testMapper.toDto(lTests);
         return lTestsDto;
     }
 
     public List<TestParameterDto> getResultParameters(TestDTO testDto) {
-        tStore = App.getInstance().getCompany().getTestStore();
         String code = testDto.getCode();
         Test test = tStore.getTestByCode(code);
         lResultParameters = test.getTestParameter();
@@ -36,8 +38,8 @@ public class WriteReportController {
         return lResultParameterDto;
     }
 
-    public boolean addReport(String diagnosis){
+    public void addReport(String diagnosis, TestDTO testDto){
         //do association with test
-        return true;
+        tStore.getTestByCode(testDto.getCode()).addReport(new Report(diagnosis));
     }
 }

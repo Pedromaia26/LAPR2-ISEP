@@ -47,7 +47,7 @@ public class WriteReportUI implements Runnable {
             }
             System.out.println("Introduce the diagnosis");
             String diagnosis = ler.next();
-            controller.addReport(diagnosis);
+            controller.addReport(diagnosis, testDto);
         }
         /*System.out.print("Name: ");
         String name = ler.nextLine();

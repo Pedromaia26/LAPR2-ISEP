@@ -1,6 +1,5 @@
 package app.domain.model;
 
-import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -18,6 +17,7 @@ public class Test {
     private ExternalModule em;
     private List<TestParameter> testParameterList;
     private Date createdAt;
+    private Report report;
 
     /**
      * List containing the samples.
@@ -102,6 +102,15 @@ public class Test {
     public List<TestParameter> getTestParameter(){ return testParameterList; }
 
     /**
+     * Returns the report of a test
+     * @return the report of a test
+     */
+
+    public Report getReport(){
+        return report;
+    }
+
+    /**
      * Returns the test parameter from a test.
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
@@ -178,6 +187,10 @@ public class Test {
 
         return this.sample.add(samp);
 
+    }
+
+    public void addReport(Report report){
+        this.report = report;
     }
 
     /**
