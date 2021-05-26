@@ -22,11 +22,4 @@ public class LabOrderStore {
         return this.labOrders.add(labOrder);
     }
 
-   /* public LabOrder getLabOrderByCode(String code) {
-        for (LabOrder tt: this.labOrders) {
-            if (code.equals(tt.getTestType().getCode()))
-                return tt;
-        }
-        throw new IllegalArgumentException("There is no Test Type with such code!");
-    }*/
 }

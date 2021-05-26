@@ -27,10 +27,6 @@ public class LabOrder {
 
     @Override
     public String toString() {
-        return "LabOrder:" +
-                " TestTypeCode= " + testType.getCode() +
-                ", TestTypeCollectionMethod= " + testType.getCollectingMethod() +
-                ", TestTypeDescription= " + testType.getDescription() +
-                ", Parameters= " + parameters ;
+        return String.format("LabOrder: TestTypeCode= %s, TestTypeCollectionMethod= %s, TestTypeDescription= %s, Parameters= %s", testType.getCode(),testType.getCollectingMethod(),testType.getDescription(),parameters);
     }
 }

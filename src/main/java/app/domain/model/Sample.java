@@ -52,9 +52,9 @@ public class Sample{
     }
 
     public BufferedImage makeUPCABarcode(String barcodeText) throws OutputException, BarcodeException {
-        Barcode barcode = BarcodeFactory.createUPCA(barcodeText);
-        barcode.setPreferredBarHeight(150);
-        return BarcodeImageHandler.getImage(barcode);
+        Barcode barcodes = BarcodeFactory.createUPCA(barcodeText);
+        barcodes.setPreferredBarHeight(150);
+        return BarcodeImageHandler.getImage(barcodes);
     }
 
     public void imageIoWrite(BufferedImage doneImage, String filename) {
