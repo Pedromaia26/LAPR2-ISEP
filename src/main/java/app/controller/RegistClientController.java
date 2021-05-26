@@ -35,9 +35,5 @@ public class RegistClientController {
         return this.company.getClientStore().saveClient(nc);
     }
 
-    public List<Client> getClientList () {
-        return this.company.getClientStore().getClientList();
-    }
-
 
 }

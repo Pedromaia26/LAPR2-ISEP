@@ -12,14 +12,23 @@ public class LabOrderStore {
         return labOrders;
     }
 
-    public void addToList (LabOrder labOrder){
-        labOrders.add(labOrder);
+    public boolean validateLB(LabOrder lb){
+        if (lb == null)
+            return false;
+        return ! this.labOrders.contains(lb);
     }
-    public LabOrder getLabOrderByCode(String code) {
+
+    public boolean addToList (LabOrder labOrder){
+        if (!validateLB(labOrder))
+            return false;
+        return this.labOrders.add(labOrder);
+    }
+
+   /* public LabOrder getLabOrderByCode(String code) {
         for (LabOrder tt: this.labOrders) {
             if (code.equals(tt.getTestType().getCode()))
                 return tt;
         }
         throw new IllegalArgumentException("There is no Test Type with such code!");
-    }
+    }*/
 }

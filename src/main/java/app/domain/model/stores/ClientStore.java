@@ -45,13 +45,6 @@ public class ClientStore {
             return false;
         return this.clientList.add(nc);
     }
-    /**
-     * Returns the list of clients.
-     * @return list of clients.
-     */
-    public List<Client> getClientList() {
-        return clientList;
-    }
 
     /**
      * Calls all the methods to save and create the client.

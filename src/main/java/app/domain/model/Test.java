@@ -4,7 +4,9 @@ import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,11 +17,16 @@ public class Test {
     private LabOrder labOrder;
     private ExternalModule em;
     private List<TestParameter> testParameterList;
+    private Date createdAt;
 
     /**
      * List containing the samples.
      */
     private List<Sample> sample = new ArrayList<>();
+
+    public Test (){
+        testParameterList = new ArrayList<>();
+    }
 
     public Test(String code, long nhsCode, LabOrder labOrder){
 
@@ -33,6 +40,20 @@ public class Test {
         this.nhsCode = nhsCode;
 
         this.labOrder = labOrder;
+        em = new ExternalModule() {
+            @Override
+            public ReferenceValue getReferenceValue(Parameter parameter) {
+                return null;
+            }
+
+            @Override
+            public String getMetric(Parameter parameter) {
+                return null;
+            }
+        };
+
+        testParameterList = new ArrayList<>();
+        testParameterList = addToList(labOrder.getParameters());
 
     }
 
@@ -172,10 +193,24 @@ public class Test {
     }
 
 
-    public void addTestResult (String parameterCode, String result, String metric){
+    public void addTestResult (String parameterCode, String result){
         TestParameter tp = getTestParameterFor(parameterCode);
         ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
+        String metric = em.getMetric(tp.getParameter());
         tp.addResult(result, metric, refValue);
+        createdAt = new Date();
+        long time = createdAt.getTime();
+        Timestamp ts = new Timestamp(time);
+        System.out.println(ts);
     }
+
+    public List<TestParameter> addToList (List <Parameter> p){
+        for (Parameter par: p){
+            testParameterList.add(new TestParameter(par));
+        }
+        return testParameterList;
+    }
+
+
 }
 
