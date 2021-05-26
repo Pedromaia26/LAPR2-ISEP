@@ -1,6 +1,6 @@
 package app.domain.model;
 
-/*import com.example2.ExternalModule2API;
+import com.example2.ExternalModule2API;
 
 public class ExternalModuleAdapter2 implements ExternalModule{
     ExternalModule2API blood;
@@ -19,4 +19,4 @@ public class ExternalModuleAdapter2 implements ExternalModule{
     public String getMetric (Parameter parameter){
         return blood.getMetricsFor(parameter.getCode());
     }
-}*/
+}

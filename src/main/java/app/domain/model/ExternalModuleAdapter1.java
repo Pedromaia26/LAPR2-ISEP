@@ -1,8 +1,9 @@
 package app.domain.model;
-/*
+
 import com.example3.CovidReferenceValues1API;
 
 public class ExternalModuleAdapter1 implements ExternalModule{
+
     CovidReferenceValues1API covid;
 
     @Override
@@ -13,5 +14,9 @@ public class ExternalModuleAdapter1 implements ExternalModule{
 
         return new ReferenceValue(min, max);
     }
+
+    @Override
+    public String getMetric(Parameter parameter) {
+        return null;
+    }
 }
-*/
