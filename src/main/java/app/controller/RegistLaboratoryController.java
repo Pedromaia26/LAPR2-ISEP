@@ -1,7 +1,6 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.domain.model.stores.TestTypeStore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ public class RegistLaboratoryController {
     private Company company;
     private TestType tt;
     private TestTypeStore testTypeStore;
-    private app.domain.model.stores.LaboratoryStore LaboratoryStore;
+    private LaboratoryStore LaboratoryStore;
     private Laboratory cl;
 
 

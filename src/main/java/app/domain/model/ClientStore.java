@@ -1,4 +1,4 @@
-package app.domain.model.stores;
+package app.domain.model;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.controller.App;
-import app.domain.model.Client;
-import app.domain.model.dto.ClientDTO;
-import app.domain.model.mappers.ClientMapper;
+import auth.domain.model.Password;
+import auth.domain.model.User;
 
 public class ClientStore {
     /**

@@ -1,4 +1,4 @@
-package app.domain.model.dto;
+package app.domain.model;
 
 import app.domain.model.Parameter;
 import app.domain.model.TestParameter;

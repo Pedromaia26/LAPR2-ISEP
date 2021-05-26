@@ -1,13 +1,14 @@
 package app.ui.console;
 
+import app.controller.App;
 import app.controller.WriteReportController;
-import app.domain.model.TestParameter;
-import app.domain.model.dto.TestDTO;
-import app.domain.model.dto.TestParameterDto;
+import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class WriteReportUI implements Runnable {
     public WriteReportUI()
@@ -19,8 +20,8 @@ public class WriteReportUI implements Runnable {
         Scanner ler = new Scanner(System.in);
         WriteReportController controller = new WriteReportController();
 
-        List<TestDTO> lTestsDto;
-        List<TestParameterDto> lTestParametersDto;
+        List<TestDTO> lTestsDto = new ArrayList<>();
+        List<TestParameterDto> lTestParametersDto = new ArrayList<>();
 
         int testop;
         TestDTO testDto = null;
@@ -48,6 +49,7 @@ public class WriteReportUI implements Runnable {
             System.out.println("Introduce the diagnosis");
             String diagnosis = ler.next();
             controller.addReport(diagnosis, testDto);
+            controller.getResultParameters(testDto);
         }
         /*System.out.print("Name: ");
         String name = ler.nextLine();

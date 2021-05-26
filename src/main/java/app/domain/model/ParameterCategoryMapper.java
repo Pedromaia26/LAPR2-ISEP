@@ -1,7 +1,4 @@
-package app.domain.model.mappers;
-
-import app.domain.model.ParameterCategory;
-import app.domain.model.dto.ParameterCategoryDto;
+package app.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;

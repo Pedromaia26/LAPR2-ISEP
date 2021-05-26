@@ -1,8 +1,6 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.domain.model.dto.ClientDTO;
-import app.domain.model.stores.ClientStore;
 
 import java.io.IOException;
 import java.util.List;

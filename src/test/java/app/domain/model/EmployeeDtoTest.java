@@ -1,9 +1,11 @@
 package app.domain.model;
 
-import app.domain.model.dto.EmployeeDto;
 import auth.domain.model.Email;
+import auth.domain.model.UserRole;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class EmployeeDtoTest {
 

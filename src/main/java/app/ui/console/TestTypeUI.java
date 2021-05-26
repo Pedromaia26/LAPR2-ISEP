@@ -1,9 +1,11 @@
 package app.ui.console;
 
+import app.controller.RegistEmployeeController;
 import app.controller.TestTypeController;
 import app.domain.model.ParameterCategory;
-import app.domain.model.dto.ParameterCategoryDto;
+import app.domain.model.ParameterCategoryDto;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

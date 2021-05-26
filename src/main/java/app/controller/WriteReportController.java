@@ -1,12 +1,9 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.domain.model.dto.TestDTO;
-import app.domain.model.dto.TestParameterDto;
-import app.domain.model.mappers.TestMapper;
-import app.domain.model.mappers.TestParameterMapper;
-import app.domain.model.stores.TestStore;
+import app.domain.model.TestParameterDto;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +35,7 @@ public class WriteReportController {
         return lResultParameterDto;
     }
 
-    public void addReport(String diagnosis, TestDTO testDto){
-        //do association with test
+    public void addReport(String diagnosis, TestDTO testDto) {
         tStore.getTestByCode(testDto.getCode()).addReport(new Report(diagnosis));
     }
 }

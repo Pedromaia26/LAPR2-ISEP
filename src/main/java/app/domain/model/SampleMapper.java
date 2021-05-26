@@ -1,4 +1,4 @@
-package app.domain.model.mappers;
+package app.domain.model;
 
 import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;

@@ -1,4 +1,4 @@
-package app.domain.model.dto;
+package app.domain.model;
 
 import app.controller.App;
 import auth.domain.model.Email;

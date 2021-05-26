@@ -2,9 +2,8 @@ package app.ui.console;
 
 import app.controller.App;
 import app.controller.RecordSampleController;
+import app.controller.RegistClientController;
 import app.domain.model.*;
-import app.domain.model.dto.SampleDTO;
-import app.domain.model.dto.TestDTO;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

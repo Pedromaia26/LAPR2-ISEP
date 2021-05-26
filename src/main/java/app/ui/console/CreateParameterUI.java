@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.CreateParameterController;
-import app.domain.model.dto.ParameterCategoryDto;
+import app.domain.model.ParameterCategoryDto;
 
 import java.util.Scanner;
 

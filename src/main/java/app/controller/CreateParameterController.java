@@ -4,8 +4,8 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
-import app.domain.model.dto.ParameterCategoryDto;
-import app.domain.model.mappers.ParameterCategoryMapper;
+import app.domain.model.ParameterCategoryDto;
+import app.domain.model.ParameterCategoryMapper;
 
 import java.util.ArrayList;
 import java.util.List;

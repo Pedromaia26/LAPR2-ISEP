@@ -1,8 +1,6 @@
-package app.domain.model.stores;
+package app.domain.model;
 
 import app.controller.App;
-import app.domain.model.Sample;
-import app.domain.model.Test;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

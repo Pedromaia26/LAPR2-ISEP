@@ -1,11 +1,13 @@
-package app.domain.model.mappers;
+package app.domain.model;
 
 import app.controller.App;
-import app.domain.model.Employee;
-import app.domain.model.SpecialistDoctor;
-import app.domain.model.dto.EmployeeDto;
 import auth.domain.model.Email;
+import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
+
+import java.util.List;
+import java.util.List;
+import java.util.List;
 
 public class EmployeeMapper extends UserRoleStore{
 

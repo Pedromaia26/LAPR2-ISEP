@@ -1,8 +1,4 @@
-package app.domain.model.dto;
-
-import app.domain.model.LabOrder;
-import app.domain.model.Sample;
-import app.domain.model.Test;
+package app.domain.model;
 
 import java.util.List;
 

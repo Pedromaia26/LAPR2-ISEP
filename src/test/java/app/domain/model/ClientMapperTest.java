@@ -1,6 +1,6 @@
 package app.domain.model;
 
-import app.domain.model.dto.ClientDTO;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

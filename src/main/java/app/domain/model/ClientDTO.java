@@ -1,4 +1,4 @@
-package app.domain.model.dto;
+package app.domain.model;
 
 public class ClientDTO {
     /**

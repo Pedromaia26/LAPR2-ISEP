@@ -3,10 +3,13 @@ package app.ui.console;
 import app.controller.App;
 import app.controller.RegistEmployeeController;
 import app.domain.model.*;
-import app.domain.model.dto.EmployeeDto;
+import app.ui.console.utils.Utils;
 import auth.domain.model.Email;
+import auth.domain.model.User;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

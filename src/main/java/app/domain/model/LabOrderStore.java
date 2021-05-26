@@ -1,6 +1,4 @@
-package app.domain.model.stores;
-
-import app.domain.model.LabOrder;
+package app.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;

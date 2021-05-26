@@ -1,6 +1,5 @@
-package app.domain.model.mappers;
+package app.domain.model;
 
-import app.domain.model.OrgRole;
 import auth.domain.model.UserRole;
 
 import java.util.ArrayList;

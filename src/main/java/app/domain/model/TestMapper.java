@@ -1,7 +1,4 @@
-package app.domain.model.mappers;
-
-import app.domain.model.Test;
-import app.domain.model.dto.TestDTO;
+package app.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +15,7 @@ public class TestMapper {
     public List<TestDTO> toDto(List<Test> listTests) {
         listTestDto= new ArrayList<>();
         for (Test t : listTests) {
+
             listTestDto.add(new TestDTO(t));
         }
         return listTestDto;

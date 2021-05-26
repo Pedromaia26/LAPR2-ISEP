@@ -1,10 +1,12 @@
 package app.domain.model;
 
-import app.domain.model.stores.*;
 import auth.AuthFacade;
 import auth.domain.store.UserRoleStore;
 import auth.domain.store.UserStore;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
