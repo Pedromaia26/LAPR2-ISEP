@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class LabOrderDTOTest {
 
     @Test
-    public void testToString() {
+    public void testToString() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");

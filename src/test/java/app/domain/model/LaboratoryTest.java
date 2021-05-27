@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class LaboratoryTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void createLaboratoryNameWithMoreThan20chars() {
+    public void createLaboratoryNameWithMoreThan20chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -30,7 +30,7 @@ public class LaboratoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createLaboratoryAdressWithMoreThan20chars() {
+    public void createLaboratoryAdressWithMoreThan20chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -51,7 +51,7 @@ public class LaboratoryTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void createLaboratoryIDWithMoreThan5alphanumeric() {
+    public void createLaboratoryIDWithMoreThan5alphanumeric() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -73,7 +73,7 @@ public class LaboratoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createLaboratorytinNumberWithNot10numbers() {
+    public void createLaboratorytinNumberWithNot10numbers() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         List<ParameterCategory> listPC = new ArrayList<>();
@@ -93,7 +93,7 @@ public class LaboratoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createLaboratoryPhoneNumberWithNot10Numbers() {
+    public void createLaboratoryPhoneNumberWithNot10Numbers() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -114,7 +114,7 @@ public class LaboratoryTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 

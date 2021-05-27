@@ -34,11 +34,49 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Correcting samples tests">
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Finishing all unit test and its mutants when instantiating a new test.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/TestTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/TestTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/LabOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/LabOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordSampleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordSampleUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderDTOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LaboratoryStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LaboratoryStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LaboratoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LaboratoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/ParameterCategoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/ParameterCategoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/TestTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/TestTypeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrder.class" afterDir="false" />
+>>>>>>> origin/master
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderDTOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderDTOTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +126,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -106,17 +143,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+<<<<<<< HEAD
+=======
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -130,6 +158,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+>>>>>>> origin/master
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< HEAD
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+=======
+>>>>>>> origin/master
     <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <option name="PACKAGE_NAME" value="" />
@@ -210,7 +266,8 @@
       <workItem from="1621952271079" duration="12409000" />
       <workItem from="1621976454814" duration="1734000" />
       <workItem from="1622052194225" duration="8699000" />
-      <workItem from="1622107359277" duration="8168000" />
+      <workItem from="1622107359277" duration="9062000" />
+      <workItem from="1622140363191" duration="2839000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -312,6 +369,7 @@
     <MESSAGE value="Correcting samples tests" />
     <option name="LAST_COMMIT_MESSAGE" value="Correcting samples tests" />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1622143636557">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -342,6 +400,8 @@
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622150231335" />
   </component>
+=======
+>>>>>>> origin/master
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

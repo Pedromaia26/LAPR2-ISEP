@@ -104,7 +104,7 @@ public class TestTest {
     }
 
     @Test
-    public void validateSampleNull() {
+    public void validateSampleNull() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("ManyLabs");
 
@@ -233,7 +233,7 @@ public class TestTest {
     }
 
     @Test
-    public void addSampleNull() {
+    public void addSampleNull() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -426,7 +426,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithMoreThan10Chars() {
+    public void createTestCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -453,7 +453,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithLessThan10Chars() {
+    public void createTestCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -482,7 +482,7 @@ public class TestTest {
     }
 
     @Test
-    public void creatTest() {
+    public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -510,7 +510,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestNHSCodeWithLessThan10Chars() {
+    public void createTestNHSCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");

@@ -22,6 +22,19 @@ public class TestTypeUI implements Runnable{
 
         System.out.println("Insert the description of the new type of test you want to create:");
         String description = ler.nextLine();
+        String api = "";
+        if (description.equalsIgnoreCase("COVID-19")){
+            api = "Domain.ExternalModuleAdapter1";
+        }else if (description.equalsIgnoreCase("BLOOD")){
+            System.out.println("1 - Domain.ExternalModuleAdapter2");
+            System.out.println("2 - Domain.ExternalModuleAdapter3");
+            int num = ler.nextInt();
+            if (num == 1){
+                api = "Domain.ExternalModuleAdapter2";
+            }else
+                api = "Domain.ExternalModuleAdapter3";
+        }
+        ler.nextLine();
         System.out.println("Insert its collecting method:");
         String collectingMethod = ler.nextLine();
         System.out.println("Insert its code:");
@@ -49,23 +62,25 @@ public class TestTypeUI implements Runnable{
         //createTestTypeController.getParameterCategoryStore().getParameterCategoryByCode(categories);
 
 
-
-
-        if (createTestTypeController.createTestType(description, collectingMethod, code, categories)){
-            System.out.println("--------------------------");
-            System.out.println("Please confirm the data:");
-            System.out.println(String.format("Description: %s\nCollecting method: %s\nCode: %s\nCategories Code: %s", description, collectingMethod, code,categories));
-            System.out.println("--------------------------");
-            System.out.println(" 1 --> Confirm");
-            System.out.println(" 2 --> Cancel");
-            int confirm = ler.nextInt();
-            if(confirm == 1){
-                if(createTestTypeController.saveTestType()){
-                    System.out.println("Test type created successfully.");
-                }else{
-                    System.out.println("Test type creation error.");
+        try {
+            if (createTestTypeController.createTestType(description, collectingMethod, code, categories, api)){
+                System.out.println("--------------------------");
+                System.out.println("Please confirm the data:");
+                System.out.println(String.format("Description: %s\nCollecting method: %s\nCode: %s\nCategories Code: %s", description, collectingMethod, code,categories));
+                System.out.println("--------------------------");
+                System.out.println(" 1 --> Confirm");
+                System.out.println(" 2 --> Cancel");
+                int confirm = ler.nextInt();
+                if(confirm == 1){
+                    if(createTestTypeController.saveTestType()){
+                        System.out.println("Test type created successfully.");
+                    }else{
+                        System.out.println("Test type creation error.");
+                    }
                 }
             }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
         }
-        }
+    }
 }

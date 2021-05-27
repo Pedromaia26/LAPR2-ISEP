@@ -1,13 +1,11 @@
 package app.domain.model;
 
+import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Test {
 
@@ -49,6 +47,8 @@ public class Test {
     /**
      * Empty constructor that initializes a list of parameters test.
      */
+
+    private ReferenceValue ref;
     public Test (){
         testParameterList = new ArrayList<>();
         results = new ArrayList<>();
@@ -87,6 +87,7 @@ public class Test {
 
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
+
 
     }
 
@@ -246,9 +247,9 @@ public class Test {
      * Returns the external module being used to obtain the reference values.
      * @return the external module.
      */
-    public ExternalModule getExternalModule (){
-        return em;
-    }
+    //public ExternalModule getExternalModule (){
+      //  return em;
+    //}
 
     /**
      * Adds a result to a parameter of a test, comparing the value received by parameter
@@ -256,12 +257,13 @@ public class Test {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result the value obtained from a test parameter of a given client.
      */
-    public void addTestResult (String parameterCode, Double result){
+    public void addTestResult (String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
         checkResultRules(result);
         TestParameter tp = getTestParameterFor(parameterCode);
-        ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
-        String metric = em.getMetric(tp.getParameter());
-        tp.addResult(result, metric, refValue);
+        this.ref = getExternalModule().getReferenceValue(tp.getParameter());
+        String metric = getExternalModule().getMetric(tp.getParameter());
+        tp.addResult(result, metric, ref);
         resultRegist = new Date();
     }
 
@@ -282,6 +284,13 @@ public class Test {
             throw new IllegalArgumentException("The result cannot be negative!");
     }
 
+    public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Properties prop = App.getInstance().getprops();
+        String classaux = prop.getProperty(labOrder.getTestType().getApi());
+        Class<?> oClass = Class.forName(classaux);
+        ExternalModule api0 = (ExternalModule) oClass.newInstance();
+        return api0;
+    }
 
 }
 

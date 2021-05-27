@@ -26,12 +26,12 @@ public class TestTypeController {
         this.parameterCategoryMapper = new ParameterCategoryMapper();
     }
 
-    public boolean createTestType(String description, String collectingMethod, String code, List <String> categories) {
+    public boolean createTestType(String description, String collectingMethod, String code, List <String> categories, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         List <ParameterCategory> cat;
 
         cat = (this.company.getParameterCategoryStore().getParameterCategoryByCode(categories));
 
-        this.tt = this.company.getTestTypeStore().createTestType(description, collectingMethod, code, cat);
+        this.tt = this.company.getTestTypeStore().createTestType(description, collectingMethod, code, cat, api);
         return this.company.getTestTypeStore().validateTestType(tt);
     }
 
