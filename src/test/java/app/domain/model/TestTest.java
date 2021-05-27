@@ -512,5 +512,32 @@ public class TestTest {
         app.domain.model.Test t = new app.domain.model.Test("abcde12345", 1234567890, lO);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void createTestNHSCodeWithLessThan10Chars() {
 
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test t = new app.domain.model.Test("abcdefghjk", 1234567, lO);
+
+    }
 }
