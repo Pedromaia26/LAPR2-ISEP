@@ -47,6 +47,11 @@ public class TestStore {
         tests.add(test);
     }
 
+    /**
+     * Returns a given test, receiving by parameter the barcode of a sample associated with the test.
+     * @param barcode the barcode of a test sample.
+     * @return the test.
+     */
 
     public Test getTestByBarcode(String barcode){
         for (Test test: tests) {
@@ -59,6 +64,11 @@ public class TestStore {
         throw new IllegalArgumentException("There is no Sample with such barcode!");
     }
 
+    /**
+     * Returns a given test, receiving by parameter the code of a test.
+     * @param code the code of the test.
+     * @return the test.
+     */
     public Test getTestByCode(String code){
         for (Test test: tests) {
             if (code.equals(test.getCode()))
