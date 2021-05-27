@@ -34,26 +34,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Finishing all unit test and its mutants when instantiating a new test.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/OrgRoleStoreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/barbecue_2_0_dev.xml" beforeDir="false" />
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Correcting samples tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/BarcodeCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/BarcodeCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/EmployeeStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/EmployeeStoreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/SampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/SampleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeStoreTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleStoreTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestStoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -180,8 +166,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestStoreTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.SampleTest" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Sem2App" />
+        <item itemvalue="JUnit.SampleTest.testToString" />
         <item itemvalue="JUnit.SampleTest.testEqualsAlreadyAdded" />
         <item itemvalue="JUnit.TestTest.recordNewSample" />
         <item itemvalue="JUnit.SampleTest" />
-        <item itemvalue="JUnit.TestStoreTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622114054413</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correcting samples tests">
+      <created>1622148001389</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622148001389</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +305,8 @@
     <MESSAGE value="Adding documentation to TestStore." />
     <MESSAGE value="adding unit test and its mutants to class test." />
     <MESSAGE value="Finishing all unit test and its mutants when instantiating a new test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing all unit test and its mutants when instantiating a new test." />
+    <MESSAGE value="Correcting samples tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcting samples tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1622143636557">
@@ -322,24 +317,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622141986797" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622147797946">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622150087123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622147797946" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622147797946">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622150087123" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622150087123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622147797946" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622147797946">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622150087123" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622150087122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622147797946" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622147797946">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622150087122" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622150087123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622147797946" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622150087123" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1622148004104">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622148004104" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

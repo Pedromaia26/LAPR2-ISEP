@@ -36,9 +36,9 @@ public class Sample{
 
         this.barcode=getBarcodecreator().makeUPCABarcode(createBarcode(c));
 
-        showBarcodes(barcode);
 
-        imageIoWrite(barcodeImage(barcode),barcode.getBarcodeNumber());
+
+
         //Criar barcode automatico e fazer verificacao se nao existe igual
     }
 

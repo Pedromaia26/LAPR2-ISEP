@@ -205,17 +205,20 @@ public class Test {
      * @param samp the sample to be saved.
      * @return True if the sample is successfully saved, false if it is not.
      */
-    public boolean saveSample(Sample samp, Company company) throws BarcodeException, OutputException {
+    public boolean saveSample(Sample samp, Company company) throws OutputException {
         if (!validateSample(samp,company))
             return false;
 
+        samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
+
+        samp.showBarcodes(samp.getBarcode());
         return addSample(samp);
     }
 
     /**
      * Adds a sample to the list of samples.
      * @param samp the sample to be added.
-     * @return
+     * @return true if samp is sucessfully added
      */
     public boolean addSample(Sample samp){
 
