@@ -93,11 +93,12 @@ public class EmployeeStoreTest {
         OrgRole usrole = new OrgRole("Specialist Doctor");
         SpecialistDoctor emp = new SpecialistDoctor(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234, 123456);
         Company comp= new Company("ManyLabs");
-        comp.getEmployeeStore().addEmployee(emp);
+        comp.getEmployeeStore().addSpecialistDoctor(emp);
         List<SpecialistDoctor> list = new ArrayList<>();
+
         list.add(emp);
 
-        Assert.assertEquals(list, comp.getEmployeeStore().getEmployeeList());
+        Assert.assertEquals(list, comp.getEmployeeStore().getSpecialistDoctors());
     }
 
     @Test
@@ -148,10 +149,50 @@ public class EmployeeStoreTest {
     }
 
     @Test
+    public void addSpecialistDoctor() {
+        OrgRole usrole = new OrgRole("Specialist Doctor");
+        SpecialistDoctor emp = new SpecialistDoctor(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234, 123456);
+        Company comp= new Company("ManyLabs");
+        boolean test1 = comp.getEmployeeStore().addSpecialistDoctor(emp);
+
+        assertTrue(test1);
+    }
+
+    @Test
+    public void addSpecialistDoctorNull() {
+        SpecialistDoctor emp = null;
+        Company comp= new Company("ManyLabs");
+        boolean test1= comp.getEmployeeStore().addSpecialistDoctor(emp);
+
+        assertFalse(test1);
+    }
+
+    @Test
     public void createUser() {
     }
 
     @Test
     public void saveEmployee() {
+    }
+
+    @Test
+    public void notExists() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Company comp= new Company("ManyLabs");
+        boolean test1 = comp.getEmployeeStore().exists(String.valueOf(emp.getEmail()));
+
+        Assert.assertFalse(test1);
+    }
+
+    @Test
+    public void exists() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Company comp= new Company("ManyLabs");
+        comp.getEmployeeStore().addEmployee(emp);
+        boolean test1 = comp.getEmployeeStore().exists(String.valueOf(emp.getEmail()));
+
+        Assert.assertTrue(test1);
     }
 }
