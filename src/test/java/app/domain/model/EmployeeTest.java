@@ -83,6 +83,34 @@ public class EmployeeTest {
         Assert.assertEquals(socCode, 1234);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void EmployeeCheckNameRules() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "NameNameNameNameNameNameNameNameName", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void EmployeeCheckAddressRules() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "", 91291291212L, new Email("pedro@gmail.com"), 1234);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void EmployeeCheckPhoneNumberRules() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 9129129121L, new Email("pedro@gmail.com"), 1234);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void EmployeeCheckSocCodeRules() {
+        OrgRole usrole = new OrgRole("adm");
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 12345);
+
+    }
+
     @Test
     public void testToString() {
         OrgRole usrole = new OrgRole("adm");

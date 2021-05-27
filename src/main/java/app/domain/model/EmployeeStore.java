@@ -76,6 +76,12 @@ public class EmployeeStore {
         return this.Employees.add(emp);
     }
 
+    public boolean addSpecialistDoctor(SpecialistDoctor emp){
+        if (!validateSpecialistDoctor(emp))
+            return false;
+        return this.SpecialistDoctors.add(emp);
+    }
+
     /**
      * Returns the Employees List
      * @return the Employees List

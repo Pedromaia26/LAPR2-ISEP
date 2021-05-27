@@ -93,10 +93,8 @@ public class EmployeeDto {
      * @return the id of a Employee
      */
     public String getId() {
-        for (int i = 0; i < name.length(); i++){
-            if (i == 0){
-                id = String.valueOf(Character.toUpperCase(name.charAt(i)));
-            }
+        id = String.valueOf(Character.toUpperCase(name.charAt(0)));
+        for (int i = 1; i < name.length(); i++){
             if(name.charAt(i) == ' '){
                 id += Character.toUpperCase(name.charAt(i + 1));
             }

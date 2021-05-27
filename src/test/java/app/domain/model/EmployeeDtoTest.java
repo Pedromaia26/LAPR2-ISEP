@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import auth.domain.model.Email;
-import auth.domain.model.UserRole;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -80,5 +79,13 @@ public class EmployeeDtoTest {
         int socCode = emp.getDocIndexNumberDto();
 
         Assert.assertEquals(socCode, 123456);
+    }
+
+    @Test
+    public void testToString() {
+        EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        String excepted = "EmployeeDto{orgRole='adm', id='null', name='Pedro', address='Porto', phoneNumber=91291291212, email=pedro@gmail.com, socCode=1234, docIndexNumber=0}";
+
+        Assert.assertEquals(excepted, emp.toString());
     }
 }
