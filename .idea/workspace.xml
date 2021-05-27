@@ -34,6 +34,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Finishing all unit test and its mutants when instantiating a new test.">
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
@@ -166,6 +167,14 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" afterDir="false" />
+=======
+    <list default="true" id="10188756-256d-4ed4-93a8-d1580f20be10" name="Default Changelist" comment="Final add user US7">
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/OrgRoleStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/barbecue_2_0_dev.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/EmployeeStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/EmployeeStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+>>>>>>> c346eb04753cd424a2574478db463b27b24454b8
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,10 +224,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.0" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+>>>>>>> c346eb04753cd424a2574478db463b27b24454b8
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -231,16 +244,27 @@
       <recent name="D:\ProjetoLapr2" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="JUnit.All in Sem2App">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+>>>>>>> c346eb04753cd424a2574478db463b27b24454b8
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sem2App" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -322,7 +346,11 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.Main" />
+=======
+        <item itemvalue="JUnit.All in Sem2App" />
+>>>>>>> c346eb04753cd424a2574478db463b27b24454b8
         <item itemvalue="JUnit.TestTest" />
         <item itemvalue="JUnit.TestTypeTest" />
         <item itemvalue="JUnit.TestTest.getSample" />
@@ -431,6 +459,7 @@
     <MESSAGE value="Finishing all unit test and its mutants when instantiating a new test." />
     <option name="LAST_COMMIT_MESSAGE" value="Finishing all unit test and its mutants when instantiating a new test." />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1622129215685">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -464,5 +493,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622133259560" />
+=======
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+>>>>>>> c346eb04753cd424a2574478db463b27b24454b8
   </component>
 </project>

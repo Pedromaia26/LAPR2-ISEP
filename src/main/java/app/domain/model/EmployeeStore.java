@@ -192,7 +192,7 @@ public class EmployeeStore {
         for(Employee emp: this.Employees)
         {
 
-            if(emp.getEmail().equals(email)) {
+            if(String.valueOf(emp.getEmail()).equals(email)) {
 
                 return true;
             }
