@@ -21,6 +21,9 @@ public class ParameterCategoryMapper{
      * @return The transformed list
      */
     public List<ParameterCategoryDto> toDto(List<ParameterCategory> listParameterCategory) {
+        if(listParameterCategory.isEmpty()) {
+            throw new ArrayIndexOutOfBoundsException("There are no parameter categories.");
+        }
         listParameterCategoryDto = new ArrayList<>();
         for (ParameterCategory cat : listParameterCategory) {
             listParameterCategoryDto.add(new ParameterCategoryDto(cat));

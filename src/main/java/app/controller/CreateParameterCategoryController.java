@@ -19,9 +19,14 @@ public class CreateParameterCategoryController {
     }
 
     public boolean createParameterCategory(String name, String code) {
-        this.pc = this.company.getParameterCategoryStore().createParameterCategory(name, code);
-        //return this.company.getParameterCategoryStore().validateParameterCategory(pc);
-        return true;
+        try {
+            this.pc = this.company.getParameterCategoryStore().createParameterCategory(name, code);
+            //return this.company.getParameterCategoryStore().validateParameterCategory(pc);
+            return true;
+        }catch(IllegalArgumentException e){
+            System.out.println("Invalid data! These are the rules:\nName: no more than 10 characters\nCode: 5 alphanumeric characters\n");
+            return false;
+        }
     }
     public boolean saveParameterCategory() {
         return this.company.getParameterCategoryStore().saveParameterCategory(pc);

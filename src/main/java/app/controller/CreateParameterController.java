@@ -33,10 +33,14 @@ public class CreateParameterController {
     }
 
     public boolean createParameter(String code, String shortName, String description, String categoryCode){
-        this.cat = this.company.getParameterCategoryStore().getParameterCategoryByCode(categoryCode);
-        System.out.println("asdasd = " + cat);
-        this.parameter = this.company.getParameterStore().createParameter(code, shortName, description, cat);
-        return this.company.getParameterStore().validateParameter(parameter);
+        try {
+            this.cat = this.company.getParameterCategoryStore().getParameterCategoryByCode(categoryCode);
+            this.parameter = this.company.getParameterStore().createParameter(code, shortName, description, cat);
+            return this.company.getParameterStore().validateParameter(parameter);
+        }catch(IllegalArgumentException e){
+            System.out.println("Invalid data! These are the rules:\nCode: 5 alphanumeric characters\nShort Name: no more than 8 characters\nDescription: no more than 20 characters\n");
+            return false;
+        }
     }
 
     public boolean saveParameter(){
@@ -48,7 +52,12 @@ public class CreateParameterController {
     }
 
     public List<ParameterCategoryDto> getParameterCategoryDto(){
-        return this.parameterCategoryMapper.toDto(getParameterCategory());
+        try {
+            return this.parameterCategoryMapper.toDto(getParameterCategory());
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("There are no parameter categories!\nPlease create one first.");
+            return new ArrayList<ParameterCategoryDto>();
+        }
     }
 
 }
