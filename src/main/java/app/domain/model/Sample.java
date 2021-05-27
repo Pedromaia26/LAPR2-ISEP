@@ -8,18 +8,23 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 import net.sourceforge.barbecue.output.OutputException;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 
 public class Sample{
     /**
      * int that contains the barcode number of a sample
      */
-    private String barcode;
+    private BarcodeCreate barcode;
+
+
 
 
     /**
@@ -27,9 +32,12 @@ public class Sample{
      * Checks all parameters rules to see if the inputted data is valid.
      *
      */
-    public Sample(Company c) {
+    public Sample(Company c) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
 
-        this.barcode=createBarcode(c);
+        this.barcode=getBarcodecreator().makeUPCABarcode(createBarcode(c));
+
+
+
 
         //Criar barcode automatico e fazer verificacao se nao existe igual
     }
@@ -51,10 +59,20 @@ public class Sample{
         return df.format(c);
     }
 
-    public BufferedImage makeUPCABarcode(String barcodeText) throws OutputException, BarcodeException {
-        Barcode barcodes = BarcodeFactory.createUPCA(barcodeText);
-        barcodes.setPreferredBarHeight(150);
-        return BarcodeImageHandler.getImage(barcodes);
+    public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+
+        Properties props = App.getInstance().getprops();
+        String classAux = props.getProperty("Domain.BarcodeAdapter.Class");
+        Class<?> oClass = Class.forName(classAux);
+        ApiBarcode api = (ApiBarcode) oClass.newInstance();
+        return api;
+
+    }
+
+    public BufferedImage barcodeImage(BarcodeCreate barcode) throws OutputException {
+
+
+        return BarcodeImageHandler.getImage((Barcode) barcode.getBarcode());
     }
 
     public void imageIoWrite(BufferedImage doneImage, String filename) {
@@ -67,23 +85,34 @@ public class Sample{
         System.out.println("Images were written succesfully.");
     }
 
+    public void showBarcodes(BarcodeCreate barcode){
 
+        JFrame frame = new JFrame();
+        frame.getContentPane().add((Component) barcode.getBarcode());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.pack();
+        frame.setLocation(500, 500);
+        frame.setVisible(true);
+
+    }
     /**
      * Returns the textual description of a sample.
      * @return characteristics of a sample.
      */
     @Override
     public String toString() {
-        return "barcode number='" + barcode + '\'';
+        return "barcode number='" + barcode.getBarcodeNumber() + '\'';
     }
-
     /**
      * Returns the barcode number of a sample.
      * @return the barcode number of a sample.
      */
-    public String getBarcode() {
+    public BarcodeCreate getBarcode() {
         return barcode;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

@@ -80,6 +80,12 @@ public class RecordSampleUI implements Runnable {
                 }
             } catch (OutputException | BarcodeException e) {
                 e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
 
         }

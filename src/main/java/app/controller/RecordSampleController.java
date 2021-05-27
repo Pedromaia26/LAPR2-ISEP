@@ -5,6 +5,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.util.List;
+import java.util.Properties;
 
 public class RecordSampleController {
     private TestStore testStore;
@@ -16,6 +17,8 @@ public class RecordSampleController {
     private TestMapper testMapper;
 
     private Test test;
+
+
 
 
     public RecordSampleController(){
@@ -36,7 +39,7 @@ public class RecordSampleController {
         return samp;
     }
 
-    public boolean createNewSample(SampleDTO dto) {
+    public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
         this.test=testStore.getTestByCode(dto.getOrderid());
         this.samp = this.test.RecordNewSample(company);
 
@@ -53,6 +56,10 @@ public class RecordSampleController {
 
         return this.test.saveSample(samp, company);
     }
+
+
+
+
 
     public List<Test> getTest(){
         return this.company.getTestStore().getTests();

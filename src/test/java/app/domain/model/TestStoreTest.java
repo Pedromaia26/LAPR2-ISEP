@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class TestStoreTest {
 
     @Test
-    public void getTestByBarcode() {
+    public void getTestByBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");
