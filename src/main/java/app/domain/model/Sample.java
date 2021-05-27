@@ -72,7 +72,7 @@ public class Sample{
     public BufferedImage barcodeImage(BarcodeCreate barcode) throws OutputException {
 
 
-        return BarcodeImageHandler.getImage((Barcode) barcode.getOla());
+        return BarcodeImageHandler.getImage((Barcode) barcode.getBarcode());
     }
 
     public void imageIoWrite(BufferedImage doneImage, String filename) {
@@ -88,7 +88,7 @@ public class Sample{
     public void showBarcodes(BarcodeCreate barcode){
 
         JFrame frame = new JFrame();
-        frame.getContentPane().add((Component) barcode.getOla());
+        frame.getContentPane().add((Component) barcode.getBarcode());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.pack();
@@ -102,7 +102,7 @@ public class Sample{
      */
     @Override
     public String toString() {
-        return "barcode number='" + barcode + '\'';
+        return "barcode number='" + barcode.getBarcodeNumber() + '\'';
     }
     /**
      * Returns the barcode number of a sample.

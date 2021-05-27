@@ -280,6 +280,7 @@ public class SampleTest {
 
     }
 
+
     @Test
     public void testEqualsAlreadyAdded() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
@@ -319,7 +320,7 @@ public class SampleTest {
 
         Sample s4 = new Sample(c2);
 
-        assertEquals(s,s4);
+        assertEquals(s.getBarcode().getBarcodeNumber(),s4.getBarcode().getBarcodeNumber());
 
     }
 

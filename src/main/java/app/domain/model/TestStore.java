@@ -56,7 +56,7 @@ public class TestStore {
     public Test getTestByBarcode(String barcode){
         for (Test test: tests) {
             for (Sample samples : test.getSample()) {
-                    if (barcode.equals(samples.getBarcode()))
+                    if (barcode.equals(samples.getBarcode().getBarcodeNumber()))
                         return test;
 
             }
