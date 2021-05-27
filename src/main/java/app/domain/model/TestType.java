@@ -26,6 +26,9 @@ public class TestType {
      */
     private List<ParameterCategory> listPC;
 
+    private ExternalModule em;
+
+
 
 
     /**
@@ -56,8 +59,14 @@ public class TestType {
 
         this.code = code;
 
-
         this.listPC = listPC;
+
+        if (description.equalsIgnoreCase("COVID-19")){
+
+        }else if (description.equalsIgnoreCase("BLOOD")){
+
+        }
+
     }
 
     /**
