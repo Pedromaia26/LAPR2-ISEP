@@ -77,7 +77,14 @@ public class Sample{
 
     public void imageIoWrite(BufferedImage doneImage, String filename) {
         try {
-            File outputfile = new File(filename+".jpg");
+            String pwd = System.getProperty("user.dir");
+
+
+            File barcodes = new File(pwd + "\\src\\main\\barcodes");
+            if (!barcodes.exists()) {
+                barcodes.mkdirs();
+            }
+            File outputfile = new File(pwd+"\\src\\main\\barcodes\\"+filename+".jpg");
             ImageIO.write(doneImage, "jpg", outputfile);
         } catch (IOException e) {
             System.out.println("Exception occured :" + e.getMessage());
