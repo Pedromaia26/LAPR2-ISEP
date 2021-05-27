@@ -46,48 +46,15 @@ public class TestType {
      */
     public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        if (description.trim().length() > 15)
-            throw new IllegalArgumentException("Description cannot have more than 15 characters");
-
-            this.description = description;
+        checkTestTypeRules(description, collectingMethod, code, listPC);
 
 
-        if (collectingMethod.trim().length() > 20)
-            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
-
-        this.collectingMethod = collectingMethod;
-
-        if (code.trim().length() != 5)
-            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
-
-        this.code = code;
-
-        this.listPC = listPC;
     }
 
-    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public TestType (String descriptionAPI, String collectingMethodAPI, String codeAPI, List<ParameterCategory> listPCAPI, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        if (description.trim().length() > 15)
-            throw new IllegalArgumentException("Description cannot have more than 15 characters");
-
-        this.description = description;
-
-
-        if (collectingMethod.trim().length() > 20)
-            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
-
-        this.collectingMethod = collectingMethod;
-
-        if (code.trim().length() != 5)
-            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
-
-        this.code = code;
-
-        this.listPC = listPC;
-
+        checkTestTypeRules(descriptionAPI, collectingMethodAPI, codeAPI, listPC);
         this.api = api;
-
-
     }
 
     public String getApi() {
@@ -179,6 +146,24 @@ public class TestType {
         this.listPC = listPC;
     }
 
+    public void checkTestTypeRules (String description, String collectingMethod, String code, List<ParameterCategory> listPC){
+
+        if (description.trim().length() > 15)
+            throw new IllegalArgumentException("Description cannot have more than 15 characters");
+
+        this.description = description;
 
 
+        if (collectingMethod.trim().length() > 20)
+            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
+
+        this.collectingMethod = collectingMethod;
+
+        if (code.trim().length() != 5)
+            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
+
+        this.code = code;
+
+        this.listPC = listPC;
+    }
 }
