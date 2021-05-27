@@ -3,6 +3,7 @@ package app.domain.model;
 import com.example2.ExternalModule2API;
 
 public class ExternalModuleAdapter2 implements ExternalModule{
+
     ExternalModule2API blood;
 
     @Override

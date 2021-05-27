@@ -11,6 +11,8 @@ import java.util.Objects;
 
 public class Test {
 
+
+    private List<TestParameterResult> results;
     /**
      * String that contains the code of a test.
      */
@@ -34,7 +36,7 @@ public class Test {
     /**
      * An object of type Date used to obtain the date when a result of a test was recorded.
      */
-    private Date createdAt;
+    private Date resultRegist;
     /**
      * The report associated to each test.
      */
@@ -49,6 +51,7 @@ public class Test {
      */
     public Test (){
         testParameterList = new ArrayList<>();
+        results = new ArrayList<>();
     }
 
     /**
@@ -257,10 +260,7 @@ public class Test {
         ReferenceValue refValue = em.getReferenceValue(tp.getParameter());
         String metric = em.getMetric(tp.getParameter());
         tp.addResult(result, metric, refValue);
-        createdAt = new Date();
-        long time = createdAt.getTime();
-        Timestamp ts = new Timestamp(time);
-        System.out.println(ts);
+        resultRegist = new Date();
     }
 
 
