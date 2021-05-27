@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class SampleTest {
 
     @Test
-    public void createBarcode() {
+    public void createBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -56,7 +56,7 @@ public class SampleTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -100,7 +100,7 @@ public class SampleTest {
     }
 
     @Test
-    public void getBarcode() {
+    public void getBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
 
         Company c= new Company("ManyLabs");
 
@@ -141,13 +141,13 @@ public class SampleTest {
 
         for(app.domain.model.Test loDTO : samples){
             for (Sample sample : loDTO.getSample())
-                System.out.println(sample.getBarcode());
+                System.out.println(sample.getBarcode().getBarcodeNumber());
         }
-        assertEquals("00000000001",s.getBarcode());
+        assertEquals("00000000001",s.getBarcode().getBarcodeNumber());
     }
 
     @Test
-    public void testEquals() {
+    public void testEquals() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
@@ -195,7 +195,7 @@ public class SampleTest {
     }
 
     @Test
-    public void testEqualsNull() {
+    public void testEqualsNull() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
@@ -238,7 +238,7 @@ public class SampleTest {
     }
 
     @Test
-    public void testEqualsDifferentClasses() {
+    public void testEqualsDifferentClasses() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
@@ -281,7 +281,7 @@ public class SampleTest {
     }
 
     @Test
-    public void testEqualsAlreadyAdded() {
+    public void testEqualsAlreadyAdded() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
@@ -324,7 +324,7 @@ public class SampleTest {
     }
 
     @Test
-    public void testEqualsSameSample() {
+    public void testEqualsSameSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 

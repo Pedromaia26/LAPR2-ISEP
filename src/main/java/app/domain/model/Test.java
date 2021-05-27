@@ -209,7 +209,6 @@ public class Test {
         if (!validateSample(samp,company))
             return false;
 
-        samp.imageIoWrite(samp.makeUPCABarcode(samp.getBarcode()), samp.getBarcode());
         return addSample(samp);
     }
 
@@ -236,7 +235,7 @@ public class Test {
      * Create a new sample with the dto received.
      * @return The Sample created.
      */
-    public Sample RecordNewSample(Company c) {
+    public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         return new Sample(c);
     }
 

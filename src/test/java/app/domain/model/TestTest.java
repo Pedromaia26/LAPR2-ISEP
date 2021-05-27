@@ -1,6 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ import static org.junit.Assert.*;
 public class TestTest {
 
     @Test
-    public void getSample() {
+    public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -57,7 +59,7 @@ public class TestTest {
     }
 
     @Test
-    public void validateSample() {
+    public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -150,7 +152,7 @@ public class TestTest {
     }
 
     @Test
-    public void validateSampleAlreadyAdd() {
+    public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
 
         Company c= new Company("ManyLabs");
 
@@ -195,7 +197,7 @@ public class TestTest {
     }
 
     @Test
-    public void addSample() {
+    public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -280,7 +282,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSample() {
+    public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -329,7 +331,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSampleEqual() {
+    public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -379,7 +381,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSampleNull() {
+    public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
