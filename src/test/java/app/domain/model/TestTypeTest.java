@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeDescriptionWithMoreThan15chars() {
+    public void createTestTypeDescriptionWithMoreThan15chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -27,7 +27,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void createTestTypeDescriptionWith15chars() {
+    public void createTestTypeDescriptionWith15chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -48,7 +48,7 @@ public class TestTypeTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeCollectingMethodWithMoreThan20Chars() {
+    public void createTestTypeCollectingMethodWithMoreThan20Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -68,7 +68,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void createTestTypeCollectingMethodWith20Chars() {
+    public void createTestTypeCollectingMethodWith20Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -86,7 +86,7 @@ public class TestTypeTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createTestTypeWithInvalidCode() {
+    public void createTestTypeWithInvalidCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -109,7 +109,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -130,7 +130,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void testEquals() {
+    public void testEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -179,7 +179,7 @@ public class TestTypeTest {
 
     }
     @Test
-    public void testEqualsDifferentClass() {
+    public void testEqualsDifferentClass() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -201,7 +201,7 @@ public class TestTypeTest {
         Assert.assertNotEquals(tt, pc2);
     }
     @Test
-    public void testEqualsWithNull() {
+    public void testEqualsWithNull() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -227,7 +227,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void getDescription() {
+    public void getDescription() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
 
@@ -255,7 +255,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void setDescription() {
+    public void setDescription() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "klam1");
@@ -284,7 +284,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void getCollectingMethod() {
+    public void getCollectingMethod() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -310,7 +310,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void setCollectingMethod() {
+    public void setCollectingMethod() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Hemogram", "klam1");
@@ -338,7 +338,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void getCode() {
+    public void getCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -364,7 +364,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void setCode() {
+    public void setCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Hemogram", "klam1");
@@ -392,7 +392,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void getListPC() {
+    public void getListPC() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -418,7 +418,7 @@ public class TestTypeTest {
     }
 
     @Test
-    public void setListPC() {
+    public void setListPC() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Hemogram", "klam1");

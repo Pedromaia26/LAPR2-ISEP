@@ -1,7 +1,10 @@
 package app.domain.model;
 
+import app.controller.App;
+
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 
 public class TestType {
 
@@ -26,8 +29,8 @@ public class TestType {
      */
     private List<ParameterCategory> listPC;
 
-    private ExternalModule em;
-
+    private ReferenceValue ref;
+    private String api;
 
 
 
@@ -41,7 +44,7 @@ public class TestType {
      * @param code The test type code
      * @param listPC The parameter category list
      */
-    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) {
+    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         if (description.trim().length() > 15)
             throw new IllegalArgumentException("Description cannot have more than 15 characters");
@@ -60,13 +63,35 @@ public class TestType {
         this.code = code;
 
         this.listPC = listPC;
+    }
 
-        if (description.equalsIgnoreCase("COVID-19")){
+    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        }else if (description.equalsIgnoreCase("BLOOD")){
+        if (description.trim().length() > 15)
+            throw new IllegalArgumentException("Description cannot have more than 15 characters");
 
-        }
+        this.description = description;
 
+
+        if (collectingMethod.trim().length() > 20)
+            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
+
+        this.collectingMethod = collectingMethod;
+
+        if (code.trim().length() != 5)
+            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
+
+        this.code = code;
+
+        this.listPC = listPC;
+
+        this.api = api;
+
+
+    }
+
+    public String getApi() {
+        return api;
     }
 
     /**
@@ -153,6 +178,7 @@ public class TestType {
     public void setListPC(List<ParameterCategory> listPC) {
         this.listPC = listPC;
     }
+
 
 
 }

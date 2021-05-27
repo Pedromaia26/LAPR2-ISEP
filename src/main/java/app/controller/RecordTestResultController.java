@@ -15,7 +15,7 @@ public class RecordTestResultController {
     private TestMapper tMapper;
     private List <TestParameter> testParameterList = new ArrayList<>();
     private List <TestParameterDto> testResultParameterDto = new ArrayList<>();
-    private Test t;
+    private Test test;
 
 
     public List<TestDTO> getTestListStore(){
@@ -25,16 +25,16 @@ public class RecordTestResultController {
         return listTDto;
     }
 
-    /* public List<TestParameterDto> getTestParameters (TestDTO testDTO){
-        String code = testDTO.getSample();
-        t = tStore.getTestByBarcode(code);
-        testParameterList = t.getTestParameter();
+    public List<TestParameterDto> getTestParameters (TestDTO testDTO){
+        String barcode = testDTO.getSample().get(0).getBarcode().getBarcodeNumber();
+        test = tStore.getTestByBarcode(barcode);
+        testParameterList = test.getTestParameter();
         testResultParameterDto = TestParameterMapper.toDto(testParameterList);
         return testResultParameterDto;
-    } */
+    }
 
-    public void addTestResult(String parameterCode, Double result){
-        t.addTestResult(parameterCode, result);
+    public void addTestResult(String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        test.addTestResult(parameterCode, result);
     }
 
     
