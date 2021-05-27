@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmployeeStore.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sem2App</a> &gt; <a href="index.source.html" class="el_package">app.domain.model</a> &gt; <span class="el_source">EmployeeStore.java</span></div><h1>EmployeeStore.java</h1><pre class="source lang-java linenums">package app.domain.model;
+
+import app.controller.App;
+import auth.domain.model.User;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+<span class="nc" id="L13">public class EmployeeStore {</span>
+
+    /**
+     * List that contains Employees
+     */
+<span class="nc" id="L18">    private List&lt;Employee&gt; Employees = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * List that contains Specialist Doctors
+     */
+<span class="nc" id="L23">    private List&lt;SpecialistDoctor&gt; SpecialistDoctors = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Send the received data and the list of Employees to the EmployeeMapper.toDto() method.
+     * @param empDto A EmployeeDto instance
+     * @return the EmployeeMapper.toDto() method
+     */
+    public Employee createEmployee(EmployeeDto empDto){
+<span class="nc" id="L31">        return EmployeeMapper.toDtoE(empDto);</span>
+    }
+
+    /**
+     * Send the received data and the list of Specialist Doctors to the EmployeeMapper.toDto() method.
+     * @param specdocdto A EmployeeDto instance
+     * @return the EmployeeMapper.toDto() method
+     */
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
+<span class="nc" id="L40">        return EmployeeMapper.toDtoSD(specdocdto);</span>
+    }
+
+    /**
+     * Returns a alphanumeric generated password, with 10 characters.
+     * @return a alphanumeric generated password, with 10 characters
+     */
+    public String generatePassword(){
+<span class="nc" id="L48">        int num= 10;</span>
+<span class="nc" id="L49">        String a=&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789&quot;;</span>
+<span class="nc" id="L50">        StringBuilder fim= new StringBuilder();</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        for (int i=0;i&lt;num;i++){</span>
+<span class="nc" id="L52">            fim.append(a.charAt((int) (Math.random() * (60))));</span>
+        }
+<span class="nc" id="L54">        return String.valueOf(fim);</span>
+    }
+
+    /**
+     * Verify if a Employee is already presented in the Employees List.
+     * @param emp A Employee instance
+     * @return the method contains() to verify if the received Employee is presented in the Employee List
+     */
+    public boolean validateEmployee(Employee emp){
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if(emp == null)</span>
+<span class="nc" id="L64">            return false;</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        return !this.Employees.contains(emp);</span>
+    }
+
+    /**
+     * Add to the Employees List the validated Employee instance received by parameter
+     * @param emp A Employee Instance
+     * @return the addition to Employees List of the Employee instance received by parameter
+     */
+    public boolean addEmployee(Employee emp){
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!validateEmployee(emp))</span>
+<span class="nc" id="L75">            return false;</span>
+<span class="nc" id="L76">        return this.Employees.add(emp);</span>
+    }
+
+    public boolean addSpecialistDoctor(SpecialistDoctor emp){
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        if (!validateSpecialistDoctor(emp))</span>
+<span class="nc" id="L81">            return false;</span>
+<span class="nc" id="L82">        return this.SpecialistDoctors.add(emp);</span>
+    }
+
+    /**
+     * Returns the Employees List
+     * @return the Employees List
+     */
+    public List&lt;Employee&gt; getEmployeeList(){
+<span class="nc" id="L90">        return Employees;</span>
+    }
+
+    /**
+     * Receives a Employee instance by parameter, create  a file and, if exists, present the Employee password.
+     * @param emp A Employee instance
+     * @throws FileNotFoundException
+     */
+    public void saveEmployee(Employee emp) throws FileNotFoundException {
+<span class="nc" id="L99">        String pwd = System.getProperty(&quot;user.dir&quot;);</span>
+
+
+<span class="nc" id="L102">        File emailAndSMSMessages = new File(pwd + &quot;\\src\\main\\emailAndSMSMessagesEmployees&quot;);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if (!emailAndSMSMessages.exists()) {</span>
+<span class="nc" id="L104">            emailAndSMSMessages.mkdirs();</span>
+        }
+
+<span class="nc" id="L107">        PrintWriter out = new PrintWriter(pwd + &quot;\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt&quot;);</span>
+
+<span class="nc" id="L109">        String password =  generatePassword();</span>
+
+
+<span class="nc" id="L112">        out.printf(&quot;Employee registered with success. The password is: %s&quot;,password);</span>
+<span class="nc" id="L113">        emp.setPassword(password);</span>
+
+
+
+<span class="nc" id="L117">        out.close();</span>
+<span class="nc" id="L118">        Employees.add(emp);</span>
+<span class="nc" id="L119">    }</span>
+
+    /**
+     * Receives a Specialist Doctor instance by parameter, create  a file and, if exists, present the Specilist Doctor password.
+     * @param emp A Specialist Doctor instance
+     * @throws FileNotFoundException
+     */
+    public void saveSpecialistDoctor(SpecialistDoctor emp) throws FileNotFoundException {
+<span class="nc" id="L127">        String pwd = System.getProperty(&quot;user.dir&quot;);</span>
+
+
+<span class="nc" id="L130">        File emailAndSMSMessages = new File(pwd + &quot;\\src\\main\\emailAndSMSMessagesEmployees&quot;);</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        if (!emailAndSMSMessages.exists()) {</span>
+<span class="nc" id="L132">            emailAndSMSMessages.mkdirs();</span>
+        }
+
+<span class="nc" id="L135">        PrintWriter out = new PrintWriter(pwd + &quot;\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt&quot;);</span>
+
+<span class="nc" id="L137">        String password =  generatePassword();</span>
+
+<span class="nc" id="L139">        out.printf(&quot;Employee registered with success. The password is: %s&quot;,password);</span>
+
+<span class="nc" id="L141">        out.close();</span>
+
+<span class="nc" id="L143">        emp.setPassword(password);</span>
+
+<span class="nc" id="L145">        SpecialistDoctors.add(emp);</span>
+<span class="nc" id="L146">    }</span>
+
+    /**
+     * Returns the Specialist Doctors List
+     * @return the Specialist Doctors List
+     */
+    public List&lt;SpecialistDoctor&gt; getSpecialistDoctors(){
+<span class="nc" id="L153">        return SpecialistDoctors;</span>
+    }
+
+    /**
+     * Verify if a Specialist Doctor is already presented in the Specialist Doctors List.
+     * @param emp A Specialist Doctor instance
+     * @return the method contains() to verify if the received Specialist Doctor is presented in the Specialist Doctor List
+     */
+    public boolean validateSpecialistDoctor(SpecialistDoctor emp){
+<span class="nc bnc" id="L162" title="All 2 branches missed.">        if(emp == null)</span>
+<span class="nc" id="L163">            return false;</span>
+<span class="nc bnc" id="L164" title="All 2 branches missed.">        return !this.SpecialistDoctors.contains(emp);</span>
+    }
+
+    /**
+     * Create a system user to the received Employee instance
+     * @param emp A Employee instance
+     * @return the addUserWithRole, associated with the Employee instance
+     */
+    public boolean createUser(Employee emp){
+<span class="nc" id="L173">        return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));</span>
+    }
+
+    /**
+     * Create a system user to the received Specialist Doctor instance
+     * @param emp A Specialist Doctor instance
+     * @return the addUserWithRole, associated with the Specialist Doctor instance
+     */
+    public boolean createUser(SpecialistDoctor emp){
+<span class="nc" id="L182">        return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));</span>
+    }
+
+    /**
+     * Verify if a Employee email is registered in the Employees list
+     * @param email The Email of a Employee
+     * @return a boolean that is true if the email is registered and false if doesn't.
+     */
+    public boolean exists(String email)
+    {
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        for(Employee emp: this.Employees)</span>
+        {
+
+<span class="nc bnc" id="L195" title="All 2 branches missed.">            if(emp.getEmail().equals(email)) {</span>
+
+<span class="nc" id="L197">                return true;</span>
+            }
+<span class="nc" id="L199">        }</span>
+<span class="nc" id="L200">        return false;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

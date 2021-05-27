@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TestStore.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sem2App</a> &gt; <a href="index.source.html" class="el_package">app.domain.model</a> &gt; <span class="el_source">TestStore.java</span></div><h1>TestStore.java</h1><pre class="source lang-java linenums">package app.domain.model;
+
+import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestStore {
+
+    /**
+     * List that contains the tests.
+     */
+    private List&lt;Test&gt; tests;
+
+    /**
+     * List that contains the tests to be reported.
+     */
+    /*private List&lt;Test&gt; testsToBeReported;*/
+
+<span class="nc" id="L22">    public TestStore(){</span>
+<span class="nc" id="L23">        tests = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L24">    }</span>
+
+    /**
+     * Returns the list of existing tests.
+     * @return list of tests.
+     */
+    public List&lt;Test&gt; getTests() {
+<span class="nc" id="L31">        return tests;</span>
+    }
+
+    /**
+     * Returns the list of existing tests to be reported.
+     * @return list of tests to be reported.
+     */
+    /*public List&lt;Test&gt; getTestsToBeReported(){
+        return testsToBeReported;
+    }*/
+
+    /**
+     * Adding a test to the tests list.
+     * @param test receives by parameter the test to be added to the list.
+     */
+    public void addToList (Test test){
+<span class="nc" id="L47">        tests.add(test);</span>
+<span class="nc" id="L48">    }</span>
+
+    /**
+     * Returns a given test, receiving by parameter the barcode of a sample associated with the test.
+     * @param barcode the barcode of a test sample.
+     * @return the test.
+     */
+
+    public Test getTestByBarcode(String barcode){
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        for (Test test: tests) {</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">            for (Sample samples : test.getSample()) {</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">                    if (barcode.equals(samples.getBarcode()))</span>
+<span class="nc" id="L60">                        return test;</span>
+
+<span class="nc" id="L62">            }</span>
+<span class="nc" id="L63">        }</span>
+<span class="nc" id="L64">        throw new IllegalArgumentException(&quot;There is no Sample with such barcode!&quot;);</span>
+    }
+
+    /**
+     * Returns a given test, receiving by parameter the code of a test.
+     * @param code the code of the test.
+     * @return the test.
+     */
+    public Test getTestByCode(String code){
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        for (Test test: tests) {</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            if (code.equals(test.getCode()))</span>
+<span class="nc" id="L75">                return test;</span>
+
+<span class="nc" id="L77">        }</span>
+
+<span class="nc" id="L79">        throw new IllegalArgumentException(&quot;There is no Sample with such barcode!&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

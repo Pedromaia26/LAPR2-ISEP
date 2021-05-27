@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CreateEmployeeUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sem2App</a> &gt; <a href="index.source.html" class="el_package">app.ui.console</a> &gt; <span class="el_source">CreateEmployeeUI.java</span></div><h1>CreateEmployeeUI.java</h1><pre class="source lang-java linenums">package app.ui.console;
+
+import app.controller.App;
+import app.controller.RegistEmployeeController;
+import app.domain.model.*;
+import app.ui.console.utils.Utils;
+import auth.domain.model.Email;
+import auth.domain.model.User;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class CreateEmployeeUI  implements Runnable{
+    public CreateEmployeeUI()
+<span class="nc" id="L18">    {</span>
+<span class="nc" id="L19">    }</span>
+
+    public void run() {
+<span class="nc" id="L22">        Scanner ler = new Scanner(System.in);</span>
+<span class="nc" id="L23">        RegistEmployeeController employeeController = new RegistEmployeeController();</span>
+
+<span class="nc" id="L25">        List&lt;OrgRole&gt; lRolesDto = employeeController.getRoles();</span>
+
+        String op;
+<span class="nc" id="L28">        String role = null;</span>
+        int num;
+<span class="nc" id="L30">        int docIndexNumber = 0;</span>
+<span class="nc" id="L31">        boolean exists = false;</span>
+
+<span class="nc" id="L33">        System.out.printf(&quot;List of employee roles:\n&quot;);</span>
+
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for(OrgRole orgRole : lRolesDto){</span>
+<span class="nc" id="L36">            System.out.printf(&quot;%d - %s\n&quot;,lRolesDto.indexOf(orgRole)+1, orgRole.getDesignation());</span>
+<span class="nc" id="L37">        }</span>
+<span class="nc" id="L38">        System.out.printf(&quot;Select a role:\n&quot;);</span>
+<span class="nc" id="L39">        String Orgop = ler.nextLine();</span>
+        try {
+<span class="nc" id="L41">            num = Integer.parseInt(Orgop);</span>
+<span class="nc bnc" id="L42" title="All 4 branches missed.">            if (Integer.parseInt(Orgop) &lt;= lRolesDto.size() &amp;&amp; Integer.parseInt(Orgop) &gt;=1) {</span>
+<span class="nc" id="L43">                role = lRolesDto.get(Integer.parseInt(Orgop)-1).getDesignation();</span>
+<span class="nc" id="L44">                exists = true;</span>
+            }
+
+<span class="nc" id="L47">        } catch (NumberFormatException e) {</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">            for (OrgRole orgRole : lRolesDto){</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                if (Orgop.equalsIgnoreCase(orgRole.getDesignation())){</span>
+<span class="nc" id="L50">                    role = orgRole.getDesignation();</span>
+<span class="nc" id="L51">                    exists = true;</span>
+                }
+<span class="nc" id="L53">            }</span>
+<span class="nc" id="L54">        }</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        if (exists){</span>
+<span class="nc" id="L56">            System.out.printf(&quot;Name: &quot;);</span>
+<span class="nc" id="L57">            String name = ler.nextLine();</span>
+<span class="nc" id="L58">            System.out.printf(&quot;Address: &quot;);</span>
+<span class="nc" id="L59">            String address = ler.nextLine();</span>
+<span class="nc" id="L60">            System.out.printf(&quot;Phone number: &quot;);</span>
+<span class="nc" id="L61">            long phoneNumber = ler.nextLong();</span>
+<span class="nc" id="L62">            ler.nextLine();</span>
+<span class="nc" id="L63">            System.out.printf(&quot;Email: &quot;);</span>
+<span class="nc" id="L64">            String m = ler.nextLine();</span>
+<span class="nc" id="L65">            Email email = new Email(m);</span>
+<span class="nc" id="L66">            System.out.printf(&quot;SOC code: &quot;);</span>
+<span class="nc" id="L67">            int socCode = ler.nextInt();</span>
+<span class="nc" id="L68">            ler.nextLine();</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">            if (role.equalsIgnoreCase(&quot;specialist doctor&quot;)){</span>
+<span class="nc" id="L70">                System.out.printf(&quot;Doctor Index Number: &quot;);</span>
+<span class="nc" id="L71">                docIndexNumber = ler.nextInt();</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">                if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {</span>
+<span class="nc" id="L73">                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);</span>
+<span class="nc" id="L74">                } else System.out.println(&quot;Employee created without success.&quot;);</span>
+            }
+            else{
+<span class="nc bnc" id="L77" title="All 2 branches missed.">                if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {</span>
+<span class="nc" id="L78">                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);</span>
+<span class="nc" id="L79">                } else System.out.println(&quot;Employee created without success.&quot;);</span>
+            }
+<span class="nc" id="L81">        }</span>
+        else{
+<span class="nc" id="L83">            throw new IllegalArgumentException(&quot;The selected role does not exist.&quot;);</span>
+        }
+<span class="nc" id="L85">    }</span>
+
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController){
+        String op;
+<span class="nc" id="L89">        Scanner ler = new Scanner(System.in);</span>
+
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (docIndexNumber == 0){</span>
+<span class="nc" id="L92">            System.out.println(&quot;Data confirmation:&quot;);</span>
+<span class="nc" id="L93">            System.out.printf(&quot;User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\n&quot;, role, name, address, email, phoneNumber, socCode);</span>
+        }
+        else{
+<span class="nc" id="L96">            System.out.println(&quot;Data confirmation:&quot;);</span>
+<span class="nc" id="L97">            System.out.printf(&quot;User Role: %s\nName: %s\nAddress: %s\nEmail: %s\nPhone number: %d\nSOC code: %d\nDoctorIndexNumber: %d\n&quot;, role, name, address, email, phoneNumber, socCode, docIndexNumber);</span>
+        }
+<span class="nc" id="L99">        System.out.println(&quot;Do you want to create the employee?(Y/N)&quot;);</span>
+<span class="nc" id="L100">        op = ler.next();</span>
+<span class="nc bnc" id="L101" title="All 4 branches missed.">        if (op.equalsIgnoreCase(&quot;Y&quot;) || op.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">            if (!App.getInstance().getCompany().getAuthFacade().existsUser(String.valueOf(email))) {</span>
+                try {
+<span class="nc bnc" id="L104" title="All 2 branches missed.">                    if (docIndexNumber == 0) employeeController.saveEmployee();</span>
+<span class="nc" id="L105">                    else employeeController.saveSpecialistDoctor();</span>
+<span class="nc" id="L106">                    System.out.println(&quot;Employee created with success.&quot;);</span>
+<span class="nc" id="L107">                } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L108">                    e.printStackTrace();</span>
+<span class="nc" id="L109">                }</span>
+            } else {
+<span class="nc" id="L111">                throw new IllegalArgumentException(&quot;Employee already created.&quot;);</span>
+            }
+<span class="nc" id="L113">        } else System.out.println(&quot;Employee regist canceled.&quot;);</span>
+<span class="nc" id="L114">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

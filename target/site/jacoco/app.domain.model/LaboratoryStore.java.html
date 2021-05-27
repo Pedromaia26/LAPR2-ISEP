@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LaboratoryStore.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sem2App</a> &gt; <a href="index.source.html" class="el_package">app.domain.model</a> &gt; <span class="el_source">LaboratoryStore.java</span></div><h1>LaboratoryStore.java</h1><pre class="source lang-java linenums">package app.domain.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="nc" id="L6">public class LaboratoryStore {</span>
+
+    /**
+     * List that contains the Laboratories.
+     */
+<span class="nc" id="L11">    private List&lt;Laboratory&gt; LaboratoryList = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Create a new Clynical Analysis Laboratory with the kind of test it operates.
+     * @param laboratoryID Laboratory ID
+     * @param name Laboratory's name
+     * @param address Laboratory's address
+     * @param phoneNumber Laboratory's phone number
+     * @param tinNumber Laboratory's Tax Identification Number
+     * @param test Types of tests list
+     * @return The test type created.
+     */
+
+    public Laboratory createLaboratory (String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List&lt;TestType&gt; test) {
+<span class="nc" id="L25">        return new Laboratory(laboratoryID, name, address, phoneNumber, tinNumber, test);</span>
+    }
+
+
+    /**
+     * Validates the Laboratory received.
+     * @param cl the Laboratory to be validated.
+     * @return True if the Laboratory is successfully validated, false if it is not.
+     */
+
+    public boolean validateLaboratory (Laboratory cl){
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (cl == null)</span>
+<span class="nc" id="L37">            return false;</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        return !this.LaboratoryList.contains(cl);</span>
+    }
+
+    /**
+     * Saves the Laboratory received.
+     * @param cl Laboratory to be saved.
+     * @return True if the Laboratory is successfully saved, false if it is not.
+     */
+
+    public boolean saveLaboratory (Laboratory cl){
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (!validateLaboratory(cl))</span>
+<span class="nc" id="L49">            return false;</span>
+<span class="nc" id="L50">        return LaboratoryList.add(cl);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
