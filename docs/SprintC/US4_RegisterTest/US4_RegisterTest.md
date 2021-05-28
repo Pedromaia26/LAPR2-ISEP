@@ -140,7 +140,7 @@ Other software classes identified:
 ## 3.2. Sequence Diagram (SD)
 
 
-![US008_SD](US008_SD.svg)
+![US004_SD](US004_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
