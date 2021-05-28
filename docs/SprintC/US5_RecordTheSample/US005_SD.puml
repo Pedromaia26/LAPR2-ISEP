@@ -7,7 +7,6 @@ participant ":TestMapper" as TM
 participant "SampleMapper" as SM
 participant "SampDto: SampleDto" as SD
 participant "tStore \n :TestStore" as SS
-participant "store \n :LabOrderStore" as TS
 participant "test\n : Test" as test
 participant "em\n : ExternalModule" as em
 

@@ -26,23 +26,25 @@ class User{
 }
 
 class Test{
-
--testType
+-LabOrder
 -sample
 }
 
 class Sample{
 
--dateCollection
--timeCollection
+-barcode
 }
+
 class TestType{
 -designation
 -description
 -internalCode
 -nhsCode
 }
-
+class LabOrder{
+-testType
+-Parameters
+}
 
 Company "1" -- "*" Test: does>
 Test "1" -- "1" Sample : has>
@@ -51,4 +53,6 @@ Test "1" -- "1" TestType : is of>
 Employee "0..1" -- "1" User: relates to >
 Sample "*" -- "1..*" Employee : is recorded by>
 LabOrder "1" -- "1" Test : gives rise>
+
+LabOrder "1" -- "1" TestType : has>
 @enduml
