@@ -9,15 +9,11 @@ import java.util.List;
 
 public class SampleMapper {
 
-    /* public static Sample toModel(SampleDTO dto) throws OutputException, BarcodeException {
+     public Test toModel(SampleDTO dto, TestStore store) throws OutputException, BarcodeException {
 
-        String orderid = dto.getOrderid();
-
-
+          String code=dto.getOrderid();
 
 
-        return new Sample();
-
-
-    }*/
+          return store.getTestByCode(code);
+    }
 }

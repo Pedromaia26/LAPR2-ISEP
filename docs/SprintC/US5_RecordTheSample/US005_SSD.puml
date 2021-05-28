@@ -22,7 +22,7 @@ sys-->MLT : request how many samples want to record
 deactivate sys
 
 MLT -> sys : type the requested data
-
+loop
 activate sys
 
 sys-->MLT : shows the data and requests a confirmation
@@ -33,4 +33,5 @@ activate sys
 sys-->MLT : informs operations success 
 deactivate sys
 deactivate MLT
+end
 @enduml

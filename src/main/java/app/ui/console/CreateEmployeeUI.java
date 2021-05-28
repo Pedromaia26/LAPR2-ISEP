@@ -22,7 +22,7 @@ public class CreateEmployeeUI  implements Runnable{
         Scanner ler = new Scanner(System.in);
         RegistEmployeeController employeeController = new RegistEmployeeController();
 
-        List<OrgRole> lRolesDto = employeeController.getRoles();
+        List<OrgRoleDto> lRolesDto = employeeController.getRoles();
 
         String op;
         String role = null;
@@ -32,7 +32,7 @@ public class CreateEmployeeUI  implements Runnable{
 
         System.out.printf("List of employee roles:\n");
 
-        for(OrgRole orgRole : lRolesDto){
+        for(OrgRoleDto orgRole : lRolesDto){
             System.out.printf("%d - %s\n",lRolesDto.indexOf(orgRole)+1, orgRole.getDesignation());
         }
         System.out.printf("Select a role:\n");
@@ -45,7 +45,7 @@ public class CreateEmployeeUI  implements Runnable{
             }
 
         } catch (NumberFormatException e) {
-            for (OrgRole orgRole : lRolesDto){
+            for (OrgRoleDto orgRole : lRolesDto){
                 if (Orgop.equalsIgnoreCase(orgRole.getDesignation())){
                     role = orgRole.getDesignation();
                     exists = true;

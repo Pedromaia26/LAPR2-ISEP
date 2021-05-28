@@ -1,10 +1,11 @@
 @startuml
+Interface ApiBarcode
+
 RecordSampleUI ..> RecordSampleController
 RecordSampleController..>Company
 RecordSampleController..>Sample
 RecordSampleController..>TestMapper
 RecordSampleController..>SampleDTO
-RecordSampleController..>SampleStore
 RecordSampleController..>SampleMapper
 RecordSampleController..>TestStore
 
@@ -16,9 +17,7 @@ RecordSampleController : +saveNewSample()
 RecordSampleController : +getTest()
 
 
-Company --> SampleStore : have
-
-SampleStore --> Sample: has
+Test --> Sample: has
 
 Company --> TestStore
 
@@ -26,7 +25,6 @@ TestStore : +getTestByTestTypeCode(testid)
 
 TestMapper ..> TestDTO
 TestDTO..> Test
-Sample --> Test: originated from
 
 
 TestStore --> Test : Has
@@ -35,35 +33,51 @@ SampleMapper ..> SampleDTO
 
 TestMapper ..> TestStore
 
-Test ..> Laborder
+Test ..> LabOrder
 LabOrder : -testType
+LabOrder : -parameters
 
 
 TestMapper : +toDTO(tests)
 
 SampleMapper : +toModel()
 
+SampleMapper ..> TestStore
 
+Sample --> ApiBarcode
+
+BarcodeAdapter  ..> ApiBarcode
+
+BarcodeAdapter --> BarcodeCreate
+
+
+ApiBarcode : +BarcodeCreate makeUPCABarcode()
+
+BarcodeAdapter : +BarcodeCreate makeUPCABarcode()
+
+BarcodeCreate : +BarcodeCreate(Object barcode, String barcodeNumber)
+BarcodeCreate : -barcode
+BarcodeCreate : -barcodeNumber
 
 
 Company : +getTestStore()
 Company : +getSampleStore()
 
-SampleStore : +RecordNewSample(tdo)
-SampleStore : +validateNewSample(samp)
-SampleStore : +saveNewSample(samp)
-SampleStore : +addNewSample(samp)
+Test : +RecordNewSample(tdo)
+Test : +validateNewSample(samp)
+Test : +saveNewSample(samp)
+Test : +addNewSample(samp)
+Test : -LabOrder
+Test : -Sample
 
-SampleDTO : +getTimeColl()
-SampleDTO : +getDataColl()
-SampleDTO : +getgetTestId()
-
-
-SampleDTO : -timeCollection
-SampleDTO : -dateCollection
+SampleDTO : +getOrderid()
 
 
-Sample : +Sample(dataCollection, timeCollection, test)
-Sample : -timeCollection
-Sample : -dateCollection
+
+SampleDTO : -orderid
+
+
+Sample : +Sample()
+Sample : +getBarcodecreator()
+Sample : -barcode
 @enduml

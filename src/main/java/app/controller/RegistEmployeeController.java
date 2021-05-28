@@ -13,16 +13,18 @@ public class RegistEmployeeController {
     private OrgRoleStore rStore;
 
     private List<OrgRole> lRoles = new ArrayList<>();
-    private List<OrgRole> lRolesDto = new ArrayList<>();
+    private List<OrgRoleDto> lRolesDto = new ArrayList<>();
 
     private Employee emp;
     private SpecialistDoctor empsd;
 
-    public List<OrgRole> getRoles(){
+    private RolesMapper rolesmapper = new RolesMapper();
+
+    public List<OrgRoleDto> getRoles(){
         rStore = App.getInstance().getCompany().getOrgRoleStore();
         rStore.addDefaultRoles();
         lRoles = rStore.getRoles();
-        lRolesDto = RolesMapper.toDTO(lRoles);
+        lRolesDto = rolesmapper.toDTO(lRoles);
         return lRolesDto;
     }
 

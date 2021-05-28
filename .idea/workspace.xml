@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Sem2App:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -34,6 +39,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="TestType update">
       <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/ClinicalChemistryTechnologistUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -49,6 +55,15 @@
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
+=======
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> b420c4f128bd1560debe31406e1bf20c99984c2e
+      <change beforePath="$PROJECT_DIR$/00000000001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/00000000002.jpg" beforeDir="false" />
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +77,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -77,13 +94,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -98,6 +108,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
@@ -105,17 +116,50 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+=======
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sem2App_jar" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_CD.svg" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.097751714" />
+    <property name="project.structure.side.proportion" value="0.23726977" />
+  </component>
+  <component name="RecentsManager">
+<<<<<<< HEAD
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.domain.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS" />
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProjetoLapr2\out\artifacts\Sem2App_jar" />
+      <recent name="D:\ProjetoLapr2\src\main\resources" />
+    </key>
+>>>>>>> b420c4f128bd1560debe31406e1bf20c99984c2e
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+      <recent name="junit.framework.TestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ProjetoLapr2" />
+<<<<<<< HEAD
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProjetoLapr2\out\artifacts\Sem2App_jar" />
+      <recent name="D:\ProjetoLapr2\src\main\resources" />
+=======
+    <key name="MoveFile.RECENT_KEYS" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.domain.model" />
+>>>>>>> b420c4f128bd1560debe31406e1bf20c99984c2e
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="app.domain.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in Sem2App">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -142,13 +186,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,7 +207,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleTest.testEqualsAlreadyAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrgRoleDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -170,36 +216,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.SampleTest" />
-      <option name="METHOD_NAME" value="testEqualsAlreadyAdded" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SampleTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.domain.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.SampleTest" />
-      <option name="METHOD_NAME" value="testToString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestStoreTest.getTestByBarcode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.OrgRoleDtoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTest.recordNewSample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolesMapperTest.toDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -208,27 +231,50 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestTest" />
-      <option name="METHOD_NAME" value="recordNewSample" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.RolesMapperTest" />
+      <option name="METHOD_NAME" value="toDTO" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app.domain.model in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.domain.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.domain.model" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TestStoreTest.getTestByBarcode" />
         <item itemvalue="JUnit.All in Sem2App" />
+<<<<<<< HEAD
         <item itemvalue="JUnit.SampleTest.testToString" />
         <item itemvalue="JUnit.SampleTest.testEqualsAlreadyAdded" />
+=======
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.RolesMapperTest.toDTO" />
+        <item itemvalue="JUnit.OrgRoleDtoTest" />
+        <item itemvalue="JUnit.app.domain.model in Sem2App" />
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="TestType update" />
+=======
+      <changelist id="32eec74f-1e37-4e39-bf2e-df2b15d965ba" name="Default Changelist" comment="Create class controlor to validate work done" />
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
       <created>1621937191897</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -245,8 +291,13 @@
       <workItem from="1622137432192" duration="493000" />
       <workItem from="1622107359277" duration="9062000" />
       <workItem from="1622140363191" duration="2839000" />
+<<<<<<< HEAD
       <workItem from="1622202710809" duration="50000" />
       <workItem from="1622226035834" duration="1213000" />
+=======
+      <workItem from="1622194755734" duration="11171000" />
+      <workItem from="1622209639493" duration="2493000" />
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -318,12 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622150229891</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00011" summary="TestType update">
       <created>1622193336128</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1622193336128</updated>
+=======
+    <task id="LOCAL-00011" summary="Create class controlor to validate work done">
+      <created>1622199596449</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622199596449</updated>
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
     </task>
     <option name="localTasksCounter" value="12" />
     <servers />
@@ -355,10 +415,37 @@
     <MESSAGE value="Create Laboratory Coordinator UI" />
     <MESSAGE value="Correcting samples tests" />
     <MESSAGE value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
+<<<<<<< HEAD
     <MESSAGE value="TestType update" />
     <option name="LAST_COMMIT_MESSAGE" value="TestType update" />
+=======
+    <MESSAGE value="Create class controlor to validate work done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622230365055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622230365055" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622230365055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622230365055" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622230365055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622230365055" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622230365055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622230365055" />
+>>>>>>> f31b5e232348ce53a962fc98ba019fc7831aaa61
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>app.domain.model.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

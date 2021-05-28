@@ -60,5 +60,11 @@ public class ParameterStore {
         return parameterList;
     }
 
-
+    public Parameter getParameterByCode(String code) {
+        for (Parameter tt: this.parameterList) {
+            if (code.equals(tt.getCode()))
+                return tt;
+        }
+        throw new IllegalArgumentException("There is no Parameter with such code!");
+    }
 }

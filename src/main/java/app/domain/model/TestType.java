@@ -53,7 +53,7 @@ public class TestType {
 
     public TestType (String descriptionAPI, String collectingMethodAPI, String codeAPI, List<ParameterCategory> listPCAPI, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        checkTestTypeRules(descriptionAPI, collectingMethodAPI, codeAPI, listPC);
+        checkTestTypeRules(descriptionAPI, collectingMethodAPI, codeAPI, listPCAPI);
         this.api = api;
     }
 
