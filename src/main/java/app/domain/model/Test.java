@@ -5,6 +5,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Test {
@@ -19,10 +20,16 @@ public class Test {
      * The National Healthcare Service.
      */
     private long nhsCode;
+
+    private Date date;
+
+
     /**
      * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
      */
     private LabOrder labOrder;
+
+    private Long tinNumber;
     /**
      * The external module that provides reference values to be compared to the results of a parameter.
      */
@@ -54,23 +61,36 @@ public class Test {
         results = new ArrayList<>();
     }
 
+    public String createTestCode(Company company){
+
+        List<Test> tests=company.getTestStore().getTests();
+        int c=1;
+        for(Test testss : tests){
+            c++;
+        }
+
+        DecimalFormat df = new DecimalFormat("000000000000");
+        return df.format(c);
+    }
+
     /**
      * Creates an instance of Test, receiving by parameter its code, its National Healthcare Service code
      * and the lab order associated to the test.
-     * @param code code of the test.
      * @param nhsCode National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(String code, long nhsCode, LabOrder labOrder){
+    public Test(Company company, long tinNumber, long nhsCode, LabOrder labOrder){
 
-        if (code.trim().length() != 10)
-            throw new IllegalArgumentException("Code should have 10 digits");
-        this.code = code;
+        this.code = createTestCode(company);
 
         if (String.valueOf(nhsCode).length() != 10)
             throw new IllegalArgumentException("National Health Service Code should have 10 digits");
 
         this.nhsCode = nhsCode;
+
+        if (String.valueOf(tinNumber).length() != 10)
+            throw new IllegalArgumentException("Tax Identification Number should have 10 digits");
+        this.tinNumber = tinNumber;
 
         this.labOrder = labOrder;
         em = new ExternalModule() {
@@ -88,7 +108,32 @@ public class Test {
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
 
+        this.date = new Date();
+    }
 
+    public Test(String code, long nhsCode, LabOrder labOrder){
+        this.code = code;
+
+        this.nhsCode = nhsCode;
+
+        this.labOrder = labOrder;
+
+        em = new ExternalModule() {
+            @Override
+            public ReferenceValue getReferenceValue(Parameter parameter) {
+                return null;
+            }
+
+            @Override
+            public String getMetric(Parameter parameter) {
+                return null;
+            }
+        };
+
+        testParameterList = new ArrayList<>();
+        testParameterList = addToList(labOrder.getParameters());
+
+        this.date = new Date();
     }
 
     /**

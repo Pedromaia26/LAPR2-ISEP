@@ -19,6 +19,23 @@ public class TestStore {
      */
     /*private List<Test> testsToBeReported;*/
 
+    public Test createTest (Company company, long tinNumber, long nhsCode, LabOrder labOrder) {
+        return new Test(company, tinNumber, nhsCode, labOrder);
+    }
+
+    /**
+     * Validates the Test received.
+     * @param ts the Test to be validated.
+     * @return True if the Test is successfully validated, false if it is not.
+     */
+
+    public boolean validateTest (Test ts){
+        if (ts == null)
+            return false;
+        return !this.tests.contains(ts);
+    }
+
+
     public TestStore(){
         tests = new ArrayList<>();
     }
@@ -56,8 +73,8 @@ public class TestStore {
     public Test getTestByBarcode(String barcode){
         for (Test test: tests) {
             for (Sample samples : test.getSample()) {
-                    if (barcode.equals(samples.getBarcode().getBarcodeNumber()))
-                        return test;
+                if (barcode.equals(samples.getBarcode().getBarcodeNumber()))
+                    return test;
 
             }
         }
@@ -77,5 +94,17 @@ public class TestStore {
         }
 
         throw new IllegalArgumentException("There is no Sample with such barcode!");
+    }
+
+    /**
+     * Saves the Test received.
+     * @param ts Test to be saved.
+     * @return True if the Test is successfully saved, false if it is not.
+     */
+
+    public boolean saveTest (Test ts){
+        if (!validateTest(ts))
+            return false;
+        return tests.add(ts);
     }
 }
