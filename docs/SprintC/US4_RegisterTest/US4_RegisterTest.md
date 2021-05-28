@@ -6,7 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an administrator, I want to register a new Clinical Analysis Laboratory.
+As an receptionist of the laboratory, I want to register a test to be performed to a registered client.
 
 
 
