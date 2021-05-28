@@ -228,11 +228,11 @@ public class Test {
     }
 
     /**
-     * Creates a report of the test.
-     * @param report the report of the test.
+     * Save the report created with the diagnosisText
+     * @param diagnosisText the text to be added to report
      */
-    public void addReport(Report report){
-        this.report = report;
+    public void addReport(String diagnosisText){
+        this.report = new Report(diagnosisText);
     }
 
     /**

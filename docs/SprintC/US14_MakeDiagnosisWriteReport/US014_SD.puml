@@ -7,8 +7,9 @@ participant "tStore\n:TestStore" as tStore
 participant ":TestMapper" as TestMapper
 participant "testDto\n:TestDto" as TestDto
 participant "test:Test" as Test
-participant ":ResultParameterMapper" as RLmapper
+participant ":TestParameterMapper" as RLmapper
 participant "report\n:Report" as Report
+participant "TestParameter" as TestParameter
 
 autonumber
 activate SD
