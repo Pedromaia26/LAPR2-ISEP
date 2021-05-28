@@ -95,6 +95,7 @@ n/a
 | 		         | ... instantiating a new Sample?                                 | Test                          | **Creator (R1)** and **HC+LC**: Applying the Creator (R1) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the test class                    |
 |        		 | ... validating all data (local validation)?                     | Sample                        | IE: owns its data.                                                                                                                                                                                     |
 |        		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
+|                | ... adapting the interface                                      | BarcodeAdapter                | **Protected variations** Convert the interface of BarcodeCreate into ApiBarcode                                                                                                                       |
 | Step 6  		 |                                                                 |                               |                                                                                                                                                                                                        |
 | Step 7  		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
 | Step 8  		 | ... informing operation success?                                | RecordSampleUI                | IE: is responsible for user interactions.                                                                                                                                                              |
@@ -107,6 +108,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Test
  * TestStore
  * TestDto
+ * BarcodeAdapter
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
