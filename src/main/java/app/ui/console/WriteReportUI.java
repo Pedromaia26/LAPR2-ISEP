@@ -49,7 +49,7 @@ public class WriteReportUI implements Runnable {
             }
             System.out.println("Introduce the diagnosis");
             String diagnosis = ler.next();
-            controller.addReport(diagnosis, testDto);
+            controller.addReport(diagnosis);
         }
         else{
             throw new IllegalArgumentException("The selected test does not exist.");
