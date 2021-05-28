@@ -84,7 +84,7 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 
 ### 1.6. System Sequence Diagram (SSD)
 
-![US008_SSD](US008_SSD.svg)
+![US004_SSD](US004_SSD.svg)
 
 
 **Other alternatives might exist.**
