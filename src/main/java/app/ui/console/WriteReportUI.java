@@ -35,7 +35,7 @@ public class WriteReportUI implements Runnable {
             System.out.printf("%d - %s", lTestsDto.indexOf(testdto)+1, testdto);
             System.out.println("---------");
         }
-        System.out.println("Select one test of the list:");
+        System.out.println("Select one test of the list: ");
         testop = ler.nextInt();
         if (testop <= lTestsDto.size() && testop >= 1){
             testDto = lTestsDto.get(testop-1);
