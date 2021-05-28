@@ -84,8 +84,8 @@ public class Sample{
             if (!barcodes.exists()) {
                 barcodes.mkdirs();
             }
-            File outputfile = new File(pwd+"\\src\\main\\barcodes\\"+filename+".jpg");
-            ImageIO.write(doneImage, "jpg", outputfile);
+            File outputfile = new File(pwd+"\\src\\main\\barcodes\\"+filename+".jpeg");
+            ImageIO.write(doneImage, "jpeg", outputfile);
         } catch (IOException e) {
             System.out.println("Exception occured :" + e.getMessage());
         }
@@ -96,7 +96,7 @@ public class Sample{
 
         JFrame frame = new JFrame();
         frame.getContentPane().add((Component) barcode.getBarcode());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         frame.pack();
         frame.setLocation(500, 500);
