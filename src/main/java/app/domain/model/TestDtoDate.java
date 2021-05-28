@@ -45,6 +45,6 @@ public class TestDtoDate {
      */
     @Override
     public String toString() {
-        return String.format("Code: %s\nAnalysisDate: %s\nDiagnosis Date: %s", code, analysisDate, diagnosisDate);
+        return String.format("Code: %s\nRegistration Date: %s\nAnalysisDate: %s\nDiagnosis Date: %s", code, registrationDate, analysisDate, diagnosisDate);
     }
 }

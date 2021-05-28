@@ -45,6 +45,23 @@
 >  
 > **Answer:** The laboratory coordinator only sees the test dates of tests that already have all dates registered in the system.
 
+-
+
+> **Question:** "What's the Criteria to the validation of the test? We only receive dates but what do we have to do to check if everything is "ok" to validate?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8538#p11190]
+>  
+> **Answer:** The lab coordinator only checks the dates (date and time) and validates a subset of tests that he selects. The lab coordinador does not check any other information.
+
+-
+
+> **Question:** "After we validate, we send the email saying they can check the app for the results. But what happens to the test ifself? Does it stay within the system or is deleted?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8538#p11190]
+>  
+> **Answer:** The tests should not be eliminated.
+
+-
+
+> **Question:** "After validation do we need to have the time and date of the validation?" - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8408#p10997]
+>  
+> **Answer:** Yes, the system should record the date and time when the validation was made.
 
 ### 1.3. Acceptance Criteria
 
@@ -55,6 +72,7 @@
 ### 1.4. Found out Dependencies
 
 
+* There is a dependency to "US04 Regist a test" since the test has to be registered in the system.
 * There is a dependency to "US012 Record the results of a given test" since the clinical chemistry technologist must have recorded the test results.
 * There is a dependency to "US014 Make the diagnosis and write a report" since the specialist doctor must have made the diagnosis and written the report.
 
@@ -65,15 +83,10 @@
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
+
 	
 * Selected data:
-	* Test to be validated 
+	* Test or tests to be validated
 
 
 **Output Data:**
@@ -92,18 +105,16 @@
 
 ### 1.7 Other Relevant Remarks
 
-* The created task stays in a "not published" state in order to distinguish from "published" tasks.
 
 
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US15_MD](US15_MD.svg)
 
 ### 2.2. Other Remarks
 
-n/a
 
 
 ## 3. Design - User Story Realization 
@@ -114,14 +125,9 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateTaskUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateTaskController | Controller                             |
-| 			  		 |	... instantiating a new Task? | Organization   | Creator (Rule 1): in the DM Organization has a Task.   |
-| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation.  |
-| 			  		 |	... knowing to which organization the user belongs to? | Platform  | IE: has registed all Organizations |
-| 			  		 |							 | Organization   | IE: knows/has its own Employees|
-| 			  		 |							 | Employee  | IE: knows its own data (e.g. email) |
-| Step 2  		 |							 |             |                              |
+| Step 1  		 |	... interacting with the actor? | ValidateWorkDoneUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  		 |	... coordinating the US? | ValidateWorkDoneController | Controller                             |
+| Step 2  		 |	... knowing tests to show	 |             |                              |
 | Step 3  		 |	...saving the inputted data? | Task  | IE: object created in step 1 has its own data.  |
 | Step 4  		 |	...knowing the task categories to show? | Platform  | IE: Task Categories are defined by the Platform. |
 | Step 5  		 |	... saving the selected category? | Task  | IE: object created in step 1 is classified in one Category.  |
@@ -135,31 +141,32 @@ n/a
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Organization
- * Platform
- * Task
+ * Report
+ * Company
+ * Test
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateTaskUI  
- * CreateTaskController
+ * ValidateWorkDoneUI  
+ * ValidateWorkDoneController
+ * TestMapper
+ * TestDtoDate
+ * TestStore
 
 
 ## 3.2. Sequence Diagram (SD)
 
-**Alternative 1**
 
-![US006_SD](US006_SD.svg)
+![US15_SD](US15_SD.svg)
 
-**Alternative 2**
 
-![US006_SD](US006_SD_v2.svg)
+![US15_SD](US15_SD_TestMapper_toDto_List.svg)
 
 ## 3.3. Class Diagram (CD)
 
 **From alternative 1**
 
-![US006_CD](US006_CD.svg)
+![US15_CD](US15_CD.svg)
 
 # 4. Tests 
 
