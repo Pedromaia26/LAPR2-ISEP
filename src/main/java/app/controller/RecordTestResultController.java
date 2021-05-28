@@ -25,6 +25,15 @@ public class RecordTestResultController {
         tStore = App.getInstance().getCompany().getTestStore();
         testTypeStore = App.getInstance().getCompany().getTestTypeStore(); //temporary
         pcs = App.getInstance().getCompany().getParameterCategoryStore(); //temporary
+        tMapper = new TestMapper();
+    }
+
+    public Test getTestByCode(String code){
+        return tStore.getTestByCode(code);
+    }
+
+    public Test getTest(){
+        return test;
     }
 
     public List<TestDTO> getTestListStore(){
@@ -32,6 +41,7 @@ public class RecordTestResultController {
         listTDto = tMapper.toDto(listT);
         return listTDto;
     }
+
 
     public List<TestParameterDto> getTestParameters (TestDTO testDTO){
         String barcode = testDTO.getSample().get(0).getBarcode().getBarcodeNumber();

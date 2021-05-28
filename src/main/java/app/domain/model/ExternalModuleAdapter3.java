@@ -4,7 +4,7 @@ import com.example1.ExternalModule3API;
 
 public class ExternalModuleAdapter3 implements ExternalModule{
 
-    ExternalModule3API blood;
+    ExternalModule3API blood = new ExternalModule3API();
 
     @Override
     public ReferenceValue getReferenceValue(Parameter parameter) {

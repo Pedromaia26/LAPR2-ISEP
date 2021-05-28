@@ -23,6 +23,8 @@ public class Test {
 
     private Date date;
 
+    private TestParameter tp;
+
 
     /**
      * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
@@ -309,12 +311,27 @@ public class Test {
     public void addTestResult (String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
-        TestParameter tp = getTestParameterFor(parameterCode);
+        this.tp = getTestParameterFor(parameterCode);
         this.ref = getExternalModule().getReferenceValue(tp.getParameter());
         String metric = getExternalModule().getMetric(tp.getParameter());
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
+        compareValues();
     }
+
+    public void compareValues(){
+        TestParameterResult tpr = tp.getTpr();
+        Double min;
+        Double max;
+        min = tpr.getRefValue().getMinimum();
+        max = tpr.getRefValue().getMaximum();
+        if (tpr.getValue()<min || tpr.getValue()>max){
+            System.out.println("The parameter value is out of the reference range!");
+        }else{
+            System.out.println("The parameter value is among the reference values!");
+        }
+    }
+
 
 
     public List<TestParameter> addToList (List <Parameter> p){
@@ -337,8 +354,7 @@ public class Test {
         Properties prop = App.getInstance().getprops();
         String classaux = prop.getProperty(labOrder.getTestType().getApi());
         Class<?> oClass = Class.forName(classaux);
-        ExternalModule api0 = (ExternalModule) oClass.newInstance();
-        return api0;
+        return (ExternalModule) oClass.newInstance();
     }
 
     /**

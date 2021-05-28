@@ -10,16 +10,74 @@ import java.util.List;
 import java.util.Scanner;
 
 public class RecordTestResultUI implements Runnable {
-    public RecordTestResultUI(){
+    public RecordTestResultUI() {
 
     }
+
     @Override
     public void run() {
 
         Scanner ler = new Scanner(System.in);
         RecordTestResultController rtrController = new RecordTestResultController();
 
-        String category;
+        if (!App.getInstance().getCompany().getTestStore().getTests().isEmpty()) {
+            String barcode;
+            System.out.println("Select the test whose result you want to register from the following list, using the sample barcode:");
+
+            List<TestDTO> testList = rtrController.getTestListStore();
+            for (TestDTO test : testList) {
+                System.out.println(test);
+            }
+            System.out.println();
+            barcode = ler.nextLine();
+
+            Test t = rtrController.getTestByCode(barcode);
+
+            System.out.println(t);
+
+            List<TestParameter> tParamList = t.getTestParameter();
+            System.out.println("---TEST PARAMETER LIST---");
+            System.out.println();
+            for (TestParameter tParam : tParamList) {
+                System.out.println(tParam);
+            }
+            System.out.println();
+            System.out.print("Choose a parameter, whose result you want to register, by selecting its code:");
+            System.out.println();
+
+            String parameterCode;
+            String op;
+            do {
+                double resultValue;
+                parameterCode = ler.nextLine();
+                System.out.println(t.getTestParameterFor(parameterCode));
+                System.out.println();
+
+                System.out.println("Please insert the result value and metric of the parameter:");
+                System.out.println();
+                System.out.print("Result Value:");
+                resultValue = ler.nextDouble();
+                try {
+                    t.addTestResult(parameterCode, resultValue);
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println("Do you want to compare another parameter value with the reference values? (Y/N)");
+
+                ler.nextLine();
+                op = ler.nextLine();
+
+
+            } while (op.equalsIgnoreCase("Y"));
+
+        }
+
+
+
+
+
+        /*String category;
 
         List <Parameter> pList = new ArrayList<>();
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "klkll");
@@ -84,6 +142,7 @@ public class RecordTestResultUI implements Runnable {
             System.out.println("---------");
         }
 
-    }
+    }*/
 
+    }
 }

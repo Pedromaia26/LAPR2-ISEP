@@ -21,6 +21,7 @@ public class WriteReportController {
 
     public WriteReportController() {
         this.tStore = App.getInstance().getCompany().getTestStore();
+        testMapper = new TestMapper();
     }
 
     public List<TestDTO> getTests(){

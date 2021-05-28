@@ -4,10 +4,12 @@ import com.example2.ExternalModule2API;
 
 public class ExternalModuleAdapter2 implements ExternalModule{
 
-    ExternalModule2API blood;
+
+    ExternalModule2API blood = new ExternalModule2API();
 
     @Override
     public ReferenceValue getReferenceValue(Parameter parameter) {
+
         Double min = blood.getReferenceFor(parameter.getCode()).getMinValue();
         Double max = blood.getReferenceFor(parameter.getCode()).getMaxValue();
 
