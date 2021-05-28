@@ -39,33 +39,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/OrgRoleDtoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/ReportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SD.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US14_MakeDiagnosisWriteReport.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US14_MakeDiagnosisWriteReport.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RegistEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateEmployeeUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateEmployeeUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistEmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistEmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesStore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
-=======
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleDto.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/OrgRoleDtoTest.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/ReportTest.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SD.puml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US14_MakeDiagnosisWriteReport.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US14_MakeDiagnosisWriteReport.md" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/App.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RegistEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistEmployeeController.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesStore.java" beforeDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateEmployeeUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateEmployeeUI.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/controller/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/App.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistEmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistEmployeeController.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesStore.class" beforeDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
     <list default="true" id="32eec74f-1e37-4e39-bf2e-df2b15d965ba" name="Default Changelist" comment="Create class controlor to validate work done">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/Sem2App_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -83,7 +81,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +125,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sem2App_jar" />
     <property name="project.structure.last.edited" value="Artifacts" />
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_CD.svg" />
     <property name="project.structure.last.edited" value="Project" />
@@ -143,15 +137,12 @@
     <property name="project.structure.side.proportion" value="0.23726977" />
   </component>
   <component name="RecentsManager">
-<<<<<<< HEAD
-=======
     <key name="CreateTestDialog.RecentsKey">
       <recent name="app.domain.model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ProjetoLapr2" />
     </key>
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="junit.framework.TestCase" />
@@ -164,22 +155,7 @@
       <recent name="app.domain.model" />
     </key>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="JUnit.RolesMapperTest.toDTO">
-=======
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -206,7 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -220,8 +195,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-=======
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <option name="PACKAGE_NAME" value="" />
@@ -279,14 +252,9 @@
       <list>
         <item itemvalue="JUnit.RolesMapperTest.toDTO" />
         <item itemvalue="JUnit.All in Sem2App" />
-<<<<<<< HEAD
         <item itemvalue="JUnit.OrgRoleDtoTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.app.domain.model in Sem2App" />
-=======
-        <item itemvalue="JUnit.SampleTest.testToString" />
-        <item itemvalue="JUnit.SampleTest.testEqualsAlreadyAdded" />
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
       </list>
     </recent_temporary>
   </component>
@@ -310,11 +278,8 @@
       <workItem from="1622137432192" duration="493000" />
       <workItem from="1622107359277" duration="9062000" />
       <workItem from="1622140363191" duration="2839000" />
-<<<<<<< HEAD
       <workItem from="1622194755734" duration="11171000" />
-=======
       <workItem from="1622209639493" duration="2493000" />
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -426,8 +391,6 @@
     <MESSAGE value="Create class controlor to validate work done" />
     <option name="LAST_COMMIT_MESSAGE" value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
   </component>
-<<<<<<< HEAD
-=======
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1622143636557">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -470,7 +433,6 @@
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622150231335" />
   </component>
->>>>>>> 2830e1f95d5842c5e2495883fd1fcca87e2f2a66
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
