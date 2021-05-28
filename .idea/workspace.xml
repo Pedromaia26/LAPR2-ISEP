@@ -36,14 +36,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/CD_US005.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/CD_US005.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_MD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_MD.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_MD.svg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_MD.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_SD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_SD.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RecordSampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RecordSampleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/SampleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/SampleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestDtoDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestDtoDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00000000001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/00000000002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +88,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_MD.svg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_CD.svg" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -351,26 +346,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622141986797" />
-    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1622209800610">
+    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1622213484079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622209800610" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622202701659">
+    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622213484079" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622214045095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622202701659" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622202701659">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622214045095" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622214045095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622202701659" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622202701659">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622214045095" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622214045094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622202701659" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622202701659">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622214045094" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622214045095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622202701659" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622214045095" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1622193184858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
