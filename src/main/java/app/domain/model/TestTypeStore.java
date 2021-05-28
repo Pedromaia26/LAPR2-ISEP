@@ -34,9 +34,14 @@ public class TestTypeStore {
      * @return The test type created.
      */
 
-    public TestType createTestType (String description, String collectingMethod, String code, List<ParameterCategory> cat) {
 
+    public TestType createTestType (String description, String collectingMethod, String code, List<ParameterCategory> cat) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         return new TestType(description, collectingMethod, code, cat);
+    }
+
+    public TestType createTestType (String description, String collectingMethod, String code, List<ParameterCategory> cat, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        return new TestType(description, collectingMethod, code, cat, api);
     }
 
 

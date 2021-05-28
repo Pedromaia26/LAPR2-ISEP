@@ -29,12 +29,22 @@ public class RecordSampleUI implements Runnable {
         ParameterCategory pc = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pc);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = null;
+        try {
+            testesss = new TestType("asd","asd","12345",listPC);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
         App.getInstance().getCompany().getTestTypeStore().addToList(testesss);
          List<Parameter> parameters = new ArrayList<>();
 
-        LabOrder labOrder= new LabOrder(testesss,parameters);
+        LabOrder labOrder= null;
+        try {
+            labOrder = new LabOrder(testesss,parameters);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
         App.getInstance().getCompany().getLabOrderStore().addToList(labOrder);
 
@@ -78,7 +88,7 @@ public class RecordSampleUI implements Runnable {
                 else{
                     System.out.printf("Sample number:%d Creation error\n",i);
                 }
-            } catch (OutputException | BarcodeException e) {
+            } catch (OutputException | BarcodeException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
 

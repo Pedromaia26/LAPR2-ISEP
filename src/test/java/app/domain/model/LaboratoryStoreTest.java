@@ -12,7 +12,7 @@ import java.util.List;
 public class LaboratoryStoreTest {
 
     @Test
-    public void createLaboratory() {
+    public void createLaboratory() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
         ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");

@@ -1,7 +1,10 @@
 package app.domain.model;
 
+import app.controller.App;
+
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 
 public class TestType {
 
@@ -26,6 +29,9 @@ public class TestType {
      */
     private List<ParameterCategory> listPC;
 
+    private ReferenceValue ref;
+    private String api;
+
 
 
     /**
@@ -38,26 +44,21 @@ public class TestType {
      * @param code The test type code
      * @param listPC The parameter category list
      */
-    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) {
+    public TestType (String description, String collectingMethod, String code, List<ParameterCategory> listPC) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        if (description.trim().length() > 15)
-            throw new IllegalArgumentException("Description cannot have more than 15 characters");
-
-            this.description = description;
+        checkTestTypeRules(description, collectingMethod, code, listPC);
 
 
-        if (collectingMethod.trim().length() > 20)
-            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
+    }
 
-        this.collectingMethod = collectingMethod;
+    public TestType (String descriptionAPI, String collectingMethodAPI, String codeAPI, List<ParameterCategory> listPCAPI, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        if (code.trim().length() != 5)
-            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
+        checkTestTypeRules(descriptionAPI, collectingMethodAPI, codeAPI, listPC);
+        this.api = api;
+    }
 
-        this.code = code;
-
-
-        this.listPC = listPC;
+    public String getApi() {
+        return api;
     }
 
     /**
@@ -145,5 +146,24 @@ public class TestType {
         this.listPC = listPC;
     }
 
+    public void checkTestTypeRules (String description, String collectingMethod, String code, List<ParameterCategory> listPC){
 
+        if (description.trim().length() > 15)
+            throw new IllegalArgumentException("Description cannot have more than 15 characters");
+
+        this.description = description;
+
+
+        if (collectingMethod.trim().length() > 20)
+            throw new IllegalArgumentException("Collecting method cannot have more than 20 characters");
+
+        this.collectingMethod = collectingMethod;
+
+        if (code.trim().length() != 5)
+            throw new IllegalArgumentException("Code must have 5 alphanumeric characters");
+
+        this.code = code;
+
+        this.listPC = listPC;
+    }
 }

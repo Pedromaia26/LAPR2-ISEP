@@ -84,7 +84,7 @@ public class ParameterCategoryTest {
     }
 
     @Test
-    public void testEqualsDifferentClass(){
+    public void testEqualsDifferentClass() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("BloodC", "okjn7");

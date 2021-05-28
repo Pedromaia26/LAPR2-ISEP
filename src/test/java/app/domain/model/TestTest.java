@@ -1,6 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,8 +14,8 @@ import static org.junit.Assert.*;
 public class TestTest {
 
     @Test
-    public void getSample() {
-        Company c= new Company("ManyLabs");
+    public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -31,15 +33,15 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -53,12 +55,12 @@ public class TestTest {
 
         samples.add(sample);
 
-        Assert.assertEquals(samples,nteste.getSample());
+        Assert.assertEquals(samples, nteste.getSample());
     }
 
     @Test
-    public void validateSample() {
-        Company c= new Company("ManyLabs");
+    public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -76,15 +78,15 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -93,14 +95,7 @@ public class TestTest {
         Sample sample = new Sample(c);
 
 
-
-
-        boolean test1= nteste.validateSample(sample,c);
-
-
-
-
-
+        boolean test1 = nteste.validateSample(sample, c);
 
 
         assertTrue(test1);
@@ -109,9 +104,9 @@ public class TestTest {
     }
 
     @Test
-    public void validateSampleNull() {
+    public void validateSampleNull() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        Company c= new Company("ManyLabs");
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -129,30 +124,30 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
 
-        Sample sample1= null;
-        boolean test3= nteste.validateSample(sample1,c);
+        Sample sample1 = null;
+        boolean test3 = nteste.validateSample(sample1, c);
 
         assertFalse(test3);
 
     }
 
     @Test
-    public void validateSampleAlreadyAdd() {
+    public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
 
-        Company c= new Company("ManyLabs");
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -170,24 +165,24 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
 
         Sample sample = new Sample(c);
 
-        nteste.validateSample(sample,c);
+        nteste.validateSample(sample, c);
         nteste.addSample(sample);
-        boolean test2= nteste.validateSample(sample,c);
+        boolean test2 = nteste.validateSample(sample, c);
 
 
         assertFalse(test2);
@@ -195,8 +190,8 @@ public class TestTest {
     }
 
     @Test
-    public void addSample() {
-        Company c= new Company("ManyLabs");
+    public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -214,15 +209,15 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -230,17 +225,16 @@ public class TestTest {
 
         Sample sample = new Sample(c);
 
-        boolean test1= nteste.addSample(sample);
+        boolean test1 = nteste.addSample(sample);
 
         assertTrue(test1);
 
 
-
     }
 
     @Test
-    public void addSampleNull() {
-        Company c= new Company("ManyLabs");
+    public void addSampleNull() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -258,29 +252,32 @@ public class TestTest {
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
 
         listPC.add(pca);
-        TestType testesss = new TestType("asd","asd","12345",listPC);
+        TestType testesss = new TestType("asd", "asd", "12345", listPC);
 
         c.getTestTypeStore().addToList(testesss);
 
-        LabOrder labOrder= new LabOrder(testesss,param);
+        LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
 
-        Sample sample1= null;
+        Sample sample1 = null;
 
-        boolean test2= nteste.validateSample(sample1,c);
+        boolean test2 = nteste.validateSample(sample1, c);
 
         assertFalse(test2);
 
     }
 
+
+
+
     @Test
-    public void recordNewSample() {
+    public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -324,12 +321,12 @@ public class TestTest {
         Sample test2= test.RecordNewSample(App.getInstance().getCompany());
 
 
-        assertEquals(sample,test2);
+        assertEquals(sample.getBarcode().getBarcodeNumber(),test2.getBarcode().getBarcodeNumber());
 
     }
 
     @Test
-    public void recordNewSampleEqual() {
+    public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -379,7 +376,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSampleNull() {
+    public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -429,7 +426,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithMoreThan10Chars() {
+    public void createTestCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -456,7 +453,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithLessThan10Chars() {
+    public void createTestCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -485,7 +482,7 @@ public class TestTest {
     }
 
     @Test
-    public void creatTest() {
+    public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -513,7 +510,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestNHSCodeWithLessThan10Chars() {
+    public void createTestNHSCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");

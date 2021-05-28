@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class LabOrderTest {
 
     @Test
-    public void getTestType() {
+    public void getTestType() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -41,7 +41,7 @@ public class LabOrderTest {
     }
 
     @Test
-    public void getParameters() {
+    public void getParameters() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -72,7 +72,7 @@ public class LabOrderTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");

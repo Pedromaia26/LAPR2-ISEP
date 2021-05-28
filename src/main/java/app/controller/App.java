@@ -76,6 +76,9 @@ public class App {
         return props;
     }
 
+    public Properties getprops(){
+        return getProperties();
+    }
 
     private void bootstrap()
     {

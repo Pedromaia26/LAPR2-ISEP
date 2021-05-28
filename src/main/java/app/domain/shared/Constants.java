@@ -1,7 +1,5 @@
 package app.domain.shared;
 
-import app.domain.model.OrgRole;
-
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>

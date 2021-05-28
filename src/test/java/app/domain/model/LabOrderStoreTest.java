@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class LabOrderStoreTest {
 
     @Test
-    public void addToList() {
+    public void addToList() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -53,7 +53,7 @@ public class LabOrderStoreTest {
 
 
     @Test
-    public void validateLB() {
+    public void validateLB() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -99,7 +99,7 @@ public class LabOrderStoreTest {
     }
 
     @Test
-    public void validateLBAlreadyOnList() {
+    public void validateLBAlreadyOnList() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
