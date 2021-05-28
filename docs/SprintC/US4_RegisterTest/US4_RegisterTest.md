@@ -147,7 +147,7 @@ Other software classes identified:
 
 **From alternative 1**
 
-![US008_CD](US008_CD.svg)
+![US004_CD](US004_CD.svg)
 
 # 4. Tests 
 
