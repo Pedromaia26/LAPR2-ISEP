@@ -4,6 +4,9 @@ import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,5 +109,40 @@ public class TestStore {
         if (!validateTest(ts))
             return false;
         return tests.add(ts);
+    }
+
+     /**
+     * Marks the test as validated
+     * @param code The code of the test to validate
+     */
+    public void validateTest(String code) throws IOException{
+        Test test = getTestByCode(code);
+        test.validateTest();
+        notifyClient(test);
+    }
+
+    /**
+     * Notify the client that the test is available in the system.
+     * @param test The test that was validated
+     */
+    public void notifyClient(Test test) throws IOException {
+
+        String pwd = System.getProperty("user.dir");
+
+
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        if (!emailAndSMSMessages.exists()) {
+            emailAndSMSMessages.mkdirs();
+        }
+
+        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+
+        asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\n Many Labs.\n");
+
+
+
+
+        asd.close();
+
     }
 }

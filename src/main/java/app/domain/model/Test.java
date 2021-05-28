@@ -43,6 +43,10 @@ public class Test {
      */
     private Date resultRegist;
     /**
+     * An object of type Date used to record the date when a test was validated.
+     */
+    private Date validationDate;
+    /**
      * The report associated to each test.
      */
     private Report report;
@@ -335,6 +339,29 @@ public class Test {
         Class<?> oClass = Class.forName(classaux);
         ExternalModule api0 = (ExternalModule) oClass.newInstance();
         return api0;
+    }
+
+    /**
+     * Mark the test as validated
+     */
+    public void validateTest(){
+        validationDate = new Date();
+    }
+
+    /**
+     * Returns the date when results were registered
+     * @return the date when results were registered
+     */
+    public Date getResultRegist(){
+        return resultRegist;
+    }
+
+    /**
+     * Returns the date when the test was registered
+     * @return the date when the test was registered
+     */
+    public Date getDate(){
+        return date;
     }
 
 }

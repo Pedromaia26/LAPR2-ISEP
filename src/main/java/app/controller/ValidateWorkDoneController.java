@@ -2,6 +2,7 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,24 +30,24 @@ public class ValidateWorkDoneController {
         this.testMapper = new TestMapper();
     }
 
-//    public List<TestDtoDate> getTests(){
-//        testsList = company.getTestStore().getTests();
-//        for(Test test : testsList){
-//            if((test.getReport().getCreatedAt() != null)){
-//                testsReadyToValidate.add(test);
-//            }
-//        }
-//        if(testsDtoDateList.isEmpty()){
-//            throw new ArrayIndexOutOfBoundsException("There are no tests to be validated");
-//        }else {
-//            testsDtoDateList = testMapper.toDtoDate(testsReadyToValidate);
-//            return testsDtoDateList;
-//        }
-//    }
+    public List<TestDtoDate> getTests(){
+        testsList = company.getTestStore().getTests();
+        for(Test test : testsList){
+            if((test.getReport().getCreatedAt() != null)){
+                testsReadyToValidate.add(test);
+            }
+        }
+        if(testsDtoDateList.isEmpty()){
+            throw new ArrayIndexOutOfBoundsException("There are no tests to be validated.");
+        }else {
+            testsDtoDateList = testMapper.toDtoDate(testsReadyToValidate);
+            return testsDtoDateList;
+        }
+    }
 
-//    public boolean validateTests(List<String> codes){
-//        for (String code: codes){
-//            company.getTestStore().validateTest(code);
-//        }
-//    }
+    public void validateTests(List<String> codes) throws IOException {
+        for (String code: codes){
+            company.getTestStore().validateTest(code);
+        }
+    }
 }

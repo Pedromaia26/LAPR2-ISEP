@@ -30,15 +30,16 @@ public class TestMapper {
         return listTestDto;
     }
 
-//    /**
-//     * Transforms a list of objects of Test into a list of objects of type TestDtoDate that contains only the dates
-//     * @param listTests The list to be transformed
-//     * @return The transformed list
-//     */
-//    public List<TestDtoDate> toDtoDate(List<Test> listTests){
-//        listTestDtoDate  = new ArrayList<>();
-//        for (Test t : listTests){
-//            listTestDtoDate.add(new TestDtoDate(t.getCode(), ))
-//        }
-//    }
+    /**
+     * Transforms a list of objects of Test into a list of objects of type TestDtoDate that contains only the dates
+     * @param listTests The list to be transformed
+     * @return The transformed list
+     */
+    public List<TestDtoDate> toDtoDate(List<Test> listTests){
+        listTestDtoDate  = new ArrayList<>();
+        for (Test test : listTests){
+            listTestDtoDate.add(new TestDtoDate(test.getCode(), test.getDate(), test.getResultRegist(), test.getReport().getCreatedAt() ));
+        }
+        return listTestDtoDate;
+    }
 }
