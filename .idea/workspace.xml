@@ -34,12 +34,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Create Laboratory Coordinator UI">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="TestType update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/ClinicalChemistryTechnologistUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/AuthUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/AuthUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,21 +98,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="app.domain.model" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ProjetoLapr2" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.domain.model" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -133,15 +142,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -221,7 +228,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="" />
+      <changelist id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="TestType update" />
       <created>1621937191897</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -238,6 +245,8 @@
       <workItem from="1622137432192" duration="493000" />
       <workItem from="1622107359277" duration="9062000" />
       <workItem from="1622140363191" duration="2839000" />
+      <workItem from="1622202710809" duration="50000" />
+      <workItem from="1622226035834" duration="1213000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -309,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622150229891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="TestType update">
+      <created>1622193336128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622193336128</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +355,8 @@
     <MESSAGE value="Create Laboratory Coordinator UI" />
     <MESSAGE value="Correcting samples tests" />
     <MESSAGE value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
+    <MESSAGE value="TestType update" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestType update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
