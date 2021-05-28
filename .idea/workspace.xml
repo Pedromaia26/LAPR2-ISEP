@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Finishing all unit test and its mutants when instantiating a new test." />
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDtoDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +50,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -48,7 +62,7 @@
       <recent name="app.domain.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -58,19 +72,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestTest" />
         <item itemvalue="JUnit.TestTypeTest" />
         <item itemvalue="JUnit.TestTest.getSample" />
         <item itemvalue="JUnit.TestStoreTest.getTestByBarcode" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +163,9 @@
       <workItem from="1621976454814" duration="1734000" />
       <workItem from="1622052194225" duration="8699000" />
       <workItem from="1622107359277" duration="8168000" />
+      <workItem from="1622126572217" duration="1816000" />
+      <workItem from="1622131541969" duration="3183000" />
+      <workItem from="1622137432192" duration="493000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622114054413</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Create Laboratory Coordinator UI">
+      <created>1622128922248</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622128922248</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +257,7 @@
     <MESSAGE value="Adding documentation to TestStore." />
     <MESSAGE value="adding unit test and its mutants to class test." />
     <MESSAGE value="Finishing all unit test and its mutants when instantiating a new test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing all unit test and its mutants when instantiating a new test." />
+    <MESSAGE value="Create Laboratory Coordinator UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Laboratory Coordinator UI" />
   </component>
 </project>
