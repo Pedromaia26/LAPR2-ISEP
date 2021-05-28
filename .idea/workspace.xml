@@ -39,30 +39,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/ReceptionistUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/ReceptionistUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
-=======
+    <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterDTO.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterMapper.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeDTO.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeMapper.java" afterDir="false" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestUI.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ParameterStore.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestType.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeStore.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/ReceptionistUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/ReceptionistUI.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTest.class" afterDir="false" />
     <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI" />
     <change afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleDto.java" afterDir="false" />
     <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/OrgRoleDtoTest.java" afterDir="false" />
@@ -88,12 +84,10 @@
     <change beforePath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" afterDir="false" />
     <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" afterDir="false" />
     <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
->>>>>>> 106059f0428667bcfa16d27fd807b00e4d92ffa5
     <list default="true" id="32eec74f-1e37-4e39-bf2e-df2b15d965ba" name="Default Changelist" comment="Create class controlor to validate work done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/00000000001.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/00000000002.jpg" beforeDir="false" />
->>>>>>> 2c85d0dbf07e1eaca58bb9c1ce178756fad54adc
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,16 +156,13 @@
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
-<<<<<<< HEAD
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ProjetoLapr2" />
-=======
+    <key name="MoveFile.RECENT_KEYS" />
+    <recent name="D:\ProjetoLapr2" />
     <key name="CreateTestDialog.RecentsKey">
       <recent name="app.domain.model" />
->>>>>>> 106059f0428667bcfa16d27fd807b00e4d92ffa5
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in Sem2App">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -266,8 +257,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Sem2App" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RolesMapperTest.toDTO" />
         <item itemvalue="JUnit.OrgRoleDtoTest" />
         <item itemvalue="JUnit.app.domain.model in Sem2App" />
