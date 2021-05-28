@@ -56,20 +56,12 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** Every Clinical Analysis Laboratory must perform blood tests.
-* **AC2:** The laboratoryID has 5 alphanumeric characters.
-* **AC3:** The name must have no more than 20 characters.
-* **AC4:** The address must have no more than 20 characters.
-* **AC5:** The phone number is an 11-digit number.
-* **AC6:** TIN is a 10-digit number.
-* **AC7:** Every field is required.
-* **AC8:** Only the name of two Clinical Analysis Laboratory can be same.
+* **AC1:** The test internal code is a 12-digit sequential number.
+* **AC2:** The NHS code of the test must have 12 characters.
 
 
 ### 1.4. Found out Dependencies
 
-
-* There is a dependency to "US09 Create a Type Test" since at least one type of test must exist to create a new Clinical Analysis Laboratory.
 
 
 ### 1.5 Input and Output Data
@@ -78,11 +70,9 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 **Input Data:**
 
 * Typed data:
-	* a laboratory ID, 
-	* a name, 
-	* an address
-	* a phone number
-	* a taxpayer identification numbers (TIN)
+	* a NHS Code, 
+	* a Date of the day the test was created, 
+	* a Lab Order (which contains a type of test)
 	
 * Selected data:
 	* a type of test
@@ -90,7 +80,6 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 
 **Output Data:**
 
-* List of existing types of tests
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
