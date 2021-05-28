@@ -33,8 +33,14 @@ public class ValidateWorkDoneController {
 //        testsList = company.getTestStore().getTests();
 //        for(Test test : testsList){
 //            if((test.getReport().getCreatedAt() != null)){
-//                testsDtoDateList.add(testMapper.)
+//                testsReadyToValidate.add(test);
 //            }
+//        }
+//        if(testsDtoDateList.isEmpty()){
+//            throw new ArrayIndexOutOfBoundsException("There are no tests to be validated");
+//        }else {
+//            testsDtoDateList = testMapper.toDtoDate(testsReadyToValidate);
+//            return testsDtoDateList;
 //        }
 //    }
 

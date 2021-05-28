@@ -39,11 +39,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="32eec74f-1e37-4e39-bf2e-df2b15d965ba" name="Default Changelist" comment="Create class controlor to validate work done">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/ValidateWorkDoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/ValidateWorkDoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" afterDir="false" />
+=======
     <list default="true" id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="Create Laboratory Coordinator UI">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/Sem2App_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/00000000001.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/00000000002.jpg" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sem2App_jar/CovidReferenceValues1API.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sem2App_jar/ExternalModule2API.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Sem2App_jar/ExternalModule3API.jar" beforeDir="false" />
@@ -55,6 +64,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
+>>>>>>> d22153f176b7592eaf6c4d756ceda504d2ddb988
+>>>>>>> 34a85e7e038bd7ad077099149cfdcf3326d85339
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +117,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Sem2App_jar" />
     <property name="project.structure.last.edited" value="Artifacts" />
+=======
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US5_RecordTheSample/US005_CD.svg" />
+>>>>>>> d22153f176b7592eaf6c4d756ceda504d2ddb988
+    <property name="project.structure.last.edited" value="Project" />
+>>>>>>> 34a85e7e038bd7ad077099149cfdcf3326d85339
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.23726977" />
   </component>
@@ -237,7 +259,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c1fa2ae2-52f2-4456-a96c-18a8ad86d997" name="Default Changelist" comment="" />
+      <changelist id="32eec74f-1e37-4e39-bf2e-df2b15d965ba" name="Default Changelist" comment="Create class controlor to validate work done" />
       <created>1621937191897</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -254,6 +276,7 @@
       <workItem from="1622137432192" duration="493000" />
       <workItem from="1622107359277" duration="9062000" />
       <workItem from="1622140363191" duration="2839000" />
+      <workItem from="1622209639493" duration="2493000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -325,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622150229891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Create class controlor to validate work done">
+      <created>1622199596449</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622199596449</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +385,10 @@
     <MESSAGE value="Create Laboratory Coordinator UI" />
     <MESSAGE value="Correcting samples tests" />
     <MESSAGE value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
+<<<<<<< HEAD
+    <MESSAGE value="Create class controlor to validate work done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create class controlor to validate work done" />
+=======
     <option name="LAST_COMMIT_MESSAGE" value="Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController." />
   </component>
   <component name="WindowStateProjectService">
@@ -398,6 +432,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622150231335" />
+>>>>>>> d22153f176b7592eaf6c4d756ceda504d2ddb988
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
