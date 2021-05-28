@@ -137,7 +137,7 @@ public class TestStore {
 
         PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
 
-        asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\n Many Labs.\n");
+        //asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\n Many Labs.\n");
 
 
 
