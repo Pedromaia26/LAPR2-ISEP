@@ -269,11 +269,9 @@ public class Test {
 
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
 
-<<<<<<< HEAD
-        //samp.showBarcodes(samp.getBarcode());
-=======
+
         // samp.showBarcodes(samp.getBarcode());
->>>>>>> d5e0ab1cdbd0f9d8ae066365d4d1c96364fce732
+
         return addSample(samp);
     }
 
