@@ -8,7 +8,7 @@ public class TestParameterResult {
      * A reference value.
      */
     private ReferenceValue refValue;
-    private Date createdAt;
+
     /**
      * The value of a given parameter.
      */
@@ -40,10 +40,6 @@ public class TestParameterResult {
         return refValue;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
     /**
      * Returns the value of a parameter.
      * @return the value of the parameter.
@@ -69,8 +65,7 @@ public class TestParameterResult {
     public String toString() {
         return "TestParameterResult{" +
                 "refValue=" + refValue +
-                ", createdAt=" + createdAt +
-                ", value='" + value + '\'' +
+                ", value=" + value +
                 ", metric='" + metric + '\'' +
                 '}';
     }

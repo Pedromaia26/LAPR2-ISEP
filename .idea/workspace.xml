@@ -39,6 +39,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Finishing UI for recording test results and some changes to optimize the code." />
+    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModule.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter1.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter2.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ExternalModuleAdapter3.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ReferenceValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ReferenceValue.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterResult.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -117,6 +131,32 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.All in Sem2App">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -126,32 +166,6 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -383,6 +397,8 @@
     <MESSAGE value="Finishing user interface for recording test results and some minor changes to the code." />
     <MESSAGE value="fixing jenkins test coverage bug" />
     <MESSAGE value="Finishing UI for recording test results." />
+    <MESSAGE value="Finishing UI for recording test results and some changes to optimize the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing UI for recording test results and some changes to optimize the code." />
     <option name="LAST_COMMIT_MESSAGE" value="Finishing user interface for recording test results and some minor changes to the code." />
   </component>
   <component name="WindowStateProjectService">
@@ -440,6 +456,8 @@
     <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
