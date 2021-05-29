@@ -64,8 +64,7 @@ public class Sample{
         Properties props = App.getInstance().getprops();
         String classAux = props.getProperty("Domain.BarcodeAdapter.Class");
         Class<?> oClass = Class.forName(classAux);
-        ApiBarcode api = (ApiBarcode) oClass.newInstance();
-        return api;
+        return (ApiBarcode) oClass.newInstance();
 
     }
 
@@ -129,4 +128,6 @@ public class Sample{
         Sample sample = (Sample) o;
         return Objects.equals(barcode, sample.barcode);
     }
+
+
 }

@@ -23,59 +23,74 @@ public class RecordTestResultUI implements Runnable {
         if (!App.getInstance().getCompany().getTestStore().getTests().isEmpty()) {
             String barcode;
             System.out.println("Select the test whose result you want to register from the following list, using one of the samples barcode:");
-
-            List<TestDTO> testList = rtrController.getTestListStore();
-            for (TestDTO test : testList) {
-                System.out.println(test);
-            }
-            System.out.println();
-            barcode = ler.nextLine();
-
-            Test t = rtrController.getTestByBarcode(barcode);
-
-            System.out.println(t);
-
-            List<TestParameter> tParamList = t.getTestParameter();
-            System.out.println("---TEST PARAMETER LIST---");
-            System.out.println();
-            for (TestParameter tParam : tParamList) {
-                System.out.println(tParam);
-            }
-            System.out.println();
-            System.out.print("Choose a parameter, whose result you want to register, by selecting its code:");
-            System.out.println();
-
-            String parameterCode;
-            String op;
+            Test t;
+            List<TestParameter> tParamList = new ArrayList<>();
             do {
-                double resultValue;
-                parameterCode = ler.nextLine();
-                System.out.println(t.getTestParameterFor(parameterCode));
 
+                List<TestDTO> testList = rtrController.getTestListStore();
+                for (TestDTO test : testList) {
+                    System.out.println(test);
+                }
                 System.out.println();
+                barcode = ler.nextLine();
 
-                System.out.println("Please insert the result value and metric of the parameter:");
-                System.out.println();
-                System.out.print("Result Value: ");
-                resultValue = ler.nextDouble();
-                try {
-                    t.addTestResult(parameterCode, resultValue);
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
+                t = rtrController.getTestByBarcode(barcode);
+
+
+
+                for (TestParameter tp: t.getTestParameter()){
+                    tParamList.add(tp);
                 }
 
-                tParamList.remove(t.getTestParameterFor(parameterCode));
+                System.out.println("---TEST PARAMETER LIST---");
+                System.out.println();
+                for (TestParameter tParam : tParamList) {
+                    System.out.println(tParam);
+                }
+                System.out.println();
+                System.out.print("Choose a parameter, whose result you want to register, by selecting its code:");
+                System.out.println();
 
-                if (!tParamList.isEmpty()){
-                    System.out.println("For which parameter do you want to compare your result with the reference values next?");
-                    for (TestParameter tParam : tParamList) {
-                        System.out.println(tParam);
+                String parameterCode;
+                String op;
+
+                t.getSample().remove(t.getSampleByBarcode(barcode));
+
+                do {
+                    double resultValue;
+                    parameterCode = ler.nextLine();
+
+                    System.out.println();
+
+                    System.out.println("Please insert the result value and metric of the parameter:");
+                    System.out.println();
+                    System.out.print("Result Value: ");
+                    resultValue = ler.nextDouble();
+                    try {
+                        t.addTestResult(parameterCode, resultValue);
+                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                        e.printStackTrace();
                     }
-                    System.out.println("Enter the code: ");
+
+                    tParamList.remove(t.getTestParameterFor(parameterCode));
+
+                    if (!tParamList.isEmpty()) {
+                        System.out.println("For which parameter do you want to compare your result with the reference values next?");
+                        for (TestParameter tParam : tParamList) {
+                            System.out.println(tParam);
+                        }
+                        System.out.println("Enter the code: ");
+                        ler.nextLine();
+                    }
+
+                } while (!tParamList.isEmpty());
+
+                if (!t.getSample().isEmpty()){
+                    System.out.println("Insert the code of the sample whose result you intend to record next: ");
                     ler.nextLine();
                 }
-
-            } while (!tParamList.isEmpty());
+            }while (!t.getSample().isEmpty());
+        }
 
         }
 
@@ -151,4 +166,4 @@ public class RecordTestResultUI implements Runnable {
     }*/
 
     }
-}
+
