@@ -200,4 +200,28 @@ public class Client {
     public String getPassword() {
         return password;
     }
+
+    public long getCcn() {
+        return ccn;
+    }
+
+    public long getNhs() {
+        return nhs;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public long getTif() {
+        return tif;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
 }
