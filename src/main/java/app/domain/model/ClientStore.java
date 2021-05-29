@@ -110,5 +110,19 @@ public class ClientStore {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
 
+    public List<Client> getClientList() {
+        return clientList;
+    }
+
+    public Client getClientByTinNumber(long tinNumber){
+
+        for (Client client: clientList) {
+            if (tinNumber==client.getTif())
+                return client;
+        }
+        throw new IllegalArgumentException("There is no Sample with such barcode!");
+    }
+
+
 
 }

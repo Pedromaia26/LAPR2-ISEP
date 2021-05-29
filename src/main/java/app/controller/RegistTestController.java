@@ -18,6 +18,7 @@ public class RegistTestController {
     private TestTypeMapper testTypeMapper;
     private ParameterMapper parameterMapper;
     private ParameterStore parameterStore;
+    private ClientMapper clientMapper;
 
     public RegistTestController() {
         this(App.getInstance().getCompany());
@@ -26,6 +27,7 @@ public class RegistTestController {
         this.clientStore = App.getInstance().getCompany().getClientStore();
         this.testStore = App.getInstance().getCompany().getTestStore();
         this.parameterMapper = new ParameterMapper();
+        this.clientMapper = new ClientMapper();
     }
 
     public RegistTestController(Company company) {
@@ -35,14 +37,15 @@ public class RegistTestController {
         this.clientStore = App.getInstance().getCompany().getClientStore();
         this.testStore = App.getInstance().getCompany().getTestStore();
         this.parameterMapper = new ParameterMapper();
+        this.clientMapper = new ClientMapper();
+
     }
 
     public boolean createTest(long tinNumber, long nhsCode, LabOrder labOrder) {
-        for (Parameter pars: labOrder.getParameters()){
-            par.add(this.company.getParameterStore().getParameterByCode(pars.getCode()));
-        }
-        this.tt = (this.company.getTestTypeStore().getTestTypeByCode(labOrder.getTestType().getCode()));
-        this.ts = this.company.getTestStore().createTest(this.company, tinNumber, nhsCode, labOrder);
+
+        this.client=clientStore.getClientByTinNumber(tinNumber);
+
+        this.ts = this.company.getTestStore().createTest(this.company, this.client, nhsCode, labOrder);
         return this.company.getTestStore().validateTest(ts);
     }
 
@@ -73,6 +76,14 @@ public class RegistTestController {
 
     public List<ParameterDTO> getParameterDto(){
         return this.parameterMapper.toDto(getParameter());
+    }
+
+    public List<Client> getClient(){
+        return this.company.getClientStore().getClientList();
+    }
+
+    public List<ClientDTO> getClientDto(){
+        return this.clientMapper.toDto(getClient());
     }
 
     public boolean saveTest () {

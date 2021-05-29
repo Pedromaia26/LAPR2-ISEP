@@ -48,6 +48,7 @@ public class ClientDTO {
      * @param name The name of a client
      * @param phoneNumber The Phone Number of a client
      */
+
     public ClientDTO(long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
         this.ccn = ccn;
         this.nhs = nhs;
@@ -58,6 +59,20 @@ public class ClientDTO {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
+
+    public ClientDTO(Client client){
+        this.ccn = client.getCcn();
+        this.birth= client.getBirth();
+        this.nhs = client.getNhs();
+        this.sex = client.getSex();
+        this.email=String.valueOf(client.getEmail());
+        this.name=client.getName();
+        this.phoneNumber= client.getPhoneNumber();
+        this.tif=client.getTif();
+    }
+
+
+
     /**
      * Returns the Citizen Card Number of a client.
      * @return the Citizen Card Number of a client.
@@ -120,6 +135,6 @@ public class ClientDTO {
      */
     @Override
     public String toString() {
-        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tif=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
+        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tin=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
     }
 }
