@@ -20,7 +20,7 @@ activate Controller
 Controller -> Company: tStore = getTestStore()
 activate Company
 deactivate Company
-Controller -> tStore: lTests = getTestsToBeReported()
+Controller -> tStore: lTests = getTests()
 activate tStore
 deactivate tStore
 Controller -> TestMapper: lTestsDto = toDTO(lTests)
