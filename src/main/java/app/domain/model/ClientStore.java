@@ -94,10 +94,10 @@ public class ClientStore {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\"+ nc.getName()+"_"+nc.getCcn()+".txt");
 
         String password =  generatePassword();
-        asd.printf("Cliente registado com sucesso a sua password de acesso é : %s",password);
+        asd.printf("Client registed succesfully and your password is: %s",password);
 
 
 

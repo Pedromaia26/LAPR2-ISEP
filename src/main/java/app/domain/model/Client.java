@@ -241,9 +241,9 @@ public class Client {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\notify_"+name+"_"+ccn+".txt");
 
-        asd.append("Dear Client "+ name +", with CCN "+ccn+",\nYour test was validated and you can check it when you want.\nHave a good day,\nMany Labs.\n");
+        asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\nMany Labs.\n",name,ccn);
 
         asd.close();
 
