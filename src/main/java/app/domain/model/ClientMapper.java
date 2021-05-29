@@ -20,14 +20,14 @@ public class ClientMapper{
      */
     public static Client toModel(ClientDTO dto) {
 
-        long ccn = dto.getCcn();
-        long nhs = dto.getNhs();
-        String birth = dto.getBirth();
-        String sex = dto.getSex();
-        long tif = dto.getTif();
-        String email = dto.getEmail();
-        String name = dto.getName();
-        long phoneNumber = dto.getPhoneNumber();
+        long ccn = dto.getCcnDto();
+        long nhs = dto.getNhsDto();
+        String birth = dto.getBirthDto();
+        String sex = dto.getSexDto();
+        long tif = dto.getTifDto();
+        String email = dto.getEmailDto();
+        String name = dto.getNameDto();
+        long phoneNumber = dto.getPhoneNumberDto();
 
         return new Client(ccn, nhs, birth, sex, tif, email, name, phoneNumber);
 

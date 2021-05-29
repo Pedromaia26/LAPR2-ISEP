@@ -40,31 +40,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="RecordTestResult user interface update">
-      <change afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestParameterTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeDTOTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeMapperTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/TestUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestParameterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestParameterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/ClientDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/ClientDTOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,22 +363,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="ValidateWorkDoneController, Test and TestStore add methods" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom" timestamp="1622297765365">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1622298704202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622297765365" />
-    <state width="1877" height="311" key="GridCell.Tab.0.center" timestamp="1622297765365">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622298704202" />
+    <state width="1877" height="311" key="GridCell.Tab.0.bottom" timestamp="1622298253784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622297765365" />
-    <state width="1877" height="311" key="GridCell.Tab.0.left" timestamp="1622297765365">
+    <state width="1877" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622298253784" />
+    <state width="1877" height="311" key="GridCell.Tab.0.center" timestamp="1622298253784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622297765365" />
-    <state width="1877" height="311" key="GridCell.Tab.0.right" timestamp="1622297765365">
+    <state width="1877" height="311" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622298253784" />
+    <state width="1877" height="311" key="GridCell.Tab.0.left" timestamp="1622298253784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622297765365" />
+    <state width="1877" height="311" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622298253784" />
+    <state width="1877" height="311" key="GridCell.Tab.0.right" timestamp="1622298253784">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="311" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622298253784" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1622293627974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -11,7 +11,7 @@ public class ClientDTOTest {
     public void getCcn() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        long ccn = nc.getCcn();
+        long ccn = nc.getCcnDto();
 
         Assert.assertEquals(1234567890123456L, ccn);
     }
@@ -20,7 +20,7 @@ public class ClientDTOTest {
     public void getNhs() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        long nhs = nc.getNhs();
+        long nhs = nc.getNhsDto();
 
         Assert.assertEquals(1234567890L, nhs);
     }
@@ -29,7 +29,7 @@ public class ClientDTOTest {
     public void getBirth() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        String birth = nc.getBirth();
+        String birth = nc.getBirthDto();
 
         Assert.assertEquals("12/12/2012", birth);
     }
@@ -38,7 +38,7 @@ public class ClientDTOTest {
     public void getSex() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        String sex = nc.getSex();
+        String sex = nc.getSexDto();
 
         Assert.assertEquals("Male", sex);
     }
@@ -47,7 +47,7 @@ public class ClientDTOTest {
     public void getTif() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        long tif = nc.getTif();
+        long tif = nc.getTifDto();
 
         Assert.assertEquals(1234567890L, tif);
     }
@@ -56,7 +56,7 @@ public class ClientDTOTest {
     public void getEmail() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        String email = nc.getEmail();
+        String email = nc.getEmailDto();
 
         Assert.assertEquals("asd@gmail.com", email);
     }
@@ -65,7 +65,7 @@ public class ClientDTOTest {
     public void getName() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        String name = nc.getName();
+        String name = nc.getNameDto();
 
         Assert.assertEquals("Moirane", name);
     }
@@ -74,7 +74,7 @@ public class ClientDTOTest {
     public void getPhoneNumber() {
         ClientDTO nc = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company c = new Company("Many Labs");
-        long phoneneumber = nc.getPhoneNumber();
+        long phoneneumber = nc.getPhoneNumberDto();
 
         Assert.assertEquals(44123456789L, phoneneumber);
     }
