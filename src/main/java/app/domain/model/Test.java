@@ -68,16 +68,17 @@ public class Test {
      */
 
     private ReferenceValue ref;
-    public Test (){
+
+    public Test() {
         testParameterList = new ArrayList<>();
         results = new ArrayList<>();
     }
 
-    public String createTestCode(Company company){
+    public String createTestCode(Company company) {
 
-        List<Test> tests=company.getTestStore().getTests();
-        int c=1;
-        for(Test testss : tests){
+        List<Test> tests = company.getTestStore().getTests();
+        int c = 1;
+        for (Test testss : tests) {
             c++;
         }
 
@@ -88,10 +89,11 @@ public class Test {
     /**
      * Creates an instance of Test, receiving by parameter its code, its National Healthcare Service code
      * and the lab order associated to the test.
-     * @param nhsCode National Healthcare Service code of the test.
+     *
+     * @param nhsCode  National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(Company company, Client client, long nhsCode, LabOrder labOrder){
+    public Test(Company company, Client client, long nhsCode, LabOrder labOrder) {
 
         this.code = createTestCode(company);
 
@@ -123,7 +125,7 @@ public class Test {
         this.date = new Date();
     }
 
-    public Test(String code, long nhsCode, LabOrder labOrder){
+    public Test(String code, long nhsCode, LabOrder labOrder) {
         this.code = code;
 
         this.nhsCode = nhsCode;
@@ -150,6 +152,7 @@ public class Test {
 
     /**
      * Returns the code of a test.
+     *
      * @return the code of a test .
      */
 
@@ -159,6 +162,7 @@ public class Test {
 
     /**
      * Returns the National Health Service code of a test.
+     *
      * @return the National Health Service code of a test.
      */
 
@@ -169,6 +173,7 @@ public class Test {
 
     /**
      * Returns the lab order of a test.
+     *
      * @return the lab order.
      */
 
@@ -178,6 +183,7 @@ public class Test {
 
     /**
      * Returns the list of existing samples.
+     *
      * @return list of samples.
      */
 
@@ -187,37 +193,42 @@ public class Test {
 
     /**
      * Returns the list of parameters of a test.
+     *
      * @return list of parameters of a test.
      */
 
-    public List<TestParameter> getTestParameter(){ return testParameterList; }
+    public List<TestParameter> getTestParameter() {
+        return testParameterList;
+    }
 
     /**
      * Returns the report of a test
+     *
      * @return the report of a test
      */
 
-    public Report getReport(){
+    public Report getReport() {
         return report;
     }
 
     /**
      * Returns the test parameter from a test.
+     *
      * @param parameterCode receives a parameter code by parameter and proceeds to check if this code exists.
      * @return the test parameter intended if the code exists. If not, informs the user that the code does not exist.
      */
-    public TestParameter getTestParameterFor(String parameterCode){
-        for (TestParameter testParam: testParameterList) {
+    public TestParameter getTestParameterFor(String parameterCode) {
+        for (TestParameter testParam : testParameterList) {
             if (parameterCode.equals(testParam.getParameter().getCode()))
                 return testParam;
         }
-        throw new IllegalArgumentException ("There is no parameter with such code");
+        throw new IllegalArgumentException("There is no parameter with such code");
     }
-
 
 
     /**
      * Compares an object of test that evokes the method with another.
+     *
      * @param o The object to compare.
      * @return True if both objects are equal and false if not.
      */
@@ -232,6 +243,7 @@ public class Test {
 
     /**
      * Returns the textual description of a test.
+     *
      * @return characteristics of a test.
      */
     public String toString() {
@@ -240,15 +252,16 @@ public class Test {
 
     /**
      * Validates the sample received.
+     *
      * @param samp the sample to be validated.
      * @return True if the sample is successfully validated, false if it is not.
      */
-    public boolean validateSample(Sample samp, Company company){
+    public boolean validateSample(Sample samp, Company company) {
         if (samp == null)
             return false;
 
-        List<Test> tests= company.getTestStore().getTests();
-        for(Test testss : tests){
+        List<Test> tests = company.getTestStore().getTests();
+        for (Test testss : tests) {
             for (Sample samples : testss.getSample()) {
                 if (samples.getBarcode().equals(samp.getBarcode())) {
                     return false;
@@ -258,16 +271,18 @@ public class Test {
         }
         return true;
     }
+
     /**
      * Saves the sample received in the test.
+     *
      * @param samp the sample to be saved.
      * @return True if the sample is successfully saved, false if it is not.
      */
     public boolean saveSample(Sample samp, Company company) throws OutputException {
-        if (!validateSample(samp,company))
+        if (!validateSample(samp, company))
             return false;
 
-        samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
+        samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()), samp.getBarcode().getBarcodeNumber());
 
 
         // samp.showBarcodes(samp.getBarcode());
@@ -277,10 +292,11 @@ public class Test {
 
     /**
      * Adds a sample to the list of samples.
+     *
      * @param samp the sample to be added.
      * @return true if samp is sucessfully added
      */
-    public boolean addSample(Sample samp){
+    public boolean addSample(Sample samp) {
 
         return this.sample.add(samp);
 
@@ -288,14 +304,16 @@ public class Test {
 
     /**
      * Save the report created with the diagnosisText
+     *
      * @param diagnosisText the text to be added to report
      */
-    public void addReport(String diagnosisText){
+    public void addReport(String diagnosisText) {
         this.report = new Report(diagnosisText);
     }
 
     /**
      * Create a new sample with the dto received.
+     *
      * @return The Sample created.
      */
     public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
@@ -304,12 +322,22 @@ public class Test {
 
 
     /**
+     * Returns the external module being used to obtain the reference values.
+     * @return the external module.
+     */
+    //public ExternalModule getExternalModule (){
+    //  return em;
+    //}
+
+
+    /**
      * Adds a result to a parameter of a test, comparing the value received by parameter
      * and the existing reference values provided by the external module.
+     *
      * @param parameterCode the code of the parameter for which we pretend to add a result.
-     * @param result the value obtained from a test parameter of a given client.
+     * @param result        the value obtained from a test parameter of a given client.
      */
-    public void addTestResult (String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestResult(String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -330,23 +358,22 @@ public class Test {
      * and informs the user about the results.
      */
 
-    public void compareValues(){
+    public void compareValues() {
         TestParameterResult tpr = tp.getTpr();
         Double min;
         Double max;
         min = tpr.getRefValue().getMinimum();
         max = tpr.getRefValue().getMaximum();
-        if (tpr.getValue()<min || tpr.getValue()>max){
-            System.out.printf("The result of the parameter '%s' is outside of the reference range!", tp.getParameter().getShortName());
-        }else{
-            System.out.printf("The result of the parameter '%s' is among the reference values!", tp.getParameter().getShortName());
+        if (tpr.getValue() < min || tpr.getValue() > max) {
+            System.out.printf("The result of the parameter '%s' is outside of the reference range!\n", tp.getParameter().getShortName());
+        } else {
+            System.out.printf("The result of the parameter '%s' is among the reference values!\n", tp.getParameter().getShortName());
         }
     }
 
 
-
-    public List<TestParameter> addToList (List <Parameter> p){
-        for (Parameter par: p){
+    public List<TestParameter> addToList(List<Parameter> p) {
+        for (Parameter par : p) {
             testParameterList.add(new TestParameter(par));
         }
         return testParameterList;
@@ -354,10 +381,11 @@ public class Test {
 
     /**
      * Checks the parameter result restrictions
+     *
      * @param result the result of a given parameter of a test.
      */
-    public void checkResultRules (Double result){
-        if (result<0)
+    public void checkResultRules(Double result) {
+        if (result < 0)
             throw new IllegalArgumentException("The result cannot be negative!");
     }
 
@@ -371,34 +399,48 @@ public class Test {
     /**
      * Mark the test as validated
      */
+
+
     public void validateTest() throws IOException {
+
         validationDate = new Date();
         client.notifyClient();
     }
 
     /**
      * Returns the date when results were registered
+     *
      * @return the date when results were registered
      */
-    public Date getResultRegist(){
+    public Date getResultRegist() {
         return resultRegist;
     }
 
     /**
      * Returns the date when the test was registered
+     *
      * @return the date when the test was registered
      */
-    public Date getDate(){
+    public Date getDate() {
         return date;
     }
 
     /**
      * Returns the date when the test was validated
+     *
      * @return the date when the test was validated
      */
-    public Date getValidationDate(){
+    public Date getValidationDate() {
         return validationDate;
     }
 
+    public Sample getSampleByBarcode(String barcode) {
+        for (Sample samp : sample) {
+            if (barcode.equals(samp.getBarcode().getBarcodeNumber())) {
+                return samp;
+            }
+        }
+        throw new IllegalArgumentException("There is no sample with such barcode!");
+    }
 }
 
