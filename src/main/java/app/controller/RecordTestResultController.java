@@ -28,8 +28,8 @@ public class RecordTestResultController {
         tMapper = new TestMapper();
     }
 
-    public Test getTestByCode(String code){
-        return tStore.getTestByCode(code);
+    public Test getTestByBarcode(String code){
+        return tStore.getTestByBarcode(code);
     }
 
     public Test getTest(){
