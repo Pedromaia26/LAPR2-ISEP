@@ -1,0 +1,52 @@
+@startuml
+WriteReportUI ..> WriteReportController
+WriteReportUI ..> TestDto
+WriteReportUI ..> TestParameterDto
+WriteReportController..>Company
+WriteReportController..>TestParameterMapper
+WriteReportController..>TestParameter
+WriteReportController..>Test
+WriteReportController..>TestDto
+WriteReportController..>TestMapper
+WriteReportController..>TestStore
+WriteReportController..>TestParameterDto
+
+WriteReportController : +getTests()
+WriteReportController : +getResultParameters(testDto)
+WriteReportController : +createReport(diagnosisText)
+
+Company : +getTestStore()
+Company"1" --> "1"TestStore: Has
+
+TestStore : +getTests()
+TestStore : +getTestByCode(code)
+TestStore"1" --> "*"Test: Has
+
+TestMapper : +toDTO(lTests)
+TestMapper..>Test
+TestMapper..>TestDto
+
+TestDto : +getCode()
+
+Test : +getResultParameters()
+Test : +addReport(diagnosisText)
+Test : -report
+
+Test"1" --> "*"Report : Associated with
+Test"*" --> "1..*"TestParameter: Rates
+
+TestParameterMapper : +toDto(lResultParameters)
+TestParameterMapper..>TestParameter
+TestParameterMapper..>TestParameterDto
+
+TestParameter : -parameter
+TestParameter : -tpr
+
+TestDto..>Test
+
+Report : +create(diagnosisText)
+Report : +getData()
+Report : +validate(diagnosisText)
+Report : -diagnosis
+Report : -createdAt
+@enduml
