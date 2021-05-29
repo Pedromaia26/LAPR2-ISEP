@@ -266,7 +266,7 @@ public class Test {
 
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
 
-        samp.showBarcodes(samp.getBarcode());
+        // samp.showBarcodes(samp.getBarcode());
         return addSample(samp);
     }
 
@@ -339,9 +339,9 @@ public class Test {
         min = tpr.getRefValue().getMinimum();
         max = tpr.getRefValue().getMaximum();
         if (tpr.getValue()<min || tpr.getValue()>max){
-            System.out.println("The parameter value is out of the reference range!");
+            System.out.printf("The result of the parameter '%s' is outside of the reference range!", tp.getParameter().getShortName());
         }else{
-            System.out.println("The parameter value is among the reference values!");
+            System.out.printf("The result of the parameter '%s' is among the reference values!", tp.getParameter().getShortName());
         }
     }
 
