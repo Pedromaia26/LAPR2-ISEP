@@ -20,38 +20,6 @@ public class RecordSampleUI implements Runnable {
         Scanner ler = new Scanner(System.in);
         RecordSampleController controller= new RecordSampleController();
 
-        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc2);
-
-        List<ParameterCategory> listPC = new ArrayList<>();
-        ParameterCategory pc = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("10019");
-
-        listPC.add(pc);
-        TestType testesss = null;
-        try {
-            testesss = new TestType("asd","asd","12345",listPC);
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        App.getInstance().getCompany().getTestTypeStore().addToList(testesss);
-         List<Parameter> parameters = new ArrayList<>();
-
-        LabOrder labOrder= null;
-        try {
-            labOrder = new LabOrder(testesss,parameters);
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        App.getInstance().getCompany().getLabOrderStore().addToList(labOrder);
-
-        Test nteste=new Test("1234567890",1234123412L,labOrder);
-
-        App.getInstance().getCompany().getTestStore().addToList(nteste);
-
         for(TestDTO loDTO : controller.getTestDto()){
             if (loDTO.getSample().isEmpty())
                 System.out.println(loDTO);
@@ -91,11 +59,6 @@ public class RecordSampleUI implements Runnable {
             } catch (OutputException | BarcodeException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
-
-        }
-
-        for(TestDTO loDTO : controller.getTestDto()){
-            System.out.println(loDTO);
 
         }
 
