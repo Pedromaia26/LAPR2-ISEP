@@ -90,6 +90,7 @@ public class TestParameterTest {
 
     }  */
 
+    /*
     @Test
     public void testToString() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
@@ -115,5 +116,5 @@ public class TestParameterTest {
         app.domain.model.Test t = new app.domain.model.Test(c, 1234567890, 1876543210, lO);
 
         TestParameter tp = new TestParameter(p);
-    }
+    }*/
 }

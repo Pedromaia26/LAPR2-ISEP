@@ -34,6 +34,8 @@ public class Test {
      */
     private LabOrder labOrder;
 
+    private Client client;
+
     private Long tinNumber;
     /**
      * The external module that provides reference values to be compared to the results of a parameter.
@@ -88,7 +90,7 @@ public class Test {
      * @param nhsCode National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(Company company, long tinNumber, long nhsCode, LabOrder labOrder){
+    public Test(Company company, Client client, long nhsCode, LabOrder labOrder){
 
         this.code = createTestCode(company);
 
@@ -97,9 +99,9 @@ public class Test {
 
         this.nhsCode = nhsCode;
 
-        if (String.valueOf(tinNumber).length() != 10)
+        if (String.valueOf(client.getTif()).length() != 10)
             throw new IllegalArgumentException("Tax Identification Number should have 10 digits");
-        this.tinNumber = tinNumber;
+        this.client = client;
 
         this.labOrder = labOrder;
         em = new ExternalModule() {
