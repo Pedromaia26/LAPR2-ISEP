@@ -38,7 +38,7 @@ public class ValidateWorkDoneUI implements Runnable {
 
             System.out.println("Tests validated successfully!");
         }catch(ArrayIndexOutOfBoundsException e){
-            e.printStackTrace();
+            System.out.println("\nThere are no tests to be validated.");
         }
     }
 }
