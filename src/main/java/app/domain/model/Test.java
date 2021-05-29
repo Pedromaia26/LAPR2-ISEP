@@ -122,7 +122,7 @@ public class Test {
         this.nhsCode = nhsCode;
 
         this.labOrder = labOrder;
-        
+
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
 
