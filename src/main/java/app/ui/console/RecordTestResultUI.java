@@ -22,7 +22,7 @@ public class RecordTestResultUI implements Runnable {
 
         if (!App.getInstance().getCompany().getTestStore().getTests().isEmpty()) {
             String barcode;
-            System.out.println("Select the test whose result you want to register from the following list, using one of the samples barcode:");
+
             Test t;
             List<TestParameter> tParamList = new ArrayList<>();
             do {
@@ -31,12 +31,11 @@ public class RecordTestResultUI implements Runnable {
                 for (TestDTO test : testList) {
                     System.out.println(test);
                 }
+                System.out.println("Select the test whose result you want to register from the following list, using one of the samples barcode:");
                 System.out.println();
                 barcode = ler.nextLine();
 
                 t = rtrController.getTestByBarcode(barcode);
-
-
 
                 for (TestParameter tp: t.getTestParameter()){
                     tParamList.add(tp);
@@ -57,6 +56,7 @@ public class RecordTestResultUI implements Runnable {
                 t.getSample().remove(t.getSampleByBarcode(barcode));
 
                 do {
+                    String metric;
                     double resultValue;
                     parameterCode = ler.nextLine();
 
@@ -66,8 +66,11 @@ public class RecordTestResultUI implements Runnable {
                     System.out.println();
                     System.out.print("Result Value: ");
                     resultValue = ler.nextDouble();
+                    System.out.print("Metric: ");
+                    ler.nextLine();
+                    metric = ler.nextLine();
                     try {
-                        t.addTestResult(parameterCode, resultValue);
+                        t.addTestResult(parameterCode, resultValue, metric);
                     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
                     }
@@ -80,90 +83,14 @@ public class RecordTestResultUI implements Runnable {
                             System.out.println(tParam);
                         }
                         System.out.println("Enter the code: ");
-                        ler.nextLine();
                     }
 
                 } while (!tParamList.isEmpty());
 
-                if (!t.getSample().isEmpty()){
-                    System.out.println("Insert the code of the sample whose result you intend to record next: ");
-                    ler.nextLine();
-                }
             }while (!t.getSample().isEmpty());
         }
 
         }
-
-
-
-
-
-        /*String category;
-
-        List <Parameter> pList = new ArrayList<>();
-        ParameterCategory pc2 = new ParameterCategory("Hemogram", "klkll");
-
-        List <ParameterCategory> pCatList = new ArrayList<>();
-
-        pCatList.add(pc2);
-
-        try {
-            TestType tt = new TestType("Blood", "swab", "12345", pCatList);
-           App.getInstance().getCompany().getTestTypeStore().addToList(tt);
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-
-
-        if(!App.getInstance().getCompany().getTestTypeStore().getTestTypes().isEmpty()) {
-
-                System.out.println("Insert the code of the test, please.");
-                String code = ler.nextLine();
-                System.out.println("Insert the NHS code of the test, please.");
-                String nhsCode = ler.nextLine();
-                System.out.println("Insert code of the type of test, please");
-
-                for(TestType tp : rtrController.getTestTypeStore().getTestTypes()){
-                    System.out.println(tp.toString());
-                }
-
-                String codeOfTT = ler.nextLine();
-
-                TestType tt = rtrController.getTestTypeStore().getTestTypeByCode(codeOfTT);
-                System.out.println(tt);
-
-
-                if(!rtrController.getParameterCategoryStore().getParameterCategories().isEmpty()) {
-                    System.out.println("Choose the parameter category u want to add");
-                    String pCategoryCode = ler.nextLine();
-                    ParameterCategory pc = rtrController.getParameterCategoryStore().getParameterCategoryByCode(pCategoryCode);
-                    Parameter p = new Parameter("aaaaa", "hemogl", "hemogl values", pc);
-                    pList.add(p);
-                }
-                try {
-                    LabOrder lO = new LabOrder(tt, pList);
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        List<TestDTO> listTDto = new ArrayList<>();
-        List<TestParameterDto> testParameterDto = new ArrayList<>();
-
-        int testop;
-        TestDTO testDto = null;
-        boolean exists = false;
-
-        listTDto = rtrController.getTestListStore();
-
-        System.out.println("List of tests already registered in the system:");
-        for (TestDTO testdto: listTDto){
-            System.out.printf("%d - %s", listTDto.indexOf(testdto)+1, testdto);
-            System.out.println("---------");
-        }
-
-    }*/
 
     }
 
