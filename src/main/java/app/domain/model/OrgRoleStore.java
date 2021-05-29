@@ -4,11 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrgRoleStore {
-
+    /**
+     * List that contains the OrgRoles
+     */
     private List<OrgRole> store = new ArrayList<>();
 
+    /**
+     * Constructor that create a empty instance of a OrgRole store
+     */
     public OrgRoleStore() { }
 
+    /**
+     * Method that adds the default OrgRoles if there are no OrgRoles registered
+     */
     public void addDefaultRoles(){
         if (store.isEmpty()){
             this.addOrgRole(new OrgRole("Administrator"));
@@ -20,11 +28,18 @@ public class OrgRoleStore {
         }
     }
 
+    /**
+     * Add a OrgRole to the list of OrgRoles
+     * @param orgRole the OrgRole to add to the list
+     */
     public void addOrgRole(OrgRole orgRole){
         store.add(orgRole);
     }
 
-
+    /**
+     * Returns the list that contains the OrgRoles
+     * @return the OrgRoles list
+     */
     public List<OrgRole> getRoles(){
         return store;
     }
