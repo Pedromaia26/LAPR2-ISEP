@@ -28,7 +28,7 @@ public class WriteReportController {
         lTests = tStore.getTests();
         for(Test test : lTests){
             for (TestParameter testparameter : test.getTestParameter()){
-                if(testparameter.getTpr().getValue().equals(null)){
+                if(testparameter.getTpr() != (null)){
                     lTestsToBeReported.add(test);
                 }
             }

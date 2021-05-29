@@ -317,6 +317,11 @@ public class Test {
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
         compareValues();
+        addTestToBeReported();
+    }
+
+    public void addTestToBeReported() {
+
     }
 
     public void compareValues(){

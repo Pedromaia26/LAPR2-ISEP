@@ -33,8 +33,8 @@ public class TestTypeUI implements Runnable{
                 api = "Domain.ExternalModuleAdapter2";
             }else
                 api = "Domain.ExternalModuleAdapter3";
+            ler.nextLine();
         }
-        ler.nextLine();
         System.out.println("Insert its collecting method:");
         String collectingMethod = ler.nextLine();
         System.out.println("Insert its code:");
