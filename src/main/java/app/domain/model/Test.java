@@ -393,5 +393,13 @@ public class Test {
         return date;
     }
 
+    /**
+     * Returns the date when the test was validated
+     * @return the date when the test was validated
+     */
+    public Date getValidationDate(){
+        return validationDate;
+    }
+
 }
 
