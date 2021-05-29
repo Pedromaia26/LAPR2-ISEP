@@ -22,7 +22,7 @@ public class RecordTestResultUI implements Runnable {
 
         if (!App.getInstance().getCompany().getTestStore().getTests().isEmpty()) {
             String barcode;
-            System.out.println("Select the test whose result you want to register from the following list, using the sample barcode:");
+            System.out.println("Select the test whose result you want to register from the following list, using one of the samples barcode:");
 
             List<TestDTO> testList = rtrController.getTestListStore();
             for (TestDTO test : testList) {
@@ -31,7 +31,7 @@ public class RecordTestResultUI implements Runnable {
             System.out.println();
             barcode = ler.nextLine();
 
-            Test t = rtrController.getTestByCode(barcode);
+            Test t = rtrController.getTestByBarcode(barcode);
 
             System.out.println(t);
 
@@ -51,11 +51,12 @@ public class RecordTestResultUI implements Runnable {
                 double resultValue;
                 parameterCode = ler.nextLine();
                 System.out.println(t.getTestParameterFor(parameterCode));
+
                 System.out.println();
 
                 System.out.println("Please insert the result value and metric of the parameter:");
                 System.out.println();
-                System.out.print("Result Value:");
+                System.out.print("Result Value: ");
                 resultValue = ler.nextDouble();
                 try {
                     t.addTestResult(parameterCode, resultValue);
@@ -63,13 +64,18 @@ public class RecordTestResultUI implements Runnable {
                     e.printStackTrace();
                 }
 
-                System.out.println("Do you want to compare another parameter value with the reference values? (Y/N)");
+                tParamList.remove(t.getTestParameterFor(parameterCode));
 
-                ler.nextLine();
-                op = ler.nextLine();
+                if (!tParamList.isEmpty()){
+                    System.out.println("For which parameter do you want to compare your result with the reference values next?");
+                    for (TestParameter tParam : tParamList) {
+                        System.out.println(tParam);
+                    }
+                    System.out.println("Enter the code: ");
+                    ler.nextLine();
+                }
 
-
-            } while (op.equalsIgnoreCase("Y"));
+            } while (!tParamList.isEmpty());
 
         }
 

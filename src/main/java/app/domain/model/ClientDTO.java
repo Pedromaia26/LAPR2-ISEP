@@ -48,6 +48,7 @@ public class ClientDTO {
      * @param name The name of a client
      * @param phoneNumber The Phone Number of a client
      */
+
     public ClientDTO(long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
         this.ccn = ccn;
         this.nhs = nhs;
@@ -58,60 +59,74 @@ public class ClientDTO {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
+
+    public ClientDTO(Client client){
+        this.ccn = client.getCcn();
+        this.birth= client.getBirth();
+        this.nhs = client.getNhs();
+        this.sex = client.getSex();
+        this.email=String.valueOf(client.getEmail());
+        this.name=client.getName();
+        this.phoneNumber= client.getPhoneNumber();
+        this.tif=client.getTif();
+    }
+
+
+
     /**
      * Returns the Citizen Card Number of a client.
      * @return the Citizen Card Number of a client.
      */
-    public long getCcn() {
+    public long getCcnDto() {
         return ccn;
     }
     /**
      * Returns the National Health Service Number of a client.
      * @return the National Health Service Number of a client.
      */
-    public long getNhs() {
+    public long getNhsDto() {
         return nhs;
     }
     /**
      * Returns the date of birth of a client.
      * @return the date of birth of a client.
      */
-    public String getBirth() {
+    public String getBirthDto() {
         return birth;
     }
     /**
      * Returns the sex of a client.
      * @return the sex of a client.
      */
-    public String getSex() {
+    public String getSexDto() {
         return sex;
     }
     /**
      * Returns the Tax Identification Number of a client.
      * @return the Tax Identification Number of a client.
      */
-    public long getTif() {
+    public long getTifDto() {
         return tif;
     }
     /**
      * Returns the email of a client.
      * @return the email of a client.
      */
-    public String getEmail() {
+    public String getEmailDto() {
         return email;
     }
     /**
      * Returns the name of a client.
      * @return the name of a client.
      */
-    public String getName() {
+    public String getNameDto() {
         return name;
     }
     /**
      * Returns the Phone Number of a client.
      * @return the Phone Number of a client.
      */
-    public long getPhoneNumber() {
+    public long getPhoneNumberDto() {
         return phoneNumber;
     }
     /**
@@ -120,6 +135,6 @@ public class ClientDTO {
      */
     @Override
     public String toString() {
-        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tif=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
+        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tin=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
     }
 }

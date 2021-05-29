@@ -19,9 +19,14 @@ public class TestUI implements Runnable{
     public void run() {
         Scanner ler = new Scanner(System.in);
         RegistTestController createRegistTestController = new RegistTestController();
-        TestTypeController createTestTypeController = new TestTypeController();
         String code;
-        System.out.println("Insert the Tax Identification Number of the client related to the test:");
+
+        List<ClientDTO> clientDto = createRegistTestController.getClientDto();
+        for(ClientDTO clientDTO : clientDto){
+            System.out.println(clientDTO);
+        }
+
+        System.out.println("Insert the Tax Identification Number(TIN) of the client related to the test:");
         long tinNumber = ler.nextLong();
         ler.nextLine();
         System.out.println("Insert its National Health Security code:");

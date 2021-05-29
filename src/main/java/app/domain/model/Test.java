@@ -17,12 +17,15 @@ public class Test {
      */
     private String code;
     /**
-     * The National Healthcare Service.
+     * The National Healthcare Service code.
      */
     private long nhsCode;
 
     private Date date;
 
+    /**
+     * The parameter of a given test.
+     */
     private TestParameter tp;
 
 
@@ -30,6 +33,8 @@ public class Test {
      * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
      */
     private LabOrder labOrder;
+
+    private Client client;
 
     private Long tinNumber;
     /**
@@ -85,7 +90,7 @@ public class Test {
      * @param nhsCode National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(Company company, long tinNumber, long nhsCode, LabOrder labOrder){
+    public Test(Company company, Client client, long nhsCode, LabOrder labOrder){
 
         this.code = createTestCode(company);
 
@@ -94,9 +99,9 @@ public class Test {
 
         this.nhsCode = nhsCode;
 
-        if (String.valueOf(tinNumber).length() != 10)
+        if (String.valueOf(client.getTif()).length() != 10)
             throw new IllegalArgumentException("Tax Identification Number should have 10 digits");
-        this.tinNumber = tinNumber;
+        this.client = client;
 
         this.labOrder = labOrder;
         em = new ExternalModule() {
@@ -263,7 +268,7 @@ public class Test {
 
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
 
-        samp.showBarcodes(samp.getBarcode());
+        // samp.showBarcodes(samp.getBarcode());
         return addSample(samp);
     }
 
@@ -324,6 +329,11 @@ public class Test {
 
     }
 
+    /**
+     * Compares the values written by the clinical chemistry technologist with the reference values provided by the external module,
+     * and informs the user about the results.
+     */
+
     public void compareValues(){
         TestParameterResult tpr = tp.getTpr();
         Double min;
@@ -331,9 +341,9 @@ public class Test {
         min = tpr.getRefValue().getMinimum();
         max = tpr.getRefValue().getMaximum();
         if (tpr.getValue()<min || tpr.getValue()>max){
-            System.out.println("The parameter value is out of the reference range!");
+            System.out.printf("The result of the parameter '%s' is outside of the reference range!", tp.getParameter().getShortName());
         }else{
-            System.out.println("The parameter value is among the reference values!");
+            System.out.printf("The result of the parameter '%s' is among the reference values!", tp.getParameter().getShortName());
         }
     }
 
@@ -383,6 +393,14 @@ public class Test {
      */
     public Date getDate(){
         return date;
+    }
+
+    /**
+     * Returns the date when the test was validated
+     * @return the date when the test was validated
+     */
+    public Date getValidationDate(){
+        return validationDate;
     }
 
 }
