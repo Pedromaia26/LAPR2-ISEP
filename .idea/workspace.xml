@@ -39,22 +39,119 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="RecordTestResult user interface update">
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestParameterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeDTOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/TestTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/TestTypeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestTypeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistLaboratoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistLaboratoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/TestTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/TestTypeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ApiBarcode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ApiBarcode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ExternalModuleAdapter3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LaboratoryStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LaboratoryStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Parameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ReferenceValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ReferenceValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/SampleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/SampleDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterResult.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/shared/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AdminUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AdminUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ClinicalChemistryTechnologistUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ClinicalChemistryTechnologistUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/DevTeamUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/DevTeamUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryCoordinatorUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryCoordinatorUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MainMenuUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MainMenuUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MenuItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MenuItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MltUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MltUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ShowTextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ShowTextUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/AuthFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/AuthFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/UserSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/Email.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/Password.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/UserRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/store/UserRoleStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/store/UserRoleStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/store/UserStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/store/UserStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/mappers/UserRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/mappers/UserRoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/mappers/dto/UserRoleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/mappers/dto/UserRoleDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientDTOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientDTOTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ClientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeDtoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeDtoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/EmployeeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderDTOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderDTOTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LabOrderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/LaboratoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/OrgRoleTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryDtoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryDtoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleDTOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleDTOTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/SpecialistDoctorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/SpecialistDoctorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeStoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +166,8 @@
       <list>
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -99,6 +196,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.097751714" />
@@ -116,7 +215,7 @@
       <recent name="app.domain.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestTypeMapperTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -143,15 +242,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrgRoleDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParameterCategoryMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -160,13 +264,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.OrgRoleDtoTest" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.ParameterCategoryMapperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RolesMapperTest.toDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestParameterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -175,14 +279,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.RolesMapperTest" />
-      <option name="METHOD_NAME" value="toDTO" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestParameterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app.domain.model in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTypeDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -191,18 +294,34 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestTypeDTOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTypeMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.domain.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.domain.model" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestTypeMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTypeMapperTest" />
+        <item itemvalue="JUnit.TestTypeDTOTest" />
+        <item itemvalue="JUnit.TestParameterTest" />
+        <item itemvalue="JUnit.ParameterCategoryMapperTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in Sem2App" />
-        <item itemvalue="JUnit.RolesMapperTest.toDTO" />
-        <item itemvalue="JUnit.OrgRoleDtoTest" />
-        <item itemvalue="JUnit.app.domain.model in Sem2App" />
       </list>
     </recent_temporary>
   </component>
@@ -231,6 +350,7 @@
       <workItem from="1622194755734" duration="11171000" />
       <workItem from="1622209639493" duration="2493000" />
       <workItem from="1622233659070" duration="2466000" />
+      <workItem from="1622282491519" duration="6076000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
@@ -352,10 +472,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ValidateWorkDoneController, Test and TestStore add methods" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

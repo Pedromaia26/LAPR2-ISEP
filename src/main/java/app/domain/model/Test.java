@@ -17,12 +17,15 @@ public class Test {
      */
     private String code;
     /**
-     * The National Healthcare Service.
+     * The National Healthcare Service code.
      */
     private long nhsCode;
 
     private Date date;
 
+    /**
+     * The parameter of a given test.
+     */
     private TestParameter tp;
 
 
@@ -323,6 +326,11 @@ public class Test {
     public void addTestToBeReported() {
 
     }
+
+    /**
+     * Compares the values written by the clinical chemistry technologist with the reference values provided by the external module,
+     * and informs the user about the results.
+     */
 
     public void compareValues(){
         TestParameterResult tpr = tp.getTpr();

@@ -20,6 +20,44 @@ public class TestTypeDTO {
      */
     private List<ParameterCategory> listPC;
 
+    /**
+     * Returns the description of a test DTO.
+     * @return the description of the test DTO.
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Returns the collecting method of a test DTO.
+     * @return the collecting method of the test DTO.
+     */
+
+    public String getCollectingMethod() {
+        return collectingMethod;
+    }
+
+    /**
+     * Returns the code of a test DTO.
+     * @return the code of the test DTO.
+     */
+    public String getCode() {
+        return code;
+    }
+
+    /**
+     * Returns the list of parameter categories belonging to a test DTO.
+     * @return the list of parameter categories for a test DTO.
+     */
+
+    public List<ParameterCategory> getListPC() {
+        return listPC;
+    }
+
+    /**
+     * Returns the textual description of a test type Dto.
+     * @return characteristics of the test type DTO.
+     */
     @Override
     public String toString() {
         return "TestTypeDTO{" +
@@ -27,6 +65,12 @@ public class TestTypeDTO {
         ", code='" + code + "'" +
         '}';
     }
+
+    /**
+     * Constructs an instance of TestTypeDTO with the same attributes as the received TestType object.
+     *
+     * @param tt The type of test to be copied
+     */
 
     public TestTypeDTO(TestType tt){
         this.description = tt.getDescription();

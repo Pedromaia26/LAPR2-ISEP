@@ -13,17 +13,20 @@ public class TestTypeController {
     private ParameterCategoryStore parameterCategoryStore;
     private TestType tt;
     private ParameterCategoryMapper parameterCategoryMapper;
+    private TestTypeMapper ttMapper;
 
 
 
     public TestTypeController() {
         this(App.getInstance().getCompany());
         this.parameterCategoryMapper = new ParameterCategoryMapper();
+        this.ttMapper = new TestTypeMapper();
     }
 
     public TestTypeController(Company company) {
         this.company = company;
         this.parameterCategoryMapper = new ParameterCategoryMapper();
+        this.ttMapper = new TestTypeMapper();
     }
 
     public boolean createTestType(String description, String collectingMethod, String code, List <String> categories, String api) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -51,6 +54,13 @@ public class TestTypeController {
         return this.parameterCategoryMapper.toDto(getParameterCategory());
     }
 
+    public List<TestType> getTestType(){
+        return this.company.getTestTypeStore().getTestTypes();
+    }
+
+    public List<TestTypeDTO> getTestTypeDto(){
+        return this.ttMapper.toDto(getTestType());
+    }
 
     // public List<String> getParameterCategory2(){
         // return this.company.getParameterCategoryStore().getParameterCategoryByCode();
