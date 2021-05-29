@@ -11,10 +11,16 @@ import auth.domain.model.Password;
 import auth.domain.model.User;
 
 public class ClientStore {
+
     /**
      * List that contains the Clients.
      */
-    private List<Client> clientList = new ArrayList<>();
+    private List<Client> clientList;
+
+    public ClientStore(){
+        clientList = new ArrayList<>();
+    }
+
     /**
      * Create a new client with the dto received.
      * @param dto The clientDTO
