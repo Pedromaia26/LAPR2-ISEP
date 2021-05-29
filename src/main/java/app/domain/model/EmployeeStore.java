@@ -76,6 +76,11 @@ public class EmployeeStore {
         return this.Employees.add(emp);
     }
 
+    /**
+     * Add to the Employees List the validated Employee instance received by parameter
+     * @param emp A SpecialistDoctor Instance
+     * @return the addition to Specialist Doctors List of the Specialist Doctor instance received by parameter
+     */
     public boolean addSpecialistDoctor(SpecialistDoctor emp){
         if (!validateSpecialistDoctor(emp))
             return false;

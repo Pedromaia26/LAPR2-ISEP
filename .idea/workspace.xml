@@ -40,21 +40,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/TestTypeUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RecordTestResultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/EmployeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/RolesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/SpecialistDoctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/SpecialistDoctor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,6 +224,7 @@
       <workItem from="1622194755734" duration="11171000" />
       <workItem from="1622209639493" duration="2493000" />
       <workItem from="1622233659070" duration="2466000" />
+      <workItem from="1622293662514" duration="7857000" />
     </task>
     <task id="LOCAL-00001" summary="pom change">
       <created>1621952441657</created>
