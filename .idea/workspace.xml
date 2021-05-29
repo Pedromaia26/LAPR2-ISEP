@@ -39,23 +39,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="fixing jenkins test coverage bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Sample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/OrgRoleStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
-    </list>
+    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Finishing UI for recording test results." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -352,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622281283500</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finishing UI for recording test results.">
+      <created>1622310842325</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622310842325</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +378,8 @@
     <MESSAGE value="ValidateWorkDoneController, Test and TestStore add methods" />
     <MESSAGE value="Finishing user interface for recording test results and some minor changes to the code." />
     <MESSAGE value="fixing jenkins test coverage bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing jenkins test coverage bug" />
+    <MESSAGE value="Finishing UI for recording test results." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing UI for recording test results." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
