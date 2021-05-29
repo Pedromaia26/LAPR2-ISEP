@@ -320,7 +320,7 @@ public class Test {
         return new Sample(c);
     }
 
-<<<<<<< HEAD
+
     /**
      * Returns the external module being used to obtain the reference values.
      * @return the external module.
@@ -328,8 +328,7 @@ public class Test {
     //public ExternalModule getExternalModule (){
     //  return em;
     //}
-=======
->>>>>>> f08b714a4da901bbc2499ad1001ffc193ab78467
+
 
     /**
      * Adds a result to a parameter of a test, comparing the value received by parameter
@@ -400,11 +399,10 @@ public class Test {
     /**
      * Mark the test as validated
      */
-<<<<<<< HEAD
-    public void validateTest() {
-=======
+
+
     public void validateTest() throws IOException {
->>>>>>> f08b714a4da901bbc2499ad1001ffc193ab78467
+
         validationDate = new Date();
         client.notifyClient();
     }
@@ -444,6 +442,5 @@ public class Test {
         }
         throw new IllegalArgumentException("There is no sample with such barcode!");
     }
-
 }
 
