@@ -29,6 +29,7 @@ public class Test {
      */
     private TestParameter tp;
 
+    private String metric;
 
     /**
      * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
@@ -107,17 +108,7 @@ public class Test {
         this.client = client;
 
         this.labOrder = labOrder;
-        em = new ExternalModule() {
-            @Override
-            public ReferenceValue getReferenceValue(Parameter parameter) {
-                return null;
-            }
 
-            @Override
-            public String getMetric(Parameter parameter) {
-                return null;
-            }
-        };
 
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
@@ -131,19 +122,7 @@ public class Test {
         this.nhsCode = nhsCode;
 
         this.labOrder = labOrder;
-
-        em = new ExternalModule() {
-            @Override
-            public ReferenceValue getReferenceValue(Parameter parameter) {
-                return null;
-            }
-
-            @Override
-            public String getMetric(Parameter parameter) {
-                return null;
-            }
-        };
-
+        
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
 
@@ -321,13 +300,6 @@ public class Test {
     }
 
 
-    /**
-     * Returns the external module being used to obtain the reference values.
-     * @return the external module.
-     */
-    //public ExternalModule getExternalModule (){
-    //  return em;
-    //}
 
 
     /**
@@ -337,12 +309,12 @@ public class Test {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-    public void addTestResult(String parameterCode, Double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestResult(String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
         this.ref = getExternalModule().getReferenceValue(tp.getParameter());
-        String metric = getExternalModule().getMetric(tp.getParameter());
+        this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
         compareValues();
@@ -364,11 +336,16 @@ public class Test {
         Double max;
         min = tpr.getRefValue().getMinimum();
         max = tpr.getRefValue().getMaximum();
-        if (tpr.getValue() < min || tpr.getValue() > max) {
-            System.out.printf("The result of the parameter '%s' is outside of the reference range!\n", tp.getParameter().getShortName());
-        } else {
-            System.out.printf("The result of the parameter '%s' is among the reference values!\n", tp.getParameter().getShortName());
+        if (tpr.getMetric().equals(this.metric)){
+            if (tpr.getValue() < min || tpr.getValue() > max) {
+                System.out.printf("The result of the parameter '%s' is outside of the reference range!\n", tp.getParameter().getShortName());
+            } else {
+                System.out.printf("The result of the parameter '%s' is among the reference values!\n", tp.getParameter().getShortName());
+            }
+        }else{
+            throw new IllegalArgumentException("The metric used does not correspond to the metric of the parameter!");
         }
+
     }
 
 

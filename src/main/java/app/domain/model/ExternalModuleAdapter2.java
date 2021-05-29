@@ -12,14 +12,14 @@ public class ExternalModuleAdapter2 implements ExternalModule{
 
         Double min = blood.getReferenceFor(parameter.getCode()).getMinValue();
         Double max = blood.getReferenceFor(parameter.getCode()).getMaxValue();
+        String metric = blood.getMetricsFor(parameter.getCode());
 
-
-        return new ReferenceValue(min, max);
+        return new ReferenceValue(min, max, metric);
 
     }
 
-    @Override
+    /*@Override
     public String getMetric (Parameter parameter){
         return blood.getMetricsFor(parameter.getCode());
-    }
+    } */
 }

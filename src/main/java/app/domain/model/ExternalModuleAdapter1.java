@@ -15,11 +15,11 @@ public class ExternalModuleAdapter1 implements ExternalModule{
        Double max = covid.getMaxReferenceValue(parameter.getCode(), 12345);
        String metric = covid.usedMetric(parameter.getCode(), 12345);
 
-        return new ReferenceValue(min, max);
+        return new ReferenceValue(min, max, metric);
     }
 
-    @Override
+    /*@Override
     public String getMetric(Parameter parameter) {
         return null;
-    }
+    }*/
 }
