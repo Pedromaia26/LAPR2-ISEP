@@ -4,6 +4,9 @@ package app.domain.model;
 import auth.domain.model.Email;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -223,5 +226,26 @@ public class Client {
 
     public long getPhoneNumber() {
         return phoneNumber;
+    }
+
+    /**
+     * Notify the client that the test is available in the system.
+     */
+    public void notifyClient() throws IOException {
+
+        String pwd = System.getProperty("user.dir");
+
+
+        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
+        if (!emailAndSMSMessages.exists()) {
+            emailAndSMSMessages.mkdirs();
+        }
+
+        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
+
+        asd.append("Dear Client "+ name +", with CCN "+ccn+",\nYour test was validated and you can check it when you want.\nHave a good day,\nMany Labs.\n");
+
+        asd.close();
+
     }
 }

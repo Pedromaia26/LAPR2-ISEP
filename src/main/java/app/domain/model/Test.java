@@ -4,6 +4,7 @@ import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -268,7 +269,7 @@ public class Test {
 
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()),samp.getBarcode().getBarcodeNumber());
 
-        samp.showBarcodes(samp.getBarcode());
+        //samp.showBarcodes(samp.getBarcode());
         return addSample(samp);
     }
 
@@ -299,13 +300,6 @@ public class Test {
         return new Sample(c);
     }
 
-    /**
-     * Returns the external module being used to obtain the reference values.
-     * @return the external module.
-     */
-    //public ExternalModule getExternalModule (){
-      //  return em;
-    //}
 
     /**
      * Adds a result to a parameter of a test, comparing the value received by parameter
@@ -375,8 +369,9 @@ public class Test {
     /**
      * Mark the test as validated
      */
-    public void validateTest(){
+    public void validateTest() throws IOException {
         validationDate = new Date();
+        client.notifyClient();
     }
 
     /**

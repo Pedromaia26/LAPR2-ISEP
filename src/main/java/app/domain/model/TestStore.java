@@ -22,6 +22,7 @@ public class TestStore {
      */
     /*private List<Test> testsToBeReported;*/
 
+
     public Test createTest (Company company, Client client, long nhsCode, LabOrder labOrder) {
         return new Test(company, client, nhsCode, labOrder);
     }
@@ -51,13 +52,6 @@ public class TestStore {
         return tests;
     }
 
-    /**
-     * Returns the list of existing tests to be reported.
-     * @return list of tests to be reported.
-     */
-    /*public List<Test> getTestsToBeReported(){
-        return testsToBeReported;
-    }*/
 
     /**
      * Adding a test to the tests list.
@@ -118,31 +112,6 @@ public class TestStore {
     public void validateTest(String code) throws IOException{
         Test test = getTestByCode(code);
         test.validateTest();
-        notifyClient(test);
     }
 
-    /**
-     * Notify the client that the test is available in the system.
-     * @param test The test that was validated
-     */
-    public void notifyClient(Test test) throws IOException {
-
-        String pwd = System.getProperty("user.dir");
-
-
-        File emailAndSMSMessages = new File(pwd + "\\src\\main\\emailAndSMSMessages");
-        if (!emailAndSMSMessages.exists()) {
-            emailAndSMSMessages.mkdirs();
-        }
-
-        PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\emailAndSMSMessages.txt");
-
-        //asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\n Many Labs.\n");
-
-
-
-
-        asd.close();
-
-    }
 }
