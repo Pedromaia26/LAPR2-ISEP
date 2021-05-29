@@ -109,7 +109,7 @@ public class EmployeeStore {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt");
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\"+emp.getEmployeeId()+".txt");
 
         String password =  generatePassword();
 
@@ -137,7 +137,7 @@ public class EmployeeStore {
             emailAndSMSMessages.mkdirs();
         }
 
-        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\emailAndSMSMessages.txt");
+        PrintWriter out = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessagesEmployees\\"+emp.getEmployeeId()+".txt");
 
         String password =  generatePassword();
 
