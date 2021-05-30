@@ -111,7 +111,7 @@
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US15_MD](US15_MD.svg)
+![US15_DM](US15_DM.svg)
 
 ### 2.2. Other Remarks
 
@@ -127,15 +127,14 @@
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1  		 |	... interacting with the actor? | ValidateWorkDoneUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
 | 			  		 |	... coordinating the US? | ValidateWorkDoneController | Controller                             |
-| Step 2  		 |	... knowing tests to show	 |             |                              |
-| Step 3  		 |	...saving the inputted data? | Task  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the task categories to show? | Platform  | IE: Task Categories are defined by the Platform. |
-| Step 5  		 |	... saving the selected category? | Task  | IE: object created in step 1 is classified in one Category.  |
-| Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | Task | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Organization | IE: knows all its tasks.| 
-| 			  		 |	... saving the created task? | Organization | IE: owns all its tasks.| 
-| Step 8  		 |	... informing operation success?| CreateTaskUI  | IE: is responsible for user interactions.  | 
+| Step 2  		 |	... knowing tests to show?	 | TestStore             |  IE: TestStore has the responsability to know all the tests.         |
+|            	 |	...knowing the testStore? | Company  | IE: Company has the responsability to know the TestStore.  |
+|       		 |	... transfer the domain objects in DTO? | TestDtoDate  | DTO: The ValidateWorkDoneUI can't have access to the tests |
+| Step 3  		 |							 |             |                              |              
+| Step 4  		 |	... showing the information to be confirmed | ValidateWorkDoneUI | IE: knows what the user selected.| 
+| Step 5 		 |	... set validation date?| Test | IE: owns its data.| 
+|       		 |	... notify client?      | Client   | IE: owns personal information of the client.                       |   
+| Step 6 		 |	... informing operation success?| ValidateWorkDoneUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
@@ -144,6 +143,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Report
  * Company
  * Test
+ * Client
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
@@ -160,7 +160,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 ![US15_SD](US15_SD.svg)
 
 
-![US15_SD](US15_SD_TestMapper_toDto_List.svg)
+![US15_SD_TestMapper_toDTO_List](US15_SD_TestMapper_toDTO_List.svg)
 
 ## 3.3. Class Diagram (CD)
 

@@ -26,7 +26,7 @@ public class RecordSampleUI implements Runnable {
         }
         String codeTest = ler.nextLine();
 
-        System.out.print("Insert how many samples want to collect.%n");
+        System.out.print("Insert how many samples want to collect.\n");
 
         int number = ler.nextInt();
 
@@ -36,20 +36,20 @@ public class RecordSampleUI implements Runnable {
             try {
                 if (controller.createNewSample(new SampleDTO(codeTest))) {
 
-                    System.out.print("--------------------------%n");
-                    System.out.print("Please confirm the data:%n");
+                    System.out.print("--------------------------\n");
+                    System.out.print("Please confirm the data:\n");
                     System.out.printf("TestCode: %s%nBarcode of sample %d: %s%n", codeTest, i,controller.getSamp().toString());
-                    System.out.print("--------------------------%n");
-                    System.out.print(" 1 --> Confirm%n");
-                    System.out.print(" 2 --> Cancel%n");
+                    System.out.print("--------------------------\n");
+                    System.out.print(" 1 --> Confirm\n");
+                    System.out.print(" 2 --> Cancel\n");
                     confirm = ler.nextInt();
                     if (confirm == 1) {
                         if (controller.saveSample()) {
-                            System.out.print("Sample recorded successfully.%n");
-                            System.out.print("--------------------------%n");
+                            System.out.print("Sample recorded successfully.\n");
+                            System.out.print("--------------------------\n");
                         } else {
-                            System.out.print("Sample recording error.%n");
-                            System.out.print("--------------------------%n");
+                            System.out.print("Sample recording error.\n");
+                            System.out.print("--------------------------\n");
                         }
                     }
                 }
