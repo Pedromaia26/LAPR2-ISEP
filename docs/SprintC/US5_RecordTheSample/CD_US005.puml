@@ -75,7 +75,7 @@ SampleMapper : +toModel()
 
 SampleMapper ..> TestStore
 
-Sample"*" -->"1"ApiBarcode : makes use of
+Sample"1..*" -->"1"ApiBarcode : makes use of
 
 BarcodeAdapter  ..> ApiBarcode
 
