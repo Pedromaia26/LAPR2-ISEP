@@ -1,0 +1,86 @@
+@startuml
+autonumber
+'hide footbox
+actor "Laboratory Coordinator" as ADM
+
+participant ":ValidateWorkDoneUI" as UI
+participant ":ValidateWorkDoneController" as CTRL
+participant ":Company" as ML
+participant ":TestMapper" as MAPPER
+participant "store\n:TestStore" as STORE
+participant ":Test" as TEST
+participant ":Client" as CLIENT
+participant ":Report" as REPORT
+participant "Tests\n:List<Test>" as TESTLIST
+participant "TestsDto\n:List<TestDto>" as TESTLISTDTO
+
+activate ADM
+ADM -> UI : asks to validate the work done by the clinical\nchemistry technologist and specialist doctor
+activate UI
+
+UI --> CTRL : testDtoDate = getTests()
+activate CTRL
+
+CTRL -> ML : test = getTests()
+activate ML
+|||
+deactivate ML
+
+CTRL -> MAPPER : testDtoDate = toDtoDate(test)
+activate MAPPER
+
+ref over MAPPER : SD_TestMapper_toDTO_List
+
+
+CTRL --> UI : testDtoDate
+deactivate MAPPER
+deactivate CTRL
+
+
+
+UI --> ADM : shows tests ready to be validated
+deactivate UI
+
+ADM -> UI : selects tests to validate
+activate UI
+
+UI -> ADM : shows tests selected and request confirmation
+deactivate UI
+
+ADM -> UI : confirms data
+activate UI
+
+UI -> CTRL : validateTest(codes)
+activate CTRL
+
+CTRL -> ML : testStore = getTestStore()
+activate ML
+|||
+deactivate ML
+
+CTRL -> STORE : validateWorkDone(codes)
+activate STORE
+
+STORE -> STORE : test = getTestByCode()
+activate STORE
+|||
+deactivate STORE
+STORE -> TEST : validate(test)
+activate TEST
+
+TEST -> CLIENT : notifyClient()
+activate CLIENT
+|||
+deactivate CLIENT
+
+deactivate TEST
+
+deactivate STORE
+deactivate CTRL
+
+UI -> ADM : informs operation success
+
+deactivate UI
+
+deactivate ADM
+@enduml
