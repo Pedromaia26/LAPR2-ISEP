@@ -8,7 +8,6 @@ import java.util.List;
 
 public class RecordTestResultController {
 
-    private TestTypeStore testTypeStore; //temporary
     private TestStore tStore;
     private List<Test> listT = new ArrayList<>();
     private List<TestDTO> listTDto = new ArrayList<>();
@@ -16,24 +15,18 @@ public class RecordTestResultController {
     private List <TestParameter> testParameterList = new ArrayList<>();
     private List <TestParameterDto> testParameterDto = new ArrayList<>();
     private Test test;
-    private List<TestType> listTT = new ArrayList<>(); //temporary
-    private ParameterCategoryStore pcs; //temporary
     private Company c;
 
     public RecordTestResultController(){
         this.c = App.getInstance().getCompany();
         tStore = App.getInstance().getCompany().getTestStore();
-        testTypeStore = App.getInstance().getCompany().getTestTypeStore(); //temporary
-        pcs = App.getInstance().getCompany().getParameterCategoryStore(); //temporary
         tMapper = new TestMapper();
     }
 
     public Test getTestByBarcode(String code){
+        this.test = tStore.getTestByBarcode(code);
         return tStore.getTestByBarcode(code);
-    }
 
-    public Test getTest(){
-        return test;
     }
 
     public List<TestDTO> getTestListStore(){
@@ -42,24 +35,16 @@ public class RecordTestResultController {
         return listTDto;
     }
 
-
-    public List<TestParameterDto> getTestParameters (TestDTO testDTO){
-        String barcode = testDTO.getSample().get(0).getBarcode().getBarcodeNumber();
-        test = tStore.getTestByBarcode(barcode);
-        testParameterList = test.getTestParameter();
-        testParameterDto = TestParameterMapper.toDto(testParameterList);
-        return testParameterDto;
+    public Test getTest(){
+        return this.test;
     }
 
     public void addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         test.addTestResult(barcode, parameterCode, result, metric);
     }
 
-    public TestTypeStore getTestTypeStore(){ //temporary
-        return testTypeStore;
-    }
 
-    public ParameterCategoryStore getParameterCategoryStore(){ //temporary
-        return pcs;
+    public boolean saveTestResult(String testParameterResult) {
+        return test.saveTestParameterResult(testParameterResult);
     }
 }
