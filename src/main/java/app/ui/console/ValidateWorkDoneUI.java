@@ -35,13 +35,23 @@ public class ValidateWorkDoneUI implements Runnable {
 
             } while (optn == 1);
 
-            try {
-                validateWorkDoneController.validateTests(testsToValidate);
-            } catch (Exception e) {
-                e.printStackTrace();
+            System.out.println("Confirm the code of the tests to be validated, please.");
+            for (String code : testsToValidate){
+                System.out.println(code);
             }
 
-            System.out.print("Tests validated successfully!\n");
+            System.out.println("\n1-> Confirm\n2-> Cancel");
+            int confirm = ler.nextInt();
+
+            if(confirm==1) {
+                try {
+                    validateWorkDoneController.validateTests(testsToValidate);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                System.out.print("Tests validated successfully!\n");
+            }
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.print("\nThere are no tests to be validated.\n");
         }
