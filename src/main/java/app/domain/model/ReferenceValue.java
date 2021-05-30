@@ -23,4 +23,13 @@ public class ReferenceValue {
     public Double getMaximum() {
         return maximum;
     }
+
+    @Override
+    public String toString() {
+        return "ReferenceValue{" +
+                "minimum=" + minimum +
+                ", maximum=" + maximum +
+                ", metric='" + metric + '\'' +
+                '}';
+    }
 }

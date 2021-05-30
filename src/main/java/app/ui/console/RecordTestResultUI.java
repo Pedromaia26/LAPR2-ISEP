@@ -24,6 +24,7 @@ public class RecordTestResultUI implements Runnable {
             String barcode;
 
             Test t;
+            String op;
             List<TestParameter> tParamList = new ArrayList<>();
             do {
 
@@ -51,7 +52,6 @@ public class RecordTestResultUI implements Runnable {
                 System.out.println();
 
                 String parameterCode;
-                String op;
 
                 t.getSample().remove(t.getSampleByBarcode(barcode));
 
@@ -70,7 +70,7 @@ public class RecordTestResultUI implements Runnable {
                     ler.nextLine();
                     metric = ler.nextLine();
                     try {
-                        t.addTestResult(parameterCode, resultValue, metric);
+                        t.addTestResult(barcode, parameterCode, resultValue, metric);
                     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
                     }
@@ -86,8 +86,9 @@ public class RecordTestResultUI implements Runnable {
                     }
 
                 } while (!tParamList.isEmpty());
-
-            }while (!t.getSample().isEmpty());
+                System.out.print("Do you want to analyse more samples?(Y/N)\n");
+                op = ler.nextLine();
+            }while (op.equalsIgnoreCase("Y"));
         }
 
         }

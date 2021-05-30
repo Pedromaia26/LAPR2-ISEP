@@ -70,6 +70,8 @@ public class Test {
 
     private ReferenceValue ref;
 
+    private List<String> testParameterResultList = new ArrayList<>();
+
     public Test() {
         testParameterList = new ArrayList<>();
         results = new ArrayList<>();
@@ -226,7 +228,7 @@ public class Test {
      * @return characteristics of a test.
      */
     public String toString() {
-        return "Test:" + labOrder + ", sample=" + sample;
+        return "Test:Code:" + code + labOrder + ", sample=" + sample;
     }
 
     /**
@@ -249,6 +251,27 @@ public class Test {
             }
         }
         return true;
+    }
+
+    public boolean validateTestResultString(String testResult) {
+        if (testResult == null)
+            return false;
+        return (!this.testParameterResultList.contains(testResult));
+    }
+
+    public boolean saveTestResultString(String testResult) {
+        if(testParameterResultList == null) {
+            testParameterResultList = new ArrayList<>();
+        }
+
+        if (validateTestResultString(testResult)) {
+            testParameterResultList.add(testResult);
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 
     /**
@@ -309,7 +332,7 @@ public class Test {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-    public void addTestResult(String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -317,12 +340,7 @@ public class Test {
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
-        compareValues();
-        addTestToBeReported();
-    }
-
-    public void addTestToBeReported() {
-
+        compareValues(barcode);
     }
 
     /**
@@ -330,22 +348,25 @@ public class Test {
      * and informs the user about the results.
      */
 
-    public void compareValues() {
+    public void compareValues(String barcode) {
         TestParameterResult tpr = tp.getTpr();
         Double min;
         Double max;
+        String result;
         min = tpr.getRefValue().getMinimum();
         max = tpr.getRefValue().getMaximum();
         if (tpr.getMetric().equals(this.metric)){
             if (tpr.getValue() < min || tpr.getValue() > max) {
                 System.out.printf("The result of the parameter '%s' is outside of the reference range!\n", tp.getParameter().getShortName());
+                result = barcode + "_" + tp + "_outOfRange";
             } else {
                 System.out.printf("The result of the parameter '%s' is among the reference values!\n", tp.getParameter().getShortName());
+                result = barcode + "_" + tp + "_inRange";
             }
+            saveTestResultString(result);
         }else{
             throw new IllegalArgumentException("The metric used does not correspond to the metric of the parameter!");
         }
-
     }
 
 
@@ -400,6 +421,10 @@ public class Test {
      */
     public Date getDate() {
         return date;
+    }
+
+    public List<String> getTestParameterResultList() {
+        return testParameterResultList;
     }
 
     /**

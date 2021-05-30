@@ -16,4 +16,12 @@ public class TestParameterDto {
         parameterdto = testParameter.getParameter();
         tprdto = testParameter.getTpr();
     }
+
+    @Override
+    public String toString() {
+        return "TestParameterDto{" +
+                "parameterdto=" + parameterdto +
+                ", tprdto=" + tprdto +
+                '}';
+    }
 }

@@ -22,19 +22,23 @@ public class WriteReportController {
     public WriteReportController() {
         this.tStore = App.getInstance().getCompany().getTestStore();
         testMapper = new TestMapper();
+        lTests = tStore.getTests();
     }
 
     public List<TestDTO> getTests(){
-        lTests = tStore.getTests();
         for(Test test : lTests){
             for (TestParameter testparameter : test.getTestParameter()){
-                if(testparameter.getTpr() != (null)){
+                if(testparameter.getTpr() != (null) && !lTestsToBeReported.contains(test) && test.getReport() == null){
                     lTestsToBeReported.add(test);
                 }
             }
         }
         lTestsDto = testMapper.toDto(lTestsToBeReported);
         return lTestsDto;
+    }
+
+    public boolean removeTestToBeReported(){
+        return lTestsToBeReported.remove(test);
     }
 
     public List<TestParameterDto> getResultParameters(TestDTO testDto) {

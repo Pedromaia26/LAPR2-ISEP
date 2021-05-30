@@ -30,10 +30,12 @@ public class WriteReportUI implements Runnable {
 
         lTestsDto = controller.getTests();
 
+        if(lTestsDto.isEmpty()){
+            throw new IllegalArgumentException("There are no tests to be reported.");
+        }
         System.out.println("List of tests to be reported:");
         for (TestDTO testdto: lTestsDto){
-            System.out.printf("%d - %s", lTestsDto.indexOf(testdto)+1, testdto);
-            System.out.println("---------");
+            System.out.printf("%d - %s\n", lTestsDto.indexOf(testdto)+1, testdto);
         }
         System.out.println("Select one test of the list: ");
         testop = ler.nextInt();
@@ -50,6 +52,10 @@ public class WriteReportUI implements Runnable {
             System.out.println("Introduce the diagnosis");
             String diagnosis = ler.next();
             controller.addReport(diagnosis);
+            if (controller.removeTestToBeReported())
+                System.out.print("Report created with success.\n");
+            else
+                throw new IllegalArgumentException("Report not created.");
         }
         else{
             throw new IllegalArgumentException("The selected test does not exist.");

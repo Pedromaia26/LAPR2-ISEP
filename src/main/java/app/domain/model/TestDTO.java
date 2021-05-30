@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestDTO {
@@ -19,6 +20,8 @@ public class TestDTO {
      */
     private List<Sample> sample;
 
+    private List<String> testParameterResultList = new ArrayList<>();
+
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
      *
@@ -28,6 +31,7 @@ public class TestDTO {
         this.labOrder=test.getLabOrder();
         this.sample=test.getSample();
         this.code=test.getCode();
+        this.testParameterResultList=test.getTestParameterResultList();
     }
 
     /**
@@ -43,7 +47,7 @@ public class TestDTO {
      */
     @Override
     public String toString() {
-        return "TestDTO:"+"code: " +code  +" ,"+ labOrder.toString() + ", sample=" + sample;
+        return "TestDTO:"+"code: " +code  +" ,"+ labOrder.toString() + ", sample=" + sample + ", results=" + testParameterResultList;
     }
 
     /**

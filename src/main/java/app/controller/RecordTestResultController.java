@@ -51,8 +51,8 @@ public class RecordTestResultController {
         return testParameterDto;
     }
 
-    public void addTestResult(String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        test.addTestResult(parameterCode, result, metric);
+    public void addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        test.addTestResult(barcode, parameterCode, result, metric);
     }
 
     public TestTypeStore getTestTypeStore(){ //temporary

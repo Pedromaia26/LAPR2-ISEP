@@ -11,7 +11,7 @@ public class TestParameterMapper {
     /**
      * Initializes a list of a TestParameterDto.
      */
-    private static List<TestParameterDto> lResultParametersDto = new ArrayList<>();
+    private static List<TestParameterDto> lResultParametersDto;
 
     /**
      * Transforms a list of objects of TestParameter into a list of objects of type TestParameterDTO.
@@ -20,10 +20,12 @@ public class TestParameterMapper {
      */
     public static List<TestParameterDto> toDto(List<TestParameter> testParameterList){
 
-        if (testParameterList.isEmpty()){
-            for (TestParameter testParameter : testParameterList){
-                lResultParametersDto.add(new TestParameterDto(testParameter));
-            }
+        if (testParameterList.isEmpty()) {
+            throw new ArrayIndexOutOfBoundsException("There are no test parameters.");
+        }
+        lResultParametersDto = new ArrayList<>();
+        for (TestParameter testParameter : testParameterList){
+            lResultParametersDto.add(new TestParameterDto(testParameter));
         }
 
         return lResultParametersDto;

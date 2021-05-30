@@ -40,10 +40,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/BarcodeCreateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/BarcodeCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/BarcodeCreate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ReferenceValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ReferenceValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestParameterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/RecordTestResultUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" beforeDir="false" />
     </list>
@@ -106,33 +113,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="app.domain.model" />
-    </key>
+    <key name="CopyFile.RECENT_KEYS" />
     <key name="MoveFile.RECENT_KEYS" />
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
-    <key name="CopyFile.RECENT_KEYS" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="app.domain.model" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BarcodeCreateTest.testEqualsSameClass">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -142,6 +138,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsSameClass" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsNotEqual" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsDifferentClasses" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEquals" />
-        <item itemvalue="JUnit.BarcodeCreateTest.testEqualsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -404,42 +411,11 @@
     <MESSAGE value="Finishing UI for recording test results and some changes to optimize the code." />
     <option name="LAST_COMMIT_MESSAGE" value="Finishing user interface for recording test results and some minor changes to the code." />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="100" y="100" width="1720" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1622341152855">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="100" y="100" width="1720" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622341152855" />
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1622341147418">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622341147418" />
-    <state width="1860" height="311" key="GridCell.Tab.0.bottom" timestamp="1622341432759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622341432759" />
-    <state width="1860" height="311" key="GridCell.Tab.0.center" timestamp="1622341432759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622341432759" />
-    <state width="1860" height="311" key="GridCell.Tab.0.left" timestamp="1622341432759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622341432759" />
-    <state width="1860" height="311" key="GridCell.Tab.0.right" timestamp="1622341432759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622341432759" />
-    <state x="731" y="317" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1622340830072">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="731" y="317" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622340830072" />
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
@@ -447,7 +423,8 @@
     <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
