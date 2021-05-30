@@ -101,6 +101,6 @@ public class LabOrderTest {
 
         String s=labOrder.toString();
 
-        assertEquals("LabOrder: TestTypeCode= 12345, TestTypeCollectionMethod= asd, TestTypeDescription= asd, Parameters= [Short Name: aa; Code: 01981; Description: blood; Parameter Category: Name: hemogram; Code: 09090]",s);
+        assertEquals("TestTypeCode= 12345, TestTypeDescription= asd, Parameters= [Short Name: aa; Code: 01981; Description: blood; Parameter Category: Name: hemogram; Code: 09090]",s);
     }
 }
