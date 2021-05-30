@@ -1,0 +1,184 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+package "Domain" {
+class TestType
+class ReferenceValue
+class TestParameterResult
+class TestParameter
+class Parameter
+class Test
+class Company
+class TestStore
+class ExternalModuleAPI1
+class ExternalModuleAPI2
+class ExternalModuleAPI3
+class ExternalModuleAdapter1
+class ExternalModuleAdapter2
+class ExternalModuleAdapter3
+interface ExternalModule
+}
+
+package "Controller" {
+class RecordTestResultController
+}
+
+package "UI" {
+class RecordTestResultUI
+}
+
+package "Mapper" {
+class TestParameterMapper
+class TestMapper
+}
+
+package "DTO" {
+class TestParameterDto
+class TestDTO
+}
+
+interface ExternalModule{
++ReferenceValue getReferenceValue(Parameter parameter)
+}
+
+
+class ExternalModuleAPI1{
++String usedMetric(String parameterID, Integer accessKey)
++Double getMinReferenceValue(String parameterID, Integer accessKey)
++Double getMaxReferenceValue(String parameterID, Integer accessKey)
+}
+
+class ExternalModuleAPI2{
++String getMetricsFor(String parameterID)
++EMRefValue getReferenceFor(String parameterID)
++EMRefValue getReferenceFor(String parameterID, Date onDate)
+}
+
+class ExternalModuleAPI3{
++String usedMetric(String parameterID, Integer accessKey)
++Double getMinReferenceValue(String parameterId, Integer accessKey)
++Double getMaxReferenceValue(String parameterId, Integer accessKey)
+}
+
+class ExternalModuleAdapter1{
++ReferenceValue getReferenceValue(Parameter parameter)
+}
+
+class ExternalModuleAdapter2{
++ReferenceValue getReferenceValue(Parameter parameter)
+}
+
+class ExternalModuleAdapter3{
++ReferenceValue getReferenceValue(Parameter parameter)
+}
+
+class TestParameterMapper{
++toDto
+}
+
+class TestParameterDto{
+-Parameter parameterdto
+-TestParameterResult tprdto
+}
+
+class TestType{
++getApi()
+}
+
+class TestDTO{
+-LabOrder labOrder
+-String code
+-List<Sample> sample
+-List<String>testParameterResultList
+
+}
+class ReferenceValue{
+-double minimum
+-double maximum
+-String metric
+}
+class TestParameterResult{
+  -ReferenceValue refValue
+  -double value
+  -String metric
+  +TestParameterResult(value, metric, refValue)
+}
+class TestParameter{
+  +getParameter()
+  +addResult(Double result, String metric, ReferenceValue ref)
+}
+
+class Parameter{
+-String code
+-String shortName
+-String description
+-ParameterCategory parameterCategory
+}
+
+class Test {
+  -Double testCode
+  -String nhsCode
+  +addTestParameterResult(parameterCode, result, metric)
+  +validateTestResult(testParameterResult)
+  +addTestResult(testParameterResult)
+
+}
+
+
+class TestStore{
+   +getTestByBarcode()
+   +getTests()
+}
+
+class Company {
+  -String designation
+  +getTestStore()
+
+}
+
+
+class RecordTestResultController {
+    +getTestListStore()
+    +getTestParameters()
+    +addTestParameterResult(parameterCode, result, metric)
+    +saveTestParameterResult(testParameterResult)
+}
+
+
+class RecordTestResultUI {
+
+}
+
+class TestMapper{
++toDto()
+}
+
+
+RecordTestResultUI ..> RecordTestResultController
+RecordTestResultController ..> TestStore
+RecordTestResultController ..> Company
+Company "1" --> "1" TestStore: uses
+TestStore "1" --> "1..*" Test: conducts
+RecordTestResultController ..> TestMapper
+TestMapper ..> TestStore
+Test "1" --> "1..*" TestParameter: requests analysis of
+TestParameter "*" --> "1" Parameter: refers to
+TestParameter "1" --> "1" TestParameterResult: contains
+TestParameterResult "1" --> "1" ReferenceValue: records
+ExternalModuleAdapter1 ..|> ExternalModule
+ExternalModuleAdapter2 ..|> ExternalModule
+ExternalModuleAdapter3 ..|> ExternalModule
+Test "1" --> "*" TestType: is of
+TestType "*" --> "1" ExternalModule: makes use of
+RecordTestResultController  ..>  Test
+RecordTestResultController ...> TestParameterMapper
+ExternalModuleAdapter1 --> ExternalModuleAPI1
+ExternalModuleAdapter2 --> ExternalModuleAPI2
+ExternalModuleAdapter3 --> ExternalModuleAPI3
+TestMapper ..> TestDTO
+TestParameterMapper ..> TestParameterDto
+TestDTO ..> Test
+TestParameterMapper ..> Test
+
+@enduml
