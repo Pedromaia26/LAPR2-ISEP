@@ -33,11 +33,11 @@ public class WriteReportUI implements Runnable {
         if(lTestsDto.isEmpty()){
             throw new IllegalArgumentException("There are no tests to be reported.");
         }
-        System.out.println("List of tests to be reported:");
+        System.out.print("List of tests to be reported:%n");
         for (TestDTO testdto: lTestsDto){
-            System.out.printf("%d - %s\n", lTestsDto.indexOf(testdto)+1, testdto);
+            System.out.printf("%d - %s%n", lTestsDto.indexOf(testdto)+1, testdto);
         }
-        System.out.print("Select one test of the list: \n");
+        System.out.print("Select one test of the list: %n");
         testop = ler.nextInt();
         if (testop <= lTestsDto.size() && testop >= 1){
             testDto = lTestsDto.get(testop-1);
@@ -49,12 +49,12 @@ public class WriteReportUI implements Runnable {
                 System.out.println(testParameter);
                 System.out.println("---------");
             }
-            System.out.print("Introduce the diagnosis\n");
+            System.out.print("Introduce the diagnosis%n");
             String diagnosis = ler.next();
             controller.addReport(diagnosis);
 
             if (controller.removeTestToBeReported())
-                System.out.print("Report created with success.\n");
+                System.out.print("Report created with success.%n");
             else
                 throw new IllegalArgumentException("Report not created.");
         }
