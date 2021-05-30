@@ -316,6 +316,7 @@ public class Test {
      */
     public void addReport(String diagnosisText) {
         this.report = new Report(diagnosisText);
+
     }
 
     /**

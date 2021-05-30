@@ -49,7 +49,14 @@ public class WriteReportController {
         return lResultParameterDto;
     }
 
+    public List<Test> getTest(){
+        return lTests;
+    }
+
     public void addReport(String diagnosisText) {
         test.addReport(diagnosisText);
+
     }
+
+
 }

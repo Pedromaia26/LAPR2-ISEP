@@ -52,6 +52,7 @@ public class WriteReportUI implements Runnable {
             System.out.print("Introduce the diagnosis\n");
             String diagnosis = ler.next();
             controller.addReport(diagnosis);
+
             if (controller.removeTestToBeReported())
                 System.out.print("Report created with success.\n");
             else
