@@ -203,27 +203,45 @@ public class Client {
     public String getPassword() {
         return password;
     }
-
+    /**
+     * Returns the ccn of a client.
+     * @return ccn of a client.
+     */
     public long getCcn() {
         return ccn;
     }
-
+    /**
+     * Returns the nhs of a client.
+     * @return nhs of a client.
+     */
     public long getNhs() {
         return nhs;
     }
-
+    /**
+     * Returns the date of birth of a client.
+     * @return birth date of a client.
+     */
     public String getBirth() {
         return birth;
     }
-
+    /**
+     * Returns the sex of a client.
+     * @return sex of a client.
+     */
     public String getSex() {
         return sex;
     }
-
+    /**
+     * Returns the tin number of a client.
+     * @return tin number of a client.
+     */
     public long getTif() {
         return tif;
     }
-
+    /**
+     * Returns the phone number of a client.
+     * @return phone number of a client.
+     */
     public long getPhoneNumber() {
         return phoneNumber;
     }

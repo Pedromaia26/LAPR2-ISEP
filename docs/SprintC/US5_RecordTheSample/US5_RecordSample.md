@@ -95,7 +95,7 @@ n/a
 | 		         | ... instantiating a new Sample?                                 | Test                          | **Creator (R1)** and **HC+LC**: Applying the Creator (R1) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the test class                    |
 |        		 | ... validating all data (local validation)?                     | Sample                        | IE: owns its data.                                                                                                                                                                                     |
 |        		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
-|                | ... adapting the interface                                      | BarcodeAdapter                | **Protected variations** Convert the interface of BarcodeCreate into ApiBarcode                                                                                                                       |
+|                | ... adapting the interface                                      | BarcodeAdapter                | **Protected variations** Upgrade the adaptability of the system to new APIs with the same funcionalities                                                                                               |
 | Step 6  		 |                                                                 |                               |                                                                                                                                                                                                        |
 | Step 7  		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
 | Step 8  		 | ... informing operation success?                                | RecordSampleUI                | IE: is responsible for user interactions.                                                                                                                                                              |
@@ -131,22 +131,98 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests 
 
-**Test 1:** Check that it is not possible to create an instance of the Task class with null values. 
+**Test 1:** Confirm if the barcode is correct 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Task instance = new Task(null, null, null, null, null, null, null);
-	}
+	@Test
+        public void getBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    
+            Company c= new Company("ManyLabs");
+            Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+    
+            ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+    
+            Parameter p = new Parameter("01981", "aa", "blood", pc);
+            List<Parameter> param = new ArrayList<>();
+    
+            param.add(p);
+    
+            ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+            ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+            c.getParameterCategoryStore().addToList(pc1);
+            c.getParameterCategoryStore().addToList(pc2);
+    
+            List<ParameterCategory> listPC = new ArrayList<>();
+            ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+    
+            listPC.add(pca);
+            TestType testesss = new TestType("asd","asd","12345",listPC);
+    
+            c.getTestTypeStore().addToList(testesss);
+    
+            LabOrder labOrder= new LabOrder(testesss,param);
+    
+            c.getLabOrderStore().addToList(labOrder);
+    
+            app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
+    
+    
+            c.getTestStore().addToList(nteste);
+    
+            Sample s = new Sample(c);
+    
+            nteste.addSample(s);
+    
+            List<app.domain.model.Test> samples = c.getTestStore().getTests();
+    
+            assertEquals("00000000001",s.getBarcode().getBarcodeNumber());
+        }
 	
 
-**Test 2:** Check that it is not possible to create an instance of the Task class with a reference containing less than five chars - AC2. 
+**Test 2:** Check if sample equals to null 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureReferenceMeetsAC2() {
-		Category cat = new Category(10, "Category 10");
-		
-		Task instance = new Task("Ab1", "Task Description", "Informal Data", "Technical Data", 3, 3780, cat);
-	}
+	@Test
+        public void testEqualsNull() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+            Company c= new Company("ManyLabs");
+            Company c2= new Company("ManyLabs2");
+            Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+    
+            ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+    
+            Parameter p = new Parameter("01981", "aa", "blood", pc);
+            List<Parameter> param = new ArrayList<>();
+    
+            param.add(p);
+    
+            ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+            ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+            c.getParameterCategoryStore().addToList(pc1);
+            c.getParameterCategoryStore().addToList(pc2);
+    
+            List<ParameterCategory> listPC = new ArrayList<>();
+            ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+    
+            listPC.add(pca);
+            TestType testesss = new TestType("asd","asd","12345",listPC);
+    
+            c.getTestTypeStore().addToList(testesss);
+    
+            LabOrder labOrder= new LabOrder(testesss,param);
+    
+            c.getLabOrderStore().addToList(labOrder);
+    
+            app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
+    
+    
+            c.getTestStore().addToList(nteste);
+    
+    
+            Sample s = new Sample(c);
+    
+            Sample s2 =null;
+    
+            assertNotEquals(s,s2);
+    
+        }
 
 
 *It is also recommended to organize this content by subsections.* 
@@ -154,34 +230,23 @@ Other software classes (i.e. Pure Fabrication) identified:
 # 5. Construction (Implementation)
 
 
-## Class CreateTaskController 
+## Class RecordSampleController 
 
-		public boolean createTask(String ref, String designation, String informalDesc, 
-			String technicalDesc, Integer duration, Double cost, Integer catId)() {
-		
-			Category cat = this.platform.getCategoryById(catId);
-			
-			Organization org;
-			// ... (omitted)
-			
-			this.task = org.createTask(ref, designation, informalDesc, technicalDesc, duration, cost, cat);
-			
-			return (this.task != null);
-		}
+		public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
+                this.test=sampleMapper.toModel(dto,testStore);
+                this.samp = this.test.RecordNewSample(company);
+        
+               return this.test.validateSample(samp,company );
+        
+            }
 
 
-## Class Organization
+## Class Test
 
 
-		public Task createTask(String ref, String designation, String informalDesc, 
-			String technicalDesc, Integer duration, Double cost, Category cat)() {
-		
-	
-			Task task = new Task(ref, designation, informalDesc, technicalDesc, duration, cost, cat);
-			if (this.validateTask(task))
-				return task;
-			return null;
-		}
+		public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+                return new Sample(c);
+            }
 
 
 
