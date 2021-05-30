@@ -6,16 +6,16 @@ autonumber
 activate Adm
 Adm -> System: starts a new test to be performed to a client
 activate System
-System --> Adm: request data(code, nhsCode, testType)
+System --> Adm: request data(nhsCode, tinNumber, labOrder)
 deactivate System
 Adm -> System: types the requested data
 activate System
-
+System --> Adm: shows a list of test types and clients registered and requests to select one of each
+Adm -> System: selects a test type from the code and a client from the Tax Identification Number
 loop
-System --> Adm: shows list of the parameters to be analised in accordance with the test type
-Adm -> System: select parameter
+System --> Adm: shows a list of parameters registered and requests to select one of them
+Adm -> System: selects a parameter from the code
 end
-
 System --> Adm: shows the data and request confirmation
 deactivate System
 Adm -> System: confirms data
