@@ -42,33 +42,7 @@
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/ValidateWorkDoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/ValidateWorkDoneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/WriteReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/WriteReportUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/LabOrderDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/DevTeamUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/DevTeamUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,18 +156,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BarcodeCreateTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.domain.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.BarcodeCreateTest" />
-      <option name="METHOD_NAME" value="testEquals" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,22 +196,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BarcodeCreateTest.testEqualsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.domain.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.BarcodeCreateTest" />
-      <option name="METHOD_NAME" value="testEqualsNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BarcodeCreateTest.testEqualsSameClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
@@ -265,10 +215,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in Sem2App" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsSameClass" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsNotEqual" />
         <item itemvalue="JUnit.BarcodeCreateTest.testEqualsDifferentClasses" />
-        <item itemvalue="JUnit.BarcodeCreateTest.testEquals" />
       </list>
     </recent_temporary>
   </component>
@@ -445,22 +395,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622359043770" />
-    <state width="1860" height="311" key="GridCell.Tab.0.bottom" timestamp="1622360685417">
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom" timestamp="1622364451054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622360685417" />
-    <state width="1860" height="311" key="GridCell.Tab.0.center" timestamp="1622360685416">
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622364451054" />
+    <state width="1877" height="314" key="GridCell.Tab.0.center" timestamp="1622364451054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622360685416" />
-    <state width="1860" height="311" key="GridCell.Tab.0.left" timestamp="1622360685416">
+    <state width="1877" height="314" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622364451054" />
+    <state width="1877" height="314" key="GridCell.Tab.0.left" timestamp="1622364451054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622360685416" />
-    <state width="1860" height="311" key="GridCell.Tab.0.right" timestamp="1622360685416">
+    <state width="1877" height="314" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622364451054" />
+    <state width="1877" height="314" key="GridCell.Tab.0.right" timestamp="1622364451054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="311" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622360685416" />
+    <state width="1877" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622364451054" />
+    <state x="781" y="240" key="RollbackChangesDialog" timestamp="1622362989661">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="781" y="240" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622362989661" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
