@@ -40,7 +40,7 @@ public class ClientMapper{
      */
     public List<ClientDTO> toDto(List<Client> listClient) {
         if(listClient.isEmpty()) {
-            throw new ArrayIndexOutOfBoundsException("There are no test types.");
+            throw new ArrayIndexOutOfBoundsException("There are no clients.");
         }
         listClientDto = new ArrayList<>();
         for (Client client : listClient) {

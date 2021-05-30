@@ -42,11 +42,10 @@
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Adding unit tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/ClientMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/ClientMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/ClientMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +122,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -157,15 +156,7 @@
       </method>
     </configuration>
     <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" />
-    <configuration name="BarcodeCreateTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LabOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -174,13 +165,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestParameterTest" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.ClientMapperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LabOrderTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
         <pattern>
@@ -189,63 +180,33 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.LabOrderTest" />
-      <option name="METHOD_NAME" value="testToString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.domain.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestMapperTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestParameterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTypeMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.domain.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.domain.model" />
-      <option name="MAIN_CLASS_NAME" value="app.domain.model.LabOrderTest" />
-      <option name="METHOD_NAME" value="testToString" />
+      <option name="MAIN_CLASS_NAME" value="app.domain.model.TestTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="app.domain.model in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <option name="TEST_OBJECT" value="class" />
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.domain.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.domain.model" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTest" />
+        <item itemvalue="JUnit.app.domain.model in Sem2App" />
+        <item itemvalue="JUnit.ClientMapperTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Sem2App" />
-        <item itemvalue="JUnit.TestMapperTest" />
-        <item itemvalue="JUnit.TestTypeMapperTest" />
-        <item itemvalue="JUnit.app.domain.model in Sem2App" />
       </list>
     </recent_temporary>
   </component>
@@ -433,36 +394,6 @@
     <MESSAGE value="Adding unit tests." />
     <option name="LAST_COMMIT_MESSAGE" value="Adding unit tests." />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1622386279105">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622386279105" />
-    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1622377071199">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622377071199" />
-    <state width="1860" height="331" key="GridCell.Tab.0.bottom" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.center" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.left" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.right" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state x="781" y="240" key="RollbackChangesDialog" timestamp="1622362989661">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="781" y="240" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622362989661" />
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
@@ -477,7 +408,7 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Main_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622393785975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622392111367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622395113037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
