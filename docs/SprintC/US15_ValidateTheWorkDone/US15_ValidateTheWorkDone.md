@@ -132,7 +132,8 @@
 |       		 |	... transfer the domain objects in DTO? | TestDtoDate  | DTO: The ValidateWorkDoneUI can't have access to the tests |
 | Step 3  		 |							 |             |                              |              
 | Step 4  		 |	... showing the information to be confirmed | ValidateWorkDoneUI | IE: knows what the user selected.| 
-| Step 5 		 |	... set validation date? | Test | IE: owns its data.| 
+| Step 5 		 |	... set validation date?| Test | IE: owns its data.| 
+|       		 |	... notify client?      | Client   | IE: owns personal information of the client.                       |   
 | Step 6 		 |	... informing operation success?| ValidateWorkDoneUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
