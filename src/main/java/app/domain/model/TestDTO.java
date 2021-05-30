@@ -20,7 +20,7 @@ public class TestDTO {
      */
     private List<Sample> sample;
 
-    private List<String> testParameterResultList = new ArrayList<>();
+    private List<String> testParameterResultList;
 
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
@@ -33,6 +33,8 @@ public class TestDTO {
         this.code=test.getCode();
         this.testParameterResultList=test.getTestParameterResultList();
     }
+
+
 
     /**
      * Returns the code of the test.
