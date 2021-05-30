@@ -27,4 +27,12 @@ public class BarcodeCreate {
         BarcodeCreate sample = (BarcodeCreate) o;
         return Objects.equals(barcode, sample.barcode) && Objects.equals(barcodeNumber, sample.barcodeNumber);
     }
+
+    @Override
+    public String toString() {
+        return "BarcodeCreate{" +
+                "barcode=" + barcode +
+                ", barcodeNumber='" + barcodeNumber + '\'' +
+                '}';
+    }
 }
