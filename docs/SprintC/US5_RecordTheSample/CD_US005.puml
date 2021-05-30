@@ -1,5 +1,25 @@
 @startuml
+package "UI" {
+  Class RecordSampleUI
+}
+package "Controllers" {
+ Class RecordSampleController
+}
+package "Domain" {
+ Class Company
+Class Sample
+Class TestMapper
+Class SampleDTO
+Class SampleMapper
+Class TestStore
+Class Test
+Class TestDTO
+Class LabOrder
 Interface ApiBarcode
+Class BarcodeAdapter
+Class BarcodeCreate
+}
+
 
 RecordSampleUI ..> RecordSampleController
 RecordSampleController..>Company
@@ -8,6 +28,11 @@ RecordSampleController..>TestMapper
 RecordSampleController..>SampleDTO
 RecordSampleController..>SampleMapper
 RecordSampleController..>TestStore
+
+
+
+
+
 
 
 

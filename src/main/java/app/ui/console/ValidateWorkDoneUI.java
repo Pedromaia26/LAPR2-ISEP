@@ -17,7 +17,8 @@ public class ValidateWorkDoneUI implements Runnable {
         ValidateWorkDoneController validateWorkDoneController = new ValidateWorkDoneController();
 
         try {
-            for (TestDtoDate test : validateWorkDoneController.getTests()) {
+            List<TestDtoDate> testsDto = validateWorkDoneController.getTests();
+            for (TestDtoDate test : testsDto) {
                 System.out.println(test);
             }
 
@@ -26,7 +27,7 @@ public class ValidateWorkDoneUI implements Runnable {
             do {
                 System.out.print("Insert the code of the test to validate, please.\n");
                 testsToValidate.add(ler.next());
-                if (validateWorkDoneController.getTests().size()>1){
+                if (testsDto.size()>1){
                     System.out.print("Do you want to select another test to validate?\n1-> Yes\n2-> No\n");
                     optn = ler.nextInt();
                 }else {
@@ -35,13 +36,23 @@ public class ValidateWorkDoneUI implements Runnable {
 
             } while (optn == 1);
 
-            try {
-                validateWorkDoneController.validateTests(testsToValidate);
-            } catch (Exception e) {
-                e.printStackTrace();
+            System.out.println("Confirm the code of the tests to be validated, please.");
+            for (String code : testsToValidate){
+                System.out.println(code);
             }
 
-            System.out.print("Tests validated successfully!\n");
+            System.out.println("\n1-> Confirm\n2-> Cancel");
+            int confirm = ler.nextInt();
+
+            if(confirm==1) {
+                try {
+                    validateWorkDoneController.validateTests(testsToValidate);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                System.out.print("Tests validated successfully!\n");
+            }
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.print("\nThere are no tests to be validated.\n");
         }

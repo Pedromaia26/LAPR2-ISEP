@@ -1,73 +1,135 @@
 @startuml
 actor Receptionist as Adm
-participant ":RegistTest UI" as System
-participant ":RegistTestCrontroller" as RTC
+participant ":TestUI" as UI
+participant ":RegistTestController" as TTC
 participant ":Company" as ML
-participant "store\n:TestType" as tt
-participant ":listTTMapper" as ltc
-participant "store\n:storeTest" as test
-
+participant "ttStore\n:TestTypeStore" as TTS
+participant ":listTestTypeMapper" as MAP1
+participant "cStore\n:ClientStore" as CS
+participant ":listClientMapper" as MAP2
+participant "pStore\n:ParameterStore" as PS
+participant ":listParameterMapper" as MAP3
+participant ":lStore\n:LabOrderStore" as LS
+participant ":LabOrder" as LAB
+participant "tStore\n:TestStore" as TS
+participant "t\n:Test" as T
 autonumber
+
+
 activate Adm
-Adm -> System: starts a new test to be performed to a client
-activate System
-System --> Adm: request data(code, nhsCode, testType)
-deactivate System
+Adm -> UI: starts a new test to be performed to a client
+activate UI
+UI --> Adm: request data(nhsCode)
+deactivate UI
 
-Adm -> System: types requested data
-activate System
-System-->RTC: m=getTestType()
-activate RTC
-RTC-->ML: m=getTestType()
+Adm -> UI: types requested data
+activate UI
+UI->TTC: listTestTypeDto = getTestType()
+activate TTC
+TTC->ML: TestTypeStore = getTestTypeStore()
 activate ML
-create "listTT :List<TestType>" as listtt
-ML --> listtt: create()
-ML --> RTC: listTT
 deactivate ML
-activate ltc
-RTC --> ltc: toDTO(listTT)
-create "listTTDto\n:List<TestTypeDto" as ltcdt
-ltc --> ltcdt: create()
-ltc --> RTC: listTTDto
-RTC --> System: listTTDto
-deactivate ltc
-deactivate RTC
-deactivate System
+TTC -> TTS: tt = getTestType()
+activate TTS
+deactivate TTS
+TTC -> MAP1: listTestTypeDto = toDTO(tt)
+activate MAP1
+deactivate MAP1
+
+deactivate TTC
+UI --> Adm: shows a list of test types registered and requests to select one of them
+deactivate UI
+
+Adm -> UI: selects a test type from the code
+activate UI
+UI->TTC: listClientDto = getClient()
+activate TTC
+TTC->ML: TestClient = getClientStore()
+activate ML
+deactivate ML
+TTC -> CS: c = getClient()
+activate CS
+deactivate CS
+TTC -> MAP2: listClientDto = toDTO(tt)
+activate MAP2
+deactivate MAP2
+
+deactivate TTC
+UI --> Adm: shows a list of test types registered and requests to select one of them
+deactivate UI
 
 
-loop
-System --> Adm: shows list of the parameters to be analised in accordance with the test type
-Adm --> System: select parameter
-activate System
 
-System --> RTC: createTest(code, nhsCode, testType)
-activate RTC
-RTC --> tt: test=getTestTypeByCode(code)
-end
-activate tt
-deactivate tt
-RTC --> tt: ct=createTest(code, nhsCode, testType)
-activate tt
-create "ct: \nTest" as CT
-tt --> CT: create(code, nhsCode, testType)
-deactivate tt
-RTC --> tt: validateTest(ct)
-activate tt
-deactivate tt
-System --> Adm: shows data and requests a confirmation
-deactivate RTC
-deactivate System
-Adm --> System: confirms all data
-activate System
-System --> RTC: saveTest()
-activate RTC
-RTC --> test: saveTest(ct)
-activate test
-test --> test: validateTest(ct)
-test --> test: addTest(ct)
-deactivate RTC
-System --> Adm: informs operation success
-deactivate test
-deactivate System
-deactivate Adm
+Adm -> UI: selects a Client from the Tax Identification Number
+activate UI
+UI->TTC: listParameterDto = getParameter()
+activate TTC
+TTC->ML: ParameterStore = getParameterStore()
+activate ML
+deactivate ML
+TTC -> PS: par = getParameter()
+activate PS
+deactivate PS
+TTC -> MAP3: listParameterDto = toDTO(par)
+activate MAP3
+deactivate MAP3
+
+deactivate TTC
+UI --> Adm: shows a list of parameters registered and requests to select one of them
+deactivate UI
+
+Adm -> UI: selects a parameter from the code
+activate UI
+UI -> TTC: createTest(tinNumber, nhsCode, labOrder)
+activate TTC
+TTC -> TTS: tt = getTestTypeByCode(testType)
+activate TTS
+deactivate TTS
+TTC -> CS: c = getClientByTinNumber(tinNumber)
+activate CS
+deactivate CS
+TTC -> PS: par = getParameterCategoryByCode(pars)
+activate PS
+deactivate PS
+TTC -> ML: lStore = getLabOrderStore()
+activate ML
+deactivate ML
+TTC -> LS: lab = createLabOrder(tt,par)
+activate LS
+create "labOrder\n : LabOrder" as LC
+LS -> LC: create (tt,par)
+deactivate LS
+
+TTC -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+TTC -> TS: t = createTest(tinNumber, nhsCode, labOrder)
+activate TS
+TS --> T**: create (tinNumber, nhsCode, labOrder)
+deactivate TS
+TTC -> TS: validateTest(t)
+activate TS
+deactivate TS
+deactivate TTC
+UI --> Adm: shows all data and requests a confirmation
+deactivate ML
+deactivate UI
+
+
+Adm -> UI: confirms all data
+activate UI
+UI -> TTC: saveTest()
+activate TTC
+TTC -> TS: saveTest(tt)
+activate TS
+TS -> TS: validateTest(tt)
+activate TS
+deactivate TS
+TS -> TS: addTest(tt)
+activate TS
+deactivate TS
+deactivate TTC
+deactivate TS
+UI --> Adm: informs operation success
+deactivate UI
 @enduml

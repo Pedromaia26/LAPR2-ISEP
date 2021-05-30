@@ -170,22 +170,60 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests 
 
-**Test 1:** Check that it is not possible to create an instance of the Task class with null values. 
+**Test 1:** Check if the TestDtoDate have the same dates that Test. 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Task instance = new Task(null, null, null, null, null, null, null);
-	}
+	@Test
+    public void testToString() {
+        Date registrationDate = new Date();
+        Date analysisDate = new Date();
+        Date diagnosisDate = new Date();
+
+        TestDtoDate test = new TestDtoDate("000000000001",registrationDate, analysisDate, diagnosisDate);
+        String expect = String.format("Code: 000000000001 %nRegistration Date: %s %nAnalysisDate: %s %nDiagnosis Date: %s", registrationDate, analysisDate, diagnosisDate);
+        String actual = test.toString();
+
+        Assert.assertEquals(expect, actual);
+    }
 	
 
-**Test 2:** Check that it is not possible to create an instance of the Task class with a reference containing less than five chars - AC2. 
+**Test 2:** Check if the validation date are recorded with success. 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureReferenceMeetsAC2() {
-		Category cat = new Category(10, "Category 10");
-		
-		Task instance = new Task("Ab1", "Task Description", "Informal Data", "Technical Data", 3, 3780, cat);
-	}
+	@Test
+    public void testValidateTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+
+        test.validateTest();
+        Date expect = test.getValidationDate();
+
+        Date actual = test.getValidationDate();
+
+        Assert.assertEquals(expect,actual);
+    }
 
 
 *It is also recommended to organize this content by subsections.* 
@@ -193,34 +231,23 @@ Other software classes (i.e. Pure Fabrication) identified:
 # 5. Construction (Implementation)
 
 
-## Class CreateTaskController 
+## Class ValidateWorkDoneController 
 
-		public boolean createTask(String ref, String designation, String informalDesc, 
-			String technicalDesc, Integer duration, Double cost, Integer catId)() {
-		
-			Category cat = this.platform.getCategoryById(catId);
-			
-			Organization org;
-			// ... (omitted)
-			
-			this.task = org.createTask(ref, designation, informalDesc, technicalDesc, duration, cost, cat);
-			
-			return (this.task != null);
-		}
+		public void validateTests(List<String> codes) throws IOException {
+        for (String code: codes){
+            company.getTestStore().validateWorkDone(code);
+        }
+    }
 
 
-## Class Organization
+## Class Test
 
 
-		public Task createTask(String ref, String designation, String informalDesc, 
-			String technicalDesc, Integer duration, Double cost, Category cat)() {
-		
-	
-			Task task = new Task(ref, designation, informalDesc, technicalDesc, duration, cost, cat);
-			if (this.validateTask(task))
-				return task;
-			return null;
-		}
+		 public void validateTest() throws IOException {
+
+           validationDate = new Date();
+           client.notifyClient();
+        }
 
 
 

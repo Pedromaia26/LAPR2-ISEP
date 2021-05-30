@@ -8,15 +8,11 @@ Adm -> System: ask to validate the work done by the clinical \nchemistry technol
 activate System
 System --> Adm: shows the tests ready to be validated
 deactivate System
-Adm -> System: select the test to validate
+Adm -> System: select tests to validate
 activate System
-System --> Adm: shows the dates
+System --> Adm: shows tests selected and request confirmation
 deactivate System
-Adm -> System: validate
-activate System
-System --> Adm: request confirmation
-deactivate System
-Adm -> System: confirms
+Adm -> System: confirms data
 activate System
 System --> Adm: informs operations success
 deactivate System

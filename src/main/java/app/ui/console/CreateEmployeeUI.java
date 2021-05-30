@@ -51,35 +51,41 @@ public class CreateEmployeeUI  implements Runnable{
                 }
             }
         }
-        if (exists){
-            System.out.print("Name: ");
-            String name = ler.nextLine();
-            System.out.print("Address: ");
-            String address = ler.nextLine();
-            System.out.print("Phone number: ");
-            long phoneNumber = ler.nextLong();
-            ler.nextLine();
-            System.out.print("Email: ");
-            String m = ler.nextLine();
-            Email email = new Email(m);
-            System.out.print("SOC code: ");
-            int socCode = ler.nextInt();
-            ler.nextLine();
-            if (role.equalsIgnoreCase("specialist doctor")){
-                System.out.print("Doctor Index Number: ");
-                docIndexNumber = ler.nextInt();
-                if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
-                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
-                } else System.out.print("Employee created without success.\n");
-            }
-            else{
-                if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
-                    ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
-                } else System.out.print("Employee created without success.\n");
+
+        if (exists) {
+            try {
+
+
+                System.out.print("Name: ");
+                String name = ler.nextLine();
+                System.out.print("Address: ");
+                String address = ler.nextLine();
+                System.out.print("Phone number: ");
+                long phoneNumber = ler.nextLong();
+                ler.nextLine();
+                System.out.print("Email: ");
+                String m = ler.nextLine();
+                Email email = new Email(m);
+                System.out.print("SOC code: ");
+                int socCode = ler.nextInt();
+                ler.nextLine();
+                if (role.equalsIgnoreCase("specialist doctor")) {
+                    System.out.print("Doctor Index Number: ");
+                    docIndexNumber = ler.nextInt();
+                    if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
+                        ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
+                    } else System.out.print("Employee created without success.\n");
+                } else {
+                    if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
+                        ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
+                    } else System.out.print("Employee created without success.\n");
+                }
+            }catch (Exception e){
+                System.out.println("Invalid data");
             }
         }
         else{
-            throw new IllegalArgumentException("The selected role does not exist.");
+            System.out.println("The selected role does not exist.");
         }
     }
 

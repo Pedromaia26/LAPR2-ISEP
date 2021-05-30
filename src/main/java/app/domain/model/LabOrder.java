@@ -54,7 +54,7 @@ public class LabOrder {
      */
     @Override
     public String toString() {
-        return String.format("LabOrder: TestTypeCode= %s, TestTypeCollectionMethod= %s, TestTypeDescription= %s, Parameters= %s", testType.getCode(),testType.getCollectingMethod(),testType.getDescription(),parameters);
+        return String.format("TestTypeCode= %s, TestTypeDescription= %s, Parameters= %s", testType.getCode(),testType.getDescription(),parameters);
     }
 
 

@@ -39,27 +39,29 @@ public class RegistClientUI implements Runnable {
         System.out.print("Sex(if you dont want to write it, leave it blank): ");
         String sex = ler.nextLine();
 
-
-        if(cliente.createNewClient(new ClientDTO(ccn,nhs,birth,sex,tif,email,name,phoneNumber))){
-            System.out.print("--------------------------\n");
-            System.out.print("Please confirm the data:\n");
-            System.out.printf("CCN: %d%nNHS: %d%nBirth date: %s%nSex: %s%nTIN: %d%nEmail: %s%nName: %s%nPhone Number: %s%n", ccn, nhs, birth,sex,tif,email,name,phoneNumber);
-            System.out.print("--------------------------\n");
-            System.out.print(" 1 --> Confirm\n");
-            System.out.print(" 2 --> Cancel\n");
-            int confirm = ler.nextInt();
-            if(confirm == 1){
-                try {
-                    if(cliente.saveClient()){
-                        System.out.print("Client registered successfully.\n");
-                    }else{
-                        System.out.print("Client register error.\n");
+        try {
+            if (cliente.createNewClient(new ClientDTO(ccn, nhs, birth, sex, tif, email, name, phoneNumber))) {
+                System.out.print("--------------------------\n");
+                System.out.print("Please confirm the data:\n");
+                System.out.printf("CCN: %d%nNHS: %d%nBirth date: %s%nSex: %s%nTIN: %d%nEmail: %s%nName: %s%nPhone Number: %s%n", ccn, nhs, birth, sex, tif, email, name, phoneNumber);
+                System.out.print("--------------------------\n");
+                System.out.print(" 1 --> Confirm\n");
+                System.out.print(" 2 --> Cancel\n");
+                int confirm = ler.nextInt();
+                if (confirm == 1) {
+                    try {
+                        if (cliente.saveClient()) {
+                            System.out.print("Client registered successfully.\n");
+                        } else {
+                            System.out.print("Client register error.\n");
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             }
+        }catch (Exception e){
+            System.out.println("Invalid data");
         }
-
     }
 }
