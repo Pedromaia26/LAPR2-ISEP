@@ -56,13 +56,15 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** The test internal code is a 12-digit sequential number.
+* **AC1:** The TIN number registered must be connected to a client.
 * **AC2:** The NHS code of the test must have 12 characters.
-
+* **AC3:** A Laboratory Order can have unlimited parameters, but only have one test type.
+* **AC4:** The Test Type should be added to the Laboratory Order inserting the Test Type code.
+* **AC5:** The Parameter(s) should be added to the Laboratory Order inserting the Parameter(s) code(s).
 
 ### 1.4. Found out Dependencies
 
-
+No dependencies.
 
 ### 1.5 Input and Output Data
 
@@ -70,16 +72,16 @@ As an receptionist of the laboratory, I want to register a test to be performed 
 **Input Data:**
 
 * Typed data:
-	* a NHS Code, 
-	* a Date of the day the test was created, 
-	* a Lab Order (which contains a type of test)
+	* a National Health Security Number, 
 	
 * Selected data:
-	* a type of test
-
+	* a Lab Order (which contains a type of test and a parameter)
+	* a Tax Identification Number (which must be connected to a Client)
 
 **Output Data:**
-
+* List of existing Types of Tests
+* List of existing Clients
+* List of existing Parameters
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
