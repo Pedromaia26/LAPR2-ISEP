@@ -26,10 +26,10 @@ public class TestUI implements Runnable{
             System.out.println(clientDTO);
         }
 
-        System.out.print("Insert the Tax Identification Number(TIN) of the client related to the test:%n");
+        System.out.print("Insert the Tax Identification Number(TIN) of the client related to the test:\n");
         long tinNumber = ler.nextLong();
         ler.nextLine();
-        System.out.print("Insert its National Health Security code:%n");
+        System.out.print("Insert its National Health Security code:\n");
         long nhsCode = ler.nextLong();
         List<TestTypeDTO> listTestTypeDto = createRegistTestController.getTestTypeDto();
 
@@ -37,7 +37,7 @@ public class TestUI implements Runnable{
             System.out.println(testTypeDTO);
         }
 
-        System.out.print("Type the Test Type Code:%n");
+        System.out.print("Type the Test Type Code:\n");
 
         String testType = ler.next();
 
@@ -51,36 +51,36 @@ public class TestUI implements Runnable{
 
         List<String> parameterCodes = new ArrayList<>();
 
-        System.out.print("Type the Parameter Code:%n");
+        System.out.print("Type the Parameter Code:\n");
 
         int a;
 
         do {
             String parameterCode = ler.next();
             parameterCodes.add(parameterCode);
-            System.out.print("Do you want to add another parameter to your Laboratory Order?:%n1 ---> Yes%n2 ---> No%n");
+            System.out.print("Do you want to add another parameter to your Laboratory Order?:\n1 ---> Yes\n2 ---> No\n");
             a = ler.nextInt();
-            if(a==1) System.out.print("Type the Parameter Code:%n");
+            if(a==1) System.out.print("Type the Parameter Code:\n");
         }while (a==1);
 
         List<Parameter> par = createRegistTestController.getParameterByCode(parameterCodes);
 
-        LabOrder labOrder = null;
+        LabOrder labOrder;
         labOrder = new LabOrder(tt,par);
 
         if (createRegistTestController.createTest(tinNumber, nhsCode, labOrder)){
-            System.out.print("--------------------------%n");
-            System.out.print("Please confirm the data:%n");
+            System.out.print("--------------------------\n");
+            System.out.print("Please confirm the data:\n");
             System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nLaboratory Order: %s%n", tinNumber, nhsCode, labOrder);
-            System.out.print("--------------------------%n");
-            System.out.print(" 1 --> Confirm%n");
-            System.out.print(" 2 --> Cancel%n");
+            System.out.print("--------------------------\n");
+            System.out.print(" 1 --> Confirm\n");
+            System.out.print(" 2 --> Cancel\n");
             int confirm = ler.nextInt();
             if(confirm == 1){
                 if(createRegistTestController.saveTest()){
-                    System.out.print("Test was created successfully.%n");
+                    System.out.print("Test was created successfully.\n");
                 }else{
-                    System.out.print("Test creation error.%n");
+                    System.out.print("Test creation error.\n");
                 }
             }
         }
