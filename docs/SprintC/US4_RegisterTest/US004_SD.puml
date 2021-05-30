@@ -88,7 +88,7 @@ deactivate TTS
 TTC -> CS: c = getClientByTinNumber(tinNumber)
 activate CS
 deactivate CS
-TTC -> PS: par = getParameterCategoryByCode(pars)
+TTC -> PS: par = getParameterByCode(pars)
 activate PS
 deactivate PS
 TTC -> ML: lStore = getLabOrderStore()
