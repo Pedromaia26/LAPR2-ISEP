@@ -159,7 +159,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 ![US15_SD](US15_SD.svg)
 
 
-![US15_SD_TestMapper_toDto_List](US15_SD_TestMapper_toDto_List.svg)
+![US15_SD_TestMapper_toDTO_List](US15_SD_TestMapper_toDTO_List.svg)
 
 ## 3.3. Class Diagram (CD)
 
