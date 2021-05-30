@@ -61,26 +61,31 @@ public class TestTypeUI implements Runnable{
 
         //createTestTypeController.getParameterCategoryStore().getParameterCategoryByCode(categories);
 
-
         try {
-            if (createTestTypeController.createTestType(description, collectingMethod, code, categories, api)){
-                System.out.print("--------------------------\n");
-                System.out.print("Please confirm the data:\n");
-                System.out.printf("Description: %s%nCollecting method: %s%nCode: %s%nCategories Code: %s%n", description, collectingMethod, code,categories);
-                System.out.print("--------------------------\n");
-                System.out.print(" 1 --> Confirm\n");
-                System.out.print(" 2 --> Cancel\n");
-                int confirm = ler.nextInt();
-                if(confirm == 1){
-                    if(createTestTypeController.saveTestType()){
-                        System.out.print("Test type created successfully.\n");
-                    }else{
-                        System.out.print("Test type creation error.\n");
+
+            try {
+                if (createTestTypeController.createTestType(description, collectingMethod, code, categories, api)){
+                    System.out.print("--------------------------\n");
+                    System.out.print("Please confirm the data:\n");
+                    System.out.printf("Description: %s%nCollecting method: %s%nCode: %s%nCategories Code: %s%n", description, collectingMethod, code,categories);
+                    System.out.print("--------------------------\n");
+                    System.out.print(" 1 --> Confirm\n");
+                    System.out.print(" 2 --> Cancel\n");
+                    int confirm = ler.nextInt();
+                    if(confirm == 1){
+                        if(createTestTypeController.saveTestType()){
+                            System.out.print("Test type created successfully.\n");
+                        }else{
+                            System.out.print("Test type creation error.\n");
+                        }
                     }
                 }
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                e.printStackTrace();
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
+        }catch (Exception e){
+            System.out.println("Invalid data");
         }
+
     }
 }

@@ -39,14 +39,12 @@ public class WriteReportUI implements Runnable {
         }
         System.out.print("Select one test of the list: \n");
         testop = ler.nextInt();
-        if (testop <= lTestsDto.size() && testop >= 1){
-            testDto = lTestsDto.get(testop-1);
-            exists = true;
-        }
-        if (exists){
+
+        try {
+            testDto = lTestsDto.get(testop - 1);
             lTestParametersDto = controller.getResultParameters(testDto);
-            for (TestParameterDto testParameter : lTestParametersDto){
-                System.out.printf(" Test Parameter : %s \n Test Parameter Result : %s\n",testParameter.getParameterdto(),testParameter.getTprdto());
+            for (TestParameterDto testParameter : lTestParametersDto) {
+                System.out.printf(" Test Parameter : %s \n Test Parameter Result : %s\n", testParameter.getParameterdto(), testParameter.getTprdto());
                 System.out.println("---------");
             }
             System.out.print("Introduce the diagnosis\n");
@@ -56,10 +54,10 @@ public class WriteReportUI implements Runnable {
             if (controller.removeTestToBeReported())
                 System.out.print("Report created with success.\n");
             else
-                throw new IllegalArgumentException("Report not created.");
-        }
-        else{
-            throw new IllegalArgumentException("The selected test does not exist.");
+                System.out.println("Report not created.");
+
+        }catch (Exception e){
+            System.out.print("The selected test does not exist.\n");
         }
         /*
         long time = createdAt.getTime();

@@ -40,37 +40,42 @@ public class LaboratoryUI implements Runnable{
 
         int a;
         String testTypeCode;
+        try {
 
-        do {
-            testTypeCode = ler.next();
-            testtypes.add(testTypeCode);
-            System.out.print("Do you want to add another type test to your Laboratory?:\n1 ---> Yes\n2 ---> No\n");
-            a = ler.nextInt();
-        }while (a==1);
 
-        List<TestType> tt = new ArrayList<>();
+            do {
+                testTypeCode = ler.next();
+                testtypes.add(testTypeCode);
+                System.out.print("Do you want to add another type test to your Laboratory?:\n1 ---> Yes\n2 ---> No\n");
+                a = ler.nextInt();
+            } while (a == 1);
 
-        for(String code : testtypes){
-            tt.add(createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(code));
-        }
+            List<TestType> tt = new ArrayList<>();
 
-        createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
-        
-        if (createRegistLaboratoryController.createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, tt)){
-            System.out.print("--------------------------\n");
-            System.out.print("Please confirm the data:\n");
-            System.out.printf("Laboratory ID: %s%nName: %s%nAddress: %s%nPhone Number: %d%nTax Identification Number: %d%nTest Type code: %s%n", laboratoryID, name, address, phoneNumber, tinNumber, testtypes);
-            System.out.print("--------------------------\n");
-            System.out.print(" 1 --> Confirm\n");
-            System.out.print(" 2 --> Cancel\n");
-            int confirm = ler.nextInt();
-            if(confirm == 1){
-                if(createRegistLaboratoryController.saveLaboratory()){
-                    System.out.print("Laboratory created successfully.\n");
-                }else{
-                    System.out.print("Laboratory creation error.\n");
+            for (String code : testtypes) {
+                tt.add(createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(code));
+            }
+
+            createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
+
+            if (createRegistLaboratoryController.createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, tt)) {
+                System.out.print("--------------------------\n");
+                System.out.print("Please confirm the data:\n");
+                System.out.printf("Laboratory ID: %s%nName: %s%nAddress: %s%nPhone Number: %d%nTax Identification Number: %d%nTest Type code: %s%n", laboratoryID, name, address, phoneNumber, tinNumber, testtypes);
+                System.out.print("--------------------------\n");
+                System.out.print(" 1 --> Confirm\n");
+                System.out.print(" 2 --> Cancel\n");
+                int confirm = ler.nextInt();
+                if (confirm == 1) {
+                    if (createRegistLaboratoryController.saveLaboratory()) {
+                        System.out.print("Laboratory created successfully.\n");
+                    } else {
+                        System.out.print("Laboratory creation error.\n");
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("Invalid data");
         }
     }
 }

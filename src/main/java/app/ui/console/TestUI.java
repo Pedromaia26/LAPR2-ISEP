@@ -67,22 +67,25 @@ public class TestUI implements Runnable{
 
         LabOrder labOrder;
         labOrder = new LabOrder(tt,par);
-
-        if (createRegistTestController.createTest(tinNumber, nhsCode, labOrder)){
-            System.out.print("--------------------------\n");
-            System.out.print("Please confirm the data:\n");
-            System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nTestType: %s%nParameters: %s%n ", tinNumber, nhsCode, labOrder.getTestType(),labOrder.getParameters());
-            System.out.print("--------------------------\n");
-            System.out.print(" 1 --> Confirm\n");
-            System.out.print(" 2 --> Cancel\n");
-            int confirm = ler.nextInt();
-            if(confirm == 1){
-                if(createRegistTestController.saveTest()){
-                    System.out.print("Test was created successfully.\n");
-                }else{
-                    System.out.print("Test creation error.\n");
+        try {
+            if (createRegistTestController.createTest(tinNumber, nhsCode, labOrder)) {
+                System.out.print("--------------------------\n");
+                System.out.print("Please confirm the data:\n");
+                System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nTestType: %s%nParameters: %s%n ", tinNumber, nhsCode, labOrder.getTestType(), labOrder.getParameters());
+                System.out.print("--------------------------\n");
+                System.out.print(" 1 --> Confirm\n");
+                System.out.print(" 2 --> Cancel\n");
+                int confirm = ler.nextInt();
+                if (confirm == 1) {
+                    if (createRegistTestController.saveTest()) {
+                        System.out.print("Test was created successfully.\n");
+                    } else {
+                        System.out.print("Test creation error.\n");
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("Invalid data");
         }
     }
 
