@@ -1,4 +1,22 @@
 @startuml
+package UI{
+    Class WriteReportUI
+}
+package Controllers{
+    Class WriteReportController
+}
+package Domain{
+    Class TestDto
+    Class TestParameterDto
+    Class Company
+    Class TestParameterMapper
+    Class TestParameter
+    Class Test
+    Class TestMapper
+    Class TestStore
+    Class TestParameterDto
+    Class Report
+}
 WriteReportUI ..> WriteReportController
 WriteReportUI ..> TestDto
 WriteReportUI ..> TestParameterDto
@@ -16,11 +34,11 @@ WriteReportController : +getResultParameters(testDto)
 WriteReportController : +createReport(diagnosisText)
 
 Company : +getTestStore()
-Company"1" --> "1"TestStore: Has
+Company"1" --> "1"TestStore: has
 
 TestStore : +getTests()
 TestStore : +getTestByCode(code)
-TestStore"1" --> "*"Test: Has
+TestStore"1" --> "*"Test: has
 
 TestMapper : +toDTO(lTests)
 TestMapper..>Test
@@ -32,8 +50,8 @@ Test : +getResultParameters()
 Test : +addReport(diagnosisText)
 Test : -report
 
-Test"1" --> "*"Report : Associated with
-Test"*" --> "1..*"TestParameter: Rates
+Test"1" --> "*"Report : associated with
+Test"1..*" --> "1..*"TestParameter: request analysis of
 
 TestParameterMapper : +toDto(lResultParameters)
 TestParameterMapper..>TestParameter
@@ -41,8 +59,6 @@ TestParameterMapper..>TestParameterDto
 
 TestParameter : -parameter
 TestParameter : -tpr
-
-TestDto..>Test
 
 Report : +create(diagnosisText)
 Report : +getData()

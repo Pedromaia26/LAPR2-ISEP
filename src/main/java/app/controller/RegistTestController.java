@@ -19,6 +19,9 @@ public class RegistTestController {
     private ParameterMapper parameterMapper;
     private ParameterStore parameterStore;
     private ClientMapper clientMapper;
+    private TestMapper testMapper;
+
+
 
     public RegistTestController() {
         this(App.getInstance().getCompany());
@@ -28,6 +31,8 @@ public class RegistTestController {
         this.testStore = App.getInstance().getCompany().getTestStore();
         this.parameterMapper = new ParameterMapper();
         this.clientMapper = new ClientMapper();
+        this.testMapper = new TestMapper();
+
     }
 
     public RegistTestController(Company company) {
@@ -38,6 +43,7 @@ public class RegistTestController {
         this.testStore = App.getInstance().getCompany().getTestStore();
         this.parameterMapper = new ParameterMapper();
         this.clientMapper = new ClientMapper();
+        this.testMapper = new TestMapper();
 
     }
 
@@ -88,6 +94,13 @@ public class RegistTestController {
 
     public boolean saveTest () {
         return this.company.getTestStore().saveTest(ts);
+    }
+
+    public List<Test> getTests(){
+        return testStore.getTests();
+    }
+    public List<TestDTO> getTestDto(){
+        return this.testMapper.toDto(getTests());
     }
 }
 

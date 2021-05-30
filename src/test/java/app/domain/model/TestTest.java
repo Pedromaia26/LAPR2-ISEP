@@ -703,4 +703,37 @@ public class TestTest {
         Assert.assertNotEquals(expected, actual);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void checkResultRules() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("IgGAN", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+
+        test.addTestParameterResult("00000000001", p.getCode(), -15d, "Index (S/C) value");
+
+    }
 }
