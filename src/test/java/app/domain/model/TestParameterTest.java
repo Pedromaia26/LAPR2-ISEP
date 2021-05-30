@@ -24,10 +24,11 @@ public class TestParameterTest {
 
     }
 
-    /*
-    @Test
-    public void addResult() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
+    @Test
+    public void getTpr() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Client cli = new Client(1234567890987654L, 1234567890, "22/10/2002", "male", 2345678909L, "aa@gmail.com", "Jonas", 91111111112L);
         Company c = new Company("Many Labs");
 
         ParameterCategory pc = new ParameterCategory("Hemogram", "90009");
@@ -47,15 +48,17 @@ public class TestParameterTest {
         TestType tt = new TestType("COVID-19", "swab", "89898", pcList);
 
         LabOrder lO =  new LabOrder(tt, pList);
-        app.domain.model.Test t = new app.domain.model.Test(c, 1234567890, 1876543210, lO);
+        app.domain.model.Test t = new app.domain.model.Test(c, cli, 123456789012L, lO);
 
-        t.addTestResult("IgGAN", 1D);
+        ReferenceValue ref = new ReferenceValue(1.0d, 1.5d, "10e9L");
 
+        TestParameter tp = new TestParameter(p);
 
+        tp.addResult(1d, "10e9L", ref);
 
-        String expected = "The parameter value is among the reference values!";
+        Assert.assertEquals("10e9L", tp.getTpr().getMetric());
 
-    } */
+    }
 
     /*@Test
     public void getTpr() throws ClassNotFoundException, InstantiationException, IllegalAccessException {

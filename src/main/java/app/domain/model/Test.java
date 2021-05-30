@@ -281,7 +281,7 @@ public class Test {
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()), samp.getBarcode().getBarcodeNumber());
 
 
-        // samp.showBarcodes(samp.getBarcode());
+        samp.showBarcodes(samp.getBarcode());
 
         return addSample(samp);
     }
