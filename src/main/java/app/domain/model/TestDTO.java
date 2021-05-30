@@ -34,12 +34,15 @@ public class TestDTO {
         this.testParameterResultList=test.getTestParameterResultList();
     }
 
+
     /**
      * Returns the code of the test.
      *
      * @return The code of the test.
      */
     public String getCode() { return code; }
+
+
 
     /**
      * Returns the textual description of a test.

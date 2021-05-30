@@ -24,6 +24,11 @@ public class ParameterDTO {
     public String getCodeDTO() {
         return code;
     }
+
+    public String getShortName() {
+        return shortName;
+    }
+
     /**
      * Returns the textual description of a ParameterDto.
      * @return characteristics of a parameterDto.

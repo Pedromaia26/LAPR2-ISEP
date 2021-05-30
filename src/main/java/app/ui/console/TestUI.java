@@ -23,7 +23,7 @@ public class TestUI implements Runnable{
 
         List<ClientDTO> clientDto = createRegistTestController.getClientDto();
         for(ClientDTO clientDTO : clientDto){
-            System.out.println(clientDTO);
+            System.out.printf("Client :%nTin: %d%nName: %s%nCCN: %d%nEmail: %s%n", clientDTO.getTifDto(),clientDTO.getNameDto(),clientDTO.getCcnDto(),clientDTO.getEmailDto());
         }
 
         System.out.print("Insert the Tax Identification Number(TIN) of the client related to the test:\n");
@@ -34,7 +34,7 @@ public class TestUI implements Runnable{
         List<TestTypeDTO> listTestTypeDto = createRegistTestController.getTestTypeDto();
 
         for(TestTypeDTO testTypeDTO : listTestTypeDto){
-            System.out.println(testTypeDTO);
+            System.out.printf("TestType: Code: %s, Description %s%n",testTypeDTO.getCode(), testTypeDTO.getDescription());
         }
 
         System.out.print("Type the Test Type Code:\n");
@@ -46,7 +46,7 @@ public class TestUI implements Runnable{
         List<ParameterDTO> listParameterDto = createRegistTestController.getParameterDto();
 
         for(ParameterDTO parameterDTO : listParameterDto){
-            System.out.println(parameterDTO);
+            System.out.printf("Parameter: Code: %s, Short Name: %s%n",parameterDTO.getCodeDTO(),parameterDTO.getShortName());
         }
 
         List<String> parameterCodes = new ArrayList<>();
@@ -71,7 +71,7 @@ public class TestUI implements Runnable{
         if (createRegistTestController.createTest(tinNumber, nhsCode, labOrder)){
             System.out.print("--------------------------\n");
             System.out.print("Please confirm the data:\n");
-            System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nLaboratory Order: %s%n", tinNumber, nhsCode, labOrder);
+            System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nTestType: %s%nParameters: %s%n ", tinNumber, nhsCode, labOrder.getTestType(),labOrder.getParameters());
             System.out.print("--------------------------\n");
             System.out.print(" 1 --> Confirm\n");
             System.out.print(" 2 --> Cancel\n");

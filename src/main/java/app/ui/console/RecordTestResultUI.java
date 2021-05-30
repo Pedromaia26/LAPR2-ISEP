@@ -31,8 +31,9 @@ public class RecordTestResultUI implements Runnable {
 
                 List<TestDTO> testList = rtrController.getTestListStore();
                 for (TestDTO test : testList) {
-                    System.out.println(test);
+                    System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%nBarcode:%s%n",test.getCode(), test.getLabOrder().getTestType(),test.getLabOrder().getParameters(),test.getSample());
                 }
+
                 System.out.print("Select the test whose result you want to register from the following list, using one of the samples barcode:\n");
                 System.out.println();
                 barcode = ler.nextLine();
@@ -46,7 +47,7 @@ public class RecordTestResultUI implements Runnable {
                 System.out.print("---TEST PARAMETER LIST---\n");
                 System.out.println();
                 for (TestParameter tParam : tParamList) {
-                    System.out.println(tParam);
+                    System.out.printf("Test Parameter: %s, %s \n",tParam.getParameter().getCode(), tParam.getParameter().getShortName());
                 }
                 System.out.println();
                 System.out.print("Choose a parameter, whose result you want to register, by selecting its code:");
@@ -90,11 +91,10 @@ public class RecordTestResultUI implements Runnable {
                     }else{
                         System.out.print("Unfortunately, the parameter result could not be added.\n");
                     }
-
                     if (!tParamList.isEmpty()) {
                         System.out.print("For which parameter do you want to compare your result with the reference values next?\n");
                         for (TestParameter tParam : tParamList) {
-                            System.out.println(tParam);
+                            System.out.printf("Test Parameter: %s, %s \n",tParam.getParameter().getCode(), tParam.getParameter().getShortName());
                         }
                         System.out.print("Enter the code: ");
                         ler.nextLine();

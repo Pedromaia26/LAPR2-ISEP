@@ -35,7 +35,7 @@ public class WriteReportUI implements Runnable {
         }
         System.out.print("List of tests to be reported:\n");
         for (TestDTO testdto: lTestsDto){
-            System.out.printf("%d - %s%n", lTestsDto.indexOf(testdto)+1, testdto);
+            System.out.printf("%d - Code: %s%nLabOrder:%n%s%nParameters:%s%n%s%n--------------------------------%n", lTestsDto.indexOf(testdto)+1, testdto.getCode(),testdto.getLabOrder().getTestType(),testdto.getLabOrder().getParameters(), testdto.getSample() );
         }
         System.out.print("Select one test of the list: \n");
         testop = ler.nextInt();
@@ -46,7 +46,7 @@ public class WriteReportUI implements Runnable {
         if (exists){
             lTestParametersDto = controller.getResultParameters(testDto);
             for (TestParameterDto testParameter : lTestParametersDto){
-                System.out.println(testParameter);
+                System.out.printf(" Test Parameter : %s \n Test Parameter Result : %s\n",testParameter.getParameterdto(),testParameter.getTprdto());
                 System.out.println("---------");
             }
             System.out.print("Introduce the diagnosis\n");
