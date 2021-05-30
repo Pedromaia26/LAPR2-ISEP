@@ -49,8 +49,8 @@ public class RecordTestResultUI implements Runnable {
                     System.out.println(tParam);
                 }
                 System.out.println();
-                System.out.print("Choose a parameter, whose result you want to register, by selecting its code:\n");
-
+                System.out.print("Choose a parameter, whose result you want to register, by selecting its code:");
+                System.out.println();
 
                 String parameterCode;
 
@@ -71,10 +71,10 @@ public class RecordTestResultUI implements Runnable {
                     ler.nextLine();
                     metric = ler.nextLine();
 
-                    System.out.println("Please confirm the data:");
-                    System.out.println(String.format("---------------\nResult Value: %s\nMetric: %s\n---------------", resultValue, metric));
-                    System.out.println(" 1 --> Confirm");
-                    System.out.println(" 2 --> Cancel");
+                    System.out.print("Please confirm the data:\n");
+                    System.out.printf("---------------\nResult Value: %s\nMetric: %s\n---------------%n", resultValue, metric);
+                    System.out.print(" 1 --> Confirm\n");
+                    System.out.print(" 2 --> Cancel\n");
                     int confirm = ler.nextInt();
 
                     try {
@@ -85,10 +85,10 @@ public class RecordTestResultUI implements Runnable {
 
                     if (confirm == 1){
                         if (rtrController.saveTestResult(result))
-                            System.out.println("Parameter result was added successfully.");
-                            tParamList.remove(t.getTestParameterFor(parameterCode));
+                            System.out.print("Parameter result was added successfully.\n");
+                        tParamList.remove(t.getTestParameterFor(parameterCode));
                     }else{
-                        System.out.println("Unfortunately, the parameter result could not be added.");
+                        System.out.print("Unfortunately, the parameter result could not be added.\n");
                     }
 
                     if (!tParamList.isEmpty()) {
@@ -96,12 +96,8 @@ public class RecordTestResultUI implements Runnable {
                         for (TestParameter tParam : tParamList) {
                             System.out.println(tParam);
                         }
-<<<<<<< HEAD
-                        System.out.print("Enter the code: \n");
-=======
                         System.out.print("Enter the code: ");
                         ler.nextLine();
->>>>>>> ce40120820c78d71cb99845ca6da2eb07e3c01ed
                     }
 
 
@@ -113,7 +109,6 @@ public class RecordTestResultUI implements Runnable {
             }while (op.equalsIgnoreCase("Y"));
         }
 
-        }
-
     }
 
+}
