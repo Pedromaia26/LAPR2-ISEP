@@ -24,9 +24,9 @@ public class ValidateWorkDoneUI implements Runnable {
             int optn;
             List<String> testsToValidate = new ArrayList<>();
             do {
-                System.out.println("Insert the code of the test to validate, please.");
+                System.out.print("Insert the code of the test to validate, please.\n");
                 testsToValidate.add(ler.next());
-                System.out.println("Do you want to select another test to validate?\n1-> Yes\n2-> No");
+                System.out.print("Do you want to select another test to validate?\n1-> Yes\n2-> No\n");
                 optn = ler.nextInt();
             } while (optn == 1);
 
@@ -36,9 +36,9 @@ public class ValidateWorkDoneUI implements Runnable {
                 e.printStackTrace();
             }
 
-            System.out.println("Tests validated successfully!");
+            System.out.print("Tests validated successfully!\n");
         }catch(ArrayIndexOutOfBoundsException e){
-            System.out.println("\nThere are no tests to be validated.");
+            System.out.print("\nThere are no tests to be validated.\n");
         }
     }
 }

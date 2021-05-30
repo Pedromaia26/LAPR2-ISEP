@@ -20,14 +20,14 @@ public class TestTypeUI implements Runnable{
         Scanner ler = new Scanner(System.in);
         TestTypeController createTestTypeController = new TestTypeController();
 
-        System.out.println("Insert the description of the new type of test you want to create:");
+        System.out.print("Insert the description of the new type of test you want to create:\n");
         String description = ler.nextLine();
         String api = "";
         if (description.equalsIgnoreCase("COVID-19")){
             api = "Domain.ExternalModuleAdapter1";
         }else if (description.equalsIgnoreCase("BLOOD")){
-            System.out.println("1 - Domain.ExternalModuleAdapter2");
-            System.out.println("2 - Domain.ExternalModuleAdapter3");
+            System.out.print("1 - Domain.ExternalModuleAdapter2\n");
+            System.out.print("2 - Domain.ExternalModuleAdapter3\n");
             int num = ler.nextInt();
             if (num == 1){
                 api = "Domain.ExternalModuleAdapter2";
@@ -35,11 +35,11 @@ public class TestTypeUI implements Runnable{
                 api = "Domain.ExternalModuleAdapter3";
             ler.nextLine();
         }
-        System.out.println("Insert its collecting method:");
+        System.out.print("Insert its collecting method:\n");
         String collectingMethod = ler.nextLine();
-        System.out.println("Insert its code:");
+        System.out.print("Insert its code:\n");
         String code = ler.next();
-        System.out.println("Insert the code of the category that you want to add:");
+        System.out.print("Insert the code of the category that you want to add:\n");
 
         for(ParameterCategoryDto cat : createTestTypeController.getParameterCategoryDto()){
             System.out.println(cat);
@@ -54,7 +54,7 @@ public class TestTypeUI implements Runnable{
         do {
             String categoryCode = ler.next();
             categories.add(categoryCode);
-            System.out.println("Do you want to add another parameter category to your type of test?:\n1 ---> Yes\n2 ---> No");
+            System.out.print("Do you want to add another parameter category to your type of test?:\n1 ---> Yes\n2 ---> No\n");
             a = ler.nextInt();
         }while (a==1);
 
@@ -64,18 +64,18 @@ public class TestTypeUI implements Runnable{
 
         try {
             if (createTestTypeController.createTestType(description, collectingMethod, code, categories, api)){
-                System.out.println("--------------------------");
-                System.out.println("Please confirm the data:");
-                System.out.println(String.format("Description: %s\nCollecting method: %s\nCode: %s\nCategories Code: %s", description, collectingMethod, code,categories));
-                System.out.println("--------------------------");
-                System.out.println(" 1 --> Confirm");
-                System.out.println(" 2 --> Cancel");
+                System.out.print("--------------------------\n");
+                System.out.print("Please confirm the data:\n");
+                System.out.printf("Description: %s\nCollecting method: %s\nCode: %s\nCategories Code: %s%n", description, collectingMethod, code,categories);
+                System.out.print("--------------------------\n");
+                System.out.print(" 1 --> Confirm\n");
+                System.out.print(" 2 --> Cancel\n");
                 int confirm = ler.nextInt();
                 if(confirm == 1){
                     if(createTestTypeController.saveTestType()){
-                        System.out.println("Test type created successfully.");
+                        System.out.print("Test type created successfully.\n");
                     }else{
-                        System.out.println("Test type creation error.");
+                        System.out.print("Test type creation error.\n");
                     }
                 }
             }

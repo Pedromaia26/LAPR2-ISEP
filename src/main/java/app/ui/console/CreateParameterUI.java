@@ -18,15 +18,15 @@ public class CreateParameterUI implements Runnable{
         do {
             if(!createParameterController.getParameterCategoryDto().isEmpty()) {
 
-            System.out.println("Insert the code of the parameter, please.");
+            System.out.print("Insert the code of the parameter, please.\n");
             String code = ler.nextLine();
-            System.out.println("Insert the short name of the parameter, please.");
+            System.out.print("Insert the short name of the parameter, please.\n");
             String shortName = ler.nextLine();
-            System.out.println("Insert the description of the parameter, please.");
+            System.out.print("Insert the description of the parameter, please.\n");
             String description = ler.nextLine();
 
 
-            System.out.println("Insert code of the category that categorize the parameter");
+            System.out.print("Insert code of the category that categorize the parameter\n");
 
 
             for(ParameterCategoryDto cat : createParameterController.getParameterCategoryDto()){
@@ -38,26 +38,26 @@ public class CreateParameterUI implements Runnable{
                 int confirm;
 
                 if (createParameterController.createParameter(code, shortName, description, categoryCode)) {
-                    System.out.println("--------------------------");
-                    System.out.println("Please confirm the data:");
-                    System.out.println(String.format("Code: %s\nShort Name: %s\nDescription: %s\nParameter Category Code: %S", code, shortName, description, categoryCode));
-                    System.out.println("--------------------------");
-                    System.out.println(" 1 --> Confirm");
-                    System.out.println(" 2 --> Cancel");
+                    System.out.print("--------------------------\n");
+                    System.out.print("Please confirm the data:\n");
+                    System.out.printf("Code: %s\nShort Name: %s\nDescription: %s\nParameter Category Code: %S%n", code, shortName, description, categoryCode);
+                    System.out.print("--------------------------\n");
+                    System.out.print(" 1 --> Confirm\n");
+                    System.out.print(" 2 --> Cancel\n");
                     confirm = ler.nextInt();
                     if (confirm == 1) {
                         if (createParameterController.saveParameter()) {
-                            System.out.println("Parameter created successfully.");
+                            System.out.print("Parameter created successfully.\n");
                         } else {
-                            System.out.println("Parameter creation error.");
+                            System.out.print("Parameter creation error.\n");
                         }
                     }
                 }
 
 
-                System.out.println("Do you want to create a new parameter?");
-                System.out.println(" 1 --> Yes");
-                System.out.println(" 2 --> No");
+                System.out.print("Do you want to create a new parameter?\n");
+                System.out.print(" 1 --> Yes\n");
+                System.out.print(" 2 --> No\n");
                 optn = ler.nextInt();
                 ler.nextLine();
             }else{

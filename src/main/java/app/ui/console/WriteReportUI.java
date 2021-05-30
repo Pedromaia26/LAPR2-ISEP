@@ -37,7 +37,7 @@ public class WriteReportUI implements Runnable {
         for (TestDTO testdto: lTestsDto){
             System.out.printf("%d - %s\n", lTestsDto.indexOf(testdto)+1, testdto);
         }
-        System.out.println("Select one test of the list: ");
+        System.out.print("Select one test of the list: \n");
         testop = ler.nextInt();
         if (testop <= lTestsDto.size() && testop >= 1){
             testDto = lTestsDto.get(testop-1);
@@ -49,7 +49,7 @@ public class WriteReportUI implements Runnable {
                 System.out.println(testParameter);
                 System.out.println("---------");
             }
-            System.out.println("Introduce the diagnosis");
+            System.out.print("Introduce the diagnosis\n");
             String diagnosis = ler.next();
             controller.addReport(diagnosis);
             if (controller.removeTestToBeReported())
