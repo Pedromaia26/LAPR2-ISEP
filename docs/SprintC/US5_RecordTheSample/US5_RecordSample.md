@@ -62,7 +62,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 **Input Data:**
 	
 * Selected data: Test.
-
+* Typed data: Number of samples
 
 **Output Data:**
 
