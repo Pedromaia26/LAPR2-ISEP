@@ -113,30 +113,45 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateLaboratoryUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateLaboratoryController | Controller                             |
-| 			  		 |	... instantiating a new Laboratory? | Company | In the DM Company conducts Laboratory.   |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |	...saving the inputted data? | Laboratory  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the test type to show? | Company | IE: Test types are conducted by the Company. |
-| Step 5  		 |	... saving the selected test type? | Laboratory | IE: object created in step 1 contains one or more test types.  |
-| Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | Laboratory | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Company | IE: knows all its test types.| 
-| 			  		 |	... saving the created laboratory? | Company | IE: owns all the Laboratories.| 
-| Step 8  		 |	... informing operation success?| CreateLaboratoryUI  | IE: responsible for user interactions.  | 
+| Step 1  		 |	... interacting with the actor? | TestUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			     |	... coordinating the US? | RegistTestController | Controller                             |
+| Step 2  		 |							                                                                                 |
+| Step 3  		 |                                                                                                          |
+| Step 4  		 |	...knowing the Test Type to show?  |  TestTypeStore |  IE + HC + LC: Owns all the Test Types. Prevents the Company of doing to many things.  |
+|                |  ...process the data and convert it to DTO?  |  TestTypeMapper  |  DTO: The UI can't interact directly with the domain  |
+| Step 5  		 |	
+| Step 6  	     |  ...knowing the Clients to show?  |  ClientStore |  IE + HC + LC: Owns all the Clients. Prevents the Company of doing to many things. |        
+|                |  ...process the data and convert it to DTO?  |  ClientMapper  |  DTO: The UI can't interact directly with the domain  |
+| Step 7  		 |	
+| Step 8  		 |  ...knowing the Parameters to show?  |  ParameterStore |  IE + HC + LC: Owns all the Parameters. Prevents the Company of doing to many things. 
+|                |  ...process the data and convert it to DTO?  |  ParameterMapper  |  DTO: The UI can't interact directly with the domain  |
+| Step 9  		 |  ...instanciate a new LabOrder?  |  LabOrderStore  |  Creator(R1/R2) and HC+LC: Applying the Creator (R1/R2) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the LabOrderStore class    |
+|                |  ...instanciate a new Test?  |  TestStore  |   Creator(R1/R2) and HC+LC: Applying the Creator (R1/R2) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the TestStoreStore class    |
+|                |  ... validating all data (local validation)?  |  Test  |  	IE: owns its data.   | 
+|                |  ... validating all data (global validation)?  |  TestStore  |       IE: owns its data.    |
+| Step 10  		 | 
+| Step 11  		 |  ... validating all data (global validation)?  |  TestStore  |       IE: owns its data.    |
+|                |  ... saving the test?  |   TestStore   |   TestStore saves the test.    |
+| Step 12 		 |  ... informing operation success?   |  TestUI  |  IE: is responsible for user interactions.   |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
- * Laboratory
+ * TestTypeMapper
+ * TestTypeStore
+ * ParameterStore
+ * ParameterMapper
+ * ClientStore
+ * ClientMapper
+ * TestStore
+ * Test
 
-Other software classes identified: 
+Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateLaboratoryUI  
- * CreateLaboratoryController
+ * TestUI 
+ * TestController
 
 
 
