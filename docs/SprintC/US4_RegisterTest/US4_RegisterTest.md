@@ -1,4 +1,4 @@
-# US 008 - To register a new Laboratory 
+# US 004 - To register a new Test
 
 ## 1. Requirements Engineering
 
