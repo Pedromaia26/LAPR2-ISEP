@@ -9,6 +9,10 @@ activate CCT
 
 CCT -> S: asks to record the results of a given test
 activate S
+S --> CCT: shows list of tests and asks to select one
+deactivate S
+CCT -> S: selects test
+activate S
 loop
 S --> CCT: shows parameter list pertaining to the test\n being analysed and asks to select one
 deactivate S
@@ -20,15 +24,16 @@ deactivate S
 
 CCT -> S: types request data
 activate S
-end
 
-S --> CCT: shows the test result and requests confirmation
+
+S --> CCT: shows data and requests confirmation
 deactivate S
 
 CCT -> S: confirms the data
 activate S
 S --> CCT: informs operation success
-
+deactivate S
+end
 
 
 @enduml
