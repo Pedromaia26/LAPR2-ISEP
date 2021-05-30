@@ -113,8 +113,8 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateLaboratoryUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateLaboratoryController | Controller                             |
+| Step 1  		 |	... interacting with the actor? | TestUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  		 |	... coordinating the US? | RegistTestController | Controller                             |
 | 			  		 |	... instantiating a new Laboratory? | Company | In the DM Company conducts Laboratory.   |
 | Step 2  		 |							 |             |                              |
 | Step 3  		 |	...saving the inputted data? | Laboratory  | IE: object created in step 1 has its own data.  |
@@ -131,12 +131,19 @@ n/a
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
- * Laboratory
+ * TestTypeMapper
+ * TestTypeStore
+ * ParameterStore
+ * ParameterMapper
+ * ClientStore
+ * ClientMapper
+ * TestStore
+ * Test
 
-Other software classes identified: 
+Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateLaboratoryUI  
- * CreateLaboratoryController
+ * TestUI 
+ * TestController
 
 
 
