@@ -1,6 +1,6 @@
 package app.domain.model;
 
-import java.security.Timestamp;
+
 import java.util.Date;
 
 public class TestDtoDate {
@@ -34,9 +34,9 @@ public class TestDtoDate {
      */
     public TestDtoDate(String code,Date registrationDate, Date analysisDate, Date diagnosisDate){
         this.code = code;
-        this.registrationDate = registrationDate;
-        this.analysisDate = analysisDate;
-        this.diagnosisDate = diagnosisDate;
+        this.registrationDate = new Date(registrationDate.getTime());
+        this.analysisDate = new Date(analysisDate.getTime());
+        this.diagnosisDate = new Date(diagnosisDate.getTime());
     }
 
     /**
@@ -45,6 +45,6 @@ public class TestDtoDate {
      */
     @Override
     public String toString() {
-        return String.format("Code: %s\nRegistration Date: %s\nAnalysisDate: %s\nDiagnosis Date: %s", code, registrationDate, analysisDate, diagnosisDate);
+        return String.format("Code: %s %nRegistration Date: %s %nAnalysisDate: %s %nDiagnosis Date: %s", code, registrationDate, analysisDate, diagnosisDate);
     }
 }
