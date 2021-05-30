@@ -93,13 +93,14 @@ No dependencies.
 
 ### 1.7 Other Relevant Remarks
 
-* The created task stays in a "not published" state in order to distinguish from "published" tasks.
+* N/A.
 
 
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
 
+![US004_DM](US004_DM.svg)
 
 ### 2.2. Other Remarks
 
