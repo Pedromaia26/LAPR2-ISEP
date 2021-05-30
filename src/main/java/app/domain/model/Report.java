@@ -40,4 +40,12 @@ public class Report {
     public Date getCreatedAt() {
         return createdAt;
     }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "diagnosis='" + diagnosis + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }

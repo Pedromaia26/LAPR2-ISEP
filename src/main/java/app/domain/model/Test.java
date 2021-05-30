@@ -122,19 +122,7 @@ public class Test {
 
         this.date = new Date();
     }
-
-    /*public Test(String code, long nhsCode, LabOrder labOrder) {
-        this.code = code;
-
-        this.nhsCode = nhsCode;
-
-        this.labOrder = labOrder;
-
-        testParameterList = new ArrayList<>();
-        testParameterList = addToList(labOrder.getParameters());
-
-        this.date = new Date();
-    }*/
+    
 
     /**
      * Returns the code of a test.
@@ -316,6 +304,7 @@ public class Test {
      */
     public void addReport(String diagnosisText) {
         this.report = new Report(diagnosisText);
+
     }
 
     /**

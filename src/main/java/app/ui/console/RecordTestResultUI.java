@@ -33,7 +33,7 @@ public class RecordTestResultUI implements Runnable {
                 for (TestDTO test : testList) {
                     System.out.println(test);
                 }
-                System.out.print("Select the test whose result you want to register from the following list, using one of the samples barcode:\n");
+                System.out.print("Select the test whose result you want to register from the following list, using one of the samples barcode:%n");
                 System.out.println();
                 barcode = ler.nextLine();
 
@@ -43,7 +43,7 @@ public class RecordTestResultUI implements Runnable {
                     tParamList.add(tp);
                 }
 
-                System.out.print("---TEST PARAMETER LIST---\n");
+                System.out.print("---TEST PARAMETER LIST---%n");
                 System.out.println();
                 for (TestParameter tParam : tParamList) {
                     System.out.println(tParam);
@@ -63,7 +63,7 @@ public class RecordTestResultUI implements Runnable {
 
                     System.out.println();
 
-                    System.out.print("Please insert the result value and metric of the parameter:\n");
+                    System.out.print("Please insert the result value and metric of the parameter:%n");
                     System.out.println();
                     System.out.print("Result Value: ");
                     resultValue = ler.nextDouble();
@@ -71,10 +71,10 @@ public class RecordTestResultUI implements Runnable {
                     ler.nextLine();
                     metric = ler.nextLine();
 
-                    System.out.print("Please confirm the data:\n");
-                    System.out.printf("---------------\nResult Value: %s\nMetric: %s\n---------------%n", resultValue, metric);
-                    System.out.print(" 1 --> Confirm\n");
-                    System.out.print(" 2 --> Cancel\n");
+                    System.out.print("Please confirm the data:%n");
+                    System.out.printf("---------------%nResult Value: %s%nMetric: %s%n---------------%n", resultValue, metric);
+                    System.out.print(" 1 --> Confirm%n");
+                    System.out.print(" 2 --> Cancel%n");
                     int confirm = ler.nextInt();
 
                     try {
@@ -85,14 +85,14 @@ public class RecordTestResultUI implements Runnable {
 
                     if (confirm == 1){
                         if (rtrController.saveTestResult(result))
-                            System.out.print("Parameter result was added successfully.\n");
+                            System.out.print("Parameter result was added successfully.%n");
                         tParamList.remove(t.getTestParameterFor(parameterCode));
                     }else{
-                        System.out.print("Unfortunately, the parameter result could not be added.\n");
+                        System.out.print("Unfortunately, the parameter result could not be added.%n");
                     }
 
                     if (!tParamList.isEmpty()) {
-                        System.out.print("For which parameter do you want to compare your result with the reference values next?\n");
+                        System.out.print("For which parameter do you want to compare your result with the reference values next?%n");
                         for (TestParameter tParam : tParamList) {
                             System.out.println(tParam);
                         }
@@ -102,7 +102,7 @@ public class RecordTestResultUI implements Runnable {
 
 
                 } while (!tParamList.isEmpty());
-                System.out.print("Do you want to analyse more samples?(Y/N)\n");
+                System.out.print("Do you want to analyse more samples?(Y/N)%n");
                 ler.nextLine();
                 op = ler.nextLine();
 
