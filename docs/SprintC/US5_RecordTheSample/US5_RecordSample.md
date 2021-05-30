@@ -1,4 +1,4 @@
-# US 003 - To register a client  
+# US 005 - To record a new sample 
 
 ## 1. Requirements Engineering
 
@@ -103,8 +103,9 @@ n/a
 | Step 1  		 | ... interacting with the actor?                                 | RecordSampleUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
 |                | ... coordinating the US?                                        | RecordSampleController        | **Controller**                                                                                                                                                                                         |
 | Step 2  		 | ... knowing the tests to show?                                  | TestStore                     | **Information Expert**: Owns the existing tests.                                                                                                                                                       |
+|                | ... knowing the test store                                      | Company                       | **Information Expert**: Knows the existing stores.                                                                                                                                                     |
 |                | ... process the data and convert it to dto                      | TestMapper                    | **DTO**: So that the UI can't interact directly with the domain.                                                                                                                                       |
-| Step 3  		 | ... saving the selected test?                                   | Sample                        | **Information Expert**: knowing to which test is associated                                                                                                                                            |
+| Step 3  		 |                                                                 |                               |                                                                                                                                                                                                        |
 | Step 4  		 |                                                                 |                               |                                                                                                                                                                                                        |
 | Step 5  		 | ... knowing the number of samples?                              | Test                          |**Information Expert**: knowing how many samples were collected.                                                                                                                                        |
 | 		         | ... instantiating a new Sample?                                 | Test                          | **Creator (R1)** and **HC+LC**: Applying the Creator (R1) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the test class                    |
@@ -121,6 +122,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Sample
  * Test
+ * Company
  
 
 Other software classes (i.e. Pure Fabrication) identified: 
