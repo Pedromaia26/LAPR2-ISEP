@@ -88,7 +88,7 @@ n/a
 | Step 1  		 | ... interacting with the actor?                                 | RecordSampleUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
 |                | ... coordinating the US?                                        | RecordSampleController        | **Controller**                                                                                                                                                                                         |
 | Step 2  		 | ... knowing the tests to show?                                  | TestStore                     | **Information Expert**: Owns the existing tests.                                                                                                                                                       |
-|                | ... process the data and convert it to dto                      | TestDTO                       | **DTO**: So that the UI can't interact directly with the domain.                                                                                                                                       |
+|                | ... process the data and convert it to dto                      | TestMapper                    | **DTO**: So that the UI can't interact directly with the domain.                                                                                                                                       |
 | Step 3  		 | ... saving the selected test?                                   | Sample                        | **Information Expert**: knowing to which test is associated                                                                                                                                            |
 | Step 4  		 |                                                                 |                               |                                                                                                                                                                                                        |
 | Step 5  		 | ... knowing the number of samples?                              | Test                          |**Information Expert**: knowing how many samples were collected.                                                                                                                                        |
@@ -106,15 +106,15 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Sample
  * Test
- * TestStore
- * TestDto
- * BarcodeAdapter
+ 
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
  * RecordSampleUI  
  * RecordSampleController
-
+ * TestStore
+ * TestMapper
+ * BarcodeAdapter
 
 ## 3.2. Sequence Diagram (SD)
 
