@@ -12,16 +12,10 @@ package Domain {
   class Company
   class Test
   class TestStore
+  class TestMapper
+  class TestDtoDate
   class Report
   class Client
-}
-
-package Mappers {
-  class TestMapper
-}
-
-package Dto {
-  class TestDtoDate
 }
 
 class Company
