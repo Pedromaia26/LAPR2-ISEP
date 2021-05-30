@@ -60,7 +60,7 @@ public class TestUI implements Runnable{
             parameterCodes.add(parameterCode);
             System.out.print("Do you want to add another parameter to your Laboratory Order?:\n1 ---> Yes\n2 ---> No\n");
             a = ler.nextInt();
-            System.out.print("Type the Parameter Code:\n");
+            if(a==1) System.out.print("Type the Parameter Code:\n");
         }while (a==1);
 
         List<Parameter> par = createRegistTestController.getParameterByCode(parameterCodes);
