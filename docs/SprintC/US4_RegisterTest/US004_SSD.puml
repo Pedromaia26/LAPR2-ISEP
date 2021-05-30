@@ -10,9 +10,13 @@ System --> Adm: request data(nhsCode, tinNumber, labOrder)
 deactivate System
 Adm -> System: types the requested data
 activate System
-System --> Adm: shows a list of test types and clients registered and requests to select one of each
+System --> Adm: shows a list of test types registered and requests to select one of them
 deactivate System
-Adm -> System: selects a test type from the code and a client from the Tax Identification Number
+Adm -> System: selects a test type from the code
+activate System
+System --> Adm: shows a list of Clients registered and requests to select one of them
+deactivate System
+Adm -> System: selects a Client from the Tax Identification Number
 loop
 activate System
 System --> Adm: shows a list of parameters registered and requests to select one of them
@@ -29,3 +33,4 @@ System --> Adm: informs operation success
 deactivate System
 
 deactivate Adm
+@enduml
