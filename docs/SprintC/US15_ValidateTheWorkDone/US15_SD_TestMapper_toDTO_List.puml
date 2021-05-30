@@ -1,0 +1,49 @@
+@startuml
+autonumber
+hide footbox
+title SD_TestMapper_toDto_List
+
+participant ":TestMapper" as MAPPER
+participant "Tests\n:List<Test>" as TESTLIST
+participant "TestsDto\n:List<TestDto>" as TESTLISTDTO
+participant ":Test" as TEST
+participant ":Report" as REPORT
+participant "dto : TestDto" as TESTDTO
+
+
+[o->     MAPPER : toDtoDate(test)
+activate MAPPER
+
+MAPPER --> TESTLISTDTO** : create()
+loop for each object in Tests
+MAPPER -> TEST : code = getCode()
+activate TEST
+|||
+deactivate TEST
+
+MAPPER -> TEST : registrationDate = getRegistrationDate()
+activate TEST
+|||
+deactivate TEST
+
+MAPPER -> TEST : analysisDate = getResultRegist()
+activate TEST
+|||
+deactivate TEST
+
+MAPPER -> REPORT : diagnosisDate = getCreatedAt()
+activate REPORT
+|||
+deactivate REPORT
+
+MAPPER --> TESTDTO** : create(code, registrationDate, analysisDate, diagnosisDate)
+
+MAPPER -> TESTLISTDTO : add(dto)
+activate TESTLISTDTO
+|||
+deactivate TESTLISTDTO
+end
+
+[<--     MAPPER : Tests
+deactivate MAPPER
+@enduml
