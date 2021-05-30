@@ -113,18 +113,17 @@ n/a
 | 			  		 |	... coordinating the US? | RecordTestResultController | Controller                             |
 | Step 2  		 |		... knowing the tests to show?		 |      TestStore       |  IE and HC+LC: Owns the existing tests and prevents the Company from doing many things.                            |
 |				 |	... knowing the TestStore?   |  Company  | IE: Company knows all its tests.
-|                |	... process the data and convert it to dto  |  TestMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
+|                |	... process the data and convert it to dto?  |  TestMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
 | Step 3  		 |
 | Step 4  		 |	...knowing the test parameters to show? | Test  | IE: Test contains a list of test parameters. |
-|				 | 	... process the data and convert it to dto  |  TestParameterMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
+|				 | 	... process the data and convert it to dto?  |  TestParameterMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
 | Step 5  		 |									|
 | Step 6  		 |							 |             |                              |              
-| Step 7  		 |  ... create a new instance of TestParameterResult?	| 	Test  |	Creator (R1): ?		|
-|				 |  ... validating all data (local validation)? | TestParameterResult | IE: owns its data.|
-|					 |   ... adapting the interface  | 				| Protected variations: Upgrade the adaptability of the system to new APIs with the same funcionalities |
+| Step 7  		 |  ... create a new instance of TestParameterResult?	| 	TestParameter  |	Creator (R1/R2): TestParameter agregrates objects of TestParameterResult and instances 	objects of TestParameterResult.	|
+|					 |   ... adapting the interface?  | ExternalModuleAdapters	| Protected variations: Identify points of predicted variation or instability (variety of interfaces) and assign responsibilities (to the adapters) to create a stable interface around those points. |
 | Step 8  		 |						| 
-| Step 9 		 |   .. saving the test parameter result?	|  Test  | IE: knows all its test parameters.  |
-|			 	 | ... validating all data (global validation)?	 | Test | IE: owns its data. |
+| Step 9 		 |   ... saving the test parameter result?	|  Test  | IE: knows all the results for the parameters of a test.  |
+|			 	 | ... validating all data (global validation)?	 | Test | IE: owns the list of test parameter results. |
 | Step 10 		 | ...informing operation success |	RecordTestResultUI  |  IE: is responsible for user interactions.	|
 
 
@@ -135,6 +134,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Company
  * TestParameterResult
  * Test
+ 
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
@@ -143,6 +143,10 @@ Other software classes (i.e. Pure Fabrication) identified:
  * TestMapper
  * TestStore
  * TestParameterMapper
+ * ExternalModuleAdapter1
+ * ExternalModuleAdapter2
+ * ExternalModuleAdapter3
+ 
  
 
 
