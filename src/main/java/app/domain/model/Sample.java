@@ -59,6 +59,10 @@ public class Sample{
         return df.format(c);
     }
 
+    /**
+     * Method to get the Api to use to create the barcodes
+     * @return the ApiBarcode.
+     */
     public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
 
         Properties props = App.getInstance().getprops();
@@ -68,12 +72,20 @@ public class Sample{
 
     }
 
+    /**
+     * Create the barcode Image
+     * @return the barcode.
+     */
     public BufferedImage barcodeImage(BarcodeCreate barcode) throws OutputException {
 
 
         return BarcodeImageHandler.getImage((Barcode) barcode.getBarcode());
     }
 
+    /**
+     * Write the barcode image
+     * @return the final image to the folder.
+     */
     public void imageIoWrite(BufferedImage doneImage, String filename) {
         try {
             String pwd = System.getProperty("user.dir");
@@ -91,6 +103,9 @@ public class Sample{
         System.out.println("Images were written succesfully.");
     }
 
+    /**
+     * Show the barcodes on screen
+     */
     public void showBarcodes(BarcodeCreate barcode){
 
         JFrame frame = new JFrame();

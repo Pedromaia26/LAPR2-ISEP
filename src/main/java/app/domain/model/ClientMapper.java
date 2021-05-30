@@ -33,7 +33,11 @@ public class ClientMapper{
 
 
     }
-
+    /**
+     * Recieves the Clientlist and returns the clientlistdto.
+     * @param listClient The Clientlist
+     * @return clientlistdto.
+     */
     public List<ClientDTO> toDto(List<Client> listClient) {
         if(listClient.isEmpty()) {
             throw new ArrayIndexOutOfBoundsException("There are no test types.");

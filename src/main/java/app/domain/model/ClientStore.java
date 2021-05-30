@@ -115,11 +115,18 @@ public class ClientStore {
     public boolean CreateUser(Client nc){
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
-
+    /**
+     * Returns the client list.
+     * @return the client list.
+     */
     public List<Client> getClientList() {
         return clientList;
     }
 
+    /**
+     * Searches for the client with a specific tin number.
+     * @return the client with specific tin number.
+     */
     public Client getClientByTinNumber(long tinNumber){
 
         for (Client client: clientList) {
