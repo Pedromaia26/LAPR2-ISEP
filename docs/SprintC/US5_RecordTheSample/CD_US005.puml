@@ -8,16 +8,21 @@ package "Controllers" {
 package "Domain" {
  Class Company
 Class Sample
-Class TestMapper
-Class SampleDTO
-Class SampleMapper
 Class TestStore
 Class Test
-Class TestDTO
 Class LabOrder
 Interface ApiBarcode
 Class BarcodeAdapter
 Class BarcodeCreate
+}
+package "Mapper" {
+Class TestMapper
+Class SampleMapper
+
+}
+package "Dto"{
+Class SampleDTO
+Class TestDTO
 }
 
 
