@@ -25,6 +25,7 @@ public class RecordTestResultUI implements Runnable {
 
             Test t;
             String op;
+            String result = "";
             List<TestParameter> tParamList = new ArrayList<>();
             do {
 
@@ -53,7 +54,7 @@ public class RecordTestResultUI implements Runnable {
 
                 String parameterCode;
 
-                t.getSample().remove(t.getSampleByBarcode(barcode));
+                rtrController.getTest().getSample().remove(t.getSampleByBarcode(barcode));
 
                 do {
                     String metric;
@@ -69,25 +70,42 @@ public class RecordTestResultUI implements Runnable {
                     System.out.print("Metric: ");
                     ler.nextLine();
                     metric = ler.nextLine();
+
+                    System.out.println("Please confirm the data:");
+                    System.out.println(String.format("---------------\nResult Value: %s\nMetric: %s\n---------------", resultValue, metric));
+                    System.out.println(" 1 --> Confirm");
+                    System.out.println(" 2 --> Cancel");
+                    int confirm = ler.nextInt();
+
                     try {
-                        t.addTestResult(barcode, parameterCode, resultValue, metric);
+                        result = rtrController.getTest().addTestResult(barcode, parameterCode, resultValue, metric);
                     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
                     }
 
-                    tParamList.remove(t.getTestParameterFor(parameterCode));
+                    if (confirm == 1){
+                        if (rtrController.saveTestResult(result))
+                            System.out.println("Parameter result was added successfully.");
+                            tParamList.remove(t.getTestParameterFor(parameterCode));
+                    }else{
+                        System.out.println("Unfortunately, the parameter result could not be added.");
+                    }
 
                     if (!tParamList.isEmpty()) {
                         System.out.println("For which parameter do you want to compare your result with the reference values next?");
                         for (TestParameter tParam : tParamList) {
                             System.out.println(tParam);
                         }
-                        System.out.println("Enter the code: ");
+                        System.out.print("Enter the code: ");
+                        ler.nextLine();
                     }
+
 
                 } while (!tParamList.isEmpty());
                 System.out.print("Do you want to analyse more samples?(Y/N)\n");
+                ler.nextLine();
                 op = ler.nextLine();
+
             }while (op.equalsIgnoreCase("Y"));
         }
 

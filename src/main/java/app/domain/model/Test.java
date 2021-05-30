@@ -51,6 +51,11 @@ public class Test {
      * An object of type Date used to obtain the date when a result of a test was recorded.
      */
     private Date resultRegist;
+
+    public List<TestParameter> getTestParameterList() {
+        return testParameterList;
+    }
+
     /**
      * An object of type Date used to record the date when a test was validated.
      */
@@ -253,18 +258,18 @@ public class Test {
         return true;
     }
 
-    public boolean validateTestResultString(String testResult) {
+    public boolean validateTestParameterResult(String testResult) {
         if (testResult == null)
             return false;
         return (!this.testParameterResultList.contains(testResult));
     }
 
-    public boolean saveTestResultString(String testResult) {
+    public boolean saveTestParameterResult(String testResult) {
         if(testParameterResultList == null) {
             testParameterResultList = new ArrayList<>();
         }
 
-        if (validateTestResultString(testResult)) {
+        if (validateTestParameterResult(testResult)) {
             testParameterResultList.add(testResult);
             return true;
         } else {
@@ -332,7 +337,7 @@ public class Test {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-    public void addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public String addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -340,7 +345,8 @@ public class Test {
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
-        compareValues(barcode);
+        String testPResult = compareValues(barcode);
+        return testPResult;
     }
 
     /**
@@ -348,7 +354,7 @@ public class Test {
      * and informs the user about the results.
      */
 
-    public void compareValues(String barcode) {
+    public String compareValues(String barcode) {
         TestParameterResult tpr = tp.getTpr();
         Double min;
         Double max;
@@ -363,10 +369,10 @@ public class Test {
                 System.out.printf("The result of the parameter '%s' is among the reference values!\n", tp.getParameter().getShortName());
                 result = barcode + "_" + tp + "_inRange";
             }
-            saveTestResultString(result);
         }else{
             throw new IllegalArgumentException("The metric used does not correspond to the metric of the parameter!");
         }
+        return result;
     }
 
 
