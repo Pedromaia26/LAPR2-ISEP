@@ -21,21 +21,21 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 
 **From the client clarifications:**
 
-> **Question:** "Should the specialist doctor make the diagnosis and report at the same time?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
+> **Question:** "Once the specialist doctor decides to write the report for a given test, should the results of the chemical analysis and the reference values be presented on the screen? If not, how should the specialist doctor access the data related to the diagnosis he needs to make?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8497#p11126]
 >  
-> **Answer:** 
+> **Answer:** "After selecting a test (to make the diagnosis/report) the results of the chemical analysis and the reference values should be presented on the screen. Then the Specialist Doctor should write the report."
 
 -
 
-> **Question:** "Should the application have a specific order for the "documents" to be made by the specialist doctor?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
+> **Question:** "Should we order the list of tests to be displayed by date of chemical analysis older to newer?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8571#p11230]
 >  
-> **Answer:**
+> **Answer:** "Sorting is not required in this sprint."
 
 -
 
-> **Question:** "How should the specialist doctor choose the test to work on?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8259#p10799]
+> **Question:** "What kind of validation should the external module do? Should it show the test reference values next to the test parameter results for the Specialist Doctor to validate it by himself? Or should it show on the console that the values of the test parameter results are valid, doing everything automatically?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8643#p11312]
 > 
-> **Answer:**
+> **Answer:** "The system should 'show the test reference values next to the test parameter results'."
 
 -
 
@@ -94,6 +94,7 @@ As a specialist doctor, I intend to make the diagnosis and write a report for a 
 **Output Data:**
 
 * List of tests;
+* List of test parameters;  
 * (In)success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
@@ -121,16 +122,18 @@ n/a
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1  		 |	... interacting with the actor? | WriteReportUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | WriteReportController | Controller                             |
+| 			  		 |	... coordinating the US? | WriteReportController | Controller.                             |
 | Step 2  		 |	... knowing the existing tests?	 |  TestStore  |  IE: TestStore has the responsability to know all the tests.                            |
 | 	 |	... knowing the TestStore?	 |  Company  |  IE: Company has the responsability to know the TestStore.                            |
-|  		 |	... transfer the domain objects in DTO?	 |  TestDto  |  DTO: The WriteReportUI can't have access to the tests                            |
+|  		 |	... transfer the domain objects in DTO?	 |  TestMapper  |  DTO: The WriteReportUI can't have access to the tests.                            |
 | Step 3  		 |	 |   |   |
 | Step 4  		 |	... knowing the test parameters to show? | Test  | IE: Test knows its own results. |
-| Step 5  		 |	... create a new instance of Report? | Test  | Creator(Rule 1)  |
+| Step 5  		 |	... create a new instance of Report? | Test  | Creator(Rule 1).  |
 |  		 |	... validating the Report? | Report  | IE: Report knows its onw information.  |
-| Step 6  		 |	... showing the information		 | WriteReportUI  |                              |              
-| Step 7  		 |	... save the creation data? | Report | IE: Report knows its onw information. |
+| Step 6  		 |		 |  |                              |              
+| Step 7  		 |	... save the creation date? | Report | IE: Report knows its onw information. |
+|  		 |	... validate the data?	 |  Report  |  IE: Report knows its onw information.                            |
+|  		 |	... create a new instance of Report?	 |  Test  |  Creator(Rule 1).                            |
 | Step 8  		 |	... informing operation success? | WriteReportUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
@@ -139,7 +142,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Company
  * Test
- * TestParameter
+ * Report
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
