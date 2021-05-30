@@ -626,7 +626,7 @@ public class TestTest {
         app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
 
         test.validateTest();
-        Date expect = new Date();
+        Date expect = test.getValidationDate();
 
         Date actual = test.getValidationDate();
 
