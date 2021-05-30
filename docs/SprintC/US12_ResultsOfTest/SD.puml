@@ -70,7 +70,7 @@ C -> T: addTestParameterResult (parameterCode, result, metric)
 activate T
 
     ref over T
-    SD_AddTestParameterResult(parameter, result, metric)
+    SD_AddTestParameterResult(parameterCode, result, metric)
 end ref
 
 T --> C: testParameterResult
