@@ -6,16 +6,20 @@ package Controllers{
     Class WriteReportController
 }
 package Domain{
+    Class Company
+    Class Test
+    Class TestStore
+    Class Report
+    Class TestParameter
+}
+package DTO{
     Class TestDto
     Class TestParameterDto
-    Class Company
-    Class TestParameterMapper
-    Class TestParameter
-    Class Test
-    Class TestMapper
-    Class TestStore
     Class TestParameterDto
-    Class Report
+}
+package Mappers{
+    Class TestParameterMapper
+    Class TestMapper
 }
 WriteReportUI ..> WriteReportController
 WriteReportUI ..> TestDto
@@ -48,7 +52,10 @@ TestDto : +getCode()
 
 Test : +getResultParameters()
 Test : +addReport(diagnosisText)
+Test : -code
 Test : -report
+Test : -labOrder
+Test : -sample
 
 Test"1" --> "*"Report : associated with
 Test"1..*" --> "1..*"TestParameter: request analysis of

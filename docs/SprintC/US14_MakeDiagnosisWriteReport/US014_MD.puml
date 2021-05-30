@@ -22,9 +22,31 @@ class Report {
   -createdAt
 }
 
+class SpecialistDoctor {
+  -docIndexNumber
+}
+
+class Employee {
+  -employeeID
+  -name
+  -address
+  -phoneNumber
+  -email
+  -socCode
+}
+
+class User{
+  -name
+  -email
+  -password
+}
+
 Company "1" -- "*" Test : performs  >
-Test "1" -- "*" TestParameter : request analysis of >
 Report "1" -- "1" Test : created according to >
 ParameterResult "1..*" -- "1" Test : obtained through >
+SpecialistDoctor --|> Employee
+Company "1" -- "1..*" Employee : has >
+SpecialistDoctor "1" -- "1..*" Report : writes >
+Employee "0..1" -- "1" User: relates to >
 
 @enduml
