@@ -16,7 +16,7 @@ public class TestDtoDateTest {
         Date diagnosisDate = new Date();
 
         TestDtoDate test = new TestDtoDate("000000000001",registrationDate, analysisDate, diagnosisDate);
-        String expect = String.format("Code: 000000000001\nRegistration Date: %s\nAnalysisDate: %s\nDiagnosis Date: %s", registrationDate, analysisDate, diagnosisDate);
+        String expect = String.format("Code: 000000000001 %nRegistration Date: %s %nAnalysisDate: %s %nDiagnosis Date: %s", registrationDate, analysisDate, diagnosisDate);
         String actual = test.toString();
 
         Assert.assertEquals(expect, actual);
