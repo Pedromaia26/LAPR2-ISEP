@@ -42,11 +42,9 @@
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/LabOrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_CD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_CD.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_MD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_MD.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,10 +233,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BarcodeCreateTest.testEquals" />
         <item itemvalue="JUnit.All in Sem2App" />
         <item itemvalue="JUnit.TestMapperTest" />
         <item itemvalue="JUnit.TestTypeMapperTest" />
-        <item itemvalue="JUnit.app.domain.model in Sem2App" />
       </list>
     </recent_temporary>
   </component>
@@ -426,36 +424,6 @@
     <MESSAGE value="Finishing UI for recording test results and some changes to optimize the code." />
     <MESSAGE value="Adding unit tests." />
     <option name="LAST_COMMIT_MESSAGE" value="Adding unit tests." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1622386279105">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="722" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622386279105" />
-    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1622377071199">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622377071199" />
-    <state width="1860" height="331" key="GridCell.Tab.0.bottom" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.center" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.left" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state width="1860" height="331" key="GridCell.Tab.0.right" timestamp="1622391339808">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="331" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622391339808" />
-    <state x="781" y="240" key="RollbackChangesDialog" timestamp="1622362989661">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="781" y="240" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622362989661" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
