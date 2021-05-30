@@ -72,6 +72,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -87,7 +88,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -118,6 +119,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -133,7 +135,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -159,6 +161,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -174,7 +177,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -205,6 +208,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -218,7 +222,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -248,6 +252,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -261,7 +266,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test("1234567890", 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -292,6 +297,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -305,7 +311,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -316,7 +322,7 @@ public class TestTest {
         nteste.addSample(sample);
 
 
-        SampleDTO sampleDTO= new SampleDTO("1234567890");
+        SampleDTO sampleDTO= new SampleDTO("000000000001");
 
         app.domain.model.Test test = c.getTestStore().getTestByCode(sampleDTO.getOrderid());
         Sample test2= test.RecordNewSample(App.getInstance().getCompany());
@@ -337,6 +343,7 @@ public class TestTest {
 
         param.add(p);
 
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
@@ -354,7 +361,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -365,7 +372,7 @@ public class TestTest {
         nteste.addSample(sample);
 
 
-        SampleDTO sampleDTO= new SampleDTO("1234567890");
+        SampleDTO sampleDTO= new SampleDTO("000000000001");
 
         app.domain.model.Test test = c.getTestStore().getTestByCode(sampleDTO.getOrderid());
         Sample test2= test.RecordNewSample(c);
@@ -383,6 +390,7 @@ public class TestTest {
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
         Parameter p = new Parameter("01981", "aa", "blood", pc);
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         List<Parameter> param = new ArrayList<>();
 
         param.add(p);
@@ -404,7 +412,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test("1234567890",1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -415,7 +423,7 @@ public class TestTest {
         nteste.addSample(sample);
 
 
-        SampleDTO sampleDTO= new SampleDTO("1234567890");
+        SampleDTO sampleDTO= new SampleDTO("000000000001");
 
         app.domain.model.Test test = c.getTestStore().getTestByCode(sampleDTO.getOrderid());
         Sample test2= test.RecordNewSample(c);
@@ -488,6 +496,7 @@ public class TestTest {
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
 
@@ -507,7 +516,7 @@ public class TestTest {
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
 
-        app.domain.model.Test t = new app.domain.model.Test("abcde12345", 1234567890, lO);
+        app.domain.model.Test t = new app.domain.model.Test(c, client, 1234567890, lO);
     }
 
     /*@Test (expected = IllegalArgumentException.class)

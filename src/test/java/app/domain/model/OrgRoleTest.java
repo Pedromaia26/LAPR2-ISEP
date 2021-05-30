@@ -1,6 +1,5 @@
 package app.domain.model;
 
-import com.thoughtworks.qdox.model.expression.Or;
 import org.junit.Assert;
 import org.junit.Test;
 

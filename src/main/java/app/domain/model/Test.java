@@ -116,7 +116,7 @@ public class Test {
         this.date = new Date();
     }
 
-    public Test(String code, long nhsCode, LabOrder labOrder) {
+    /*public Test(String code, long nhsCode, LabOrder labOrder) {
         this.code = code;
 
         this.nhsCode = nhsCode;
@@ -127,7 +127,7 @@ public class Test {
         testParameterList = addToList(labOrder.getParameters());
 
         this.date = new Date();
-    }
+    }*/
 
     /**
      * Returns the code of a test.

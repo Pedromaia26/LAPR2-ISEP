@@ -18,6 +18,7 @@ public class TestStoreTest {
         Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Parameter p = new Parameter("01981", "aa", "blood", pc);
         Parameter p1 = new Parameter("8ika1", "bb", "sangue", pc);
@@ -59,8 +60,8 @@ public class TestStoreTest {
         LabOrder lO = new LabOrder(tt, param);
         LabOrder lO1 = new LabOrder(tt2, param2);
 
-        app.domain.model.Test t = new app.domain.model.Test("1231231231",1231231231L,lO);
-        app.domain.model.Test t2 = new app.domain.model.Test("1231231231",1231231231L,lO1);
+        app.domain.model.Test t = new app.domain.model.Test(c, client,1231231231L,lO);
+        app.domain.model.Test t2 = new app.domain.model.Test(c, client,1231231231L,lO1);
 
         c.getTestStore().addToList(t);
         c.getTestStore().addToList(t2);
