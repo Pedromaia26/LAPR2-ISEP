@@ -13,15 +13,12 @@ class LaboratoryCoordinator {
 }
 
 class Report {
-
+   - diagnosis
+   - createdAt
 }
 
 class SpecialistDoctor {
   
-}
-
-class Diagnosis {
-  - description
 }
 
 class ParameterResult {
@@ -43,9 +40,7 @@ Company "1" -- "*" LaboratoryCoordinator : has  >
 Company "1" -- "*" SpecialistDoctor : has >
 Company "1" -- "*" ClinicalChemistryTechnologist: has >
 SpecialistDoctor "1" -- "1" Report: writes >
-SpecialistDoctor "1" -- "1..*" Diagnosis: makes >
 SpecialistDoctor "1" -- "1..*" ParameterResult: analysis >
-LaboratoryCoordinator "1" -- "*" Diagnosis: validates >
 LaboratoryCoordinator "1" -- "*" Report: validates >
 LaboratoryCoordinator "1" -- "*" ParameterResult: validates >
 ClinicalChemistryTechnologist "1" -- "*" ParameterResult: records >
