@@ -326,7 +326,7 @@ public class Test {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-    public String addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);

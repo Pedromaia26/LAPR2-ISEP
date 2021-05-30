@@ -78,13 +78,13 @@ public class RecordTestResultUI implements Runnable {
                     int confirm = ler.nextInt();
 
                     try {
-                        result = rtrController.getTest().addTestResult(barcode, parameterCode, resultValue, metric);
+                        result = rtrController.getTest().addTestParameterResult(barcode, parameterCode, resultValue, metric);
                     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
                     }
 
                     if (confirm == 1){
-                        if (rtrController.saveTestResult(result))
+                        if (rtrController.saveTestParameterResult(result))
                             System.out.print("Parameter result was added successfully.\n");
                         tParamList.remove(t.getTestParameterFor(parameterCode));
                     }else{

@@ -48,7 +48,7 @@ public class ValidateWorkDoneController {
 
     public void validateTests(List<String> codes) throws IOException {
         for (String code: codes){
-            company.getTestStore().validateTest(code);
+            company.getTestStore().validateWorkDone(code);
         }
     }
 }

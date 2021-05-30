@@ -49,12 +49,12 @@ public class RecordTestResultController {
         return this.test;
     }
 
-    public void addTestResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        test.addTestResult(barcode, parameterCode, result, metric);
+    public void addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        test.addTestParameterResult(barcode, parameterCode, result, metric);
     }
 
 
-    public boolean saveTestResult(String testParameterResult) {
+    public boolean saveTestParameterResult(String testParameterResult) {
         return test.saveTestParameterResult(testParameterResult);
     }
 }
