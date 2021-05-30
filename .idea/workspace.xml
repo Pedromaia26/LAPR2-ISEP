@@ -39,19 +39,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Minor updates to code in order to optimize.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Adding unit tests.">
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RegistTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/TestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestParameterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestParameterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/domain/model/TestTypeMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestParameterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestParameterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622372255760</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Adding unit tests.">
+      <created>1622393976568</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622393976568</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +392,8 @@
     <MESSAGE value="fixing jenkins test coverage bug" />
     <MESSAGE value="Finishing UI for recording test results." />
     <MESSAGE value="Finishing UI for recording test results and some changes to optimize the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing user interface for recording test results and some minor changes to the code." />
+    <MESSAGE value="Adding unit tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding unit tests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -407,6 +407,7 @@
     <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Main_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622393785975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622392111367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
