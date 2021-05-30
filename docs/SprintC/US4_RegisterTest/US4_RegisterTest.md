@@ -115,16 +115,16 @@ n/a
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step 1  		 |	... interacting with the actor? | TestUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
 | 			  		 |	... coordinating the US? | RegistTestController | Controller                             |
-| 			  		 |	... instantiating a new Laboratory? | Company | In the DM Company conducts Laboratory.   |
+| 			  		 |	... instantiating a new Test? | Company | In the DM Company conducts Tests.   |
 | Step 2  		 |							 |             |                              |
-| Step 3  		 |	...saving the inputted data? | Laboratory  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the test type to show? | Company | IE: Test types are conducted by the Company. |
-| Step 5  		 |	... saving the selected test type? | Laboratory | IE: object created in step 1 contains one or more test types.  |
+| Step 3  		 |	...saving the inputted data? | Test  | IE: object created in step 1 has its own data.  |
+| Step 4  		 |	...knowing the Test to show? | Company | IE: Tests are conducted by the Company. |
+| Step 5  		 |	... saving the selected Test? | Test | IE: object created in step 1 contains one or more test types.  |
 | Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | Laboratory | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Company | IE: knows all its test types.| 
-| 			  		 |	... saving the created laboratory? | Company | IE: owns all the Laboratories.| 
-| Step 8  		 |	... informing operation success?| CreateLaboratoryUI  | IE: responsible for user interactions.  | 
+| Step 7  		 |	... validating all data (local validation)? | Test | IE: owns its data.| 
+| 			  		 |	... validating all data (global validation)? | Company | IE: knows all its Tests.| 
+| 			  		 |	... saving the created Test? | Company | IE: owns all the Tests.| 
+| Step 8  		 |	... informing operation success?| TestUI  | IE: responsible for user interactions.  | 
 
 ### Systematization ##
 
