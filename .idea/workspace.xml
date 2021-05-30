@@ -42,7 +42,6 @@
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="ValidateWorkDoneController, Test and TestStore add methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateParameterCategoryUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateParameterCategoryUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateParameterUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/CreateParameterUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/ui/console/DevTeamUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/ui/console/DevTeamUI.java" afterDir="false" />
@@ -77,7 +76,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/RecordTestResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/Test.java" afterDir="false" />
@@ -85,7 +83,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
->>>>>>> ce40120820c78d71cb99845ca6da2eb07e3c01ed
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,21 +170,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
-      <module name="Sem2App" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-=======
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -201,7 +183,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
->>>>>>> ce40120820c78d71cb99845ca6da2eb07e3c01ed
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
+      <module name="Sem2App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BarcodeCreateTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sem2App" />
       <extension name="coverage">
@@ -483,11 +477,8 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-=======
->>>>>>> ce40120820c78d71cb99845ca6da2eb07e3c01ed
     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
@@ -495,12 +486,9 @@
     <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
-<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-=======
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
->>>>>>> ce40120820c78d71cb99845ca6da2eb07e3c01ed
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
