@@ -98,8 +98,8 @@ public class Test {
 
         this.code = createTestCode(company);
 
-        if (String.valueOf(nhsCode).length() != 10)
-            throw new IllegalArgumentException("National Health Service Code should have 10 digits");
+        if (String.valueOf(nhsCode).length() != 12)
+            throw new IllegalArgumentException("National Health Service Code should have 12 digits");
 
         this.nhsCode = nhsCode;
 

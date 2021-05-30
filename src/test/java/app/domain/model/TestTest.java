@@ -42,7 +42,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c,client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c,client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -88,7 +88,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -135,7 +135,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -177,7 +177,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -222,7 +222,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -266,7 +266,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 1234123412L, labOrder);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -311,7 +311,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -361,7 +361,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -412,7 +412,7 @@ public class TestTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -434,61 +434,6 @@ public class TestTest {
 
     }
 
-    /*@Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-
-        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
-        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-
-        List<ParameterCategory> listPC = new ArrayList<>();
-
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
-
-
-        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("09090");
-
-        listPC.add(pCat);
-
-        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
-
-        Parameter p = new Parameter("998la", "hemogl", "hemoglobin values",pCat);
-
-        App.getInstance().getCompany().getParameterStore().addParameter(p);
-        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
-        LabOrder lO = new LabOrder(tt,listOfPar);
-
-        app.domain.model.Test t = new app.domain.model.Test("abcde123456", 1234567890, lO);
-    }*/
-
-    /*@Test (expected = IllegalArgumentException.class)
-    public void createTestCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-
-
-        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
-        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-
-        List<ParameterCategory> listPC = new ArrayList<>();
-
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
-        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
-
-
-        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
-
-        listPC.add(pCat);
-
-        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
-
-        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
-
-        App.getInstance().getCompany().getParameterStore().addParameter(p);
-        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
-        LabOrder lO = new LabOrder(tt,listOfPar);
-
-        app.domain.model.Test t = new app.domain.model.Test("abcde", 1234567890, lO);
-
-    }*/
 
     @Test
     public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -516,12 +461,16 @@ public class TestTest {
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
 
-        app.domain.model.Test t = new app.domain.model.Test(c, client, 1234567890, lO);
+        app.domain.model.Test t = new app.domain.model.Test(c, client, 123456789000L, lO);
     }
 
-    /*@Test (expected = IllegalArgumentException.class)
-    public void createTestNHSCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
+    @Test (expected = IllegalArgumentException.class)
+    public void createTestNHSCodeWithLessThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -544,7 +493,102 @@ public class TestTest {
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
 
-        app.domain.model.Test t = new app.domain.model.Test("abcdefghjk", 1234567, lO);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567, lO);
 
-    }*/
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void createTestNHSCodeWithMoreThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567897897L, lO);
+
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void createTestTINCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L);
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO);
+
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void createTestTINCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",12345678901L,"asd@gmail.com","Moirane",44123456789L);
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc);
+        App.getInstance().getCompany().getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = App.getInstance().getCompany().getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        App.getInstance().getCompany().getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO);
+
+    }
 }

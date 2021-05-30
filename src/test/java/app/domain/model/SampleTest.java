@@ -42,7 +42,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -85,7 +85,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -131,7 +131,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -179,7 +179,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -228,7 +228,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -272,7 +272,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -317,7 +317,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
@@ -361,7 +361,7 @@ public class SampleTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,1234123412L,labOrder);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
 
 
         c.getTestStore().addToList(nteste);
