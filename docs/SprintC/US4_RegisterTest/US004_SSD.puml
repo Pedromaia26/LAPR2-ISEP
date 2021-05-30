@@ -6,7 +6,7 @@ autonumber
 activate Adm
 Adm -> System: starts a new test to be performed to a client
 activate System
-System --> Adm: request data(nhsCode, tinNumber, labOrder)
+System --> Adm: request data(nhsCode)
 deactivate System
 Adm -> System: types the requested data
 activate System

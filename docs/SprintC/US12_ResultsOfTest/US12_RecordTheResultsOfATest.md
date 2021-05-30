@@ -128,8 +128,8 @@ n/a
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
- * TestParameterResult
  * Test
+ * TestParameter
  
 
 Other software classes (i.e. Pure Fabrication) identified: 
