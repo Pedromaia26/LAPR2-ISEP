@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SampleMapper {
-
-     public Test toModel(SampleDTO dto, TestStore store) throws OutputException, BarcodeException {
+    /**
+     * Recieves the sampleDTO and returns the new Sample.
+     * @param dto The sampleDTO
+     * @return new sample.
+     */
+     public Test toModel(SampleDTO dto, TestStore store) {
 
           String code=dto.getOrderid();
 

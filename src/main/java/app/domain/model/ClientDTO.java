@@ -59,7 +59,10 @@ public class ClientDTO {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
-
+    /**
+     * Regists a clientDTO, receiving by parameter client
+     * @param client The Citizen Card Number
+     */
     public ClientDTO(Client client){
         this.ccn = client.getCcn();
         this.birth= client.getBirth();

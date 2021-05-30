@@ -4,12 +4,29 @@ import java.util.List;
 import java.util.Objects;
 
 public class Laboratory {
-
+    /**
+     * String that contains the laboratoryID
+     */
     private final String laboratoryID;
+    /**
+     * String that contains the name
+     */
     private final String name;
+    /**
+     * String that contains the address
+     */
     private final String address;
+    /**
+     * String that contains the phoneNumber
+     */
     private long phoneNumber;
+    /**
+     * String that contains the tinNumber
+     */
     private long tinNumber;
+    /**
+     * String that contains the Parameter category list
+     */
     private final List<TestType> listPC;
 
 
@@ -54,6 +71,10 @@ public class Laboratory {
 
         this.listPC = listPC;
     }
+    /**
+     * Returns the textual description of a laboratory.
+     * @return characteristics of a laboratory.
+     */
     public String toString(){
         return String.format("laboratoryID: %s; Name: %s; Address: %s; Phone Number: %d; tinNumber: %d; Test Types: %s;", laboratoryID, name, address, phoneNumber, tinNumber, listPC);
     }

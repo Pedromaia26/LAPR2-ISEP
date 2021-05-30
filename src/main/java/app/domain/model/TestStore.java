@@ -109,7 +109,7 @@ public class TestStore {
      * Marks the test as validated
      * @param code The code of the test to validate
      */
-    public void validateTest(String code) throws IOException{
+    public void validateWorkDone(String code) throws IOException{
         Test test = getTestByCode(code);
         test.validateTest();
     }

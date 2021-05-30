@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class TestTypeMapperTest {
 
-    /* @Test
+    @Test
     public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Company c = new Company("Many Labs");
@@ -23,9 +23,7 @@ public class TestTypeMapperTest {
 
         TestType tt = new TestType("COVID-19", "swab", "adasd", pcList);
 
-        TestTypeStore tList = new TestTypeStore();
-
-        tList.addToList(tt);
+        c.getTestTypeStore().addToList(tt);
 
 
         List<TestTypeDTO> ttDtoList = ttContr.getTestTypeDto();
@@ -37,5 +35,5 @@ public class TestTypeMapperTest {
 
             Assert.assertEquals(description, "COVID-19", description);
         }
-    } */
+    }
 }

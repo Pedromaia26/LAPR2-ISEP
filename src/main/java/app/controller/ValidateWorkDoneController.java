@@ -33,7 +33,8 @@ public class ValidateWorkDoneController {
     public List<TestDtoDate> getTests(){
         testsList = company.getTestStore().getTests();
         for(Test test : testsList){
-            if((test.getReport().getCreatedAt() != null) && (test.getValidationDate() == null)){
+
+            if((test.getReport()!= null) && (test.getValidationDate() == null)){
                 testsReadyToValidate.add(test);
             }
         }
@@ -47,7 +48,7 @@ public class ValidateWorkDoneController {
 
     public void validateTests(List<String> codes) throws IOException {
         for (String code: codes){
-            company.getTestStore().validateTest(code);
+            company.getTestStore().validateWorkDone(code);
         }
     }
 }

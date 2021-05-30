@@ -35,6 +35,7 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 > **Answer:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
 
 
+
 ### 1.3. Acceptance Criteria
 
 
@@ -46,7 +47,7 @@ As a clinical chemistry technologist, I intend to record the results of a given 
 ### 1.4. Found out Dependencies
 
 
-* No dependecies were found for now.
+* There is a dependency to "US05 Record A New Sample" since at least one sample must be registered in the system, so that the results of its parameters can be compared with the reference values.
 
 
 ### 1.5 Input and Output Data
@@ -108,35 +109,41 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateTaskUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateTaskController | Controller                             |
-| 			  		 |	... instantiating a new Task? | Organization   | Creator (Rule 1): in the DM Organization has a Task.   |
-| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation.  |
-| 			  		 |	... knowing to which organization the user belongs to? | Platform  | IE: has registed all Organizations |
-| 			  		 |							 | Organization   | IE: knows/has its own Employees|
-| 			  		 |							 | Employee  | IE: knows its own data (e.g. email) |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |	...saving the inputted data? | Task  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the task categories to show? | Platform  | IE: Task Categories are defined by the Platform. |
-| Step 5  		 |	... saving the selected category? | Task  | IE: object created in step 1 is classified in one Category.  |
+| Step 1  		 |	... interacting with the actor? | RecordTestResultUI  |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  		 |	... coordinating the US? | RecordTestResultController | Controller                             |
+| Step 2  		 |		... knowing the tests to show?		 |      TestStore       |  IE and HC+LC: Owns the existing tests and prevents the Company from doing many things.                            |
+|				 |	... knowing the TestStore?   |  Company  | IE: Company knows all its tests.
+|                |	... process the data and convert it to dto  |  TestMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
+| Step 3  		 |
+| Step 4  		 |	...knowing the test parameters to show? | Test  | IE: Test contains a list of test parameters. |
+|				 | 	... process the data and convert it to dto  |  TestParameterMapper   | DTO: It is used so that the UI cannot contact directly with the domain model.   	|
+| Step 5  		 |									|
 | Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | Task | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Organization | IE: knows all its tasks.| 
-| 			  		 |	... saving the created task? | Organization | IE: owns all its tasks.| 
-| Step 8  		 |	... informing operation success?| CreateTaskUI  | IE: is responsible for user interactions.  | 
+| Step 7  		 |  ... create a new instance of TestParameterResult?	| 	Test  |	Creator (R1): ?		|
+|				 |  ... validating all data (local validation)? | TestParameterResult | IE: owns its data.|
+|					 |   ... adapting the interface  | 				| Protected variations: Upgrade the adaptability of the system to new APIs with the same funcionalities |
+| Step 8  		 |						| 
+| Step 9 		 |   .. saving the test parameter result?	|  Test  | IE: knows all its test parameters.  |
+|			 	 | ... validating all data (global validation)?	 | Test | IE: owns its data. |
+| Step 10 		 | ...informing operation success |	RecordTestResultUI  |  IE: is responsible for user interactions.	|
+
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Organization
- * Platform
- * Task
+ * Company
+ * TestParameterResult
+ * Test
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateTaskUI  
- * CreateTaskController
+ * RecordTestResultUI  
+ * RecordTestResultController
+ * TestMapper
+ * TestStore
+ * TestParameterMapper
+ 
 
 
 ## 3.2. Sequence Diagram (SD)

@@ -21,8 +21,8 @@ public class WriteReportUI implements Runnable {
         Scanner ler = new Scanner(System.in);
         WriteReportController controller = new WriteReportController();
 
-        List<TestDTO> lTestsDto = new ArrayList<>();
-        List<TestParameterDto> lTestParametersDto = new ArrayList<>();
+        List<TestDTO> lTestsDto;
+        List<TestParameterDto> lTestParametersDto;
 
         int testop;
         TestDTO testDto = null;
@@ -33,32 +33,31 @@ public class WriteReportUI implements Runnable {
         if(lTestsDto.isEmpty()){
             throw new IllegalArgumentException("There are no tests to be reported.");
         }
-        System.out.println("List of tests to be reported:");
+        System.out.print("List of tests to be reported:\n");
         for (TestDTO testdto: lTestsDto){
-            System.out.printf("%d - %s\n", lTestsDto.indexOf(testdto)+1, testdto);
+            System.out.printf("%d - Code: %s%nLabOrder:%n%s%nParameters:%s%n%s%n--------------------------------%n", lTestsDto.indexOf(testdto)+1, testdto.getCode(),testdto.getLabOrder().getTestType(),testdto.getLabOrder().getParameters(), testdto.getSample() );
         }
-        System.out.println("Select one test of the list: ");
+        System.out.print("Select one test of the list: \n");
         testop = ler.nextInt();
-        if (testop <= lTestsDto.size() && testop >= 1){
-            testDto = lTestsDto.get(testop-1);
-            exists = true;
-        }
-        if (exists){
+
+        try {
+            testDto = lTestsDto.get(testop - 1);
             lTestParametersDto = controller.getResultParameters(testDto);
-            for (TestParameterDto testParameter : lTestParametersDto){
-                System.out.println(testParameter);
+            for (TestParameterDto testParameter : lTestParametersDto) {
+                System.out.printf(" Test Parameter : %s \n Test Parameter Result : %s\n", testParameter.getParameterdto(), testParameter.getTprdto());
                 System.out.println("---------");
             }
-            System.out.println("Introduce the diagnosis");
+            System.out.print("Introduce the diagnosis\n");
             String diagnosis = ler.next();
             controller.addReport(diagnosis);
+
             if (controller.removeTestToBeReported())
                 System.out.print("Report created with success.\n");
             else
-                throw new IllegalArgumentException("Report not created.");
-        }
-        else{
-            throw new IllegalArgumentException("The selected test does not exist.");
+                System.out.println("Report not created.");
+
+        }catch (Exception e){
+            System.out.print("The selected test does not exist.\n");
         }
         /*
         long time = createdAt.getTime();

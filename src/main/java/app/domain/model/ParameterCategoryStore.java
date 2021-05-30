@@ -27,12 +27,21 @@ public class ParameterCategoryStore {
         return new ParameterCategory(name, code);
 
     }
+    /**
+     * Validates the ParameterCategory received.
+     * @param pc the parameterCategory to be validated.
+     * @return True if the parameterCategory is successfully validated, false if it is not.
+     */
     public boolean validateParameterCategory(ParameterCategory pc) {
         if (pc == null)
             return false;
         return (!this.cat.contains(pc));
     }
-
+    /**
+     * Saves the parameter category received.
+     * @param pc the parameterCategory to be saved.
+     * @return True if the parameterCategory is successfully saved, false if it is not.
+     */
     public boolean saveParameterCategory(ParameterCategory pc) {
         if(cat == null) {
             cat = new ArrayList<>();

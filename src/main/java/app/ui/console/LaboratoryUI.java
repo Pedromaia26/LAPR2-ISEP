@@ -23,54 +23,59 @@ public class LaboratoryUI implements Runnable{
         Scanner ler = new Scanner(System.in);
         RegistLaboratoryController createRegistLaboratoryController = new RegistLaboratoryController();
 
-        System.out.println("Insert the Laboratory ID you want to create:");
+        System.out.print("Insert the Laboratory ID you want to create:\n");
         String laboratoryID = ler.next();
-        System.out.println("Insert its name:");
+        System.out.print("Insert its name:\n");
         String name = ler.next();
         ler.nextLine();
-        System.out.println("Insert its address:");
+        System.out.print("Insert its address:\n");
         String address = ler.next();
-        System.out.println("Insert the phone number of the Clinical Analysis Laboratory:");
+        System.out.print("Insert the phone number of the Clinical Analysis Laboratory:\n");
         long phoneNumber = ler.nextLong();
-        System.out.println("Insert the Tax Identification Number:");
+        System.out.print("Insert the Tax Identification Number:\n");
         long tinNumber = ler.nextLong();
-        System.out.println("Insert the code of the Test Type you want to use:");
+        System.out.print("Insert the code of the Test Type you want to use:\n");
 
         List<String> testtypes = new ArrayList<>();
 
         int a;
         String testTypeCode;
+        try {
 
-        do {
-            testTypeCode = ler.next();
-            testtypes.add(testTypeCode);
-            System.out.println("Do you want to add another type test to your Laboratory?:\n1 ---> Yes\n2 ---> No");
-            a = ler.nextInt();
-        }while (a==1);
 
-        List<TestType> tt = new ArrayList<>();
+            do {
+                testTypeCode = ler.next();
+                testtypes.add(testTypeCode);
+                System.out.print("Do you want to add another type test to your Laboratory?:\n1 ---> Yes\n2 ---> No\n");
+                a = ler.nextInt();
+            } while (a == 1);
 
-        for(String code : testtypes){
-            tt.add(createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(code));
-        }
+            List<TestType> tt = new ArrayList<>();
 
-        createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
-        
-        if (createRegistLaboratoryController.createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, tt)){
-            System.out.println("--------------------------");
-            System.out.println("Please confirm the data:");
-            System.out.printf("Laboratory ID: %s\nName: %s\nAddress: %s\nPhone Number: %d\nTax Identification Number: %d\nTest Type code: %s\n%n", laboratoryID, name, address, phoneNumber, tinNumber, testtypes);
-            System.out.println("--------------------------");
-            System.out.println(" 1 --> Confirm");
-            System.out.println(" 2 --> Cancel");
-            int confirm = ler.nextInt();
-            if(confirm == 1){
-                if(createRegistLaboratoryController.saveLaboratory()){
-                    System.out.println("Laboratory created successfully.");
-                }else{
-                    System.out.println("Laboratory creation error.");
+            for (String code : testtypes) {
+                tt.add(createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(code));
+            }
+
+            createRegistLaboratoryController.getTestTypeStore().getTestTypeByCode(testTypeCode);
+
+            if (createRegistLaboratoryController.createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, tt)) {
+                System.out.print("--------------------------\n");
+                System.out.print("Please confirm the data:\n");
+                System.out.printf("Laboratory ID: %s%nName: %s%nAddress: %s%nPhone Number: %d%nTax Identification Number: %d%nTest Type code: %s%n", laboratoryID, name, address, phoneNumber, tinNumber, testtypes);
+                System.out.print("--------------------------\n");
+                System.out.print(" 1 --> Confirm\n");
+                System.out.print(" 2 --> Cancel\n");
+                int confirm = ler.nextInt();
+                if (confirm == 1) {
+                    if (createRegistLaboratoryController.saveLaboratory()) {
+                        System.out.print("Laboratory created successfully.\n");
+                    } else {
+                        System.out.print("Laboratory creation error.\n");
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("Invalid data");
         }
     }
 }

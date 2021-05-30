@@ -22,45 +22,45 @@ public class RecordSampleUI implements Runnable {
 
         for(TestDTO loDTO : controller.getTestDto()){
             if (loDTO.getSample().isEmpty())
-                System.out.println(loDTO);
+                System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%n",loDTO.getCode(), loDTO.getLabOrder().getTestType(),loDTO.getLabOrder().getParameters());
         }
         String codeTest = ler.nextLine();
 
-        System.out.println("Insert how many samples want to collect.");
+        System.out.print("Insert how many samples want to collect.\n");
 
         int number = ler.nextInt();
 
 
         int confirm;
-        for (int i=1;i<=number;i++) {
-            try {
-                if (controller.createNewSample(new SampleDTO(codeTest))) {
+        try {
+            for (int i = 1; i <= number; i++) {
+                try {
+                    if (controller.createNewSample(new SampleDTO(codeTest))) {
 
-                    System.out.println("--------------------------");
-                    System.out.println("Please confirm the data:");
-                    System.out.printf("TestCode: %s\nBarcode of sample %d: %s\n", codeTest, i,controller.getSamp().toString());
-                    System.out.println("--------------------------");
-                    System.out.println(" 1 --> Confirm");
-                    System.out.println(" 2 --> Cancel");
-                    confirm = ler.nextInt();
-                    if (confirm == 1) {
-                        if (controller.saveSample()) {
-                            System.out.println("Sample recorded successfully.");
-                            System.out.println("--------------------------");
-                        } else {
-                            System.out.println("Sample recording error.");
-                            System.out.println("--------------------------");
+                        System.out.print("--------------------------\n");
+                        System.out.print("Please confirm the data:\n");
+                        System.out.printf("TestCode: %s%nBarcode of sample %d: %s%n", codeTest, i, controller.getSamp().toString());
+                        System.out.print("--------------------------\n");
+                        System.out.print(" 1 --> Confirm\n");
+                        System.out.print(" 2 --> Cancel\n");
+                        confirm = ler.nextInt();
+                        if (confirm == 1) {
+                            if (controller.saveSample()) {
+                                System.out.print("Sample recorded successfully.\n");
+                                System.out.print("--------------------------\n");
+                            } else {
+                                System.out.print("Sample recording error.\n");
+                                System.out.print("--------------------------\n");
+                            }
                         }
                     }
+                } catch (OutputException | BarcodeException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
-                else{
-                    System.out.printf("Sample number:%d Creation error\n",i);
-                }
-            } catch (OutputException | BarcodeException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
-                e.printStackTrace();
+                System.out.println();
             }
-
+        }catch (Exception e){
+            System.out.println("Invalid test code");
         }
-
     }
 }

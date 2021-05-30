@@ -14,26 +14,26 @@ public class CreateParameterCategoryUI implements Runnable {
         Scanner ler = new Scanner(System.in);
         CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController();
 
-        System.out.println("Insert the code of the parameter category, please.");
+        System.out.print("Insert the code of the parameter category, please.\n");
         String code = ler.nextLine();
-        System.out.println("Insert the name of the parameter category, please.");
+        System.out.print("Insert the name of the parameter category, please.\n");
         String name = ler.nextLine();
 
         int confirm;
 
         if(createParameterCategoryController.createParameterCategory(name, code)) {
-            System.out.println("--------------------------");
-            System.out.println("Please confirm the data:");
-            System.out.println(String.format("Code: %s\nName: %s", code, name));
-            System.out.println("--------------------------");
-            System.out.println(" 1 --> Confirm");
-            System.out.println(" 2 --> Cancel");
+            System.out.print("--------------------------\n");
+            System.out.print("Please confirm the data:\n");
+            System.out.printf("Code: %s%nName: %s%n", code, name);
+            System.out.print("--------------------------\n");
+            System.out.print(" 1 --> Confirm\n");
+            System.out.print(" 2 --> Cancel\n");
             confirm = ler.nextInt();
             if(confirm == 1){
                 if(createParameterCategoryController.saveParameterCategory()){
-                    System.out.println("Parameter category created successfully.");
+                    System.out.print("Parameter category created successfully.\n");
                 }else{
-                    System.out.println("Parameter category creation error.");
+                    System.out.print("Parameter category creation error.\n");
                 }
             }
         }

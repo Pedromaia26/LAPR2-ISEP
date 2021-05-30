@@ -147,7 +147,10 @@ public class EmployeeDto {
      * @return the Doctor Index Number of a Specialist Doctor
      */
     public int getDocIndexNumberDto() { return docIndexNumber; }
-
+    /**
+     * Returns the textual description of a employeeDto.
+     * @return characteristics of a employeeDto.
+     */
     @Override
     public String toString() {
         return "EmployeeDto{" +

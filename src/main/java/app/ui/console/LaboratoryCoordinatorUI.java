@@ -16,7 +16,7 @@ public class LaboratoryCoordinatorUI implements Runnable{
         int option;
         do
         {
-            option = Utils.showAndSelectIndex(options, "\n\nReceptionist Menu:");
+            option = Utils.showAndSelectIndex(options, "\n\nLaboratory Coordinator Menu:");
 
             if ( (option >= 0) && (option < options.size()))
             {

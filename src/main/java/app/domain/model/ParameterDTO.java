@@ -5,19 +5,19 @@ import java.util.List;
 public class ParameterDTO {
 
     /**
-     String that contains the parameter code.
+     String that contains the parameterDto code.
      */
     private String code;
     /**
-     String that contains the parameter short name.
+     String that contains the parameterDto short name.
      */
     private String shortName;
     /**
-     String that contains the parameter description.
+     String that contains the parameterDto description.
      */
     private String description;
     /**
-     Object ParameterCategory corresponding to the category that categorizes the parameter
+     Object ParameterCategory corresponding to the category that categorizes the parameterDto
      */
     private ParameterCategory category;
 
@@ -25,6 +25,14 @@ public class ParameterDTO {
         return code;
     }
 
+    public String getShortName() {
+        return shortName;
+    }
+
+    /**
+     * Returns the textual description of a ParameterDto.
+     * @return characteristics of a parameterDto.
+     */
     @Override
     public String toString() {
         return "code=" + code + ", shortName=" + shortName + ", description=" + description +

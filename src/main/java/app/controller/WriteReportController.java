@@ -29,6 +29,7 @@ public class WriteReportController {
         for(Test test : lTests){
             for (TestParameter testparameter : test.getTestParameter()){
                 if(testparameter.getTpr() != (null) && !lTestsToBeReported.contains(test) && test.getReport() == null){
+
                     lTestsToBeReported.add(test);
                 }
             }
@@ -49,7 +50,14 @@ public class WriteReportController {
         return lResultParameterDto;
     }
 
+    public List<Test> getTest(){
+        return lTests;
+    }
+
     public void addReport(String diagnosisText) {
         test.addReport(diagnosisText);
+
     }
+
+
 }
