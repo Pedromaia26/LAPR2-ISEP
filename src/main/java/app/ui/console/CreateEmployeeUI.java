@@ -57,7 +57,7 @@ public class CreateEmployeeUI  implements Runnable{
                 System.out.println("Select the LaboratoryID to work");
                 List<LaboratoryDTO> laboratoryDTO = employeeController.getLaboratoryDTO();
                 for(LaboratoryDTO dto: laboratoryDTO){
-                    System.out.printf("Laboratory:%nLab ID: %s%nLab Name: %s%nPhone Number: %d%n", dto.getLaboratoryID(),dto.getName(),dto.getPhoneNumber());
+                    System.out.printf("Laboratory:%nLab ID: %s%nLab Name: %s%nPhone Number: %d%n", dto.getLaboratoryIDDto(),dto.getNameDto(),dto.getPhoneNumberDto());
                 }
                 String labId= ler.nextLine();
                 System.out.print("Name: ");

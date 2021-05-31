@@ -37,27 +37,27 @@ public class LaboratoryDTO {
         this.listPC = lab.getListPC();
     }
 
-    public String getLaboratoryID() {
+    public String getLaboratoryIDDto() {
         return laboratoryID;
     }
 
-    public String getName() {
+    public String getNameDto() {
         return name;
     }
 
-    public String getAddress() {
+    public String getAddressDto() {
         return address;
     }
 
-    public long getPhoneNumber() {
+    public long getPhoneNumberDto() {
         return phoneNumber;
     }
 
-    public long getTinNumber() {
+    public long getTinNumberDto() {
         return tinNumber;
     }
 
-    public List<TestType> getListPC() {
+    public List<TestType> getListPCDto() {
         return listPC;
     }
 }
