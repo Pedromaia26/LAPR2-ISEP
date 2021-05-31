@@ -69,7 +69,7 @@ public class Laboratory {
 
         this.laboratoryID = laboratoryID;
 
-        System.out.println(listPC);
+
         this.listPC = listPC;
     }
     /**
