@@ -48,7 +48,12 @@ public class TestParameterTest {
         TestType tt = new TestType("COVID-19", "swab", "89898", pcList);
 
         LabOrder lO =  new LabOrder(tt, pList);
-        app.domain.model.Test t = new app.domain.model.Test(c, cli, 123456789012L, lO);
+
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c, cli, 123456789012L, lO,l);
 
         ReferenceValue ref = new ReferenceValue(1.0d, 1.5d, "10e9L");
 

@@ -205,4 +205,12 @@ public class EmployeeStore {
         return false;
     }
 
+    public Laboratory getEmpByEmail(String labid) {
+        for (Employee lab : Employees) {
+            if (labid.equals(String.valueOf(lab.getEmail())))
+                return lab.getLaboratory();
+            }
+            throw new IllegalArgumentException("There is no Employee with such Email!");
+        }
+
 }

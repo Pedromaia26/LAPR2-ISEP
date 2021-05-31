@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import auth.AuthFacade;
+import auth.domain.model.Email;
 
 import javax.naming.ldap.ExtendedRequest;
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ public class RecordTestResultController {
     private List <TestParameterDto> testParameterDto = new ArrayList<>();
     private Test test;
     private Company c;
+    private AuthFacade authFacade;
+    private Laboratory lab;
 
 
     public RecordTestResultController(){
@@ -24,6 +28,7 @@ public class RecordTestResultController {
         tStore = App.getInstance().getCompany().getTestStore();
         tMapper = new TestMapper();
         tpMapper = new TestParameterMapper();
+        this.authFacade= c.getAuthFacade();
     }
 
     public Test getTestByBarcode(String code){
@@ -43,6 +48,19 @@ public class RecordTestResultController {
         listT = tStore.getTests();
         listTDto = tMapper.toDto(listT);
         return listTDto;
+    }
+
+    public boolean checkLab(TestDTO test){
+
+        Email empemail= authFacade.getCurrentUserSession().getUserId();
+
+        this.lab=c.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
+
+        if(test.getLaboratoryDTO().getLaboratoryID().equals(lab.getLaboratoryID())){
+            return true;
+        }
+        throw new ArrayIndexOutOfBoundsException("There are no tests to be validated.");
+
     }
 
     public Test getTest(){

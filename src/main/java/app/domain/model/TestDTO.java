@@ -22,6 +22,8 @@ public class TestDTO {
 
     private List<String> testParameterResultList;
 
+    private Laboratory laboratory;
+
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
      *
@@ -32,6 +34,7 @@ public class TestDTO {
         this.sample=test.getSample();
         this.code=test.getCode();
         this.testParameterResultList=test.getTestParameterResultList();
+        this.laboratory= test.getLab();
     }
 
 
@@ -69,5 +72,9 @@ public class TestDTO {
      */
     public List<Sample> getSample() {
         return sample;
+    }
+
+    public Laboratory getLaboratoryDTO() {
+        return laboratory;
     }
 }

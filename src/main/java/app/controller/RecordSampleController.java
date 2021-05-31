@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import auth.AuthFacade;
+import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -19,7 +21,8 @@ public class RecordSampleController {
     private Test test;
 
     private SampleMapper sampleMapper;
-
+    private AuthFacade authFacade;
+    private Laboratory lab;
 
 
 
@@ -28,6 +31,7 @@ public class RecordSampleController {
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
         this.sampleMapper= new SampleMapper();
+        this.authFacade= company.getAuthFacade();
 
     }
 
@@ -36,6 +40,7 @@ public class RecordSampleController {
         this.company= company;
         this.testMapper = new TestMapper();
         this.sampleMapper= new SampleMapper();
+        this.authFacade= company.getAuthFacade();
 
     }
 
@@ -62,7 +67,18 @@ public class RecordSampleController {
     }
 
 
+    public boolean checkLab(TestDTO test){
 
+        Email empemail= authFacade.getCurrentUserSession().getUserId();
+
+        this.lab=company.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
+
+        if(test.getLaboratoryDTO().getLaboratoryID().equals(lab.getLaboratoryID())){
+            return true;
+        }
+        throw new ArrayIndexOutOfBoundsException("There are no tests to be validated.");
+
+    }
 
 
     public List<Test> getTest(){

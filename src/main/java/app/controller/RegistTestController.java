@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import auth.AuthFacade;
+import auth.domain.model.Email;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,8 @@ public class RegistTestController {
     private ParameterStore parameterStore;
     private ClientMapper clientMapper;
     private TestMapper testMapper;
+    private AuthFacade authFacade;
+    private Laboratory lab;
 
 
 
@@ -32,6 +36,7 @@ public class RegistTestController {
         this.parameterMapper = new ParameterMapper();
         this.clientMapper = new ClientMapper();
         this.testMapper = new TestMapper();
+        this.authFacade= company.getAuthFacade();
 
     }
 
@@ -44,6 +49,7 @@ public class RegistTestController {
         this.parameterMapper = new ParameterMapper();
         this.clientMapper = new ClientMapper();
         this.testMapper = new TestMapper();
+        this.authFacade= company.getAuthFacade();
 
     }
 
@@ -51,8 +57,19 @@ public class RegistTestController {
 
         this.client=clientStore.getClientByTinNumber(tinNumber);
 
-        this.ts = this.company.getTestStore().createTest(this.company, this.client, nhsCode, labOrder);
+        this.ts = this.company.getTestStore().createTest(this.company, this.client, nhsCode, labOrder, lab);
         return this.company.getTestStore().validateTest(ts);
+    }
+
+    public void checkLab(){
+
+        Email empemail= authFacade.getCurrentUserSession().getUserId();
+
+        this.lab=company.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
+
+        System.out.println(lab);
+
+
     }
 
     public TestType getTestTypeByCode(String testType){

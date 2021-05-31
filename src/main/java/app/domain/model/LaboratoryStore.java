@@ -8,7 +8,7 @@ public class LaboratoryStore {
     /**
      * List that contains the Laboratories.
      */
-    private List<Laboratory> LaboratoryList = new ArrayList<>();
+    private List<Laboratory> laboratoryList = new ArrayList<>();
 
     /**
      * Create a new Clynical Analysis Laboratory with the kind of test it operates.
@@ -35,7 +35,7 @@ public class LaboratoryStore {
     public boolean validateLaboratory (Laboratory cl){
         if (cl == null)
             return false;
-        return !this.LaboratoryList.contains(cl);
+        return !this.laboratoryList.contains(cl);
     }
 
     /**
@@ -47,6 +47,19 @@ public class LaboratoryStore {
     public boolean saveLaboratory (Laboratory cl){
         if (!validateLaboratory(cl))
             return false;
-        return LaboratoryList.add(cl);
+        return laboratoryList.add(cl);
+    }
+
+    public List<Laboratory> getLaboratoryList() {
+        return laboratoryList;
+    }
+
+    public Laboratory getLabByLabId(String labid){
+
+        for (Laboratory lab: laboratoryList) {
+            if (labid.equals(lab.getLaboratoryID()))
+                return lab;
+        }
+        throw new IllegalArgumentException("There is no Lab with such ID!");
     }
 }

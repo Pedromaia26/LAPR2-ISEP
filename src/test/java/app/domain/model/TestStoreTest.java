@@ -60,8 +60,10 @@ public class TestStoreTest {
         LabOrder lO = new LabOrder(tt, param);
         LabOrder lO1 = new LabOrder(tt2, param2);
 
-        app.domain.model.Test t = new app.domain.model.Test(c, client,123123123100L,lO);
-        app.domain.model.Test t2 = new app.domain.model.Test(c, client,123123123100L,lO1);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, ttList);
+        app.domain.model.Test t = new app.domain.model.Test(c, client,123123123100L,lO,l);
+        app.domain.model.Test t2 = new app.domain.model.Test(c, client,123123123100L,lO1,l);
 
         c.getTestStore().addToList(t);
         c.getTestStore().addToList(t2);

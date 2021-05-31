@@ -17,7 +17,8 @@ public class WriteReportController {
     private List<TestParameter> lResultParameters = new ArrayList<>();
     private List<TestParameterDto> lResultParameterDto = new ArrayList<>();
     private Test test;
-    private TestMapper testMapper;
+    private TestMapper testMapper = new TestMapper();
+    private TestParameterMapper testParameterMapper= new TestParameterMapper();
 
     public WriteReportController() {
         this.tStore = App.getInstance().getCompany().getTestStore();
@@ -46,7 +47,7 @@ public class WriteReportController {
         String code = testDto.getCode();
         test = tStore.getTestByCode(code);
         lResultParameters = test.getTestParameter();
-        lResultParameterDto = TestParameterMapper.toDto(lResultParameters);
+        lResultParameterDto = testParameterMapper.toDto(lResultParameters);
         return lResultParameterDto;
     }
 

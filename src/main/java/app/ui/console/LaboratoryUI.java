@@ -29,7 +29,7 @@ public class LaboratoryUI implements Runnable{
         String name = ler.next();
         ler.nextLine();
         System.out.print("Insert its address:\n");
-        String address = ler.next();
+        String address = ler.nextLine();
         System.out.print("Insert the phone number of the Clinical Analysis Laboratory:\n");
         long phoneNumber = ler.nextLong();
         System.out.print("Insert the Tax Identification Number:\n");
@@ -73,6 +73,9 @@ public class LaboratoryUI implements Runnable{
                         System.out.print("Laboratory creation error.\n");
                     }
                 }
+            }
+            else {
+                System.out.println("Error");
             }
         }catch (Exception e){
             System.out.println("Invalid data");

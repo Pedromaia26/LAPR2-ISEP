@@ -35,9 +35,9 @@ public class OrgRole {
      * @param socCode the SocCode of a Employee
      * @return the Constructor to a new Employee
      */
-    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode){
+    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab){
         OrgRole role = new OrgRole(Orole);
-        return new Employee(role, employeeId, name, address, phoneNumber, email, socCode);
+        return new Employee(role, employeeId, name, address, phoneNumber, email, socCode, lab);
     }
 
     /**
@@ -53,9 +53,9 @@ public class OrgRole {
      * @param docIndexNumber the Doctor Index Number of a Specialist Doctor
      * @return the Constructor to a new Specialist Doctor
      */
-    public SpecialistDoctor createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber){
+    public SpecialistDoctor createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode,Laboratory lab, int docIndexNumber){
         OrgRole role = new OrgRole(Orole);
-        return new SpecialistDoctor(role, employeeId, name, address, phoneNumber, email, socCode, docIndexNumber);
+        return new SpecialistDoctor(role, employeeId, name, address, phoneNumber, email, socCode,lab, docIndexNumber);
     }
 
     /**

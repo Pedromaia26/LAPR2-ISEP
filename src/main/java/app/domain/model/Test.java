@@ -12,6 +12,10 @@ import java.util.*;
 public class Test {
 
 
+
+    private Laboratory lab;
+
+
     private List<TestParameterResult> results;
     /**
      * String that contains the code of a test.
@@ -101,7 +105,7 @@ public class Test {
      * @param nhsCode  National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(Company company, Client client, long nhsCode, LabOrder labOrder) {
+    public Test(Company company, Client client, long nhsCode, LabOrder labOrder, Laboratory lab) {
 
         this.code = createTestCode(company);
 
@@ -121,6 +125,8 @@ public class Test {
         testParameterList = addToList(labOrder.getParameters());
 
         this.date = new Date();
+
+        this.lab=lab;
     }
     
 
@@ -439,6 +445,10 @@ public class Test {
             }
         }
         throw new IllegalArgumentException("There is no sample with such barcode!");
+    }
+
+    public Laboratory getLab() {
+        return lab;
     }
 }
 

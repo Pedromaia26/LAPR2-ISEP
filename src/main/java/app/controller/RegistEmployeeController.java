@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegistEmployeeController {
+    private Company company;
 
     private OrgRoleStore rStore;
 
@@ -19,6 +20,13 @@ public class RegistEmployeeController {
     private SpecialistDoctor empsd;
 
     private RolesMapper rolesmapper = new RolesMapper();
+
+    private LaboratoryMapper laboratoryMapper = new LaboratoryMapper();
+
+
+    public RegistEmployeeController(){
+        this.company= App.getInstance().getCompany();
+    }
 
     public List<OrgRoleDto> getRoles(){
         rStore = App.getInstance().getCompany().getOrgRoleStore();
@@ -54,5 +62,14 @@ public class RegistEmployeeController {
     public void saveSpecialistDoctor() throws FileNotFoundException {
         App.getInstance().getCompany().getEmployeeStore().saveSpecialistDoctor(empsd);
         App.getInstance().getCompany().getEmployeeStore().createUser(empsd);
+    }
+
+
+    public List<Laboratory> getLaboratory(){
+        return this.company.getLaboratoryStore().getLaboratoryList();
+    }
+
+    public List<LaboratoryDTO> getLaboratoryDTO(){
+        return this.laboratoryMapper.toDto(getLaboratory());
     }
 }

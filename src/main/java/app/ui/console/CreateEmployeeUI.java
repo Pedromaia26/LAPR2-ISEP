@@ -54,8 +54,12 @@ public class CreateEmployeeUI  implements Runnable{
 
         if (exists) {
             try {
-
-
+                System.out.println("Select the LaboratoryID to work");
+                List<LaboratoryDTO> laboratoryDTO = employeeController.getLaboratoryDTO();
+                for(LaboratoryDTO dto: laboratoryDTO){
+                    System.out.printf("Laboratory:%nLab ID: %s%nLab Name: %s%nPhone Number: %d%n", dto.getLaboratoryID(),dto.getName(),dto.getPhoneNumber());
+                }
+                String labId= ler.nextLine();
                 System.out.print("Name: ");
                 String name = ler.nextLine();
                 System.out.print("Address: ");
@@ -72,11 +76,11 @@ public class CreateEmployeeUI  implements Runnable{
                 if (role.equalsIgnoreCase("specialist doctor")) {
                     System.out.print("Doctor Index Number: ");
                     docIndexNumber = ler.nextInt();
-                    if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode, docIndexNumber))) {
+                    if (employeeController.createSpecialistDoctor(new EmployeeDto(role, name, address, phoneNumber, email, socCode,labId, docIndexNumber))) {
                         ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
                     } else System.out.print("Employee created without success.\n");
                 } else {
-                    if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode))) {
+                    if (employeeController.createEmployee(new EmployeeDto(role, name, address, phoneNumber, email, socCode, labId))) {
                         ConfirmDataSave(role, name, address, phoneNumber, email, socCode, docIndexNumber, employeeController);
                     } else System.out.print("Employee created without success.\n");
                 }

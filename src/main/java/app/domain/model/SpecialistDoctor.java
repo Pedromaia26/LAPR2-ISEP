@@ -26,8 +26,8 @@ public class SpecialistDoctor extends Employee {
      * @param socCode The SOC code of a Specialist Doctor
      * @param docIndexNumber The Doctor Index Number of a Specialist Doctor
      */
-    public SpecialistDoctor(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode, int docIndexNumber) {
-        super(userRole, employeeId, name, adress, phoneNumber, email, socCode);
+    public SpecialistDoctor(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode,Laboratory lab, int docIndexNumber) {
+        super(userRole, employeeId, name, adress, phoneNumber, email, socCode, lab);
         if(String.valueOf(docIndexNumber).length() != 6)
             throw new IllegalArgumentException("Doctor Index Number should have 6 digits.");
         this.docIndexNumber = docIndexNumber;

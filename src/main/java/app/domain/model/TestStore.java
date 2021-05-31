@@ -23,8 +23,8 @@ public class TestStore {
     /*private List<Test> testsToBeReported;*/
 
 
-    public Test createTest (Company company, Client client, long nhsCode, LabOrder labOrder) {
-        return new Test(company, client, nhsCode, labOrder);
+    public Test createTest (Company company, Client client, long nhsCode, LabOrder labOrder, Laboratory lab) {
+        return new Test(company, client, nhsCode, labOrder, lab);
     }
 
     /**

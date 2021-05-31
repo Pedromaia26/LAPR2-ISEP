@@ -24,8 +24,14 @@ public class TestMapperTest {
         Parameter p = new Parameter("45678", "hemogl", "hemogl v", pc1);
         List<Parameter> listP = new ArrayList<>();
         Client cli = new Client(1234567890987654L, 1234567890L, "22/10/2002", "male", 1234567890L, "bbb@gmail.com",  "jonas", 98765431209L);
-                LabOrder l0 = new LabOrder(tt, listP);
-        app.domain.model.Test test = new app.domain.model.Test(c, cli, 123456789098L, l0);
+        LabOrder l0 = new LabOrder(tt, listP);
+
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+        app.domain.model.Test test = new app.domain.model.Test(c, cli, 123456789098L, l0,l);
 
         c.getTestStore().addToList(test);
 

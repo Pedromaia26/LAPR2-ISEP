@@ -21,12 +21,12 @@ public class RegistLaboratoryController {
         this.company = company;
     }
 
-    public boolean createLaboratory(String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List <TestType> TestTypes) {
+    public boolean createLaboratory(String laboratoryID, String name, String address, long phoneNumber, long tinNumber, List <TestType> testTypes) {
         List <TestType> tt = new ArrayList<>();
-        for (TestType tts: TestTypes){
+        for (TestType tts: testTypes){
             tt.add(this.company.getTestTypeStore().getTestTypeByCode(tts.getCode()));
         }
-        this.cl = this.company.getLaboratoryStore().createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, TestTypes);
+        this.cl = this.company.getLaboratoryStore().createLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, testTypes);
         return this.company.getLaboratoryStore().validateLaboratory(cl);
     }
 

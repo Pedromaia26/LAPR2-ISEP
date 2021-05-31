@@ -45,6 +45,8 @@ public class Employee {
      */
     private String password;
 
+    private Laboratory laboratory;
+
     /**
      * Regists a new employee, receiving by parameter the Organization Role, Employee ID,
      * Name, Address, Phone Number, Email and SOC code of a Employee.
@@ -58,7 +60,7 @@ public class Employee {
      * @param email The Email of a Employee
      * @param socCode The SOC code of a Employee
      */
-    public Employee(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode) {
+    public Employee(OrgRole userRole, String employeeId, String name, String adress, long phoneNumber, Email email, int socCode, Laboratory lab) {
         this.userRole = userRole;
 
         this.employeeId = employeeId;
@@ -82,6 +84,8 @@ public class Employee {
         this.socCode = socCode;
 
         this.userRole = userRole;
+
+        this.laboratory=lab;
     }
 
     /**
@@ -148,10 +152,16 @@ public class Employee {
         this.password = password;
     }
 
+    public Laboratory getLaboratory() {
+        return laboratory;
+    }
+
     /**
      * Returns a String with the information of a employee
      * @return attributes of a Employee
      */
+
+
     @Override
     public String toString() {
         return "Employee{" +

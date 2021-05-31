@@ -19,11 +19,15 @@ public class RecordSampleUI implements Runnable {
     public void run() {
         Scanner ler = new Scanner(System.in);
         RecordSampleController controller= new RecordSampleController();
+        try {
 
-        for(TestDTO loDTO : controller.getTestDto()){
-            if (loDTO.getSample().isEmpty())
-                System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%n",loDTO.getCode(), loDTO.getLabOrder().getTestType(),loDTO.getLabOrder().getParameters());
-        }
+            for (TestDTO loDTO : controller.getTestDto()) {
+
+                if (loDTO.getSample().isEmpty() && controller.checkLab(loDTO)) {
+                    System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%n", loDTO.getCode(), loDTO.getLabOrder().getTestType(), loDTO.getLabOrder().getParameters());
+                }
+            }
+
         String codeTest = ler.nextLine();
 
         System.out.print("Insert how many samples want to collect.\n");
@@ -62,5 +66,9 @@ public class RecordSampleUI implements Runnable {
         }catch (Exception e){
             System.out.println("Invalid test code");
         }
+    }catch (Exception e){
+        System.out.println("No tests to be analised");
+    }
+
     }
 }

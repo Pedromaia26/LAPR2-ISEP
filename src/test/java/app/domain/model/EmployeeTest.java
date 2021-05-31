@@ -7,14 +7,19 @@ import auth.domain.model.UserRole;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class EmployeeTest {
 
     @Test
     public void getUserRole() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         String userRole = emp.getUserRole();
 
@@ -23,9 +28,10 @@ public class EmployeeTest {
 
     @Test
     public void getEmployeeId() {
-
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         String employeeId = emp.getEmployeeId();
 
@@ -34,8 +40,10 @@ public class EmployeeTest {
 
     @Test
     public void getName() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         String name = emp.getName();
 
@@ -44,8 +52,10 @@ public class EmployeeTest {
 
     @Test
     public void getAdress() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         String address = emp.getAdress();
 
@@ -54,8 +64,10 @@ public class EmployeeTest {
 
     @Test
     public void getPhoneNumber() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         long phoneNumer = emp.getPhoneNumber();
 
@@ -64,9 +76,11 @@ public class EmployeeTest {
 
     @Test
     public void getEmail() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
         Email e = new Email("pedro@gmail.com");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, e, 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, e, 1234,l);
         Company c = new Company("Many Labs");
         Email email = emp.getEmail();
 
@@ -75,8 +89,10 @@ public class EmployeeTest {
 
     @Test
     public void getSocCode() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         Company c = new Company("Many Labs");
         int socCode = emp.getSocCode();
 
@@ -85,36 +101,46 @@ public class EmployeeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void EmployeeCheckNameRules() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "NameNameNameNameNameNameNameNameName", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "NameNameNameNameNameNameNameNameName", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void EmployeeCheckAddressRules() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void EmployeeCheckPhoneNumberRules() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 9129129121L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 9129129121L, new Email("pedro@gmail.com"), 1234,l);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void EmployeeCheckSocCodeRules() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 12345);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 12345,l);
 
     }
 
     @Test
     public void testToString() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
         String a = emp.toString();
 
         Assert.assertEquals("Employee{userRole=adm, employeeId='P00001', name='Pedro', adress='Porto', phoneNumber=91291291212, email=pedro@gmail.com, socCode=1234}", a);
@@ -122,20 +148,22 @@ public class EmployeeTest {
 
     @Test
     public void testEquals() {
+        List<TestType> testTypes =new ArrayList<>();
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
         OrgRole usrole = new OrgRole("adm");
-        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp1 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp2 = new Employee(usrole, "P00002", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp3 = new Employee(usrole, "P00001", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp4 = new Employee(usrole, "P00001", "Pedro", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp5 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291213L, new Email("pedro@gmail.com"), 1234);
-        Employee emp6 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedross@gmail.com"), 1234);
-        Employee emp7 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1243);
-        Employee emp8 = new Employee(usrole, "P00002", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp9 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234);
-        Employee emp10 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedro@gmail.com"), 1234);
-        Employee emp11 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1234);
-        Employee emp12 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1243);
+        Employee emp = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp1 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp2 = new Employee(usrole, "P00002", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp3 = new Employee(usrole, "P00001", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp4 = new Employee(usrole, "P00001", "Pedro", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp5 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291213L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp6 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedross@gmail.com"), 1234,l);
+        Employee emp7 = new Employee(usrole, "P00001", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1243,l);
+        Employee emp8 = new Employee(usrole, "P00002", "Pedros", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp9 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291212L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp10 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedro@gmail.com"), 1234,l);
+        Employee emp11 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1234,l);
+        Employee emp12 = new Employee(usrole, "P00002", "Pedros", "Portos", 91291291213L, new Email("pedross@gmail.com"), 1243,l);
 
         Employee emp13 = null;
 

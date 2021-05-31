@@ -39,6 +39,8 @@ public class EmployeeDto {
      */
     private int docIndexNumber;
 
+    private String labID;
+
     /**
      * Creates a new Employee with the received information: Organization Role, Employee ID, Name,
      * Address, Phone Number, Email and the SOC code of a Employee.
@@ -50,13 +52,14 @@ public class EmployeeDto {
      * @param email The Email of a Employee
      * @param socCode The SOC code of a Employee
      */
-    public EmployeeDto(String orgRole, String name, String adress, long phoneNumber, Email email, int socCode) {
+    public EmployeeDto(String orgRole, String name, String adress, long phoneNumber, Email email, int socCode, String labId) {
         this.orgRole = orgRole;
         this.name = name;
         this.address = adress;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.socCode = socCode;
+        this.labID= labId;
     }
 
     /**
@@ -71,7 +74,7 @@ public class EmployeeDto {
      * @param socCode The SOC code of a Employee
      * @param docIndexNumber The Doctor Index Number of a Specialist Doctor
      */
-    public EmployeeDto(String orgRole, String name, String adress, long phoneNumber, Email email, int socCode, int docIndexNumber) {
+    public EmployeeDto(String orgRole, String name, String adress, long phoneNumber, Email email, int socCode,String labId, int docIndexNumber) {
         this.orgRole = orgRole;
         this.name = name;
         this.address = adress;
@@ -79,6 +82,7 @@ public class EmployeeDto {
         this.email = email;
         this.socCode = socCode;
         this.docIndexNumber = docIndexNumber;
+        this.labID= labId;
     }
 
     /**
@@ -147,10 +151,18 @@ public class EmployeeDto {
      * @return the Doctor Index Number of a Specialist Doctor
      */
     public int getDocIndexNumberDto() { return docIndexNumber; }
+
+
+    public String getLabID() {
+        return labID;
+    }
+
     /**
      * Returns the textual description of a employeeDto.
      * @return characteristics of a employeeDto.
      */
+
+
     @Override
     public String toString() {
         return "EmployeeDto{" +

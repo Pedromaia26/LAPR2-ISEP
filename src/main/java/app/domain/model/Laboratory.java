@@ -69,6 +69,7 @@ public class Laboratory {
 
         this.laboratoryID = laboratoryID;
 
+        System.out.println(listPC);
         this.listPC = listPC;
     }
     /**
@@ -88,4 +89,27 @@ public class Laboratory {
         return Objects.equals(name, laboratory.name) && Objects.equals(address, laboratory.address) && Objects.equals(listPC, laboratory.listPC);
     }
 
+    public String getLaboratoryID() {
+        return laboratoryID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public long getTinNumber() {
+        return tinNumber;
+    }
+
+    public List<TestType> getListPC() {
+        return listPC;
+    }
 }

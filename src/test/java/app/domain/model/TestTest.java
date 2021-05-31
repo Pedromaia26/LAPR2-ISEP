@@ -45,8 +45,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c,client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c,client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -91,8 +94,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -138,8 +144,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -180,8 +189,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -225,8 +237,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -269,8 +284,11 @@ public class TestTest {
         LabOrder labOrder = new LabOrder(testesss, param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -314,8 +332,11 @@ public class TestTest {
         LabOrder labOrder= new LabOrder(testesss,param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -364,8 +385,11 @@ public class TestTest {
         LabOrder labOrder= new LabOrder(testesss,param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -415,8 +439,11 @@ public class TestTest {
         LabOrder labOrder= new LabOrder(testesss,param);
 
         c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -464,8 +491,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test t = new app.domain.model.Test(c, client, 123456789000L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c, client, 123456789000L, lO,l);
     }
 
 
@@ -496,8 +526,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567, lO,l);
 
     }
 
@@ -528,8 +561,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567897897L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567897897L, lO,l);
 
     }
 
@@ -561,7 +597,11 @@ public class TestTest {
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
 
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO,l);
 
     }
     @Test (expected = IllegalArgumentException.class)
@@ -592,7 +632,11 @@ public class TestTest {
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
 
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO,l);
 
     }
 
@@ -622,8 +666,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
 
         test.validateTest();
         Date expect = test.getValidationDate();
@@ -659,8 +706,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
         Date expected = new Date();
 
         Date actual = test.getDate();
@@ -694,8 +744,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
         Date expected = new Date(15987);
 
         Date actual = test.getDate();
@@ -730,8 +783,11 @@ public class TestTest {
         App.getInstance().getCompany().getParameterStore().addParameter(p);
         List <Parameter> listOfPar = App.getInstance().getCompany().getParameterStore().getParameterList();
         LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
 
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO);
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
 
         test.addTestParameterResult("00000000001", p.getCode(), -15d, "Index (S/C) value");
 
