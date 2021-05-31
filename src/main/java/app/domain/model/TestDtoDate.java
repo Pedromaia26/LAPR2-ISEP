@@ -1,6 +1,7 @@
 package app.domain.model;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TestDtoDate {
@@ -45,6 +46,7 @@ public class TestDtoDate {
      */
     @Override
     public String toString() {
-        return String.format("Code: %s %nRegistration Date: %s %nAnalysisDate: %s %nDiagnosis Date: %s", code, registrationDate, analysisDate, diagnosisDate);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return String.format("Code: %s %nRegistration Date: %s %nAnalysisDate: %s %nDiagnosis Date: %s", code, formatter.format(registrationDate), formatter.format(analysisDate), formatter.format(diagnosisDate));
     }
 }
