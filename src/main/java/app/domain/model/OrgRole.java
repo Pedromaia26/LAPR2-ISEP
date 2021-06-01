@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.App;
 import app.domain.shared.Constants;
 import auth.domain.model.Email;
 import auth.domain.model.UserRole;
@@ -10,6 +11,8 @@ public class OrgRole {
      * String that contains the Designation of a OrgRole
      */
     private String designation;
+
+    private Company company;
 
     /**
      * Constructor that create a empty instance of a OrgRole
@@ -36,7 +39,8 @@ public class OrgRole {
      * @return the Constructor to a new Employee
      */
     public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab){
-        OrgRole role = new OrgRole(Orole);
+        company = App.getInstance().getCompany();
+        OrgRole role = company.getOrgRoleStore().getRoleByDesignation(Orole);
         return new Employee(role, employeeId, name, address, phoneNumber, email, socCode, lab);
     }
 

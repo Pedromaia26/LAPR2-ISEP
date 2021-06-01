@@ -40,7 +40,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Trying to fix jenkins bugs to coverage by updating workspace">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/domain/model/OrgRoleStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,20 +120,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestDtoDateTest.testToString">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
       <module name="Sem2App" />
@@ -201,9 +191,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDtoDateTest.testToString" />
-        <item itemvalue="JUnit.All in Sem2App (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in Sem2App (1)" />
+        <item itemvalue="JUnit.TestDtoDateTest.testToString" />
         <item itemvalue="JUnit.EmployeeDtoTest.getDocIndexNumber" />
         <item itemvalue="JUnit.TestTest" />
       </list>
@@ -395,66 +385,28 @@
     <MESSAGE value="Trying to fix jenkins bugs to coverage by updating workspace" />
     <option name="LAST_COMMIT_MESSAGE" value="Trying to fix jenkins bugs to coverage by updating workspace" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1622481009767">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622481009767" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1622470105464">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622470105464" />
-    <state width="1860" height="330" key="GridCell.Tab.0.bottom" timestamp="1622496834924">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622496834924" />
-    <state width="1860" height="330" key="GridCell.Tab.0.center" timestamp="1622496834924">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622496834924" />
-    <state width="1860" height="330" key="GridCell.Tab.0.left" timestamp="1622496834924">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622496834924" />
-    <state width="1860" height="330" key="GridCell.Tab.0.right" timestamp="1622496834924">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622496834924" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1622470360024">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622470360024" />
-    <state x="342" y="180" key="new project wizard" timestamp="1622460863001">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1622460863001" />
-    <state x="616" y="242" width="672" height="677" key="run.anything.popup" timestamp="1622470911698">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="242" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622470911698" />
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622392111367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>app.domain.model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Client_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622382130042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Client_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622365946127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Main_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622393785975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622392111367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>app.domain.model.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.domain.model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Client_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622365946127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

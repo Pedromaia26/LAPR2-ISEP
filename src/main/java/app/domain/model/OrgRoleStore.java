@@ -44,4 +44,13 @@ public class OrgRoleStore {
         return store;
     }
 
+    public OrgRole getRoleByDesignation(String designation) {
+        for (OrgRole role : store){
+            if (role.getDesignation().equals(designation)){
+                return role;
+            }
+        }
+        return null;
+    }
+
 }
