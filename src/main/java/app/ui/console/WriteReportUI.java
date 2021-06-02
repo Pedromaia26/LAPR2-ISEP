@@ -38,9 +38,10 @@ public class WriteReportUI implements Runnable {
             System.out.printf("%d - Code: %s%nLabOrder:%n%s%nParameters:%s%n%s%n--------------------------------%n", lTestsDto.indexOf(testdto)+1, testdto.getCode(),testdto.getLabOrder().getTestType(),testdto.getLabOrder().getParameters(), testdto.getSample() );
         }
         System.out.print("Select one test of the list: \n");
-        testop = ler.nextInt();
-
         try {
+            testop = ler.nextInt();
+
+
             testDto = lTestsDto.get(testop - 1);
             lTestParametersDto = controller.getResultParameters(testDto);
             for (TestParameterDto testParameter : lTestParametersDto) {

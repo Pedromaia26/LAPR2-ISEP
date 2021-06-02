@@ -19,7 +19,7 @@ public class RegistClientUI implements Runnable {
         Scanner ler = new Scanner(System.in);
         RegistClientController cliente= new RegistClientController();
 
-
+        try {
         System.out.print("Name: ");
         String name = ler.nextLine();
         System.out.print("Email: ");
@@ -39,7 +39,7 @@ public class RegistClientUI implements Runnable {
         System.out.print("Sex(if you dont want to write it, leave it blank): ");
         String sex = ler.nextLine();
 
-        try {
+
             if (cliente.createNewClient(new ClientDTO(ccn, nhs, birth, sex, tif, email, name, phoneNumber))) {
                 System.out.print("--------------------------\n");
                 System.out.print("Please confirm the data:\n");

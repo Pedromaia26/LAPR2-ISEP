@@ -266,4 +266,12 @@ public class Client {
         asd.close();
 
     }
+
+    public void setEmail(Email email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
