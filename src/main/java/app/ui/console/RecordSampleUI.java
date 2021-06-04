@@ -31,12 +31,12 @@ public class RecordSampleUI implements Runnable {
         String codeTest = ler.nextLine();
 
         System.out.print("Insert how many samples want to collect.\n");
-
+        try {
         int number = ler.nextInt();
 
 
         int confirm;
-        try {
+
             for (int i = 1; i <= number; i++) {
                 try {
                     if (controller.createNewSample(new SampleDTO(codeTest))) {

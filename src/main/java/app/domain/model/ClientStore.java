@@ -136,6 +136,13 @@ public class ClientStore {
         throw new IllegalArgumentException("There is no Sample with such barcode!");
     }
 
+    public Client getClientByEmail(String email) {
+        for (Client client : clientList) {
+            if (email.equals(String.valueOf(client.getEmail())))
+                return client;
+        }
+        throw new IllegalArgumentException("There is no Client with such Email!");
+    }
 
 
 }
