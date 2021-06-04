@@ -1,4 +1,4 @@
-# US 005 - To record a new sample 
+# US 016 - To overview all tests
 
 ## 1. Requirements Engineering
 
@@ -6,8 +6,7 @@
 ### 1.1. User Story Description
 
 
-As a medical lab technician, I want to record the samples collected in the scope of a given test
-
+US16: As a laboratory coordinator, I want to have an overview of all the tests performed by Many Labs and analyse the overall performance of the company (for instance, check the sub-intervals in which there were more samples waiting for the result). To facilitate overall analysis, the application should also display statistics and graphs.
 
 
 ### 1.2. Customer Specifications and Clarifications 
@@ -15,7 +14,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 **From the specifications document:**
 
-> "When sampling (blood or swab) the medical lab technician records the samples in the system, associating the samples with the client/test, and identifying each sample with a barcode that is automatically generated using an external API"
+> "At the same time the results are also available in the central application where the medical lab technicians who collect the samples, the clinical chemistry technologist, the specialist doctor, and the laboratory coordinator can check them."
 
 
 
@@ -44,16 +43,15 @@ As a medical lab technician, I want to record the samples collected in the scope
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** The system should support several barcode APIs. The API to use is defined by configuration
-* **AC2:** A test can have more than one sample
-* **AC3:** A sample should only have one atribute, the barcode
+* **AC1:** While evaluating the performance the laboratory coordinator should have the ability to dynamically select the algorithm to be applied from the ones available on the system (the benchmark algorithm provided in moodle and the brute-force algorithm to be developed)
+* **AC2:** Support for easily adding other similar algorithms is required
 
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US004 Create a test to be registered" since at least a test must exist to record the sample.
+* There is a dependency to "US012 ResultOfTest" since at least a test must had started analysing the samples.
 
 
 ### 1.5 Input and Output Data
@@ -61,12 +59,12 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 **Input Data:**
 	
-* Selected data: Test.
-* Typed data: Number of samples
+* Selected data: Select the algorithm to use.
 
 **Output Data:**
 
 * (In)Success of the operation
+* The graphs and statistics
 
 ### 1.6. System Sequence Diagram (SSD)
 

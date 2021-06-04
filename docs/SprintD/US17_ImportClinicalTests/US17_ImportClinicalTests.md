@@ -1,4 +1,4 @@
-# US 005 - To record a new sample 
+# US 017 - To import clinical tests 
 
 ## 1. Requirements Engineering
 
@@ -6,17 +6,13 @@
 ### 1.1. User Story Description
 
 
-As a medical lab technician, I want to record the samples collected in the scope of a given test
-
+As a laboratory coordinator, I want to import clinical tests from a CSV file.
 
 
 ### 1.2. Customer Specifications and Clarifications 
 
 
 **From the specifications document:**
-
-> "When sampling (blood or swab) the medical lab technician records the samples in the system, associating the samples with the client/test, and identifying each sample with a barcode that is automatically generated using an external API"
-
 
 
 
@@ -44,16 +40,15 @@ As a medical lab technician, I want to record the samples collected in the scope
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** The system should support several barcode APIs. The API to use is defined by configuration
-* **AC2:** A test can have more than one sample
-* **AC3:** A sample should only have one atribute, the barcode
+* **AC1:** If the file contains invalid data (e.g., a parameter not defined in the system), that data should not be load into the system. An exception should be thrown.
+
 
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US004 Create a test to be registered" since at least a test must exist to record the sample.
+* There is no dependency found.
 
 
 ### 1.5 Input and Output Data
@@ -61,8 +56,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 **Input Data:**
 	
-* Selected data: Test.
-* Typed data: Number of samples
+* Selected data: The CSV file.
 
 **Output Data:**
 
