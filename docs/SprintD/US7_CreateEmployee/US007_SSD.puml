@@ -1,0 +1,27 @@
+@startuml
+actor Administrator as Adm
+participant ":System" as System
+
+autonumber
+activate Adm
+Adm -> System: starts new employee
+activate System
+System --> Adm: shows the list of organization roles and request to select one of them
+deactivate System
+Adm -> System: select an organization role
+activate System
+System --> Adm: request data(name, adress, phone number, e-mail, soc code)
+opt role = Specialist Doctor
+    System --> Adm: request data(doctorIndexNumber)
+end
+deactivate System
+Adm -> System: types requested data
+activate System
+System --> Adm: shows the data and request a confirmation
+deactivate System
+Adm -> System: confirms the data
+activate System
+System --> Adm: informs operation success
+deactivate System
+deactivate Adm
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class LaboratoryCoordinator {
+
+}
+
+class Report {
+   - diagnosis
+   - createdAt
+}
+
+class SpecialistDoctor {
+  
+}
+
+class ParameterResult {
+  - parameterValue
+
+}
+
+class ClinicalChemistryTechnologist {
+
+}
+
+class Test {
+
+}
+
+
+
+Company "1" -- "*" LaboratoryCoordinator : has  >
+Company "1" -- "*" SpecialistDoctor : has >
+Company "1" -- "*" ClinicalChemistryTechnologist: has >
+SpecialistDoctor "1" -- "1" Report: writes >
+SpecialistDoctor "1" -- "1..*" ParameterResult: analysis >
+LaboratoryCoordinator "1" -- "*" Report: validates >
+LaboratoryCoordinator "1" -- "*" ParameterResult: validates >
+ClinicalChemistryTechnologist "1" -- "*" ParameterResult: records >
+Test "1..*" -- "1" ParameterResult: obtained through >
+Report "1" -- "1" Test: created according to >
+@enduml

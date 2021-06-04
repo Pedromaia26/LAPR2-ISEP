@@ -1,0 +1,70 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class TestType {
+  -code
+  -description
+  -collectingMethod
+  -parameterCategory
+}
+
+class LabOrder {
+  -testType
+  -parameter
+}
+
+class Client {
+  -ccn
+  -nhs
+  -birth
+  -sex
+  -tif
+  -email
+  -name
+  -phoneNumber
+}
+
+class Parameter {
+  -code
+  -shortName
+  -descriptionName
+  -parameterCategory
+}
+
+class Administrator {
+
+}
+
+class Receptionist {
+
+}
+
+class Test {
+   -tinNumber
+   -nhsCode
+   -labOrder
+}
+
+
+Test "1" -- "1..*" Client: has a set of >
+Test "1" -- "1..*" LabOrder: has a set of >
+LabOrder "1" -- "1" TestType: has a set of >
+LabOrder "1" -- "1..*" Parameter: has a set of >
+Administrator "1..*" -- "*" TestType: created by <
+Administrator "1..*" -- "*" Client: created by <
+Administrator "1..*" -- "*" Parameter: created by <
+Company "1" -- "*" Administrator: has >
+Company "1" -- "*" Receptionist: has >
+Receptionist "*" -- "*" Test: created by <
+Company "1" -- "*" TestType: conducts >
+Company "1" -- "*" Client: conducts >
+Company "1" -- "*" LabOrder: conducts >
+Company "1" -- "*" Parameter: conducts >
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class Test {
+  -report
+}
+
+class ParameterResult {
+  -parameter
+  -testParameterResult
+}
+
+class Report {
+  -diagnosis
+  -createdAt
+}
+
+class SpecialistDoctor {
+  -docIndexNumber
+}
+
+class Employee {
+  -employeeID
+  -name
+  -address
+  -phoneNumber
+  -email
+  -socCode
+}
+
+class User{
+  -name
+  -email
+  -password
+}
+
+Company "1" -- "*" Test : performs  >
+Report "1" -- "1" Test : created according to >
+ParameterResult "1..*" -- "1" Test : obtained through >
+SpecialistDoctor --|> Employee
+Company "1" -- "1..*" Employee : has >
+SpecialistDoctor "1" -- "1..*" Report : writes >
+Employee "0..1" -- "1" User: relates to >
+
+@enduml

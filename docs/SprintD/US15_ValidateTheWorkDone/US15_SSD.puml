@@ -1,0 +1,20 @@
+@startuml
+actor "Laboratory Coordinator" as Adm
+participant ":System" as System
+
+autonumber
+activate Adm
+Adm -> System: ask to validate the work done by the clinical \nchemistry technologist and specialist doctor
+activate System
+System --> Adm: shows the tests ready to be validated
+deactivate System
+Adm -> System: select tests to validate
+activate System
+System --> Adm: shows tests selected and request confirmation
+deactivate System
+Adm -> System: confirms data
+activate System
+System --> Adm: informs operations success
+deactivate System
+deactivate Adm
+@enduml

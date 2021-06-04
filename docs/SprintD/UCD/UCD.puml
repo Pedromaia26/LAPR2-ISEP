@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam linetype polyline
+actor Receptionist as r
+actor "Medical lab technician" as mlt
+actor "Clinical chemistry technologist" as cct
+actor "Specialist doctor" as sd
+actor "Laboratory coordinator" as lc
+actor Client as cc
+Rectangle {
+actor "Summarize system" as ss << Non-Human >>
+}
+
+Rectangle ManyLabs{
+usecase "UC1-Make Chemical Analysis" as UC1
+usecase "UC2-Register the test to be performed" as UC2
+usecase "UC3-Register the client" as UC3
+usecase "UC4-Make a Diagnosis about the chemical results" as UC4
+usecase "UC5-Validate the result and report" as UC5
+usecase "UC6-Colect and record the samples" as UC6
+usecase "UC7-Summarize the tests" as UC7
+usecase "UC8-Record the chemical analysis result" as UC8
+usecase "UC9-Check the results" as UC9
+
+}
+
+r--UC2
+cct--UC1
+r--UC3
+sd--UC4
+lc--UC5
+mlt--UC6
+ss--UC7
+cct--UC8
+cc--UC9
+@enduml

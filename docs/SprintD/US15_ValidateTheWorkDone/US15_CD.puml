@@ -1,0 +1,93 @@
+@startuml
+skinparam classAttributeIconSize 0
+package UI  {
+  class ValidateWorkDoneUI
+}
+
+package Controllers {
+  class ValidateWorkDoneController
+}
+
+package Domain {
+  class Company
+  class Test
+  class TestStore
+  class Report
+  class Client
+}
+
+package Mappers {
+  class TestMapper
+}
+
+package Dto {
+  class TestDtoDate
+}
+
+class Company
+{
+  -String designation
+  +getTestStore()
+}
+
+
+class Test {
+  -int code
+  -String nhsCode
+  -List <TestType> listTestType
+  -Date createdAt
+  -Date resultRegist
+  +Test()
+  +getCreatedAt()
+  +getResultRegist()
+  +validateTest()
+}
+
+class TestStore {
+  +getTestByCode(Code)
+  +validateWorkDone(test)
+}
+
+
+class ValidateWorkDoneController {
+  +getTests()
+  +validateTest(test)
+}
+
+class ValidateWorkDoneUI {
+
+}
+
+class TestMapper {
+   +toDtoDate()
+}
+
+class TestDtoDate {
+  -String Code
+  -Date registDate
+  -Date analysisDate
+  -Date diagnosisDate
+  +TestDtoDate()
+}
+class Report {
+  -Date createdAt
+  +getCreatedAt()
+}
+
+class Client {
+  +notifyClient()
+}
+
+
+ValidateWorkDoneUI ..> ValidateWorkDoneController
+ValidateWorkDoneController ..> TestStore
+ValidateWorkDoneController ..> Company
+ValidateWorkDoneController ..> TestMapper
+TestMapper ..> Test
+TestMapper ..> TestDtoDate
+TestMapper ..> Report
+TestDtoDate ..> Test
+Test --> Client
+TestStore "1" --> "*" Test : capable of analysing
+Company "1" --> "1" TestStore : uses
+@enduml

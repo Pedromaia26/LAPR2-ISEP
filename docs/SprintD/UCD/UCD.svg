@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="961px" preserveAspectRatio="none" style="width:693px;height:961px;" version="1.1" viewBox="0 0 693 961" width="693px" zoomAndPan="magnify"><defs><filter height="300%" id="fstomcb6ggxyp" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fstomcb6ggxyp)" height="130" style="stroke:#000000;stroke-width:1.5;" width="168" x="33" y="819"/><!--MD5=[cf1651d31d5f33993ae35e66637ebfa8]
+cluster ManyLabs--><rect fill="#FFFFFF" filter="url(#fstomcb6ggxyp)" height="859" style="stroke:#000000;stroke-width:1.5;" width="409" x="272" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="81" x="436" y="21.9951">ManyLabs</text><!--MD5=[72f941736658486a9447ee9af01ffec8]
+entity ss--><ellipse cx="117" cy="860.7969" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,868.7969 L117,895.7969 M104,876.7969 L130,876.7969 M117,895.7969 L104,910.7969 M117,895.7969 L130,910.7969 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="49" y="929.292">Summarize system</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="103" x="65.5" y="847.9951">«Non-Human»</text><ellipse cx="476.4616" cy="348.9923" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="117.9616" ry="25.9923" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="374.9616" y="351.839">UC1-Make Chemical Analysis</text><ellipse cx="476.5416" cy="157.0083" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="155.5416" ry="33.5083" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="335.5416" y="159.855">UC2-Register the test to be performed</text><ellipse cx="476.7481" cy="64.8496" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="102.2481" ry="22.8496" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="392.2481" y="67.6963">UC3-Register the client</text><ellipse cx="476.5288" cy="553.1058" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="188.5288" ry="40.1058" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="350" x="301.5288" y="555.9524">UC4-Make a Diagnosis about the chemical results</text><ellipse cx="476.7348" cy="658.247" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="139.2348" ry="30.247" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="248" x="352.7348" y="661.0936">UC5-Validate the result and report</text><ellipse cx="476.6004" cy="256.8201" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="142.1004" ry="30.8201" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254" x="349.6004" y="259.6668">UC6-Colect and record the samples</text><ellipse cx="476.6316" cy="826.2263" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="109.1316" ry="24.2263" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="384.6316" y="829.073">UC7-Summarize the tests</text><ellipse cx="476.4876" cy="443.7975" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="156.9876" ry="33.7975" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="285" x="333.9876" y="446.6442">UC8-Record the chemical analysis result</text><ellipse cx="476.6626" cy="745.0325" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="98.1626" ry="22.0325" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="396.6626" y="747.8792">UC9-Check the results</text><!--MD5=[cbf2a705c8c36a956106bd646f097c75]
+entity r--><ellipse cx="117" cy="72" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,80 L117,107 M104,88 L130,88 M117,107 L104,122 M117,107 L130,122 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="70.5" y="140.4951">Receptionist</text><!--MD5=[ddc0993abd4478baf117d835cc4f0442]
+entity mlt--><ellipse cx="117" cy="226" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,234 L117,261 M104,242 L130,242 M117,261 L104,276 M117,261 L130,276 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="37.5" y="294.4951">Medical lab technician</text><!--MD5=[72bd50b8814dffd24ca46f995a9a7d84]
+entity cct--><ellipse cx="117" cy="354" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,362 L117,389 M104,370 L130,370 M117,389 L104,404 M117,389 L130,404 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="6" y="422.4951">Clinical chemistry technologist</text><!--MD5=[1865ce58b93b46dbf0f89b42133fbc97]
+entity sd--><ellipse cx="117" cy="496" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,504 L117,531 M104,512 L130,512 M117,531 L104,546 M117,531 L130,546 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="56" y="564.4951">Specialist doctor</text><!--MD5=[9b765648a409d02f5ba0bbb9cb84ff33]
+entity lc--><ellipse cx="117" cy="612" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,620 L117,647 M104,628 L130,628 M117,647 L104,662 M117,647 L130,662 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="33.5" y="680.4951">Laboratory coordinator</text><!--MD5=[db956f40f2dc50163091c98812b3e6f0]
+entity cc--><ellipse cx="117" cy="728" fill="#FEFECE" filter="url(#fstomcb6ggxyp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M117,736 L117,763 M104,744 L130,744 M117,763 L104,778 M117,763 L130,778 " fill="none" filter="url(#fstomcb6ggxyp)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="95.5" y="796.4951">Client</text><!--MD5=[cf4083435b12df47fba7737af7fae5ab]
+link r to UC2--><path d="M163.641,109.894 C210.135,116.917 284.349,128.127 348.717,137.85 " fill="none" id="r-UC2" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4b7061113a6e53411f47f9c8087da062]
+link cct to UC1--><path d="M228.179,373.905 C272.904,369.401 324.379,364.218 368.749,359.75 " fill="none" id="cct-UC1" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3041f2bdf2a68f246ca872463daab7e5]
+link r to UC3--><path d="M163.641,98.149 C218.888,92.276 313.275,82.244 383.773,74.75 " fill="none" id="r-UC3" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3641496ffb9b6d7a2b2554a1fe5e5f4f]
+link sd to UC4--><path d="M178.241,531.381 C211.473,533.798 254.651,536.938 297.751,540.073 " fill="none" id="sd-UC4" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[97fbf8a37cac34d5ae1239edf28658f2]
+link lc to UC5--><path d="M200.916,646.479 C242.17,648.21 293.092,650.347 339.835,652.308 " fill="none" id="lc-UC5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e86d6f9ae0b534829c3ca8ae762c23af]
+link mlt to UC6--><path d="M196.897,257 C237.2,257 287.474,257 334.178,257 " fill="none" id="mlt-UC6" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b73c3c166da3b64b37a2f8abdec3fa76]
+link ss to UC7--><path d="M185.243,873.0906 C242.686,863.771 325.709,850.302 388.26,840.154 " fill="none" id="ss-UC7" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c6d743fd3df42d6ca5fcda02fc35d235]
+link cct to UC8--><path d="M228.179,403.183 C267.057,409.6 311.036,416.858 351.014,423.455 " fill="none" id="cct-UC8" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8fcb6dda9ab652cbe67b89584388f9f9]
+link cc to UC9--><path d="M138.505,758.197 C184.276,756.405 297.237,751.981 379.801,748.748 " fill="none" id="cc-UC9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f5e1591e0847fe2da277c76a96591b5]
+@startuml
+left to right direction
+skinparam linetype polyline
+actor Receptionist as r
+actor "Medical lab technician" as mlt
+actor "Clinical chemistry technologist" as cct
+actor "Specialist doctor" as sd
+actor "Laboratory coordinator" as lc
+actor Client as cc
+Rectangle {
+actor "Summarize system" as ss << Non-Human >>
+}
+
+Rectangle ManyLabs{
+usecase "UC1-Make Chemical Analysis" as UC1
+usecase "UC2-Register the test to be performed" as UC2
+usecase "UC3-Register the client" as UC3
+usecase "UC4-Make a Diagnosis about the chemical results" as UC4
+usecase "UC5-Validate the result and report" as UC5
+usecase "UC6-Colect and record the samples" as UC6
+usecase "UC7-Summarize the tests" as UC7
+usecase "UC8-Record the chemical analysis result" as UC8
+usecase "UC9-Check the results" as UC9
+
+}
+
+r- -UC2
+cct- -UC1
+r- -UC3
+sd- -UC4
+lc- -UC5
+mlt- -UC6
+ss- -UC7
+cct- -UC8
+cc- -UC9
+@enduml
+
+PlantUML version 1.2021.5beta3(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

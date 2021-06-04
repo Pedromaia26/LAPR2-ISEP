@@ -1,0 +1,37 @@
+@startuml
+Actor "Medical Lab Technicician" as MLT
+participant "System" as sys
+
+
+
+autonumber
+
+activate MLT
+MLT->sys : starts recording the sample 
+
+activate sys
+
+sys-->MLT : shows the list of tests registered to be performed and requests to select one of them
+deactivate sys
+
+MLT->sys : select a test registered to be performed
+activate sys
+
+sys-->MLT : request how many samples want to record
+
+deactivate sys
+
+MLT -> sys : type the requested data
+loop
+activate sys
+
+sys-->MLT : shows the data and requests a confirmation
+deactivate sys
+MLT->sys : confirms the data 
+activate sys
+
+sys-->MLT : informs operations success 
+deactivate sys
+deactivate MLT
+end
+@enduml

@@ -1,0 +1,80 @@
+@startuml
+actor "Specialist Doctor" as SD
+participant ":WriteReportUI" as Interface
+participant ":WriteReportController" as Controller
+participant ":Company" as Company
+participant "tStore\n:TestStore" as tStore
+participant ":TestMapper" as TestMapper
+participant "testDto\n:TestDto" as TestDto
+participant "test:Test" as Test
+participant ":TestParameterMapper" as RLmapper
+participant "report\n:Report" as Report
+participant "TestParameter" as TestParameter
+
+autonumber
+activate SD
+SD -> Interface: starts the realization of the report
+activate Interface
+Interface -> Controller: lTestsDto = getTests()
+activate Controller
+Controller -> Company: tStore = getTestStore()
+activate Company
+deactivate Company
+Controller -> tStore: lTests = getTests()
+activate tStore
+deactivate tStore
+Controller -> TestMapper: lTestsDto = toDTO(lTests)
+activate TestMapper
+deactivate TestMapper
+deactivate Controller
+Interface --> SD: ask to select the test
+deactivate Interface
+SD -> Interface: selects the intended test
+activate Interface
+Interface -> Controller: lResultParametersDto = getResultParameters(testDto)
+activate Controller
+Controller -> Company: tStore = getTestStore()
+activate Company
+deactivate Company
+Controller -> TestDto: code = getCode()
+activate TestDto
+deactivate TestDto
+Controller -> tStore: test = getTestByCode(code)
+activate tStore
+deactivate tStore
+Controller -> Test: lResultParameters = getResultParameters()
+activate Test
+deactivate Test
+Controller -> RLmapper: lResultParametersDto = toDto(lResultParameters)
+activate RLmapper
+deactivate RLmapper
+Interface --> SD: shows the list of parameters results and request data (diagnosisText)
+deactivate Controller
+deactivate Interface
+SD -> Interface: types requested data
+activate Interface
+Interface --> SD: shows the data and requests a confirmation
+deactivate Interface
+SD -> Interface: confirms the data
+activate Interface
+Interface -> Controller: createReport(diagnosisText)
+activate Controller
+Controller -> Test: report = addReport(diagnosisText)
+activate Test
+Test -> Report**: create(diagnosisText)
+activate Report
+Report -> Report: submittedData = getData()
+activate Report
+deactivate Report
+Report -> Report: validate(diagnosisText)
+activate Report
+deactivate Report
+deactivate Report
+deactivate Test
+deactivate Controller
+Interface --> SD: informs operation success
+deactivate Interface
+deactivate SD
+
+
+@enduml
