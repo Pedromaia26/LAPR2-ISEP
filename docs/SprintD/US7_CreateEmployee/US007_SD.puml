@@ -1,0 +1,146 @@
+@startuml
+actor Administrator as Adm
+participant ":RegistEmployeeUI" as Interface
+participant ":RegistEmployeeController" as Controller
+participant ":Company" as Company
+participant ":OrgRolesMapper" as RolesMapper
+participant "eStore \n :EmployeeStore" as estore
+participant ":EmployeeMapper" as eMapper
+participant "empDto: EmployeeDto" as EmployeeDto
+participant "Rstore \n :OrgRolesStore" as rstore
+participant "role:OrgRole" as OrgRole
+participant "AuthFacade" as AuthFacade
+ 
+ 
+autonumber
+activate Adm
+Adm -> Interface: starts registering a new employee
+activate Interface
+Interface -> Controller: IRolesDto = getRoles()
+activate Controller
+Controller -> Company: rStore = getOrgStore()
+activate Company
+deactivate Company
+Controller -> rstore: lRoles = getRoles()
+activate rstore
+deactivate rstore
+Controller -> RolesMapper: lRolesDto = toDTO(lRoles)
+activate RolesMapper
+deactivate RolesMapper
+deactivate Controller
+Interface --> Adm: ask to select the employee role
+deactivate Interface
+Adm -> Interface: selects the intended role
+activate Interface
+Interface --> Adm: request data (name, address, phoneNumber, emailAddress, socCode)
+opt role == "Specialist Doctor"
+    Interface --> Adm: request data(doctorIndexNumber)
+end
+deactivate Interface
+ 
+ 
+Adm -> Interface: types requested data
+activate Interface
+Interface --> Controller: createEmployee(empDto)
+activate Controller
+Controller -> Company: eStore = getEmployeeStore()
+activate Company
+deactivate Company
+Controller -> estore: emp = createEmployee(empDto)
+activate estore
+estore -> EmployeeDto: roleId = getRoleId()
+activate EmployeeDto
+deactivate EmployeeDto
+estore -> rstore: role = getRoleById(roleId)
+activate rstore
+deactivate rstore
+estore -> eMapper: emp = createEmployee(empDto)
+activate eMapper
+eMapper -> EmployeeDto: id = getId()
+activate EmployeeDto
+deactivate EmployeeDto
+eMapper -> EmployeeDto: name = getName()
+activate EmployeeDto
+deactivate EmployeeDto
+eMapper -> EmployeeDto: adress = getAdress()
+activate EmployeeDto
+deactivate EmployeeDto
+eMapper -> EmployeeDto: phoneNumber = getphoneNumber()
+activate EmployeeDto
+deactivate EmployeeDto
+eMapper -> EmployeeDto: emailAdress = getEmailAdress()
+activate EmployeeDto
+deactivate EmployeeDto
+eMapper -> EmployeeDto: socCode = getsocCode()
+activate EmployeeDto
+deactivate EmployeeDto
+alt role != SpecialistDoctor
+    eMapper -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
+    activate OrgRole
+else
+    eMapper -> EmployeeDto: doctorIndexNumber = getDoctorIndexNumber()
+    activate EmployeeDto
+    deactivate EmployeeDto
+    eMapper -> OrgRole: emp = createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+end
+alt role != SpecialistDoctor
+    create "emp:Employee" as Employee
+    OrgRole -> Employee: create(role, id, name, address, phoneNumber, emailAddress, socCode)
+else
+    create "emp:SpecialistDoctor" as Doctor
+    OrgRole -> Doctor:create(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+end
+deactivate eMapper
+deactivate OrgRole
+deactivate estore
+Controller -> estore: validateEmployee(emp)
+activate estore
+deactivate estore
+deactivate Controller
+
+Interface -> Adm: shows the data and requests a confirmation
+deactivate Interface
+Adm -> Interface: confirms the data
+
+activate Interface
+Interface -> Controller: saveEmployee()
+activate Controller
+Controller -> estore: saveEmployee(emp)
+activate estore
+estore -> Employee: email = getEmail()
+activate Employee
+deactivate Employee
+estore -> estore: validateEmployee(emp)
+activate AuthFacade
+deactivate AuthFacade
+activate estore
+estore -> AuthFacade: b = existsUser(email)
+activate AuthFacade
+deactivate AuthFacade
+deactivate estore
+estore -> Employee: name = getName()
+activate Employee
+deactivate Employee
+estore -> Employee: role = getOrgRole()
+activate Employee
+deactivate Employee
+estore -> OrgRole: roleDesc = getDescription()
+activate OrgRole
+deactivate OrgRole
+estore -> estore: pwd = generatePassword()
+activate estore
+deactivate estore
+estore -> AuthFacade: b = addUserWithRole(name, email, pwd, roleDesc)
+activate AuthFacade
+deactivate AuthFacade
+estore -> estore: addEmployee(emp)
+activate estore
+deactivate estore
+estore -> estore: sendEmail(emp, pwd)
+activate estore
+deactivate estore
+deactivate Controller
+Interface -> Adm: informs operation success
+deactivate Interface
+deactivate Adm
+@enduml

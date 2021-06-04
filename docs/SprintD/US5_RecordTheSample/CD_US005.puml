@@ -1,0 +1,124 @@
+@startuml
+package "UI" {
+  Class RecordSampleUI
+}
+package "Controllers" {
+ Class RecordSampleController
+}
+package "Domain" {
+ Class Company
+Class Sample
+Class TestStore
+Class Test
+Class LabOrder
+Interface ApiBarcode
+Class BarcodeAdapter
+Class BarcodeCreate
+}
+package "Mapper" {
+Class TestMapper
+Class SampleMapper
+
+}
+package "Dto"{
+Class SampleDTO
+Class TestDTO
+}
+
+
+RecordSampleUI ..> RecordSampleController
+RecordSampleController..>Company
+RecordSampleController..>Sample
+RecordSampleController..>TestMapper
+RecordSampleController..>SampleDTO
+RecordSampleController..>SampleMapper
+RecordSampleController..>TestStore
+
+RecordSampleUI ..> TestDTO
+
+
+
+
+
+
+
+
+RecordSampleController : +RecordNewSample(dto)
+RecordSampleController : +saveNewSample()
+RecordSampleController : +getTest()
+
+
+Test"1" -->"*" Sample: has
+
+Company"1" -->"1" TestStore :has
+
+TestStore : +getTestByTestTypeCode(testid)
+
+TestMapper ..> TestDTO
+TestDTO..> Test
+
+
+TestStore"1" -->"*"Test : Has
+SampleMapper ..> SampleDTO
+
+
+TestMapper ..> TestStore
+
+Test "1" --> "1" LabOrder : has
+LabOrder : -testType
+LabOrder : -parameters
+
+
+TestMapper : +toDTO(tests)
+
+SampleMapper : +toModel()
+
+SampleMapper ..> TestStore
+
+Sample"1..*" -->"1"ApiBarcode : makes use of
+
+BarcodeAdapter  ..> ApiBarcode
+
+BarcodeAdapter --> BarcodeCreate
+
+
+ApiBarcode : +BarcodeCreate makeUPCABarcode()
+
+BarcodeAdapter : +BarcodeCreate makeUPCABarcode()
+
+BarcodeCreate : +BarcodeCreate(Object barcode, String barcodeNumber)
+BarcodeCreate : -barcode
+BarcodeCreate : -barcodeNumber
+
+
+Company : +getTestStore()
+Company : +getSampleStore()
+
+Test : +RecordNewSample(tdo)
+Test : +validateNewSample(samp)
+Test : +saveNewSample(samp)
+Test : +addNewSample(samp)
+Test : -LabOrder
+Test : -Sample
+Test : -code
+Test : -client
+Test : -nhscode
+
+
+TestDTO : -LabOrder
+TestDTO : -Sample
+TestDTO : -code
+TestDTO : -client
+TestDTO : -nhscode
+
+SampleDTO : +getOrderid()
+
+
+
+SampleDTO : -orderid
+
+
+Sample : +Sample()
+Sample : +getBarcodecreator()
+Sample : -barcode
+@enduml

@@ -1,0 +1,169 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+
+
+
+class Test {
+  -long tinNumber
+  -long nhsCode
+  -LabOrder labOrder
+  +TestType(tinNumber, nhsCode, labOrder)
+}
+
+class TestTypeStore{
+ +getTestTypeByCode(testType)
+}
+
+class ClientStore{
+ +getClientByTinNumber(tinNumber)
+}
+
+class ParameterStore{
+ +getParameterByCode(pars)
+}
+
+class LabOrderStore{
+  createLabOrder(tt,par)
+}
+
+class LabOrder{
+  LabOrder(tt,par)
+}
+
+
+class TestStore{
+   +createTestType(description, collectingMethod, code, cat)
+   +validateTestType(tt)
+   +addTestType(tt)
+   +saveTestType(tt)
+   }
+
+class TestType {
+  -String code
+  -String description
+  -String collectingMethod
+  -List<ParameterCategory> parameterCategory
+  +TestType(code, description, collectingMethod, parameterCategory)
+}
+
+class Client {
+  -long ccn
+  -long nhs
+  -String birth
+  -String sex
+  -long tif
+  -String email
+  -String name
+  -long phoneNumber
+  +Client(ccn, nhs, birth, sex, tif, email, name, phoneNumber)
+}
+
+
+class Parameter {
+  -String code
+  -String shortName
+  -String descriptionName
+  -List<ParameterCategory> parameterCategory
+  +Parameter(code, shortName, descriptionName, parameterCategory)
+}
+
+
+
+class Company {
+  -String designation
+  +getParameterCategoryStore()
+  +getTestTypeStore()
+
+}
+
+
+class TestController {
+    +getTestTypeStore()
+    +getClientStore()
+    +getParameterStore()
+    +createTest(tinNumber, nhsCode, labOrder)
+    +saveTest()
+}
+
+
+class TestUI {
+
+}
+
+class TestTypeMapper{
++toDto()
+}
+
+class ClientMapper{
++toDto()
+}
+
+class ParameterMapper{
++toDto()
+}
+
+
+class TestTypeDto{
+-String code
+-String description
+-String collectingMethod
++TestTypeDto(listPC)
+}
+
+class ClientDto{
+-long ccn
+-long nhs
+-String birth
+-String sex
+-long tif
+-String email
+-String name
+-long phoneNumber
+}
+
+
+class ParameterDto{
+-String code
+-String shortName
+-String descriptionName
++ParameterDto(category)
+}
+
+TestUI ..> TestController
+TestController ..> TestStore
+TestController ..> Company
+TestController ..> TestTypeStore
+TestController ..> TestTypeMapper
+TestController ..> ClientStore
+TestController ..> ClientMapper
+TestController ..> ParameterStore
+TestController ..> ParameterMapper
+TestController ..> LabOrderStore
+LabOrderStore ..> LabOrder
+Company "1" --> "1" TestStore: uses
+Company "1" --> "1" TestTypeStore: uses
+Company "1" --> "1" ClientStore: uses
+Company "1" --> "1" ParameterStore: uses
+TestStore "1" --> "1..*" Test: conducts
+LabOrder "1" --> "1" TestType: has a set of
+Test "1" --> "1" Client: has a set of
+Test "1" --> "1..*" LabOrder: has a set of
+LabOrder "1" --> "1..*" Parameter: has a set of
+TestTypeStore "1" -> "*" TestType: adopts
+ClientStore "1" -> "*" Client: adopts
+ParameterStore "1" -> "*" Parameter: adopts
+
+TestTypeMapper ..> TestTypeStore
+TestTypeMapper ..> TestTypeDto
+TestTypeDto ..> TestType
+
+ClientMapper ..> ClientStore
+ClientMapper ..> ClientDto
+ClientDto ..> Client
+
+ParameterMapper ..> ParameterDto
+ParameterDto ..> Parameter
+ParameterMapper ..> ParameterStore
+@enduml

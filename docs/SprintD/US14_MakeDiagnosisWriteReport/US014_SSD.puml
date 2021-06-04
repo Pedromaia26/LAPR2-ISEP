@@ -1,0 +1,33 @@
+@startuml
+Actor "Specialist Doctor" as SD
+participant ":System" as SY
+
+autonumber
+
+activate SD
+SD -> SY : starts the realization of the report
+
+activate SY
+SY --> SD : shows the list of tests to be reported and requests to select one of them
+deactivate SY
+
+SD -> SY : select a test to be reported
+
+activate SY
+SY --> SD : shows the list of parameters results and request data (diagnosisText)
+deactivate SY
+
+SD -> SY : types requested data
+
+activate SY
+SY --> SD : shows the data and requests a confirmation
+deactivate SY
+
+SD -> SY : confirms the data 
+
+activate SY
+SY --> SD : informs operations success
+deactivate SY
+
+deactivate SD
+@enduml

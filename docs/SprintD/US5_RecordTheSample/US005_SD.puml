@@ -1,0 +1,122 @@
+@startuml
+actor "Medical Lab Technician" as Adm
+participant ":RecordSampleUI" as Interface
+participant ":RecordSampleController" as Controller
+participant ":Company" as Company
+participant ":TestMapper" as TM
+participant "SampleMapper" as SM
+participant "SampDto: SampleDto" as SD
+participant "tStore \n :TestStore" as SS
+participant "test\n : Test" as test
+participant "em\n : ExternalModule" as em
+
+
+ 
+ 
+autonumber
+activate Adm
+Adm -> Interface: starts recording a new sample
+activate Interface
+Interface -> Controller: testDto = getTest()
+activate Controller
+Controller -> Company : tStore=getTestStore()
+activate Company
+deactivate Company
+Controller -> SS: test = getTest()
+activate SS
+deactivate SS
+Controller -> TM: testDto = toDTO(test)
+activate TM
+
+TM-->Controller : testDto
+deactivate TM
+Controller-->Interface : testDto
+deactivate Controller
+Interface --> Adm: shows the list of tests registered to be performed and requests to select one of them
+deactivate Interface
+
+
+
+Adm -> Interface: select a test registered to be performed
+activate Interface
+Interface--> Adm: request how many samples want to record
+deactivate Interface
+
+Adm -> Interface : type the requested data
+loop
+
+activate Interface
+
+Interface->Controller: RecordNewSample(dto)
+activate Controller
+Controller -> Company : testStore=getTestStore()
+activate Company
+Deactivate Company
+Controller -> SM : test=toModel(dto)
+activate SM
+SM->SD : code=getCode()
+activate SD
+deactivate SD
+SM->SS: getTestbyCode(code)
+activate SS
+deactivate SS
+deactivate SS
+deactivate SM
+Controller->test: samp=RecordNewSample()
+activate test
+
+create "samp: Sample" as samp
+
+test->samp:  create()
+activate samp
+
+samp -> samp : getBarcodecreator()
+
+samp-> em : makeUPCABarcode()
+activate em
+
+create "barcode\n : BarcodeCreate" as BC
+
+em->BC :create(...)
+
+em-->samp : barcode
+
+deactivate em
+
+deactivate samp
+
+
+deactivate test
+
+Controller->test:validateNewSample(samp)
+Activate test
+deactivate test
+
+deactivate Controller
+
+
+Interface-->Adm : shows the data and requests a confirmation
+
+deactivate Interface
+
+Adm -> Interface: confirms the data
+activate Interface
+Interface->Controller: saveNewSample()
+activate Controller
+Controller->test:saveNewSample(samp)
+activate test
+test->test:validateNewSample(samp)
+activate test
+deactivate test
+test->test:addSample(samp)
+activate test
+deactivate test
+
+deactivate test
+deactivate Controller
+Interface--> Adm: informs operation success
+
+deactivate Interface
+deactivate Adm
+end
+@enduml

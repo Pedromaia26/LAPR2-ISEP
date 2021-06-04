@@ -1,0 +1,66 @@
+@startuml
+RegistEmployeeUI ..> RegistEmployeeController
+RegistEmployeeController ..>Company
+RegistEmployeeController ..>Employee
+RegistEmployeeController ..>SpecialistDoctor
+RegistEmployeeController ..>RolesMapper
+RegistEmployeeController ..>EmployeeDto
+RegistEmployeeController ..>RolesStore
+RegistEmployeeController ..>EmployeeStore
+
+OrgRole ..> Employee
+OrgRole ..> SpecialistDoctor
+Employee <|-- SpecialistDoctor
+
+RegistEmployeeController : +getRoles()
+RegistEmployeeController : +createEmployee(empDto)
+RegistEmployeeController : +saveEmployee()
+
+Company "1" --> "*" Employee: has
+
+EmployeeStore ..>EmployeeDto
+EmployeeStore ..>RolesStore
+EmployeeStore ..>OrgRole 
+
+RolesMapper ..> EmployeeDto
+
+RolesMapper ..> Employee
+
+RolesMapper : +toDTO(lRoles)
+
+RolesStore : +getRoles()
+EmployeeStore : +createEmployee(empDto)
+RolesStore : +getRoleById(roleId)
+EmployeeStore : +saveEmployee(emp)
+EmployeeStore : +validateEmployee(emp)
+EmployeeStore : +addEmployee(emp)
+
+OrgRole : +createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode)
+OrgRole : +createEmployee(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+
+EmployeeDto : +getRoleId()
+EmployeeDto : +getId()
+EmployeeDto : +getName()
+EmployeeDto : +getAdress()
+EmployeeDto : +getPhoneNumber()
+EmployeeDto : +getSocCode()
+EmployeeDto : +getEmail()
+EmployeeDto : +getDoctorIndexNumber()
+EmployeeDto : -employeeID
+EmployeeDto : -name
+EmployeeDto : -address
+EmployeeDto : -phoneNumber
+EmployeeDto : -socCode
+EmployeeDto : -email
+
+Employee : +create(role, id, name, address, phoneNumber, emailAddress, socCode)
+Employee : -employeeID
+Employee : -name
+Employee : -address
+Employee : -phoneNumber
+Employee : -socCode
+Employee : -email
+
+SpecialistDoctor : +create(role, id, name, address, phoneNumber, emailAddress, socCode, doctorIndexNumber)
+SpecialistDoctor : -doctorIndexNumber
+@enduml

@@ -1,0 +1,105 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+@startuml
+autonumber
+
+actor "Clinical Chemistry Technologist" as CCT
+participant ":RecordTestResultUI" as UI
+participant ":RecordTestResultController" as C
+participant ":Company" as ML
+participant "tStore\n:TestStore" as TS
+participant "tMapper\n:TestMapper" as MAP
+participant "tpMapper\n:TestParameterMapper" as TPM
+participant "test\n:Test" as T
+participant "listT\n:List<Test>" as tLIST
+participant "testParameterList\n:List<TestParameter>" as tpLIST
+participant "listTDto\n:List<TestDto>" as tDtoLIST
+participant "testParameterDto\n:List<TestParameterDto>" as tpDtoLIST
+
+
+
+activate CCT
+CCT -> UI: asks to record the results of a given test
+activate UI
+UI -> C: listTDto = getTestListStore()
+activate C
+
+C -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+C -> TS: listT = getTests()
+activate TS
+deactivate TS
+C -> MAP: listTDto = toDto(listT)
+activate MAP
+deactivate MAP
+deactivate C
+UI --> CCT: shows tests list and asks to select one
+deactivate UI
+CCT -> UI: selects a test
+activate UI
+UI -> C: testParameterDto = getTestParameters()
+activate C
+C -> TS: test = getTestByBarcode(barcode)
+activate TS
+deactivate TS
+C -> T:  testParameterList = getTestParameters(barcode)
+activate T
+deactivate T
+C -> TPM: testParameterDto = toDto(testParameterList)
+activate TPM
+deactivate TPM
+deactivate C
+UI --> CCT: shows parameter list pertaining to the test\n being analysed and asks to select one
+deactivate UI
+
+loop
+CCT -> UI: selects test parameter
+activate UI
+UI --> CCT: requests the result value and metric
+deactivate UI
+
+CCT -> UI: types request data
+activate UI
+UI -> C: addTestParameterResult (parameterCode, result, metric)
+activate C
+C -> T: addTestParameterResult (parameterCode, result, metric)
+activate T
+
+    ref over T
+    SD_AddTestParameterResult(parameterCode, result, metric)
+end ref
+
+T --> C: testParameterResult
+deactivate T
+C --> UI: testParameterResult
+deactivate C
+UI --> CCT: shows all data and request confirmation
+deactivate UI
+
+deactivate C
+deactivate UI
+CCT -> UI: confirms all data
+activate UI
+UI -> C: saveTestParameterResult(testParameterResult)
+activate C
+C -> T: saveTestParameterResult(testParameterResult)
+activate T
+T -> T: validateTestResult(testParameterResult)
+activate T
+deactivate T
+T -> T: addTestResult(testParameterResult)
+activate T
+deactivate T
+deactivate T
+deactivate C
+UI --> CCT: informs operation success
+deactivate UI
+end
+
+
+
+@enduml

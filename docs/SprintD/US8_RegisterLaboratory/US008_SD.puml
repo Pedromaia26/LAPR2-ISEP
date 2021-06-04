@@ -1,0 +1,68 @@
+@startuml
+actor Administrator as Adm
+participant ":RegistLaboratory UI" as System
+participant ":RegistLaboratoryCrontroller" as RLC
+participant ":Company" as ML
+participant ":TestType" as tt
+participant "Laboratory" as lab
+
+
+autonumber
+activate Adm
+Adm -> System: register a new laboratory
+activate System
+System --> Adm: request data(laboratoryID, name, address, phoneNumber, tinNumber)
+deactivate System
+
+
+
+
+Adm -> System: types requested data
+activate System
+System-->RLC: m=getTestType()
+activate RLC
+RLC-->ML: m=getTestType()
+activate ML
+create "listTT :List<TestType>" as listtt
+ML --> listtt: create()
+listtt --> ML: listTT
+
+
+loop
+System --> Adm: shows the data and request a confirmation
+deactivate ML
+deactivate RLC
+deactivate System
+Adm --> System: selects a type of test
+activate System
+System --> RLC: createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
+activate RLC
+RLC --> tt: test=getTestTypeByCode(code)
+end
+activate tt
+deactivate tt
+RLC --> tt: cl=createLaboratory(laboratoryID, name, address, \n phoneNumber, tinNumber, testType)
+activate tt
+create "cl: \nLaboratory" as CL
+tt --> CL: create(laboratoryID, name, address, \n phoneNumber, tinNumber, test)
+deactivate tt
+RLC --> tt: validateLaboratory(cl)
+activate tt
+deactivate tt
+System --> Adm: shows all data and requests a confirmation
+deactivate RLC
+deactivate System
+Adm --> System: confirms all data
+activate System
+System --> RLC: saveLaboratory()
+activate RLC
+RLC --> lab: saveLaboratory(cl)
+activate lab
+lab --> lab: validateLaboratory(cl)
+lab --> lab: addLaboratory(cl)
+deactivate RLC
+System --> Adm: informs operation success
+deactivate lab
+deactivate System
+deactivate Adm
+@enduml

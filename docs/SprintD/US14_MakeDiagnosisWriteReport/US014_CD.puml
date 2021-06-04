@@ -1,0 +1,75 @@
+@startuml
+package UI{
+    Class WriteReportUI
+}
+package Controllers{
+    Class WriteReportController
+}
+package Domain{
+    Class Company
+    Class Test
+    Class TestStore
+    Class Report
+    Class TestParameter
+}
+package DTO{
+    Class TestDto
+    Class TestParameterDto
+    Class TestParameterDto
+}
+package Mappers{
+    Class TestParameterMapper
+    Class TestMapper
+}
+WriteReportUI ..> WriteReportController
+WriteReportUI ..> TestDto
+WriteReportUI ..> TestParameterDto
+WriteReportController..>Company
+WriteReportController..>TestParameterMapper
+WriteReportController..>TestParameter
+WriteReportController..>Test
+WriteReportController..>TestDto
+WriteReportController..>TestMapper
+WriteReportController..>TestStore
+WriteReportController..>TestParameterDto
+
+WriteReportController : +getTests()
+WriteReportController : +getResultParameters(testDto)
+WriteReportController : +createReport(diagnosisText)
+
+Company : +getTestStore()
+Company"1" --> "1"TestStore: has
+
+TestStore : +getTests()
+TestStore : +getTestByCode(code)
+TestStore"1" --> "*"Test: has
+
+TestMapper : +toDTO(lTests)
+TestMapper..>Test
+TestMapper..>TestDto
+
+TestDto : +getCode()
+
+Test : +getResultParameters()
+Test : +addReport(diagnosisText)
+Test : -code
+Test : -report
+Test : -labOrder
+Test : -sample
+
+Test"1" --> "*"Report : associated with
+Test"1..*" --> "1..*"TestParameter: request analysis of
+
+TestParameterMapper : +toDto(lResultParameters)
+TestParameterMapper..>TestParameter
+TestParameterMapper..>TestParameterDto
+
+TestParameter : -parameter
+TestParameter : -tpr
+
+Report : +create(diagnosisText)
+Report : +getData()
+Report : +validate(diagnosisText)
+Report : -diagnosis
+Report : -createdAt
+@enduml
