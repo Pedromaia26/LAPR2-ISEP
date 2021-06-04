@@ -1,4 +1,4 @@
-# US 006 - To create a Task 
+# US 002 - To update a Client 
 
 ## 1. Requirements Engineering
 
@@ -6,8 +6,7 @@
 ### 1.1. User Story Description
 
 
-As an organization employee, I want to create a new task in order to be further published.
-
+As a client, I want to update my personal data.
 
 
 ### 1.2. Customer Specifications and Clarifications 
@@ -15,38 +14,39 @@ As an organization employee, I want to create a new task in order to be further 
 
 **From the specifications document:**
 
->	Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category. 
-
-
->	As long as it is not published, access to the task is exclusive to the employees of the respective organization. 
-
 
 
 **From the client clarifications:**
 
-> **Question:** Which is the unit of measurement used to estimate duration?
+> **Question:** "Should the Client type in the attribute he/she wants to update or should he choose from a list?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8838#p11541]
 >  
-> **Answer:** Duration is estimated in days.
+> **Answer:** 
 
 -
 
-> **Question:** Monetary data is expressed in any particular currency?
+> **Question:** "What is the Data that the Client can update?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8838#p11541]
 >  
-> **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
+> **Answer:** 
 
 
 ### 1.3. Acceptance Criteria
 
-
-* **AC1:** All required fiels must be filled in.
-* **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
+* **AC1** All fields are optional
+* **AC2** Citizen Card: 16 digit number
+* **AC3** NHS: 10 digit number
+* **AC4** TIN: 10 digit number
+* **AC5** Birth day - in which format: DD/MM/YY
+* **AC6** Sex - should only be Male/Female or include more options. Male/Female
+* **AC7** Phone number: 11 digit number
+* **AC8** The client cant be older than 150 years
+* **AC9** The name cant be longer than 35 characters
+* **AC10** The password______
 
 
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
+* There is no dependency.
 
 
 ### 1.5 Input and Output Data
@@ -55,32 +55,26 @@ As an organization employee, I want to create a new task in order to be further 
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
-	
-* Selected data:
-	* Classifying task category 
+ 	* Citizen card number,
+	* National Healthcare Service (NHS) number,
+	* Birth date,
+	* Sex,
+	* Tax Identification number (TIN),
+	* E-mail,
+	* Name,
+	* Phone number.
 
 
 **Output Data:**
 
-* List of existing task categories
-* (In)Success of the operation
+* List of client information;
+* (In)Success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
-
-
-**Alternative 2**
-
-![US006_SSD_v2](US006_SSD_v2.svg)
+![US002_SSD](US002_SSD.svg)
 
 
 **Other alternatives might exist.**
@@ -94,7 +88,7 @@ As an organization employee, I want to create a new task in order to be further 
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US006_MD](US006_MD.svg)
+![US002_MD](US002_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -144,17 +138,13 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US006_SD](US006_SD.svg)
-
-**Alternative 2**
-
-![US006_SD](US006_SD_v2.svg)
+![US002_SD](US002_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
 **From alternative 1**
 
-![US006_CD](US006_CD.svg)
+![US006_CD](US002_CD.svg)
 
 # 4. Tests 
 
