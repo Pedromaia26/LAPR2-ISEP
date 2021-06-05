@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.controller.App;
+import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class ClientStore {
 
@@ -142,6 +144,56 @@ public class ClientStore {
                 return client;
         }
         throw new IllegalArgumentException("There is no Client with such Email!");
+    }
+
+    public void ChangeName(Client client, String name){
+
+        client.setName(name);
+
+    }
+
+    public void ChangeCCN(Client client, long ccn){
+
+        client.setCcn(ccn);
+
+    }
+
+    public void ChangeNHS(Client client, long nhs){
+
+        client.setNhs(nhs);
+
+    }
+
+    public void ChangeTIN(Client client, long tin){
+
+        client.setTif(tin);
+
+    }
+
+    public void ChangeSex(Client client, String tin){
+
+        client.setSex(tin);
+
+    }
+    public void ChangePN(Client client, long pn){
+
+        client.setPhoneNumber(pn);
+
+    }
+    public void ChangePassword(Client client, String pw){
+
+        client.setPassword(pw);
+
+    }
+    public void ChangeEmail(Client client, String email){
+
+        client.setEmail(new Email(email));
+
+    }
+    public void ChangeBD(Client client, String birth){
+
+        client.setBirth(birth);
+
     }
 
 

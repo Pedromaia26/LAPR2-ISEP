@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.domain.model.Client;
 import app.domain.model.Company;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
@@ -93,6 +94,10 @@ public class App {
         this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_LC));
         this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_SD));*/
 
+        Client client = new Client(1234567890123456L,1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Client",12312312312L);
+
+        this.getCompany().getClientStore().addNewClient(client);
+
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
 
         this.authFacade.addUserWithRole("Receptionist", "rec@lei.sem2.pt", "123456",Constants.ROLE_REC);
@@ -104,6 +109,9 @@ public class App {
         this.authFacade.addUserWithRole("Laboratory Coordinator", "lc@lei.sem2.pt", "123456",Constants.ROLE_LC);
 
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456",Constants.ROLE_CCT);
+
+        this.authFacade.addUserWithRole("Client", "client@lei.sem2.pt", "123456",Constants.ROLE_C);
+
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

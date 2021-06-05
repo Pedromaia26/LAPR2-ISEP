@@ -67,7 +67,6 @@ public class RegistTestController {
 
         this.lab=company.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
 
-        System.out.println(lab);
 
 
     }

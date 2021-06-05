@@ -1,6 +1,11 @@
 package app.ui.gui;
 
+import app.controller.AuthController;
 import app.domain.model.ClientStore;
+import app.domain.shared.Constants;
+import app.ui.console.*;
+import app.ui.console.utils.Utils;
+import auth.mappers.dto.UserRoleDTO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,6 +24,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -50,6 +58,7 @@ public class JanelaPrincipalUI implements Initializable {
     private ImageView passIcon;
 
 
+    private AuthController ctrl=new AuthController();
 
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -59,19 +68,36 @@ public class JanelaPrincipalUI implements Initializable {
     public void loginButtonOnAction(ActionEvent event) throws IOException {
 
         //try {
+        boolean success;
+
+
+
             if (username.getText().equals("") || password.getText().equals("")) {
                 loginMessage.setText("Invalid e-mail or password. Please try again!");
 
             } else {
+                success = ctrl.doLogin(username.getText(), password.getText());
+
+                if (success) {
+                    List<UserRoleDTO> roles = this.ctrl.getUserRoles();
+                    UserRoleDTO role = selectsRole(roles);
+
+
                     loginMessage.setText("Successful login!");
-                    Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
-                    Stage stage2 = new Stage();
-                    Scene scene2 = new Scene(aaaaa);
-                    stage2.setTitle("CLIENT MENU");
-                    stage2.setScene(scene2);
-                    stage2.setResizable(true);
-                    stage2.show();
+                    if(role.getDescription().equalsIgnoreCase("CLIENT")) {
+                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
+                        Stage stage2 = new Stage();
+                        Scene scene2 = new Scene(aaaaa);
+                        stage2.setTitle("CLIENT MENU");
+                        stage2.setScene(scene2);
+                        stage2.setResizable(true);
+                        stage2.show();
+                    }
                 }
+                else {
+                    loginMessage.setText("Invalid e-mail or password. Please try again!");
+                }
+            }
 
 
             /*if (!client.getClientList().isEmpty()) {
@@ -94,5 +120,19 @@ public class JanelaPrincipalUI implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
+
+    public void verificateLogin(){
+
+    }
+
+
+    private UserRoleDTO selectsRole(List<UserRoleDTO> roles)
+    {
+        if (roles.size() == 1)
+            return roles.get(0);
+        else
+            return (UserRoleDTO) Utils.showAndSelectOne(roles, "Select the role you want to adopt in this session:");
+    }
+
 }
 
