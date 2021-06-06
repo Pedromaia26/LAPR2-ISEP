@@ -1,5 +1,6 @@
 package app.ui.gui;
 
+import app.controller.AlterClientDataController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,13 +30,16 @@ public class ClientMenuUI implements Initializable {
         welcome.setText("Welcome");
     }
 
+
     public void updateOnAction(ActionEvent actionEvent) throws IOException {
-        Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("updateClient.fxml"));
+        Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("ClientInterfaceGUI.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(update);
         stage2.setTitle("Update");
         stage2.setScene(scene2);
         stage2.setResizable(true);
+
+        AlterClientDataController alterClientDataController = new AlterClientDataController();
         stage2.show();
 
     }

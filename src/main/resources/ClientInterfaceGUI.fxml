@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AlterClientDataController">
+   <children>
+      <Label layoutX="207.0" layoutY="99.0" text="Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="210.0" layoutY="135.0" text="Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="168.0" text="Citizen Card Number">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="203.0" text="Tax Identification Number">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="180.0" layoutY="396.0" text="Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="356.0" text="Birth Date">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="141.0" layoutY="316.0" text="Phone Number">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="239.0" text="National Health Number">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="227.0" layoutY="274.0" prefHeight="22.0" prefWidth="27.0" text="Sex">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="254.0" layoutY="21.0" text="Client Data">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtChangeName" disable="true" layoutX="325.0" layoutY="97.0" />
+      <TextField fx:id="txtChangeEmail" disable="true" layoutX="325.0" layoutY="133.0" />
+      <TextField fx:id="txtChangeCCN" disable="true" layoutX="325.0" layoutY="166.0" />
+      <TextField fx:id="txtChangeTIN" disable="true" layoutX="325.0" layoutY="201.0" />
+      <TextField fx:id="txtChangeNHS" disable="true" layoutX="325.0" layoutY="237.0" />
+      <TextField fx:id="txtChangeSex" disable="true" layoutX="325.0" layoutY="272.0" />
+      <TextField fx:id="txtChangePN" disable="true" layoutX="325.0" layoutY="314.0" />
+      <TextField fx:id="txtChangeBD" disable="true" layoutX="325.0" layoutY="354.0" />
+      <PasswordField fx:id="txtChangePW" disable="true" layoutX="325.0" layoutY="395.0" />
+      <Separator layoutY="62.0" prefHeight="5.0" prefWidth="687.0" />
+      <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: lightblue;" />
+      <Separator layoutY="79.0" prefHeight="5.0" prefWidth="687.0" />
+      <Button fx:id="changeName" disable="true" layoutX="519.0" layoutY="97.0" mnemonicParsing="false" onAction="#UpdateName" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeEmail" disable="true" layoutX="519.0" layoutY="134.0" mnemonicParsing="false" onAction="#UpdateEmail" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeCcn" disable="true" layoutX="519.0" layoutY="166.0" mnemonicParsing="false" onAction="#UpdateCCN" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeTin" disable="true" layoutX="519.0" layoutY="201.0" mnemonicParsing="false" onAction="#UpdateTIN" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeNhs" disable="true" layoutX="519.0" layoutY="237.0" mnemonicParsing="false" onAction="#UpdateNHS" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeSex" disable="true" layoutX="519.0" layoutY="272.0" mnemonicParsing="false" onAction="#UpdateSex" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changePn" disable="true" layoutX="519.0" layoutY="314.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeBd" disable="true" layoutX="519.0" layoutY="355.0" mnemonicParsing="false" onAction="#UpdateBirthDate" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="changePw" disable="true" layoutX="519.0" layoutY="395.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Go Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="showdata" layoutX="400.0" layoutY="17.0" mnemonicParsing="false" onAction="#showdata" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Show">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
