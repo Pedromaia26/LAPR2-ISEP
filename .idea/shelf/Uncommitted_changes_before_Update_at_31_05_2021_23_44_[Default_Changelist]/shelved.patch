@@ -1,0 +1,290 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"Sem2App:jar\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:Pedro-Fernandes\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:Tiago-Gon-alves-Marques\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5b09f2da-3380-46e6-ab3a-b54601b59e3a\" name=\"Default Changelist\" comment=\"Trying to fix jenkins bugs to coverage by updating workspace\">\r\n      <change beforePath=\"$PROJECT_DIR$/Sem2App.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Sem2App.iml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"JUnit3 Test Class\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"JUnit4 Test Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1t1Wginpx3bycAYDmaa6TX0FZEC\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\" value=\"JUnit4\" />\r\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4\" value=\"\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SSD.svg\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.097751714\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.4312026\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.keymap\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\" />\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n      <recent name=\"junit.framework.TestCase\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\" />\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"app.domain.model\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunAnythingCache\">\r\n    <option name=\"myCommands\">\r\n      <command value=\"mvn install\" />\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.All in Sem2App (1)\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.ui.Main\" />\r\n      <module name=\"Sem2App\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"app.ui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"ArquillianTestNG\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"All in Sem2App (1)\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Sem2App\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"package\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"All in Sem2App\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\" />\r\n    <configuration name=\"ClientMapperTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Sem2App\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"app.domain.model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"app.domain.model\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.domain.model.ClientMapperTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Sem2App\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"app.domain.model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"app.domain.model\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.domain.model.TestTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"app.domain.model in Sem2App\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Sem2App\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"app.domain.model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"app.domain.model\" />\r\n      <option name=\"TEST_OBJECT\" value=\"package\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.All in Sem2App (1)\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"JUnit.TestTest\" />\r\n        <item itemvalue=\"JUnit.app.domain.model in Sem2App\" />\r\n        <item itemvalue=\"JUnit.ClientMapperTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5b09f2da-3380-46e6-ab3a-b54601b59e3a\" name=\"Default Changelist\" comment=\"TestType update\" />\r\n      <created>1621937191897</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1621937191897</updated>\r\n      <workItem from=\"1621937195410\" duration=\"551000\" />\r\n      <workItem from=\"1621938297359\" duration=\"615000\" />\r\n      <workItem from=\"1621941804548\" duration=\"1475000\" />\r\n      <workItem from=\"1621952271079\" duration=\"12409000\" />\r\n      <workItem from=\"1621976454814\" duration=\"1734000\" />\r\n      <workItem from=\"1622052194225\" duration=\"8699000\" />\r\n      <workItem from=\"1622107359277\" duration=\"8168000\" />\r\n      <workItem from=\"1622126572217\" duration=\"1816000\" />\r\n      <workItem from=\"1622131541969\" duration=\"3183000\" />\r\n      <workItem from=\"1622137432192\" duration=\"493000\" />\r\n      <workItem from=\"1622107359277\" duration=\"9062000\" />\r\n      <workItem from=\"1622140363191\" duration=\"2839000\" />\r\n      <workItem from=\"1622202710809\" duration=\"50000\" />\r\n      <workItem from=\"1622226035834\" duration=\"1213000\" />\r\n      <workItem from=\"1622194755734\" duration=\"11171000\" />\r\n      <workItem from=\"1622209639493\" duration=\"2493000\" />\r\n      <workItem from=\"1622233659070\" duration=\"2466000\" />\r\n      <workItem from=\"1622293662514\" duration=\"7857000\" />\r\n      <workItem from=\"1622278676493\" duration=\"3231000\" />\r\n      <workItem from=\"1622290942846\" duration=\"792000\" />\r\n      <workItem from=\"1622291823079\" duration=\"1597000\" />\r\n      <workItem from=\"1622282491519\" duration=\"6076000\" />\r\n      <workItem from=\"1622368702744\" duration=\"9867000\" />\r\n      <workItem from=\"1622367477575\" duration=\"6707000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"pom change\">\r\n      <created>1621952441657</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1621952441657</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"External Module update, finishing all methods referent to test\">\r\n      <created>1621961351288</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1621961351288</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Adding controller referent to recording a result of a test, adding methods to class test and external module adapters update.\">\r\n      <created>1622056360817</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622056360817</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Adding documentation to Test related classes.\">\r\n      <created>1622067252793</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622067252793</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Adding documentation to Test Parameter related classes.\">\r\n      <created>1622068108632</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622068108632</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Adding documentation to TestStore.\">\r\n      <created>1622110886300</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622110886300</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"adding unit test and its mutants to class test.\">\r\n      <created>1622113734632</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622113734632</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Finishing all unit test and its mutants when instantiating a new test.\">\r\n      <created>1622114054413</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622114054413</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Correcting samples tests\">\r\n      <created>1622148001389</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622148001389</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Correcting samples tests\">\r\n      <created>1622150229891</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622150229891</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Create class controlor to validate work done\">\r\n      <created>1622199596449</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622199596449</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"ValidateWorkDoneController, Test and TestStore add methods\">\r\n      <created>1622236018778</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622236018778</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Creating ValidateWorkDoneUI\">\r\n      <created>1622281283500</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622281283500</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Finishing UI for recording test results.\">\r\n      <created>1622310842325</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622310842325</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Updating User Interface in general and last changes to the code.\">\r\n      <created>1622372255760</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622372255760</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Adding unit tests.\">\r\n      <created>1622393976568</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1622393976568</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"17\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"pom change\" />\r\n    <MESSAGE value=\"External Module update, finishing all methods referent to test\" />\r\n    <MESSAGE value=\"Adding controller referent to recording a result of a test, adding methods to class test and external module adapters update.\" />\r\n    <MESSAGE value=\"Adding documentation to Test related classes.\" />\r\n    <MESSAGE value=\"Adding documentation to Test Parameter related classes.\" />\r\n    <MESSAGE value=\"Adding documentation to TestStore.\" />\r\n    <MESSAGE value=\"adding unit test and its mutants to class test.\" />\r\n    <MESSAGE value=\"Finishing all unit test and its mutants when instantiating a new test.\" />\r\n    <MESSAGE value=\"Create Laboratory Coordinator UI\" />\r\n    <MESSAGE value=\"Correcting samples tests\" />\r\n    <MESSAGE value=\"Using configuration files to choose the API referent to the test type of the test being analysed, updating the RecordTestResultController.\" />\r\n    <MESSAGE value=\"TestType update\" />\r\n    <MESSAGE value=\"Create class controlor to validate work done\" />\r\n    <MESSAGE value=\"ValidateWorkDoneController, Test and TestStore add methods\" />\r\n    <MESSAGE value=\"Finishing user interface for recording test results and some minor changes to the code.\" />\r\n    <MESSAGE value=\"fixing jenkins test coverage bug\" />\r\n    <MESSAGE value=\"Finishing UI for recording test results.\" />\r\n    <MESSAGE value=\"Finishing UI for recording test results and some changes to optimize the code.\" />\r\n    <MESSAGE value=\"Adding unit tests.\" />\r\n    <MESSAGE value=\"Trying to fix jenkins bugs to coverage by updating workspace\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Trying to fix jenkins bugs to coverage by updating workspace\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/Client_java$app_domain_model_in_Sem2App.ic\" NAME=\"app.domain.model in Sem2App Coverage Results\" MODIFIED=\"1622382130042\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>app.domain.model.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/Client_java$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622365946127\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n    <SUITE FILE_PATH=\"coverage/Employee_java$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622218789185\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n    <SUITE FILE_PATH=\"coverage/Main_java$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622393785975\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n    <SUITE FILE_PATH=\"coverage/Employee_java$app_domain_model_in_Sem2App.ic\" NAME=\"app.domain.model in Sem2App Coverage Results\" MODIFIED=\"1622218522990\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>app.domain.model.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/Main_java$app_domain_model_in_Sem2App.ic\" NAME=\"app.domain.model in Sem2App Coverage Results\" MODIFIED=\"1622392111367\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>app.domain.model.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/Main_java$ParameterTest.ic\" NAME=\"ParameterTest Coverage Results\" MODIFIED=\"1622292746364\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>app.domain.model.*</FILTER>\r\n    </SUITE>\r\n    <SUITE FILE_PATH=\"coverage/Sem2App$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622114897486\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n    <SUITE FILE_PATH=\"coverage/ProjetoLapr2$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622150087093\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n    <SUITE FILE_PATH=\"coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic\" NAME=\"All in Sem2App Coverage Results\" MODIFIED=\"1622313090732\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -40,7 +40,84 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="5b09f2da-3380-46e6-ab3a-b54601b59e3a" name="Default Changelist" comment="Trying to fix jenkins bugs to coverage by updating workspace">
++      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/gui/ClientMenuUI.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/gui/JanelaPrincipalUI.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/app/ui/gui/Main.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/aaaa.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/cliente.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Sem2App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sem2App.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/App.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/AuthController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterCategoryController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/CreateParameterController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistLaboratoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistLaboratoryController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/RegistTestController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/ValidateWorkDoneController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/WriteReportController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/BarcodeCreate.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Client.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ClientStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Company.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Employee.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/EmployeeStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Laboratory.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Parameter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategory.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterCategoryStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/ParameterStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Report.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/RolesMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Sample.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/SpecialistDoctor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/Test.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestParameterMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestType.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/domain/model/TestTypeStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AdminUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AdminUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/AuthUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ClinicalChemistryTechnologistUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ClinicalChemistryTechnologistUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateEmployeeUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterCategoryUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/CreateParameterUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryCoordinatorUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryCoordinatorUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/LaboratoryUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MainMenuUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MainMenuUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MenuItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MenuItem.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/MltUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/MltUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ReceptionistUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ReceptionistUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordSampleUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RecordTestResultUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/RegistClientUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ShowTextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ShowTextUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/SpecialistDoctorUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestTypeUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/TestUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/ValidateWorkDoneUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/WriteReportUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/app/ui/console/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/ui/console/utils/Utils.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/AuthFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/AuthFacade.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/UserSession.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/Email.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/Password.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/model/UserRole.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/store/UserRoleStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/store/UserRoleStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/domain/store/UserStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/domain/store/UserStore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/auth/mappers/UserRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/mappers/UserRoleMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/ParameterCategoryMapperTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/SampleTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestMapperTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestStoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestStoreTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/domain/model/TestTypeMapperTest.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -55,8 +132,10 @@
+       <list>
+         <option value="Interface" />
+         <option value="JUnit3 Test Class" />
+-        <option value="Class" />
+         <option value="JUnit4 Test Class" />
++        <option value="JavaFXApplication" />
++        <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -87,12 +166,12 @@
+     <property name="aspect.path.notification.shown" value="true" />
+     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/SprintC/US14_MakeDiagnosisWriteReport/US014_SSD.svg" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="nodejs_package_manager_path" value="npm" />
+-    <property name="project.structure.last.edited" value="Modules" />
++    <property name="project.structure.last.edited" value="Libraries" />
+     <property name="project.structure.proportion" value="0.097751714" />
+     <property name="project.structure.side.proportion" value="0.4312026" />
+-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
++    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS" />
+@@ -100,7 +179,9 @@
+       <recent name="" />
+       <recent name="junit.framework.TestCase" />
+     </key>
+-    <key name="MoveFile.RECENT_KEYS" />
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Tiago\Documents\lei-21-s2-1de-g21\src\main\resources" />
++    </key>
+     <key name="CreateTestDialog.RecentsKey">
+       <recent name="app.domain.model" />
+     </key>
+@@ -110,7 +191,20 @@
+       <command value="mvn install" />
+     </option>
+   </component>
+-  <component name="RunManager" selected="JUnit.All in Sem2App (1)">
++  <component name="RunManager" selected="Application.Main (1)">
++    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="app.ui.gui.Main" />
++      <module name="Sem2App" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="app.ui.gui.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="app.ui.Main" />
+       <module name="Sem2App" />
+@@ -124,15 +218,13 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
++    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+       <option name="arquillianRunConfiguration">
+         <value>
+           <option name="containerStateName" value="" />
+         </value>
+       </option>
+-      <option name="TEST_OBJECT" value="CLASS" />
+-      <properties />
+-      <listeners />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -141,22 +233,6 @@
+       <module name="Sem2App" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="TEST_OBJECT" value="package" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="All in Sem2App" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" />
+-    <configuration name="ClientMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="Sem2App" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="app.domain.model.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="app.domain.model" />
+-      <option name="MAIN_CLASS_NAME" value="app.domain.model.ClientMapperTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -192,11 +268,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.Main (1)" />
++        <item itemvalue="Application.Main" />
+         <item itemvalue="JUnit.All in Sem2App (1)" />
+-        <item itemvalue="Application.Main" />
+         <item itemvalue="JUnit.TestTest" />
+         <item itemvalue="JUnit.app.domain.model in Sem2App" />
+-        <item itemvalue="JUnit.ClientMapperTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -232,6 +308,9 @@
+       <workItem from="1622282491519" duration="6076000" />
+       <workItem from="1622368702744" duration="9867000" />
+       <workItem from="1622367477575" duration="6707000" />
++      <workItem from="1622483339612" duration="194000" />
++      <workItem from="1622483547386" duration="65000" />
++      <workItem from="1622483652304" duration="11537000" />
+     </task>
+     <task id="LOCAL-00001" summary="pom change">
+       <created>1621952441657</created>
+@@ -385,29 +464,40 @@
+     <MESSAGE value="Adding unit tests." />
+     <MESSAGE value="Trying to fix jenkins bugs to coverage by updating workspace" />
+     <option name="LAST_COMMIT_MESSAGE" value="Trying to fix jenkins bugs to coverage by updating workspace" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/app/ui/gui/Main.java</url>
++          <line>8</line>
++          <option name="timeStamp" value="5" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+     <select />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/Client_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622382130042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+-      <FILTER>app.domain.model.*</FILTER>
+-    </SUITE>
+-    <SUITE FILE_PATH="coverage/Client_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622365946127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+-    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+-    <SUITE FILE_PATH="coverage/Main_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622393785975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+     <SUITE FILE_PATH="coverage/Employee_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622218522990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>app.domain.model.*</FILTER>
+     </SUITE>
+-    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622392111367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>app.domain.model.*</FILTER>
+     </SUITE>
+-    <SUITE FILE_PATH="coverage/Main_java$ParameterTest.ic" NAME="ParameterTest Coverage Results" MODIFIED="1622292746364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++    <SUITE FILE_PATH="coverage/Main_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622393785975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/Employee_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622218789185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/Main_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622395113037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+       <FILTER>app.domain.model.*</FILTER>
+     </SUITE>
+     <SUITE FILE_PATH="coverage/Sem2App$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622114897486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+     <SUITE FILE_PATH="coverage/ProjetoLapr2$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622150087093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+-    <SUITE FILE_PATH="coverage/ValidateWorkDoneController_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622313090732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/Client_java$app_domain_model_in_Sem2App.ic" NAME="app.domain.model in Sem2App Coverage Results" MODIFIED="1622382130042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>app.domain.model.*</FILTER>
++    </SUITE>
++    <SUITE FILE_PATH="coverage/Client_java$All_in_Sem2App.ic" NAME="All in Sem2App Coverage Results" MODIFIED="1622365946127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AhkProjectSettings\">\r\n    <option name=\"defaultAhkSdk\" value=\"AutoHotkey v1.1\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"corretto-11\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -10,5 +10,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file

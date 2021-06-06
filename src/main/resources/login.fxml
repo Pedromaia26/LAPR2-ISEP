@@ -46,12 +46,12 @@
                   <Image url="@images/pass.png" />
                </image>
             </ImageView>
-            <Button fx:id="cancelButton" alignment="CENTER" layoutX="158.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="37.0" prefWidth="98.0" style="-fx-background-color: #6700fa; -fx-background-radius: 30px;" text="CANCEL" textFill="#f8f0f0">
+            <Label fx:id="loginMessage" alignment="CENTER" layoutX="28.0" layoutY="244.0" prefHeight="21.0" prefWidth="360.0" underline="true" />
+            <Button fx:id="cancelButton" alignment="CENTER" layoutX="169.0" layoutY="330.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #6700fa; -fx-background-radius: 30px;" stylesheets="@styles/styles.css" text="CANCEL" textFill="#f8f0f0">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Label fx:id="loginMessage" alignment="CENTER" layoutX="28.0" layoutY="244.0" prefHeight="21.0" prefWidth="360.0" underline="true" />
          </children>
       </AnchorPane>
    </center>
