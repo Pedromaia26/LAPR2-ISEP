@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.serialization.Serialization;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,11 @@ public class ParameterStore {
      * List that contains the parameters.
      */
     private List<Parameter> parameterList;
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     public ParameterStore(){
         parameterList = new ArrayList<>();
@@ -49,7 +56,9 @@ public class ParameterStore {
         if (!validateParameter(parameter)) {
             return false;
         }
-        return this.parameterList.add(parameter);
+        this.parameterList.add(parameter);
+        save();
+        return true;
     }
 
     public void addParameter(Parameter parameter) {
@@ -66,5 +75,13 @@ public class ParameterStore {
                 return tt;
         }
         throw new IllegalArgumentException("There is no Parameter with such code!");
+    }
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) parameterList, "parameter.ser");
+    }
+
+    public void read(Company c){
+        parameterList = (List<Parameter>) (List<?>) ser.ler("parameter.ser");
     }
 }

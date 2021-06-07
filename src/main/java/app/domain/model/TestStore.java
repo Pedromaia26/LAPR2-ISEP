@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.serialization.Serialization;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -16,6 +17,11 @@ public class TestStore {
      * List that contains the tests.
      */
     private List<Test> tests;
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     /**
      * List that contains the tests to be reported.
@@ -102,7 +108,9 @@ public class TestStore {
     public boolean saveTest (Test ts){
         if (!validateTest(ts))
             return false;
-        return tests.add(ts);
+        tests.add(ts);
+        save();
+        return true;
     }
 
      /**
@@ -112,6 +120,16 @@ public class TestStore {
     public void validateWorkDone(String code) throws IOException{
         Test test = getTestByCode(code);
         test.validateTest();
+        save();
     }
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) tests, "test.ser");
+    }
+
+    public void read(Company c){
+        tests = (List<Test>) (List<?>) ser.ler("test.ser");
+    }
+
 
 }

@@ -2,11 +2,12 @@ package app.domain.model;
 
 import app.controller.App;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class LabOrder {
+public class LabOrder implements Serializable {
     /**
      * TestType that contains the testtype of a laborder
      */

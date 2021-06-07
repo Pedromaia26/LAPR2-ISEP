@@ -40,7 +40,9 @@ public class WriteReportController {
     }
 
     public boolean removeTestToBeReported(){
-        return lTestsToBeReported.remove(test);
+        boolean flag = lTestsToBeReported.remove(test);
+        tStore.save();
+        return flag;
     }
 
     public List<TestParameterDto> getResultParameters(TestDTO testDto) {

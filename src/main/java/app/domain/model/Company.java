@@ -5,6 +5,7 @@ import auth.domain.store.UserRoleStore;
 import auth.domain.store.UserStore;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -7,11 +7,12 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Client {
+public class Client implements Serializable {
     /**
      * String that contains the Citizen card number
      */

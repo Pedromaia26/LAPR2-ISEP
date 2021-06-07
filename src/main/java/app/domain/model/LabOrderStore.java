@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.serialization.Serialization;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,12 @@ public class LabOrderStore {
      * List that contains the laborders.
      */
     private List<LabOrder> labOrders= new ArrayList<>();
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
+
     /**
      * Returns the list of labOrders.
      * @return the list of a laborders.
@@ -33,7 +41,19 @@ public class LabOrderStore {
     public boolean addToList (LabOrder labOrder){
         if (!validateLB(labOrder))
             return false;
-        return this.labOrders.add(labOrder);
+        this.labOrders.add(labOrder);
+        save();
+        return true;
+    }
+
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) labOrders, "labOrders.ser");
+    }
+
+    public void read(Company c){
+        labOrders = (List<LabOrder>) (List<?>) ser.ler("labOrders.ser");
+        System.out.println(labOrders);
     }
 
 }

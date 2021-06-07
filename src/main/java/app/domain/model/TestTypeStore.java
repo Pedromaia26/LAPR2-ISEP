@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.serialization.Serialization;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,11 @@ public class TestTypeStore {
      * List that contains the types of tests.
      */
     private List <TestType> testTypeList;
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     public TestTypeStore() {
         testTypeList = new ArrayList<>();
@@ -66,7 +73,9 @@ public class TestTypeStore {
     public boolean saveTestType (TestType tt){
         if (!validateTestType(tt))
             return false;
-        return testTypeList.add(tt);
+        testTypeList.add(tt);
+        save();
+        return true;
     }
 
 
@@ -83,6 +92,15 @@ public class TestTypeStore {
      */
     public List<TestType> getTestTypes(){
         return testTypeList;
+    }
+
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) testTypeList, "testType.ser");
+    }
+
+    public void read(Company c){
+        testTypeList = (List<TestType>) (List<?>) ser.ler("testType.ser");
     }
 
 }

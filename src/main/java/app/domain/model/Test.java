@@ -5,11 +5,12 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.*;
 
-public class Test {
+public class Test implements Serializable {
 
 
 

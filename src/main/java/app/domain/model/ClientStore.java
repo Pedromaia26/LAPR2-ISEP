@@ -7,12 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.controller.App;
+import app.serialization.Serialization;
 import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
-import com.sun.org.apache.bcel.internal.generic.NEW;
+
 
 public class ClientStore {
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     /**
      * List that contains the Clients.
@@ -64,6 +70,8 @@ public class ClientStore {
         sendEmail(nc);
 
         addNewClient(nc);
+
+        save();
 
         return CreateUser(nc);
     }
@@ -194,6 +202,21 @@ public class ClientStore {
 
         client.setBirth(birth);
 
+    }
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) clientList, "client.ser");
+    }
+
+    public void read(Company c){
+        clientList = (List<Client>) (List<?>) ser.ler("client.ser");
+        addUser(c);
+    }
+
+    public void addUser(Company c){
+        for( Client nc : clientList){
+            c.getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
+        }
     }
 
 

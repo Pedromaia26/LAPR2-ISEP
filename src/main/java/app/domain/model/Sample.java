@@ -13,12 +13,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
 
-public class Sample{
+public class Sample implements Serializable {
     /**
      * int that contains the barcode number of a sample
      */

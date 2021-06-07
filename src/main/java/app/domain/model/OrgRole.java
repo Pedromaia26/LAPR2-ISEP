@@ -5,14 +5,16 @@ import app.domain.shared.Constants;
 import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 
-public class OrgRole {
+import java.io.Serializable;
+
+public class OrgRole implements Serializable {
 
     /**
      * String that contains the Designation of a OrgRole
      */
     private String designation;
 
-    private Company company;
+    private transient Company company;
 
     /**
      * Constructor that create a empty instance of a OrgRole

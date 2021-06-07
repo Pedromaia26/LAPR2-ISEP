@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.serialization.Serialization;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,11 @@ public class LaboratoryStore {
      * List that contains the Laboratories.
      */
     private List<Laboratory> laboratoryList = new ArrayList<>();
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     /**
      * Create a new Clynical Analysis Laboratory with the kind of test it operates.
@@ -47,7 +54,9 @@ public class LaboratoryStore {
     public boolean saveLaboratory (Laboratory cl){
         if (!validateLaboratory(cl))
             return false;
-        return laboratoryList.add(cl);
+        laboratoryList.add(cl);
+        save();
+        return true;
     }
 
     public List<Laboratory> getLaboratoryList() {
@@ -61,5 +70,14 @@ public class LaboratoryStore {
                 return lab;
         }
         throw new IllegalArgumentException("There is no Lab with such ID!");
+    }
+
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) laboratoryList, "laboratory.ser");
+    }
+
+    public void read(Company c){
+        laboratoryList = (List<Laboratory>) (List<?>) ser.ler("laboratory.ser");
     }
 }
