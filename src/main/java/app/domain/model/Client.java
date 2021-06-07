@@ -274,4 +274,28 @@ public class Client {
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public void setCcn(long ccn) {
+        this.ccn = ccn;
+    }
+
+    public void setNhs(long nhs) {
+        this.nhs = nhs;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setTif(long tif) {
+        this.tif = tif;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

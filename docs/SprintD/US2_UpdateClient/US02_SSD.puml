@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Client" as C
+participant ":System" as S
+activate C
+
+C -> S: asks to update its personal data
+activate S
+S --> C: shows all data about the client
+deactivate S
+C -> S: selects the fields he wants to update and types the new data
+activate S
+S --> C: shows all data and requests confirmation
+deactivate S
+C -> S: confirms the data
+activate S
+S --> C: shows information success
+deactivate S
+
+@enduml

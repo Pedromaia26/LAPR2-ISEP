@@ -46,7 +46,7 @@ As a client, I want to update my personal data.
 ### 1.4. Found out Dependencies
 
 
-* There is no dependency.
+* There is a dependency to "US03 To Register A Client" since the client must be registered in the system, to update its data.
 
 
 ### 1.5 Input and Output Data
@@ -74,7 +74,7 @@ As a client, I want to update my personal data.
 
 **Alternative 1**
 
-![US002_SSD](US002_SSD.svg)
+![US02_SSD.svg](US02_SSD.svg)
 
 
 **Other alternatives might exist.**
