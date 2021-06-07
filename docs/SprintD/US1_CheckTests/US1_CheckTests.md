@@ -57,7 +57,7 @@ As a client, I want to access the application to view the results of the tests I
 
 **Alternative 1**
 
-![US001_CheckTests_SSD](US001_CheckTests_SSD.svg)
+![US001_SSD.svg](US001_SSD.svg)
 
 
 
@@ -123,7 +123,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US005_SD](US005_SD.svg)
+![US001_SD.svg](US001_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
