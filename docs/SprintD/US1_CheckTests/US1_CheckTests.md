@@ -26,7 +26,7 @@ As a client, I want to access the application to view the results of the tests I
 >  
 > **Answer:** "The test registration date." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8787]
 
-> **Question:** "The testâ€™s results show only present the parameters value or the analysis of those values?"
+> **Question:** "The test’s results show only present the parameters value or the analysis of those values?"
 >  
 > **Answer:** 
 
@@ -57,7 +57,7 @@ As a client, I want to access the application to view the results of the tests I
 
 **Alternative 1**
 
-![US005_SSD](US005_SSD.svg)
+![US001_CheckTests_SSD](US001_CheckTests_SSD.svg)
 
 
 
