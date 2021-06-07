@@ -107,4 +107,11 @@ public class ParameterCategoryStore {
         cat = (List<ParameterCategory>) (List<?>) ser.ler("parameterCategory.ser");
     }
 
+    public ParameterCategory getParameterCategoryByDescription(String test) {
+        for (ParameterCategory category : cat) {
+            if (test.equals(category.getName()))
+                return category;
+        }
+        throw new IllegalArgumentException("There is no Parameter Category with such name!");
+    }
 }

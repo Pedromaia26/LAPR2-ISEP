@@ -17,7 +17,7 @@ public class BarcodeCreateTest {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -49,7 +49,7 @@ public class BarcodeCreateTest {
 
         c.getLabOrderStore().addToList(labOrder);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -74,7 +74,7 @@ public class BarcodeCreateTest {
     public void testEqualsNull() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -104,7 +104,7 @@ public class BarcodeCreateTest {
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -130,7 +130,7 @@ public class BarcodeCreateTest {
     public void testEqualsDifferentClasses() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -159,7 +159,7 @@ public class BarcodeCreateTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -184,7 +184,7 @@ public class BarcodeCreateTest {
     public void testEqualsNotEqual() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -213,7 +213,7 @@ public class BarcodeCreateTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -239,7 +239,7 @@ public class BarcodeCreateTest {
     public void testEqualsSameClass() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -270,7 +270,7 @@ public class BarcodeCreateTest {
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
 
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);

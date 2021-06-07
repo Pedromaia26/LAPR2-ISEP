@@ -24,11 +24,11 @@ public class RegistEmployeeController {
     private LaboratoryMapper laboratoryMapper = new LaboratoryMapper();
 
 
-    public RegistEmployeeController(){
+    public RegistEmployeeController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.company= App.getInstance().getCompany();
     }
 
-    public List<OrgRoleDto> getRoles(){
+    public List<OrgRoleDto> getRoles() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         rStore = App.getInstance().getCompany().getOrgRoleStore();
         rStore.addDefaultRoles();
         lRoles = rStore.getRoles();
@@ -36,30 +36,30 @@ public class RegistEmployeeController {
         return lRolesDto;
     }
 
-    public boolean createEmployee(EmployeeDto empDto){
+    public boolean createEmployee(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto);
         return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
     }
 
-    public boolean createSpecialistDoctor(EmployeeDto spedocdto){
+    public boolean createSpecialistDoctor(EmployeeDto spedocdto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto);
         return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
     }
 
-    public List<Employee> getEmployeeList(){
+    public List<Employee> getEmployeeList() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getEmployeeStore().getEmployeeList();
     }
 
-    public List<SpecialistDoctor> getSpecialistDoctorList(){
+    public List<SpecialistDoctor> getSpecialistDoctorList() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getEmployeeStore().getSpecialistDoctors();
     }
 
-    public void saveEmployee() throws FileNotFoundException {
+    public void saveEmployee() throws FileNotFoundException, IllegalAccessException, ClassNotFoundException, InstantiationException {
         App.getInstance().getCompany().getEmployeeStore().saveEmployee(emp);
         App.getInstance().getCompany().getEmployeeStore().createUser(emp);
     }
 
-    public void saveSpecialistDoctor() throws FileNotFoundException {
+    public void saveSpecialistDoctor() throws FileNotFoundException, IllegalAccessException, ClassNotFoundException, InstantiationException {
         App.getInstance().getCompany().getEmployeeStore().saveSpecialistDoctor(empsd);
         App.getInstance().getCompany().getEmployeeStore().createUser(empsd);
     }

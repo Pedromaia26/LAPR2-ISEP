@@ -64,7 +64,7 @@ public class ClientStore {
      * @param nc the client to be saved.
      * @return True if the client is successfully created, false if it is not.
      */
-    public boolean saveClient(Client nc) throws IOException {
+    public boolean saveClient(Client nc) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         validateClient(nc);
 
         sendEmail(nc);
@@ -122,7 +122,7 @@ public class ClientStore {
      * @param nc the client to be created.
      * @return True if the client is successfully saved, false if it is not.
      */
-    public boolean CreateUser(Client nc){
+    public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
     /**
@@ -154,13 +154,22 @@ public class ClientStore {
         throw new IllegalArgumentException("There is no Client with such Email!");
     }
 
+    public Boolean getClientByCcn(String ccn){
+        for (Client client : clientList) {
+            if (ccn.equals(client.getCcn()))
+                return true;
+        }
+        return false;
+
+    }
+
     public void ChangeName(Client client, String name){
 
         client.setName(name);
 
     }
 
-    public void ChangeCCN(Client client, long ccn){
+    public void ChangeCCN(Client client, String ccn){
 
         client.setCcn(ccn);
 

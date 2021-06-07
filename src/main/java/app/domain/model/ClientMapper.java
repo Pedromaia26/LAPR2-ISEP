@@ -20,7 +20,7 @@ public class ClientMapper{
      */
     public static Client toModel(ClientDTO dto) {
 
-        long ccn = dto.getCcnDto();
+        String ccn = dto.getCcnDto();
         long nhs = dto.getNhsDto();
         String birth = dto.getBirthDto();
         String sex = dto.getSexDto();

@@ -13,11 +13,11 @@ public class ClientStoreTest {
 
     @Test
     public void createNewClient() {
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Company comp= new Company("ManyLabs");
 
-        ClientDTO clientDTO = new ClientDTO(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        ClientDTO clientDTO = new ClientDTO("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Client client1=comp.getClientStore().createNewClient(clientDTO);
 
@@ -27,7 +27,7 @@ public class ClientStoreTest {
 
     @Test
     public void validateClient() {
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
 
         Company comp= new Company("ManyLabs");
@@ -51,7 +51,7 @@ public class ClientStoreTest {
 
     @Test
     public void validateClientSameTestAlreadyOnTheList() {
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
         comp.getClientStore().addNewClient(client);
 
@@ -61,10 +61,10 @@ public class ClientStoreTest {
 
     @Test
     public void validateClientEqualTestAlreadyOnTheList() {
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
         comp.getClientStore().addNewClient(client);
-        Client client2 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client2 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         boolean test4= comp.getClientStore().validateClient(client2);
         assertFalse(test4);
     }
@@ -72,7 +72,7 @@ public class ClientStoreTest {
 
     @Test
     public void addNewClient() {
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Company comp= new Company("ManyLabs");
 
@@ -101,7 +101,7 @@ public class ClientStoreTest {
     @Test
     public void addNewClientSameTestAlreadyOnTheList() {
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
 
         comp.getClientStore().addNewClient(client);
@@ -114,10 +114,10 @@ public class ClientStoreTest {
     @Test
     public void addNewClientEqualTestAlreadyOnTheList() {
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
 
-        Client client2 = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client2 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
 
          comp.getClientStore().addNewClient(client);

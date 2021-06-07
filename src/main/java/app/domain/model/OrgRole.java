@@ -40,7 +40,7 @@ public class OrgRole implements Serializable {
      * @param socCode the SocCode of a Employee
      * @return the Constructor to a new Employee
      */
-    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab){
+    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         company = App.getInstance().getCompany();
         OrgRole role = company.getOrgRoleStore().getRoleByDesignation(Orole);
         return new Employee(role, employeeId, name, address, phoneNumber, email, socCode, lab);

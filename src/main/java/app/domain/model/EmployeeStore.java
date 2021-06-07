@@ -33,7 +33,7 @@ public class EmployeeStore {
      * @param empDto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public Employee createEmployee(EmployeeDto empDto){
+    public Employee createEmployee(EmployeeDto empDto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         return EmployeeMapper.toDtoE(empDto);
     }
 
@@ -42,7 +42,7 @@ public class EmployeeStore {
      * @param specdocdto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         return EmployeeMapper.toDtoSD(specdocdto);
     }
 
@@ -184,7 +184,7 @@ public class EmployeeStore {
      * @param emp A Employee instance
      * @return the addUserWithRole, associated with the Employee instance
      */
-    public boolean createUser(Employee emp){
+    public boolean createUser(Employee emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 
@@ -193,7 +193,7 @@ public class EmployeeStore {
      * @param emp A Specialist Doctor instance
      * @return the addUserWithRole, associated with the Specialist Doctor instance
      */
-    public boolean createUser(SpecialistDoctor emp){
+    public boolean createUser(SpecialistDoctor emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 

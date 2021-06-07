@@ -56,4 +56,10 @@ public class LabOrderStore {
         System.out.println(labOrders);
     }
 
+
+    public LabOrder createLabOrder (TestType testType, List<Parameter> parameters) {
+
+        return new LabOrder(testType, parameters);
+    }
+
 }

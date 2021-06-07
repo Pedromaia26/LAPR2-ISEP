@@ -72,7 +72,7 @@ public class AlterClientDataController {
 
 
 
-    public AlterClientDataController(){
+    public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.authFacade= company.getAuthFacade();
@@ -81,7 +81,7 @@ public class AlterClientDataController {
 
     }
 
-    public AlterClientDataController(Company company) {
+    public AlterClientDataController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.company= company;
         this.authFacade= company.getAuthFacade();
@@ -174,7 +174,7 @@ public class AlterClientDataController {
 
         String newCcn= this.txtChangeCCN.getCharacters().toString();
 
-        this.clientStore.ChangeCCN(this.client,Long.parseLong(newCcn));
+        this.clientStore.ChangeCCN(this.client,newCcn);
 
     }
 

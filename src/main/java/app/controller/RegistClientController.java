@@ -12,7 +12,7 @@ public class RegistClientController {
 
     private Client nc;
 
-    public RegistClientController(){
+    public RegistClientController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
         this.clientStore=App.getInstance().getCompany().getClientStore();
     }
@@ -28,7 +28,7 @@ public class RegistClientController {
         return this.clientStore.validateClient(nc);
     }
 
-    public boolean saveClient () throws IOException {
+    public boolean saveClient () throws IOException, IllegalAccessException, ClassNotFoundException, InstantiationException {
 
         return this.company.getClientStore().saveClient(nc);
     }

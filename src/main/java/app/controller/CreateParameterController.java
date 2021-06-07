@@ -20,7 +20,7 @@ public class CreateParameterController {
     private ParameterCategoryMapper parameterCategoryMapper;
 
 
-    public CreateParameterController(){
+    public CreateParameterController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
         this.pcDtoList = new ArrayList<>();
         this.parameterCategoryMapper = new ParameterCategoryMapper();

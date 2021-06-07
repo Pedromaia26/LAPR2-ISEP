@@ -20,7 +20,7 @@ public class TestTest {
     @Test
     public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
         Company c = new Company("ManyLabs");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -49,7 +49,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c,client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c,client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -79,7 +79,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -98,7 +98,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -129,7 +129,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -148,7 +148,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -174,7 +174,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -193,7 +193,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -224,7 +224,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -241,7 +241,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -271,7 +271,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -288,7 +288,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste = new app.domain.model.Test(c, client, 123412341200L, labOrder,l);
+        app.domain.model.Test nteste = new app.domain.model.Test(c, client, "123412341200", labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -319,7 +319,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -336,7 +336,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -368,7 +368,7 @@ public class TestTest {
 
         param.add(p);
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
@@ -389,7 +389,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -418,7 +418,7 @@ public class TestTest {
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
         Parameter p = new Parameter("01981", "aa", "blood", pc);
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         List<Parameter> param = new ArrayList<>();
 
         param.add(p);
@@ -443,7 +443,7 @@ public class TestTest {
         testTypes.add(testesss);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test nteste=new app.domain.model.Test(c, client,123412341200L,labOrder,l);
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
 
 
         c.getTestStore().addToList(nteste);
@@ -472,7 +472,7 @@ public class TestTest {
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         List<ParameterCategory> listPC = new ArrayList<>();
 
@@ -495,7 +495,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c, client, 123456789000L, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c, client, "123412341200", lO,l);
     }
 
 
@@ -504,7 +504,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -530,7 +530,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, "1234123410", lO,l);
 
     }
 
@@ -539,7 +539,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -565,7 +565,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 1234567897897L, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, "123412341200", lO,l);
 
     }
 
@@ -574,7 +574,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -601,7 +601,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, "123412341200", lO,l);
 
     }
     @Test (expected = IllegalArgumentException.class)
@@ -609,7 +609,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890L,"12/12/2012","Male",12345678901L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",12345678901L,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -636,7 +636,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, "123412341200", lO,l);
 
     }
 
@@ -644,7 +644,7 @@ public class TestTest {
     public void testValidateTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -670,7 +670,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
 
         test.validateTest();
         Date expect = test.getValidationDate();
@@ -684,7 +684,7 @@ public class TestTest {
     public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -710,7 +710,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
         Date expected = new Date();
 
         Date actual = test.getDate();
@@ -722,7 +722,7 @@ public class TestTest {
     public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -748,7 +748,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
         Date expected = new Date(15987);
 
         Date actual = test.getDate();
@@ -761,7 +761,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client(1234567890123456L,1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -787,7 +787,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test test = new app.domain.model.Test(c,client, 123456789123L, lO,l);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
 
         test.addTestParameterResult("00000000001", p.getCode(), -15d, "Index (S/C) value");
 

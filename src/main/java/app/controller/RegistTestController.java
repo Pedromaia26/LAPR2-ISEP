@@ -27,7 +27,7 @@ public class RegistTestController {
 
 
 
-    public RegistTestController() {
+    public RegistTestController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();
@@ -40,7 +40,7 @@ public class RegistTestController {
 
     }
 
-    public RegistTestController(Company company) {
+    public RegistTestController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.company = company;
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();
@@ -53,7 +53,7 @@ public class RegistTestController {
 
     }
 
-    public boolean createTest(long tinNumber, long nhsCode, LabOrder labOrder) {
+    public boolean createTest(long tinNumber, String nhsCode, LabOrder labOrder) {
 
         this.client=clientStore.getClientByTinNumber(tinNumber);
 

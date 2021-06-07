@@ -17,7 +17,12 @@ public class RegistClientUI implements Runnable {
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RegistClientController cliente= new RegistClientController();
+        RegistClientController cliente= null;
+        try {
+            cliente = new RegistClientController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         try {
         System.out.print("Name: ");
@@ -27,7 +32,7 @@ public class RegistClientUI implements Runnable {
         System.out.print("Phone number: ");
         long phoneNumber = ler.nextLong();
         System.out.print("Citizen Card Number: ");
-        long ccn = ler.nextLong();
+        String ccn = ler.next();
         System.out.print("National Health Service number: ");
         long nhs = ler.nextLong();
         System.out.print("Tax Identification Number: ");

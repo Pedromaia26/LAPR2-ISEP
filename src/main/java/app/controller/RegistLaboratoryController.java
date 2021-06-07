@@ -13,7 +13,7 @@ public class RegistLaboratoryController {
     private Laboratory cl;
 
 
-    public RegistLaboratoryController() {
+    public RegistLaboratoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
     }
 

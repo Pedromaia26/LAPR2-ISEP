@@ -20,7 +20,7 @@ public class WriteReportController {
     private TestMapper testMapper = new TestMapper();
     private TestParameterMapper testParameterMapper= new TestParameterMapper();
 
-    public WriteReportController() {
+    public WriteReportController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.tStore = App.getInstance().getCompany().getTestStore();
         testMapper = new TestMapper();
         lTests = tStore.getTests();

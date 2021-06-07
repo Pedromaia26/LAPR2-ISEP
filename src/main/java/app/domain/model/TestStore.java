@@ -8,6 +8,7 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +30,12 @@ public class TestStore {
     /*private List<Test> testsToBeReported;*/
 
 
-    public Test createTest (Company company, Client client, long nhsCode, LabOrder labOrder, Laboratory lab) {
+    public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab) {
         return new Test(company, client, nhsCode, labOrder, lab);
+    }
+
+    public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab, String data) throws ParseException {
+        return new Test(company, client, nhsCode, labOrder, lab, data);
     }
 
     /**

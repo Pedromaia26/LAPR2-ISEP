@@ -12,7 +12,12 @@ public class CreateParameterCategoryUI implements Runnable {
 
     public void run(){
         Scanner ler = new Scanner(System.in);
-        CreateParameterCategoryController createParameterCategoryController = new CreateParameterCategoryController();
+        CreateParameterCategoryController createParameterCategoryController = null;
+        try {
+            createParameterCategoryController = new CreateParameterCategoryController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         System.out.print("Insert the code of the parameter category, please.\n");
         String code = ler.nextLine();

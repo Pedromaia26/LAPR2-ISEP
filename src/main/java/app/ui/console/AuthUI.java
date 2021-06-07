@@ -19,8 +19,7 @@ import java.util.Objects;
 public class AuthUI implements Runnable{
     private AuthController ctrl;
 
-    public AuthUI()
-    {
+    public AuthUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         ctrl = new AuthController();
     }
 

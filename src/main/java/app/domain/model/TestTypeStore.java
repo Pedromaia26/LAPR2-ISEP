@@ -103,4 +103,18 @@ public class TestTypeStore {
         testTypeList = (List<TestType>) (List<?>) ser.ler("testType.ser");
     }
 
+
+    public TestType getTestTypeByDescription(String test) {
+
+        for (TestType tt: this.testTypeList) {
+
+
+            if (test.equals(tt.getDescription())) {
+
+                return tt;
+
+            }
+        }
+        throw new IllegalArgumentException("There is no Test Type with such Description!");
+    }
 }

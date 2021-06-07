@@ -4,7 +4,7 @@ public class ClientDTO {
     /**
      * String that contains the Citizen card number
      */
-    private long ccn;
+    private String ccn;
     /**
      * String that contains the National Health Service Number
      */
@@ -49,7 +49,7 @@ public class ClientDTO {
      * @param phoneNumber The Phone Number of a client
      */
 
-    public ClientDTO(long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
+    public ClientDTO(String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
         this.ccn = ccn;
         this.nhs = nhs;
         this.birth = birth;
@@ -80,7 +80,7 @@ public class ClientDTO {
      * Returns the Citizen Card Number of a client.
      * @return the Citizen Card Number of a client.
      */
-    public long getCcnDto() {
+    public String getCcnDto() {
         return ccn;
     }
     /**
@@ -138,6 +138,6 @@ public class ClientDTO {
      */
     @Override
     public String toString() {
-        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tin=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
+        return  String.format("ccn=%s, nhs=%d, birth=%s, sex=%s, tin=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
     }
 }
