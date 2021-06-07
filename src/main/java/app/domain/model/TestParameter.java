@@ -2,7 +2,9 @@ package app.domain.model;
 
 import app.controller.App;
 
-public class TestParameter {
+import java.io.Serializable;
+
+public class TestParameter implements Serializable {
 
     /**
      * Parameter of a test.

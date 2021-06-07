@@ -63,7 +63,9 @@ public class RecordSampleController {
 
         //criar e "guardar" sample na classe test
 
-        return this.test.saveSample(samp, company);
+        boolean flag = this.test.saveSample(samp, company);
+        testStore.save();
+        return flag;
     }
 
 

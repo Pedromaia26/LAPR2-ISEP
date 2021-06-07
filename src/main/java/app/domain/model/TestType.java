@@ -2,11 +2,12 @@ package app.domain.model;
 
 import app.controller.App;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
 
-public class TestType {
+public class TestType implements Serializable {
 
 
     /**

@@ -1,6 +1,8 @@
 package app.domain.model;
 
-public class ReferenceValue {
+import java.io.Serializable;
+
+public class ReferenceValue implements Serializable {
 
     private Double minimum;
     private Double maximum;

@@ -112,6 +112,14 @@ public class App {
 
         this.authFacade.addUserWithRole("Client", "client@lei.sem2.pt", "123456",Constants.ROLE_C);
 
+        company.getEmployeeStore().read(company);
+        company.getEmployeeStore().readSpecialistDoctor(company);
+        company.getClientStore().read(company);
+        company.getParameterCategoryStore().read(company);
+        company.getParameterStore().read(company);
+        company.getTestTypeStore().read(company);
+        company.getLaboratoryStore().read(company);
+        company.getTestStore().read(company);
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

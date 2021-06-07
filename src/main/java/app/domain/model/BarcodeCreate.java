@@ -1,8 +1,9 @@
 package app.domain.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class BarcodeCreate {
+public class BarcodeCreate implements Serializable {
     /**
      * Object that contains the barcode
      */

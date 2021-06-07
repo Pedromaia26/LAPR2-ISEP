@@ -5,12 +5,13 @@ import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class Employee {
+public class Employee implements Serializable {
 
     /**
      * Object that contains the Organization Role of a Employee

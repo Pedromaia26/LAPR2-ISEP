@@ -1,8 +1,9 @@
 package app.domain.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Report {
+public class Report implements Serializable {
 
     /**
      * String that contains the diagnosis test to be added to the report
