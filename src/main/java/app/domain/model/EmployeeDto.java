@@ -103,11 +103,7 @@ public class EmployeeDto {
      * Returns the id of a Employee
      * @return the id of a Employee
      */
-<<<<<<< HEAD
     public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         id = String.valueOf(Character.toUpperCase(name.charAt(0)));
         for (int i = 1; i < name.length(); i++){
             if(name.charAt(i) == ' '){

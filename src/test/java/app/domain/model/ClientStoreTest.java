@@ -50,7 +50,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void validateClientSameTestAlreadyOnTheList() {
+    public void validateClientSameTestAlreadyOnTheList() throws IOException {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
         comp.getClientStore().addNewClient(client);
@@ -60,7 +60,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void validateClientEqualTestAlreadyOnTheList() {
+    public void validateClientEqualTestAlreadyOnTheList() throws IOException {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
         comp.getClientStore().addNewClient(client);
@@ -71,7 +71,7 @@ public class ClientStoreTest {
 
 
     @Test
-    public void addNewClient() {
+    public void addNewClient() throws IOException {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
         Company comp= new Company("ManyLabs");
@@ -88,7 +88,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void addNewClientNull() {
+    public void addNewClientNull() throws IOException {
         Client client1= null;
         Company comp= new Company("ManyLabs");
 
@@ -99,7 +99,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void addNewClientSameTestAlreadyOnTheList() {
+    public void addNewClientSameTestAlreadyOnTheList() throws IOException {
 
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");
@@ -112,7 +112,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void addNewClientEqualTestAlreadyOnTheList() {
+    public void addNewClientEqualTestAlreadyOnTheList() throws IOException {
 
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
         Company comp= new Company("ManyLabs");

@@ -8,10 +8,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.List;
 import java.util.List;
 import java.util.List;
@@ -24,11 +21,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Employee
      */
-<<<<<<< HEAD
     public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();
@@ -49,11 +42,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Specialist Doctor
      */
-<<<<<<< HEAD
     public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();

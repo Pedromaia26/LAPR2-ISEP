@@ -24,7 +24,6 @@ public class TestMapper {
     public List<TestDTO> toDto(List<Test> listTests) {
         listTestDto= new ArrayList<>();
         for (Test t : listTests) {
-
             listTestDto.add(new TestDTO(t));
         }
         return listTestDto;

@@ -17,11 +17,7 @@ public class ValidateWorkDoneController {
     private List<TestDtoDate> testsDtoDateList;
     private TestMapper testMapper;
 
-<<<<<<< HEAD
     public ValidateWorkDoneController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public ValidateWorkDoneController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this(App.getInstance().getCompany());
         this.testsList = new ArrayList<>();
         this.testsReadyToValidate = new ArrayList<>();

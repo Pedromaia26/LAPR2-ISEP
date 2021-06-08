@@ -6,10 +6,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.Scanner;
 
 public class CreateParameterCategoryUI implements Runnable {
@@ -22,11 +19,7 @@ public class CreateParameterCategoryUI implements Runnable {
         CreateParameterCategoryController createParameterCategoryController = null;
         try {
             createParameterCategoryController = new CreateParameterCategoryController();
-<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
-=======
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 

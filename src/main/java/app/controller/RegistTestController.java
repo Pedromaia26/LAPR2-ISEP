@@ -7,10 +7,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,13 +29,7 @@ public class RegistTestController {
     private AuthFacade authFacade;
     private Laboratory lab;
 
-
-
-<<<<<<< HEAD
     public RegistTestController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public RegistTestController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this(App.getInstance().getCompany());
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();
@@ -51,11 +42,7 @@ public class RegistTestController {
 
     }
 
-<<<<<<< HEAD
     public RegistTestController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public RegistTestController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.company = company;
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();

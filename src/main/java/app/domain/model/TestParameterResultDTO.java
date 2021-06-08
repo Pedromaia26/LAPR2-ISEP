@@ -26,4 +26,16 @@ public class TestParameterResultDTO {
         this.refValue = testParameterResult.getRefValue();
 
     }
+
+    public ReferenceValue getRefValue() {
+        return refValue;
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public String getMetric() {
+        return metric;
+    }
 }

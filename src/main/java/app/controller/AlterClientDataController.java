@@ -77,13 +77,7 @@ public class AlterClientDataController {
     @FXML
     private TextField txtChangePW;
 
-
-
-<<<<<<< HEAD
     public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.authFacade= company.getAuthFacade();
@@ -92,11 +86,7 @@ public class AlterClientDataController {
 
     }
 
-<<<<<<< HEAD
     public AlterClientDataController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public AlterClientDataController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.company= company;
         this.authFacade= company.getAuthFacade();

@@ -7,10 +7,7 @@ import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +24,7 @@ public class WriteReportController {
     private TestMapper testMapper = new TestMapper();
     private TestParameterMapper testParameterMapper= new TestParameterMapper();
 
-<<<<<<< HEAD
     public WriteReportController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public WriteReportController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.tStore = App.getInstance().getCompany().getTestStore();
         testMapper = new TestMapper();
         lTests = tStore.getTests();
@@ -70,7 +63,7 @@ public class WriteReportController {
 
     public void addReport(String diagnosisText) {
         test.addReport(diagnosisText);
-
+        tStore.save();
     }
 
 

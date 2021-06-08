@@ -6,10 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +15,7 @@ import static org.junit.Assert.*;
 public class BarcodeCreateTest {
 
     @Test
-<<<<<<< HEAD
     public void testEquals() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
-=======
-    public void testEquals() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
@@ -80,11 +73,7 @@ public class BarcodeCreateTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void testEqualsNull() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
-=======
-    public void testEqualsNull() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
@@ -140,11 +129,7 @@ public class BarcodeCreateTest {
 
 
     @Test
-<<<<<<< HEAD
     public void testEqualsDifferentClasses() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
-=======
-    public void testEqualsDifferentClasses() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
@@ -198,11 +183,7 @@ public class BarcodeCreateTest {
 
 
     @Test
-<<<<<<< HEAD
     public void testEqualsNotEqual() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
-=======
-    public void testEqualsNotEqual() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
@@ -257,11 +238,7 @@ public class BarcodeCreateTest {
 
 
     @Test
-<<<<<<< HEAD
     public void testEqualsSameClass() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
-=======
-    public void testEqualsSameClass() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);

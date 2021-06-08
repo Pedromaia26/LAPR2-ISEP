@@ -8,10 +8,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,20 +23,17 @@ public class RecordSampleUI implements Runnable {
         RecordSampleController controller= null;
         try {
             controller = new RecordSampleController();
-<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
-=======
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
         try {
 
             for (TestDTO loDTO : controller.getTestDto()) {
-
+                System.out.println("ola1");
                 if (loDTO.getSample().isEmpty() && controller.checkLab(loDTO)) {
                     System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%n", loDTO.getCode(), loDTO.getLabOrder().getTestType(), loDTO.getLabOrder().getParameters());
                 }
+                System.out.println("ola2");
             }
 
         String codeTest = ler.nextLine();

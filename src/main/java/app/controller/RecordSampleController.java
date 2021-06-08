@@ -8,6 +8,7 @@ import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -29,11 +30,7 @@ public class RecordSampleController {
 
 
 
-<<<<<<< HEAD
     public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.company=App.getInstance().getCompany();
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
@@ -55,11 +52,7 @@ public class RecordSampleController {
         return samp;
     }
 
-<<<<<<< HEAD
     public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
-=======
-    public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.test=sampleMapper.toModel(dto,testStore);
         this.samp = this.test.RecordNewSample(company);
 
@@ -74,7 +67,12 @@ public class RecordSampleController {
 
         //criar e "guardar" sample na classe test
 
-        boolean flag = this.test.saveSample(samp, company, new Date().toString());
+        Date date = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String data=formatter.format(date);
+
+        boolean flag = this.test.saveSample(samp, company, data);
         testStore.save();
         return flag;
     }
@@ -87,6 +85,7 @@ public class RecordSampleController {
         this.lab=company.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
 
         if(test.getLaboratoryDTO().getLaboratoryID().equals(lab.getLaboratoryID())){
+            System.out.println("OLA");
             return true;
         }
         throw new ArrayIndexOutOfBoundsException("There are no tests to be validated.");

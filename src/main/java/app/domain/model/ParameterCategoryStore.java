@@ -55,8 +55,10 @@ public class ParameterCategoryStore {
         }
 
         if (validateParameterCategory(pc)) {
+            System.out.println("ola");
             cat.add(pc);
             save();
+            System.out.println("ola2");
             return true;
         } else {
             return false;

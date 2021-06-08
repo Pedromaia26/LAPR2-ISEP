@@ -8,10 +8,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,11 +24,7 @@ public class TestUI implements Runnable{
         RegistTestController createRegistTestController = null;
         try {
             createRegistTestController = new RegistTestController();
-<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
-=======
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
         try {
@@ -42,7 +35,7 @@ public class TestUI implements Runnable{
             String code;
             List<ClientDTO> clientDto = createRegistTestController.getClientDto();
             for (ClientDTO clientDTO : clientDto) {
-                System.out.printf("Client :%nTin: %d%nName: %s%nCCN: %d%nEmail: %s%n", clientDTO.getTifDto(), clientDTO.getNameDto(), clientDTO.getCcnDto(), clientDTO.getEmailDto());
+                System.out.printf("Client :%nTin: %d%nName: %s%nCCN: %s%nEmail: %s%n", clientDTO.getTifDto(), clientDTO.getNameDto(), clientDTO.getCcnDto(), clientDTO.getEmailDto());
             }
 
             System.out.print("Insert the Tax Identification Number(TIN) of the client related to the test:\n");
@@ -91,7 +84,7 @@ public class TestUI implements Runnable{
                     if (createRegistTestController.createTest(tinNumber, nhsCode, labOrder)) {
                         System.out.print("--------------------------\n");
                         System.out.print("Please confirm the data:\n");
-                        System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %d%nTestType: %s%nParameters: %s%n ", tinNumber, nhsCode, labOrder.getTestType(), labOrder.getParameters());
+                        System.out.printf("Tax Identification Number of the client: %d%nNational Health Security Code: %s%nTestType: %s%nParameters: %s%n ", tinNumber, nhsCode, labOrder.getTestType(), labOrder.getParameters());
                         System.out.print("--------------------------\n");
                         System.out.print(" 1 --> Confirm\n");
                         System.out.print(" 2 --> Cancel\n");

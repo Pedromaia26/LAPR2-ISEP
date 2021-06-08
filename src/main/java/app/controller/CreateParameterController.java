@@ -10,10 +10,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +23,7 @@ public class CreateParameterController {
     private ParameterCategory cat;
     private ParameterCategoryMapper parameterCategoryMapper;
 
-
-<<<<<<< HEAD
     public CreateParameterController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public CreateParameterController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this(App.getInstance().getCompany());
         this.pcDtoList = new ArrayList<>();
         this.parameterCategoryMapper = new ParameterCategoryMapper();

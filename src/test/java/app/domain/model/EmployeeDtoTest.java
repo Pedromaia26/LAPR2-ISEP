@@ -7,10 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
 import static org.junit.Assert.*;
 
@@ -26,11 +23,7 @@ public class EmployeeDtoTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
-=======
-    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,"12312312");
         Company c = new Company("Many Labs");
         String employeeId = emp.getId();

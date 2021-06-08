@@ -27,11 +27,7 @@ public class App {
     private AuthFacade authFacade;
     private UserRoleStore userRoleStore;
 
-<<<<<<< HEAD
     private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException, ParseException, BarcodeException, OutputException, IOException {
-=======
-    private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Properties props = getProperties();
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
@@ -85,11 +81,7 @@ public class App {
         return getProperties();
     }
 
-<<<<<<< HEAD
     private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, ParseException, IOException {
-=======
-    private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_REC,Constants.ROLE_REC);
         this.authFacade.addUserRole(Constants.ROLE_MLT,Constants.ROLE_MLT);
@@ -105,7 +97,14 @@ public class App {
         this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_LC));
         this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_SD));*/
 
-
+        company.getEmployeeStore().read(company);
+        company.getEmployeeStore().readSpecialistDoctor(company);
+        company.getClientStore().read(company);
+        company.getParameterCategoryStore().read(company);
+        company.getParameterStore().read(company);
+        company.getTestTypeStore().read(company);
+        company.getLaboratoryStore().read(company);
+        company.getTestStore().read(company);
 
         ParameterCategory pc1 = new ParameterCategory("Hemogram", "11111");
         this.getCompany().getParameterCategoryStore().saveParameterCategory(pc1);
@@ -176,16 +175,9 @@ public class App {
 
         this.authFacade.addUserWithRole("Client", "client@lei.sem2.pt", "123456",Constants.ROLE_C);
 
-        company.getEmployeeStore().read(company);
-        company.getEmployeeStore().readSpecialistDoctor(company);
-        company.getClientStore().read(company);
-        company.getParameterCategoryStore().read(company);
-        company.getParameterStore().read(company);
-        company.getTestTypeStore().read(company);
-        company.getLaboratoryStore().read(company);
-        company.getTestStore().read(company);
+        System.out.println(this.getCompany().getTestStore().getTests());
 
-        List<ParameterCategory> li = new ArrayList<>();
+        /*List<ParameterCategory> li = new ArrayList<>();
         li.add(new ParameterCategory("ola", "12345"));
 
         List<Parameter> list = new ArrayList<>();
@@ -197,7 +189,9 @@ public class App {
 
         LabOrder lo = new LabOrder(tp, list);
 
-        Test test = this.getCompany().getTestStore().createTest(this.getCompany(), this.getCompany().getClientStore().getClientByEmail("client@lei.sem2.pt"), "123456789012", lo, new Laboratory("12345", "name", "address", 91291291212L, 1234567890L, lll));
+
+
+        Test test = this.getCompany().getTestStore().createTest(company, client, "123456789012", lo, l);
 
         this.getCompany().getTestStore().saveTest(test);
 
@@ -211,16 +205,12 @@ public class App {
 
         test.addReport("REPOOOOOORRRTTTT");
 
-        test.validateTest();
+        test.validateTest();*/
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
     private static App singleton = null;
-<<<<<<< HEAD
     public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException, ParseException, BarcodeException, OutputException, IOException {
-=======
-    public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         if(singleton == null)
         {
             synchronized(App.class)

@@ -7,10 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.ParseException;
-=======
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +16,7 @@ import static org.junit.Assert.*;
 public class TestStoreTest {
 
     @Test
-<<<<<<< HEAD
     public void getTestByBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void getTestByBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");

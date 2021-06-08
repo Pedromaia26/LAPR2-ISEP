@@ -23,11 +23,7 @@ public class RegistClientUI implements Runnable {
         RegistClientController cliente= null;
         try {
             cliente = new RegistClientController();
-<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
-=======
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 
@@ -55,7 +51,7 @@ public class RegistClientUI implements Runnable {
             if (cliente.createNewClient(new ClientDTO(ccn, nhs, birth, sex, tif, email, name, phoneNumber))) {
                 System.out.print("--------------------------\n");
                 System.out.print("Please confirm the data:\n");
-                System.out.printf("CCN: %d%nNHS: %d%nBirth date: %s%nSex: %s%nTIN: %d%nEmail: %s%nName: %s%nPhone Number: %s%n", ccn, nhs, birth, sex, tif, email, name, phoneNumber);
+                System.out.printf("CCN: %s%nNHS: %d%nBirth date: %s%nSex: %s%nTIN: %d%nEmail: %s%nName: %s%nPhone Number: %s%n", ccn, nhs, birth, sex, tif, email, name, phoneNumber);
                 System.out.print("--------------------------\n");
                 System.out.print(" 1 --> Confirm\n");
                 System.out.print(" 2 --> Cancel\n");

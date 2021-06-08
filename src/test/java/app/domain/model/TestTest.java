@@ -19,11 +19,7 @@ import static org.junit.Assert.*;
 public class TestTest {
 
     @Test
-<<<<<<< HEAD
     public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c = new Company("ManyLabs");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
@@ -72,11 +68,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -170,11 +162,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("ManyLabs");
 
@@ -223,11 +211,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -322,11 +306,7 @@ public class TestTest {
 
 
     @Test
-<<<<<<< HEAD
     public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -379,11 +359,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -437,11 +413,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
-=======
-    public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -496,11 +468,7 @@ public class TestTest {
 
 
     @Test
-<<<<<<< HEAD
     public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -533,11 +501,7 @@ public class TestTest {
 
 
     @Test (expected = IllegalArgumentException.class)
-<<<<<<< HEAD
     public void createTestNHSCodeWithLessThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void createTestNHSCodeWithLessThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
 
@@ -572,11 +536,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-<<<<<<< HEAD
     public void createTestNHSCodeWithMoreThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void createTestNHSCodeWithMoreThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
 
@@ -611,11 +571,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-<<<<<<< HEAD
     public void createTestTINCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void createTestTINCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
 
@@ -650,11 +606,7 @@ public class TestTest {
 
     }
     @Test (expected = IllegalArgumentException.class)
-<<<<<<< HEAD
     public void createTestTINCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void createTestTINCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
 
@@ -730,11 +682,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c = new Company("Many Labs");
 
         Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
@@ -772,11 +720,7 @@ public class TestTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Company c = new Company("Many Labs");
 
         Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
@@ -814,11 +758,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-<<<<<<< HEAD
     public void checkResultRules() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public void checkResultRules() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
 

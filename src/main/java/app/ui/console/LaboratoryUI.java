@@ -28,11 +28,7 @@ public class LaboratoryUI implements Runnable{
         RegistLaboratoryController createRegistLaboratoryController = null;
         try {
             createRegistLaboratoryController = new RegistLaboratoryController();
-<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
-=======
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 

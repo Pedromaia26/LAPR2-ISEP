@@ -77,7 +77,7 @@ public class Test implements Serializable {
     /**
      * List containing the samples.
      */
-    private List<Sample> sample = new ArrayList<>();
+    private List<Sample> sample;
 
     /**
      * Empty constructor that initializes a list of parameters test.
@@ -85,11 +85,13 @@ public class Test implements Serializable {
 
     private ReferenceValue ref;
 
-    private List<String> testParameterResultList = new ArrayList<>();
+    private List<String> testParameterResultList;
 
     public Test() {
         testParameterList = new ArrayList<>();
         results = new ArrayList<>();
+        sample = new ArrayList<>();
+        testParameterResultList = new ArrayList<>();
     }
 
     public String createTestCode(Company company) {
@@ -160,7 +162,12 @@ public class Test implements Serializable {
     }
 
     public void setSampleData(String sampleData) throws ParseException {
-        this.sampleData = new SimpleDateFormat("dd/MM/yyyy").parse(sampleData);
+        try {
+            this.sampleData = new SimpleDateFormat("dd/MM/yyyy").parse(sampleData);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("ola");
     }
 
     /**
@@ -269,7 +276,7 @@ public class Test implements Serializable {
      * @return characteristics of a test.
      */
     public String toString() {
-        return "Test:Code:" + code + labOrder + ", sample=" + sample;
+        return "Test:Code:" + code + labOrder + ", sample=" + sample + ", ReportDate=" + report.getCreatedAt() + ", ValidationData" + validationDate;
     }
 
     /**
@@ -328,7 +335,6 @@ public class Test implements Serializable {
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()), samp.getBarcode().getBarcodeNumber());
 
         setSampleData(data);
-
         //samp.showBarcodes(samp.getBarcode());
 
         return addSample(samp);
@@ -341,7 +347,6 @@ public class Test implements Serializable {
      * @return true if samp is sucessfully added
      */
     public boolean addSample(Sample samp) {
-
         return this.sample.add(samp);
 
     }
@@ -366,11 +371,7 @@ public class Test implements Serializable {
      *
      * @return The Sample created.
      */
-<<<<<<< HEAD
     public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
-=======
-    public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         return new Sample(c);
     }
 
@@ -384,11 +385,7 @@ public class Test implements Serializable {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-<<<<<<< HEAD
     public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, BarcodeException, ParseException, OutputException, IOException {
-=======
-    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -399,12 +396,8 @@ public class Test implements Serializable {
         String testPResult = compareValues(barcode);
         return testPResult;
     }
-<<<<<<< HEAD
-    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException, OutputException, IOException, BarcodeException {
-=======
-    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
+    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException, OutputException, IOException, BarcodeException {
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
         this.ref = getExternalModule().getReferenceValue(tp.getParameter());
@@ -459,11 +452,7 @@ public class Test implements Serializable {
             throw new IllegalArgumentException("The result cannot be negative!");
     }
 
-<<<<<<< HEAD
     public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
-=======
-    public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
->>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         Properties prop = App.getInstance().getprops();
         String classaux = prop.getProperty(labOrder.getTestType().getApi());
         Class<?> oClass = Class.forName(classaux);
