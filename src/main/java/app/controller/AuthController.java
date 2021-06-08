@@ -3,6 +3,7 @@ package app.controller;
 import auth.domain.model.UserRole;
 import auth.mappers.dto.UserRoleDTO;
 
+import java.io.IOException;
 import java.util.List;
 /**
  *
@@ -12,7 +13,7 @@ public class AuthController {
 
     private App app;
 
-    public AuthController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public AuthController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.app = App.getInstance();
     }
 

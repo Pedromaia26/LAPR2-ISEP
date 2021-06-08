@@ -45,7 +45,7 @@ public class ClientMenuUI implements Initializable {
     }
 
 
-    public void checkOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void checkOnAction(javafx.event.ActionEvent actionEvent) throws IOException, IllegalAccessException, ClassNotFoundException, InstantiationException {
         Parent seeResults = FXMLLoader.load(getClass().getClassLoader().getResource("CheckTestResults.fxml"));
         Stage stage3 = new Stage();
         Scene scene3 = new Scene(seeResults);

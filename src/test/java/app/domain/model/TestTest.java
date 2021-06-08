@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 public class TestTest {
 
     @Test
-    public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
         Company c = new Company("ManyLabs");
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
 
@@ -67,7 +67,7 @@ public class TestTest {
     }
 
     @Test
-    public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void validateSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
         Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -161,7 +161,7 @@ public class TestTest {
     }
 
     @Test
-    public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void validateSampleAlreadyAdd() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
 
         Company c = new Company("ManyLabs");
 
@@ -210,7 +210,7 @@ public class TestTest {
     }
 
     @Test
-    public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void addSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
         Company c = new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -305,7 +305,7 @@ public class TestTest {
 
 
     @Test
-    public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -358,7 +358,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void recordNewSampleEqual() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -412,7 +412,7 @@ public class TestTest {
     }
 
     @Test
-    public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
+    public void recordNewSampleNull() throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException {
         Company c= new Company("ManyLabs");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -467,7 +467,7 @@ public class TestTest {
 
 
     @Test
-    public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void creatTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
@@ -500,7 +500,7 @@ public class TestTest {
 
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestNHSCodeWithLessThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createTestNHSCodeWithLessThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
 
@@ -535,7 +535,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestNHSCodeWithMoreThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createTestNHSCodeWithMoreThan12Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
 
@@ -570,7 +570,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void createTestTINCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createTestTINCodeWithLessThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
 
@@ -605,7 +605,7 @@ public class TestTest {
 
     }
     @Test (expected = IllegalArgumentException.class)
-    public void createTestTINCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createTestTINCodeWithMoreThan10Chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
 
@@ -681,7 +681,7 @@ public class TestTest {
     }
 
     @Test
-    public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         Company c = new Company("Many Labs");
 
         Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
@@ -719,7 +719,7 @@ public class TestTest {
     }
 
     @Test
-    public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         Company c = new Company("Many Labs");
 
         Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
@@ -757,7 +757,7 @@ public class TestTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void checkResultRules() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void checkResultRules() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
 

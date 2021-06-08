@@ -51,7 +51,7 @@ public class ImportCSVFileController {
     private Button test;
 
 
-    public ImportCSVFileController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public ImportCSVFileController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.authFacade= company.getAuthFacade();

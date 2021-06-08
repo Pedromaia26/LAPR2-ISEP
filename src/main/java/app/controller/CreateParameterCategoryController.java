@@ -4,13 +4,15 @@ import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryStore;
 
+import java.io.IOException;
+
 public class CreateParameterCategoryController {
 
     private Company company;
     private ParameterCategory pc;
     private ParameterCategoryStore pcStore;
 
-    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this(App.getInstance().getCompany());
     }
     public CreateParameterCategoryController(Company company) {

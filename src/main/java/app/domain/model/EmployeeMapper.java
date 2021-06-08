@@ -5,6 +5,7 @@ import auth.domain.model.Email;
 import auth.domain.model.UserRole;
 import auth.domain.store.UserRoleStore;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.List;
 import java.util.List;
@@ -17,7 +18,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Employee
      */
-    public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();
@@ -38,7 +39,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Specialist Doctor
      */
-    public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();

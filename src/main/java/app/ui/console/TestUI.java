@@ -5,6 +5,7 @@ import app.domain.model.*;
 import auth.AuthFacade;
 import auth.domain.model.Email;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,7 +21,7 @@ public class TestUI implements Runnable{
         RegistTestController createRegistTestController = null;
         try {
             createRegistTestController = new RegistTestController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
         try {

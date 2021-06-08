@@ -22,7 +22,7 @@ public class App {
     private AuthFacade authFacade;
     private UserRoleStore userRoleStore;
 
-    private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         Properties props = getProperties();
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
@@ -76,7 +76,7 @@ public class App {
         return getProperties();
     }
 
-    private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+    private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IOException {
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_REC,Constants.ROLE_REC);
         this.authFacade.addUserRole(Constants.ROLE_MLT,Constants.ROLE_MLT);
@@ -175,7 +175,7 @@ public class App {
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
     private static App singleton = null;
-    public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
         if(singleton == null)
         {
             synchronized(App.class)

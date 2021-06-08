@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class AlterClientDataController {
     private ClientStore clientStore;
 
@@ -72,7 +74,7 @@ public class AlterClientDataController {
 
 
 
-    public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.authFacade= company.getAuthFacade();
@@ -81,7 +83,7 @@ public class AlterClientDataController {
 
     }
 
-    public AlterClientDataController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public AlterClientDataController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.clientStore=App.getInstance().getCompany().getClientStore();
         this.company= company;
         this.authFacade= company.getAuthFacade();
@@ -92,6 +94,7 @@ public class AlterClientDataController {
 
     public void checkClient(){
         Email empemail= authFacade.getCurrentUserSession().getUserId();
+
 
         this.client=company.getClientStore().getClientByEmail(String.valueOf(empemail));
 

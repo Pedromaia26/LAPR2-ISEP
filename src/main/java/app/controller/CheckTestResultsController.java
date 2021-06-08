@@ -5,6 +5,7 @@ import auth.AuthFacade;
 import auth.UserSession;
 import auth.domain.model.Email;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class CheckTestResultsController {
 
     private TestParameterResult tpResult;
 
-    public CheckTestResultsController() {
+    public CheckTestResultsController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         company = App.getInstance().getCompany();
         clientStore = company.getClientStore();
         authFacade = company.getAuthFacade();

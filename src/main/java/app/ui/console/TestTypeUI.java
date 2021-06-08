@@ -5,6 +5,7 @@ import app.controller.TestTypeController;
 import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryDto;
 
+import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class TestTypeUI implements Runnable{
         TestTypeController createTestTypeController = null;
         try {
             createTestTypeController = new TestTypeController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 

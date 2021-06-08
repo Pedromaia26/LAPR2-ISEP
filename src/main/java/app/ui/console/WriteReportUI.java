@@ -22,7 +22,7 @@ public class WriteReportUI implements Runnable {
         WriteReportController controller = null;
         try {
             controller = new WriteReportController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 

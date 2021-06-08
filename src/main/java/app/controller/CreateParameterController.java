@@ -7,6 +7,7 @@ import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryDto;
 import app.domain.model.ParameterCategoryMapper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class CreateParameterController {
     private ParameterCategoryMapper parameterCategoryMapper;
 
 
-    public CreateParameterController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public CreateParameterController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this(App.getInstance().getCompany());
         this.pcDtoList = new ArrayList<>();
         this.parameterCategoryMapper = new ParameterCategoryMapper();

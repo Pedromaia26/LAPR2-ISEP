@@ -5,6 +5,7 @@ import app.controller.TestTypeController;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
 public class TestMapperTest {
 
     @Test
-    public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         Company c = new Company("Many Labs");
         RegistTestController tContr = new RegistTestController(c);

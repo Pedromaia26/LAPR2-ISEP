@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.CreateParameterCategoryController;
 import app.controller.CreateParameterController;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CreateParameterCategoryUI implements Runnable {
@@ -15,7 +16,7 @@ public class CreateParameterCategoryUI implements Runnable {
         CreateParameterCategoryController createParameterCategoryController = null;
         try {
             createParameterCategoryController = new CreateParameterCategoryController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 

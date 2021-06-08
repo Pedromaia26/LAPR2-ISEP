@@ -20,7 +20,7 @@ public class RegistClientUI implements Runnable {
         RegistClientController cliente= null;
         try {
             cliente = new RegistClientController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 

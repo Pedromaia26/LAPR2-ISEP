@@ -5,6 +5,7 @@ import auth.AuthFacade;
 import auth.domain.model.Email;
 
 import javax.naming.ldap.ExtendedRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class RecordTestResultController {
     private Laboratory lab;
 
 
-    public RecordTestResultController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public RecordTestResultController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.c = App.getInstance().getCompany();
         tStore = App.getInstance().getCompany().getTestStore();
         tMapper = new TestMapper();
@@ -67,7 +68,7 @@ public class RecordTestResultController {
         return this.test;
     }
 
-    public void addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         test.addTestParameterResult(barcode, parameterCode, result, metric);
     }
 

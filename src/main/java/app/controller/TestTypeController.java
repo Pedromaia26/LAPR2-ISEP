@@ -2,6 +2,7 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class TestTypeController {
 
 
 
-    public TestTypeController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public TestTypeController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this(App.getInstance().getCompany());
         this.parameterCategoryMapper = new ParameterCategoryMapper();
         this.ttMapper = new TestTypeMapper();

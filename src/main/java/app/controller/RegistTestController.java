@@ -4,6 +4,7 @@ import app.domain.model.*;
 import auth.AuthFacade;
 import auth.domain.model.Email;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class RegistTestController {
 
 
 
-    public RegistTestController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public RegistTestController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this(App.getInstance().getCompany());
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();
@@ -40,7 +41,7 @@ public class RegistTestController {
 
     }
 
-    public RegistTestController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public RegistTestController(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         this.company = company;
         this.testTypeMapper = new TestTypeMapper();
         this.testTypeStore = App.getInstance().getCompany().getTestTypeStore();

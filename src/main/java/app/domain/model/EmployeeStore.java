@@ -6,6 +6,7 @@ import auth.domain.model.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class EmployeeStore {
      * @param empDto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public Employee createEmployee(EmployeeDto empDto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public Employee createEmployee(EmployeeDto empDto) throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
         return EmployeeMapper.toDtoE(empDto);
     }
 
@@ -42,7 +43,7 @@ public class EmployeeStore {
      * @param specdocdto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto) throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
         return EmployeeMapper.toDtoSD(specdocdto);
     }
 
@@ -184,7 +185,7 @@ public class EmployeeStore {
      * @param emp A Employee instance
      * @return the addUserWithRole, associated with the Employee instance
      */
-    public boolean createUser(Employee emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public boolean createUser(Employee emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 
@@ -193,7 +194,7 @@ public class EmployeeStore {
      * @param emp A Specialist Doctor instance
      * @return the addUserWithRole, associated with the Specialist Doctor instance
      */
-    public boolean createUser(SpecialistDoctor emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public boolean createUser(SpecialistDoctor emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 

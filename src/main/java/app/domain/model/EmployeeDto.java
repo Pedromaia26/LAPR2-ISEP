@@ -5,6 +5,8 @@ import auth.domain.model.Email;
 import auth.domain.model.User;
 import auth.domain.model.UserRole;
 
+import java.io.IOException;
+
 public class EmployeeDto {
     /**
      * Object that contains the Organization Role of a Employee
@@ -96,7 +98,7 @@ public class EmployeeDto {
      * Returns the id of a Employee
      * @return the id of a Employee
      */
-    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
         id = String.valueOf(Character.toUpperCase(name.charAt(0)));
         for (int i = 1; i < name.length(); i++){
             if(name.charAt(i) == ' '){

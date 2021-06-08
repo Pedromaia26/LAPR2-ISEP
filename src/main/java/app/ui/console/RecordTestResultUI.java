@@ -5,6 +5,7 @@ import app.controller.RecordSampleController;
 import app.controller.RecordTestResultController;
 import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class RecordTestResultUI implements Runnable {
         RecordTestResultController rtrController = null;
         try {
             rtrController = new RecordTestResultController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 
@@ -126,7 +127,7 @@ public class RecordTestResultUI implements Runnable {
                     System.out.println("No tests to be validated");
                 }
             }
-        } catch (IllegalAccessException | InstantiationException | ClassNotFoundException e) {
+        } catch (IllegalAccessException | InstantiationException | ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
 

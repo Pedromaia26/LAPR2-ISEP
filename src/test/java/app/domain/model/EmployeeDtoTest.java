@@ -4,6 +4,8 @@ import auth.domain.model.Email;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 public class EmployeeDtoTest {
@@ -18,7 +20,7 @@ public class EmployeeDtoTest {
     }
 
     @Test
-    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,"12312312");
         Company c = new Company("Many Labs");
         String employeeId = emp.getId();

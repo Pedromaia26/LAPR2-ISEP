@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
@@ -44,6 +45,8 @@ public class CheckTestResultsUI implements Initializable {
 
     private TestParameterResultDTO testParameterResultDTO;
 
+    public CheckTestResultsUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
+    }
 
 
     @Override

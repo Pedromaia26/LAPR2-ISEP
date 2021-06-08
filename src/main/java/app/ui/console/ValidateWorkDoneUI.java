@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.ValidateWorkDoneController;
 import app.domain.model.TestDtoDate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class ValidateWorkDoneUI implements Runnable {
         ValidateWorkDoneController validateWorkDoneController = null;
         try {
             validateWorkDoneController = new ValidateWorkDoneController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
 
