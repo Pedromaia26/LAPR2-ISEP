@@ -64,7 +64,11 @@ public class JanelaPrincipalUI implements Initializable {
 
     private AuthController ctrl=new AuthController();
 
+<<<<<<< HEAD
     public JanelaPrincipalUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
+=======
+    public JanelaPrincipalUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

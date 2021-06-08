@@ -25,7 +25,11 @@ public class TestTypeUI implements Runnable{
         TestTypeController createTestTypeController = null;
         try {
             createTestTypeController = new TestTypeController();
+<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
+=======
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 

@@ -29,7 +29,11 @@ public class RecordSampleController {
 
 
 
+<<<<<<< HEAD
     public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.company=App.getInstance().getCompany();
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
@@ -51,7 +55,11 @@ public class RecordSampleController {
         return samp;
     }
 
+<<<<<<< HEAD
     public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
+=======
+    public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.test=sampleMapper.toModel(dto,testStore);
         this.samp = this.test.RecordNewSample(company);
 

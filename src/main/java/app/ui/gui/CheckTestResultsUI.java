@@ -48,7 +48,11 @@ public class CheckTestResultsUI implements Initializable {
 
     private TestParameterResultDTO testParameterResultDTO;
 
+<<<<<<< HEAD
     public CheckTestResultsUI() throws IllegalAccessException, ParseException, InstantiationException, OutputException, ClassNotFoundException, BarcodeException, IOException {
+=======
+    public CheckTestResultsUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
     }
 
 

@@ -8,7 +8,10 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.text.ParseException;
+=======
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +53,11 @@ public class CheckTestResultsController {
 
     private TestParameterResult tpResult;
 
+<<<<<<< HEAD
     public CheckTestResultsController() throws IllegalAccessException, ParseException, InstantiationException, OutputException, IOException, BarcodeException, ClassNotFoundException {
+=======
+    public CheckTestResultsController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         company = App.getInstance().getCompany();
         clientStore = company.getClientStore();
         authFacade = company.getAuthFacade();

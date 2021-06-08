@@ -26,14 +26,22 @@ public class CreateEmployeeUI  implements Runnable{
         RegistEmployeeController employeeController = null;
         try {
             employeeController = new RegistEmployeeController();
+<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
+=======
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 
         List<OrgRoleDto> lRolesDto = null;
         try {
             lRolesDto = employeeController.getRoles();
+<<<<<<< HEAD
         } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
+=======
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException e) {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
             e.printStackTrace();
         }
 
@@ -106,7 +114,11 @@ public class CreateEmployeeUI  implements Runnable{
         }
     }
 
+<<<<<<< HEAD
     public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         String op;
         Scanner ler = new Scanner(System.in);
 

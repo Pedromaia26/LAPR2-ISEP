@@ -9,13 +9,19 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.IOException;
 import java.text.ParseException;
 
+import java.io.IOException;
+
 public class CreateParameterCategoryController {
 
     private Company company;
     private ParameterCategory pc;
     private ParameterCategoryStore pcStore;
 
+<<<<<<< HEAD
     public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this(App.getInstance().getCompany());
     }
     public CreateParameterCategoryController(Company company) {

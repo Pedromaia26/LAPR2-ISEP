@@ -15,7 +15,11 @@ public class RegistClientController {
 
     private Client nc;
 
+<<<<<<< HEAD
     public RegistClientController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public RegistClientController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this(App.getInstance().getCompany());
         this.clientStore=App.getInstance().getCompany().getClientStore();
     }

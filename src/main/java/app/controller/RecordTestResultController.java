@@ -8,7 +8,10 @@ import net.sourceforge.barbecue.output.OutputException;
 
 import javax.naming.ldap.ExtendedRequest;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.text.ParseException;
+=======
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +30,11 @@ public class RecordTestResultController {
     private Laboratory lab;
 
 
+<<<<<<< HEAD
     public RecordTestResultController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public RecordTestResultController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         this.c = App.getInstance().getCompany();
         tStore = App.getInstance().getCompany().getTestStore();
         tMapper = new TestMapper();
@@ -71,7 +78,11 @@ public class RecordTestResultController {
         return this.test;
     }
 
+<<<<<<< HEAD
     public void addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public void addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         test.addTestParameterResult(barcode, parameterCode, result, metric);
     }
 

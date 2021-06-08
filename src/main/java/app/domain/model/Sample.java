@@ -34,7 +34,11 @@ public class Sample implements Serializable {
      * Checks all parameters rules to see if the inputted data is valid.
      *
      */
+<<<<<<< HEAD
     public Sample(Company c) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
+=======
+    public Sample(Company c) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         this.barcode=getBarcodecreator().makeUPCABarcode(createBarcode(c));
 
@@ -65,7 +69,11 @@ public class Sample implements Serializable {
      * Method to get the Api to use to create the barcodes
      * @return the ApiBarcode.
      */
+<<<<<<< HEAD
     public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Properties props = App.getInstance().getprops();
         String classAux = props.getProperty("Domain.BarcodeAdapter.Class");

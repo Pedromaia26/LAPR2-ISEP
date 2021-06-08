@@ -8,7 +8,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.text.ParseException;
+=======
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +20,11 @@ import static org.junit.Assert.*;
 public class TestMapperTest {
 
     @Test
+<<<<<<< HEAD
     public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException, BarcodeException, ParseException, OutputException, IOException {
+=======
+    public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
         Company c = new Company("Many Labs");
         RegistTestController tContr = new RegistTestController(c);

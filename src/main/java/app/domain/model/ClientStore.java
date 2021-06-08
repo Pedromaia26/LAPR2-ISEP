@@ -12,8 +12,12 @@ import app.serialization.Serialization;
 import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
+<<<<<<< HEAD
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
+=======
+
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
 
 public class ClientStore {
 
@@ -124,7 +128,11 @@ public class ClientStore {
      * @param nc the client to be created.
      * @return True if the client is successfully saved, false if it is not.
      */
+<<<<<<< HEAD
     public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+=======
+    public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException {
+>>>>>>> 0b16295dad191dc0501148fa23580a90a24b6c66
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
     /**
