@@ -2,12 +2,14 @@ package app.domain.model;
 
 import app.controller.App;
 import auth.domain.model.Email;
+import app.serialization.Serialization;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +21,22 @@ public class TestStore {
     private List<Test> tests;
 
     /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
+
+    /**
      * List that contains the tests to be reported.
      */
     /*private List<Test> testsToBeReported;*/
 
 
-    public Test createTest (Company company, Client client, long nhsCode, LabOrder labOrder, Laboratory lab) {
+    public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab) {
         return new Test(company, client, nhsCode, labOrder, lab);
+    }
+
+    public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab, String data) throws ParseException {
+        return new Test(company, client, nhsCode, labOrder, lab, data);
     }
 
     /**
@@ -113,7 +124,9 @@ public class TestStore {
     public boolean saveTest (Test ts){
         if (!validateTest(ts))
             return false;
-        return tests.add(ts);
+        tests.add(ts);
+        save();
+        return true;
     }
 
      /**
@@ -123,6 +136,16 @@ public class TestStore {
     public void validateWorkDone(String code) throws IOException{
         Test test = getTestByCode(code);
         test.validateTest();
+        save();
     }
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) tests, "test.ser");
+    }
+
+    public void read(Company c){
+        tests = (List<Test>) (List<?>) ser.ler("test.ser");
+    }
+
 
 }

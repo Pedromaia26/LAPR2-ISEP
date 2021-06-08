@@ -20,9 +20,19 @@ public class CreateEmployeeUI  implements Runnable{
 
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RegistEmployeeController employeeController = new RegistEmployeeController();
+        RegistEmployeeController employeeController = null;
+        try {
+            employeeController = new RegistEmployeeController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
-        List<OrgRoleDto> lRolesDto = employeeController.getRoles();
+        List<OrgRoleDto> lRolesDto = null;
+        try {
+            lRolesDto = employeeController.getRoles();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         String op;
         String role = null;
@@ -93,7 +103,7 @@ public class CreateEmployeeUI  implements Runnable{
         }
     }
 
-    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController){
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         String op;
         Scanner ler = new Scanner(System.in);
 

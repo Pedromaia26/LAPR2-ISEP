@@ -6,13 +6,18 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Test {
+public class Test implements Serializable {
 
 
+
+    private Date sampleData;
 
     private Laboratory lab;
 
@@ -25,7 +30,7 @@ public class Test {
     /**
      * The National Healthcare Service code.
      */
-    private long nhsCode;
+    private String nhsCode;
 
     private Date date;
 
@@ -106,7 +111,7 @@ public class Test {
      * @param nhsCode  National Healthcare Service code of the test.
      * @param labOrder lab order prescribed by the doctor for a given test.
      */
-    public Test(Company company, Client client, long nhsCode, LabOrder labOrder, Laboratory lab) {
+    public Test(Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab) {
 
         this.code = createTestCode(company);
 
@@ -129,7 +134,34 @@ public class Test {
 
         this.lab=lab;
     }
-    
+
+    public Test(Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab, String data) throws ParseException {
+
+        this.code = createTestCode(company);
+
+        if (String.valueOf(nhsCode).length() != 12)
+            throw new IllegalArgumentException("National Health Service Code should have 12 digits");
+
+        this.nhsCode = nhsCode;
+
+        if (String.valueOf(client.getTif()).length() != 10)
+            throw new IllegalArgumentException("Tax Identification Number should have 10 digits");
+        this.client = client;
+
+        this.labOrder = labOrder;
+
+
+        testParameterList = new ArrayList<>();
+        testParameterList = addToList(labOrder.getParameters());
+
+        this.date = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
+
+        this.lab=lab;
+    }
+
+    public void setSampleData(String sampleData) throws ParseException {
+        this.sampleData = new SimpleDateFormat("dd/MM/yyyy").parse(sampleData);
+    }
 
     /**
      * Returns the code of a test.
@@ -147,7 +179,7 @@ public class Test {
      * @return the National Health Service code of a test.
      */
 
-    public long getNhsCode() {
+    public String getNhsCode() {
         return nhsCode;
     }
 
@@ -289,14 +321,15 @@ public class Test {
      * @param samp the sample to be saved.
      * @return True if the sample is successfully saved, false if it is not.
      */
-    public boolean saveSample(Sample samp, Company company) throws OutputException {
+    public boolean saveSample(Sample samp, Company company, String data) throws OutputException, ParseException {
         if (!validateSample(samp, company))
             return false;
 
         samp.imageIoWrite(samp.barcodeImage(samp.getBarcode()), samp.getBarcode().getBarcodeNumber());
 
+        setSampleData(data);
 
-        samp.showBarcodes(samp.getBarcode());
+        //samp.showBarcodes(samp.getBarcode());
 
         return addSample(samp);
     }
@@ -320,6 +353,11 @@ public class Test {
      */
     public void addReport(String diagnosisText) {
         this.report = new Report(diagnosisText);
+
+    }
+
+    public void addReport(String diagnosisText, String data) throws ParseException {
+        this.report = new Report(diagnosisText, data);
 
     }
 
@@ -350,6 +388,17 @@ public class Test {
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
+        String testPResult = compareValues(barcode);
+        return testPResult;
+    }
+    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException {
+
+        checkResultRules(result);
+        this.tp = getTestParameterFor(parameterCode);
+        this.ref = getExternalModule().getReferenceValue(tp.getParameter());
+        this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
+        tp.addResult(result, metric, ref);
+        resultRegist = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
         String testPResult = compareValues(barcode);
         return testPResult;
     }
@@ -415,6 +464,14 @@ public class Test {
         validationDate = new Date();
         client.notifyClient();
     }
+
+    public void validateTest(String data) throws IOException, ParseException {
+
+        validationDate = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
+        client.notifyClient();
+    }
+
+
 
     /**
      * Returns the date when results were registered

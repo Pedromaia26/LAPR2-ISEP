@@ -148,11 +148,21 @@
 			<systemPath>${basedir}/lib/CovidReferenceValues1API-1.0.0.jar</systemPath>
 		</dependency>
 		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>11</version>
+		</dependency>
+		<dependency>
 			<groupId>net.sourceforge.barbecue</groupId>
 			<artifactId>barbecue</artifactId>
 			<version>2.0-dev</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/barbecue-2.0-dev.jar</systemPath>
 		</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-controls</artifactId>
+				<version>11</version>
+			</dependency>
 	</dependencies>
 </project>

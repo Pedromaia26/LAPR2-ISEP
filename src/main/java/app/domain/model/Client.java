@@ -7,15 +7,16 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Client {
+public class Client implements Serializable {
     /**
      * String that contains the Citizen card number
      */
-    private long ccn;
+    private String ccn;
     /**
      * String that contains the National Health Service Number
      */
@@ -64,7 +65,7 @@ public class Client {
      * @param name The name of a client
      * @param phoneNumber The Phone Number of a client
      */
-    public Client (long ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
+    public Client (String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
 
         if (String.valueOf(ccn).length()!=16)
             throw new IllegalArgumentException("Citizen Card Number must be 16 characters long");
@@ -168,7 +169,7 @@ public class Client {
      */
     @Override
     public String toString() {
-        return  String.format("ccn=%d, nhs=%d, birth=%s, sex=%s, tif=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
+        return  String.format("ccn=%s, nhs=%d, birth=%s, sex=%s, tif=%d, email=%s, name=%s, phoneNumber=%d",ccn,nhs,birth,sex,tif,email,name, phoneNumber );
     }
 
     @Override
@@ -207,7 +208,7 @@ public class Client {
      * Returns the ccn of a client.
      * @return ccn of a client.
      */
-    public long getCcn() {
+    public String getCcn() {
         return ccn;
     }
     /**
@@ -261,7 +262,7 @@ public class Client {
 
         PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\notify_"+name+"_"+ccn+".txt");
 
-        asd.printf("Dear Client %s, with CCN %d,\nYour test was validated and you can check it when you want.\nHave a good day,\nMany Labs.\n",name,ccn);
+        asd.printf("Dear Client %s, with CCN %s,\nYour test was validated and you can check it when you want.\nHave a good day,\nMany Labs.\n",name,ccn);
 
         asd.close();
 
@@ -275,7 +276,7 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setCcn(long ccn) {
+    public void setCcn(String ccn) {
         this.ccn = ccn;
     }
 

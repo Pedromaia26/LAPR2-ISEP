@@ -21,7 +21,12 @@ public class LaboratoryUI implements Runnable{
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RegistLaboratoryController createRegistLaboratoryController = new RegistLaboratoryController();
+        RegistLaboratoryController createRegistLaboratoryController = null;
+        try {
+            createRegistLaboratoryController = new RegistLaboratoryController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         System.out.print("Insert the Laboratory ID you want to create:\n");
         String laboratoryID = ler.next();

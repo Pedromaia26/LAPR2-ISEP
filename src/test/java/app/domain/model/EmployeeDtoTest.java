@@ -18,7 +18,7 @@ public class EmployeeDtoTest {
     }
 
     @Test
-    public void getEmployeeId() {
+    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,"12312312");
         Company c = new Company("Many Labs");
         String employeeId = emp.getId();

@@ -1,8 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Report {
+public class Report implements Serializable {
 
     /**
      * String that contains the diagnosis test to be added to the report
@@ -23,6 +26,10 @@ public class Report {
             throw new IllegalArgumentException("Diagnosis should have no more than 400 words.");
         this.diagnosis = diagnosis;
         this.createdAt = new Date();
+    }
+    public Report(String diagnosis, String data) throws ParseException {
+        this.diagnosis = diagnosis;
+        this.createdAt = new SimpleDateFormat("dd/MM/yyyy").parse(data);
     }
 
     /**

@@ -18,7 +18,12 @@ public class TestTypeUI implements Runnable{
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        TestTypeController createTestTypeController = new TestTypeController();
+        TestTypeController createTestTypeController = null;
+        try {
+            createTestTypeController = new TestTypeController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         System.out.print("Insert the description of the new type of test you want to create:\n");
         String description = ler.nextLine();

@@ -28,7 +28,7 @@ public class TestParameterTest {
     @Test
     public void getTpr() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        Client cli = new Client(1234567890987654L, 1234567890, "22/10/2002", "male", 2345678909L, "aa@gmail.com", "Jonas", 91111111112L);
+        Client cli = new Client("1234567890123456", 1234567890, "22/10/2002", "male", 2345678909L, "aa@gmail.com", "Jonas", 91111111112L);
         Company c = new Company("Many Labs");
 
         ParameterCategory pc = new ParameterCategory("Hemogram", "90009");
@@ -53,7 +53,7 @@ public class TestParameterTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c, cli, 123456789012L, lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c, cli, "123412341200", lO,l);
 
         ReferenceValue ref = new ReferenceValue(1.0d, 1.5d, "10e9L");
 

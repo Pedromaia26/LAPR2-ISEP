@@ -17,7 +17,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Employee
      */
-    public static Employee toDtoE(EmployeeDto empDto){
+    public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();
@@ -38,7 +38,7 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Specialist Doctor
      */
-    public static SpecialistDoctor toDtoSD(EmployeeDto empDto){
+    public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
         String employeeId = empDto.getId();

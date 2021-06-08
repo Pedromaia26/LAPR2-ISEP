@@ -31,7 +31,7 @@ public class ClientMenuUI implements Initializable {
     }
 
 
-    public void updateOnAction(ActionEvent actionEvent) throws IOException {
+    public void updateOnAction(ActionEvent actionEvent) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("ClientInterfaceGUI.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(update);

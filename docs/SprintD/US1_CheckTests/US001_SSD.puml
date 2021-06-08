@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Client" as C
+participant ":System" as S
+activate C
+
+C -> S: asks to show the results of previously performed tests
+
+activate S
+S --> C: shows the list of already performed tests by the client\n and asks him to select one
+deactivate S
+
+C -> S: selects one test
+
+activate S
+S --> C: shows the results associated\n with the test selected by the client
+deactivate S
+
+deactivate S
+deactivate C
+
+@enduml

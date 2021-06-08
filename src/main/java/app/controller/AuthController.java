@@ -12,8 +12,7 @@ public class AuthController {
 
     private App app;
 
-    public AuthController()
-    {
+    public AuthController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.app = App.getInstance();
     }
 

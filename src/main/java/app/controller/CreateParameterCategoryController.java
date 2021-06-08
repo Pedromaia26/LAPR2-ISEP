@@ -10,7 +10,7 @@ public class CreateParameterCategoryController {
     private ParameterCategory pc;
     private ParameterCategoryStore pcStore;
 
-    public CreateParameterCategoryController() {
+    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
     }
     public CreateParameterCategoryController(Company company) {

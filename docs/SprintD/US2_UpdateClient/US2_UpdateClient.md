@@ -74,7 +74,7 @@ As a client, I want to update my personal data.
 
 **Alternative 1**
 
-![US02_SSD.svg](US02_SSD.svg)
+![US002_SSD.svg](US002_SSD.svg)
 
 
 **Other alternatives might exist.**

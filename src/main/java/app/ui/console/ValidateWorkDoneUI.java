@@ -14,7 +14,12 @@ public class ValidateWorkDoneUI implements Runnable {
 
     public void run() {
         Scanner ler = new Scanner(System.in);
-        ValidateWorkDoneController validateWorkDoneController = new ValidateWorkDoneController();
+        ValidateWorkDoneController validateWorkDoneController = null;
+        try {
+            validateWorkDoneController = new ValidateWorkDoneController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         try {
             List<TestDtoDate> testsDto = validateWorkDoneController.getTests();

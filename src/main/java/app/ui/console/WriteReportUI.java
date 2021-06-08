@@ -19,7 +19,12 @@ public class WriteReportUI implements Runnable {
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        WriteReportController controller = new WriteReportController();
+        WriteReportController controller = null;
+        try {
+            controller = new WriteReportController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         List<TestDTO> lTestsDto;
         List<TestParameterDto> lTestParametersDto;

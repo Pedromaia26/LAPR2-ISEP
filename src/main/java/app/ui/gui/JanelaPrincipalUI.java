@@ -60,6 +60,9 @@ public class JanelaPrincipalUI implements Initializable {
 
     private AuthController ctrl=new AuthController();
 
+    public JanelaPrincipalUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    }
+
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
@@ -92,6 +95,17 @@ public class JanelaPrincipalUI implements Initializable {
                         stage2.setScene(scene2);
                         stage2.setResizable(true);
                         stage2.show();
+                    }
+                    else{
+                        if(role.getDescription().equalsIgnoreCase("LABORATORY COORDINATOR")){
+                            Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
+                            Stage stage2 = new Stage();
+                            Scene scene2 = new Scene(aaaaa);
+                            stage2.setTitle("LABORATORY COORDINATOR");
+                            stage2.setScene(scene2);
+                            stage2.setResizable(true);
+                            stage2.show();
+                        }
                     }
                 }
                 else {

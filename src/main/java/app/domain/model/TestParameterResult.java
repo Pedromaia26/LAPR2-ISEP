@@ -1,8 +1,9 @@
 package app.domain.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TestParameterResult {
+public class TestParameterResult implements Serializable {
 
     /**
      * A reference value.

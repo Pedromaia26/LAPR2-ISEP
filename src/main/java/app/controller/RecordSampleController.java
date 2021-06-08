@@ -6,6 +6,8 @@ import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -26,7 +28,7 @@ public class RecordSampleController {
 
 
 
-    public RecordSampleController(){
+    public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.company=App.getInstance().getCompany();
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
@@ -56,14 +58,16 @@ public class RecordSampleController {
 
     }
 
-    public boolean saveSample () throws BarcodeException, OutputException {
+    public boolean saveSample () throws BarcodeException, OutputException, ParseException {
 
         //var=testStore.getTestByCode();
         //this.samp = var.RecordNewSample(dto);
 
         //criar e "guardar" sample na classe test
 
-        return this.test.saveSample(samp, company);
+        boolean flag = this.test.saveSample(samp, company, new Date().toString());
+        testStore.save();
+        return flag;
     }
 
 

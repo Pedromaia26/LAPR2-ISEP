@@ -14,7 +14,7 @@ public class ValidateWorkDoneController {
     private List<TestDtoDate> testsDtoDateList;
     private TestMapper testMapper;
 
-    public ValidateWorkDoneController(){
+    public ValidateWorkDoneController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
         this.testsList = new ArrayList<>();
         this.testsReadyToValidate = new ArrayList<>();

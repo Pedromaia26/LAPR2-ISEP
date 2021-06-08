@@ -7,11 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.controller.App;
+import app.serialization.Serialization;
 import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2546ca0bfba61e23e704950241838c3de1d103da
 
 public class ClientStore {
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     /**
      * List that contains the Clients.
@@ -57,12 +67,14 @@ public class ClientStore {
      * @param nc the client to be saved.
      * @return True if the client is successfully created, false if it is not.
      */
-    public boolean saveClient(Client nc) throws IOException {
+    public boolean saveClient(Client nc) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
         validateClient(nc);
 
         sendEmail(nc);
 
         addNewClient(nc);
+
+        save();
 
         return CreateUser(nc);
     }
@@ -113,7 +125,7 @@ public class ClientStore {
      * @param nc the client to be created.
      * @return True if the client is successfully saved, false if it is not.
      */
-    public boolean CreateUser(Client nc){
+    public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
     /**
@@ -145,13 +157,22 @@ public class ClientStore {
         throw new IllegalArgumentException("There is no Client with such Email!");
     }
 
+    public Boolean getClientByCcn(String ccn){
+        for (Client client : clientList) {
+            if (ccn.equals(client.getCcn()))
+                return true;
+        }
+        return false;
+
+    }
+
     public void ChangeName(Client client, String name){
 
         client.setName(name);
 
     }
 
-    public void ChangeCCN(Client client, long ccn){
+    public void ChangeCCN(Client client, String ccn){
 
         client.setCcn(ccn);
 
@@ -193,6 +214,21 @@ public class ClientStore {
 
         client.setBirth(birth);
 
+    }
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) clientList, "client.ser");
+    }
+
+    public void read(Company c){
+        clientList = (List<Client>) (List<?>) ser.ler("client.ser");
+        addUser(c);
+    }
+
+    public void addUser(Company c){
+        for( Client nc : clientList){
+            c.getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
+        }
     }
 
 

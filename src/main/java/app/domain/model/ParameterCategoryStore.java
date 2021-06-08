@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.serialization.Serialization;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,11 @@ public class ParameterCategoryStore {
      */
     private List<ParameterCategory> cat;
     private List<ParameterCategory> pc;
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
 
 
@@ -49,6 +56,7 @@ public class ParameterCategoryStore {
 
         if (validateParameterCategory(pc)) {
             cat.add(pc);
+            save();
             return true;
         } else {
             return false;
@@ -88,5 +96,22 @@ public class ParameterCategoryStore {
             if (pc.isEmpty())
             throw new IllegalArgumentException("There is no Parameter Category with such code!");
             return pc;
+    }
+
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) cat, "parameterCategory.ser");
+    }
+
+    public void read(Company c){
+        cat = (List<ParameterCategory>) (List<?>) ser.ler("parameterCategory.ser");
+    }
+
+    public ParameterCategory getParameterCategoryByDescription(String test) {
+        for (ParameterCategory category : cat) {
+            if (test.equals(category.getName()))
+                return category;
+        }
+        throw new IllegalArgumentException("There is no Parameter Category with such name!");
     }
 }

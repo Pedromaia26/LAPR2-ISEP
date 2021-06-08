@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="349px" preserveAspectRatio="none" style="width:424px;height:349px;" version="1.1" viewBox="0 0 424 349" width="424px" zoomAndPan="magnify"><defs><filter height="300%" id="f18wxwhenyk6cy" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="146.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="21" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="46.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="375" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="46.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="375" y="199.0156"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="26" x2="26" y1="89.6094" y2="263.7188"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="380" x2="380" y1="89.6094" y2="263.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="5" y="86.5332">Client</text><ellipse cx="26" cy="15" fill="#FEFECE" filter="url(#f18wxwhenyk6cy)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M26,23 L26,50 M13,31 L39,31 M26,50 L13,65 M26,50 L39,65 " fill="none" filter="url(#f18wxwhenyk6cy)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="5" y="277.252">Client</text><ellipse cx="26" cy="290.3281" fill="#FEFECE" filter="url(#f18wxwhenyk6cy)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M26,298.3281 L26,325.3281 M13,306.3281 L39,306.3281 M26,325.3281 L13,340.3281 M26,325.3281 L39,340.3281 " fill="none" filter="url(#f18wxwhenyk6cy)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f18wxwhenyk6cy)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="346" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="353" y="74.5332">:System</text><rect fill="#FEFECE" filter="url(#f18wxwhenyk6cy)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="64" x="346" y="262.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="353" y="284.252">:System</text><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="146.1094" style="stroke:#A80036;stroke-width:1.0;" width="10" x="21" y="99.6094"/><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="46.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="375" y="121.9609"/><rect fill="#FFFFFF" filter="url(#f18wxwhenyk6cy)" height="46.7031" style="stroke:#A80036;stroke-width:1.0;" width="10" x="375" y="199.0156"/><polygon fill="#A80036" points="363,117.9609,373,121.9609,363,125.9609,367,121.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="31" x2="369" y1="121.9609" y2="121.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="38" y="117.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="311" x="49" y="117.1045">asks to show the results of previously performed tests</text><polygon fill="#A80036" points="42,164.6641,32,168.6641,42,172.6641,38,168.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="36" x2="379" y1="168.6641" y2="168.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48" y="155.6318">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="309" x="59" y="147.4561">shows the list of already performed tests by the client</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157" x="63" y="163.8076">and asks him to select one</text><polygon fill="#A80036" points="363,195.0156,373,199.0156,363,203.0156,367,199.0156" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="31" x2="369" y1="199.0156" y2="199.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="38" y="194.1592">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="49" y="194.1592">selects one test</text><polygon fill="#A80036" points="37,241.7188,27,245.7188,37,249.7188,33,245.7188" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="31" x2="379" y1="245.7188" y2="245.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="43" y="232.6865">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="54" y="224.5107">shows the results associated</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199" x="58" y="240.8623">with the test selected by the client</text><!--MD5=[e6c0b455047be7ee2083bdf5416b0830]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Client" as C
+participant ":System" as S
+activate C
+
+C -> S: asks to show the results of previously performed tests
+
+activate S
+S - -> C: shows the list of already performed tests by the client\n and asks him to select one
+deactivate S
+
+C -> S: selects one test
+
+activate S
+S - -> C: shows the results associated\n with the test selected by the client
+deactivate S
+
+deactivate S
+deactivate C
+
+@enduml
+
+@startuml
+
+autonumber
+
+actor "Client" as C
+participant ":System" as S
+activate C
+
+C -> S: asks to show the results of previously performed tests
+
+activate S
+S - -> C: shows the list of already performed tests by the client\n and asks him to select one
+deactivate S
+
+C -> S: selects one test
+
+activate S
+S - -> C: shows the results associated\n with the test selected by the client
+deactivate S
+
+deactivate S
+deactivate C
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

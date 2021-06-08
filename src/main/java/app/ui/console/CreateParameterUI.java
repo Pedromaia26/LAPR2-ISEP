@@ -12,7 +12,12 @@ public class CreateParameterUI implements Runnable{
 
     public void run(){
         Scanner ler = new Scanner(System.in);
-        CreateParameterController createParameterController = new CreateParameterController();
+        CreateParameterController createParameterController = null;
+        try {
+            createParameterController = new CreateParameterController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
 
         int optn;
         do {

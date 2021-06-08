@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCordController">
+   <children>
+      <Button layoutX="60.0" layoutY="173.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="174.0" text="Button" />
+      <Button fx:id="btnFiles" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" onAction="#toFilesCSV" prefHeight="139.0" prefWidth="174.0" text="Import CSV files" />
+      <Label layoutX="250.0" layoutY="65.0" prefHeight="35.0" prefWidth="101.0" text="Welcome">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

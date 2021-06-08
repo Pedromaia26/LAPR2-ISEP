@@ -23,7 +23,7 @@ public class RecordTestResultController {
     private Laboratory lab;
 
 
-    public RecordTestResultController(){
+    public RecordTestResultController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this.c = App.getInstance().getCompany();
         tStore = App.getInstance().getCompany().getTestStore();
         tMapper = new TestMapper();
@@ -73,6 +73,8 @@ public class RecordTestResultController {
 
 
     public boolean saveTestParameterResult(String testParameterResult) {
-        return test.saveTestParameterResult(testParameterResult);
+        boolean flag = test.saveTestParameterResult(testParameterResult);
+        tStore.save();
+        return flag;
     }
 }

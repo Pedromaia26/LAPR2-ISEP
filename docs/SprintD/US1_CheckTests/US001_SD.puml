@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Client" as C
+participant ":CheckTestResultsUI" as UI
+participant ":CheckTestResultsController" as CTRL
+participant ":AuthFacade" as AUTH
+participant "us\n:UserSession" as US
+participant ":Company" as ML
+participant "tStore\n:TestStore" as STORE
+participant "tMapper\n:TestMapper" as MAP
+participant "test\n:Test" as T
+participant "clientsTests\n:TestDTO" as DTO
+participant "testResult\n:Report"
+activate C
+
+C -> UI: asks to show the results of previously performed tests
+activate UI
+UI -> CTRL: clientTests = getTests()
+activate CTRL
+CTRL -> AUTH: us = getCurrentUserSession()
+activate AUTH
+deactivate AUTH
+CTRL -> US: id = getUserId()
+activate US
+deactivate US
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> STORE: listClientTests = getTestsByClient(id)
+activate STORE
+deactivate STORE
+CTRL -> MAP: clientTests = toDto(listClientTests)
+activate MAP
+deactivate MAP
+deactivate CTRL
+UI --> C: shows the list of already performed tests by the client\n and asks him to select one
+deactivate UI
+C -> UI: selects one test
+activate UI
+UI -> CTRL: testResult = getTestReport(code)
+activate CTRL
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> STORE: test = getTestByCode()
+activate STORE
+deactivate STORE
+CTRL -> T: testResult = getReport()
+activate T
+deactivate T
+deactivate CTRL
+UI --> C: shows the results associated\n with the test selected by the client
+deactivate UI
+
+
+
+@enduml

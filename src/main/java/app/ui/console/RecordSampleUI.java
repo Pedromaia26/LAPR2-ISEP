@@ -18,7 +18,12 @@ public class RecordSampleUI implements Runnable {
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RecordSampleController controller= new RecordSampleController();
+        RecordSampleController controller= null;
+        try {
+            controller = new RecordSampleController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
         try {
 
             for (TestDTO loDTO : controller.getTestDto()) {

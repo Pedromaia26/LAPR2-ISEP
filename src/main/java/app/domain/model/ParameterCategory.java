@@ -1,6 +1,8 @@
 package app.domain.model;
 
-public class ParameterCategory {
+import java.io.Serializable;
+
+public class ParameterCategory implements Serializable {
 
     /**
      * String that contains the parameter category name.
@@ -20,7 +22,7 @@ public class ParameterCategory {
      */
     public ParameterCategory (String name, String code){
 
-        if (name.trim().length() > 10)
+        if (name.trim().length() > 15)
             throw new IllegalArgumentException("Name must have no more than 10 characters");
 
         this.name = name;

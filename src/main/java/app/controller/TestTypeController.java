@@ -17,7 +17,7 @@ public class TestTypeController {
 
 
 
-    public TestTypeController() {
+    public TestTypeController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         this(App.getInstance().getCompany());
         this.parameterCategoryMapper = new ParameterCategoryMapper();
         this.ttMapper = new TestTypeMapper();

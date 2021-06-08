@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.serialization.Serialization;
 import auth.domain.model.User;
 
 import java.io.File;
@@ -11,6 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class EmployeeStore {
+
+    /**
+     * Object used to save the information.
+     */
+    private Serialization ser = new Serialization();
 
     /**
      * List that contains Employees
@@ -27,7 +33,7 @@ public class EmployeeStore {
      * @param empDto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public Employee createEmployee(EmployeeDto empDto){
+    public Employee createEmployee(EmployeeDto empDto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         return EmployeeMapper.toDtoE(empDto);
     }
 
@@ -36,7 +42,7 @@ public class EmployeeStore {
      * @param specdocdto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto){
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         return EmployeeMapper.toDtoSD(specdocdto);
     }
 
@@ -121,6 +127,7 @@ public class EmployeeStore {
 
         out.close();
         Employees.add(emp);
+        save();
     }
 
     /**
@@ -147,7 +154,10 @@ public class EmployeeStore {
 
         emp.setPassword(password);
 
+
         SpecialistDoctors.add(emp);
+
+        saveSpecialistDoctor();
     }
 
     /**
@@ -174,7 +184,7 @@ public class EmployeeStore {
      * @param emp A Employee instance
      * @return the addUserWithRole, associated with the Employee instance
      */
-    public boolean createUser(Employee emp){
+    public boolean createUser(Employee emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 
@@ -183,7 +193,7 @@ public class EmployeeStore {
      * @param emp A Specialist Doctor instance
      * @return the addUserWithRole, associated with the Specialist Doctor instance
      */
-    public boolean createUser(SpecialistDoctor emp){
+    public boolean createUser(SpecialistDoctor emp) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
     }
 
@@ -212,5 +222,40 @@ public class EmployeeStore {
             }
             throw new IllegalArgumentException("There is no Employee with such Email!");
         }
+
+
+
+    public void save(){
+        ser.escrever((List<Object>) (List<?>) Employees, "employees.ser");
+    }
+
+    public void read(Company c){
+        Employees = (List<Employee>) (List<?>) ser.ler("employees.ser");
+        addUser(c);
+    }
+
+    public void addUser(Company c){
+        for( Employee emp : Employees){
+            c.getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), emp.getUserRole());
+        }
+    }
+
+    public void saveSpecialistDoctor(){
+        ser.escrever((List<Object>) (List<?>) SpecialistDoctors, "SpecialistDoctor.ser");
+    }
+
+    public void readSpecialistDoctor(Company c){
+        File f = new File("SpecialistDoctor.ser");
+        if (f.exists()) {
+            SpecialistDoctors = (List<SpecialistDoctor>) (List<?>) ser.ler("SpecialistDoctor.ser");
+        }
+        addUserSpecialistDoctor(c);
+    }
+
+    public void addUserSpecialistDoctor(Company c){
+        for( SpecialistDoctor emp : SpecialistDoctors){
+            c.getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));
+        }
+    }
 
 }

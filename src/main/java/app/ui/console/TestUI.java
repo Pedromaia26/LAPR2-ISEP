@@ -17,7 +17,12 @@ public class TestUI implements Runnable{
     @Override
     public void run() {
         Scanner ler = new Scanner(System.in);
-        RegistTestController createRegistTestController = new RegistTestController();
+        RegistTestController createRegistTestController = null;
+        try {
+            createRegistTestController = new RegistTestController();
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
         try {
 
             createRegistTestController.checkLab();
@@ -34,7 +39,7 @@ public class TestUI implements Runnable{
                 long tinNumber = ler.nextLong();
                 ler.nextLine();
                 System.out.print("Insert its National Health Security code:\n");
-                long nhsCode = ler.nextLong();
+                String nhsCode = ler.next();
                 List<TestTypeDTO> listTestTypeDto = createRegistTestController.getTestTypeDto();
 
                 for (TestTypeDTO testTypeDTO : listTestTypeDto) {
