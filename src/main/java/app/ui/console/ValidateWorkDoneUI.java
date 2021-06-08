@@ -2,7 +2,11 @@ package app.ui.console;
 
 import app.controller.ValidateWorkDoneController;
 import app.domain.model.TestDtoDate;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +21,7 @@ public class ValidateWorkDoneUI implements Runnable {
         ValidateWorkDoneController validateWorkDoneController = null;
         try {
             validateWorkDoneController = new ValidateWorkDoneController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 

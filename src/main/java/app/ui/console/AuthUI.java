@@ -5,7 +5,11 @@ import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
 import auth.domain.model.UserRole;
 import auth.mappers.dto.UserRoleDTO;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,7 +23,7 @@ import java.util.Objects;
 public class AuthUI implements Runnable{
     private AuthController ctrl;
 
-    public AuthUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public AuthUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
         ctrl = new AuthController();
     }
 

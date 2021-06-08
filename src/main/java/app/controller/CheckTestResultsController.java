@@ -4,7 +4,11 @@ import app.domain.model.*;
 import auth.AuthFacade;
 import auth.UserSession;
 import auth.domain.model.Email;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class CheckTestResultsController {
 
     private TestParameterResult tpResult;
 
-    public CheckTestResultsController() {
+    public CheckTestResultsController() throws IllegalAccessException, ParseException, InstantiationException, OutputException, IOException, BarcodeException, ClassNotFoundException {
         company = App.getInstance().getCompany();
         clientStore = company.getClientStore();
         authFacade = company.getAuthFacade();

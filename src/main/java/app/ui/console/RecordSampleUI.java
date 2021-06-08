@@ -7,6 +7,8 @@ import app.domain.model.*;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +23,7 @@ public class RecordSampleUI implements Runnable {
         RecordSampleController controller= null;
         try {
             controller = new RecordSampleController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
         try {

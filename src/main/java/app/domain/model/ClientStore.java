@@ -3,6 +3,7 @@ package app.domain.model;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +12,8 @@ import app.serialization.Serialization;
 import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
-<<<<<<< HEAD
-=======
-
->>>>>>> 2546ca0bfba61e23e704950241838c3de1d103da
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 public class ClientStore {
 
@@ -67,7 +66,7 @@ public class ClientStore {
      * @param nc the client to be saved.
      * @return True if the client is successfully created, false if it is not.
      */
-    public boolean saveClient(Client nc) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public boolean saveClient(Client nc) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException, ParseException, OutputException, BarcodeException {
         validateClient(nc);
 
         sendEmail(nc);
@@ -125,7 +124,7 @@ public class ClientStore {
      * @param nc the client to be created.
      * @return True if the client is successfully saved, false if it is not.
      */
-    public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public boolean CreateUser(Client nc) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         return App.getInstance().getCompany().getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
     }
     /**

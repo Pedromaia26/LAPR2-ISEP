@@ -366,7 +366,7 @@ public class Test implements Serializable {
      *
      * @return The Sample created.
      */
-    public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public Sample RecordNewSample(Company c) throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
         return new Sample(c);
     }
 
@@ -380,7 +380,7 @@ public class Test implements Serializable {
      * @param parameterCode the code of the parameter for which we pretend to add a result.
      * @param result        the value obtained from a test parameter of a given client.
      */
-    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric) throws ClassNotFoundException, InstantiationException, IllegalAccessException, BarcodeException, ParseException, OutputException, IOException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -391,7 +391,7 @@ public class Test implements Serializable {
         String testPResult = compareValues(barcode);
         return testPResult;
     }
-    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException {
+    public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException, OutputException, IOException, BarcodeException {
 
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -447,7 +447,7 @@ public class Test implements Serializable {
             throw new IllegalArgumentException("The result cannot be negative!");
     }
 
-    public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Properties prop = App.getInstance().getprops();
         String classaux = prop.getProperty(labOrder.getTestType().getApi());
         Class<?> oClass = Class.forName(classaux);

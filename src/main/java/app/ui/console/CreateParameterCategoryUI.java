@@ -2,7 +2,11 @@ package app.ui.console;
 
 import app.controller.CreateParameterCategoryController;
 import app.controller.CreateParameterController;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class CreateParameterCategoryUI implements Runnable {
@@ -15,7 +19,7 @@ public class CreateParameterCategoryUI implements Runnable {
         CreateParameterCategoryController createParameterCategoryController = null;
         try {
             createParameterCategoryController = new CreateParameterCategoryController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 

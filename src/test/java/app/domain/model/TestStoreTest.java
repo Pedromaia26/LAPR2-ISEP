@@ -6,6 +6,8 @@ import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,7 @@ import static org.junit.Assert.*;
 public class TestStoreTest {
 
     @Test
-    public void getTestByBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException {
+    public void getTestByBarcode() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");

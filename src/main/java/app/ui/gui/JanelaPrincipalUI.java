@@ -22,8 +22,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.image.ImageView;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -60,7 +64,7 @@ public class JanelaPrincipalUI implements Initializable {
 
     private AuthController ctrl=new AuthController();
 
-    public JanelaPrincipalUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public JanelaPrincipalUI() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

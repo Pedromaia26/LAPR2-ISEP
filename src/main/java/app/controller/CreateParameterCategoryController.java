@@ -3,6 +3,11 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryStore;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
+import java.io.IOException;
+import java.text.ParseException;
 
 public class CreateParameterCategoryController {
 
@@ -10,7 +15,7 @@ public class CreateParameterCategoryController {
     private ParameterCategory pc;
     private ParameterCategoryStore pcStore;
 
-    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public CreateParameterCategoryController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this(App.getInstance().getCompany());
     }
     public CreateParameterCategoryController(Company company) {

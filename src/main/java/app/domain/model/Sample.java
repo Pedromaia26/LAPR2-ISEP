@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
@@ -33,7 +34,7 @@ public class Sample implements Serializable {
      * Checks all parameters rules to see if the inputted data is valid.
      *
      */
-    public Sample(Company c) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
+    public Sample(Company c) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
 
         this.barcode=getBarcodecreator().makeUPCABarcode(createBarcode(c));
 
@@ -64,7 +65,7 @@ public class Sample implements Serializable {
      * Method to get the Api to use to create the barcodes
      * @return the ApiBarcode.
      */
-    public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public ApiBarcode getBarcodecreator() throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
 
         Properties props = App.getInstance().getprops();
         String classAux = props.getProperty("Domain.BarcodeAdapter.Class");

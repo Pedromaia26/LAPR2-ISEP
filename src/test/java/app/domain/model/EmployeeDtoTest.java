@@ -1,8 +1,13 @@
 package app.domain.model;
 
 import auth.domain.model.Email;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.text.ParseException;
 
 import static org.junit.Assert.*;
 
@@ -18,7 +23,7 @@ public class EmployeeDtoTest {
     }
 
     @Test
-    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,"12312312");
         Company c = new Company("Many Labs");
         String employeeId = emp.getId();

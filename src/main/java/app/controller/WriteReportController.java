@@ -2,8 +2,12 @@ package app.controller;
 
 import app.domain.model.*;
 import app.domain.model.TestParameterDto;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +24,7 @@ public class WriteReportController {
     private TestMapper testMapper = new TestMapper();
     private TestParameterMapper testParameterMapper= new TestParameterMapper();
 
-    public WriteReportController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public WriteReportController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.tStore = App.getInstance().getCompany().getTestStore();
         testMapper = new TestMapper();
         lTests = tStore.getTests();

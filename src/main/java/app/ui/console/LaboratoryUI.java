@@ -7,8 +7,12 @@ import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryDto;
 import app.domain.model.TestType;
 import app.domain.model.TestTypeStore;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
 import java.sql.SQLOutput;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,7 +28,7 @@ public class LaboratoryUI implements Runnable{
         RegistLaboratoryController createRegistLaboratoryController = null;
         try {
             createRegistLaboratoryController = new RegistLaboratoryController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 

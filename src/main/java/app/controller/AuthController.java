@@ -2,7 +2,11 @@ package app.controller;
 
 import auth.domain.model.UserRole;
 import auth.mappers.dto.UserRoleDTO;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 /**
  *
@@ -12,7 +16,7 @@ public class AuthController {
 
     private App app;
 
-    public AuthController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public AuthController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.app = App.getInstance();
     }
 

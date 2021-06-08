@@ -2,9 +2,13 @@ package app.domain.model;
 
 import app.controller.RegistTestController;
 import app.controller.TestTypeController;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +17,7 @@ import static org.junit.Assert.*;
 public class TestMapperTest {
 
     @Test
-    public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void toDto() throws ClassNotFoundException, InstantiationException, IllegalAccessException, BarcodeException, ParseException, OutputException, IOException {
 
         Company c = new Company("Many Labs");
         RegistTestController tContr = new RegistTestController(c);

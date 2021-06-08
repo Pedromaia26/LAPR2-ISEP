@@ -3,8 +3,11 @@ package app.ui.console;
 import app.controller.App;
 import app.controller.RegistClientController;
 import app.domain.model.ClientDTO;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -20,7 +23,7 @@ public class RegistClientUI implements Runnable {
         RegistClientController cliente= null;
         try {
             cliente = new RegistClientController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 

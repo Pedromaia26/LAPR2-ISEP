@@ -11,8 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 
 
@@ -31,7 +35,7 @@ public class ClientMenuUI implements Initializable {
     }
 
 
-    public void updateOnAction(ActionEvent actionEvent) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public void updateOnAction(ActionEvent actionEvent) throws IOException, IllegalAccessException, InstantiationException, ClassNotFoundException, ParseException, OutputException, BarcodeException {
         Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("ClientInterfaceGUI.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(update);
@@ -45,7 +49,7 @@ public class ClientMenuUI implements Initializable {
     }
 
 
-    public void checkOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void checkOnAction(javafx.event.ActionEvent actionEvent) throws IOException, IllegalAccessException, ParseException, InstantiationException, OutputException, BarcodeException, ClassNotFoundException {
         Parent seeResults = FXMLLoader.load(getClass().getClassLoader().getResource("CheckTestResults.fxml"));
         Stage stage3 = new Stage();
         Scene scene3 = new Scene(seeResults);

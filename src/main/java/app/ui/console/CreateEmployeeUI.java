@@ -6,9 +6,12 @@ import app.domain.model.*;
 import app.ui.console.utils.Utils;
 import auth.domain.model.Email;
 import auth.domain.model.User;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,14 +26,14 @@ public class CreateEmployeeUI  implements Runnable{
         RegistEmployeeController employeeController = null;
         try {
             employeeController = new RegistEmployeeController();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 
         List<OrgRoleDto> lRolesDto = null;
         try {
             lRolesDto = employeeController.getRoles();
-        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+        } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | IOException | OutputException | ParseException | BarcodeException e) {
             e.printStackTrace();
         }
 
@@ -103,7 +106,7 @@ public class CreateEmployeeUI  implements Runnable{
         }
     }
 
-    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public void ConfirmDataSave(String role, String name, String address, long phoneNumber, Email email, int socCode, int docIndexNumber, RegistEmployeeController employeeController) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         String op;
         Scanner ler = new Scanner(System.in);
 
@@ -123,7 +126,7 @@ public class CreateEmployeeUI  implements Runnable{
                     if (docIndexNumber == 0) employeeController.saveEmployee();
                     else employeeController.saveSpecialistDoctor();
                     System.out.print("Employee created with success.\n");
-                } catch (FileNotFoundException e) {
+                } catch (IOException | OutputException | ParseException | BarcodeException e) {
                     e.printStackTrace();
                 }
             } else {

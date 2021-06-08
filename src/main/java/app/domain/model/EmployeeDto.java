@@ -4,6 +4,11 @@ import app.controller.App;
 import auth.domain.model.Email;
 import auth.domain.model.User;
 import auth.domain.model.UserRole;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
+import java.io.IOException;
+import java.text.ParseException;
 
 public class EmployeeDto {
     /**
@@ -96,7 +101,7 @@ public class EmployeeDto {
      * Returns the id of a Employee
      * @return the id of a Employee
      */
-    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         id = String.valueOf(Character.toUpperCase(name.charAt(0)));
         for (int i = 1; i < name.length(); i++){
             if(name.charAt(i) == ' '){

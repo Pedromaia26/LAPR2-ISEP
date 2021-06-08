@@ -6,6 +6,7 @@ import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +29,7 @@ public class RecordSampleController {
 
 
 
-    public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public RecordSampleController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.company=App.getInstance().getCompany();
         this.testStore=App.getInstance().getCompany().getTestStore();
         this.testMapper = new TestMapper();
@@ -50,7 +51,7 @@ public class RecordSampleController {
         return samp;
     }
 
-    public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException {
+    public boolean createNewSample(SampleDTO dto) throws BarcodeException, IllegalAccessException, InstantiationException, ClassNotFoundException, OutputException, IOException, ParseException {
         this.test=sampleMapper.toModel(dto,testStore);
         this.samp = this.test.RecordNewSample(company);
 

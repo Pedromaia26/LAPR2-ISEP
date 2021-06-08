@@ -1,8 +1,11 @@
 package app.controller;
 
 import app.domain.model.*;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 public class RegistClientController {
@@ -12,7 +15,7 @@ public class RegistClientController {
 
     private Client nc;
 
-    public RegistClientController() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public RegistClientController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this(App.getInstance().getCompany());
         this.clientStore=App.getInstance().getCompany().getClientStore();
     }
@@ -28,7 +31,7 @@ public class RegistClientController {
         return this.clientStore.validateClient(nc);
     }
 
-    public boolean saveClient () throws IOException, IllegalAccessException, ClassNotFoundException, InstantiationException {
+    public boolean saveClient () throws IOException, IllegalAccessException, ClassNotFoundException, InstantiationException, ParseException, OutputException, BarcodeException {
 
         return this.company.getClientStore().saveClient(nc);
     }

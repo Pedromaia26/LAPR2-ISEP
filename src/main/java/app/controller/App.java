@@ -5,10 +5,15 @@ import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;
 import auth.domain.store.UserRoleStore;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -22,7 +27,7 @@ public class App {
     private AuthFacade authFacade;
     private UserRoleStore userRoleStore;
 
-    private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    private App() throws IllegalAccessException, ClassNotFoundException, InstantiationException, ParseException, BarcodeException, OutputException, IOException {
         Properties props = getProperties();
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
@@ -76,7 +81,7 @@ public class App {
         return getProperties();
     }
 
-    private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+    private void bootstrap() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, ParseException, IOException {
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_REC,Constants.ROLE_REC);
         this.authFacade.addUserRole(Constants.ROLE_MLT,Constants.ROLE_MLT);
@@ -171,11 +176,39 @@ public class App {
         company.getTestTypeStore().read(company);
         company.getLaboratoryStore().read(company);
         company.getTestStore().read(company);
+
+        List<ParameterCategory> li = new ArrayList<>();
+        li.add(new ParameterCategory("ola", "12345"));
+
+        List<Parameter> list = new ArrayList<>();
+        list.add(new Parameter("12345", "par", "desc", li.get(0)));
+
+        List<TestType> lll = new ArrayList<>();
+
+        TestType tp = null;
+
+        LabOrder lo = new LabOrder(tp, list);
+
+        Test test = this.getCompany().getTestStore().createTest(this.getCompany(), this.getCompany().getClientStore().getClientByEmail("client@lei.sem2.pt"), "123456789012", lo, new Laboratory("12345", "name", "address", 91291291212L, 1234567890L, lll));
+
+        this.getCompany().getTestStore().saveTest(test);
+
+        Sample sample = test.RecordNewSample(this.getCompany());
+
+        test.saveSample(sample, this.getCompany(), new Date().toString());
+
+        String r1 = test.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), list.get(0).getCode(), 2.0, "Index (S/C) Value");
+
+        test.saveTestParameterResult(r1);
+
+        test.addReport("REPOOOOOORRRTTTT");
+
+        test.validateTest();
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
     private static App singleton = null;
-    public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+    public static App getInstance() throws IllegalAccessException, InstantiationException, ClassNotFoundException, ParseException, BarcodeException, OutputException, IOException {
         if(singleton == null)
         {
             synchronized(App.class)
