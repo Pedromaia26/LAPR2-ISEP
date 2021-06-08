@@ -10,7 +10,6 @@ import app.controller.App;
 import auth.domain.model.Email;
 import auth.domain.model.Password;
 import auth.domain.model.User;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class ClientStore {
 

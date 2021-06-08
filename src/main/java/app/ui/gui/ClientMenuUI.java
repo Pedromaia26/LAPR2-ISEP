@@ -45,6 +45,16 @@ public class ClientMenuUI implements Initializable {
     }
 
 
-    public void checkOnAction(javafx.event.ActionEvent actionEvent) {
+    public void checkOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent seeResults = FXMLLoader.load(getClass().getClassLoader().getResource("CheckTestResults.fxml"));
+        Stage stage3 = new Stage();
+        Scene scene3 = new Scene(seeResults);
+        stage3.setTitle("View the results");
+        stage3.setScene(scene3);
+        stage3.setResizable(true);
+
+        CheckTestResultsUI checkTestResultsUI = new CheckTestResultsUI();
+
+        stage3.show();
     }
 }

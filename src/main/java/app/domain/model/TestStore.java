@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -91,6 +92,16 @@ public class TestStore {
         }
 
         throw new IllegalArgumentException("There is no Sample with such barcode!");
+    }
+
+    public List<Test> getTestsByClient(Email id){
+        List<Test> list = new ArrayList<>();
+        for (Test test: tests) {
+            if(String.valueOf(test.getClientId()).equals(id.toString())){
+                list.add(test);
+            }
+        }
+        return list;
     }
 
     /**

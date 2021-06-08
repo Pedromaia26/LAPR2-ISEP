@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -180,6 +181,14 @@ public class Test {
     public List<TestParameter> getTestParameter() {
         return testParameterList;
     }
+
+    /**
+     * Returns the Id of the associated client
+     *
+     * @return the Id of the client
+     */
+
+    public Email getClientId() { return client.getEmail(); }
 
     /**
      * Returns the report of a test
