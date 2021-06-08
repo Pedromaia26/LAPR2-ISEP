@@ -565,7 +565,7 @@ public class TestTest {
         testTypes.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
-        app.domain.model.Test t = new app.domain.model.Test(c,client, "123412341200", lO,l);
+        app.domain.model.Test t = new app.domain.model.Test(c,client, "123412341200212", lO,l);
 
     }
 
