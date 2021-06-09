@@ -10,6 +10,8 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CheckTestResultsController {
@@ -77,6 +79,7 @@ public class CheckTestResultsController {
                 listClientTests.add(test);
             }
         }
+        Collections.sort(listClientTests);
         clientTests = tMapper.toDto(listClientTests);
         return clientTests;
     }

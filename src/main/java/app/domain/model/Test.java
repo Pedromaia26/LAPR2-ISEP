@@ -13,7 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Test implements Serializable {
+public class Test implements Serializable, Comparable<Test> {
 
 
 
@@ -518,6 +518,11 @@ public class Test implements Serializable {
 
     public Laboratory getLab() {
         return lab;
+    }
+
+    @Override
+    public int compareTo(Test test) {
+        return getDate().compareTo(test.getDate());
     }
 }
 
