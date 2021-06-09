@@ -108,7 +108,7 @@ public class ClientStore {
         PrintWriter asd = new PrintWriter(pwd + "\\src\\main\\emailAndSMSMessages\\"+ nc.getName()+"_"+nc.getCcn()+".txt");
 
         String password =  generatePassword();
-        asd.printf("Client registed succesfully and your password is: %s",password);
+        asd.printf("Client registed succesfully.Your email is : %s \n and your password is: %s",nc.getEmail().getEmail(),password);
 
 
 
