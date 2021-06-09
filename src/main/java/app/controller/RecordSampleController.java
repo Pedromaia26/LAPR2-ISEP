@@ -85,7 +85,6 @@ public class RecordSampleController {
         this.lab=company.getEmployeeStore().getEmpByEmail(String.valueOf(empemail));
 
         if(test.getLaboratoryDTO().getLaboratoryID().equals(lab.getLaboratoryID())){
-            System.out.println("OLA");
             return true;
         }
         throw new ArrayIndexOutOfBoundsException("There are no tests to be validated.");

@@ -716,7 +716,7 @@ public class TestTest {
 
         Date actual = test.getDate();
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected.toString(), actual.toString());
     }
 
     @Test

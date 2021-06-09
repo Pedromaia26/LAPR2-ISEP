@@ -103,14 +103,14 @@ public class EmployeeDto {
      * Returns the id of a Employee
      * @return the id of a Employee
      */
-    public String getId() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+    public String getId(Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         id = String.valueOf(Character.toUpperCase(name.charAt(0)));
         for (int i = 1; i < name.length(); i++){
             if(name.charAt(i) == ' '){
                 id += Character.toUpperCase(name.charAt(i + 1));
             }
         }
-        id += String.format("%05d", App.getInstance().getCompany().getEmployeeStore().getEmployeeList().size()+1);
+        id += String.format("%05d", company.getEmployeeStore().getEmployeeList().size()+1);
         return id;
     }
     /**

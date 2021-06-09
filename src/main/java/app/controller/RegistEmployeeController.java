@@ -40,12 +40,12 @@ public class RegistEmployeeController {
     }
 
     public boolean createEmployee(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-        this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto);
+        this.emp = App.getInstance().getCompany().getEmployeeStore().createEmployee(empDto, this.company);
         return App.getInstance().getCompany().getEmployeeStore().validateEmployee(emp);
     }
 
     public boolean createSpecialistDoctor(EmployeeDto spedocdto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-        this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto);
+        this.empsd = App.getInstance().getCompany().getEmployeeStore().createSpecialistDoctor(spedocdto, this.company);
         return App.getInstance().getCompany().getEmployeeStore().validateSpecialistDoctor(empsd);
     }
 

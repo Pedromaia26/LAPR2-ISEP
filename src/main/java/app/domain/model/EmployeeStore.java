@@ -37,8 +37,8 @@ public class EmployeeStore {
      * @param empDto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public Employee createEmployee(EmployeeDto empDto) throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
-        return EmployeeMapper.toDtoE(empDto);
+    public Employee createEmployee(EmployeeDto empDto, Company company) throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
+        return EmployeeMapper.toDtoE(empDto, company);
     }
 
     /**
@@ -46,8 +46,8 @@ public class EmployeeStore {
      * @param specdocdto A EmployeeDto instance
      * @return the EmployeeMapper.toDto() method
      */
-    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto) throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
-        return EmployeeMapper.toDtoSD(specdocdto);
+    public SpecialistDoctor createSpecialistDoctor(EmployeeDto specdocdto, Company company) throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
+        return EmployeeMapper.toDtoSD(specdocdto, company);
     }
 
     /**

@@ -29,11 +29,9 @@ public class RecordSampleUI implements Runnable {
         try {
 
             for (TestDTO loDTO : controller.getTestDto()) {
-                System.out.println("ola1");
                 if (loDTO.getSample().isEmpty() && controller.checkLab(loDTO)) {
                     System.out.printf("------------Test------------%nCode: %s%nTestType: %s%nParameters: %s%n", loDTO.getCode(), loDTO.getLabOrder().getTestType(), loDTO.getLabOrder().getParameters());
                 }
-                System.out.println("ola2");
             }
 
         String codeTest = ler.nextLine();

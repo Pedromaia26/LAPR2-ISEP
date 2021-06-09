@@ -21,10 +21,10 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Employee
      */
-    public static Employee toDtoE(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+    public static Employee toDtoE(EmployeeDto empDto, Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
-        String employeeId = empDto.getId();
+        String employeeId = empDto.getId(company);
         String address = empDto.getAdressDto();
         long phoneNumber = empDto.getPhoneNumberDto();
         Email email = empDto.getEmailDto();
@@ -42,10 +42,10 @@ public class EmployeeMapper extends UserRoleStore{
      * @param empDto A EmployeeDto instance
      * @return A new Specialist Doctor
      */
-    public static SpecialistDoctor toDtoSD(EmployeeDto empDto) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
+    public static SpecialistDoctor toDtoSD(EmployeeDto empDto, Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         String orgRole = empDto.getUserRole();
         String name = empDto.getNameDto();
-        String employeeId = empDto.getId();
+        String employeeId = empDto.getId(company);
         String address = empDto.getAdressDto();
         long phoneNumber = empDto.getPhoneNumberDto();
         Email email = empDto.getEmailDto();

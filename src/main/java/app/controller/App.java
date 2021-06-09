@@ -174,38 +174,6 @@ public class App {
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456",Constants.ROLE_CCT);
 
         this.authFacade.addUserWithRole("Client", "client@lei.sem2.pt", "123456",Constants.ROLE_C);
-
-        System.out.println(this.getCompany().getTestStore().getTests());
-
-        /*List<ParameterCategory> li = new ArrayList<>();
-        li.add(new ParameterCategory("ola", "12345"));
-
-        List<Parameter> list = new ArrayList<>();
-        list.add(new Parameter("12345", "par", "desc", li.get(0)));
-
-        List<TestType> lll = new ArrayList<>();
-
-        TestType tp = null;
-
-        LabOrder lo = new LabOrder(tp, list);
-
-
-
-        Test test = this.getCompany().getTestStore().createTest(company, client, "123456789012", lo, l);
-
-        this.getCompany().getTestStore().saveTest(test);
-
-        Sample sample = test.RecordNewSample(this.getCompany());
-
-        test.saveSample(sample, this.getCompany(), new Date().toString());
-
-        String r1 = test.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), list.get(0).getCode(), 2.0, "Index (S/C) Value");
-
-        test.saveTestParameterResult(r1);
-
-        test.addReport("REPOOOOOORRRTTTT");
-
-        test.validateTest();*/
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

@@ -26,7 +26,7 @@ public class EmployeeDtoTest {
     public void getEmployeeId() throws IllegalAccessException, InstantiationException, ClassNotFoundException, BarcodeException, ParseException, OutputException, IOException {
         EmployeeDto emp = new EmployeeDto("adm", "Pedro", "Porto", 91291291212L, new Email("pedro@gmail.com"), 1234,"12312312");
         Company c = new Company("Many Labs");
-        String employeeId = emp.getId();
+        String employeeId = emp.getId(c);
 
         Assert.assertEquals(employeeId, "P00001");
     }

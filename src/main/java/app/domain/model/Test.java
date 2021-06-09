@@ -77,7 +77,7 @@ public class Test implements Serializable {
     /**
      * List containing the samples.
      */
-    private List<Sample> sample;
+    private List<Sample> sample = new ArrayList<>();
 
     /**
      * Empty constructor that initializes a list of parameters test.
@@ -90,7 +90,6 @@ public class Test implements Serializable {
     public Test() {
         testParameterList = new ArrayList<>();
         results = new ArrayList<>();
-        sample = new ArrayList<>();
         testParameterResultList = new ArrayList<>();
     }
 
@@ -167,7 +166,6 @@ public class Test implements Serializable {
         } catch (Exception e){
             e.printStackTrace();
         }
-        System.out.println("ola");
     }
 
     /**
@@ -276,7 +274,7 @@ public class Test implements Serializable {
      * @return characteristics of a test.
      */
     public String toString() {
-        return "Test:Code:" + code + labOrder + ", sample=" + sample + ", ReportDate=" + report.getCreatedAt() + ", ValidationData" + validationDate;
+        return "Test:Code:" + code + labOrder + ", sample=" + sample;
     }
 
     /**
