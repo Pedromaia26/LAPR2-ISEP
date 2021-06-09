@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
@@ -61,6 +62,10 @@ public class JanelaPrincipalUI implements Initializable {
     @FXML
     private ImageView passIcon;
 
+    @FXML
+    private BorderPane borderpane;
+
+    Stage stage;
 
     private AuthController ctrl=new AuthController();
 
@@ -91,6 +96,13 @@ public class JanelaPrincipalUI implements Initializable {
 
 
                     loginMessage.setText("Successful login!");
+
+                    stage = (Stage) borderpane.getScene().getWindow();
+
+                    System.out.println("closed");
+
+                    stage.close();
+
                     if(role.getDescription().equalsIgnoreCase("CLIENT")) {
                         Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
                         Stage stage2 = new Stage();

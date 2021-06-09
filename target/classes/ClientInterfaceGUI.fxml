@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AlterClientDataController">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AlterClientDataController">
    <children>
       <Label layoutX="207.0" layoutY="99.0" text="Name">
          <font>
@@ -52,7 +51,7 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="21.0" text="Client Data">
+      <Label layoutX="288.0" layoutY="22.0" prefHeight="30.0" prefWidth="129.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Client Data">
          <font>
             <Font name="Calibri Bold" size="24.0" />
          </font>
@@ -62,67 +61,62 @@
       <TextField fx:id="txtChangeCCN" disable="true" layoutX="325.0" layoutY="166.0" />
       <TextField fx:id="txtChangeTIN" disable="true" layoutX="325.0" layoutY="201.0" />
       <TextField fx:id="txtChangeNHS" disable="true" layoutX="325.0" layoutY="237.0" />
-      <TextField fx:id="txtChangeSex" disable="true" layoutX="325.0" layoutY="272.0" />
+      <TextField fx:id="txtChangeSex" disable="true" layoutX="325.0" layoutY="273.0" />
       <TextField fx:id="txtChangePN" disable="true" layoutX="325.0" layoutY="314.0" />
       <TextField fx:id="txtChangeBD" disable="true" layoutX="325.0" layoutY="354.0" />
       <PasswordField fx:id="txtChangePW" disable="true" layoutX="325.0" layoutY="395.0" />
       <Separator layoutY="62.0" prefHeight="5.0" prefWidth="687.0" />
-      <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: lightblue;" />
+      <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: #6700FAFF;" />
       <Separator layoutY="79.0" prefHeight="5.0" prefWidth="687.0" />
-      <Button fx:id="changeName" disable="true" layoutX="519.0" layoutY="97.0" mnemonicParsing="false" onAction="#UpdateName" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeName" disable="true" layoutX="519.0" layoutY="95.0" mnemonicParsing="false" onAction="#UpdateName" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeEmail" disable="true" layoutX="519.0" layoutY="134.0" mnemonicParsing="false" onAction="#UpdateEmail" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeEmail" disable="true" layoutX="519.0" layoutY="131.0" mnemonicParsing="false" onAction="#UpdateEmail" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeCcn" disable="true" layoutX="519.0" layoutY="166.0" mnemonicParsing="false" onAction="#UpdateCCN" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeCcn" disable="true" layoutX="519.0" layoutY="164.0" mnemonicParsing="false" onAction="#UpdateCCN" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeTin" disable="true" layoutX="519.0" layoutY="201.0" mnemonicParsing="false" onAction="#UpdateTIN" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeTin" disable="true" layoutX="519.0" layoutY="199.0" mnemonicParsing="false" onAction="#UpdateTIN" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeNhs" disable="true" layoutX="519.0" layoutY="237.0" mnemonicParsing="false" onAction="#UpdateNHS" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeNhs" disable="true" layoutX="519.0" layoutY="235.0" mnemonicParsing="false" onAction="#UpdateNHS" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeSex" disable="true" layoutX="519.0" layoutY="272.0" mnemonicParsing="false" onAction="#UpdateSex" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeSex" disable="true" layoutX="519.0" layoutY="270.0" mnemonicParsing="false" onAction="#UpdateSex" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changePn" disable="true" layoutX="519.0" layoutY="314.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changePn" disable="true" layoutX="519.0" layoutY="312.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changeBd" disable="true" layoutX="519.0" layoutY="355.0" mnemonicParsing="false" onAction="#UpdateBirthDate" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changeBd" disable="true" layoutX="519.0" layoutY="353.0" mnemonicParsing="false" onAction="#UpdateBirthDate" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="changePw" disable="true" layoutX="519.0" layoutY="395.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Update">
+      <Button fx:id="changePw" disable="true" layoutX="519.0" layoutY="393.0" mnemonicParsing="false" onAction="#UpdatePassword" style="-fx-border-color: #6700FAFF; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 2;" text="Update">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Go Back">
+      <Label layoutX="611.0" layoutY="439.0" onMouseClicked="#goback" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Go back">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
-      </Button>
-      <Button fx:id="showdata" layoutX="400.0" layoutY="17.0" mnemonicParsing="false" onAction="#showdata" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Show">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>

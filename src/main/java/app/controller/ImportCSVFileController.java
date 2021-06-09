@@ -2,24 +2,30 @@ package app.controller;
 
 import app.domain.model.*;
 import auth.AuthFacade;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.*;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class ImportCSVFileController {
+public class ImportCSVFileController{
 
     private ClientStore clientStore;
 
@@ -50,6 +56,12 @@ public class ImportCSVFileController {
     @FXML
     private Button test;
 
+    @FXML
+    private ProgressBar pb;
+
+    @FXML
+    private Label per;
+
     public ImportCSVFileController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
@@ -63,30 +75,35 @@ public class ImportCSVFileController {
 
     }
 
-
-
-
     @FXML
     public void test(ActionEvent actionEvent) {
 
+
+        per.setText("Wait...");
         int c=0;
+        int d=0;
+        int cont=0;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
         List<File> f = fileChooser.showOpenMultipleDialog(null);
+        try {
+
+
         for (File file : f){
             System.out.println(file.getAbsolutePath());
             String line = "";
             String splitBy = ";";
+
             try
             {
             //parsing a CSV file into BufferedReader class constructor
+
                 BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
                 br.readLine();
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
                     try {
-
-
+                        cont++;
                         String[] tests = line.split(splitBy);    // use comma as separator
                         parameterCategory = new ArrayList<>();
                         parameters = new ArrayList<>();
@@ -99,6 +116,7 @@ public class ImportCSVFileController {
                         } else {
                             ClientDTO clientDTO = new ClientDTO(tests[3], Long.parseLong(tests[4]), tests[6], "Undifined", Long.parseLong(tests[5]), tests[9], tests[8], Long.parseLong(tests[7]));
                             this.client = clientStore.createNewClient(clientDTO);
+                            clientStore.saveClient(client);
                         }
 
 
@@ -171,6 +189,8 @@ public class ImportCSVFileController {
                         System.out.println("Couldnt create");
                     }
                 }
+                pb.setProgress((double)c/cont);
+                per.setText(Math.floor((double)c/cont*100) + "% of tests created" );
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -179,7 +199,9 @@ public class ImportCSVFileController {
         }
         System.out.println(c);
 
-
+        }catch (Exception e){
+            per.setText("No file selected");
+        }
     }
 
 }
