@@ -64,7 +64,7 @@ public class ClientMenuUI implements Initializable {
         Scene scene2 = new Scene(update);
         stage2.setTitle("Update");
         stage2.setScene(scene2);
-        stage2.setResizable(true);
+        stage2.setResizable(false);
 
         AlterClientDataController alterClientDataController = new AlterClientDataController();
         stage2.show();
@@ -85,7 +85,7 @@ public class ClientMenuUI implements Initializable {
         Scene scene3 = new Scene(seeResults);
         stage3.setTitle("View the results");
         stage3.setScene(scene3);
-        stage3.setResizable(true);
+        stage3.setResizable(false);
 
         CheckTestResultsUI checkTestResultsUI = new CheckTestResultsUI();
 
@@ -107,7 +107,7 @@ public class ClientMenuUI implements Initializable {
             Scene scene2 = new Scene(update, 600, 500);
             stage2.setTitle("MANY LABS");
             stage2.setScene(scene2);
-            stage2.setResizable(true);
+            stage2.setResizable(false);
 
 
             stage2.show();
