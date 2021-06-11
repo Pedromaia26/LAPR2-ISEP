@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TestDTO {
@@ -24,6 +25,8 @@ public class TestDTO {
 
     private Laboratory laboratory;
 
+    private Date date;
+
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
      *
@@ -35,6 +38,7 @@ public class TestDTO {
         this.code=test.getCode();
         this.testParameterResultList=test.getTestParameterResultList();
         this.laboratory= test.getLab();
+        this.date = test.getDate();
     }
 
 
@@ -76,4 +80,6 @@ public class TestDTO {
     public Laboratory getLaboratoryDTO() {
         return laboratory;
     }
+
+    public Date getDate() { return date; }
 }

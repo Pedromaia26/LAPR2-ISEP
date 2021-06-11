@@ -5,17 +5,26 @@ import auth.AuthFacade;
 import auth.domain.model.Email;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.ParseException;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
-public class AlterClientDataController {
+public class AlterClientDataController implements Initializable {
     private ClientStore clientStore;
 
     private Company company;
@@ -77,6 +86,18 @@ public class AlterClientDataController {
     @FXML
     private TextField txtChangePW;
 
+    Stage stage;
+
+    @FXML
+    private AnchorPane anchorpane;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setprompttext();
+    }
+
+
     public AlterClientDataController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.company=App.getInstance().getCompany();
         this.clientStore=App.getInstance().getCompany().getClientStore();
@@ -112,7 +133,7 @@ public class AlterClientDataController {
         this.txtChangeName.setDisable(false);
         //this.txtChangeName.setPromptText("this.client.getName()");
 
-        this.txtChangePW.setPromptText(this.client.getName());
+        this.txtChangePW.setPromptText(this.client.getPassword());
         this.txtChangePW.setDisable(false);
 
         this.txtChangePN.setPromptText(String.valueOf(this.client.getPhoneNumber()));
@@ -172,7 +193,9 @@ public class AlterClientDataController {
 
         this.clientStore.ChangeName(this.client,newName);
 
-        System.out.println(client.getName());
+        txtChangeName.clear();
+        setprompttext();
+
 
     }
 
@@ -182,6 +205,10 @@ public class AlterClientDataController {
 
         this.clientStore.ChangeCCN(this.client,newCcn);
 
+        txtChangeCCN.clear();
+        setprompttext();
+
+
     }
 
     public void UpdateNHS(ActionEvent actionEvent) {
@@ -189,6 +216,10 @@ public class AlterClientDataController {
         String newNhs= this.txtChangeNHS.getCharacters().toString();
 
         this.clientStore.ChangeNHS(this.client,Long.parseLong(newNhs));
+
+        txtChangeNHS.clear();
+        setprompttext();
+
 
     }
 
@@ -198,6 +229,10 @@ public class AlterClientDataController {
 
         this.clientStore.ChangeTIN(this.client,Long.parseLong(newTIN));
 
+        txtChangeTIN.clear();
+        setprompttext();
+
+
     }
 
     public void UpdateEmail(ActionEvent actionEvent) {
@@ -205,6 +240,10 @@ public class AlterClientDataController {
         String newEmail= this.txtChangeEmail.getCharacters().toString();
 
         this.clientStore.ChangeEmail(this.client,newEmail);
+
+        txtChangeEmail.clear();
+        setprompttext();
+
 
     }
 
@@ -214,6 +253,10 @@ public class AlterClientDataController {
 
         this.clientStore.ChangeSex(this.client,newSex);
 
+        txtChangeSex.clear();
+        setprompttext();
+
+
     }
 
     public void UpdateBirthDate(ActionEvent actionEvent) {
@@ -222,12 +265,19 @@ public class AlterClientDataController {
 
         this.clientStore.ChangeBD(this.client,newBirthDate);
 
+        txtChangeBD.clear();
+        setprompttext();
+
+
     }
     public void UpdatePhoneNumer(ActionEvent actionEvent) {
 
         String newPhoneNumer= this.txtChangePN.getCharacters().toString();
 
         this.clientStore.ChangePN(this.client,Long.parseLong(newPhoneNumer));
+
+        txtChangePN.clear();
+        setprompttext();
 
     }
     public void UpdatePassword(ActionEvent actionEvent) {
@@ -236,11 +286,27 @@ public class AlterClientDataController {
 
         this.clientStore.ChangePassword(this.client,newPassword);
 
+        txtChangePW.clear();
+        setprompttext();
+
     }
 
-    public void showdata(ActionEvent actionEvent) {
 
-        setprompttext();
+    public void goback(MouseEvent mouseEvent) throws IOException {
+
+        stage = (Stage) anchorpane.getScene().getWindow();
+
+        System.out.println("closed");
+
+        stage.close();
+
+        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
+        Stage stage2 = new Stage();
+        Scene scene2 = new Scene(aaaaa);
+        stage2.setTitle("CLIENT MENU");
+        stage2.setScene(scene2);
+        stage2.setResizable(true);
+        stage2.show();
 
     }
 }

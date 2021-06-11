@@ -21,19 +21,27 @@
             </font>
         </Button>
       <ListView fx:id="listTests" layoutX="396.0" layoutY="138.0" prefHeight="234.0" prefWidth="246.0" />
-      <TableView fx:id="tableResults" layoutX="87.0" layoutY="138.0" prefHeight="106.0" prefWidth="269.0" />
+      <TableView fx:id="tableResults" layoutX="87.0" layoutY="138.0" prefHeight="106.0" prefWidth="270.0">
+        <placeholder>
+            <Label text="" />
+        </placeholder>
+      </TableView>
       <ImageView fx:id="userIcon" fitHeight="32.0" fitWidth="32.0" layoutX="632.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/icon.png" />
          </image></ImageView>
       <Label fx:id="labelUserName" layoutX="591.0" layoutY="437.0" />
-      <Button fx:id="btnSelect" layoutX="493.0" layoutY="381.0" mnemonicParsing="false" onAction="#SelectTest" text="Select" />
-      <Label layoutX="168.0" layoutY="247.0" text="Report">
+      <Button fx:id="btnSelect" layoutX="479.0" layoutY="381.0" mnemonicParsing="false" onAction="#SelectTest" text="Check result" />
+      <Label layoutX="168.0" layoutY="256.0" text="Report">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labelReport" layoutX="44.0" layoutY="276.0" prefHeight="95.0" prefWidth="276.0" />
-      <TableView fx:id="tableParameter" layoutX="14.0" layoutY="138.0" prefHeight="106.0" prefWidth="76.0" />
+      <Label fx:id="labelReport" alignment="TOP_LEFT" layoutX="44.0" layoutY="276.0" prefHeight="95.0" prefWidth="276.0" />
+      <TableView fx:id="tableParameter" layoutX="14.0" layoutY="138.0" prefHeight="106.0" prefWidth="76.0">
+          <placeholder>
+              <Label text="" />
+          </placeholder>
+      </TableView>
     </children>
 </AnchorPane>

@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCordController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCordController">
    <children>
-      <Button layoutX="60.0" layoutY="173.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="174.0" text="Button" />
-      <Button fx:id="btnFiles" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" onAction="#toFilesCSV" prefHeight="139.0" prefWidth="174.0" text="Import CSV files" />
-      <Label layoutX="250.0" layoutY="65.0" prefHeight="35.0" prefWidth="101.0" text="Welcome">
+      <Button layoutX="355.0" layoutY="231.0" mnemonicParsing="false" onAction="#overview" prefHeight="98.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #6700FAFF; -fx-border-radius: 40;" text="btn">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnFiles" layoutX="355.0" layoutY="92.0" mnemonicParsing="false" onAction="#toFilesCSV" prefHeight="98.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #6700FAFF; -fx-border-radius: 40;" text="Import CSV files">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="515.0" layoutY="364.0" onMouseClicked="#logout" prefHeight="22.0" prefWidth="71.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="LogOut">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Label layoutX="246.0" layoutY="24.0" prefHeight="41.0" prefWidth="135.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Welcome">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="121.0" prefHeight="41.0" prefWidth="109.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Lab">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="180.0" prefHeight="41.0" prefWidth="144.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Coordinator">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="239.0" prefHeight="41.0" prefWidth="109.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Menu">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" prefHeight="400.0" prefWidth="17.0" style="-fx-background-color: #6700FAFF;" />
    </children>
 </AnchorPane>

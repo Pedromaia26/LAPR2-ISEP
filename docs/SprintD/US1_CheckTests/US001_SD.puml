@@ -10,9 +10,17 @@ participant ":AuthFacade" as AUTH
 participant "us\n:UserSession" as US
 participant ":Company" as ML
 participant "tStore\n:TestStore" as STORE
-participant "tMapper\n:TestMapper" as MAP
+participant "tMapper\n:TestMapper" as MAP1
+participant "rMapper\n:ReportMapper" as MAP2
+participant "tpMapper\n:TestParameterMapper" as MAP3
+participant "pMapper\n:ParameterMapper" as MAP4
+participant "tprMapper\n:TestParameterResultMapper" as MAP5
 participant "test\n:Test" as T
-participant "clientsTests\n:TestDTO" as DTO
+participant "clientsTests\n:TestDTO" as DTO1
+participant "clientsReports\n:ReportDTO" as DTO2
+participant "clientsTestParameters\n:TestPara,eterDTO" as DTO3
+participant "clientsParameters\n:ParameterDTO" as DTO4
+participant "clientsTestParameterResults\n:TestParameterResultDTO" as DTO5
 participant "testResult\n:Report"
 activate C
 
@@ -32,29 +40,80 @@ deactivate ML
 CTRL -> STORE: listClientTests = getTestsByClient(id)
 activate STORE
 deactivate STORE
-CTRL -> MAP: clientTests = toDto(listClientTests)
-activate MAP
-deactivate MAP
+CTRL -> MAP1: clientTests = toDto(listClientTests)
+activate MAP1
+deactivate MAP1
 deactivate CTRL
 UI --> C: shows the list of already performed tests by the client\n and asks him to select one
 deactivate UI
 C -> UI: selects one test
 activate UI
-UI -> CTRL: testResult = getTestReport(code)
+UI -> CTRL: report = getTestReport(code)
 activate CTRL
 CTRL -> ML: tStore = getTestStore()
 activate ML
 deactivate ML
+CTRL -> MAP2: clientReports = toDto(listClientReports)
+activate MAP2
+deactivate MAP2
 CTRL -> STORE: test = getTestByCode()
 activate STORE
 deactivate STORE
-CTRL -> T: testResult = getReport()
+CTRL -> T: report = getReport()
+activate T
+deactivate T
+deactivate CTRL
+deactivate UI
+UI -> CTRL: testParameter = getTestParameter(code)
+activate UI
+activate CTRL
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> MAP3: clientTestParameters = toDto(listClientTestParameters)
+activate MAP3
+deactivate MAP3
+CTRL -> STORE: test = getTestByCode()
+activate STORE
+deactivate STORE
+CTRL -> T: ltestParameterDto = getTestParameter()
+activate T
+deactivate T
+deactivate CTRL
+deactivate UI
+UI -> CTRL: parameter = getParameter(testParameterDto)
+activate UI
+activate CTRL
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> MAP4: clientParameters = toDto(listClientParameters)
+activate MAP4
+deactivate MAP4
+CTRL -> STORE: test = getTestByCode()
+activate STORE
+deactivate STORE
+CTRL -> T: Parameter = getParameter()
+activate T
+deactivate T
+deactivate CTRL
+deactivate UI
+UI -> CTRL: result = getResults(testParameterDto)
+activate UI
+activate CTRL
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> MAP5: clientTestParameterResults = toDto(listClientTestParameterResults)
+activate MAP5
+deactivate MAP5
+CTRL -> STORE: test = getTestByCode()
+activate STORE
+deactivate STORE
+CTRL -> T: result = getResults()
 activate T
 deactivate T
 deactivate CTRL
 UI --> C: shows the results associated\n with the test selected by the client
 deactivate UI
-
-
-
 @enduml
