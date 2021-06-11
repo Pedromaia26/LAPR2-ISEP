@@ -299,6 +299,10 @@ public class Test implements Serializable {
         return true;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
     public boolean validateTestParameterResult(String testResult) {
         if (testResult == null)
             return false;

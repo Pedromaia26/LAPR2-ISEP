@@ -99,9 +99,7 @@ public class JanelaPrincipalUI implements Initializable {
                         stage2.setScene(scene2);
                         stage2.setResizable(true);
                         stage2.show();
-                    }
-                    else{
-                        if(role.getDescription().equalsIgnoreCase("LABORATORY COORDINATOR")){
+                    } else if (role.getDescription().equalsIgnoreCase("LABORATORY COORDINATOR")){
                             Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
                             Stage stage2 = new Stage();
                             Scene scene2 = new Scene(aaaaa);
@@ -109,10 +107,16 @@ public class JanelaPrincipalUI implements Initializable {
                             stage2.setScene(scene2);
                             stage2.setResizable(true);
                             stage2.show();
-                        }
+                    } else if (role.getDescription().equalsIgnoreCase("CLINICAL CHEMISTRY TECHNOLOGIST")){
+                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("ClinicalChemistryTechnologist.fxml"));
+                        Stage stage2 = new Stage();
+                        Scene scene2 = new Scene(aaaaa);
+                        stage2.setTitle("CLINICAL CHEMISTRY TECHNOLOGIST");
+                        stage2.setScene(scene2);
+                        stage2.setResizable(true);
+                        stage2.show();
                     }
-                }
-                else {
+                } else {
                     loginMessage.setText("Invalid e-mail or password. Please try again!");
                 }
             }

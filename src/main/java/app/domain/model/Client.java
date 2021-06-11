@@ -1,16 +1,21 @@
 package app.domain.model;
 
 
+import app.controller.App;
 import auth.domain.model.Email;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Properties;
 
 public class Client implements Serializable {
     /**
@@ -49,6 +54,8 @@ public class Client implements Serializable {
      * String that contains the Password of a client
      */
     private String password;
+
+
 
 
     /**
@@ -299,4 +306,7 @@ public class Client implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
 }

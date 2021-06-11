@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import app.controller.App;
 import app.serialization.Serialization;
@@ -21,6 +22,8 @@ public class ClientStore {
      * Object used to save the information.
      */
     private Serialization ser = new Serialization();
+
+    private String orderingAlgorithm;
 
     /**
      * List that contains the Clients.
@@ -227,6 +230,21 @@ public class ClientStore {
         for( Client nc : clientList){
             c.getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
         }
+    }
+
+    public OrderClientsTIN OrderingAlgorithm() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
+        Properties prop = App.getInstance().getprops();
+        String classaux = prop.getProperty(getOrderingAlgorithm());
+        Class<?> oClass = Class.forName(classaux);
+        return (OrderClientsTIN) oClass.newInstance();
+    }
+
+    public void setOrderingAlgorithm(String orderingAlgorithm) {
+        this.orderingAlgorithm = orderingAlgorithm;
+    }
+
+    public String getOrderingAlgorithm(){
+        return orderingAlgorithm;
     }
 
 

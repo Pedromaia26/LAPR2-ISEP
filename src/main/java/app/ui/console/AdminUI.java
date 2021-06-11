@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.ui.console.utils.Utils;
+import auth.AuthFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 
 public class AdminUI implements Runnable{
+    private AuthFacade auth;
     public AdminUI()
     {
     }

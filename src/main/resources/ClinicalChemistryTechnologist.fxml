@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.ClinicalChemTechUI">
+   <children>
+      <Label fx:id="client2" layoutX="130.0" layoutY="50.0" prefHeight="21.0" prefWidth="340.0" />
+      <Label alignment="CENTER" layoutX="95.0" layoutY="61.0" prefHeight="21.0" prefWidth="411.0" text="Please choose the client whose tests you want to check:" />
+      <TableView fx:id="tableView" layoutX="87.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="130.0" text="Name" />
+          <TableColumn fx:id="tinColumn" prefWidth="139.0" text="Tin" />
+            <TableColumn fx:id="ccnColumn" prefWidth="157.0" text="CCN" />
+        </columns>
+      </TableView>
+      <Button fx:id="history" layoutX="347.0" layoutY="336.0" mnemonicParsing="false" onAction="#historyOnAction" prefHeight="31.0" prefWidth="205.0" text="Consult history of tests" />
+      <Button fx:id="sortTIN" layoutX="14.0" layoutY="312.0" mnemonicParsing="false" onAction="#sortByTinOnAction" text="Sort by TIN" />
+      <Button fx:id="sortNAME" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#sortByNameOnAction" text="Sort by Name" />
+   </children>
+</AnchorPane>

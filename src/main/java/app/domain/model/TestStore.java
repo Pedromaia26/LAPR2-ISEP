@@ -147,5 +147,16 @@ public class TestStore {
         tests = (List<Test>) (List<?>) ser.ler("test.ser");
     }
 
+    public List<Test> getTestsByClient(Client c){
+        List<Test> list = new ArrayList<>();
+        for (Test test: tests) {
+            if(c.equals(test.getClient())){
+                list.add(test);
+            }
+        }
+        return list;
+
+    }
+
 
 }
