@@ -76,4 +76,28 @@ public class LabCordController {
 
 
     }
+
+    public void overview(ActionEvent actionEvent) {
+        try {
+            stage = (Stage) anchorPane.getScene().getWindow();
+
+            System.out.println("closed");
+
+            stage.close();
+
+
+            Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("LBOverview.fxml"));
+            Stage stage2 = new Stage();
+            Scene scene2 = new Scene(update);
+            stage2.setTitle("OverView");
+            stage2.setScene(scene2);
+            stage2.setResizable(true);
+
+
+            stage2.show();
+        }catch (Exception e){
+            System.out.println("Fail Opening the OverView window");
+        }
+
+    }
 }

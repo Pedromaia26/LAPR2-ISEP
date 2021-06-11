@@ -472,6 +472,7 @@ public class Test implements Serializable, Comparable<Test> {
 
         validationDate = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
         client.notifyClient();
+
     }
 
 
