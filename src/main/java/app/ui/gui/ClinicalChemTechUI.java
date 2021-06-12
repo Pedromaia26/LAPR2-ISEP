@@ -2,13 +2,11 @@ package app.ui.gui;
 
 import app.controller.App;
 import app.controller.ClinicalChemTechController;
-import app.domain.model.Client;
-import app.domain.model.ClientDTO;
-import app.domain.model.ClientStore;
-import app.domain.model.Company;
+import app.domain.model.*;
 import auth.AuthFacade;
 import auth.UserSession;
 //import com.sun.rowset.internal.Row;
+import auth.domain.model.Email;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,7 +21,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
-
 import javax.imageio.IIOParam;
 import java.io.IOException;
 import java.net.URL;
@@ -35,11 +32,7 @@ import java.util.ResourceBundle;
 
 public class ClinicalChemTechUI implements Initializable {
 
-    /*private Company c;
-    Client client0 = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Client",12312312312L);
-    Client client = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Tiago",12312312312L);
-    Client client1 = new Client("5654161110898400",1234567890L,"01/12/2002","female",9898798910L,"client@lei.sem2.pt","Joana",12312312312L);
-    private List<Client> clientList = new ArrayList<>();*/
+
     @FXML
     private TableView<ClientDTO> tableView = new TableView<>();
     @FXML
@@ -53,17 +46,21 @@ public class ClinicalChemTechUI implements Initializable {
     private ClientStore cStore;
 
     private ClinicalChemTechController controller;
+    private TestStore testStore;
+    private AuthFacade auth;
 
     public ClinicalChemTechUI() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         controller = new ClinicalChemTechController();
+        testStore = App.getInstance().getCompany().getTestStore();
+        auth = new AuthFacade();
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // client.setText("Welcome");
-
-        // client2.setText("Welcome, " + auth.getCurrentUserSession().getUserId());
+        /*Email email = auth.getCurrentUserSession().getUserId();
+        System.out.println(email);
+        client2.setText("Welcome, " + auth.getCurrentUserSession().getUserId().toString());*/
 
 
 
@@ -109,7 +106,9 @@ public class ClinicalChemTechUI implements Initializable {
 
 
     public void historyOnAction (ActionEvent actionEvent) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, OutputException, BarcodeException, ParseException {
-
+        for (Test t:testStore.getTests()){
+            System.out.println(t.getValidationDate());
+        }
         ClientDTO a = tableView.getSelectionModel().getSelectedItems().get(0);
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestsHistory.fxml"));
         Parent root = fxmlLoader.load();

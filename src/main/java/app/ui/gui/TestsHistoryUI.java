@@ -18,12 +18,13 @@ import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
-import java.awt.event.ActionEvent;
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 
 public class TestsHistoryUI implements Initializable {
 
@@ -38,7 +39,7 @@ public class TestsHistoryUI implements Initializable {
     @FXML
     private Label clientTest;
     @FXML
-    private Button checkTestDetails;
+    private Button testDetails;
     private ClinicalChemTechController controller;
 
     public TestsHistoryUI() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -95,21 +96,23 @@ public class TestsHistoryUI implements Initializable {
 
     }
 
-//    public void checkTestDetailsOnAction(ActionEvent actionEvent) throws IOException {
-//        TestDTO test = testsTable.getSelectionModel().getSelectedItems().get(0);
-//        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestResult.fxml"));
-//        Parent root = fxmlLoader.load();
-////        TestsResultsUI controller = fxmlLoader.getController();
-////        controller.initData(test);
-//        Stage stage2 = new Stage();
-//        Scene scene2 = new Scene(root);
-//        stage2.setTitle("TEST RESULT");
-//        stage2.setScene(scene2);
-//        stage2.setResizable(true);
-//        stage2.show();
-//    }
+  public void testDetailsOnAction(ActionEvent actionEvent) throws IOException {
+        TestDTO test = testsTable.getSelectionModel().getSelectedItems().get(0);
+       FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestResult.fxml"));
+        Parent root = fxmlLoader.load();
+        //   TestsResultsUI controller = fxmlLoader.getController();
+        ////        controller.initData(test);
+        Stage stage2 = new Stage();
+       Scene scene2 = new Scene(root);
+        stage2.setTitle("TEST RESULT");
+        stage2.setScene(scene2);
+        stage2.setResizable(true);
+        stage2.show();
+    }
 
     private Company getCompany() {
         return null;
     }
+
+
 }

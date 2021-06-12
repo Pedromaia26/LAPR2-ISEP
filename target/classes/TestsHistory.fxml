@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.TestsHistoryUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.TestsHistoryUI">
    <children>
-      <TableView fx:id="testsTable" layoutX="183.0" layoutY="100.0" prefHeight="200.0" prefWidth="234.0">
+      <TableView fx:id="testsTable" layoutX="130.0" layoutY="100.0" prefHeight="200.0" prefWidth="329.0">
         <columns>
-          <TableColumn fx:id="testColumn" prefWidth="116.800048828125" text="Code" />
-            <TableColumn fx:id="dateColumn" prefWidth="116.79998779296875" text="Date" />
+          <TableColumn fx:id="testColumn" prefWidth="168.0" text="Code" />
+            <TableColumn fx:id="dateColumn" prefWidth="160.0" text="Date" />
         </columns>
       </TableView>
       <Label fx:id="clientTest" alignment="CENTER" layoutX="159.0" layoutY="49.0" prefHeight="18.0" prefWidth="282.0" />
+      <Button fx:id="testDetails" alignment="CENTER" layoutX="417.0" layoutY="338.0" mnemonicParsing="false" onAction="#testDetailsOnAction" prefHeight="31.0" prefWidth="138.0" text="Check test details" />
    </children>
 </AnchorPane>
