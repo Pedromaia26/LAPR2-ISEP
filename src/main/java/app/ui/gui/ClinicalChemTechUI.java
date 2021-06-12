@@ -8,7 +8,7 @@ import app.domain.model.ClientStore;
 import app.domain.model.Company;
 import auth.AuthFacade;
 import auth.UserSession;
-import com.sun.rowset.internal.Row;
+//import com.sun.rowset.internal.Row;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -127,11 +127,10 @@ public class ClinicalChemTechUI implements Initializable {
         App.getInstance().getCompany().getClientStore().setOrderingAlgorithm("Domain.OrderByTin");
         List<ClientDTO> clientList = App.getInstance().getCompany().getClientStore().OrderingAlgorithm().orderClientsByTin(controller.getClients());
         tableView.setItems(orderByTin(clientList));
-
     }
 
     public void sortByNameOnAction (ActionEvent actionEvent) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        App.getInstance().getCompany().getClientStore().setOrderingAlgorithm("Domain.OrderByTin");
+        App.getInstance().getCompany().getClientStore().setOrderingAlgorithm("Domain.OrderByName");
         List<ClientDTO> clientList = App.getInstance().getCompany().getClientStore().OrderingAlgorithm().orderClientsByName(controller.getClients());
         tableView.setItems(orderByName(clientList));
     }

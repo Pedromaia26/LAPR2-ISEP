@@ -11,6 +11,9 @@
       <Label fx:id="client2" layoutX="130.0" layoutY="50.0" prefHeight="21.0" prefWidth="340.0" />
       <Label alignment="CENTER" layoutX="95.0" layoutY="61.0" prefHeight="21.0" prefWidth="411.0" text="Please choose the client whose tests you want to check:" />
       <TableView fx:id="tableView" layoutX="87.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0">
+          <placeholder>
+              <Label text="There are no clients with validated tests registered in the system."/>
+          </placeholder>
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="130.0" text="Name" />
           <TableColumn fx:id="tinColumn" prefWidth="139.0" text="Tin" />

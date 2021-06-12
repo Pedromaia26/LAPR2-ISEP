@@ -11,8 +11,6 @@ import java.util.Properties;
 import app.controller.App;
 import app.serialization.Serialization;
 import auth.domain.model.Email;
-import auth.domain.model.Password;
-import auth.domain.model.User;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -232,11 +230,11 @@ public class ClientStore {
         }
     }
 
-    public OrderClientsTIN OrderingAlgorithm() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
+    public SortingAlgorithms OrderingAlgorithm() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Properties prop = App.getInstance().getprops();
         String classaux = prop.getProperty(getOrderingAlgorithm());
         Class<?> oClass = Class.forName(classaux);
-        return (OrderClientsTIN) oClass.newInstance();
+        return  (SortingAlgorithms) oClass.newInstance();
     }
 
     public void setOrderingAlgorithm(String orderingAlgorithm) {

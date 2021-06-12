@@ -9,10 +9,10 @@ import java.text.ParseException;
 import java.util.Collections;
 import java.util.List;
 
-public class OrderClientsTIN {
+public class BubbleSort implements SortingAlgorithms{
 
 
-    public OrderClientsTIN()  {
+    public BubbleSort()  {
     }
 
     public List<ClientDTO> orderClientsByTin(List<ClientDTO> clientList){

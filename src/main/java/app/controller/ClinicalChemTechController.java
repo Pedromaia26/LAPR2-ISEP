@@ -18,6 +18,8 @@ public class ClinicalChemTechController {
     private TestMapper tMapper;
     private Client client;
     private List<Test> tList;
+    private List<Test> tValidList;
+    private List<Client> clientList;
 
     public ClinicalChemTechController() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         this(App.getInstance().getCompany());
@@ -26,6 +28,8 @@ public class ClinicalChemTechController {
         this.tMapper = new TestMapper();
         this.tList = new ArrayList<>();
         this.clientMapper = new ClientMapper();
+        this.tValidList = new ArrayList<>();
+        this.clientList = new ArrayList<>();
     }
 
 
@@ -36,18 +40,37 @@ public class ClinicalChemTechController {
         this.tMapper = new TestMapper();
         this.tList = new ArrayList<>();
         this.clientMapper = new ClientMapper();
+        this.tValidList = new ArrayList<>();
+        this.clientList = new ArrayList<>();
     }
 
     public List<ClientDTO> getClients(){
-        List<Client> clientList = cStore.getClientList();
-        return clientMapper.toDto(clientList);
-
+        try {
+            List<Client> clientList = cStore.getClientList();
+            for (Client client : clientList) {
+                for (Test test : testStore.getTestsByClient(client)) {
+                    if (test.getValidationDate() != null) {
+                        if (!this.clientList.contains(client)) {
+                            this.clientList.add(client);
+                        }
+                    }
+                }
+            }
+            System.out.println(this.clientList);
+            return clientMapper.toDto(this.clientList);
+        }catch(ArrayIndexOutOfBoundsException e){
+            return new ArrayList<ClientDTO>();
+        }
     }
 
     public List<TestDTO> getTestsByClient(ClientDTO client){
         this.client = this.cStore.getClientByTinNumber(client.getTifDto());
         tList = testStore.getTestsByClient(this.client);
-        return tMapper.toDto(tList);
-
+        for(Test t : tList){
+            if(t.getValidationDate()!=null){
+                tValidList.add(t);
+            }
+        }
+        return tMapper.toDto(tValidList);
     }
 }

@@ -159,8 +159,8 @@ public class App {
         TestType tt = new TestType("Covid-19", "swab", "12345", parameterCategories);
 
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Client",12312312312L);
-        Client client2 = new Client("7651861100123109",1234567890L,"24/01/2002","female",1554566760L,"client2@lei.sem2.pt","Client2",91110998123L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Bruno",12312312312L);
+        Client client2 = new Client("7651861100123109",1234567890L,"24/01/2002","female",1554566760L,"client2@lei.sem2.pt","Tiago",91110998123L);
 
         this.getCompany().getClientStore().addNewClient(client2);
         this.getCompany().getClientStore().addNewClient(client);
@@ -168,6 +168,9 @@ public class App {
 
         Test t = new Test(getCompany(), client, "123456789098",  lO, l);
         Test t2 = new Test(getCompany(), client2, "898916726190", lO,l);
+
+        t.validateTest();
+
 
         this.getCompany().getTestStore().saveTest(t);
         this.getCompany().getTestStore().saveTest(t2);

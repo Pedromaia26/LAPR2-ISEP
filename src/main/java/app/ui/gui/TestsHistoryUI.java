@@ -5,16 +5,24 @@ import app.domain.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class TestsHistoryUI implements Initializable {
@@ -25,6 +33,12 @@ public class TestsHistoryUI implements Initializable {
     TableView<TestDTO> testsTable;
     @FXML
     private TableColumn<TestDTO, String> testColumn;
+    @FXML
+    private TableColumn<TestDTO, Date> dateColumn;
+    @FXML
+    private Label clientTest;
+    @FXML
+    private Button checkTestDetails;
     private ClinicalChemTechController controller;
 
     public TestsHistoryUI() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -57,7 +71,9 @@ public class TestsHistoryUI implements Initializable {
         //for (TestDTO testessss: t){
           //  System.out.println(testessss);
         //}
+        clientTest.setText(ccnClient.getNameDto() + "'s tests" );
         testColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("validationDate"));
         testsTable.setItems(getTestsByClient(ccnClient));
 
 
@@ -78,6 +94,20 @@ public class TestsHistoryUI implements Initializable {
         return tests;
 
     }
+
+//    public void checkTestDetailsOnAction(ActionEvent actionEvent) throws IOException {
+//        TestDTO test = testsTable.getSelectionModel().getSelectedItems().get(0);
+//        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestResult.fxml"));
+//        Parent root = fxmlLoader.load();
+////        TestsResultsUI controller = fxmlLoader.getController();
+////        controller.initData(test);
+//        Stage stage2 = new Stage();
+//        Scene scene2 = new Scene(root);
+//        stage2.setTitle("TEST RESULT");
+//        stage2.setScene(scene2);
+//        stage2.setResizable(true);
+//        stage2.show();
+//    }
 
     private Company getCompany() {
         return null;

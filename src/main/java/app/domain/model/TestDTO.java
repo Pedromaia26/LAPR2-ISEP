@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,8 @@ public class TestDTO {
 
     private Date date;
 
+    private Date validationDate;
+
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
      *
@@ -39,6 +42,7 @@ public class TestDTO {
         this.testParameterResultList=test.getTestParameterResultList();
         this.laboratory= test.getLab();
         this.date = test.getDate();
+        this.validationDate = test.getValidationDate();
     }
 
 
@@ -82,4 +86,9 @@ public class TestDTO {
     }
 
     public Date getDate() { return date; }
+
+    public String getValidationDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return formatter.format(validationDate);
+    }
 }
