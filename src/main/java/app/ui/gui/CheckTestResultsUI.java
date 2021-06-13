@@ -4,14 +4,19 @@ import app.controller.CheckTestResultsController;
 import app.domain.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -34,6 +39,11 @@ public class CheckTestResultsUI implements Initializable {
 
     @FXML
     Label labelReport = new Label();
+
+    Stage stage;
+
+    @FXML
+    private AnchorPane anchorpane;
 
     private List<TestDTO> clientTests = new ArrayList<>();
 
@@ -95,5 +105,23 @@ public class CheckTestResultsUI implements Initializable {
         }
 
         labelReport.setText(report.getDiagnosis());
+    }
+
+    public void goBack(MouseEvent mouseEvent) throws IOException {
+
+        stage = (Stage) anchorpane.getScene().getWindow();
+
+        System.out.println("closed");
+
+        stage.close();
+
+        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
+        Stage stage2 = new Stage();
+        Scene scene2 = new Scene(aaaaa);
+        stage2.setTitle("CLIENT MENU");
+        stage2.setScene(scene2);
+        stage2.setResizable(true);
+        stage2.show();
+
     }
 }
