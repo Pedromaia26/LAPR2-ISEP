@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="499.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
+   <children>
+      <LineChart fx:id="graph" layoutY="50.0" prefHeight="400.0" prefWidth="411.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="436.0" layoutY="80.0" text="Number of Tests Registed:" />
+      <Label layoutX="432.0" layoutY="130.0" text="Number of Tests Validated:" />
+      <Label layoutX="476.0" layoutY="174.0" text="Number of Clients:" />
+      <Label fx:id="testReg" layoutX="631.0" layoutY="80.0" />
+      <Label fx:id="testVal" layoutX="617.0" layoutY="130.0" />
+      <Label fx:id="nClient" layoutX="617.0" layoutY="174.0" />
+   </children>
+</AnchorPane>
