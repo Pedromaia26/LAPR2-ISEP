@@ -112,7 +112,7 @@ public class ImportCSVFileController{
                         DecimalFormat df = new DecimalFormat("0000000000000000");
 
                         double valor = Double.parseDouble(tests[13].replace("," , "."));
-                        System.out.println(valor);
+
 
                         //System.out.println("Tests :[Code=" + tests[0] + ", NhsCode=" + tests[1] + ", LabID=" + tests[2] + ", CCN=" + tests[3] + ", NHS=" + tests[4] +", TIN=" + tests[5] +", BirthDay=" + tests[6] +", PN=" + tests[7] +", Name=" + tests[8] +", Email=" + tests[9] +", Address=" + tests[10] +", TestType=" + tests[11] + ", Category=" + tests[12] + ", HB000=" + tests[13] +", WBC00=" + tests[14] + ", PLT00=" + tests[15] + ", RBC00=" + tests[16] +", Category=" + tests[17] + ", HDL00=" + tests[18] +", Category=" + tests[19] + ", IgGAN=" + tests[20] +", TestRegDat=" + tests[21] + ", TestChemDate=" + tests[22] + ", TestDocDate=" + tests[23] +", TestValDate=" + tests[24] +"]");
 
@@ -196,6 +196,8 @@ public class ImportCSVFileController{
                         if (!tests[23].equals("NA")) {
                             newtest.addReport("Default", tests[23]);
                         }
+                        System.out.println(tests[23]);
+                        System.out.println(newtest.getDate());
 
 
                         if (!tests[24].equals("NA")) {
