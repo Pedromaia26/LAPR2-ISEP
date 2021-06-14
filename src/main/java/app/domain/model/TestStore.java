@@ -102,7 +102,7 @@ public class TestStore {
 
         }
 
-        throw new IllegalArgumentException("There is no Sample with such barcode!");
+        throw new IllegalArgumentException("There is no Test with such code!");
     }
 
     public List<Test> getTestsByClient(Email id){
