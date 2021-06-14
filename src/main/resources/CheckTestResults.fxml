@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
     <children>
         <Label layoutX="284.0" layoutY="14.0" text="Test Results" textAlignment="CENTER">
             <font>
@@ -15,22 +15,22 @@
         <Separator layoutY="62.0" prefHeight="5.0" prefWidth="687.0" />
         <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: lightblue;" />
         <Separator layoutY="79.0" prefHeight="5.0" prefWidth="687.0" />
-        <Button layoutX="14.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: lightblue; -fx-border-radius: 30px;" text="Go Back">
+        <Label layoutX="611.0" layoutY="439.0" onMouseClicked="#goBack" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Go back">
             <font>
-                <Font name="System Bold" size="12.0" />
+                <Font name="System Bold" size="14.0" />
             </font>
-        </Button>
+        </Label>
       <ListView fx:id="listTests" layoutX="396.0" layoutY="138.0" prefHeight="234.0" prefWidth="246.0" />
       <TableView fx:id="tableResults" layoutX="87.0" layoutY="138.0" prefHeight="106.0" prefWidth="270.0">
         <placeholder>
             <Label text="" />
         </placeholder>
       </TableView>
-      <ImageView fx:id="userIcon" fitHeight="32.0" fitWidth="32.0" layoutX="632.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="userIcon" fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/icon.png" />
          </image></ImageView>
-      <Label fx:id="labelUserName" layoutX="591.0" layoutY="437.0" />
+      <Label fx:id="labelUserName" layoutX="52.0" layoutY="438.0" prefHeight="17.0" prefWidth="173.0" />
       <Button fx:id="btnSelect" layoutX="479.0" layoutY="381.0" mnemonicParsing="false" onAction="#SelectTest" text="Check result" />
       <Label layoutX="168.0" layoutY="256.0" text="Report">
          <font>
