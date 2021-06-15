@@ -6,9 +6,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.ui.gui.TestDetailsUI"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.TestDetailsUI">
+   <children>
+      <TableView fx:id="table1" layoutX="21.0" layoutY="100.0" prefHeight="200.0" prefWidth="94.0">
+        <columns>
+          <TableColumn fx:id="parameterColumn" prefWidth="95.0" sortable="false" text="Parameter" />
+        </columns>
+      </TableView>
+      <TableView fx:id="table2" layoutX="115.0" layoutY="100.0" prefHeight="200.0" prefWidth="327.0">
+         <columns>
+            <TableColumn fx:id="minRefValueColumn" prefWidth="169.0" sortable="false" text="Min Reference Value" />
+            <TableColumn fx:id="maxRefValueColumn" prefWidth="157.0" sortable="false" text="Min Reference Value" />
+         </columns>
+      </TableView>
+      <TableView fx:id="table3" layoutX="442.0" layoutY="100.0" prefHeight="200.0" prefWidth="94.0">
+         <columns>
+            <TableColumn fx:id="valueColumn" prefWidth="95.0" sortable="false" text="Result Value" />
+         </columns>
+      </TableView>
+   </children>
 </AnchorPane>

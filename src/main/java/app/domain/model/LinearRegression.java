@@ -3,6 +3,8 @@ package app.domain.model; /*****************************************************
  *  Simple linear regression.
  ******************************************************************************/
 
+import org.apache.commons.math3.distribution.TDistribution;
+
 /**
  *  The code LinearRegression class performs a simple linear regression
  *  on an set of n data points (y_i, x_i).
@@ -18,7 +20,18 @@ package app.domain.model; /*****************************************************
 public class LinearRegression {
     private final double intercept, slope;
     private final double r2;
+    private final double rss;
+    private final int degressOfFreedom;
+    private double r2adjusted;
     private final double svar0, svar1;
+    private final double s2;
+    private final double tb;
+    private final double ssr;
+    private final double svar;
+    private TDistribution tDistribution;
+
+
+
 
     /**
      * Performs a linear regression on the data points (y[i], x[i]).
@@ -50,8 +63,10 @@ public class LinearRegression {
             yybar += (y[i] - ybar) * (y[i] - ybar);
             xybar += (x[i] - xbar) * (y[i] - ybar);
         }
+
         slope  = xybar / xxbar;
         intercept = ybar - slope * xbar;
+        System.out.println(slope);
 
         // more statistical analysis
         double rss = 0.0;      // residual sum of squares
@@ -62,12 +77,33 @@ public class LinearRegression {
             ssr += (fit - ybar) * (fit - ybar);
         }
 
+        this.ssr = ssr;
+        this.rss = rss;
+
+
         int degreesOfFreedom = n-2;
+
+        tDistribution = new TDistribution(degreesOfFreedom);
+
+        this.degressOfFreedom = degreesOfFreedom;
         r2    = ssr / yybar;
         double svar  = rss / degreesOfFreedom;
+
+        this.svar = svar;
+
         svar1 = svar / xxbar;
+        System.out.println(svar1);
         svar0 = svar/n + xbar*xbar*svar1;
+        r2adjusted = 1 - ((double)(n - 1) / (double)(n - (2))) * (1 - r2);
+
+        s2 = 1/(double)(n-2) * rss;
+        tb = slope/(Math.sqrt(s2)/Math.sqrt(xxbar));
+
+
+
     }
+
+
 
     /**
      * Returns the y-intercept alpha of the best of the best-fit line y = alpha + beta * x.
@@ -97,6 +133,11 @@ public class LinearRegression {
         return r2;
     }
 
+
+    public double R2Adjusted(){
+        return r2adjusted;
+    }
+
     /**
      * Returns the standard error of the estimate for the intercept.
      *
@@ -105,6 +146,8 @@ public class LinearRegression {
     public double interceptStdErr() {
         return Math.sqrt(svar0);
     }
+
+
 
     /**
      * Returns the standard error of the estimate for the slope.
@@ -141,6 +184,43 @@ public class LinearRegression {
         return s.toString();
     }
 
+    public double getSvar() {
+        return svar;
+    }
+
+    public double obs(double sL){
+        return 1-(sL/2);
+    }
+
+    public double S2() {
+        return s2;
+    }
+
+    public double Tb() {
+        return tb;
+    }
+
+    public String decisao (double sL){
+        System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
+
+        if (Math.abs(tb)>tDistribution.cumulativeProbability(obs(sL)))
+
+            return "Reject HO";
+
+        return "No reject H0";
+    }
+
+    public double getssr() {
+        return ssr;
+    }
+
+    public double getRss() {
+        return rss;
+    }
+
+    public int getDegressOfFreedom() {
+        return degressOfFreedom;
+    }
 
 }
 

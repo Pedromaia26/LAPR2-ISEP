@@ -9,9 +9,16 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestStore {
 
@@ -29,6 +36,10 @@ public class TestStore {
      * List that contains the tests to be reported.
      */
     /*private List<Test> testsToBeReported;*/
+
+    private List<Test> listTestsinRegDateRange;
+
+    private List<Test> listTestsinValDateRange;
 
 
     public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab) {
@@ -157,6 +168,96 @@ public class TestStore {
         return list;
 
     }
+    public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
+        listTestsinRegDateRange = new ArrayList<>();
+        listTestsinValDateRange = new ArrayList<>();
+        for(Test test : tests){
+
+
+            if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
+
+                listTestsinRegDateRange.add(test);
+            }
+            if (test.getValidationDate()!=null) {
+                if ((test.getValidationDate().toInstant().equals(startDate.toInstant()) || test.getValidationDate().toInstant().equals(endDate.toInstant())) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
+
+                    listTestsinValDateRange.add(test);
+                    System.out.println(listTestsinRegDateRange);
+                }
+            }
+
+        }
+        return listTestsinValDateRange;
+    }
+
+    public void getCovidTestsPerDay(Date startDate, Date endDate){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(startDate);
+
+
+        long difference= Math.abs(endDate.getTime() - startDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS)+1;
+        int a = (int)diff;
+        System.out.println("Dias(tamanho do array))");
+        System.out.println(diff);
+        int[] c = new int[a];
+        for (Test t:  getTestsInInterval(startDate, endDate)) {
+
+            if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
+                // System.out.println(t.getValidationDate());
+                long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
+                long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
+                int pos = (int) p;
+                c[pos]++;
+            }
+
+
+        }
+        for (int i = 0; i < c.length; i++) {
+            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(cal.getTime()));
+            System.out.println(c[i]);
+            cal.add(Calendar.DATE, 1);
+        }
+    }
+    public void getPositiveCovidTestsPerDay(Date startDate, Date endDate){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(startDate);
+
+
+        long difference= Math.abs(endDate.getTime() - startDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS)+1;
+        int a = (int)diff;
+        System.out.println("Dias(tamanho do array))");
+        System.out.println(diff);
+        int[] c = new int[a];
+        for (Test t:  getTestsInInterval(startDate, endDate)) {
+
+
+
+            if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
+                if (!t.getResults().isEmpty()){
+                    System.out.println(t.getResults());
+                    if (t.getResults().get(0)>1.4){
+                        // System.out.println(t.getValidationDate());
+                        long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
+                        long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
+                        int pos = (int) p;
+                        c[pos]++;
+                    }
+                }
+
+            }
+
+        }
+        for (int i = 0; i < c.length; i++) {
+            System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(cal.getTime()));
+            System.out.println(c[i]);
+            cal.add(Calendar.DATE, 1);
+        }
+    }
 
 }
+

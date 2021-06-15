@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="735.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.AdminUI">
+   <children>
+      <Label alignment="CENTER" layoutX="201.0" layoutY="42.0" prefHeight="27.0" prefWidth="264.0" text="Send Covid-19 report to NHS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="89.0" prefHeight="21.0" prefWidth="286.0" text="Select the data you want to send to NHS:" />
+      <ComboBox fx:id="dataComboBox" layoutX="335.0" layoutY="84.0" prefHeight="31.0" prefWidth="198.0" />
+      <Label alignment="CENTER" layoutX="36.0" layoutY="159.0" prefHeight="21.0" prefWidth="286.0" text="Define the number of historical points:" />
+      <TextField fx:id="histPoints" layoutX="339.0" layoutY="154.0" />
+      <Label alignment="CENTER" layoutX="36.0" layoutY="230.0" prefHeight="21.0" prefWidth="299.0" text="Define the dates interval to fit the model:" />
+      <DatePicker fx:id="begin" editable="false" layoutX="99.0" layoutY="267.0" onAction="#beginDateOnAction" />
+      <Label layoutX="49.0" layoutY="272.0" text="Begin" />
+      <Label layoutX="49.0" layoutY="314.0" text="End" />
+      <DatePicker fx:id="end" editable="false" layoutX="99.0" layoutY="309.0" onAction="#endDateOnAction" />
+      <Separator layoutX="4.0" layoutY="135.0" prefHeight="14.0" prefWidth="636.0" />
+      <Separator layoutY="216.0" prefHeight="14.0" prefWidth="636.0" />
+      <Separator layoutY="350.0" prefHeight="14.0" prefWidth="636.0" />
+      <Label layoutX="49.0" layoutY="373.0" prefHeight="21.0" prefWidth="286.0" text="Select the regression model:" />
+      <ComboBox fx:id="regressionModelComboBox" layoutX="333.0" layoutY="368.0" onAction="#regressionModelComboBoxOnAction" prefHeight="31.0" prefWidth="198.0" />
+      <Separator layoutY="407.0" prefHeight="14.0" prefWidth="636.0" />
+      <Label fx:id="indVarLabel" layoutX="49.0" layoutY="432.0" prefHeight="21.0" prefWidth="286.0" text="Set the independent variable:" />
+      <ComboBox fx:id="indVarComboBox" layoutX="334.0" layoutY="427.0" prefHeight="31.0" prefWidth="198.0" />
+      <Separator layoutY="466.0" prefHeight="14.0" prefWidth="636.0" />
+      <Label alignment="CENTER" layoutX="26.0" layoutY="491.0" prefHeight="21.0" prefWidth="286.0" text="Set the significance level (t-student):" />
+      <Label alignment="CENTER" layoutX="46.0" layoutY="561.0" prefHeight="21.0" prefWidth="305.0" text="Set the confidence level (confidence interval):" />
+      <TextField fx:id="significanceLevel" layoutX="358.0" layoutY="486.0" prefHeight="31.0" prefWidth="264.0" promptText="\%" />
+      <TextField fx:id="confidenceLevel" layoutX="358.0" layoutY="556.0" prefHeight="31.0" prefWidth="264.0" promptText="\%" />
+      <Label fx:id="invalidDate" alignment="CENTER" layoutX="333.0" layoutY="288.0" prefHeight="21.0" prefWidth="299.0" text="Invalid interval!" underline="true" />
+      <Button layoutX="229.0" layoutY="661.0" mnemonicParsing="false" onAction="#sendDataOnAction" prefHeight="31.0" prefWidth="187.0" text="Send Data" />
+      <Label fx:id="signifLevelLabel" alignment="CENTER" layoutX="330.0" layoutY="524.0" prefHeight="21.0" prefWidth="299.0" text="Must be a number!" underline="true" />
+      <Label fx:id="confidLevelLabel" alignment="CENTER" layoutX="330.0" layoutY="604.0" prefHeight="21.0" prefWidth="299.0" text="Must be a number!" underline="true" />
+      <Label fx:id="histPointsLabel" alignment="CENTER" layoutX="333.0" layoutY="195.0" prefHeight="21.0" prefWidth="198.0" text="Invalid number!" underline="true" />
+   </children>
+</AnchorPane>

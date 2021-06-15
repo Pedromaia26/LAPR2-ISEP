@@ -96,19 +96,19 @@ public class TestsHistoryUI implements Initializable {
 
     }
 
-  public void testDetailsOnAction(ActionEvent actionEvent) throws IOException {
-        TestDTO test = testsTable.getSelectionModel().getSelectedItems().get(0);
-       FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestResult.fxml"));
-        Parent root = fxmlLoader.load();
-        //   TestsResultsUI controller = fxmlLoader.getController();
-        ////        controller.initData(test);
-        Stage stage2 = new Stage();
-       Scene scene2 = new Scene(root);
-        stage2.setTitle("TEST RESULT");
-        stage2.setScene(scene2);
-        stage2.setResizable(true);
-        stage2.show();
-    }
+      public void testDetailsOnAction(ActionEvent actionEvent) throws IOException, OutputException, BarcodeException, ParseException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+            TestDTO test = testsTable.getSelectionModel().getSelectedItems().get(0);
+            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getClassLoader().getResource("TestResult.fxml"));
+            Parent root = fxmlLoader.load();
+            TestDetailsUI controller = fxmlLoader.getController();
+            controller.initData(test);
+            Stage stage2 = new Stage();
+            Scene scene2 = new Scene(root);
+            stage2.setTitle("TEST RESULT");
+            stage2.setScene(scene2);
+            stage2.setResizable(true);
+            stage2.show();
+        }
 
     private Company getCompany() {
         return null;

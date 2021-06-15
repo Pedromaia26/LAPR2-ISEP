@@ -21,12 +21,12 @@ public class Test implements Serializable, Comparable<Test> {
 
     private Laboratory lab;
 
-
-    private List<TestParameterResult> results;
+    private List<Double> results;
     /**
      * String that contains the code of a test.
      */
     private String code;
+
     /**
      * The National Healthcare Service code.
      */
@@ -62,9 +62,6 @@ public class Test implements Serializable, Comparable<Test> {
      */
     private Date resultRegist;
 
-    public List<TestParameter> getTestParameterList() {
-        return testParameterList;
-    }
 
     /**
      * An object of type Date used to record the date when a test was validated.
@@ -131,6 +128,9 @@ public class Test implements Serializable, Comparable<Test> {
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
 
+        results = new ArrayList<>();
+
+
         this.date = new Date();
 
         this.lab=lab;
@@ -154,6 +154,8 @@ public class Test implements Serializable, Comparable<Test> {
 
         testParameterList = new ArrayList<>();
         testParameterList = addToList(labOrder.getParameters());
+
+        results = new ArrayList<>();
 
         this.date = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
 
@@ -395,6 +397,8 @@ public class Test implements Serializable, Comparable<Test> {
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
+        results.add(tp.getTpr().getValue());
+        System.out.println(results);
         String testPResult = compareValues(barcode);
         return testPResult;
     }
@@ -407,6 +411,8 @@ public class Test implements Serializable, Comparable<Test> {
         tp.addResult(result, metric, ref);
         resultRegist = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
         String testPResult = compareValues(barcode);
+        results.add(tp.getTpr().getValue());
+        System.out.println(results);
         return testPResult;
     }
 
@@ -456,6 +462,7 @@ public class Test implements Serializable, Comparable<Test> {
 
     public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Properties prop = App.getInstance().getprops();
+        System.out.println(labOrder.getTestType().getApi());
         String classaux = prop.getProperty(labOrder.getTestType().getApi());
         Class<?> oClass = Class.forName(classaux);
         return (ExternalModule) oClass.newInstance();
@@ -523,6 +530,15 @@ public class Test implements Serializable, Comparable<Test> {
 
     public Laboratory getLab() {
         return lab;
+    }
+
+
+    public List<TestParameter> getTestParameterList() {
+        return testParameterList;
+    }
+
+    public List<Double> getResults() {
+        return results;
     }
 
     @Override
