@@ -53,6 +53,9 @@ public class AdminUI implements Initializable {
     private Label histPointsLabel;
     @FXML
     private TextField histPoints;
+    @FXML
+    private DatePicker currentDay;
+
 
     private NHSReportController controller = new NHSReportController();
 
@@ -188,13 +191,24 @@ public class AdminUI implements Initializable {
             confidLevelLabel.setVisible(true);
         }
 
+
+
+        String histPts = histPoints.getText();
+        Integer hP = Integer.parseInt(histPts);
+
+
+        Date actualDate = new SimpleDateFormat("dd/MM/yyyy").parse(currentDay.getValue().format(formatter));
         Date startDate=new SimpleDateFormat("dd/MM/yyyy").parse(begin.getValue().format(formatter));
         Date endDate=new SimpleDateFormat("dd/MM/yyyy").parse(end.getValue().format(formatter));
 
         // controller.getTestsByInterval(startDate, endDate);
       //testStore.getPositiveTestsPerDay(startDate, endDate);
-        testStore.getCovidTestsPerDay(startDate, endDate);
-        testStore.getPositiveCovidTestsPerDay(startDate, endDate);
+
+        testStore.covidTestsLinearRegression(startDate, endDate);
+        testStore.positiveCovidTestsLinearRegression(startDate, endDate);
+        testStore.getCovidTestsPerDay(actualDate, hP);
+
+
     }
 
 

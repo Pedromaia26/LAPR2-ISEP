@@ -14,10 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class TestStore {
@@ -191,7 +188,7 @@ public class TestStore {
         return listTestsinValDateRange;
     }
 
-    public void getCovidTestsPerDay(Date startDate, Date endDate){
+    public void covidTestsLinearRegression(Date startDate, Date endDate){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -207,6 +204,7 @@ public class TestStore {
 
             if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
                 // System.out.println(t.getValidationDate());
+
                 long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
                 long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
                 int pos = (int) p;
@@ -216,48 +214,141 @@ public class TestStore {
 
         }
         for (int i = 0; i < c.length; i++) {
+
             System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(cal.getTime()));
             System.out.println(c[i]);
             cal.add(Calendar.DATE, 1);
         }
     }
-    public void getPositiveCovidTestsPerDay(Date startDate, Date endDate){
+    public void positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
 
-
-        long difference= Math.abs(endDate.getTime() - startDate.getTime());
-        long diff = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS)+1;
-        int a = (int)diff;
-        System.out.println("Dias(tamanho do array))");
-        System.out.println(diff);
-        int[] c = new int[a];
-        for (Test t:  getTestsInInterval(startDate, endDate)) {
+        Date date = new Date(startDate.getTime());
 
 
+        long difference = Math.abs(endDate.getTime() - startDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) + 1;
+        int a = (int) diff;
+        Calendar calend = Calendar.getInstance();
+        int dayOfWeek = 0;
+        for (int j = 0; j < a; j++) {
+            calend.setTime(addDays(startDate, j));
+            if (calend.get(Calendar.DAY_OF_WEEK) != 1) {
+                dayOfWeek++;
+                getPositiveTests(startDate, endDate, calend.getTime());
+            }
+            System.out.println("Dias(tamanho do array))");
 
-            if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
-                if (!t.getResults().isEmpty()){
-                    System.out.println(t.getResults());
-                    if (t.getResults().get(0)>1.4){
-                        // System.out.println(t.getValidationDate());
-                        long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
-                        long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
-                        int pos = (int) p;
-                        c[pos]++;
+        }
+        System.out.println(dayOfWeek);
+        int[] c = new int[dayOfWeek];
+        System.out.println(c.length);
+        for (int l = 0; l < c.length; l++) {
+            calend.setTime(addDays(startDate, l));
+            if (calend.get(Calendar.DAY_OF_WEEK) != 1) {
+                c[l] = getPositiveTests(startDate, endDate, calend.getTime());
+
+            }
+            System.out.println("Dias(tamanho do array))");
+            System.out.println(diff);
+        }
+         /*   for (Test t : getTestsInInterval(startDate, endDate)) {
+                if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
+                    if (!t.getResults().isEmpty()) {
+                        System.out.println(t.getResults());
+                        if (t.getResults().get(0) > 1.4) {
+                            // System.out.println(t.getValidationDate());
+                            long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
+                            long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
+                            int pos = (int) p;
+                            c[pos]++;
+                        }
                     }
                 }
 
+            }*/
+
+            for (int i = 0; i < c.length; i++) {
+                System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(cal.getTime()));
+                System.out.println(c[i]);
+                cal.add(Calendar.DATE, 1);
             }
+        }
+
+
+    public void getCovidTestsPerDay(Date startDate, int hP){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = subtractDays(startDate, hP);
+        System.out.println(date);
+
+
+        int diff = hP;
+        System.out.println("Dias(tamanho do array))");
+        System.out.println(diff);
+        int[] c = new int[diff];
+        for (Test t:  getTestsInInterval(date, startDate)) {
+
+            if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
+                // System.out.println(t.getValidationDate());
+                long dif = Math.abs(t.getValidationDate().getTime()-date.getTime());
+                long p = TimeUnit.DAYS.convert(dif, TimeUnit.MILLISECONDS);
+                int pos = (int) p;
+                c[pos]++;
+            }
+
 
         }
         for (int i = 0; i < c.length; i++) {
-            System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(cal.getTime()));
+            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(addDays(date, i)));
             System.out.println(c[i]);
-            cal.add(Calendar.DATE, 1);
         }
+
+
+
+
+    }
+    public static Date subtractDays(Date date, int days) {
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, -days);
+
+        return cal.getTime();
     }
 
+    public static Date addDays(Date date, int days) {
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days);
+
+        return cal.getTime();
+    }
+
+    public int getPositiveTests(Date startDate, Date endDate, Date date){
+        int a = 0;
+        for (Test t: getTestsInInterval(startDate, endDate)){
+            if (t.getValidationDate().equals(date)){
+                if (t.getResults().get(0)>1.4){
+                    a++;
+                }
+
+            }
+        }
+        return a;
+
+    }
+
+    public int getTests(Date startDate, Date endDate, Date date){
+        int a = 0;
+        for (Test t: getTestsInInterval(startDate, endDate)){
+            if (t.getValidationDate().equals(date)){
+                    a++;
+                }
+
+            }
+        return a;
+        }
 }
+
 
