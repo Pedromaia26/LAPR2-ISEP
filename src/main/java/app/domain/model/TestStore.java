@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -176,8 +177,19 @@ public class TestStore {
 
                 listTestsinRegDateRange.add(test);
             }
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(startDate);
+            int firstDay = cal.get(Calendar.DAY_OF_YEAR);
+            int firstYear = cal.get(Calendar.YEAR);
+            cal.setTime(endDate);
+            int lastDay = cal.get(Calendar.DAY_OF_YEAR);
+            int lastYear = cal.get(Calendar.YEAR);
+
             if (test.getValidationDate()!=null) {
-                if ((test.getValidationDate().toInstant().equals(startDate.toInstant()) || test.getValidationDate().toInstant().equals(endDate.toInstant())) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
+                cal.setTime(test.getValidationDate());
+                int compareDay = cal.get(Calendar.DAY_OF_YEAR);
+                int compareYear = cal.get(Calendar.YEAR);
+                if (((firstDay==compareDay && firstYear==compareYear) || (lastDay==compareDay && lastYear==compareYear) ) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
 
                     listTestsinValDateRange.add(test);
                 }
@@ -187,7 +199,7 @@ public class TestStore {
         return listTestsinValDateRange;
     }
 
-    public void covidTestsLinearRegression(Date startDate, Date endDate){
+    public int[] covidTestsLinearRegression(Date startDate, Date endDate){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -206,35 +218,25 @@ public class TestStore {
             }
         }
 
-        System.out.println(dateList.get(0));
-
-        System.out.println("Dias(tamanho do array))");
-        System.out.println(diff);
         int[] c = new int[dayOfWeek];
 
         int l = 0;
         int count = 0;
-        //for (int l = 0; l < c.length; l++) {
-        cal.setTime(startDate);
-        do{
 
-            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
-                System.out.println("data: " + cal.getTime());
-                c[l] = getPositiveTests(startDate, endDate, cal.getTime());
-                System.out.println("llllll" + l);
-                l++;
-            }
-            count++;
-            cal.setTime(addDays(startDate, count));
-        }while (l<c.length);
+        cal.setTime(startDate);
+
+        for(Date d : dateList){
+            c[l] = getTests(startDate, endDate, d);
+            l++;
+        }
 
         for (int i = 0; i < c.length; i++) {
             System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
-            System.out.println(dateList.get(i));
             System.out.println(c[i]);
         }
+        return c;
     }
-    public void positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
+    public int[] positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -261,14 +263,11 @@ public class TestStore {
 
         int l = 0;
         int count = 0;
-        //for (int l = 0; l < c.length; l++) {
         calend.setTime(startDate);
         do{
 
             if (calend.get(Calendar.DAY_OF_WEEK) != 1) {
-                System.out.println("data: " + calend.getTime());
                 c[l] = getPositiveTests(startDate, endDate, calend.getTime());
-                System.out.println("llllll" + l);
                 l++;
             }
             count++;
@@ -277,8 +276,7 @@ public class TestStore {
 
 
         //}
-        System.out.println("Dias(tamanho do array))");
-        System.out.println(c.length);
+
 
          /*   for (Test t : getTestsInInterval(startDate, endDate)) {
                 if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
@@ -301,33 +299,65 @@ public class TestStore {
                 System.out.println(c[i]);
                 cal.add(Calendar.DATE, 1);
             }
+            return c;
         }
 
 
-    public void getCovidTestsPerDay(Date startDate, int hP){
+    public void getCovidTestsPerDay(Date currentDate, int hP){
+        List<Date> dayList = new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = subtractDays(startDate, hP);
-        System.out.println(date);
+        Calendar cal = Calendar.getInstance();
+        int u = 0;
+        int aux = 1;
+        do{
+            Date date = subtractDays(currentDate, aux);
+            cal.setTime(date);
+            if(cal.get(Calendar.DAY_OF_WEEK)!=1){
+                dayList.add(date);
+                u++;
+            }
+            aux++;
+        }while(u<hP);
 
+        Date firstDay = dayList.get(u-1);
 
         int diff = hP;
-        System.out.println("Dias(tamanho do array))");
-        System.out.println(diff);
         int[] c = new int[diff];
-        for (Test t:  getTestsInInterval(date, startDate)) {
 
-            if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
-                // System.out.println(t.getValidationDate());
-                long dif = Math.abs(t.getValidationDate().getTime()-date.getTime());
-                long p = TimeUnit.DAYS.convert(dif, TimeUnit.MILLISECONDS);
-                int pos = (int) p;
-                c[pos]++;
+        List<Date> dateList = new ArrayList<>();
+
+        int dayOfWeek = 0;
+        int sum = 0;
+        int j = 0;
+        //for (int j = 0; j < diff; j++) {
+        do{
+            cal.setTime(addDays(firstDay, sum));
+            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
+                dayOfWeek++;
+                getPositiveTests(firstDay, currentDate, cal.getTime());
+                dateList.add(cal.getTime());
+                j++;
             }
+            sum++;
+        }while(j<hP);
 
 
-        }
+        cal.setTime(firstDay);
+        int l = 0;
+        int count = 0;
+        do{
+
+            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
+                c[l] = getTests(firstDay, currentDate, cal.getTime());
+                l++;
+            }
+            count++;
+            cal.setTime(addDays(firstDay, count));
+        }while (l<c.length);
+
+
         for (int i = 0; i < c.length; i++) {
-            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(addDays(date, i)));
+            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
             System.out.println(c[i]);
         }
 
@@ -335,6 +365,77 @@ public class TestStore {
 
 
     }
+
+    public void getCovidTestsPerWeek(Date currentDate, int hP){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(currentDate);
+        int day = cal.get(Calendar.DAY_OF_WEEK);
+        Date date = subtractDays(currentDate, day-2);
+        System.out.println("ttttt"+ date);
+        date = subtractDays(date,7*hP);
+        for(int i=0; i<hP;i++){
+            cal.setTime(date);
+            Date date2 = addDays(date,5);
+            System.out.println("inicio" + date);
+            System.out.println("fim"+ date2);
+            List<Test> tests = getTestsInInterval(date, date2);
+            System.out.println(tests.size());
+            date = addDays(date,7);
+        }
+
+
+
+        List<Date> dayList = new ArrayList<>();
+        List<Date> dateList = new ArrayList<>();
+
+        int u = 0;
+        int aux = 1;
+        do{
+            Date date1 = subtractDays(currentDate, aux);
+            cal.setTime(date1);
+            if(cal.get(Calendar.DAY_OF_WEEK)!=1){
+                dayList.add(date);
+                u++;
+            }
+            aux++;
+        }while(u<hP*7);
+
+        Date firstDay = dayList.get(u-1);
+
+        int dayOfWeek=0;
+        int sum = 0;
+        int j = 0;
+        //for (int j = 0; j < diff; j++) {
+        do{
+            cal.setTime(addDays(firstDay, sum));
+            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
+                dayOfWeek++;
+                getPositiveTests(firstDay, currentDate, cal.getTime());
+                dateList.add(cal.getTime());
+                j++;
+            }
+            sum++;
+        }while(j<hP);
+
+
+        int diff = hP*7;
+        int[] c = new int[diff];
+        cal.setTime(firstDay);
+        int l = 0;
+        int count = 0;
+        do{
+
+            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
+                c[l] = getTests(firstDay, currentDate, cal.getTime());
+                l++;
+            }
+            count++;
+            cal.setTime(addDays(firstDay, count));
+        }while (l<c.length);
+
+
+    }
+
     public static Date subtractDays(Date date, int days) {
         GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(date);
@@ -353,12 +454,19 @@ public class TestStore {
 
     public int getPositiveTests(Date startDate, Date endDate, Date date){
         int a = 0;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int day = cal.get(Calendar.DAY_OF_YEAR);
+        int year = cal.get(Calendar.YEAR);
+
         for (Test t: getTestsInInterval(startDate, endDate)){
-            if (t.getValidationDate().getDay()==date.getDay()){
+            cal.setTime(t.getValidationDate());
+            int compareDay = cal.get(Calendar.DAY_OF_YEAR);
+            int compareYear = cal.get(Calendar.YEAR);
+            if (compareDay == day && compareYear == year){
                 if (!t.getResults().isEmpty()){
                     if (t.getResults().get(0)>1.4){
                         a++;
-                        System.out.println("aaaaaaaa " + t.getValidationDate());
                     }
                 }
             }
@@ -369,10 +477,18 @@ public class TestStore {
 
     public int getTests(Date startDate, Date endDate, Date date){
         int a = 0;
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int day = cal.get(Calendar.DAY_OF_YEAR);
+        int year = cal.get(Calendar.YEAR);
+
         for (Test t: getTestsInInterval(startDate, endDate)){
-            if (t.getValidationDate().getDay()==date.getDay()){
+            cal.setTime(t.getValidationDate());
+            int compareDay = cal.get(Calendar.DAY_OF_YEAR);
+            int compareYear = cal.get(Calendar.YEAR);
+            if (compareDay == day && compareYear == year){
                     a++;
-                System.out.println(t.getValidationDate());
                 }
 
             }
