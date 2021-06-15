@@ -93,10 +93,16 @@ public class CheckTestResultsController {
     }
 
     public List<TestParameterDto> getTestParameter(String code){
+        List<TestParameter> lista = new ArrayList<>();
         tStore = company.getTestStore();
         Test test = tStore.getTestByCode(code);
         listTestParameter = test.getTestParameter();
-        listTestParameterDto = tpMapper.toDto(listTestParameter);
+        for (TestParameter p : listTestParameter){
+            if (p.getTpr() != null){
+                lista.add(p);
+            }
+        }
+        listTestParameterDto = tpMapper.toDto(lista);
         return listTestParameterDto;
     }
 
