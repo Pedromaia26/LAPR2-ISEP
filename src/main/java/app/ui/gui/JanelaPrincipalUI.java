@@ -127,6 +127,14 @@ public class JanelaPrincipalUI implements Initializable {
                         stage2.setScene(scene2);
                         stage2.setResizable(true);
                         stage2.show();
+                    } else if (role.getDescription().equalsIgnoreCase("ADMINISTRATOR")){
+                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("Admin.fxml"));
+                        Stage stage2 = new Stage();
+                        Scene scene2 = new Scene(aaaaa);
+                        stage2.setTitle("ADMINISTRATOR");
+                        stage2.setScene(scene2);
+                        stage2.setResizable(true);
+                        stage2.show();
                     }
                 } else {
                     loginMessage.setText("Invalid e-mail or password. Please try again!");

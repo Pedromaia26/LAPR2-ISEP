@@ -37,7 +37,7 @@ public class RecordTestResultUI implements Runnable {
                 String op;
                 String result = "";
                 List<TestParameter> tParamList = new ArrayList<>();
-                try {
+                //try {
                     do {
 
                         List<TestDTO> testList = rtrController.getTestListStore();
@@ -51,7 +51,7 @@ public class RecordTestResultUI implements Runnable {
                         System.out.println();
                         barcode = ler.nextLine();
 
-                        try {
+                        //try {
                             t = rtrController.getTestByBarcode(barcode);
 
 
@@ -120,15 +120,15 @@ public class RecordTestResultUI implements Runnable {
                             System.out.print("Do you want to analyse more samples?(Y/N)\n");
                             ler.nextLine();
                             op = ler.nextLine();
-                        } catch (Exception e) {
+                        /*} catch (Exception e) {
                             System.out.println("Invalid data");
                             op = "N";
-                        }
+                        }*/
                     } while (op.equalsIgnoreCase("Y"));
 
-                }catch (Exception e){
-                    System.out.println("No tests to be validated");
-                }
+                //}catch (Exception e){
+                   // System.out.println("No tests to be validated");
+               // }
             }
         } catch (IllegalAccessException | InstantiationException | ClassNotFoundException | ParseException | BarcodeException | OutputException | IOException e) {
             e.printStackTrace();

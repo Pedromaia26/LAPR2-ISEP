@@ -24,11 +24,15 @@ public class TestDTO {
 
     private List<String> testParameterResultList;
 
+    private List<TestParameter> testParameterList;
+
     private Laboratory laboratory;
 
     private Date date;
 
     private Date validationDate;
+
+    private TestParameterMapper tpMapper = new TestParameterMapper();
 
     /**
      * Constructs an instance of TestDTO with the same attributes as the received Test.
@@ -43,6 +47,7 @@ public class TestDTO {
         this.laboratory= test.getLab();
         this.date = test.getDate();
         this.validationDate = test.getValidationDate();
+        this.testParameterList = test.getTestParameter();
     }
 
 
@@ -73,6 +78,10 @@ public class TestDTO {
         return labOrder;
     }
 
+    public List<String> getTestParameterResultList() {
+        return testParameterResultList;
+    }
+
     /**
      * Returns the list of samples of a test.
      * @return The sample of the test.
@@ -90,5 +99,9 @@ public class TestDTO {
     public String getValidationDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return formatter.format(validationDate);
+    }
+
+    public List<TestParameterDto> getTestParameterList() {
+        return tpMapper.toDto(testParameterList);
     }
 }

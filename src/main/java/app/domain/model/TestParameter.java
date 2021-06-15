@@ -21,7 +21,6 @@ public class TestParameter implements Serializable {
      */
     public TestParameter(Parameter parameter){
         this.parameter = parameter;
-
     }
 
     /**
@@ -32,10 +31,6 @@ public class TestParameter implements Serializable {
         return parameter;
 
     }
-
-
-
-
 
     public void addResult(Double result, String metric, ReferenceValue refValue){
         tpr = new TestParameterResult(result, metric, refValue);
