@@ -5,23 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
     <children>
-        <Label layoutX="284.0" layoutY="14.0" text="Test Results" textAlignment="CENTER">
+        <Label layoutX="340.0" layoutY="14.0" text="Test Results" textAlignment="CENTER">
             <font>
                 <Font name="Calibri Bold" size="24.0" />
             </font>
         </Label>
-        <Separator layoutY="62.0" prefHeight="5.0" prefWidth="687.0" />
-        <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: lightblue;" />
-        <Separator layoutY="79.0" prefHeight="5.0" prefWidth="687.0" />
-        <Label layoutX="611.0" layoutY="439.0" onMouseClicked="#goBack" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Go back">
+        <Separator layoutY="62.0" prefHeight="5.0" prefWidth="800.0" />
+        <Label layoutY="64.0" prefHeight="17.0" prefWidth="800.0" style="-fx-background-color: lightblue;" />
+        <Separator layoutY="79.0" prefHeight="5.0" prefWidth="800.0" />
+        <Label layoutX="718.0" layoutY="444.0" onMouseClicked="#goBack" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Go back">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-      <ListView fx:id="listTests" layoutX="396.0" layoutY="138.0" prefHeight="234.0" prefWidth="246.0" />
-      <TableView fx:id="tableResults" layoutX="87.0" layoutY="138.0" prefHeight="106.0" prefWidth="270.0">
+      <ListView fx:id="listTests" layoutX="503.0" layoutY="139.0" prefHeight="234.0" prefWidth="246.0" />
+      <TableView fx:id="tableResults" layoutX="10.0" layoutY="138.0" prefHeight="106.0" prefWidth="477.0">
         <placeholder>
             <Label text="" />
         </placeholder>
@@ -31,17 +31,12 @@
             <Image url="@images/icon.png" />
          </image></ImageView>
       <Label fx:id="labelUserName" layoutX="52.0" layoutY="438.0" prefHeight="17.0" prefWidth="173.0" />
-      <Button fx:id="btnSelect" layoutX="479.0" layoutY="381.0" mnemonicParsing="false" onAction="#SelectTest" text="Check result" />
-      <Label layoutX="168.0" layoutY="256.0" text="Report">
+      <Button fx:id="btnSelect" layoutX="586.0" layoutY="384.0" mnemonicParsing="false" onAction="#SelectTest" text="Check result" />
+      <Label layoutX="213.0" layoutY="275.0" text="Report">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labelReport" alignment="TOP_LEFT" layoutX="44.0" layoutY="276.0" prefHeight="95.0" prefWidth="276.0" />
-      <TableView fx:id="tableParameter" layoutX="14.0" layoutY="138.0" prefHeight="106.0" prefWidth="76.0">
-          <placeholder>
-              <Label text="" />
-          </placeholder>
-      </TableView>
+      <Label fx:id="labelReport" alignment="TOP_LEFT" layoutX="51.0" layoutY="302.0" prefHeight="95.0" prefWidth="365.0" />
     </children>
 </AnchorPane>

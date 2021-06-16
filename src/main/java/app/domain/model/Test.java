@@ -157,14 +157,14 @@ public class Test implements Serializable, Comparable<Test> {
 
         results = new ArrayList<>();
 
-        this.date = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
+        this.date = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
 
         this.lab=lab;
     }
 
     public void setSampleData(String sampleData) throws ParseException {
         try {
-            this.sampleData = new SimpleDateFormat("dd/MM/yyyy").parse(sampleData);
+            this.sampleData = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(sampleData);
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -409,7 +409,7 @@ public class Test implements Serializable, Comparable<Test> {
         this.ref = getExternalModule().getReferenceValue(tp.getParameter());
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
-        resultRegist = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
+        resultRegist = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
         String testPResult = compareValues(barcode);
         results.add(tp.getTpr().getValue());
         System.out.println(results);
@@ -481,7 +481,7 @@ public class Test implements Serializable, Comparable<Test> {
 
     public void validateTest(String data) throws IOException, ParseException {
 
-        validationDate = new SimpleDateFormat("dd/MM/yyyy").parse(data);;
+        validationDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
         client.notifyClient();
 
     }
