@@ -29,7 +29,7 @@ public class Report implements Serializable {
     }
     public Report(String diagnosis, String data) throws ParseException {
         this.diagnosis = diagnosis;
-        this.createdAt = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+        this.createdAt = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
     }
 
     /**

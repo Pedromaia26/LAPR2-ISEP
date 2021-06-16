@@ -18,7 +18,7 @@
       </LineChart>
       <Label layoutX="463.0" layoutY="80.0" text="Number of Tests Registed:" />
       <Label layoutX="409.0" layoutY="130.0" text="Number of tests already with results:" />
-      <Label layoutX="503.0" layoutY="174.0" text="Number of Clients:" />
+      <Label layoutX="551.0" layoutY="174.0" text="Max Sum:" />
       <Label fx:id="testReg" layoutX="631.0" layoutY="80.0" />
       <Label fx:id="testVal" layoutX="628.0" layoutY="130.0" prefHeight="17.0" prefWidth="0.0" />
       <Label fx:id="nClient" layoutX="625.0" layoutY="174.0" />

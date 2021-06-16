@@ -77,8 +77,8 @@ public class LabCordController {
 
     }
 
-    public void overview(ActionEvent actionEvent) {
-        try {
+    public void overview(ActionEvent actionEvent) throws IOException {
+       // try {
             stage = (Stage) anchorPane.getScene().getWindow();
 
             System.out.println("closed");
@@ -95,9 +95,9 @@ public class LabCordController {
 
 
             stage2.show();
-        }catch (Exception e){
+       /* }catch (Exception e){
             System.out.println("Fail Opening the OverView window");
-        }
+        }*/
 
     }
 }

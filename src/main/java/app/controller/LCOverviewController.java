@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
@@ -21,10 +18,7 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class LCOverviewController implements Initializable{
    // private static List<Sequence> diff;
@@ -65,6 +59,11 @@ public class LCOverviewController implements Initializable{
 
     private static List<Sequence> testByValDay = new ArrayList<>();
 
+    @FXML
+    private ComboBox algorithms;
+
+    private static String algorithm;
+
 
     public LCOverviewController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.company=App.getInstance().getCompany();
@@ -94,12 +93,13 @@ public class LCOverviewController implements Initializable{
         for(Test test : listTests){
 
             if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
-
+                verify30Min(test,1);
                 listTestsinRegDateRange.add(test);
             }
 
             if ((test.getResultRegist().toInstant().equals(startDate.toInstant()) || test.getResultRegist().toInstant().equals(endDate.toInstant()) )|| (test.getResultRegist().toInstant().isAfter(startDate.toInstant())&& test.getResultRegist().toInstant().isBefore(endDate.toInstant()))){
 
+                verify30Min(test,2);
                 listTestsinValDateRange.add(test);
             }
 
@@ -110,10 +110,16 @@ public class LCOverviewController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
 
+        Locale.setDefault(Locale.ENGLISH);
+
         for(TestDTO testDTO : getTests()){
             listView.getItems().add(testDTO.getCode());
 
         }
+
+        algorithms.getItems().add("Brute Force");
+
+        algorithms.getItems().add("Benchmark");
 
 
     }
@@ -293,19 +299,26 @@ public class LCOverviewController implements Initializable{
 
 
             while ((sequences.size()!=0 && sequences2.size()!=0) && sequences.get(0).getDate()!=null && sequences2.get(i).getDate()!=null && sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())) {
+                System.out.println("c");
+                System.out.println(sequences2);
 
 
-
-                diff.add(new Sequence(sequences2.get(i).getDate(),sequences2.get(i).getNumber() - sequences.get(0).getNumber()));
+                diff.add(new Sequence(sequences2.get(i).getDate(),sequences.get(0).getNumber()-sequences2.get(i).getNumber()));
                 sequences.remove(0);
                 sequences2.remove(i);
 
             }
             i=0;
 
-            while ((sequences.size()!=0 && sequences2.size()!=0) && i<sequences2.size() &&!sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())){
+            while ((sequences.size()!=0 && sequences2.size()!=0) && i<sequences2.size() && !sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())){
 
                 i++;
+                if(i!=sequences2.size()){
+
+                    System.out.println(sequences2.get(i).getDate());
+
+                }
+
             }
             if(i==sequences2.size()){
 
@@ -314,28 +327,38 @@ public class LCOverviewController implements Initializable{
             }
 
 
+            if((sequences.size()!=0 && sequences2.size()!=0) && sequences.get(0).getDate()!=null && sequences2.get(i).getDate()!=null && !sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())){
+                diff.add(new Sequence(sequences.get(0).getDate(),sequences.get(0).getNumber()));
+                sequences.remove(0);
+            }
 
 
-            while ((sequences.size()!=0 && sequences2.size()!=0) && sequences.get(0).getDate()!=null && sequences2.get(i).getDate()!=null && !sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())){
+           /* while ((sequences.size()!=0 && sequences2.size()!=0) && sequences.get(0).getDate()!=null && sequences2.get(i).getDate()!=null && !sequences.get(0).getDate().toString().equals(sequences2.get(i).getDate().toString())){
+                System.out.println("b");
+                System.out.println(sequences);
+                System.out.println(sequences2);
 
-
-                if(sequences.get(0).getDate().toInstant().isBefore(sequences2.get(i).getDate().toInstant())){
 
                     diff.add(new Sequence(sequences.get(0).getDate(),-sequences.get(0).getNumber()));
                     sequences.remove(i);
-                }
-                else {
-                    diff.add(new Sequence(sequences2.get(i).getDate(),sequences2.get(i).getNumber()));
-                    sequences2.remove(i);
-                }
+
+                    break;
 
 
 
-            }
+
+
+            }*/
+
             int c=1;
             boolean f;
             while (sequences.size()==0 && sequences2.size()!=0){
+                System.out.println("a");
+                System.out.println(sequences2);
                 while (c<sequences2.size() && !sequences2.get(0).getDate().equals(sequences2.get(c).getDate())){
+                    System.out.println(sequences2.get(0).getDate());
+                    System.out.println(sequences2.get(c).getDate());
+                    System.out.println();
                         c++;
 
                 }
@@ -344,23 +367,18 @@ public class LCOverviewController implements Initializable{
                 }
                 else  f = true;
                 if(f){
-                    diff.add(new Sequence(sequences2.get(0).getDate(),sequences2.get(0).getNumber()+sequences2.get(c).getNumber()));
+
+                    diff.add(new Sequence(sequences2.get(0).getDate(),-(sequences2.get(0).getNumber()+sequences2.get(c).getNumber())));
                     sequences2.remove(0);
                     sequences2.remove(c-1);
                 }
                 else {
-                    diff.add(new Sequence(sequences2.get(0).getDate(),sequences2.get(0).getNumber()));
+                    diff.add(new Sequence(sequences2.get(0).getDate(),-sequences2.get(0).getNumber()));
                     sequences2.remove(0);
                 }
                 c=1;
             }
 
-            while (sequences.size()!=0 && sequences2.size()==0){
-
-                diff.add(new Sequence(sequences.get(0).getDate(),sequences.get(0).getNumber()));
-                sequences.remove(0);
-
-            }
         }
 
 
@@ -390,9 +408,13 @@ public class LCOverviewController implements Initializable{
 
     public void changeDate(ActionEvent actionEvent) {
 
-        if (startDateBox.getValue()!=null && endDateBox.getValue()!=null){
+        if (startDateBox.getValue()!=null && endDateBox.getValue()!=null && !algorithms.getSelectionModel().isEmpty()){
             btnAnalise.setDisable(false);
             btnAnalise.setText("Analise");
+        }
+
+        if (!algorithms.getSelectionModel().isEmpty()){
+            algorithm=algorithms.getValue().toString();
         }
 
     }
@@ -411,5 +433,42 @@ public class LCOverviewController implements Initializable{
 
     public static List<Sequence> getTestValbyDay() {
         return testByValDay;
+    }
+
+    public static String getAlgorithm(){
+        if (algorithm.equals("Brute Force")){
+            return "Domain.MaxSum2";
+        }
+        else {
+            if (algorithm.equals("Benchmark")){
+                return "Domain.MaxSum1";
+            }
+        }
+       // throw new IllegalArgumentException("Error in selecting the algorithm");
+        return "";
+    }
+
+
+
+
+    public void verify30Min(Test test, int num){
+
+            if(num==1){
+                if (test.getDate().getMinutes()<30){
+                    test.getDate().setMinutes(0);
+                }
+                else {
+                    test.getDate().setMinutes(30);
+                }
+            }
+            else {
+                if (test.getResultRegist().getMinutes()<30){
+                    test.getResultRegist().setMinutes(0);
+                }
+                else {
+                    test.getResultRegist().setMinutes(30);
+                }
+            }
+
     }
 }
