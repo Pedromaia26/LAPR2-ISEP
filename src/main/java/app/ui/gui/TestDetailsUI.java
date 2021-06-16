@@ -25,41 +25,40 @@ import java.util.Set;
 public class TestDetailsUI implements Initializable {
 
     @FXML
-    private TableView <Parameter> table1;
+    private TableView <TestResultClient> clientResults;
     @FXML
-    private TableView <ReferenceValue> table2;
+    private TableColumn<TestResultClient, String> parameterColumn;
     @FXML
-    private TableView <TestParameterResult> table3;
+    private TableColumn<TestResultClient, String> minRefValueColumn;
     @FXML
-    private TableColumn<Parameter, String> parameterColumn;
+    private TableColumn<TestResultClient, String> maxRefValueColumn;
     @FXML
-    private TableColumn<ReferenceValue, String> minRefValueColumn;
-    @FXML
-    private TableColumn<ReferenceValue, String> maxRefValueColumn;
-    @FXML
-    private TableColumn<TestParameterResult, Double> valueColumn;
+    private TableColumn<TestResultClient, Double> valueColumn;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-
     }
 
 
-    public ObservableList<Parameter> getParameters(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        ObservableList<Parameter> testParameters = FXCollections.observableArrayList();
+    public ObservableList<TestResultClient> getParameters(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        ObservableList<TestResultClient> testParameters = FXCollections.observableArrayList();
 
         for (TestParameterDto parameters: testDTO.getTestParameterList()){
-            testParameters.add(parameters.getParameterdto());
+            System.out.println("ola");
+            testParameters.add(new TestResultClient(parameters, parameters.getTprdto()));
+        }
+
+        for (TestResultClient t: testParameters){
+            System.out.println(t);
         }
 
         return testParameters;
 
     }
 
-    public ObservableList<ReferenceValue> getReferenceValue(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    /*public ObservableList<ReferenceValue> getReferenceValue(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         ObservableList<ReferenceValue> testParameters = FXCollections.observableArrayList();
 
 
@@ -93,7 +92,7 @@ public class TestDetailsUI implements Initializable {
     private ScrollBar findScrollBar(TableView<?> table)
     {
         return (ScrollBar) table.lookup(".scroll-bar:vertical");
-    }
+    }*/
 
 
     public void initData (TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -101,20 +100,10 @@ public class TestDetailsUI implements Initializable {
         minRefValueColumn.setCellValueFactory(new PropertyValueFactory<>("minimum"));
         maxRefValueColumn.setCellValueFactory(new PropertyValueFactory<>("maximum"));
         valueColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
-        table1.setItems(getParameters(testDTO));
-        table2.setItems(getReferenceValue(testDTO));
-        table3.setItems(getResultValue(testDTO));
-        // synchronize scrollbars (must happen after table was made visible)
-        scrollBar();
+        clientResults.setItems(getParameters(testDTO));
+
     }
 
-    public void scrollBar(){
-        ScrollBar tableParametersScrollBar = findScrollBar(table1);
-        System.out.println(tableParametersScrollBar);
-        ScrollBar referenceValuesScrollBar = findScrollBar(table2);
-        ScrollBar parameterResultScrollBar = findScrollBar(table3);
-        //tableParametersScrollBar.valueProperty().bindBidirectional(parameterResultScrollBar.valueProperty());
-    }
 
 
 }

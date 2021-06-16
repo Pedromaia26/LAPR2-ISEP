@@ -5,7 +5,7 @@ import com.example3.CovidReferenceValues1API;
 public class ExternalModuleAdapter1 implements ExternalModule{
 
 
-    CovidReferenceValues1API covid = new CovidReferenceValues1API();
+    private CovidReferenceValues1API covid = new CovidReferenceValues1API();
 
 
     @Override

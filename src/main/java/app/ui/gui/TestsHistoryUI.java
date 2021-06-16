@@ -31,7 +31,7 @@ public class TestsHistoryUI implements Initializable {
     private Company c;
     private Test test;
     @FXML
-    TableView<TestDTO> testsTable;
+    private TableView<TestDTO> testsTable;
     @FXML
     private TableColumn<TestDTO, String> testColumn;
     @FXML

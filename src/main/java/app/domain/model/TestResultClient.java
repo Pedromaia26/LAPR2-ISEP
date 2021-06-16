@@ -7,11 +7,11 @@ public class TestResultClient {
      */
     private String shortName;
 
-    /**
-     * A reference value.
-     */
-    private ReferenceValue refValue;
+    private Double minimum;
 
+    private Double maximum;
+
+    private String code;
     /**
      * The value of a given parameter.
      */
@@ -22,8 +22,19 @@ public class TestResultClient {
     private String metric;
 
     public TestResultClient(ParameterDTO parameter, TestParameterResultDTO tpresult){
+        code = parameter.getCodeDTO();
         shortName = parameter.getShortName();
-        refValue = tpresult.getRefValue();
+        minimum = tpresult.getRefValue().getMinimum();
+        maximum = tpresult.getRefValue().getMaximum();
+        value = tpresult.getValue();
+        metric = tpresult.getMetric();
+    }
+
+    public TestResultClient(TestParameterDto parameter, TestParameterResult tpresult){
+        code = parameter.getParameterdto().getCode();
+        shortName = parameter.getParameterdto().getShortName();
+        minimum = tpresult.getRefValue().getMinimum();
+        maximum = tpresult.getRefValue().getMaximum();
         value = tpresult.getValue();
         metric = tpresult.getMetric();
     }
@@ -32,12 +43,32 @@ public class TestResultClient {
         return shortName;
     }
 
-    public ReferenceValue getRefValue() {
-        return refValue;
+    public Double getMinimum() {
+        return minimum;
+    }
+
+    public Double getMaximum() {
+        return maximum;
     }
 
     public Double getValue() {
         return value;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public String toString() {
+        return "TestResultClient{" +
+                "shortName='" + shortName + '\'' +
+                ", minimum=" + minimum +
+                ", maximum=" + maximum +
+                ", code='" + code + '\'' +
+                ", value=" + value +
+                ", metric='" + metric + '\'' +
+                '}';
     }
 
     public String getMetric() {
