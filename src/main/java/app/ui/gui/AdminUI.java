@@ -2,6 +2,7 @@ package app.ui.gui;
 
 import app.controller.App;
 import app.controller.NHSReportController;
+import app.controller.SendReportController;
 import app.domain.model.TestStore;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +24,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class AdminUI implements Initializable {
@@ -57,7 +59,7 @@ public class AdminUI implements Initializable {
     private DatePicker currentDay;
 
 
-    private NHSReportController controller = new NHSReportController();
+    private SendReportController controller = new SendReportController();
 
     public TestStore testStore = App.getInstance().getCompany().getTestStore();
 
@@ -84,6 +86,8 @@ public class AdminUI implements Initializable {
         signifLevelLabel.setVisible(false);
         confidLevelLabel.setVisible(false);
         histPointsLabel.setVisible(false);
+        Locale.setDefault(Locale.ENGLISH);
+
 
 
         dataComboBox.setItems(dataNHS);
@@ -197,16 +201,19 @@ public class AdminUI implements Initializable {
         Integer hP = Integer.parseInt(histPts);
 
 
-        Date actualDate = new SimpleDateFormat("dd/MM/yyyy").parse(currentDay.getValue().format(formatter));
+        Date currentDate = new SimpleDateFormat("dd/MM/yyyy").parse(currentDay.getValue().format(formatter));
         Date startDate=new SimpleDateFormat("dd/MM/yyyy").parse(begin.getValue().format(formatter));
         Date endDate=new SimpleDateFormat("dd/MM/yyyy").parse(end.getValue().format(formatter));
 
         // controller.getTestsByInterval(startDate, endDate);
       //testStore.getPositiveTestsPerDay(startDate, endDate);
 
-        testStore.covidTestsLinearRegression(startDate, endDate);
-        testStore.positiveCovidTestsLinearRegression(startDate, endDate);
-        testStore.getCovidTestsPerDay(actualDate, hP);
+
+        if(dataComboBox.getSelectionModel().getSelectedItem().equals("Days")){
+            controller.getReportForDays(startDate, endDate, currentDate, hP);
+        }else if(dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")){
+            controller.getReportForWeeks(startDate, endDate, currentDate, hP);
+        }
 
 
     }

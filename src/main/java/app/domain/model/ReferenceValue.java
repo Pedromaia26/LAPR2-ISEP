@@ -28,10 +28,7 @@ public class ReferenceValue implements Serializable {
 
     @Override
     public String toString() {
-        return "ReferenceValue{" +
-                "minimum=" + minimum +
-                ", maximum=" + maximum +
-                ", metric='" + metric + '\'' +
-                '}';
+        return "Minimum=" + minimum +
+                ", Maximum=" + maximum;
     }
 }

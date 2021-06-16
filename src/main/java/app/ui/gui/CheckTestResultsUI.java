@@ -29,27 +29,21 @@ import java.util.Set;
 public class CheckTestResultsUI implements Initializable {
 
     @FXML
-    ListView<String> listTests = new ListView<>();
+    private ListView<String> listTests = new ListView<>();
 
     @FXML
-    TableView<TestParameterResultDTO> tableResults = new TableView<>();
+    private TableView<TestResultClient> tableResults = new TableView<>();
 
     @FXML
-    TableView<ParameterDTO> tableParameter = new TableView<>();
+    private Label labelUserName = new Label();
 
     @FXML
-    Label labelUserName = new Label();
+    private Label labelReport = new Label();
 
-    @FXML
-    Label labelReport = new Label();
-
-    Stage stage;
+    private Stage stage;
 
     @FXML
     private AnchorPane anchorpane;
-
-    @FXML
-    private ScrollBar scroll;
 
     private List<TestDTO> clientTests = new ArrayList<>();
 
@@ -74,27 +68,28 @@ public class CheckTestResultsUI implements Initializable {
             listTests.getItems().add(test.getCode() + " - " + test.getDate());
         }
 
-        TableColumn<ParameterDTO, String> parameter = new TableColumn<>("Parameter");
+        TableColumn<TestResultClient, String> parameter = new TableColumn<>("Parameter");
         parameter.setCellValueFactory(new PropertyValueFactory<>("shortName"));
+        parameter.setPrefWidth(90);
+        parameter.setResizable(false);
 
-        TableColumn<TestParameterResultDTO, String> value = new TableColumn<>("Value");
+        TableColumn<TestResultClient, String> value = new TableColumn<>("Value");
         value.setCellValueFactory(new PropertyValueFactory<>("value"));
-        value.setPrefWidth(75);
+        value.setPrefWidth(90);
         value.setResizable(false);
 
-        TableColumn<TestParameterResultDTO, String> referenceValue = new TableColumn<>("Reference Value");
+        TableColumn<TestResultClient, String> referenceValue = new TableColumn<>("Reference Value");
         referenceValue.setCellValueFactory(new PropertyValueFactory<>("refValue"));
-        referenceValue.setPrefWidth(120);
+        referenceValue.setPrefWidth(220);
         referenceValue.setResizable(false);
 
-        TableColumn<TestParameterResultDTO, String> metric = new TableColumn<>("Metric");
+        TableColumn<TestResultClient, String> metric = new TableColumn<>("Metric");
         metric.setCellValueFactory(new PropertyValueFactory<>("metric"));
-        metric.setPrefWidth(75);
+        metric.setPrefWidth(90);
         metric.setResizable(false);
 
-        tableParameter.getColumns().add(parameter);
 
-        tableResults.getColumns().addAll(value, referenceValue, metric);
+        tableResults.getColumns().addAll(parameter, value, referenceValue, metric);
 
         labelUserName.setText(checkTestResultsController.getUserName());
     }
@@ -105,23 +100,17 @@ public class CheckTestResultsUI implements Initializable {
     }
 
     public void SelectTest(ActionEvent event){
-        ScrollBar TableResultsScrollBar = findScrollBar(tableResults);
-        ScrollBar TableParameterScrollBar = findScrollBar(tableParameter);
-        TableResultsScrollBar.valueProperty().bindBidirectional(TableParameterScrollBar.valueProperty());
-        ScrollBar scrollBarH = (ScrollBar) tableParameter.lookup(".scroll-bar:vertical");
         ScrollBar scrollBarH1 = (ScrollBar) tableResults.lookup(".scroll-bar:horizontal");
-        ScrollBar scrollBarV = (ScrollBar) tableParameter.lookup(".scroll-bar:horizontal");
-        scrollBarH.setVisible(false);
         scrollBarH1.setVisible(false);
-        scrollBarV.setVisible(false);
         int index = 0;
         String code = listTests.getSelectionModel().getSelectedItems().get(0);
         String[] array = code.split(" - ");
         report = checkTestResultsController.getTestReport(array[0]);
         ltestParameterDto = checkTestResultsController.getTestParameter(array[0]);
+        TestResultClient trClient;
         for (TestParameterDto testParameterDto : ltestParameterDto){
-            tableParameter.getItems().add(checkTestResultsController.getParameter(testParameterDto));
-            tableResults.getItems().add(checkTestResultsController.getResults(testParameterDto));
+            trClient = new TestResultClient(checkTestResultsController.getParameter(testParameterDto), checkTestResultsController.getResults(testParameterDto));
+            tableResults.getItems().add(trClient);
             index++;
         }
 
