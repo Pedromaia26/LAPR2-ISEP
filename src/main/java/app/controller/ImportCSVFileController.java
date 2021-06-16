@@ -22,6 +22,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -93,20 +94,65 @@ public class ImportCSVFileController{
             System.out.println(file.getAbsolutePath());
             String line = "";
             String splitBy = ";";
+            parameters = new ArrayList<>();
 
             try
             {
             //parsing a CSV file into BufferedReader class constructor
 
                 BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
-                br.readLine();
+                line=br.readLine();
+
+                String[] header = line.split(splitBy);
+
+                List<String> parameterstest=new ArrayList<>();
+                List<Integer> parametersIndextest=new ArrayList<>();
+                List<Integer> parameterCategorytest=new ArrayList<>();
+                List<String> invalidParameters= new ArrayList<>();
+
+
+                System.out.println(Arrays.toString(header));
+
+                for (int i=1; i< header.length;i++){
+
+                    if (header[i-1].equalsIgnoreCase("Category")){
+                        parameterCategorytest.add(i-1);
+                        while (!header[i].equalsIgnoreCase("Category") && !header[i].equalsIgnoreCase("Test_Reg_DateHour")){
+                            parameterstest.add(header[i]);
+                            parametersIndextest.add(i);
+                            i++;
+                            System.out.println(i);
+                        }
+
+                    }
+
+                }
+
+                System.out.println(parameterstest);
+
+                int j=0;
+                while (j<parameterstest.size()){
+                    try {
+                        this.parameters.add(parameterStore.getParameterByCode(parameterstest.get(j)));
+
+
+                    }catch (Exception e){
+                        invalidParameters.add(parameterstest.get(j));
+
+                    }
+                    j++;
+                }
+
+                System.out.println(invalidParameters);
+
+
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
                     try {
                         cont++;
                         String[] tests = line.split(splitBy);    // use comma as separator
                         parameterCategory = new ArrayList<>();
-                        parameters = new ArrayList<>();
+
                         //Nao utilizar code, Gerado automaticamente
 
                         DecimalFormat df = new DecimalFormat("0000000000000000");
@@ -116,26 +162,20 @@ public class ImportCSVFileController{
 
                         this.testType = testTypeStore.getTestTypeByDescription(tests[11]);
 
+                        j=0;
+                        while (j<parameterCategorytest.size()){
+                            try {
 
 
-                        if (testType.getDescription().equalsIgnoreCase("covid")) {
-                            this.parameterCategory.add(parameterCategoryStore.getParameterCategoryByDescription(tests[19]));
-                            this.parameters.add(parameterStore.getParameterByCode("IgGAN"));
+                                if (!tests[parameterCategorytest.get(j)].equalsIgnoreCase("NA")) {
+                                    this.parameterCategory.add(parameterCategoryStore.getParameterCategoryByDescription(tests[parameterCategorytest.get(j)]));
+                                }
 
-                        } else {
-                            this.parameterCategory.add(parameterCategoryStore.getParameterCategoryByDescription(tests[12]));
-
-                            this.parameters.add(parameterStore.getParameterByCode("HB000"));
-                            this.parameters.add(parameterStore.getParameterByCode("WBC00"));
-                            this.parameters.add(parameterStore.getParameterByCode("PLT00"));
-                            this.parameters.add(parameterStore.getParameterByCode("RBC00"));
-
-                            this.parameterCategory.add(parameterCategoryStore.getParameterCategoryByDescription(tests[17]));
-
-                            this.parameters.add(parameterStore.getParameterByCode("HDL00"));
-
+                            }catch (Exception e){
+                                System.out.println("Couldn't add this Parameter Category");
+                            }
+                            j++;
                         }
-
 
 
                         //Fazer com ligacao a store
@@ -162,49 +202,44 @@ public class ImportCSVFileController{
 
 
 
-                        Test newtest = testStore.createTest(this.company, this.client, tests[1], labOrder, laboratory, tests[21]);
+
+                        Test newtest = testStore.createTest(this.company, this.client, tests[1], labOrder, laboratory, tests[parametersIndextest.get(parametersIndextest.size()-1)+1]);
 
 
 
                         Sample sample = newtest.RecordNewSample(this.company);
 
-                        newtest.saveSample(sample, this.company, tests[21]);
+                        newtest.saveSample(sample, this.company, tests[parametersIndextest.get(parametersIndextest.size()-1)+1]);
 
 
 
-
-                        //Alterar para analisar todas as samples de uma vez para cada parametro(Info do stor)
-                        System.out.println(testType.getDescription());
-                        if (testType.getDescription().equalsIgnoreCase("covid")) {
-
-                            String r1 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(0).getCode(), Double.parseDouble(tests[20].replace("," , ".")), "Index (S/C) Value", tests[22]);
-
-                            newtest.saveTestParameterResult(r1);
-
-                        } else {
-
-
-                            String r1 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(0).getCode(), Double.parseDouble(tests[13].replace("," , ".")), "g/L", tests[22]);
-                            String r2 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(1).getCode(), Double.parseDouble(tests[14].replace("," , ".")), "10e9L", tests[22]);
-                            String r3 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(2).getCode(), Double.parseDouble(tests[15].replace("," , ".")), "10e9L", tests[22]);
-                            String r4 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(3).getCode(), Double.parseDouble(tests[16].replace("," , ".")), "10e12L", tests[22]);
-                            newtest.saveTestParameterResult(r1);
-                            newtest.saveTestParameterResult(r2);
-                            newtest.saveTestParameterResult(r3);
-                            newtest.saveTestParameterResult(r4);
+                        j=0;
+                        System.out.println(parametersIndextest);
+                        while (j<parameterstest.size()){
+                            try {
+                                if (!tests[parametersIndextest.get(j)].equalsIgnoreCase("NA")) {
+                                    if (!invalidParameters.contains(parameterstest.get(j))) {
+                                        String r1 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(j).getCode(), Double.parseDouble(tests[parametersIndextest.get(j)].replace(",", ".")), newtest.getExternalModule().getReferenceValue(newtest.getTestParameterFor(parameters.get(j).getCode()).getParameter()).getMetric(), tests[parametersIndextest.get(parametersIndextest.size() - 1) + 2]);
+                                        newtest.saveTestParameterResult(r1);
+                                    }
+                                }
 
 
+                            }catch (Exception e){
+                                System.out.println("Couldn't analise this parameter");
+                            }
+                            j++;
                         }
 
-                        if (!tests[23].equals("NA")) {
-                            newtest.addReport("Default", tests[23]);
+                        if (!tests[parametersIndextest.get(parametersIndextest.size()-1)+3].equals("NA")) {
+                            newtest.addReport("Default", tests[parametersIndextest.get(parametersIndextest.size()-1)+3]);
                         }
                         System.out.println(tests[23]);
                         System.out.println(newtest.getDate());
 
 
-                        if (!tests[24].equals("NA")) {
-                            newtest.validateTest(tests[24]);
+                        if (!tests[parametersIndextest.get(parametersIndextest.size()-1)+4].equals("NA")) {
+                            newtest.validateTest(tests[parametersIndextest.get(parametersIndextest.size()-1)+4]);
                         }
 
                         testStore.saveTest(newtest);
@@ -226,6 +261,7 @@ public class ImportCSVFileController{
         System.out.println(c);
 
         }catch (Exception e){
+            System.out.println(e);
             per.setText("No file selected");
         }
     }

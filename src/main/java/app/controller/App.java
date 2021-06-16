@@ -143,6 +143,8 @@ public class App {
 
         Parameter p6 = new Parameter("IgGAN", "test", "IgGAN", pc3);
 
+        Parameter p7 = new Parameter("MCV00", "test", "MCV00", pc1);
+
 
 
         this.getCompany().getParameterStore().saveParameter(p1);
@@ -151,6 +153,8 @@ public class App {
         this.getCompany().getParameterStore().saveParameter(p4);
         this.getCompany().getParameterStore().saveParameter(p5);
         this.getCompany().getParameterStore().saveParameter(p6);
+        this.getCompany().getParameterStore().saveParameter(p7);
+
 
         List<Parameter> parameterForCovid = new ArrayList<>();
         parameterForCovid.add(p6);
