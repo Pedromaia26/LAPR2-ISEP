@@ -21,7 +21,7 @@ public class TestTest {
     @Test
     public void getSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
         Company c = new Company("ManyLabs");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -80,7 +80,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -130,7 +130,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -175,7 +175,7 @@ public class TestTest {
 
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
 
@@ -225,7 +225,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -272,7 +272,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -320,7 +320,7 @@ public class TestTest {
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
         c.getParameterCategoryStore().addToList(pc2);
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         List<ParameterCategory> listPC = new ArrayList<>();
         ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
@@ -369,7 +369,7 @@ public class TestTest {
 
         param.add(p);
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
         ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
         c.getParameterCategoryStore().addToList(pc1);
@@ -419,7 +419,7 @@ public class TestTest {
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
         Parameter p = new Parameter("01981", "aa", "blood", pc);
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         List<Parameter> param = new ArrayList<>();
 
         param.add(p);
@@ -473,7 +473,7 @@ public class TestTest {
         Company c = new Company("Many Labs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         List<ParameterCategory> listPC = new ArrayList<>();
 
@@ -505,7 +505,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -540,7 +540,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -575,7 +575,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",123456789L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -610,7 +610,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",12345678901L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",12345678901L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -645,7 +645,7 @@ public class TestTest {
     public void testValidateTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, ParseException, BarcodeException, OutputException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -685,7 +685,7 @@ public class TestTest {
     public void testGetDateEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -723,7 +723,7 @@ public class TestTest {
     public void testGetDateNotEquals() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
@@ -762,7 +762,7 @@ public class TestTest {
 
         Company c = new Company("Many Labs");
 
-        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");

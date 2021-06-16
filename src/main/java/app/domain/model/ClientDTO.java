@@ -34,6 +34,8 @@ public class ClientDTO {
      */
     private long phoneNumber;
 
+    private String address;
+
     /**
      * Regists a clientDTO, receiving by parameter The Citizen Card Number, The National Health Service Number,
      * The date of birth, The sex of a client, The Tax Identification Number, The email of a client, The name of a client, The Phone Number of a client.
@@ -49,7 +51,7 @@ public class ClientDTO {
      * @param phoneNumber The Phone Number of a client
      */
 
-    public ClientDTO(String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
+    public ClientDTO(String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber, String adress) {
         this.ccn = ccn;
         this.nhs = nhs;
         this.birth = birth;
@@ -58,7 +60,9 @@ public class ClientDTO {
         this.email = email;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.address=adress;
     }
+
     /**
      * Regists a clientDTO, receiving by parameter client
      * @param client The Citizen Card Number
@@ -72,6 +76,7 @@ public class ClientDTO {
         this.name=client.getName();
         this.phoneNumber= client.getPhoneNumber();
         this.tif=client.getTif();
+        this.address=client.getAddress();
     }
 
 
@@ -132,6 +137,11 @@ public class ClientDTO {
     public long getPhoneNumberDto() {
         return phoneNumber;
     }
+
+    public String getAddressDto() {
+        return address;
+    }
+
     /**
      * Returns the textual description of a clientDTO.
      * @return characteristics of a clientDTO.

@@ -28,8 +28,9 @@ public class ClientMapper{
         String email = dto.getEmailDto();
         String name = dto.getNameDto();
         long phoneNumber = dto.getPhoneNumberDto();
+        String adress= dto.getAddressDto();
 
-        return new Client(ccn, nhs, birth, sex, tif, email, name, phoneNumber);
+        return new Client(ccn, nhs, birth, sex, tif, email, name, phoneNumber,adress);
 
 
     }

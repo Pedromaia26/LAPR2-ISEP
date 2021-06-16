@@ -120,7 +120,7 @@ public class Graphs implements Initializable {
 
 
         }catch (Exception e){
-            System.out.println("There are no tests");
+            throw new IllegalArgumentException("There are no tests");
         }
     }
 

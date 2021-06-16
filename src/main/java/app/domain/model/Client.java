@@ -55,6 +55,8 @@ public class Client implements Serializable {
      */
     private String password;
 
+    private String address;
+
 
 
 
@@ -72,7 +74,7 @@ public class Client implements Serializable {
      * @param name The name of a client
      * @param phoneNumber The Phone Number of a client
      */
-    public Client (String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber) {
+    public Client (String ccn, long nhs, String birth, String sex, long tif, String email, String name, long phoneNumber, String address) {
 
         if (String.valueOf(ccn).length()!=16)
             throw new IllegalArgumentException("Citizen Card Number must be 16 characters long");
@@ -133,6 +135,8 @@ public class Client implements Serializable {
 
         this.birth=birth;
 
+        this.address=address;
+
     }
 
     /**
@@ -185,7 +189,7 @@ public class Client implements Serializable {
             return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return Objects.equals(ccn, client.ccn) && Objects.equals(nhs, client.nhs) && Objects.equals(birth, client.birth) && Objects.equals(sex, client.sex) && Objects.equals(tif, client.tif) && Objects.equals(email, client.email) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(name, client.name);
+        return this.getCcn().equals((client).getCcn()) || this.getNhs()==((client).getNhs()) || this.getTif()==((client).getTif()) || this.getEmail().getEmail().equals((client).getEmail().getEmail()) || this.getPhoneNumber()==(client).getPhoneNumber();
     }
 
     /**
@@ -254,6 +258,10 @@ public class Client implements Serializable {
         return phoneNumber;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     /**
      * Notify the client that the test is available in the system.
      */
@@ -307,6 +315,7 @@ public class Client implements Serializable {
         this.name = name;
     }
 
-
-
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

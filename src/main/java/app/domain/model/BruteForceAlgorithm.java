@@ -16,7 +16,7 @@ public class BruteForceAlgorithm {
 
             int sum = 0;
 
-            for (int j = 0; j < array.length; j++) {
+            for (int j = i; j < array.length; j++) {
 
                 sum += array[j];
 
@@ -30,11 +30,15 @@ public class BruteForceAlgorithm {
 
         }
         int[] result = new int[end - begin];
-        int c = 0;
-        for (int i = begin; i < end; i++) {
-            result[c] = array[i];
-            c++;
+        if (maxSum>0) {
+
+            int c = 0;
+            for (int i = begin; i < end; i++) {
+                result[c] = array[i];
+                c++;
+            }
         }
+        else return new int[0];
         System.out.println(":)");
         return result;
     }

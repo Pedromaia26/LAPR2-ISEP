@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="499.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
+<AnchorPane prefHeight="499.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
    <children>
       <LineChart fx:id="graph" layoutY="50.0" prefHeight="400.0" prefWidth="411.0">
         <xAxis>
@@ -19,8 +17,8 @@
       <Label layoutX="463.0" layoutY="80.0" text="Number of Tests Registed:" />
       <Label layoutX="409.0" layoutY="130.0" text="Number of tests already with results:" />
       <Label layoutX="551.0" layoutY="174.0" text="Max Sum:" />
-      <Label fx:id="testReg" layoutX="631.0" layoutY="80.0" />
-      <Label fx:id="testVal" layoutX="628.0" layoutY="130.0" prefHeight="17.0" prefWidth="0.0" />
-      <Label fx:id="nClient" layoutX="625.0" layoutY="174.0" />
+      <Label fx:id="testReg" layoutX="631.0" layoutY="80.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label fx:id="testVal" layoutX="628.0" layoutY="130.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label fx:id="nClient" layoutX="625.0" layoutY="174.0" prefHeight="17.0" prefWidth="140.0" />
    </children>
 </AnchorPane>
