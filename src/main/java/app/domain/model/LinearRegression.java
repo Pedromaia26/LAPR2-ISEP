@@ -3,6 +3,7 @@ package app.domain.model; /*****************************************************
  *  Simple linear regression.
  ******************************************************************************/
 
+import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 
 /**
@@ -29,6 +30,7 @@ public class LinearRegression {
     private final double ssr;
     private final double svar;
     private TDistribution tDistribution;
+    private FDistribution fDistribution;
 
 
 
@@ -221,6 +223,13 @@ public class LinearRegression {
     public int getDegressOfFreedom() {
         return degressOfFreedom;
     }
+
+//    public void decisionFDist(double sL){
+//        FDistribution fDistribution = new FDistribution(1, getDegressOfFreedom());;
+//        if(0>fDistribution.inverseCumulativeProbability(1-sL)){
+//            return ""
+//        }
+//    }
 
 }
 

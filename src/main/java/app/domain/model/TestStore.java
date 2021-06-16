@@ -171,9 +171,6 @@ public class TestStore {
 
     }
 
-    public String getReportNHS(){
-        return reportNHS;
-    }
 
     public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
@@ -347,8 +344,7 @@ public class TestStore {
         }
 
 
-    public List<Date> getCovidTestsPerDay(Date currentDate, int hP){
-        reportNHS = "";
+    public String getCovidTestsPerDay(Date currentDate, int hP, String report, double[] predict){
         List<Date> dayList = new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
@@ -402,17 +398,18 @@ public class TestStore {
 
 
         for (int i = 0; i < c.length; i++) {
-            reportNHS += String.format("Number of positive Covid-19 tests at %s: %d \n", formatter.format(dateList.get(i)), c[i]);
+            report += String.format("%-30s %-20s \n" , formatter.format(dateList.get(i)), c[i]);
 //            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
 //            System.out.println(c[i]);
         }
-        reportNHS+= "\n";
-        return dateList;
+        report+= "\n";
+        return report;
+
+
     }
 
     public void getCovidTestsPerWeek(Date currentDate, int hP){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        reportNHS = "";
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
         int numOfPositiveTests;
