@@ -47,7 +47,7 @@ public class LinearRegressionMain {
         System.out.printf("T_%.3f =  \n", regression.obs(sL));
         System.out.printf("s2: %.4f\n", regression.S2());
         System.out.printf("tb: %.4f\n", regression.Tb());
-        System.out.printf("Decision: %s\n", regression.decisao(sL));
+        System.out.printf("Decision: %s\n", regression.decision(sL));
 
         System.out.println("-----------------------");
 
