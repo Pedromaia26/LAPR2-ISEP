@@ -111,8 +111,6 @@ public class ImportCSVFileController{
 
                         DecimalFormat df = new DecimalFormat("0000000000000000");
 
-                        double valor = Double.parseDouble(tests[13].replace("," , "."));
-
 
                         //System.out.println("Tests :[Code=" + tests[0] + ", NhsCode=" + tests[1] + ", LabID=" + tests[2] + ", CCN=" + tests[3] + ", NHS=" + tests[4] +", TIN=" + tests[5] +", BirthDay=" + tests[6] +", PN=" + tests[7] +", Name=" + tests[8] +", Email=" + tests[9] +", Address=" + tests[10] +", TestType=" + tests[11] + ", Category=" + tests[12] + ", HB000=" + tests[13] +", WBC00=" + tests[14] + ", PLT00=" + tests[15] + ", RBC00=" + tests[16] +", Category=" + tests[17] + ", HDL00=" + tests[18] +", Category=" + tests[19] + ", IgGAN=" + tests[20] +", TestRegDat=" + tests[21] + ", TestChemDate=" + tests[22] + ", TestDocDate=" + tests[23] +", TestValDate=" + tests[24] +"]");
 
@@ -151,9 +149,15 @@ public class ImportCSVFileController{
                         if (clientStore.getClientByCcn(df.format(Long.parseLong(tests[3])))) {
                             this.client = clientStore.getClientByEmail(tests[9]);
                         } else {
-                            ClientDTO clientDTO = new ClientDTO((df.format(Long.parseLong(tests[3]))), Long.parseLong(tests[4]), tests[6], "Undifined", Long.parseLong(tests[5]), tests[9], tests[8], Long.parseLong(tests[7]));
+                            ClientDTO clientDTO = new ClientDTO((df.format(Long.parseLong(tests[3]))), Long.parseLong(tests[4]), tests[6], "Undifined", Long.parseLong(tests[5]), tests[9], tests[8], Long.parseLong(tests[7]), tests[10]);
+                            System.out.println("a");
                             this.client = clientStore.createNewClient(clientDTO);
-                            clientStore.addNewClient(client);
+                            if(clientStore.addNewClient(client)) {
+                                clientStore.addUser(company);
+                            }
+                            else {
+                                throw new IllegalArgumentException("Couldn't create this client");
+                            }
                         }
 
 
@@ -170,15 +174,14 @@ public class ImportCSVFileController{
 
 
                         //Alterar para analisar todas as samples de uma vez para cada parametro(Info do stor)
-
+                        System.out.println(testType.getDescription());
                         if (testType.getDescription().equalsIgnoreCase("covid")) {
+
                             String r1 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(0).getCode(), Double.parseDouble(tests[20].replace("," , ".")), "Index (S/C) Value", tests[22]);
 
                             newtest.saveTestParameterResult(r1);
 
                         } else {
-
-
 
 
                             String r1 = newtest.addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(0).getCode(), Double.parseDouble(tests[13].replace("," , ".")), "g/L", tests[22]);

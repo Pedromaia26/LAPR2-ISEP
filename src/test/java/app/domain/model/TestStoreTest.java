@@ -20,7 +20,7 @@ public class TestStoreTest {
         Company c= new Company("ManyLabs");
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
         ParameterCategory pc2 = new ParameterCategory("hemogram23", "09091");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         Parameter p = new Parameter("01981", "aa", "blood", pc);
         Parameter p1 = new Parameter("8ika1", "bb", "sangue", pc);

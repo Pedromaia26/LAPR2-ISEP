@@ -10,9 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
@@ -21,7 +23,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 
-import java.io.IOException;
 import java.util.ResourceBundle;
 
 public class AlterClientDataController implements Initializable {
@@ -37,13 +38,8 @@ public class AlterClientDataController implements Initializable {
     @FXML
     private Button changeName;
     @FXML
-    private Button changeEmail;
+    private Button changeAddress;
 
-    @FXML
-    private Button changeCcn;
-
-    @FXML
-    private Button changeNhs;
 
     @FXML
     private Button changeSex;
@@ -51,45 +47,69 @@ public class AlterClientDataController implements Initializable {
     @FXML
     private Button changePn;
 
-    @FXML
-    private Button changeBd;
 
-    @FXML
-    private Button changeTin;
 
-    @FXML
-    private Button changePw;
+
+
+
     @FXML
     private TextField txtChangeName;
 
     @FXML
-    private TextField txtChangeCCN;
+    private TextField txtChangeAddress;
 
-    @FXML
-    private TextField txtChangeTIN;
-
-    @FXML
-    private TextField txtChangeNHS;
 
     @FXML
     private TextField txtChangeSex;
 
-    @FXML
-    private TextField txtChangeEmail;
 
     @FXML
     private TextField txtChangePN;
 
-    @FXML
-    private TextField txtChangeBD;
-
-    @FXML
-    private TextField txtChangePW;
 
     Stage stage;
 
     @FXML
     private AnchorPane anchorpane;
+
+    @FXML
+    private Label showName;
+
+    @FXML
+    private Label showAddress;
+
+    @FXML
+    private Label showSex;
+
+    @FXML
+    private Label showPN;
+
+    @FXML
+    private Label showCCN;
+
+    @FXML
+    private Label showTIN;
+
+    @FXML
+    private Label showBirth;
+
+    @FXML
+    private Label showNHS;
+
+    @FXML
+    private Label showEmail;
+
+    @FXML
+    private Label confirmSex;
+
+    @FXML
+    private Label confirmAddress;
+
+    @FXML
+    private Label confirmName;
+
+    @FXML
+    private Label confirmPN;
 
 
     @Override
@@ -133,50 +153,33 @@ public class AlterClientDataController implements Initializable {
         this.txtChangeName.setDisable(false);
         //this.txtChangeName.setPromptText("this.client.getName()");
 
-        this.txtChangePW.setPromptText(this.client.getPassword());
-        this.txtChangePW.setDisable(false);
+
 
         this.txtChangePN.setPromptText(String.valueOf(this.client.getPhoneNumber()));
         this.txtChangePN.setDisable(false);
 
-        this.txtChangeBD.setPromptText(this.client.getBirth());
-        this.txtChangeBD.setDisable(false);
+
 
         this.txtChangeSex.setPromptText(this.client.getSex());
         this.txtChangeSex.setDisable(false);
 
-        this.txtChangeEmail.setPromptText(this.client.getEmail().getEmail());
-        this.txtChangeEmail.setDisable(false);
-
-        this.txtChangeTIN.setPromptText(String.valueOf(this.client.getTif()));
-        this.txtChangeTIN.setDisable(false);
-
-        this.txtChangeNHS.setPromptText(String.valueOf(this.client.getNhs()));
-        this.txtChangeNHS.setDisable(false);
-
-        this.txtChangeCCN.setPromptText(String.valueOf(this.client.getCcn()));
-        this.txtChangeCCN.setDisable(false);
+        this.txtChangeAddress.setPromptText(this.client.getAddress());
+        this.txtChangeAddress.setDisable(false);
 
 
 
 
 
 
-        this.changePw.setDisable(false);
+
+
 
         this.changePn.setDisable(false);
 
-        this.changeBd.setDisable(false);
+        this.changeAddress.setDisable(false);
 
         this.changeSex.setDisable(false);
 
-        this.changeEmail.setDisable(false);
-
-        this.changeTin.setDisable(false);
-
-        this.changeNhs.setDisable(false);
-
-        this.changeCcn.setDisable(false);
 
         this.changeName.setDisable(false);
 
@@ -188,108 +191,94 @@ public class AlterClientDataController implements Initializable {
 
 
     public void UpdateName(ActionEvent actionEvent) {
+    try {
 
-        String newName= this.txtChangeName.getCharacters().toString();
+        resetConfirms();
+        String newName = this.txtChangeName.getCharacters().toString();
 
-        this.clientStore.ChangeName(this.client,newName);
+        this.clientStore.ChangeName(this.client, newName);
 
         txtChangeName.clear();
         setprompttext();
+        clientStore.save();
+        confirmName.setText("Updated Successfully");
+        confirmName.setTextFill(Paint.valueOf("Green"));
+
+    }catch (Exception e){
+        confirmName.setText("Invalid Name ");
+        confirmName.setTextFill(Paint.valueOf("Red"));
+
+    }
 
 
     }
 
-    public void UpdateCCN(ActionEvent actionEvent) {
+    public void UpdateAdress(ActionEvent actionEvent) {
+        try {
+            resetConfirms();
 
-        String newCcn= this.txtChangeCCN.getCharacters().toString();
+            String newAdress = this.txtChangeAddress.getCharacters().toString();
 
-        this.clientStore.ChangeCCN(this.client,newCcn);
+            this.clientStore.ChangeAddress(this.client, newAdress);
 
-        txtChangeCCN.clear();
-        setprompttext();
+            txtChangeName.clear();
+            clientStore.save();
+            setprompttext();
+            confirmAddress.setText("Updated Successfully");
+            confirmAddress.setTextFill(Paint.valueOf("Green"));
 
-
-    }
-
-    public void UpdateNHS(ActionEvent actionEvent) {
-
-        String newNhs= this.txtChangeNHS.getCharacters().toString();
-
-        this.clientStore.ChangeNHS(this.client,Long.parseLong(newNhs));
-
-        txtChangeNHS.clear();
-        setprompttext();
-
+        }catch (Exception e){
+            confirmAddress.setText("Invalid Address");
+            confirmAddress.setTextFill(Paint.valueOf("Red"));
+        }
 
     }
 
-    public void UpdateTIN(ActionEvent actionEvent) {
 
-        String newTIN= this.txtChangeTIN.getCharacters().toString();
-
-        this.clientStore.ChangeTIN(this.client,Long.parseLong(newTIN));
-
-        txtChangeTIN.clear();
-        setprompttext();
-
-
-    }
-
-    public void UpdateEmail(ActionEvent actionEvent) {
-
-        String newEmail= this.txtChangeEmail.getCharacters().toString();
-
-        this.clientStore.ChangeEmail(this.client,newEmail);
-
-        txtChangeEmail.clear();
-        setprompttext();
-
-
-    }
 
     public void UpdateSex(ActionEvent actionEvent) {
+        try {
 
-        String newSex= this.txtChangeSex.getCharacters().toString();
+            resetConfirms();
+            String newSex = this.txtChangeSex.getCharacters().toString();
 
-        this.clientStore.ChangeSex(this.client,newSex);
+            this.clientStore.ChangeSex(this.client, newSex);
 
-        txtChangeSex.clear();
-        setprompttext();
-
-
-    }
-
-    public void UpdateBirthDate(ActionEvent actionEvent) {
-
-        String newBirthDate= this.txtChangeBD.getCharacters().toString();
-
-        this.clientStore.ChangeBD(this.client,newBirthDate);
-
-        txtChangeBD.clear();
-        setprompttext();
+            txtChangeSex.clear();
+            clientStore.save();
+            setprompttext();
+            confirmSex.setText("Updated Successfully");
+            confirmSex.setTextFill(Paint.valueOf("Green"));
+        }catch (Exception e){
+            confirmSex.setText("Invalid Gender");
+            confirmSex.setTextFill(Paint.valueOf("Red"));
+        }
 
 
     }
+
+
     public void UpdatePhoneNumer(ActionEvent actionEvent) {
+        try {
+            resetConfirms();
 
-        String newPhoneNumer= this.txtChangePN.getCharacters().toString();
+            String newPhoneNumer = this.txtChangePN.getCharacters().toString();
 
-        this.clientStore.ChangePN(this.client,Long.parseLong(newPhoneNumer));
+            this.clientStore.ChangePN(this.client, Long.parseLong(newPhoneNumer));
 
-        txtChangePN.clear();
-        setprompttext();
+            txtChangePN.clear();
+            clientStore.save();
+
+            setprompttext();
+            confirmPN.setText("Updated Successfully");
+            confirmPN.setTextFill(Paint.valueOf("green"));
+        }catch (Exception e){
+            confirmPN.setText("Invalid Phone Number");
+            confirmPN.setTextFill(Paint.valueOf("Red"));
+        }
 
     }
-    public void UpdatePassword(ActionEvent actionEvent) {
 
-        String newPassword= this.txtChangePW.getCharacters().toString();
-
-        this.clientStore.ChangePassword(this.client,newPassword);
-
-        txtChangePW.clear();
-        setprompttext();
-
-    }
 
 
     public void goback(MouseEvent mouseEvent) throws IOException {
@@ -308,5 +297,130 @@ public class AlterClientDataController implements Initializable {
         stage2.setResizable(true);
         stage2.show();
 
+    }
+
+
+    public void mouseEnterName(MouseEvent dragEvent) {
+
+        showName.setText(client.getName());
+        resetConfirms();
+    }
+
+    public void mouseExitName(MouseEvent dragEvent) {
+
+        showName.setText("Name");
+
+    }
+
+
+
+    public void mouseEnterAddress(MouseEvent dragEvent) {
+
+        showAddress.setText(client.getAddress());
+        resetConfirms();
+    }
+
+    public void mouseExitAddress(MouseEvent dragEvent) {
+
+        showAddress.setText("Address");
+
+    }
+
+
+
+    public void mouseEnterSex(MouseEvent dragEvent) {
+
+        showSex.setText(client.getSex());
+        resetConfirms();
+    }
+
+
+    public void mouseExitSex(MouseEvent dragEvent) {
+
+        showSex.setText("Sex");
+
+    }
+
+
+    public void mouseEnterPN(MouseEvent dragEvent) {
+
+        showPN.setText(String.valueOf(client.getPhoneNumber()));
+        resetConfirms();
+    }
+
+    public void mouseExitPN(MouseEvent dragEvent) {
+
+        showPN.setText("Phone Number");
+
+    }
+
+
+    public void mouseEnterCCN(MouseEvent dragEvent) {
+
+        showCCN.setText(String.valueOf(client.getCcn()));
+        resetConfirms();
+    }
+
+    public void mouseExitCCN(MouseEvent dragEvent) {
+
+        showCCN.setText("CCN");
+
+    }
+
+
+    public void mouseEnterTIN(MouseEvent dragEvent) {
+
+        showTIN.setText(String.valueOf(client.getTif()));
+        resetConfirms();
+    }
+
+    public void mouseExitTIN(MouseEvent dragEvent) {
+
+        showTIN.setText("TIN");
+
+    }
+
+
+    public void mouseEnterNHS(MouseEvent dragEvent) {
+
+        showNHS.setText(String.valueOf(client.getNhs()));
+        resetConfirms();
+    }
+
+    public void mouseExitNHS(MouseEvent dragEvent) {
+
+        showNHS.setText("NHS Code");
+
+    }
+
+    public void mouseEnterBirth(MouseEvent dragEvent) {
+
+        showBirth.setText(client.getBirth());
+        resetConfirms();
+    }
+
+    public void mouseExitBirth(MouseEvent dragEvent) {
+
+        showBirth.setText("Birth Date");
+
+    }
+
+    public void mouseEnterEmail(MouseEvent dragEvent) {
+
+        showEmail.setText(client.getEmail().getEmail());
+        resetConfirms();
+    }
+
+    public void mouseExitEmail(MouseEvent dragEvent) {
+
+        showEmail.setText("Email");
+
+    }
+
+    public void resetConfirms(){
+        confirmAddress.setText("");
+        confirmName.setText("");
+        confirmPN.setText("");
+        confirmSex.setText("");
     }
 }

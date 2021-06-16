@@ -47,8 +47,11 @@ public class RegistClientUI implements Runnable {
         System.out.print("Sex(if you dont want to write it, leave it blank): ");
         String sex = ler.nextLine();
 
+        System.out.print("Address: ");
+        String address= ler.nextLine();
 
-            if (cliente.createNewClient(new ClientDTO(ccn, nhs, birth, sex, tif, email, name, phoneNumber))) {
+
+            if (cliente.createNewClient(new ClientDTO(ccn, nhs, birth, sex, tif, email, name, phoneNumber, address))) {
                 System.out.print("--------------------------\n");
                 System.out.print("Please confirm the data:\n");
                 System.out.printf("CCN: %s%nNHS: %d%nBirth date: %s%nSex: %s%nTIN: %d%nEmail: %s%nName: %s%nPhone Number: %s%n", ccn, nhs, birth, sex, tif, email, name, phoneNumber);

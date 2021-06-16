@@ -34,6 +34,8 @@ public class Test implements Serializable, Comparable<Test> {
 
     private Date date;
 
+    private Date fakeDate;
+
     /**
      * The parameter of a given test.
      */
@@ -61,6 +63,8 @@ public class Test implements Serializable, Comparable<Test> {
      * An object of type Date used to obtain the date when a result of a test was recorded.
      */
     private Date resultRegist;
+
+    private Date fakeResultRegist;
 
 
     /**
@@ -133,6 +137,8 @@ public class Test implements Serializable, Comparable<Test> {
 
         this.date = new Date();
 
+        this.fakeDate=new Date();
+
         this.lab=lab;
     }
 
@@ -157,7 +163,9 @@ public class Test implements Serializable, Comparable<Test> {
 
         results = new ArrayList<>();
 
-        this.date = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
+        this.date = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+
+        this.fakeDate=new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
 
         this.lab=lab;
     }
@@ -397,6 +405,7 @@ public class Test implements Serializable, Comparable<Test> {
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
         resultRegist = new Date();
+        this.fakeResultRegist=new Date();
         results.add(tp.getTpr().getValue());
         System.out.println(results);
         String testPResult = compareValues(barcode);
@@ -409,7 +418,8 @@ public class Test implements Serializable, Comparable<Test> {
         this.ref = getExternalModule().getReferenceValue(tp.getParameter());
         this.metric = getExternalModule().getReferenceValue(tp.getParameter()).getMetric();
         tp.addResult(result, metric, ref);
-        resultRegist = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
+        resultRegist = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+        this.fakeResultRegist=new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         String testPResult = compareValues(barcode);
         results.add(tp.getTpr().getValue());
         System.out.println(results);
@@ -544,6 +554,15 @@ public class Test implements Serializable, Comparable<Test> {
     @Override
     public int compareTo(Test test) {
         return getDate().compareTo(test.getDate());
+    }
+
+
+    public Date getFakeDate() {
+        return fakeDate;
+    }
+
+    public Date getFakeResultRegist() {
+        return fakeResultRegist;
     }
 }
 

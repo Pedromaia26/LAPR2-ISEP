@@ -171,49 +171,27 @@ public class ClientStore {
 
     }
 
-    public void ChangeCCN(Client client, String ccn){
 
-        client.setCcn(ccn);
+    public void ChangeSex(Client client, String sex){
 
-    }
+        if(!sex.equalsIgnoreCase("MALE") && !sex.equalsIgnoreCase("FEMALE") && !sex.equalsIgnoreCase("UNDIFINED"))
+            throw new IllegalArgumentException("Incorrect sex");
 
-    public void ChangeNHS(Client client, long nhs){
-
-        client.setNhs(nhs);
-
-    }
-
-    public void ChangeTIN(Client client, long tin){
-
-        client.setTif(tin);
-
-    }
-
-    public void ChangeSex(Client client, String tin){
-
-        client.setSex(tin);
+        client.setSex(sex);
 
     }
     public void ChangePN(Client client, long pn){
-
+        if (String.valueOf(pn).length()!=11)
+            throw new IllegalArgumentException("Phone Number must be 11 characters long");
         client.setPhoneNumber(pn);
 
     }
-    public void ChangePassword(Client client, String pw){
+    public void ChangeAddress(Client client, String address){
 
-        client.setPassword(pw);
-
-    }
-    public void ChangeEmail(Client client, String email){
-
-        client.setEmail(new Email(email));
+        client.setAddress(address);
 
     }
-    public void ChangeBD(Client client, String birth){
 
-        client.setBirth(birth);
-
-    }
 
     public void save(){
         ser.escrever((List<Object>) (List<?>) clientList, "client.ser");

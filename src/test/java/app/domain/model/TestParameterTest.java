@@ -28,7 +28,7 @@ public class TestParameterTest {
     @Test
     public void getTpr() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        Client cli = new Client("1234567890123456", 1234567890, "22/10/2002", "male", 2345678909L, "aa@gmail.com", "Jonas", 91111111112L);
+        Client cli = new Client("1234567890123456", 1234567890, "22/10/2002", "male", 2345678909L, "aa@gmail.com", "Jonas", 91111111112L,"asdasda");
         Company c = new Company("Many Labs");
 
         ParameterCategory pc = new ParameterCategory("Hemogram", "90009");

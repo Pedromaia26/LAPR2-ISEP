@@ -19,7 +19,7 @@ public class BarcodeCreateTest {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -76,7 +76,7 @@ public class BarcodeCreateTest {
     public void testEqualsNull() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -132,7 +132,7 @@ public class BarcodeCreateTest {
     public void testEqualsDifferentClasses() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -186,7 +186,7 @@ public class BarcodeCreateTest {
     public void testEqualsNotEqual() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -241,7 +241,7 @@ public class BarcodeCreateTest {
     public void testEqualsSameClass() throws InstantiationException, IllegalAccessException, ClassNotFoundException, BarcodeException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
         Company c2= new Company("ManyLabs2");
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L);
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
