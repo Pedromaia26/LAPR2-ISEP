@@ -308,6 +308,8 @@ public class TestTest {
     @Test
     public void recordNewSample() throws BarcodeException, IllegalAccessException, ClassNotFoundException, InstantiationException, OutputException, IOException, ParseException {
         Company c= new Company("ManyLabs");
+        Company c1= new Company("ManyLabs");
+
 
         ParameterCategory pc = new ParameterCategory("hemogram", "09090");
 
@@ -351,7 +353,7 @@ public class TestTest {
         SampleDTO sampleDTO= new SampleDTO("000000000001");
 
         app.domain.model.Test test = c.getTestStore().getTestByCode(sampleDTO.getOrderid());
-        Sample test2= test.RecordNewSample(App.getInstance().getCompany());
+        Sample test2= test.RecordNewSample(c1);
 
 
         assertEquals(sample.getBarcode().getBarcodeNumber(),test2.getBarcode().getBarcodeNumber());

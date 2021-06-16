@@ -55,7 +55,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client2 = new Client("1234567890123457",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client2);
+        Assert.assertNotEquals(client.getCcn(),client2.getCcn());
     }
 
     @Test
@@ -63,14 +63,14 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client3 = new Client("1234567890123456",1234567899L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client3);
+        Assert.assertNotEquals(client.getNhs(),client3.getNhs());
     }
     @Test
     public void testEqualsDiffBirth() {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client4 = new Client("1234567890123456",1234567890L,"12/12/2013","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client4);
+        Assert.assertNotEquals(client.getBirth(),client4.getBirth());
     }
 
     @Test
@@ -78,7 +78,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client5 = new Client("1234567890123456",1234567890L,"12/12/2012","Female",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client5);
+        Assert.assertNotEquals(client.getSex(),client5.getSex());
     }
 
     @Test
@@ -86,7 +86,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client6 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567895L,"asde@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client6);
+        Assert.assertNotEquals(client.getTif(),client6.getTif());
     }
 
     @Test
@@ -94,7 +94,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client7 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Random",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client7);
+        Assert.assertNotEquals(client.getName(),client7.getName());
     }
 
     @Test
@@ -102,7 +102,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client8 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asde@gmail.com","Moirane",44123456789L,"asdasda");
 
-        Assert.assertNotEquals(client,client8);
+        Assert.assertNotEquals(client.getEmail().getEmail(),client8.getEmail().getEmail());
     }
 
     @Test
@@ -110,64 +110,7 @@ public class ClientTest {
         Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
         Client client8 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456723L,"asdasda");
 
-        Assert.assertNotEquals(client,client8);
-    }
-
-    @Test
-    public void testEqualsDiffPNandName() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client17 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client17);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmail() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client16 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client16);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmailAndTin() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client15 = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567897L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client15);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmailAndTinAndSex() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client14 = new Client("1234567890123456",1234567890L,"12/12/2012","Female",1234567897L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client14);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmailAndTinAndSexAndBirth() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client13 = new Client("1234567890123456",1234567890L,"12/12/2016","Female",1234567897L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client13);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmailAndTinAndSexAndBirthAndNhs() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client12 = new Client("1234567890123456",1234567899L,"12/12/2016","Female",1234567897L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client12);
-    }
-
-    @Test
-    public void testEqualsDiffPNAndNameAndEmailAndTinAndSexAndBirthAndNhsAndCCN() {
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
-        Client client11 = new Client("1234567890123456",1234567899L,"12/12/2016","Female",1234567897L,"asde@gmail.com","Random",44123456723L,"asdasda");
-
-        Assert.assertNotEquals(client,client11);
-
+        Assert.assertNotEquals(client.getPhoneNumber(),client8.getPhoneNumber());
     }
 
     @Test
