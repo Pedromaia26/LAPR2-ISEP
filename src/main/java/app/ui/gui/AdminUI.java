@@ -150,11 +150,12 @@ public class AdminUI implements Initializable {
         } else if (begin.getValue() == null) {
             invalidDate.setText("Please, type the begin date");
             invalidDate.setVisible(true);
-        } else if (!invalidDate.getText().equals("Invalid Interval!")){
+        } else if (!invalidDate.getText().equals("Invalid Interval!")) {
             invalidDate.setVisible(false);
         }
 
 
+        double sL = 0;
 
 
         try {
@@ -171,9 +172,9 @@ public class AdminUI implements Initializable {
 
         try {
             String b = significanceLevel.getText();
-            Double sL = Double.parseDouble(b);
+            sL = Double.parseDouble(b);
             signifLevelLabel.setVisible(false);
-            if (sL<0 || sL>100){
+            if (sL < 0 || sL > 100) {
                 signifLevelLabel.setText("Must be a number between 0 and 100!");
                 signifLevelLabel.setVisible(true);
             }
@@ -186,15 +187,14 @@ public class AdminUI implements Initializable {
             String c = confidenceLevel.getText();
             Double cL = Double.parseDouble(c);
             confidLevelLabel.setVisible(false);
-            if (cL<0 || cL>100){
+            if (cL < 0 || cL > 100) {
                 confidLevelLabel.setText("Must be a number between 0 and 100!");
                 confidLevelLabel.setVisible(true);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             confidLevelLabel.setVisible(true);
         }
-
 
 
         String histPts = histPoints.getText();
@@ -202,20 +202,30 @@ public class AdminUI implements Initializable {
 
 
         Date currentDate = new SimpleDateFormat("dd/MM/yyyy").parse(currentDay.getValue().format(formatter));
-        Date startDate=new SimpleDateFormat("dd/MM/yyyy").parse(begin.getValue().format(formatter));
-        Date endDate=new SimpleDateFormat("dd/MM/yyyy").parse(end.getValue().format(formatter));
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy").parse(begin.getValue().format(formatter));
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy").parse(end.getValue().format(formatter));
 
         // controller.getTestsByInterval(startDate, endDate);
-      //testStore.getPositiveTestsPerDay(startDate, endDate);
+        //testStore.getPositiveTestsPerDay(startDate, endDate);
 
 
-        if(dataComboBox.getSelectionModel().getSelectedItem().equals("Days")){
-            controller.getReportForDays(startDate, endDate, currentDate, hP);
-        }else if(dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")){
-            controller.getReportForWeeks(startDate, endDate, currentDate, hP);
+        if (regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Simple")) {
+            if (dataComboBox.getSelectionModel().getSelectedItem().equals("Days")) {
+                if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
+                    controller.getReportForDays(startDate, endDate, currentDate, hP, sL);
+                } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
+                    controller.getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL);
+                }
+            } else if (dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")) {
+                if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
+                    controller.getReportForWeeks(startDate, endDate, currentDate, hP, sL);
+                } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
+                    controller.getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL);
+                }
+            }
+        }else if(regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Multiple")){
+            System.out.println("ola");
         }
-
-
     }
 
 

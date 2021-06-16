@@ -66,7 +66,7 @@ public class LinearRegression {
 
         slope  = xybar / xxbar;
         intercept = ybar - slope * xbar;
-        System.out.println(slope);
+        //System.out.println(slope);
 
         // more statistical analysis
         double rss = 0.0;      // residual sum of squares
@@ -92,7 +92,7 @@ public class LinearRegression {
         this.svar = svar;
 
         svar1 = svar / xxbar;
-        System.out.println(svar1);
+        //System.out.println(svar1);
         svar0 = svar/n + xbar*xbar*svar1;
         r2adjusted = 1 - ((double)(n - 1) / (double)(n - (2))) * (1 - r2);
 
@@ -200,8 +200,8 @@ public class LinearRegression {
         return tb;
     }
 
-    public String decisao (double sL){
-        System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
+    public String decision (double sL){
+       // System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
 
         if (Math.abs(tb)>tDistribution.cumulativeProbability(obs(sL)))
 

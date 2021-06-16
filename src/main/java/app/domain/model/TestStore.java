@@ -39,6 +39,10 @@ public class TestStore {
 
     private List<Test> listTestsinValDateRange;
 
+    private String reportNHS;
+
+    private List<String> reportWeeks = new ArrayList<>();
+
 
     public Test createTest (Company company, Client client, String nhsCode, LabOrder labOrder, Laboratory lab) {
         return new Test(company, client, nhsCode, labOrder, lab);
@@ -166,6 +170,11 @@ public class TestStore {
         return list;
 
     }
+
+    public String getReportNHS(){
+        return reportNHS;
+    }
+
     public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
         listTestsinRegDateRange = new ArrayList<>();
@@ -199,7 +208,7 @@ public class TestStore {
         return listTestsinValDateRange;
     }
 
-    public int[] covidTestsLinearRegression(Date startDate, Date endDate){
+    public double[] covidTestsLinearRegression(Date startDate, Date endDate){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -218,10 +227,9 @@ public class TestStore {
             }
         }
 
-        int[] c = new int[dayOfWeek];
+        double[] c = new double[dayOfWeek];
 
         int l = 0;
-        int count = 0;
 
         cal.setTime(startDate);
 
@@ -231,12 +239,46 @@ public class TestStore {
         }
 
         for (int i = 0; i < c.length; i++) {
-            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
-            System.out.println(c[i]);
+            //reportNHS = reportNHS + String.format("Number of performed Covid-19 tests at %s:  %.0f \n",  formatter.format(dateList.get(i)), c[i]);
+//            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
+//            System.out.println(c[i]);
+        }
+        //reportNHS += "\n";
+        return c;
+    }
+
+    public double[] meanAgeLinearRegression(Date startDate, Date endDate){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(startDate);
+        List<Date> dateList = new ArrayList<>();
+        int dayOfWeek = 0;
+
+        long difference = Math.abs(endDate.getTime() - startDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) + 1;
+        int a = (int) diff;
+
+        for (int j = 0; j < a; j++) {
+            cal.setTime(addDays(startDate, j));
+            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
+                dayOfWeek++;
+                dateList.add(cal.getTime());
+            }
+        }
+
+        double[] c = new double[dayOfWeek];
+
+        int l = 0;
+
+        cal.setTime(startDate);
+
+        for(Date d : dateList){
+            c[l] = getMeanAgeForDay(startDate, endDate, d);
+            l++;
         }
         return c;
     }
-    public int[] positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
+
+    public double[] positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -259,7 +301,7 @@ public class TestStore {
                 dateList.add(calend.getTime());
             }
         }
-        int[] c = new int[dayOfWeek];
+        double[] c = new double[dayOfWeek];
 
         int l = 0;
         int count = 0;
@@ -295,15 +337,18 @@ public class TestStore {
             }*/
 
             for (int i = 0; i < c.length; i++) {
-                System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(dateList.get(i)));
-                System.out.println(c[i]);
+               // reportNHS += String.format("Number of positive Covid-19 tests at %s:  %.0f \n", formatter.format(dateList.get(i)), c[i]);
+//                System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(dateList.get(i)));
+//                System.out.println(c[i]);
                 cal.add(Calendar.DATE, 1);
             }
+            //reportNHS += "\n";
             return c;
         }
 
 
-    public void getCovidTestsPerDay(Date currentDate, int hP){
+    public List<Date> getCovidTestsPerDay(Date currentDate, int hP){
+        reportNHS = "";
         List<Date> dayList = new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
@@ -348,7 +393,7 @@ public class TestStore {
         do{
 
             if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
-                c[l] = getTests(firstDay, currentDate, cal.getTime());
+                c[l] = getPositiveTests(firstDay, currentDate, cal.getTime());
                 l++;
             }
             count++;
@@ -357,29 +402,28 @@ public class TestStore {
 
 
         for (int i = 0; i < c.length; i++) {
-            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
-            System.out.println(c[i]);
+            reportNHS += String.format("Number of positive Covid-19 tests at %s: %d \n", formatter.format(dateList.get(i)), c[i]);
+//            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
+//            System.out.println(c[i]);
         }
-
-
-
-
+        reportNHS+= "\n";
+        return dateList;
     }
 
     public void getCovidTestsPerWeek(Date currentDate, int hP){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        reportNHS = "";
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
+        int numOfPositiveTests;
         int day = cal.get(Calendar.DAY_OF_WEEK);
         Date date = subtractDays(currentDate, day-2);
-        System.out.println("ttttt"+ date);
         date = subtractDays(date,7*hP);
         for(int i=0; i<hP;i++){
             cal.setTime(date);
             Date date2 = addDays(date,5);
-            System.out.println("inicio" + date);
-            System.out.println("fim"+ date2);
-            List<Test> tests = getTestsInInterval(date, date2);
-            System.out.println(tests.size());
+            numOfPositiveTests = getPositivePerWeekTests(date, date2);
+            reportNHS += String.format("Number of positive Covid-19 tests in the week from %s to %s: %d \n", formatter.format(date), formatter.format(date2), numOfPositiveTests);
             date = addDays(date,7);
         }
 
@@ -475,6 +519,20 @@ public class TestStore {
 
     }
 
+    public int getPositivePerWeekTests(Date startDate, Date endDate){
+        int a = 0;
+        for (Test t: getTestsInInterval(startDate, endDate)){
+            if (!t.getResults().isEmpty()){
+                if (t.getResults().get(0)>1.4){
+                    a++;
+                }
+            }
+        }
+
+        return a;
+
+    }
+
     public int getTests(Date startDate, Date endDate, Date date){
         int a = 0;
 
@@ -493,6 +551,27 @@ public class TestStore {
 
             }
         return a;
+        }
+
+        public double getMeanAgeForDay(Date startDate, Date endDate, Date date){
+            int a = 0;
+            double sumAge = 0;
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            int day = cal.get(Calendar.DAY_OF_YEAR);
+            int year = cal.get(Calendar.YEAR);
+
+            for (Test t: getTestsInInterval(startDate, endDate)){
+                cal.setTime(t.getValidationDate());
+                int compareDay = cal.get(Calendar.DAY_OF_YEAR);
+                int compareYear = cal.get(Calendar.YEAR);
+                if (compareDay == day && compareYear == year){
+                    a++;
+                    sumAge += t.getClient().calculateAge(t.getClient().getBirth());
+                }
+            }
+            return (sumAge/a);
         }
 }
 
