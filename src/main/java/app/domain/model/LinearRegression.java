@@ -31,6 +31,7 @@ public class LinearRegression {
     private final double svar;
     private TDistribution tDistribution;
     private FDistribution fDistribution;
+    private StringBuilder confidenceIntervals = new StringBuilder();
 
 
 
@@ -101,6 +102,16 @@ public class LinearRegression {
         s2 = 1/(double)(n-2) * rss;
         tb = slope/(Math.sqrt(s2)/Math.sqrt(xxbar));
 
+        double soma = 0;
+        for (int i = 0; i < x.length; i++) {
+            soma += x[i];
+        }
+
+        double media = soma/x.length;
+
+        double delta = 2.07 * Math.sqrt(s2)*Math.sqrt((double) 1/x.length+(Math.pow((x[0]-media),2))/xxbar);
+
+        confidenceInterval(x, delta);
 
 
     }
@@ -230,6 +241,19 @@ public class LinearRegression {
 //            return ""
 //        }
 //    }
+
+    public String getConfidenceIntervals() {
+        return confidenceIntervals.toString();
+    }
+
+    public void confidenceInterval(double[] arrayX, double delta){
+        System.out.println("delta = " +delta);
+        for (int i = 0; i < arrayX.length; i++) {
+            confidenceIntervals.append(String.format("%.4f - %.4f\n" ,predict(arrayX[i])-delta, predict((arrayX[i]))+delta));
+        }
+    }
+
+
 
 }
 

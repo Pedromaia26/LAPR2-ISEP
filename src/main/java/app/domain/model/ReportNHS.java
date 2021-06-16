@@ -82,6 +82,7 @@ public class ReportNHS {
         report += String.format("%-15s %-40s %-40s %.0f%% %-40s","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", ((1-sL)*100), "intervals");
 
 
+        report += regression.getConfidenceIntervals();
 
 
 //        //número de variáveis
