@@ -6,6 +6,9 @@ package app.domain.model; /*****************************************************
 import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *  The code LinearRegression class performs a simple linear regression
  *  on an set of n data points (y_i, x_i).
@@ -29,9 +32,10 @@ public class LinearRegression {
     private final double tb;
     private final double ssr;
     private final double svar;
+    private final double xxBar;
     private TDistribution tDistribution;
     private FDistribution fDistribution;
-    private StringBuilder confidenceIntervals = new StringBuilder();
+    private List<String> confidenceIntervals = new ArrayList<>();
 
 
 
@@ -102,17 +106,7 @@ public class LinearRegression {
         s2 = 1/(double)(n-2) * rss;
         tb = slope/(Math.sqrt(s2)/Math.sqrt(xxbar));
 
-        double soma = 0;
-        for (int i = 0; i < x.length; i++) {
-            soma += x[i];
-        }
-
-        double media = soma/x.length;
-
-        double delta = 2.07 * Math.sqrt(s2)*Math.sqrt((double) 1/x.length+(Math.pow((x[0]-media),2))/xxbar);
-
-        confidenceInterval(x, delta);
-
+        xxBar = xxbar;
 
     }
 
@@ -246,11 +240,25 @@ public class LinearRegression {
         return confidenceIntervals.toString();
     }
 
-    public void confidenceInterval(double[] arrayX, double delta){
-        System.out.println("delta = " +delta);
+    public double getTStudent(double sL){
+        return tDistribution.inverseCumulativeProbability(obs(sL));
+    }
+
+    public List<String> confidenceInterval(double[] arrayX){
+        double soma = 0;
         for (int i = 0; i < arrayX.length; i++) {
-            confidenceIntervals.append(String.format("%.4f - %.4f\n" ,predict(arrayX[i])-delta, predict((arrayX[i]))+delta));
+            soma += arrayX[i];
         }
+
+        double media = soma/arrayX.length;
+
+        double delta = 2.07 * Math.sqrt(s2)*Math.sqrt((double) 1/arrayX.length+(Math.pow((arrayX[0]-media),2))/xxBar);
+
+
+        for (int i = 0; i < arrayX.length; i++) {
+            confidenceIntervals.add(String.format("%.4f - %.4f\n" ,predict(arrayX[i])-delta, predict((arrayX[i]))+delta));
+        }
+        return confidenceIntervals;
     }
 
 

@@ -3,6 +3,7 @@ package app.domain.model;
 import com.nhs.report.Report2NHS;
 import com.sun.javafx.binding.StringFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -16,11 +17,11 @@ public class ReportNHS {
 
 
 
-    public void sendReportNHS(String reportToSend){
-        Report2NHS.writeUsingFileWriter(reportToSend);
+    public void sendReportNHS(){
+        Report2NHS.writeUsingFileWriter(report);
     }
 
-    public double[] createLinearRegression(double[] arr1, double[] arr2, double sL){
+    public void createLinearRegression(double[] arr1, double[] arr2, double sL){
         double[] predict = new double[arr1.length];
         regression = new LinearRegression(arr1, arr2);
 
@@ -58,7 +59,7 @@ public class ReportNHS {
 
         report += "\nHypothesis tests for regression coefficients:\n";
         report += "HO:b=0 H1: b<>0\n";
-        report += String.format("T_%.3f =  \n", regression.obs(sL));
+        report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
         report += String.format("\ns2: %.4f\n", regression.S2());
         report += String.format("\ntb: %.4f\n", regression.Tb());
         report += String.format("\nDecision:\n %s\n", regression.decision(sL));
@@ -82,7 +83,6 @@ public class ReportNHS {
         report += String.format("%-15s %-40s %-40s %.0f%% %-40s","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", ((1-sL)*100), "intervals");
 
 
-        report += regression.getConfidenceIntervals();
 
 
 //        //número de variáveis
@@ -110,7 +110,27 @@ public class ReportNHS {
 //        report += String.format("df: %d\n", 1+regression.getDegressOfFreedom());
        // report += String.format("SS: %.1f\n", regression.getssr()+regression.getRss());
 
-        return predict;
+    }
+
+    public void addConfLevel(double[] array, List<Date> dates){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        regression.confidenceInterval(array);
+        for(int i=0;i<array.length; i++){
+            report += String.format("%-30s %4.2f %35s %4.2f %35s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(array[i]), regression.confidenceInterval(array).get(i) );
+        }
+        sendReportNHS();
+    }
+
+    public void addConfLevelForWeek(double[] array, List<Date> dateInitial, List<Date> dateFinal){
+        System.out.println("tamanho array "+ array.length);
+        System.out.println("tamanho inicial"+ dateInitial.size());
+        System.out.println("tamanho final"+ dateFinal.size());
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        regression.confidenceInterval(array);
+        for(int i=0;i<array.length; i++){
+            report += String.format("%-15s %-15s %4.2f %35s %4.2f %35s\n", formatter.format(dateInitial.get(i)),dateFinal.get(i), array[i], "", regression.predict(array[i]), regression.confidenceInterval(array).get(i) );
+        }
+        sendReportNHS();
     }
 
     public String getReport(){

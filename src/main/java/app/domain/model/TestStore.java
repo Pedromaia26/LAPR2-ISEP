@@ -41,6 +41,12 @@ public class TestStore {
 
     private String reportNHS;
 
+    private List<Date> hPDays = new ArrayList<>();
+
+    private List<Date> hPWeeksInitial = new ArrayList<>();
+
+    private List<Date> hPWeeksFinal = new ArrayList<>();
+
     private List<String> reportWeeks = new ArrayList<>();
 
 
@@ -344,9 +350,8 @@ public class TestStore {
         }
 
 
-    public String getCovidTestsPerDay(Date currentDate, int hP, String report, double[] predict){
+    public double[] getCovidTestsPerDay(Date currentDate, int hP){
         List<Date> dayList = new ArrayList<>();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         int u = 0;
         int aux = 1;
@@ -360,10 +365,14 @@ public class TestStore {
             aux++;
         }while(u<hP);
 
+        for(Date date : dayList){
+            this.hPDays.add(new Date(date.getTime()));
+        }
+
         Date firstDay = dayList.get(u-1);
 
         int diff = hP;
-        int[] c = new int[diff];
+        double[] c = new double[diff];
 
         List<Date> dateList = new ArrayList<>();
 
@@ -383,6 +392,8 @@ public class TestStore {
         }while(j<hP);
 
 
+
+
         cal.setTime(firstDay);
         int l = 0;
         int count = 0;
@@ -397,18 +408,21 @@ public class TestStore {
         }while (l<c.length);
 
 
-        for (int i = 0; i < c.length; i++) {
-            report += String.format("%-30s %-20s \n" , formatter.format(dateList.get(i)), c[i]);
+//        for (int i = 0; i < c.length; i++) {
 //            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
 //            System.out.println(c[i]);
-        }
-        report+= "\n";
-        return report;
+//        }
+
+        return c;
 
 
     }
 
-    public void getCovidTestsPerWeek(Date currentDate, int hP){
+    public List<Date> getHPDays(){
+        return this.hPDays;
+    }
+
+    public double[] getCovidTestsPerWeek(Date currentDate, int hP){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
@@ -420,6 +434,8 @@ public class TestStore {
             cal.setTime(date);
             Date date2 = addDays(date,5);
             numOfPositiveTests = getPositivePerWeekTests(date, date2);
+            hPWeeksInitial.add(date);
+            hPWeeksFinal.add(date);
             reportNHS += String.format("Number of positive Covid-19 tests in the week from %s to %s: %d \n", formatter.format(date), formatter.format(date2), numOfPositiveTests);
             date = addDays(date,7);
         }
@@ -460,7 +476,7 @@ public class TestStore {
 
 
         int diff = hP*7;
-        int[] c = new int[diff];
+        double[] c = new double[diff];
         cal.setTime(firstDay);
         int l = 0;
         int count = 0;
@@ -473,16 +489,26 @@ public class TestStore {
             count++;
             cal.setTime(addDays(firstDay, count));
         }while (l<c.length);
-
+        return c;
 
     }
 
     public static Date subtractDays(Date date, int days) {
-        GregorianCalendar cal = new GregorianCalendar();
-        cal.setTime(date);
-        cal.add(Calendar.DATE, -days);
+//        GregorianCalendar cal = new GregorianCalendar();
+//        cal.setTime(date);
+//        cal.add(Calendar.DATE, -days);
+        Date dateAux = new Date(date.getTime());
+        dateAux.setHours(dateAux.getHours()-(24*days));
 
-        return cal.getTime();
+        return dateAux;
+    }
+
+    public List<Date> gethPWeeksInitial(){
+        return hPWeeksInitial;
+    }
+
+    public List<Date> gethPWeeksFinal(){
+        return hPWeeksFinal;
     }
 
     public static Date addDays(Date date, int days) {
@@ -519,9 +545,11 @@ public class TestStore {
     public int getPositivePerWeekTests(Date startDate, Date endDate){
         int a = 0;
         for (Test t: getTestsInInterval(startDate, endDate)){
-            if (!t.getResults().isEmpty()){
-                if (t.getResults().get(0)>1.4){
-                    a++;
+            if(t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("covid")) {
+                if (!t.getResults().isEmpty()) {
+                    if (t.getResults().get(0) > 1.4) {
+                        a++;
+                    }
                 }
             }
         }
@@ -539,6 +567,7 @@ public class TestStore {
         int year = cal.get(Calendar.YEAR);
 
         for (Test t: getTestsInInterval(startDate, endDate)){
+            if(t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("covid"))
             cal.setTime(t.getValidationDate());
             int compareDay = cal.get(Calendar.DAY_OF_YEAR);
             int compareYear = cal.get(Calendar.YEAR);
