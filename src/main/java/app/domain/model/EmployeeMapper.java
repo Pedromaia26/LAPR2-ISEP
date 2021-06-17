@@ -31,9 +31,9 @@ public class EmployeeMapper extends UserRoleStore{
         int socCode = empDto.getSocCodeDto();
         String labId= empDto.getLabID();
 
-        Laboratory lab= App.getInstance().getCompany().getLaboratoryStore().getLabByLabId(labId);
+        Laboratory lab= company.getLaboratoryStore().getLabByLabId(labId);
 
-        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode, lab);
+        return company.getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode, lab,company);
     }
 
     /**
@@ -53,9 +53,9 @@ public class EmployeeMapper extends UserRoleStore{
         int docIndexNumber = empDto.getDocIndexNumberDto();
         String labId= empDto.getLabID();
 
-        Laboratory lab= App.getInstance().getCompany().getLaboratoryStore().getLabByLabId(labId);
+        Laboratory lab= company.getLaboratoryStore().getLabByLabId(labId);
 
-        return App.getInstance().getCompany().getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode,lab, docIndexNumber);
+        return company.getOrgRole().createEmployee(orgRole, employeeId, name, address, phoneNumber, email, socCode,lab, docIndexNumber,company);
     }
 
 }
