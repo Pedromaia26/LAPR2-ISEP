@@ -69,6 +69,8 @@ public class BubbleSortTest {
         expected.add(nc);
         expected.add(nc1);
 
+
+
         assertNotEquals(expected,copy);
 
 
@@ -130,6 +132,8 @@ public class BubbleSortTest {
 
         expected.add(nc);
         expected.add(nc1);
+
+
 
         assertNotEquals(expected,copy);
 
