@@ -51,6 +51,10 @@ public class LaboratoryStore {
      * @return True if the Laboratory is successfully saved, false if it is not.
      */
 
+    public void addToList(Laboratory cl){
+        laboratoryList.add(cl);
+    }
+
     public boolean saveLaboratory (Laboratory cl){
         if (!validateLaboratory(cl))
             return false;

@@ -188,6 +188,19 @@ public class ClientStoreTest {
         company.getClientStore().ChangeName(client,name);
 
     }
+    @Test
+    public void ClientCheckNameequals35Rules() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="qwertyuiopasdfghjklçzxcvbnmqwertyui";
+
+        company.getClientStore().ChangeName(client,name);
+
+        assertEquals("qwertyuiopasdfghjklçzxcvbnmqwertyui",client.getName());
+
+    }
     @Test(expected = IllegalArgumentException.class)
     public void ClientCheckSexRules() {
         Company company= new Company("ManyLabs");
