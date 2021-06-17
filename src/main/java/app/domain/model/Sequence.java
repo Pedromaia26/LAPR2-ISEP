@@ -17,8 +17,9 @@ public class Sequence {
 
     @Override
     public String toString() {
+        SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
         return "Sequence{" +
-                "date=" + date +
+                "date=" + DateFor.format(date) +
                 ", number=" + number +
                 '}';
     }

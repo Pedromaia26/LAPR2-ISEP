@@ -2,8 +2,13 @@ package app.domain.model;
 
 import org.junit.Test;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+
 
 import static org.junit.Assert.*;
 
@@ -11,9 +16,13 @@ public class SequenceTest {
 
     @Test
     public void testToString() throws ParseException {
+
         Sequence sequence= new Sequence(new Date(2021-1900,5,21),5);
 
-        assertEquals("Sequence{date=Mon Jun 21 00:00:00 BST 2021, number=5}",sequence.toString());
+
+        
+
+        assertEquals("Sequence{date=21/06/2021, number=5}",sequence.toString());
 
     }
 
@@ -21,7 +30,10 @@ public class SequenceTest {
     public void getDate() throws ParseException {
         Sequence sequence= new Sequence(new Date(2021-1900,5,21),5);
 
-        assertEquals("Mon Jun 21 00:00:00 BST 2021",sequence.getDate().toString());
+        SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+
+
+        assertEquals("21/06/2021",DateFor.format(sequence.getDate()));
     }
 
     @Test
