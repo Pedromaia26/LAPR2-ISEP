@@ -95,7 +95,7 @@ public class ClinicalChemTechUI implements Initializable {
 
 
         for (ClientDTO c:controller.getClients()){
-            System.out.println(c);
+            //System.out.println(c);
             clients.add(c);
         }
 

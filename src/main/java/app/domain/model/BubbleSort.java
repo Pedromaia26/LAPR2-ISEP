@@ -16,25 +16,28 @@ public class BubbleSort implements SortingAlgorithms{
     }
 
     public List<ClientDTO> orderClientsByTin(List<ClientDTO> clientList){
-        for (int i = 0; i < clientList.size()-1; i++) {
-            for (int j = 0; j < clientList.size()-1; j++){
-                if (clientList.get(i).getTifDto() > clientList.get(j+1).getTifDto()){
-                    Collections.swap(clientList, i, j+1);
+        for (int i = 1; i < clientList.size()-1; i++) {
+            for (int j = 1; j < clientList.size()-i; j++){
+                if (clientList.get(j).getTifDto() > clientList.get(j+1).getTifDto()){
+                    Collections.swap(clientList, j, j+1);
                 }
             }
         }
+        System.out.println(clientList);
+
         return clientList;
 
     }
     public List<ClientDTO>  orderClientsByName(List<ClientDTO> clientList){
-        for (int i = 0; i < clientList.size()-1; i++) {
-            for (int j = 0; j < clientList.size()-1; j++){
-                if (clientList.get(i).getNameDto().compareTo(clientList.get(j+1).getNameDto())>0){
-                    Collections.swap(clientList, i, j+1);
+        for (int i = 1; i < clientList.size()-1; i++) {
+            for (int j = 1; j < clientList.size()-i; j++){
+                if (clientList.get(j).getNameDto().compareTo(clientList.get(j+1).getNameDto())>0){
+                    Collections.swap(clientList, j, j+1);
                 }
             }
         }
-    return clientList;
+        //System.out.println(clientList);
+        return clientList;
     }
 
 

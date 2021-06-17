@@ -13,8 +13,10 @@ public class InsertionSort implements SortingAlgorithms{
                 Collections.swap(clients, j+1, j);
                 j--;
             }
-            Collections.swap(clients, j+1, i);
+            //Collections.swap(clients, j+1, i);
         }
+        //System.out.println(clients);
+
         return clients;
     }
 
@@ -26,8 +28,10 @@ public class InsertionSort implements SortingAlgorithms{
                 Collections.swap(clients, j+1, j);
                 j--;
             }
-            Collections.swap(clients, j+1, i);
+           // Collections.swap(clients, j+1, i);
         }
+        System.out.println(clients);
         return clients;
     }
+
 }
