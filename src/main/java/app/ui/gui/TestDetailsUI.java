@@ -57,43 +57,7 @@ public class TestDetailsUI implements Initializable {
         return testParameters;
 
     }
-
-    /*public ObservableList<ReferenceValue> getReferenceValue(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        ObservableList<ReferenceValue> testParameters = FXCollections.observableArrayList();
-
-
-        for (TestParameterDto parameters: testDTO.getTestParameterList()){
-            System.out.println(parameters);
-            if (parameters.getTprdto()!=null) {
-                testParameters.add(parameters.getTprdto().getRefValue());
-            }
-
-        }
-
-        return testParameters;
-
-    }
-
-    public ObservableList<TestParameterResult> getResultValue(TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        ObservableList<TestParameterResult> testParameters = FXCollections.observableArrayList();
-
-
-        for (TestParameterDto parameters: testDTO.getTestParameterList()){
-            if (parameters.getTprdto()!=null) {
-                testParameters.add(parameters.getTprdto());
-            }
-
-        }
-
-        return testParameters;
-
-    }
-
-    private ScrollBar findScrollBar(TableView<?> table)
-    {
-        return (ScrollBar) table.lookup(".scroll-bar:vertical");
-    }*/
-
+    
 
     public void initData (TestDTO testDTO) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         parameterColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
