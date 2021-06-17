@@ -40,7 +40,6 @@ public class SendReportController {
 //            System.out.println(positiveTests[i]);
 //        }
         report = new ReportNHS();
-
         report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();

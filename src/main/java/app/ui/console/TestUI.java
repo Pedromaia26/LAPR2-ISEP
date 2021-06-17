@@ -2,8 +2,9 @@ package app.ui.console;
 
 import app.controller.*;
 import app.domain.model.*;
-import auth.AuthFacade;
-import auth.domain.model.Email;
+import app.mappers.dto.ClientDTO;
+import app.mappers.dto.ParameterDTO;
+import app.mappers.dto.TestTypeDTO;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
