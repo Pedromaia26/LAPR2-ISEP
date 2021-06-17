@@ -1,5 +1,9 @@
 package app.domain.model;
 
+import app.mappers.dto.ParameterDTO;
+import app.mappers.dto.TestParameterDto;
+import app.mappers.dto.TestParameterResultDTO;
+
 public class TestResultClient {
 
     /**

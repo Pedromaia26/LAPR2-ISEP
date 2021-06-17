@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.ValidateWorkDoneController;
-import app.domain.model.TestDtoDate;
+import app.mappers.dto.TestDtoDate;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

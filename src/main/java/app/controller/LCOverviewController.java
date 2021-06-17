@@ -2,6 +2,8 @@ package app.controller;
 
 import app.domain.model.*;
 
+import app.mappers.TestMapper;
+import app.mappers.dto.TestDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
