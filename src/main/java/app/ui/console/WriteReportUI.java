@@ -1,15 +1,18 @@
 package app.ui.console;
 
+import app.controller.App;
 import app.controller.WriteReportController;
-import app.mappers.DTO.TestDTO;
-import app.mappers.DTO.TestParameterDto;
+import app.domain.model.*;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class WriteReportUI implements Runnable {
     public WriteReportUI()

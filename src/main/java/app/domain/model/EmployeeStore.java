@@ -1,9 +1,8 @@
 package app.domain.model;
 
 import app.controller.App;
-import app.mappers.DTO.EmployeeDto;
-import app.mappers.EmployeeMapper;
 import app.serialization.Serialization;
+import auth.domain.model.User;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -14,6 +13,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class EmployeeStore {
 

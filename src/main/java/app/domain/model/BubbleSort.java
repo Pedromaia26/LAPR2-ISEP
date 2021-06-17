@@ -1,7 +1,11 @@
 package app.domain.model;
 
-import app.mappers.DTO.ClientDTO;
+import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Collections;
 import java.util.List;
 

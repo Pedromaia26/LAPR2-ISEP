@@ -1,9 +1,9 @@
 package app.ui.console;
 
 import app.controller.App;
+import app.controller.RecordSampleController;
 import app.controller.RecordTestResultController;
 import app.domain.model.*;
-import app.mappers.DTO.TestDTO;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

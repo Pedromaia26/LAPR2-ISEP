@@ -1,15 +1,12 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.mappers.DTO.TestDTO;
-import app.mappers.DTO.TestParameterDto;
-import app.mappers.TestMapper;
-import app.mappers.TestParameterMapper;
 import auth.AuthFacade;
 import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import javax.naming.ldap.ExtendedRequest;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.CreateParameterController;
-import app.mappers.DTO.ParameterCategoryDto;
+import app.domain.model.ParameterCategoryDto;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

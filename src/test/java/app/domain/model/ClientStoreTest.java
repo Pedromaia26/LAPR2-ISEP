@@ -1,10 +1,11 @@
 package app.domain.model;
 
-import app.mappers.DTO.ClientDTO;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 

@@ -4,8 +4,8 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
-import app.mappers.DTO.ParameterCategoryDto;
-import app.mappers.ParameterCategoryMapper;
+import app.domain.model.ParameterCategoryDto;
+import app.domain.model.ParameterCategoryMapper;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

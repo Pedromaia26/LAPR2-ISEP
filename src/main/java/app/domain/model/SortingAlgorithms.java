@@ -1,7 +1,5 @@
 package app.domain.model;
 
-import app.mappers.DTO.ClientDTO;
-
 import java.util.List;
 
 public interface SortingAlgorithms {

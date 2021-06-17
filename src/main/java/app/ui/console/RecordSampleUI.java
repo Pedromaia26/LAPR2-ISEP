@@ -1,13 +1,16 @@
 package app.ui.console;
 
+import app.controller.App;
 import app.controller.RecordSampleController;
-import app.mappers.DTO.SampleDTO;
-import app.mappers.DTO.TestDTO;
+import app.controller.RegistClientController;
+import app.domain.model.*;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class RecordSampleUI implements Runnable {

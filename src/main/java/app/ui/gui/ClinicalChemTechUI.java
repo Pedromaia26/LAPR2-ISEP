@@ -3,9 +3,10 @@ package app.ui.gui;
 import app.controller.App;
 import app.controller.ClinicalChemTechController;
 import app.domain.model.*;
-import app.mappers.DTO.ClientDTO;
 import auth.AuthFacade;
+import auth.UserSession;
 //import com.sun.rowset.internal.Row;
+import auth.domain.model.Email;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,13 +18,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
-
+import javax.imageio.IIOParam;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
 public class ClinicalChemTechUI implements Initializable {

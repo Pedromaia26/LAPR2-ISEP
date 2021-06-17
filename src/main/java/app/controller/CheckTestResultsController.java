@@ -1,8 +1,6 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.mappers.*;
-import app.mappers.DTO.*;
 import auth.AuthFacade;
 import auth.UserSession;
 import auth.domain.model.Email;
@@ -13,6 +11,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CheckTestResultsController {

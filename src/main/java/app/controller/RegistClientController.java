@@ -1,12 +1,12 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.mappers.DTO.ClientDTO;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 
 public class RegistClientController {
     private ClientStore clientStore;
