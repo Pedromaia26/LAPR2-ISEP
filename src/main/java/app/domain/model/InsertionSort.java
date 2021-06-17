@@ -32,7 +32,7 @@ public class InsertionSort implements SortingAlgorithms{
             }
            // Collections.swap(clients, j+1, i);
         }
-        System.out.println(clients);
+        //System.out.println(clients);
         return clients;
     }
 
