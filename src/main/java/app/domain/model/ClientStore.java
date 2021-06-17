@@ -52,6 +52,10 @@ public class ClientStore {
             return false;
         return ! this.clientList.contains(nc);
     }
+
+    public void addToList(Client nc){
+        this.clientList.add(nc);
+    }
     /**
      * Saves the client received.
      * @param nc the client to be saved.
@@ -167,6 +171,8 @@ public class ClientStore {
     }
 
     public void ChangeName(Client client, String name){
+        if (name.length()>35)
+            throw new IllegalArgumentException("Name cannot be longer then 35 characters");
 
         client.setName(name);
 
