@@ -18,9 +18,9 @@ public class SequenceTest {
     public void testToString() throws ParseException {
 
         Sequence sequence= new Sequence(new Date(2021-1900,5,21),5);
-
-
         
+
+
 
         assertEquals("Sequence{date=21/06/2021, number=5}",sequence.toString());
 
