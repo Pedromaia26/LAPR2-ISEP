@@ -44,8 +44,7 @@ public class OrgRole implements Serializable {
      * @param socCode the SocCode of a Employee
      * @return the Constructor to a new Employee
      */
-    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
-        company = App.getInstance().getCompany();
+    public  Employee createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode, Laboratory lab, Company company) throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         OrgRole role = company.getOrgRoleStore().getRoleByDesignation(Orole);
         return new Employee(role, employeeId, name, address, phoneNumber, email, socCode, lab);
     }
@@ -63,7 +62,7 @@ public class OrgRole implements Serializable {
      * @param docIndexNumber the Doctor Index Number of a Specialist Doctor
      * @return the Constructor to a new Specialist Doctor
      */
-    public SpecialistDoctor createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode,Laboratory lab, int docIndexNumber){
+    public SpecialistDoctor createEmployee(String Orole, String employeeId, String name, String address, long phoneNumber, Email email, int socCode,Laboratory lab, int docIndexNumber, Company company){
         OrgRole role = new OrgRole(Orole);
         return new SpecialistDoctor(role, employeeId, name, address, phoneNumber, email, socCode,lab, docIndexNumber);
     }
