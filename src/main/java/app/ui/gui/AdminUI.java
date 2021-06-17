@@ -156,6 +156,7 @@ public class AdminUI implements Initializable {
 
 
         double sL = 0;
+        double cL = 0;
 
 
         try {
@@ -185,7 +186,7 @@ public class AdminUI implements Initializable {
 
         try {
             String c = confidenceLevel.getText();
-            Double cL = Double.parseDouble(c);
+            cL = Double.parseDouble(c);
             confidLevelLabel.setVisible(false);
             if (cL < 0 || cL > 100) {
                 confidLevelLabel.setText("Must be a number between 0 and 100!");
@@ -212,15 +213,15 @@ public class AdminUI implements Initializable {
         if (regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Simple")) {
             if (dataComboBox.getSelectionModel().getSelectedItem().equals("Days")) {
                 if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
-                    controller.getReportForDays(startDate, endDate, currentDate, hP, sL);
+                    controller.getReportForDays(startDate, endDate, currentDate, hP, sL, cL);
                 } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
-                    controller.getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL);
+                    controller.getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL);
                 }
             } else if (dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")) {
                 if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
-                    controller.getReportForWeeks(startDate, endDate, currentDate, hP, sL);
+                    controller.getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL);
                 } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
-                    controller.getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL);
+                    controller.getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL);
                 }
             }
         }else if(regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Multiple")){

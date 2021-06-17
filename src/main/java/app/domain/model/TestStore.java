@@ -241,12 +241,6 @@ public class TestStore {
             l++;
         }
 
-        for (int i = 0; i < c.length; i++) {
-            //reportNHS = reportNHS + String.format("Number of performed Covid-19 tests at %s:  %.0f \n",  formatter.format(dateList.get(i)), c[i]);
-//            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
-//            System.out.println(c[i]);
-        }
-        //reportNHS += "\n";
         return c;
     }
 
@@ -310,7 +304,6 @@ public class TestStore {
         int count = 0;
         calend.setTime(startDate);
         do{
-
             if (calend.get(Calendar.DAY_OF_WEEK) != 1) {
                 c[l] = getPositiveTests(startDate, endDate, calend.getTime());
                 l++;
@@ -319,38 +312,11 @@ public class TestStore {
             calend.setTime(addDays(startDate, count));
         }while (l<c.length);
 
-
-        //}
-
-
-         /*   for (Test t : getTestsInInterval(startDate, endDate)) {
-                if (t.getLabOrder().getTestType().getDescription().equalsIgnoreCase("Covid-19")) {
-                    if (!t.getResults().isEmpty()) {
-                        System.out.println(t.getResults());
-                        if (t.getResults().get(0) > 1.4) {
-                            // System.out.println(t.getValidationDate());
-                            long dif = Math.abs(t.getValidationDate().getTime() - startDate.getTime());
-                            long p = TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS) - 1;
-                            int pos = (int) p;
-                            c[pos]++;
-                        }
-                    }
-                }
-
-            }*/
-
-            for (int i = 0; i < c.length; i++) {
-               // reportNHS += String.format("Number of positive Covid-19 tests at %s:  %.0f \n", formatter.format(dateList.get(i)), c[i]);
-//                System.out.printf("Number of positive Covid-19 tests: %s\n", formatter.format(dateList.get(i)));
-//                System.out.println(c[i]);
-                cal.add(Calendar.DATE, 1);
-            }
-            //reportNHS += "\n";
-            return c;
-        }
+        return c;
+    }
 
 
-    public double[] getCovidTestsPerDay(Date currentDate, int hP){
+    public double[] getPositiveCovidTestsPerDay(Date currentDate, int hP){
         List<Date> dayList = new ArrayList<>();
         Calendar cal = Calendar.getInstance();
         int u = 0;
@@ -371,19 +337,17 @@ public class TestStore {
 
         Date firstDay = dayList.get(u-1);
 
-        int diff = hP;
-        double[] c = new double[diff];
+        double[] c = new double[hP];
 
         List<Date> dateList = new ArrayList<>();
 
-        int dayOfWeek = 0;
+
         int sum = 0;
         int j = 0;
-        //for (int j = 0; j < diff; j++) {
+
         do{
             cal.setTime(addDays(firstDay, sum));
             if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
-                dayOfWeek++;
                 getPositiveTests(firstDay, currentDate, cal.getTime());
                 dateList.add(cal.getTime());
                 j++;
@@ -408,11 +372,6 @@ public class TestStore {
         }while (l<c.length);
 
 
-//        for (int i = 0; i < c.length; i++) {
-//            System.out.printf("Number of performed Covid-19 tests at %s:\n", formatter.format(dateList.get(i)));
-//            System.out.println(c[i]);
-//        }
-
         return c;
 
 
@@ -422,75 +381,25 @@ public class TestStore {
         return this.hPDays;
     }
 
-    public double[] getCovidTestsPerWeek(Date currentDate, int hP){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    public double[] getPositiveCovidTestsPerWeek(Date currentDate, int hP) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
+        double[] c = new double[hP];
         int numOfPositiveTests;
         int day = cal.get(Calendar.DAY_OF_WEEK);
-        Date date = subtractDays(currentDate, day-2);
-        date = subtractDays(date,7*hP);
-        for(int i=0; i<hP;i++){
+        Date date = subtractDays(currentDate, day - 2);
+        date = subtractDays(date, 7 * hP);
+        for (int i = 0; i < hP; i++) {
             cal.setTime(date);
-            Date date2 = addDays(date,5);
+            Date date2 = addDays(date, 5);
             numOfPositiveTests = getPositivePerWeekTests(date, date2);
+            c[i] = numOfPositiveTests;
             hPWeeksInitial.add(date);
-            hPWeeksFinal.add(date);
-            reportNHS += String.format("Number of positive Covid-19 tests in the week from %s to %s: %d \n", formatter.format(date), formatter.format(date2), numOfPositiveTests);
-            date = addDays(date,7);
+            hPWeeksFinal.add(date2);
+            date = addDays(date, 7);
         }
 
-
-
-        List<Date> dayList = new ArrayList<>();
-        List<Date> dateList = new ArrayList<>();
-
-        int u = 0;
-        int aux = 1;
-        do{
-            Date date1 = subtractDays(currentDate, aux);
-            cal.setTime(date1);
-            if(cal.get(Calendar.DAY_OF_WEEK)!=1){
-                dayList.add(date);
-                u++;
-            }
-            aux++;
-        }while(u<hP*7);
-
-        Date firstDay = dayList.get(u-1);
-
-        int dayOfWeek=0;
-        int sum = 0;
-        int j = 0;
-        //for (int j = 0; j < diff; j++) {
-        do{
-            cal.setTime(addDays(firstDay, sum));
-            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
-                dayOfWeek++;
-                getPositiveTests(firstDay, currentDate, cal.getTime());
-                dateList.add(cal.getTime());
-                j++;
-            }
-            sum++;
-        }while(j<hP);
-
-
-        int diff = hP*7;
-        double[] c = new double[diff];
-        cal.setTime(firstDay);
-        int l = 0;
-        int count = 0;
-        do{
-
-            if (cal.get(Calendar.DAY_OF_WEEK) != 1) {
-                c[l] = getTests(firstDay, currentDate, cal.getTime());
-                l++;
-            }
-            count++;
-            cal.setTime(addDays(firstDay, count));
-        }while (l<c.length);
         return c;
-
     }
 
     public static Date subtractDays(Date date, int days) {
@@ -597,7 +506,11 @@ public class TestStore {
                     sumAge += t.getClient().calculateAge(t.getClient().getBirth());
                 }
             }
-            return (sumAge/a);
+            if(a!=0) {
+                return (sumAge / a);
+            }else{
+                return a;
+            }
         }
 }
 

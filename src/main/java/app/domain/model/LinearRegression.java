@@ -240,11 +240,11 @@ public class LinearRegression {
         return confidenceIntervals.toString();
     }
 
-    public double getTStudent(double sL){
-        return tDistribution.inverseCumulativeProbability(obs(sL));
+    public double getTStudent(double cL){
+        return tDistribution.inverseCumulativeProbability(cL);
     }
 
-    public List<String> confidenceInterval(double[] arrayX){
+    public List<String> confidenceInterval(double[] arrayX, double cL){
         double soma = 0;
         for (int i = 0; i < arrayX.length; i++) {
             soma += arrayX[i];
@@ -252,7 +252,7 @@ public class LinearRegression {
 
         double media = soma/arrayX.length;
 
-        double delta = 2.07 * Math.sqrt(s2)*Math.sqrt((double) 1/arrayX.length+(Math.pow((arrayX[0]-media),2))/xxBar);
+        double delta = getTStudent(cL) * Math.sqrt(s2)*Math.sqrt((double) 1/arrayX.length+(Math.pow((arrayX[0]-media),2))/xxBar);
 
 
         for (int i = 0; i < arrayX.length; i++) {
