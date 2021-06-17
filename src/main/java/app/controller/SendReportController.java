@@ -42,8 +42,9 @@ public class SendReportController {
         report = new ReportNHS();
         report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
+        double[] covidTestsHp = testStore.getTestForHp(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
-        report.addConfLevel(positiveCasesToInterval , hPDays, cL/100);
+        report.addConfLevel(positiveCasesToInterval, covidTestsHp, hPDays, cL/100);
     }
 
     public void getReportForWeeks(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL){
@@ -53,9 +54,10 @@ public class SendReportController {
         report = new ReportNHS();
         report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
+        double[] perfomedTestsForHp = testStore.getCovidTestsForWeekHp(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();
         List<Date> hPWeeksFinal = testStore.gethPWeeksFinal();
-        report.addConfLevelForWeek(positiveCasesToInterval, hPWeeksInitial, hPWeeksFinal, cL/100);
+        report.addConfLevelForWeek(positiveCasesToInterval, perfomedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100);
     }
 
     public void getReportForDaysWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL){
@@ -63,10 +65,11 @@ public class SendReportController {
         double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = new ReportNHS();
-        report.createLinearRegression(meanAge, positiveTests, sL/100, cL/100);
+        report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
+        double[] meanAgeHp = testStore.getMeanAgeForHpDay(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
-        report.addConfLevel(positiveCasesToInterval , hPDays, cL/100);
+        report.addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100);
     }
 
     public void getReportForWeeksWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL){
@@ -75,9 +78,10 @@ public class SendReportController {
         report = new ReportNHS();
         report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
+        double[] meanAgeHp = testStore.getMeanAgeForHPWeek(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();
         List<Date> hPWeeksFinal = testStore.gethPWeeksFinal();
-        report.addConfLevelForWeek(positiveCasesToInterval, hPWeeksInitial, hPWeeksFinal, cL/100);
+        report.addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100);
     }
 
 }
