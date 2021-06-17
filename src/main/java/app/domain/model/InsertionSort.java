@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.mappers.DTO.ClientDTO;
+
 import java.util.Collections;
 import java.util.List;
 

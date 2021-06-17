@@ -1,11 +1,13 @@
 package app.controller;
 
 import app.domain.model.*;
-import app.domain.model.TestParameterDto;
+import app.mappers.DTO.TestDTO;
+import app.mappers.DTO.TestParameterDto;
+import app.mappers.TestMapper;
+import app.mappers.TestParameterMapper;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;

@@ -1,12 +1,15 @@
 package app.controller;
 
 import app.domain.model.*;
+import app.mappers.DTO.ParameterCategoryDto;
+import app.mappers.DTO.TestTypeDTO;
+import app.mappers.ParameterCategoryMapper;
+import app.mappers.TestTypeMapper;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestTypeController {

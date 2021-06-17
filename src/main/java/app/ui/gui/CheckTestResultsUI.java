@@ -2,12 +2,14 @@ package app.ui.gui;
 
 import app.controller.CheckTestResultsController;
 import app.domain.model.*;
+import app.mappers.DTO.ReportDTO;
+import app.mappers.DTO.TestDTO;
+import app.mappers.DTO.TestParameterDto;
+import app.mappers.DTO.TestParameterResultDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Orientation;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -24,7 +26,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class CheckTestResultsUI implements Initializable {
 

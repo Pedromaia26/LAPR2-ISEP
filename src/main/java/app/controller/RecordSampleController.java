@@ -1,6 +1,10 @@
 package app.controller;
 
 import app.domain.model.*;
+import app.mappers.DTO.SampleDTO;
+import app.mappers.DTO.TestDTO;
+import app.mappers.SampleMapper;
+import app.mappers.TestMapper;
 import auth.AuthFacade;
 import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
@@ -11,7 +15,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 
 public class RecordSampleController {
     private TestStore testStore;

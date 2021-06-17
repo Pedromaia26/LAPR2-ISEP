@@ -2,6 +2,8 @@ package app.controller;
 
 import app.domain.model.*;
 
+import app.mappers.DTO.TestDTO;
+import app.mappers.TestMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -420,12 +422,6 @@ public class LCOverviewController implements Initializable{
             }
 
         }
-
-
-
-
-
-
 
     }
 

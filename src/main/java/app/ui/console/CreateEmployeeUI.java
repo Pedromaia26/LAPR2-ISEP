@@ -2,17 +2,15 @@ package app.ui.console;
 
 import app.controller.App;
 import app.controller.RegistEmployeeController;
-import app.domain.model.*;
-import app.ui.console.utils.Utils;
+import app.mappers.DTO.EmployeeDto;
+import app.mappers.DTO.LaboratoryDTO;
+import app.mappers.DTO.OrgRoleDto;
 import auth.domain.model.Email;
-import auth.domain.model.User;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

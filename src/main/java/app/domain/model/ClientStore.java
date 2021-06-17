@@ -9,8 +9,9 @@ import java.util.List;
 import java.util.Properties;
 
 import app.controller.App;
+import app.mappers.ClientMapper;
+import app.mappers.DTO.ClientDTO;
 import app.serialization.Serialization;
-import auth.domain.model.Email;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

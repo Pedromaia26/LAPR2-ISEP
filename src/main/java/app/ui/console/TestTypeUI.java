@@ -1,14 +1,12 @@
 package app.ui.console;
 
-import app.controller.RegistEmployeeController;
 import app.controller.TestTypeController;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryDto;
+import app.mappers.DTO.ParameterCategoryDto;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;

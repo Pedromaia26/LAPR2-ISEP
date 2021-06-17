@@ -1,15 +1,12 @@
 package app.ui.gui;
 
 import app.domain.model.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import app.mappers.DTO.TestDTO;
+import app.mappers.DTO.TestParameterDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Orientation;
-import javafx.scene.Node;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,7 +17,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class TestDetailsUI implements Initializable {
 

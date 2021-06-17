@@ -1,6 +1,10 @@
 package app.controller;
 
 import app.domain.model.*;
+import app.mappers.ClientMapper;
+import app.mappers.DTO.ClientDTO;
+import app.mappers.DTO.TestDTO;
+import app.mappers.TestMapper;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 

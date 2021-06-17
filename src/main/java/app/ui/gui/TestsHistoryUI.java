@@ -2,6 +2,8 @@ package app.ui.gui;
 
 import app.controller.ClinicalChemTechController;
 import app.domain.model.*;
+import app.mappers.DTO.ClientDTO;
+import app.mappers.DTO.TestDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
