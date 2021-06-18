@@ -1,6 +1,5 @@
 package app.domain.model;
 
-import com.sun.corba.se.spi.activation.BadServerDefinition;
 import org.junit.Assert;
 import org.junit.Test;
 
