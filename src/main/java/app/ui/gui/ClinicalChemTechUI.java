@@ -5,7 +5,6 @@ import app.controller.ClinicalChemTechController;
 import app.domain.model.*;
 import app.mappers.dto.ClientDTO;
 import auth.AuthFacade;
-//import com.sun.rowset.internal.Row;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

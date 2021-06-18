@@ -1,17 +1,23 @@
 package app.domain.model;
 
+
 import app.controller.App;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
+
+import com.nhs.report.Report2NHS;
+
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 
-public class ReportNHS {
+import java.util.Properties;
+import java.util.TimerTask;
+
+public class ReportNHS extends TimerTask {
     private LinearRegression regression;
     private String report;
     private String api;
@@ -20,6 +26,15 @@ public class ReportNHS {
     public ReportNHS(){
         this.report = "";
         this.api = "Domain.ReportNHS";
+    }
+
+    @Override
+    public void run() {
+        Report2NHS.writeUsingFileWriter(report);
+    }
+
+    public ReportNHS(String report){
+        this.report = report;
     }
 
 

@@ -32,6 +32,10 @@ public class TestTypeStore {
         return testTypeList.add(tt);
     }
 
+    public void add(TestType testType){
+        testTypeList.add(testType);
+    }
+
     /**
      * Create a new type of test with the attributes received.
      * @param description The test type description
@@ -117,4 +121,7 @@ public class TestTypeStore {
         }
         throw new IllegalArgumentException("There is no Test Type with such Description!");
     }
+
 }
+
+

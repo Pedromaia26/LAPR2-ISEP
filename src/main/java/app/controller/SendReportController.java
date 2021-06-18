@@ -7,14 +7,19 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.IOException;
+import java.sql.Time;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
 
 public class SendReportController {
     private Company company;
     private TestStore testStore;
     private ReportNHS report;
+    private Timer timer = new Timer();
+    private ReportNHS autoReport;
+
 
     public SendReportController() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         this(App.getInstance().getCompany());
@@ -35,7 +40,11 @@ public class SendReportController {
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         double[] covidTestsHp = testStore.getTestForHp(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
+        autoReport = new ReportNHS(report.getReport());
+        long delay = 120;
+        timer.schedule(autoReport, delay*1000, 120000);
         report.addConfLevel(positiveCasesToInterval, covidTestsHp, hPDays, cL/100);
+
     }
 
     public void getReportForWeeks(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
