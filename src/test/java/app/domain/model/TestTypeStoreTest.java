@@ -186,10 +186,10 @@ public class TestTypeStoreTest {
 
         TestType tt = new TestType("COVID-19", "swab/blood", "89nja", listPC);
 
-        c.getTestTypeStore().add(tt);
+
 
         List<TestType> testTypeList= new ArrayList<>();
-
+        c.getTestTypeStore().add(tt);
         testTypeList.add(tt);
 
         List<TestType> testTypeList1= c.getTestTypeStore().getTestTypes();
