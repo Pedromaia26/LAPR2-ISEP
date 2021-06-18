@@ -422,7 +422,6 @@ public class LinearRegressionTest {
         expected.add(h);
 
         String actual2 = lR.getConfidenceIntervals();
-        String expected2 = "MAIAREGA";
 
         assertEquals(expected.toString(), actual2);
 
