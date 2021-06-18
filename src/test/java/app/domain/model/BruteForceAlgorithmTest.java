@@ -19,4 +19,15 @@ public class BruteForceAlgorithmTest {
 
         assertEquals(Arrays.toString(expected),Arrays.toString(result));
     }
+
+    @Test
+    public void maxSum2() {
+        int[] test = new int[]{-1,-2,-5,-3,-1};
+
+        int[] result= BruteForceAlgorithm.MaxSum(test);
+
+        int [] expected = new int[]{};
+
+        assertEquals(Arrays.toString(expected),Arrays.toString(result));
+    }
 }
