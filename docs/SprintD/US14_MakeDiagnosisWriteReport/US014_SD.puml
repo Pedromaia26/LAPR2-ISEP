@@ -12,6 +12,7 @@ participant "report\n:Report" as Report
 participant "TestParameter" as TestParameter
 
 autonumber
+
 activate SD
 SD -> Interface: starts the realization of the report
 activate Interface
@@ -27,6 +28,7 @@ Controller -> TestMapper: lTestsDto = toDTO(lTests)
 activate TestMapper
 deactivate TestMapper
 deactivate Controller
+loop
 Interface --> SD: ask to select the test
 deactivate Interface
 SD -> Interface: selects the intended test
@@ -75,6 +77,6 @@ deactivate Controller
 Interface --> SD: informs operation success
 deactivate Interface
 deactivate SD
-
+end
 
 @enduml
