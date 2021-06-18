@@ -3,6 +3,7 @@ package app.domain.model;
 import app.controller.App;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class TestParameter implements Serializable {
 
@@ -54,4 +55,14 @@ public class TestParameter implements Serializable {
                 ", tpr=" + tpr +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TestParameter test = (TestParameter) o;
+        return Objects.equals(parameter, test.parameter) && Objects.equals(tpr, test.tpr);
+    }
+
 }
