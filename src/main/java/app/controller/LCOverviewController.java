@@ -127,7 +127,7 @@ public class LCOverviewController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        Locale.setDefault(Locale.ENGLISH);
+
 
         for(TestDTO testDTO : getTests()){
             listView.getItems().add(testDTO.getCode());

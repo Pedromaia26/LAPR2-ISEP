@@ -139,7 +139,7 @@ public class AdminUI implements Initializable {
 
     }
 
-    public void sendDataOnAction (ActionEvent actionEvent) throws ParseException {
+    public void sendDataOnAction (ActionEvent actionEvent) throws ParseException, OutputException, BarcodeException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
 
         if (begin.getValue() == null && end.getValue() == null) {
             invalidDate.setText("Please, type the begin and end date");
