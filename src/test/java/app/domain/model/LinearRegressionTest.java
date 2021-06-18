@@ -194,7 +194,7 @@ public class LinearRegressionTest {
         String actual = lR.toString();
         String expected = "0.89 n + -0.36  (R^2 = 0.937)";
 
-        assertEquals(actual, expected);
+        assertEquals(actual.replace(",", "."), expected.replace(",", "."));
     }
 
     @Test
@@ -402,14 +402,14 @@ public class LinearRegressionTest {
         double confidenceLevel = 0.95;
         LinearRegression lR = new LinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
-        String a = "4,3352 - 5,5702\n";
-        String b = "8,7609 - 9,9959\n";
-        String c = "2,5649 - 3,7999\n";
-        String d = "3,4501 - 4,6851\n";
-        String e = "3,4501 - 4,6851\n";
-        String f = "1,6798 - 2,9148\n";
-        String g = "-0,9756 - 0,2594\n";
-        String h = "0,7947 - 2,0296\n";
+        String a = "4.3352 - 5.5702\n";
+        String b = "8.7609 - 9.9959\n";
+        String c = "2.5649 - 3.7999\n";
+        String d = "3.4501 - 4.6851\n";
+        String e = "3.4501 - 4.6851\n";
+        String f = "1.6798 - 2.9148\n";
+        String g = "-0.9756 - 0.2594\n";
+        String h = "0.7947 - 2.0296\n";
         List<String> expected = new ArrayList<>();
         expected.add(a);
         expected.add(b);
@@ -422,7 +422,7 @@ public class LinearRegressionTest {
 
         String actual2 = lR.getConfidenceIntervals();
 
-        assertEquals(expected.toString(), actual2);
+        assertEquals(expected.toString().replace(",", "."), actual2.replace(",", "."));
 
 
 
@@ -493,13 +493,12 @@ public class LinearRegressionTest {
         double confidenceLevel = 0.95;
         LinearRegression lR = new LinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
-        String a = "4,3352 - 5,5702\n";
-        String b = "8,7609 - 9,9959";
+        String a = "4.3352 - 5.5702\n";
+        String b = "8.7609 - 9.9959";
         List<String> expected = new ArrayList<>();
         expected.add(a);
         expected.add(b);
-
-        assertEquals(expected.get(0), actual.get(0));
+        assertEquals(expected.get(0).replace(",", "."), actual.get(0).replace(",", "."));
     }
 
     @Test
