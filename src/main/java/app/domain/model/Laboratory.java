@@ -113,4 +113,6 @@ public class Laboratory implements Serializable {
     public List<TestType> getListPC() {
         return listPC;
     }
+
+
 }

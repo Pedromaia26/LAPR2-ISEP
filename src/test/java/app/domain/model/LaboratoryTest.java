@@ -29,6 +29,32 @@ public class LaboratoryTest {
         Laboratory l = new Laboratory("A4RLD", "UniversityExeterLaboratory", "Manchester", 11111111111L, 9811111111L, ttPC);
     }
 
+    @Test
+    public void createLaboratoryNameWith20chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "11111", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("A4RLD", "UniversityExeterLabo", "Manchester", 11111111111L, 9811111111L, ttPC);
+
+
+        assertEquals("UniversityExeterLabo", l.getName());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void createLaboratoryAdressWithMoreThan20chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
@@ -46,6 +72,29 @@ public class LaboratoryTest {
         ttPC.add(tt);
 
         Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, ttPC);
+    }
+
+    @Test
+    public void createLaboratoryAdressWith30chars() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals("Manchester United Kingdomasdfg", l.getAddress());
     }
 
 
@@ -142,6 +191,118 @@ public class LaboratoryTest {
     }
 
     @Test
-    public void testEquals() {
+    public void getLaboratoryID() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals("MMOL3", l.getLaboratoryID());
+    }
+
+    @Test
+    public void getName() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals("Sonar", l.getName());
+    }
+
+    @Test
+    public void getAddress() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals("Manchester United Kingdomasdfg", l.getAddress());
+    }
+
+    @Test
+    public void getPhoneNumber() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals(22222222222L, l.getPhoneNumber());
+    }
+
+
+
+    @Test
+    public void getTinNumber() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Company c = new Company("Many Labs");
+        ParameterCategory pc1 = new ParameterCategory("Hemogram",  "11111");
+
+        c.getParameterCategoryStore().addToList(pc1);
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pc = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        TestType tt1 = new TestType("Immunity", "Swab", "11111", listPC);
+        c.getTestTypeStore().addToList(tt1);
+
+        List<TestType> ttPC = new ArrayList<>();
+        TestType tt = c.getTestTypeStore().getTestTypeByCode("11111");
+
+        ttPC.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdomasdfg", 22222222222L, 3123123435L, ttPC);
+
+        assertEquals(3123123435L, l.getTinNumber());
+    }
+
+    @Test
+    public void getListPC() {
     }
 }
