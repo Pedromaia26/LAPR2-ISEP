@@ -10,6 +10,7 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.text.ParseException;
+import java.util.Objects;
 
 public class OrgRole implements Serializable {
 
@@ -82,6 +83,16 @@ public class OrgRole implements Serializable {
     @Override
     public String toString() {
         return designation;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrgRole orgRole = (OrgRole) o;
+        return Objects.equals(designation, orgRole.designation);
     }
 
 

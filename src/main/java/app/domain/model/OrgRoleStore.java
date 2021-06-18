@@ -10,11 +10,6 @@ public class OrgRoleStore {
     private List<OrgRole> store = new ArrayList<>();
 
     /**
-     * Constructor that create a empty instance of a OrgRole store
-     */
-    public OrgRoleStore() { }
-
-    /**
      * Method that adds the default OrgRoles if there are no OrgRoles registered
      */
     public void addDefaultRoles(){
