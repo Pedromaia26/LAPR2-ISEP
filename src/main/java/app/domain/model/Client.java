@@ -106,6 +106,7 @@ public class Client implements Serializable {
             this.name=name;
 
 
+        //Ver verificacao email
 
         this.email= new Email(email);
 
@@ -118,6 +119,7 @@ public class Client implements Serializable {
 
         this.sex=sex;
 
+        //ver verificacao nascimento
 
         if(!birth.matches("^\\d{2}/\\d{2}/\\d{4}$"))
             throw new IllegalArgumentException("Format of the data is incorrect");

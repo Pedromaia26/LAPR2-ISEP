@@ -90,6 +90,13 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_SD,Constants.ROLE_SD);
         this.authFacade.addUserRole(Constants.ROLE_C,Constants.ROLE_C);
 
+        /*this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_ADMIN));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_REC));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_MLT));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_CCT));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_LC));
+        this.getCompany().getOrgRoleStore().addOrgRole(new OrgRole(Constants.ROLE_SD));*/
+
         company.getEmployeeStore().read(company);
         company.getEmployeeStore().readSpecialistDoctor(company);
         company.getClientStore().read(company);
@@ -171,6 +178,26 @@ public class App {
         LabOrder lO = new LabOrder(tt, this.getCompany().getParameterStore().getParameterList());
         LabOrder lO1 = new LabOrder(tt2, parameterForCovid);
 
+
+        //Test t = new Test(getCompany(), client, "123456789098",  lO, l);
+        //this.getCompany().getTestStore().saveTest(t);
+
+        //Sample s = new Sample(company);
+        //t.saveSample(s, company, "14/06/2021");
+
+
+        //Test t2 = new Test(getCompany(), client2, "898916726190", lO,l);
+        //this.getCompany().getTestStore().saveTest(t2);
+        //Test t3 = new Test(getCompany(), client, "894016726122", lO1,l);
+        //this.getCompany().getTestStore().saveTest(t3);
+        //Test t4 = new Test(getCompany(), client, "112016701822", lO1, l);
+        //this.getCompany().getTestStore().saveTest(t4);
+
+
+        //t.validateTest();
+        //t3.validateTest();
+        //t4.validateTest();
+        //System.out.println(t4.getResults());
 
         for (Test t: company.getTestStore().getTests()){
             System.out.println(t.getResults());
