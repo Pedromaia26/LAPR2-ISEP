@@ -10,10 +10,7 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.IOException;
 import java.sql.Time;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Timer;
+import java.util.*;
 
 public class SendReportController {
     private Company company;
@@ -49,9 +46,13 @@ public class SendReportController {
         double[] covidTestsHp = testStore.getTestForHp(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
         autoReport = new ReportNHS(report.getReport());
-        long delay = 120;
-        timer.schedule(autoReport, delay*1000, 120000);
-        report.addConfLevel(positiveCasesToInterval, covidTestsHp, hPDays, cL/100);
+        /*long delay = 120;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 3);
+        calendar.set(Calendar.SECOND, 0);
+        Date time = calendar.getTime();
+        timer.schedule(autoReport, time);*/
 
     }
 
