@@ -88,5 +88,10 @@ public class Company {
     public LabOrderStore getLabOrderStore(){return labOrderStore; }
     public TestStore getTestStore(){return testStore;}
 
+    public ReportNHS createReportNHS(){
+        return new ReportNHS();
+    }
+
+
 
 }

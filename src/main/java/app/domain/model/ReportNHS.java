@@ -1,35 +1,46 @@
 package app.domain.model;
 
-import com.nhs.report.Report2NHS;
-import com.sun.javafx.binding.StringFormatter;
+import app.controller.App;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 public class ReportNHS {
-    LinearRegression regression;
-    String report;
+    private LinearRegression regression;
+    private String report;
+    private String api;
+    private String regressionModel;
 
     public ReportNHS(){
+        this.report = "";
+        this.api = "Domain.ReportNHS";
+    }
+
+
+
+    public void sendReportNHS() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        reportApi().writeUsingFileWriter(report);
+    }
+
+    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        regression = linearRegression();
+        regression.setValuesSimpleLinearRegression(arr1, arr2);
+    }
+
+    public void printReport(double[] arr1, double[] arr2, double sL, double cL){
         report = "";
-    }
-
-
-
-    public void sendReportNHS(){
-        Report2NHS.writeUsingFileWriter(report);
-    }
-
-    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL){
         double[] predict = new double[arr1.length];
-        regression = new LinearRegression(arr1, arr2);
-
         for(int i=0; i<predict.length; i++){
             predict[i] = regression.predict(arr1[i]);
         }
         report += "Regression model equation: \n";
-        report += regression;
+        report += regression.getEquation();
         report += "\n";
 
         report += "Other statistics";
@@ -57,16 +68,15 @@ public class ReportNHS {
         report += ("\n-----------------------\n");
 
         report += "Decision: f\n";
-        report += String.format("0 > f%.2f,(%d.%d)=",sL ,1, regression.getDegressOfFreedom(),regression.getRss());
+        report += String.format("0 > f%.2f,(%d.%d)= %.3f\n",sL ,1, regression.getDegressOfFreedom(),regression.getRss(), regression.getFDistribution(sL));
+        report += regression.decisionAnova(sL);
 
         report += ("\n\n\n-----------------------\n\n");
 
         report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
     }
 
-    public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL){
-        System.out.println("array "+ array.length);
-        System.out.println("datas "+ dates.size());
+    public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         regression.confidenceInterval(array, cL);
         for(int i=0;i<array.length; i++){
@@ -75,7 +85,7 @@ public class ReportNHS {
         sendReportNHS();
     }
 
-    public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL){
+    public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
             report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(array, cL).get(i) );
@@ -83,6 +93,35 @@ public class ReportNHS {
         sendReportNHS();
     }
 
+    public ReportToNHS reportApi() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Properties prop = App.getInstance().getprops();
+        String classaux = prop.getProperty(getApi());
+        Class<?> oClass = Class.forName(classaux);
+        return (ReportToNHS) oClass.newInstance();
+    }
+
+    public LinearRegression linearRegression() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Properties prop = App.getInstance().getprops();
+        String classaux = prop.getProperty(getRegressionModel());
+        Class<?> oClass = Class.forName(classaux);
+        return (LinearRegression) oClass.newInstance();
+    }
+
+    public void setRegressionModel(String regressionModel){
+        this.regressionModel = regressionModel;
+    }
+
+    public String getRegressionModel(){
+        return regressionModel;
+    }
+
+    public void setApi(String api){
+        this.api = api;
+    }
+
+    public String getApi(){
+        return api;
+    }
 
 
     public String getReport(){
