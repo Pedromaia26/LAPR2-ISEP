@@ -1,18 +1,27 @@
 package app.domain.model;
 
 import com.nhs.report.Report2NHS;
-import com.sun.javafx.binding.StringFormatter;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimerTask;
 
-public class ReportNHS {
+public class ReportNHS extends TimerTask {
     LinearRegression regression;
     String report;
 
     public ReportNHS(){
         report = "";
+    }
+
+    @Override
+    public void run() {
+        Report2NHS.writeUsingFileWriter(report);
+    }
+
+    public ReportNHS(String report){
+        this.report = report;
     }
 
 
