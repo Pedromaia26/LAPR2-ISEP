@@ -91,7 +91,6 @@ public class ImportCSVFileController{
 
             try
             {
-            //parsing a CSV file into BufferedReader class constructor
 
                 BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
                 line=br.readLine();
@@ -139,14 +138,12 @@ public class ImportCSVFileController{
                 System.out.println(invalidParameters);
 
 
-                while ((line = br.readLine()) != null)   //returns a Boolean value
+                while ((line = br.readLine()) != null)
                 {
                     try {
                         cont++;
-                        String[] tests = line.split(splitBy);    // use comma as separator
+                        String[] tests = line.split(splitBy);
                         parameterCategory = new ArrayList<>();
-
-                        //Nao utilizar code, Gerado automaticamente
 
                         DecimalFormat df = new DecimalFormat("0000000000000000");
 
@@ -171,8 +168,6 @@ public class ImportCSVFileController{
                         }
 
 
-                        //Fazer com ligacao a store
-
                         LabOrder labOrder = labOrderStore.createLabOrder(this.testType, this.parameters);
 
 
@@ -183,7 +178,7 @@ public class ImportCSVFileController{
                             this.client = clientStore.getClientByEmail(tests[9]);
                         } else {
                             ClientDTO clientDTO = new ClientDTO((df.format(Long.parseLong(tests[3]))), Long.parseLong(tests[4]), tests[6], "Undifined", Long.parseLong(tests[5]), tests[9], tests[8], Long.parseLong(tests[7]), tests[10]);
-                            System.out.println("a");
+
                             this.client = clientStore.createNewClient(clientDTO);
                             if(clientStore.addNewClient(client)) {
                                 clientStore.addUser(company);

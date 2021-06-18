@@ -72,7 +72,7 @@ public class RecordSampleController {
 
         Date date = new Date();
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String data=formatter.format(date);
 
         boolean flag = this.test.saveSample(samp, company, data);

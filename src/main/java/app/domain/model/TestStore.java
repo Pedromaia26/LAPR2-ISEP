@@ -33,7 +33,6 @@ public class TestStore {
     /**
      * List that contains the tests to be reported.
      */
-    /*private List<Test> testsToBeReported;*/
 
     private List<Test> listTestsinRegDateRange;
 
@@ -207,15 +206,10 @@ public class TestStore {
 
     public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
-//        listTestsinRegDateRange = new ArrayList<>();
         listTestsinValDateRange = new ArrayList<>();
         for(Test test : tests){
 
 
-//            if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
-//
-//                listTestsinRegDateRange.add(test);
-//            }
             Calendar cal = Calendar.getInstance();
             cal.setTime(startDate);
             int firstDay = cal.get(Calendar.DAY_OF_YEAR);
@@ -430,9 +424,7 @@ public class TestStore {
     }
 
     public static Date subtractDays(Date date, int days) {
-//        GregorianCalendar cal = new GregorianCalendar();
-//        cal.setTime(date);
-//        cal.add(Calendar.DATE, -days);
+
         Date dateAux = new Date(date.getTime());
         dateAux.setHours(dateAux.getHours()-(24*days));
 

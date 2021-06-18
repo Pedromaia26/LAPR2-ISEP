@@ -32,7 +32,6 @@ public class BubbleSort implements SortingAlgorithms{
                 }
             }
         }
-        //System.out.println(clientList);
         return clientList;
     }
 

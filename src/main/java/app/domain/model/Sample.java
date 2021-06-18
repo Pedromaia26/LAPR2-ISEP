@@ -41,7 +41,6 @@ public class Sample implements Serializable {
 
 
 
-        //Criar barcode automatico e fazer verificacao se nao existe igual
     }
 
     /**
