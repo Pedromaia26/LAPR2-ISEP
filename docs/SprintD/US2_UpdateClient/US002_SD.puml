@@ -1,0 +1,94 @@
+@startuml
+actor "Client" as C
+participant ":AlterClientDataUI" as Interface
+participant ":AlterClientDataController" as Controller
+participant ":Company" as Company
+participant "clientStore\n:ClientStore" as cStore
+participant ":AuthFacade" as authFacade
+participant "userSession\n:UserSession" as us
+participant ":ClientMapper" as cMapper
+participant "client\n:Client" as cl
+participant "clientDto\n:ClientDTO"
+
+autonumber
+
+activate C
+C -> Interface: asks to update its personal data
+activate Interface
+Interface -> Controller: clientDto = getClient()
+activate Controller
+Controller -> Company: authFacade = getAuthFacade()
+activate Company
+deactivate Company
+Controller -> authFacade: userSession = getCurrentUserSession()
+activate authFacade
+deactivate authFacade
+Controller -> us: empEmail = getUserId()
+activate us
+deactivate us
+Controller -> Company: clientStore = getClientStore()
+activate Company
+deactivate Company
+Controller -> cStore: client = getClientByEmail(empEmail)
+activate cStore
+deactivate cStore
+Controller -> cMapper: clientDto = toDto(client)
+activate cMapper
+deactivate cMapper
+deactivate Controller
+Interface --> C: shows the client data and ask to select one of the attributes
+deactivate Interface
+C -> Interface: selects the attribute to update
+activate Interface
+Interface --> C: ask the new attribute information
+deactivate Interface
+C -> Interface: introduce the new attribute information
+activate Interface
+Interface -> Controller: updateData(attribute, updateInformation)
+activate Controller
+alt attribute == "name"
+    Controller -> cStore: ChangeName(client, updateInformation)
+    activate cStore
+    cStore -> cl: setName(updateInformation)
+    activate cl
+    cl -> cl: name = updateInformation
+    activate cl
+    deactivate cl
+    deactivate cl
+    deactivate cStore
+else attribute == "address"
+    Controller -> cStore: ChangeAddress(client, updateInformation)
+    activate cStore
+    cStore -> cl: setAddress(updateInformation)
+    activate cl
+    cl -> cl: address = updateInformation
+    activate cl
+    deactivate cl
+    deactivate cl
+    deactivate cStore
+else attribute == "sex"
+    Controller -> cStore: ChangeSex(client, updateInformation)
+    activate cStore
+    cStore -> cl: setSex(updateInformation)
+    activate cl
+    cl -> cl: sex = updateInformation
+    activate cl
+    deactivate cl
+    deactivate cl
+    deactivate cStore
+else attribute == "phoneNumber"
+    Controller -> cStore: ChangePhoneNumber(client, updateInformation)
+    activate cStore
+    cStore -> cl: setPhoneNumber(updateInformation)
+    activate cl
+    cl -> cl: phoneNumber = updateInformation
+    activate cl
+    deactivate cl
+    deactivate cl
+    deactivate cStore
+end
+deactivate Controller
+Interface --> C: informs operation success
+deactivate C
+
+@enduml
