@@ -192,7 +192,7 @@ public class LinearRegressionTest {
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         LinearRegression lR = new LinearRegression(arrayX, arrayY);
         String actual = lR.toString();
-        String expected = "0,89 n + -0,36  (R^2 = 0,937)";
+        String expected = "0.89 n + -0.36  (R^2 = 0.937)";
 
         assertEquals(actual, expected);
     }
