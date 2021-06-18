@@ -177,6 +177,31 @@ public class TestStore {
 
     }
 
+    public int contNumberofClients(List<Test> tests){
+        List<Client> clients=new ArrayList<>();
+        for (Test test: tests){
+            if (!clients.contains(test.getClient())){
+                clients.add(test.getClient());
+            }
+        }
+
+        return clients.size();
+    }
+
+    public int contNumberofTestValidated(List<Test> tests){
+        int sum=0;
+        for (Test test: tests){
+            if (test.getValidationDate()!=null){
+                sum++;
+            }
+
+        }
+
+        return sum;
+    }
+
+
+
     public List<Test> getTestsInIntervalRegistDate(Date startDate, Date endDate){
         listTestsinRegDateRange = new ArrayList<>();
 
@@ -228,7 +253,7 @@ public class TestStore {
                 cal.setTime(test.getValidationDate());
                 int compareDay = cal.get(Calendar.DAY_OF_YEAR);
                 int compareYear = cal.get(Calendar.YEAR);
-                if (((firstDay==compareDay && firstYear==compareYear) || (lastDay==compareDay && lastYear==compareYear) ) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
+                if (((test.getValidationDate().equals(startDate)) || (test.getValidationDate().equals(endDate)) ) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
 
                     listTestsinValDateRange.add(test);
                 }

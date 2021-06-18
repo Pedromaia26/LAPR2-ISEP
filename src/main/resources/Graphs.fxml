@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="499.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
+<AnchorPane prefHeight="732.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
    <children>
-      <LineChart fx:id="graph" layoutY="50.0" prefHeight="400.0" prefWidth="411.0">
+      <LineChart fx:id="graph" layoutX="50.0" layoutY="26.0" prefHeight="350.0" prefWidth="578.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" fx:id="x" />
         </xAxis>
@@ -14,11 +16,39 @@
           <NumberAxis fx:id="y" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
         </yAxis>
       </LineChart>
-      <Label layoutX="463.0" layoutY="80.0" text="Number of Tests Registed:" />
-      <Label layoutX="409.0" layoutY="130.0" text="Number of tests already with results:" />
-      <Label layoutX="551.0" layoutY="174.0" text="Max Sum:" />
-      <Label fx:id="testReg" layoutX="631.0" layoutY="80.0" prefHeight="17.0" prefWidth="140.0" />
-      <Label fx:id="testVal" layoutX="628.0" layoutY="130.0" prefHeight="17.0" prefWidth="140.0" />
-      <Label fx:id="nClient" layoutX="625.0" layoutY="174.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label layoutX="710.0" layoutY="80.0" text="Number of Tests Registed:" />
+      <Label layoutX="656.0" layoutY="122.0" text="Number of tests already with results:" />
+      <Label layoutX="656.0" layoutY="166.0" text="Max Sum:" />
+      <Label fx:id="testReg" layoutX="891.0" layoutY="80.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label fx:id="testVal" layoutX="891.0" layoutY="122.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label fx:id="nClient" layoutX="730.0" layoutY="166.0" prefHeight="192.0" prefWidth="340.0" wrapText="true" />
+      <LineChart fx:id="graph1" layoutX="50.0" layoutY="388.0" prefHeight="299.0" prefWidth="340.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x1" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y1" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph2" layoutX="394.0" layoutY="388.0" prefHeight="299.0" prefWidth="316.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x2" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y2" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph3" layoutX="730.0" layoutY="388.0" prefHeight="299.0" prefWidth="316.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x3" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y3" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <Label layoutX="701.0" layoutY="44.0" text="Number of Clients Registed:" />
+      <Label fx:id="numOfClients" layoutX="891.0" layoutY="44.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label layoutX="709.0" layoutY="18.0" text="Number of Tests validated:" />
+      <Label fx:id="testValidated" layoutX="891.0" layoutY="18.0" prefHeight="17.0" prefWidth="140.0" />
    </children>
 </AnchorPane>

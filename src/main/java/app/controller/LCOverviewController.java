@@ -78,6 +78,10 @@ public class LCOverviewController implements Initializable{
 
     private static String algorithm;
 
+    private static Date startDate;
+
+    private static Date endDate;
+
 
     public LCOverviewController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
         this.company=App.getInstance().getCompany();
@@ -103,7 +107,7 @@ public class LCOverviewController implements Initializable{
     }
 
 
-    public void getTestsInInterval(Date startDate, Date endDate){
+    public void getTestsInInterval(){
         for(Test test : listTests){
 
             if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
@@ -160,11 +164,11 @@ public class LCOverviewController implements Initializable{
             diff = new ArrayList<>();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-            Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(startDateBox.getValue().format(formatter) + " " + startHour.getValue().toString() + ":" + startMinute.getValue().toString());
-            Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(endDateBox.getValue().format(formatter) + " " + endHour.getValue().toString() + ":" + endMinute.getValue().toString());
+            startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(startDateBox.getValue().format(formatter) + " " + startHour.getValue().toString() + ":" + startMinute.getValue().toString());
+            endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(endDateBox.getValue().format(formatter) + " " + endHour.getValue().toString() + ":" + endMinute.getValue().toString());
 
-            getTestsInInterval(startDate, endDate);
-
+            getTestsInInterval();
+            System.out.println("b");
 
             int cVal = 0;
             int cNVal = 0;
@@ -276,6 +280,7 @@ public class LCOverviewController implements Initializable{
 
             difference(sequences, sequences2);
             sortDiff();
+            System.out.println("b");
 
 
             System.out.println(diff);
@@ -291,6 +296,7 @@ public class LCOverviewController implements Initializable{
 
         }catch (Exception e){
             label.setText("There are no tests");
+            System.out.println(e);
         }
 
 
@@ -568,5 +574,13 @@ public class LCOverviewController implements Initializable{
                 }
             }
 
+    }
+
+    public static Date getStartDate() {
+         return startDate;
+    }
+
+    public static Date getEndDate() {
+        return endDate;
     }
 }
