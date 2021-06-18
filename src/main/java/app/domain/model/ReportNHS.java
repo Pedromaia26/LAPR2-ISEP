@@ -73,22 +73,26 @@ public class ReportNHS extends TimerTask {
         report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
     }
 
-    public void addConfLevel(double[] array, List<Date> dates, double cL){
+    public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL){
+        System.out.println("array "+ array.length);
+        System.out.println("datas "+ dates.size());
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         regression.confidenceInterval(array, cL);
         for(int i=0;i<array.length; i++){
-            report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(array[i]), regression.confidenceInterval(array, cL).get(i) );
+            report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(array, cL).get(i) );
         }
         sendReportNHS();
     }
 
-    public void addConfLevelForWeek(double[] array, List<Date> dateInitial, List<Date> dateFinal, double cL){
+    public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
-            report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(array[i]), regression.confidenceInterval(array, cL).get(i) );
+            report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(array, cL).get(i) );
         }
         sendReportNHS();
     }
+
+
 
     public String getReport(){
         return report;

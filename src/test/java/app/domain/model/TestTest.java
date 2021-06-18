@@ -794,4 +794,235 @@ public class TestTest {
         test.addTestParameterResult("00000000001", p.getCode(), -15d, "Index (S/C) value");
 
     }
+
+    @Test
+    public void getNhsCode() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+        assertEquals("123412341200",test.getNhsCode());
+    }
+
+    @Test
+    public void getLabOrder() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+        assertEquals(lO,test.getLabOrder());
+    }
+
+    @Test
+    public void getTestParameter() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+        List<TestParameter> testParameterList = new ArrayList<>();
+
+        for (Parameter parameter: lO.getParameters()){
+            testParameterList.add(new TestParameter(parameter));
+        }
+
+
+
+
+        assertEquals(testParameterList,test.getTestParameter());
+    }
+
+    @Test
+    public void getReport() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+
+        test.addReport("asdasdadsada");
+
+        assertEquals(test.getReport(),test.getReport());
+
+
+
+    }
+
+    @Test
+    public void getTestParameterFor() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+        TestParameter testParameter = test.getTestParameterFor("998la");
+
+        assertEquals(test.getTestParameterFor("998la"),testParameter);
+
+
+
+    }
+
+    @Test
+    public void testToString() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Company c = new Company("Many Labs");
+
+        Client client = new Client("1234567890123456",1234567890,"12/12/2012","Male",1234567890,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+
+        c.getParameterCategoryStore().addToList(pc);
+        c.getParameterCategoryStore().addToList(pc1);
+
+
+        ParameterCategory pCat = c.getParameterCategoryStore().getParameterCategoryByCode("11111");
+
+        listPC.add(pCat);
+
+        TestType tt = new TestType("Covid-19", "swab", "12345", listPC);
+
+        Parameter p = new Parameter("998la", "a-bodies", "antibodies",pCat);
+
+        c.getParameterStore().addParameter(p);
+        List <Parameter> listOfPar = c.getParameterStore().getParameterList();
+        LabOrder lO = new LabOrder(tt,listOfPar);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(tt);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+        app.domain.model.Test test = new app.domain.model.Test(c,client, "123412341200", lO,l);
+
+
+        assertEquals("Test:Code:"+test.getCode()+test.getLabOrder()+", sample="+test.getSample(), test.toString());
+    }
 }

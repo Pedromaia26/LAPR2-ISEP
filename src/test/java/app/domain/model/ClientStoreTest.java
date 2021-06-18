@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -127,5 +129,219 @@ public class ClientStoreTest {
 
 
     }
+
+    @Test
+    public void changeName() {
+
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="asd";
+
+        company.getClientStore().ChangeName(client,name);
+
+        assertEquals("asd",client.getName());
+
+
+    }
+
+
+    @Test
+    public void changePN() {
+
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        long name=44123456894L;
+
+        company.getClientStore().ChangePN(client,name);
+
+        assertEquals(44123456894L,client.getPhoneNumber());
+
+
+    }
+
+    @Test
+    public void changeAddress() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="asd";
+
+        company.getClientStore().ChangeAddress(client,name);
+
+        assertEquals("asd",client.getAddress());
+    }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckNamemore35Rules() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="qwertyuiopasdfghjklçzxcvbnmqwertyuia";
+
+        company.getClientStore().ChangeName(client,name);
+
+    }
+    @Test
+    public void ClientCheckNameequals35Rules() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="qwertyuiopasdfghjklçzxcvbnmqwertyui";
+
+        company.getClientStore().ChangeName(client,name);
+
+        assertEquals("qwertyuiopasdfghjklçzxcvbnmqwertyui",client.getName());
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckSexRules() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="m";
+
+        company.getClientStore().ChangeSex(client,name);
+
+    }
+    @Test
+    public void ClientChangeSex1() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="Male";
+
+        company.getClientStore().ChangeSex(client,name);
+
+        assertEquals("Male",client.getSex());
+
+    }
+    @Test
+    public void ClientChangeSex2() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="Female";
+
+        company.getClientStore().ChangeSex(client,name);
+        assertEquals("Female",client.getSex());
+
+    }
+    @Test
+    public void ClientChangeSex3() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","qwertyuio",44123456789L,"asdasda");
+
+        String name="UNDIFINED";
+
+        company.getClientStore().ChangeSex(client,name);
+
+        assertEquals("UNDIFINED",client.getSex());
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientCheckPhoneNumberRules() {
+        Company company= new Company("ManyLabs");
+
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        long name=4412345689L;
+
+        company.getClientStore().ChangePN(client,name);
+
+
+
+    }
+
+
+
+
+    @Test
+    public void getClientList() throws IOException {
+        Company company= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        company.getClientStore().addToList(client);
+
+
+        List<Client> clientList=company.getClientStore().getClientList();
+
+        List<Client> clientList1= new ArrayList<>();
+
+        clientList1.add(client);
+
+        assertEquals(clientList1,clientList);
+
+
+    }
+
+    @Test
+    public void getClientByTinNumber() {
+
+        Company company= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        company.getClientStore().addToList(client);
+
+        Client client1=company.getClientStore().getClientByTinNumber(1234567890L);
+
+        assertEquals(client,client1);
+
+    }
+
+    @Test
+    public void getClientByEmail() {
+
+        Company company= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        company.getClientStore().addToList(client);
+
+        Client client1=company.getClientStore().getClientByEmail("asd@gmail.com");
+
+        assertEquals(client,client1);
+
+    }
+
+    @Test
+    public void getClientByCcn() {
+        Company company= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        company.getClientStore().addToList(client);
+
+        boolean b=company.getClientStore().getClientByCcn("1234567890123456");
+
+
+        assertTrue(b);
+
+    }
+
+    @Test
+    public void getClientByCcnFalse() {
+        Company company= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456891L,"asdasda");
+
+        company.getClientStore().addToList(client);
+
+        boolean b=company.getClientStore().getClientByCcn("1234567890123452");
+
+
+        assertFalse(b);
+
+    }
+
 
 }
