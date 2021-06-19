@@ -89,4 +89,20 @@ public class SendReportController {
         report.addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100);
     }
 
+    public void sendReportMultilinearRegressionForDays(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
+        double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
+        double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
+        report = company.createReportNHS();
+        report.createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL);
+    }
+
+    public void sendReportMultilinearRegressionForWeeks(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
+        double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
+        double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
+        report = company.createReportNHS();
+        report.createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL);
+    }
+
 }

@@ -215,7 +215,7 @@ public class SimpleLinearRegression {
     public String decision (double sL, double tParameter){
        // System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
 
-        if (Math.abs(tParameter)>tDistribution.cumulativeProbability(obs(sL))) {
+        if (Math.abs(tParameter)>tDistribution.inverseCumulativeProbability(obs(sL))) {
 
             return "Reject HO";
         }else {
