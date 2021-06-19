@@ -43,27 +43,27 @@ LC -> Interface: selects the .csv files
 activate Interface
 Interface -> Controller: test(file)
 activate Controller
-Controller -> cStore: clientStore = getClientStore()
-activate cStore
-deactivate cStore
-Controller -> tStore: testStore = getTestStore()
-activate tStore
-deactivate tStore
-Controller -> ttStore: testTypeStore = getTestTypeStore()
-activate ttStore
-deactivate ttStore
-Controller -> pcStore: parameterCategoryStore = getParameterCategoryStore()
-activate pcStore
-deactivate pcStore
-Controller -> pStore: parameterStore = getParameterStore()
-activate pStore
-deactivate pStore
-Controller -> loStore: labOrderStore = getLabOrderStore()
-activate loStore
-deactivate loStore
-Controller -> lStore: laboratoryStore = getLaboratoryStore()
-activate lStore
-deactivate lStore
+Controller -> company: clientStore = getClientStore()
+activate company
+deactivate company
+Controller -> company: testStore = getTestStore()
+activate company
+deactivate company
+Controller -> company: testTypeStore = getTestTypeStore()
+activate company
+deactivate company
+Controller -> company: parameterCategoryStore = getParameterCategoryStore()
+activate company
+deactivate company
+Controller -> company: parameterStore = getParameterStore()
+activate company
+deactivate company
+Controller -> company: labOrderStore = getLabOrderStore()
+activate company
+deactivate company
+Controller -> company: laboratoryStore = getLaboratoryStore()
+activate company
+deactivate company
 Controller -> br: line = readLine()
 activate br
 deactivate br
