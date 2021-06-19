@@ -18,10 +18,9 @@ import java.util.Properties;
 import java.util.TimerTask;
 
 public class ReportNHS extends TimerTask {
-    private LinearRegression regression;
+    private SimpleLinearRegression regression;
     private String report;
     private String api;
-    private String regressionModel;
 
     public ReportNHS(){
         this.report = "";
@@ -43,12 +42,9 @@ public class ReportNHS extends TimerTask {
         reportApi().writeUsingFileWriter(report);
     }
 
-    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        regression = linearRegression();
-        regression.setValuesSimpleLinearRegression(arr1, arr2);
-    }
 
-    public void printReport(double[] arr1, double[] arr2, double sL, double cL){
+    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL){
+        regression = new SimpleLinearRegression(arr1, arr2);
         report = "";
         double[] predict = new double[arr1.length];
         for(int i=0; i<predict.length; i++){
@@ -113,21 +109,6 @@ public class ReportNHS extends TimerTask {
         String classaux = prop.getProperty(getApi());
         Class<?> oClass = Class.forName(classaux);
         return (ReportToNHS) oClass.newInstance();
-    }
-
-    public LinearRegression linearRegression() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        Properties prop = App.getInstance().getprops();
-        String classaux = prop.getProperty(getRegressionModel());
-        Class<?> oClass = Class.forName(classaux);
-        return (LinearRegression) oClass.newInstance();
-    }
-
-    public void setRegressionModel(String regressionModel){
-        this.regressionModel = regressionModel;
-    }
-
-    public String getRegressionModel(){
-        return regressionModel;
     }
 
     public void setApi(String api){
