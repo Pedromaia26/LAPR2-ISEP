@@ -1,0 +1,167 @@
+@startuml
+
+actor "Laboratory Coordinator" as LC
+participant ":ImportCSVFileUI" as Interface
+participant ":ImportCSVFileController" as Controller
+participant "company\n:Company" as company
+participant "clientStore\n:ClientStore" as cStore
+participant "testStore\n:TestStore" as tStore
+participant "testTypeStore\n:TestTypeStore" as ttStore
+participant "parameterCategoryStore\n:ParameterCategoryStore" as pcStore
+participant "parameterStore\n:ParameterStore" as pStore
+participant "labOrderStore\n:LabOrderStore" as loStore
+participant "laboratoryStore\n:LaboratoryStore" as lStore
+participant "file\n:File" as file
+participant "bufferedReader\n:BufferedReader" as br
+participant "parameter\n:Parameter" as parameter
+participant "newTest\n:Test" as test
+participant "lsTests\n:String[]" as tests
+participant "header\n:String[]" as header
+participant "line\n:String" as line
+participant "testType\n:TestType" as tt
+participant "parameterCategory\n:ParameterCategory" as pc
+participant "labOrder\n:LabOrder" as lo
+participant "laboratory\n:Laboratory" as l
+participant "parameters\n:List<Parameter>" as lParameters
+participant "parameterstest\n:List<String>" as lptest
+participant "parametersIndextest\n:List<Intereger>" as lpttest
+participant "client\n:Client" as c
+participant "sample\n:Sample" as sample
+participant "r1\n:String" as r1
+participant "testParameterResultList\n:List<TestParameterResult>" as tprlist
+participant "report\n:Report" as report
+participant "tests\n:List<Test>" as lTests
+
+autonumber
+
+activate LC
+LC -> Interface: asks to import clinical tests from a CSV file
+activate Interface
+Interface --> LC: shows all files with .csv extension\n and asks to select as many as he wants
+deactivate Interface
+LC -> Interface: selects the .csv files
+activate Interface
+Interface -> Controller: test(file)
+activate Controller
+Controller -> cStore: clientStore = getClientStore()
+activate cStore
+deactivate cStore
+Controller -> tStore: testStore = getTestStore()
+activate tStore
+deactivate tStore
+Controller -> ttStore: testTypeStore = getTestTypeStore()
+activate ttStore
+deactivate ttStore
+Controller -> pcStore: parameterCategoryStore = getParameterCategoryStore()
+activate pcStore
+deactivate pcStore
+Controller -> pStore: parameterStore = getParameterStore()
+activate pStore
+deactivate pStore
+Controller -> loStore: labOrderStore = getLabOrderStore()
+activate loStore
+deactivate loStore
+Controller -> lStore: laboratoryStore = getLaboratoryStore()
+activate lStore
+deactivate lStore
+Controller -> br: line = readLine()
+activate br
+deactivate br
+Controller -> line: header = split()
+activate line
+deactivate line
+loop
+Controller -> lptest: add(header[x])
+activate lptest
+deactivate lptest
+Controller -> lpttest: add(x)
+activate lpttest
+deactivate lpttest
+Controller -> pStore: parameter = getParameterByCode(parameterstest)
+activate pStore
+pStore -> lptest: get(x)
+activate lptest
+deactivate lptest
+deactivate pStore
+Controller -> lptest: add(parameter)
+activate lptest
+deactivate lptest
+end
+loop
+Controller -> br: line = readLine()
+activate br
+deactivate br
+Controller -> line: lsTests = split()
+activate line
+deactivate line
+Controller -> ttStore: testType = getTestTypeByDescription(lsTests[11])
+activate ttStore
+deactivate ttStore
+loop
+Controller -> pcStore: parameterCategory = getParameterCategoryByDescription(lsTests[x])
+activate pcStore
+deactivate pcStore
+end
+Controller -> loStore: labOrder = createLabOrder(testType, parameters)
+activate loStore
+loStore -> lo: create(testType, parameters)
+activate lo
+deactivate lo
+deactivate loStore
+Controller -> lStore: laboratory = getLabByLabId(lsTests[2])
+activate lStore
+deactivate lStore
+Controller -> cStore: client = getClientByEmail(lsTests[9])
+activate cStore
+deactivate cStore
+Controller -> tStore: newTest = createTest(company, client, lsTests[1], labOrder,\n laboratory, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+activate tStore
+tStore -> test**: create(company, client, lsTests[1], labOrder,\n laboratory, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+Controller -> test: sample = RecordNewSample(company)
+activate test
+test -> sample**: create(company)
+deactivate test
+deactivate tStore
+Controller -> test: SaveSample(sample, company, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+activate test
+test -> test: addSample(sample)
+activate test
+deactivate test
+deactivate test
+loop
+Controller -> test: r1 = addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(j).getCode(), Double.parseDouble(lsTests[parametersIndextest.get(j)].replace(",", ".")),\n newtest.getExternalModule().getReferenceValue(newtest.getTestParameterFor(parameters.get(j).getCode()).getParameter()).getMetric(), lsTests[parametersIndextest.get(parametersIndextest.size() - 1) + 2])
+activate test
+deactivate test
+Controller -> test: saveTestParameterResult(r1)
+activate test
+test -> tprlist: add(r1)
+activate tprlist
+deactivate tprlist
+deactivate test
+end
+Controller -> test: addReport("Default", lsTests[parametersIndextest.get(parametersIndextest.size()-1)+3])
+activate test
+test -> report**: create("Default", lsTests[parametersIndextest.get(parametersIndextest.size()-1)+3])
+deactivate test
+Controller -> test: validateTest(lsTests[parametersIndextest.get(parametersIndextest.size()-1)+4])
+activate test
+test -> c: notifyClient()
+activate c
+deactivate c
+deactivate test
+Controller -> tStore: saveTest(newTest)
+activate tStore
+tStore -> lTests: add(newTest)
+activate lTests
+deactivate lTests
+deactivate tStore
+end
+deactivate Controller
+Interface --> LC:requests data confirmation
+deactivate Interface
+LC -> Interface:confirms all data
+activate Interface
+Interface --> LC:informs operation success
+deactivate Interface
+deactivate LC
+@enduml
