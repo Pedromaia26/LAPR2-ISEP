@@ -129,7 +129,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US013_SD](US013_SD.svg)
+![US013_SD.svg](US013_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
