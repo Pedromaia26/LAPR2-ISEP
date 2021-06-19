@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Clinical Chemistry Technologist" as CCT
+participant ":ClinicalChemTechUI" as UI
+participant ":ClinicalChemTechController" as CTRL
+participant ":Company" as ML
+participant "cStore\n:ClientStore" as CSTORE
+participant "clientMapper\n:ClientMapper" as CMAPPER
+participant "client\n:Client" as CLIENT
+participant "testStore\n:TestStore" as TSTORE
+participant "tMapper\n:TestMapper" as TMAPPER
+participant "clientList\n:List<Client>"
+participant "tList\n:List<Test>" as TLIST
+
+participant "clientsDto\n:ClientDto" as CDTO
+
+activate CCT
+
+CCT -> UI: asks to consult the historical tests \nperformed by a particular client and its test results/details
+activate UI
+UI -> CTRL: clientsDto = getClients()
+activate CTRL
+CTRL -> ML: cStore = getClientStore()
+activate ML
+deactivate ML
+CTRL -> CSTORE: clientList = getClientList()
+activate CSTORE
+deactivate CSTORE
+CTRL -> CMAPPER: clientsDto = toDto(clientList)
+activate CMAPPER
+deactivate CMAPPER
+deactivate CTRL
+UI --> CCT: shows the list of clients registered in the system\n and asks to select one
+deactivate UI
+CCT -> UI: selects one client
+activate UI
+UI -> CTRL: testsDto = getTestsForClientX(tin)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> CSTORE: client = getClientByTinNumber(tin)
+activate CSTORE
+deactivate CSTORE
+CTRL -> TSTORE: tList = getTestsByClient(client)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TMAPPER: testsDto = toDto(tList)
+activate TMAPPER
+deactivate TMAPPER
+deactivate CTRL
+UI --> CCT: shows the tests already performed by the selected client\n and asks to choose one to check its details
+deactivate UI
+CCT -> UI: selects one
+activate UI
+UI --> CCT: shows the details for the chosen test
+deactivate UI
+
+deactivate CCT
+
+
+
+@enduml
