@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor "Administrator" as ADM
+participant ":System" as S
+
+activate ADM
+ADM -> S: starts the process of submitting a report to the NHS
+activate S
+S --> ADM: asks to select the current day
+deactivate S
+ADM -> S: selects the current day
+activate S
+S --> ADM: asks to select the data the administrator\n wants to send to the NHS(days, weeks)
+deactivate S
+ADM -> S: selects one of them
+activate S
+S --> ADM: requests the number of historical points
+deactivate S
+ADM -> S: defines the number of historical points
+activate S
+S --> ADM: requests the dates interval to fit the regression model
+deactivate S
+ADM -> S: determines the dates interval
+activate S
+S --> ADM: shows the available regression models and asks to select one
+deactivate S
+ADM -> S: selects a regression model
+activate S
+S --> ADM: requests the significance level
+deactivate S
+ADM -> S: types the significance level
+activate S
+S --> ADM: requests the confidence level
+deactivate S
+ADM -> S: types the confidence level
+activate S
+S --> ADM: asks to confirms the data
+deactivate S
+ADM -> S: confirms all the data
+activate S
+S --> ADM: informs operation success
+deactivate S
+
+deactivate ADM
+
+
+
+
+
+
+
+
+
+
+@enduml
