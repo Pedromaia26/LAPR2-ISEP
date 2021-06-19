@@ -1,4 +1,4 @@
-# US 005 - To record a new sample 
+# US 019 - To send daily reports
 
 ## 1. Requirements Engineering
 
@@ -6,7 +6,8 @@
 ### 1.1. User Story Description
 
 
-As a medical lab technician, I want to record the samples collected in the scope of a given test
+The Many Labs company wants to send to the NHS daily reports of Covid-19 data, including the number of observed values and estimated values. Reports should be generated automatically with historical data and must be sent every day at 6:00 am.
+
 
 
 
@@ -15,7 +16,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 **From the specifications document:**
 
-> "When sampling (blood or swab) the medical lab technician records the samples in the system, associating the samples with the client/test, and identifying each sample with a barcode that is automatically generated using an external API"
+> ""
 
 
 
