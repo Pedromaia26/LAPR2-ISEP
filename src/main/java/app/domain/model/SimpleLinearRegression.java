@@ -30,6 +30,7 @@ public class SimpleLinearRegression {
     private double svar0, svar1;
     private double s2;
     private double tb;
+    private double ta;
     private double ssr;
     private double svar;
     private double xxBar;
@@ -104,6 +105,7 @@ public class SimpleLinearRegression {
 
         s2 = 1/(double)(n-2) * rss;
         tb = slope/(Math.sqrt(s2)/Math.sqrt(xxbar));
+        ta = intercept/(Math.sqrt(s2)*Math.sqrt((1.0/n)+(xbar/xxbar)));
 
         xxBar = xxbar;
 
@@ -206,10 +208,14 @@ public class SimpleLinearRegression {
         return tb;
     }
 
-    public String decision (double sL){
+    public double Ta() {
+        return ta;
+    }
+
+    public String decision (double sL, double tParameter){
        // System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
 
-        if (Math.abs(tb)>tDistribution.cumulativeProbability(obs(sL))) {
+        if (Math.abs(tParameter)>tDistribution.cumulativeProbability(obs(sL))) {
 
             return "Reject HO";
         }else {

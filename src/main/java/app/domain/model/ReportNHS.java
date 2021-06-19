@@ -43,7 +43,7 @@ public class ReportNHS extends TimerTask {
     }
 
 
-    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL){
+    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL, String parameter){
         regression = new SimpleLinearRegression(arr1, arr2);
         report = "";
         double[] predict = new double[arr1.length];
@@ -60,12 +60,7 @@ public class ReportNHS extends TimerTask {
         report += String.format("\nR = %.2f \n", Math.sqrt(regression.R2()));
         report += "\n-----------------------\n";
 
-        report += "\nHypothesis tests for regression coefficients:\n";
-        report += "HO:b=0 H1: b<>0\n";
-        report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
-        report += String.format("\ns2: %.4f\n", regression.S2());
-        report += String.format("\ntb: %.4f\n", regression.Tb());
-        report += String.format("\nDecision:\n %s\n", regression.decision(sL));
+        hypothesisTest(parameter, sL);
 
         report += ("\n-----------------------\n");
 
@@ -123,6 +118,25 @@ public class ReportNHS extends TimerTask {
     public String getReport(){
         return report;
     }
+
+    private void hypothesisTest(String parameter, double sL){
+        if(parameter.equals("a")){
+            report += "\nHypothesis tests for regression coefficient a:\n";
+            report += "HO:a=0 H1: a<>0\n";
+            report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
+            report += String.format("\ns2: %.4f\n", regression.S2());
+            report += String.format("\nta: %.4f\n", regression.Ta());
+            report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Ta()));
+        }else if(parameter.equals("b")){
+            report += "\nHypothesis tests for regression coefficient b:\n";
+            report += "HO:b=0 H1: b<>0\n";
+            report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
+            report += String.format("\ns2: %.4f\n", regression.S2());
+            report += String.format("\ntb: %.4f\n", regression.Tb());
+            report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Tb()));
+        }
+    }
+
 }
 
 

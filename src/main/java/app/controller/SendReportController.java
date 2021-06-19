@@ -34,14 +34,15 @@ public class SendReportController {
         testStore = c.getTestStore();
     }
 
-    public void getReportForDays(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void getReportForDays(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL, String parameterToHT) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
+        report.createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         double[] covidTestsHp = testStore.getTestForHp(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
+        report.addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100);
         autoReport = new ReportNHS(report.getReport());
         /*long delay = 120;
         Calendar calendar = Calendar.getInstance();
@@ -53,11 +54,11 @@ public class SendReportController {
 
     }
 
-    public void getReportForWeeks(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void getReportForWeeks(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL, String parameterToHT) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
+        report.createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
         double[] perfomedTestsForHp = testStore.getCovidTestsForWeekHp(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();
@@ -65,22 +66,22 @@ public class SendReportController {
         report.addConfLevelForWeek(positiveCasesToInterval, perfomedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100);
     }
 
-    public void getReportForDaysWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void getReportForDaysWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL, String parameterToHT) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
+        report.createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         double[] meanAgeHp = testStore.getMeanAgeForHpDay(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
         report.addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100);
     }
 
-    public void getReportForWeeksWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void getReportForWeeksWithMeanAge(Date startDate, Date endDate, Date currentDate, int hP, double sL, double cL, String parameterToHT) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
+        report.createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
         double[] meanAgeHp = testStore.getMeanAgeForHPWeek(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();
