@@ -232,27 +232,11 @@ public class TestStore {
 
     public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
-//        listTestsinRegDateRange = new ArrayList<>();
         listTestsinValDateRange = new ArrayList<>();
         for(Test test : tests){
 
 
-//            if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
-//
-//                listTestsinRegDateRange.add(test);
-//            }
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(startDate);
-            int firstDay = cal.get(Calendar.DAY_OF_YEAR);
-            int firstYear = cal.get(Calendar.YEAR);
-            cal.setTime(endDate);
-            int lastDay = cal.get(Calendar.DAY_OF_YEAR);
-            int lastYear = cal.get(Calendar.YEAR);
-
             if (test.getValidationDate()!=null) {
-                cal.setTime(test.getValidationDate());
-                int compareDay = cal.get(Calendar.DAY_OF_YEAR);
-                int compareYear = cal.get(Calendar.YEAR);
                 if (((test.getValidationDate().equals(startDate)) || (test.getValidationDate().equals(endDate)) ) || (test.getValidationDate().toInstant().isAfter(startDate.toInstant()) && test.getValidationDate().toInstant().isBefore(endDate.toInstant()))) {
 
                     listTestsinValDateRange.add(test);
