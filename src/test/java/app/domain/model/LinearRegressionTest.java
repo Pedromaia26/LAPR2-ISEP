@@ -305,7 +305,7 @@ public class LinearRegressionTest {
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.05;
         SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
-        String actual = lR.decision(significanceLevel);
+        String actual = lR.decision(significanceLevel, lR.Tb());
         String expected = "Reject HO";
 
         assertEquals(expected, actual);
@@ -318,7 +318,7 @@ public class LinearRegressionTest {
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.05;
         SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
-        String actual = lR.decision(significanceLevel);
+        String actual = lR.decision(significanceLevel, lR.Tb());
         String expected = "No Reject HO";
 
         assertNotEquals(expected, actual);

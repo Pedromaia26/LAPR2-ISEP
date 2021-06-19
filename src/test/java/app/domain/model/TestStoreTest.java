@@ -8,7 +8,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -655,6 +657,561 @@ public class TestStoreTest {
         int expected =1;
 
         assertNotEquals(expected,num);
+
+    }
+
+    @Test
+    public void getTestsInIntervalRegistDate() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, ParseException {
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
+
+        nteste.validateTest("20/05/2021 08:30");
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInInterval(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalRegistDateWrong() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, ParseException {
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
+
+        nteste.validateTest("22/05/2021 08:30");
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInInterval(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertNotEquals(tests,tests1);
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalRegistDateWrongBefore() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, ParseException {
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
+
+        nteste.validateTest("18/05/2021 08:30");
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInInterval(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertNotEquals(tests,tests1);
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalRegistDateequalStart() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, ParseException {
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
+
+        nteste.validateTest("19/05/2021 08:00");
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInInterval(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalRegistDateequalEnd() throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, ParseException {
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l);
+
+        nteste.validateTest("21/05/2021 09:30");
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInInterval(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
+    }
+
+    @Test
+    public void getTestsInInterval() throws ParseException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l,"20/05/2021 08:30");
+
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInIntervalRegistDate(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalWrong() throws ParseException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l,"18/05/2021 08:30");
+
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInIntervalRegistDate(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertNotEquals(tests,tests1);
+
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalWrongAfter() throws ParseException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l,"23/05/2021 08:30");
+
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInIntervalRegistDate(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertNotEquals(tests,tests1);
+
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalequalStart() throws ParseException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l,"19/05/2021 08:00");
+
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInIntervalRegistDate(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
+
+    }
+
+    @Test
+    public void getTestsInIntervalequalEnd() throws ParseException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Company c= new Company("ManyLabs");
+        Client client = new Client("1234567890123456",1234567890L,"12/12/2012","Male",1234567890L,"asd@gmail.com","Moirane",44123456789L,"asdasda");
+
+        ParameterCategory pc = new ParameterCategory("hemogram", "09090");
+
+        Parameter p = new Parameter("01981", "aa", "blood", pc);
+        List<Parameter> param = new ArrayList<>();
+
+        param.add(p);
+
+        ParameterCategory pc1 = new ParameterCategory("Immunity", "11111");
+        ParameterCategory pc2 = new ParameterCategory("Hemogram", "10019");
+        c.getParameterCategoryStore().addToList(pc1);
+        c.getParameterCategoryStore().addToList(pc2);
+
+        List<ParameterCategory> listPC = new ArrayList<>();
+        ParameterCategory pca = c.getParameterCategoryStore().getParameterCategoryByCode("10019");
+
+        listPC.add(pca);
+        TestType testesss = new TestType("asd","asd","12345",listPC);
+
+        c.getTestTypeStore().addToList(testesss);
+
+        LabOrder labOrder= new LabOrder(testesss,param);
+
+        c.getLabOrderStore().addToList(labOrder);
+        List<TestType> testTypes =new ArrayList<>();
+        testTypes.add(testesss);
+
+        Laboratory l = new Laboratory("MMOL3", "Sonar", "Manchester United Kingdom", 22222222222L, 3123123435L, testTypes);
+
+
+        app.domain.model.Test nteste=new app.domain.model.Test(c, client,"123412341200",labOrder,l,"21/05/2021 09:30");
+
+
+        c.getTestStore().addToList(nteste);
+
+
+        Date startDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("19/05/2021 08:00");
+        Date endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("21/05/2021 09:30");
+
+        List<app.domain.model.Test> tests=c.getTestStore().getTestsInIntervalRegistDate(startDate,endDate);
+
+        List<app.domain.model.Test> tests1= new ArrayList<>();
+
+        tests1.add(nteste);
+
+        assertEquals(tests,tests1);
+
+
 
     }
 }

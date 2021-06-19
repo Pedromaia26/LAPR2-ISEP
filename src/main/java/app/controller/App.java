@@ -168,15 +168,15 @@ public class App {
         TestType tt = new TestType("Blood", "swab", "12345", parameterCategories, "Domain.ExternalModuleAdapter2");
         TestType tt2 = new TestType("Covid-19", "swab", "42141", pCatForCovid, "Domain.ExternalModuleAdapter1");
 
-        Client client = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Bruno",12312312312L,"asdasda");
-        Client client2 = new Client("7651861100123109",1234567890L,"24/01/2002","female",1554566760L,"client2@lei.sem2.pt","Tiago",91110998123L,"asdasda");
+      // Client client = new Client("1234567890123456",1234567890L,"12/12/2002","male",1234567890L,"client@lei.sem2.pt","Bruno",12312312312L,"asdasda");
+       // Client client2 = new Client("7651861100123109",1234567890L,"24/01/2002","female",1554566760L,"client2@lei.sem2.pt","Tiago",91110998123L,"asdasda");
 
-        this.getCompany().getClientStore().addNewClient(client);
+        //this.getCompany().getClientStore().addNewClient(client);
 
-        this.getCompany().getClientStore().addNewClient(client2);
-        this.getCompany().getClientStore().addNewClient(client);
-        LabOrder lO = new LabOrder(tt, this.getCompany().getParameterStore().getParameterList());
-        LabOrder lO1 = new LabOrder(tt2, parameterForCovid);
+        //this.getCompany().getClientStore().addNewClient(client2);
+        //this.getCompany().getClientStore().addNewClient(client);
+        //LabOrder lO = new LabOrder(tt, this.getCompany().getParameterStore().getParameterList());
+        //LabOrder lO1 = new LabOrder(tt2, parameterForCovid);
 
 
         //Test t = new Test(getCompany(), client, "123456789098",  lO, l);

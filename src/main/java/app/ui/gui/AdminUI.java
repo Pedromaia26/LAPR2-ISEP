@@ -84,6 +84,7 @@ public class AdminUI implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         indVarComboBox.setVisible(false);
+        parameter.setVisible(false);
         indVarLabel.setVisible(false);
         invalidDate.setVisible(false);
         signifLevelLabel.setVisible(false);
@@ -110,9 +111,11 @@ public class AdminUI implements Initializable {
         if (regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Simple")) {
             indVarComboBox.setVisible(true);
             indVarLabel.setVisible(true);
+            parameter.setVisible(true);
         } else {
             indVarComboBox.setVisible(false);
             indVarLabel.setVisible(false);
+            parameter.setVisible(false);
         }
 
     }
@@ -217,19 +220,23 @@ public class AdminUI implements Initializable {
         if (regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Simple")) {
             if (dataComboBox.getSelectionModel().getSelectedItem().equals("Days")) {
                 if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
-                    controller.getReportForDays(startDate, endDate, currentDate, hP, sL, cL);
+                    controller.getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameter.getSelectionModel().getSelectedItem().toString());
                 } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
-                    controller.getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL);
+                    controller.getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameter.getSelectionModel().getSelectedItem().toString());
                 }
             } else if (dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")) {
                 if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Number of tests")) {
-                    controller.getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL);
+                    controller.getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameter.getSelectionModel().getSelectedItem().toString());
                 } else if (indVarComboBox.getSelectionModel().getSelectedItem().equals("Mean age")) {
-                    controller.getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL);
+                    controller.getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameter.getSelectionModel().getSelectedItem().toString());
                 }
             }
         }else if(regressionModelComboBox.getSelectionModel().getSelectedItem().equals("Multiple")){
-            System.out.println("ola");
+            if (dataComboBox.getSelectionModel().getSelectedItem().equals("Days")) {
+                controller.sendReportMultilinearRegressionForDays(startDate, endDate, currentDate, hP, sL, cL);
+            }else if(dataComboBox.getSelectionModel().getSelectedItem().equals("Weeks")){
+                controller.sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL);
+            }
         }
     }
 

@@ -19,6 +19,7 @@ import java.util.TimerTask;
 
 public class ReportNHS extends TimerTask {
     private SimpleLinearRegression regression;
+    private Multilinearregression multilinearregression;
     private String report;
     private String api;
 
@@ -43,13 +44,9 @@ public class ReportNHS extends TimerTask {
     }
 
 
-    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL){
+    public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL, String parameter){
         regression = new SimpleLinearRegression(arr1, arr2);
         report = "";
-        double[] predict = new double[arr1.length];
-        for(int i=0; i<predict.length; i++){
-            predict[i] = regression.predict(arr1[i]);
-        }
         report += "Regression model equation: \n";
         report += regression.getEquation();
         report += "\n";
@@ -60,12 +57,7 @@ public class ReportNHS extends TimerTask {
         report += String.format("\nR = %.2f \n", Math.sqrt(regression.R2()));
         report += "\n-----------------------\n";
 
-        report += "\nHypothesis tests for regression coefficients:\n";
-        report += "HO:b=0 H1: b<>0\n";
-        report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
-        report += String.format("\ns2: %.4f\n", regression.S2());
-        report += String.format("\ntb: %.4f\n", regression.Tb());
-        report += String.format("\nDecision:\n %s\n", regression.decision(sL));
+        hypothesisTest(parameter, sL);
 
         report += ("\n-----------------------\n");
 
@@ -79,7 +71,7 @@ public class ReportNHS extends TimerTask {
         report += ("\n-----------------------\n");
 
         report += "Decision: f\n";
-        report += String.format("0 > f%.2f,(%d.%d)= %.3f\n",sL ,1, regression.getDegressOfFreedom(),regression.getRss(), regression.getFDistribution(sL));
+        report += String.format("f > f%.2f,(%d.%d)= %.3f\n",sL ,1, regression.getDegressOfFreedom(),regression.getRss(), regression.getFDistribution(sL));
         report += regression.decisionAnova(sL);
 
         report += ("\n\n\n-----------------------\n\n");
@@ -123,6 +115,60 @@ public class ReportNHS extends TimerTask {
     public String getReport(){
         return report;
     }
+
+    private void hypothesisTest(String parameter, double sL){
+        if(parameter.equals("a")){
+            report += "\nHypothesis tests for regression coefficient a:\n";
+            report += "HO:a=0 H1: a<>0\n";
+            report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
+            report += String.format("\ns2: %.4f\n", regression.S2());
+            report += String.format("\nta: %.4f\n", regression.Ta());
+            report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Ta()));
+        }else if(parameter.equals("b")){
+            report += "\nHypothesis tests for regression coefficient b:\n";
+            report += "HO:b=0 H1: b<>0\n";
+            report += String.format("T_%.3f = %.3f \n", regression.obs(sL), regression.getTStudent(sL));
+            report += String.format("\ns2: %.4f\n", regression.S2());
+            report += String.format("\ntb: %.4f\n", regression.Tb());
+            report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Tb()));
+        }
+    }
+
+    public void createMultiLinearRegression(double[] arr1, double[] arr2, double[] arr3, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        multilinearregression = new Multilinearregression(arr1, arr2, arr3);
+        report += multilinearregression.toString();
+        report += String.format("\n\n");
+        report += String.format("//\nOther statistics");
+        report += String.format("R2 = %.4f\n", multilinearregression.rQuadrado());
+        report += String.format("R2adjusted = %.4f\n", multilinearregression.rQuadradoAjustado());
+        report += String.format("R = %.4f\n", Math.sqrt(multilinearregression.rQuadrado()));
+        report += String.format("//\nHypothesis tests for multilinearregression coefficient B1\nHO:B1=0 H1: B1<>0 \n");
+        report += String.format("t_%.3f = %.3f\n", multilinearregression.obs(sL), multilinearregression.tStudent(sL));
+        report += String.format("tB1 = %.3f\n", multilinearregression.Tb(1));
+        report += String.format("Decision:\n");
+        report += multilinearregression.decisionHypothesisTests(sL, 1);
+        report += String.format("\n\n");
+
+        report += String.format("\nHypothesis tests for multilinearregression coefficient B2\nHO:B2=0 H1: B2<>0 \n");
+        report += String.format("t_%.3f = %.3f\n", multilinearregression.obs(sL), multilinearregression.tStudent(sL));
+        report += String.format("tB2 = %.3f\n", multilinearregression.Tb(2));
+        report += String.format("Decision:\n");
+        report += String.format(multilinearregression.decisionHypothesisTests(sL, 2));
+        report += String.format("\n\n\n");
+        report += String.format("Significance model with Anova\n");
+        report += String.format("%-15s %-5s %-15s %-15s %-15s\n", "","df","SS", "MS", "F");
+        report += String.format("%-15s %-5s %-15.4f %-15.4f %-15.4f\n", "Regression", "2", multilinearregression.sqr(), multilinearregression.mqr(), multilinearregression.mqr()/ multilinearregression.mqe());
+        report += String.format("%-15s %-5s %-15.4f %-15.4f \n","Residual", multilinearregression.getDegreesOfFreedom(), multilinearregression.sqe(), multilinearregression.mqe());
+        report += String.format("%-15s %-5s %-15.4f\n", "Total", multilinearregression.getDegreesOfFreedom()+2, multilinearregression.sqr()+ multilinearregression.sqe());
+        report += String.format("\n\n");
+        report += String.format("Decision : f");
+        report += String.format("f > %.2f,(%d.%d)= %.3f\n", sL, 2, multilinearregression.getDegreesOfFreedom(), multilinearregression.fDistribution(sL));
+        report += (multilinearregression.decision(sL));
+
+        sendReportNHS();
+
+    }
+
 }
 
 
