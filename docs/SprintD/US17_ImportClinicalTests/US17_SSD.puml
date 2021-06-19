@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Laboratory Coordinator" as LC
+participant ":System" as S
+
+activate LC
+
+LC -> S: asks to import clinical tests from a CSV file
+activate S
+S --> LC: shows all files with .csv extension\n and asks to select as many as he wants
+deactivate S
+LC -> S: selects the .csv files
+activate S
+S --> LC: requests data confirmation
+deactivate S
+LC -> S: confirms all data
+activate S
+S --> LC: informs operation success
+deactivate S
+
+deactivate LC
+
+@enduml
