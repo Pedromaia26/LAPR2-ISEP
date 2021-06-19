@@ -38,8 +38,6 @@ public class SimpleLinearRegression {
     private List<String> confidenceIntervals = new ArrayList<>();
 
 
-    public SimpleLinearRegression(){
-    }
 
     /**
      * Performs a linear regression on the data points (y[i], x[i]).
@@ -48,7 +46,7 @@ public class SimpleLinearRegression {
      * @param  y the corresponding values of the response variable
      * @throws IllegalArgumentException if the lengths of the two arrays are not equal
      */
-    public void setValuesSimpleLinearRegression(double[] x, double[] y) {
+    public SimpleLinearRegression(double[] x, double[] y) {
         if (x.length != y.length) {
             throw new IllegalArgumentException("array lengths are not equal");
         }

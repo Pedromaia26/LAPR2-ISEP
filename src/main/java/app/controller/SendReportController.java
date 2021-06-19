@@ -38,9 +38,7 @@ public class SendReportController {
         double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.setRegressionModel("Domain.SimpleLinearRegression");
         report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
-        report.printReport(covidTests, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         double[] covidTestsHp = testStore.getTestForHp(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
@@ -59,9 +57,7 @@ public class SendReportController {
         double[] covidTests = testStore.covidTestsLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.setRegressionModel("Domain.SimpleLinearRegression");
         report.createLinearRegression(covidTests, positiveTests, sL/100, cL);
-        report.printReport(covidTests, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
         double[] perfomedTestsForHp = testStore.getCovidTestsForWeekHp(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();
@@ -73,9 +69,7 @@ public class SendReportController {
         double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.setRegressionModel("Domain.SimpleLinearRegression");
         report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
-        report.printReport(meanAge, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerDay(currentDate, hP);
         double[] meanAgeHp = testStore.getMeanAgeForHpDay(currentDate, hP);
         List<Date> hPDays = testStore.getHPDays();
@@ -86,9 +80,7 @@ public class SendReportController {
         double[] meanAge = testStore.meanAgeLinearRegression(startDate, endDate);
         double[] positiveTests = testStore.positiveCovidTestsLinearRegression(startDate, endDate);
         report = company.createReportNHS();
-        report.setRegressionModel("Domain.SimpleLinearRegression");
         report.createLinearRegression(meanAge, positiveTests, sL/100, cL);
-        report.printReport(meanAge, positiveTests, sL/100, cL);
         double[] positiveCasesToInterval = testStore.getPositiveCovidTestsPerWeek(currentDate, hP);
         double[] meanAgeHp = testStore.getMeanAgeForHPWeek(currentDate, hP);
         List<Date> hPWeeksInitial = testStore.gethPWeeksInitial();

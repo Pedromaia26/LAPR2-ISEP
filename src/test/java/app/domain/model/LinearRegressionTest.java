@@ -15,8 +15,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.intercept();
         double expected = -0.3581081081081079;
 
@@ -30,8 +29,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.intercept();
         double expected = -0.3581081081081119;
 
@@ -45,8 +43,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.slope();
         double expected = 0.8851351351351351;
 
@@ -59,8 +56,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.slope();
         double expected = 0.8451351351351351;
 
@@ -72,8 +68,7 @@ public class LinearRegressionTest {
     public void r2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.R2();
         double expected = 0.936991536991537;
 
@@ -84,8 +79,7 @@ public class LinearRegressionTest {
     public void r2_2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.R2();
         double expected = 0.945991536991537;
 
@@ -96,8 +90,7 @@ public class LinearRegressionTest {
     public void r2Adjusted() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.R2Adjusted();
         double expected = 0.9264901264901265;
 
@@ -109,8 +102,7 @@ public class LinearRegressionTest {
     public void r2Adjusted2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.R2Adjusted();
         double expected = 0.9235901264901265;
 
@@ -122,8 +114,7 @@ public class LinearRegressionTest {
     public void interceptStdErr() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.interceptStdErr();
         double expected = 0.5089517029050438;
 
@@ -134,8 +125,7 @@ public class LinearRegressionTest {
     public void interceptStdErr2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.interceptStdErr();
         double expected = 0.5089517029050448;
 
@@ -148,8 +138,7 @@ public class LinearRegressionTest {
     public void slopeStdErr() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.slopeStdErr();
         double expected = 0.09370560388610231;
 
@@ -161,8 +150,7 @@ public class LinearRegressionTest {
     public void slopeStdErr2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.slopeStdErr();
         double expected = 0.09370560388611231;
 
@@ -175,8 +163,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.predict(arrayX[3]);
         double expected = 4.0675675675675675;
 
@@ -190,8 +177,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.predict(arrayX[5]);
         double expected = 4.0675675675675675;
 
@@ -204,8 +190,7 @@ public class LinearRegressionTest {
     public void testToString() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         String actual = lR.toString();
         String expected = "0.89 n + -0.36  (R^2 = 0.937)";
 
@@ -216,8 +201,7 @@ public class LinearRegressionTest {
     public void testToString2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         String actual = lR.toString();
         String expected = "0,79 n + -0,35  (R^2 = 0,837)";
 
@@ -228,8 +212,7 @@ public class LinearRegressionTest {
     public void getSvar() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getSvar();
         double expected = 0.6497747747747745;
         assertEquals(expected, actual, 0);
@@ -240,8 +223,7 @@ public class LinearRegressionTest {
     public void getSvar2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getSvar();
         double expected = 0.6497747746647745;
         assertNotEquals(expected, actual, 0);
@@ -254,8 +236,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.05;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.obs(significanceLevel);
         double expected = 0.975;
 
@@ -268,8 +249,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.10;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.obs(significanceLevel);
         double expected = 0.975;
 
@@ -279,8 +259,7 @@ public class LinearRegressionTest {
     public void s2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.S2();
         double expected = 0.6497747747747744;
 
@@ -291,8 +270,7 @@ public class LinearRegressionTest {
     public void s22() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.S2();
         double expected = 0.6597747747747744;
 
@@ -303,8 +281,7 @@ public class LinearRegressionTest {
     public void tb() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.Tb();
         double expected = 9.445914635062838;
 
@@ -314,8 +291,7 @@ public class LinearRegressionTest {
     public void tb2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.Tb();
         double expected = 9.555914635062838;
 
@@ -328,8 +304,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.05;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         String actual = lR.decision(significanceLevel);
         String expected = "Reject HO";
 
@@ -342,8 +317,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double significanceLevel = 0.05;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         String actual = lR.decision(significanceLevel);
         String expected = "No Reject HO";
 
@@ -355,8 +329,7 @@ public class LinearRegressionTest {
     public void getssr() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getssr();
         double expected = 57.976351351351354;
 
@@ -368,8 +341,7 @@ public class LinearRegressionTest {
     public void getssr2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getssr();
         double expected = 45.976351351351354;
 
@@ -381,8 +353,7 @@ public class LinearRegressionTest {
     public void getRss() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getRss();
         double expected = 3.898648648648647;
 
@@ -392,8 +363,7 @@ public class LinearRegressionTest {
     public void getRss2() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getRss();
         double expected = 3.798648648648647;
 
@@ -406,8 +376,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         int actual = lR.getDegressOfFreedom();
         int expected = 6;
 
@@ -419,8 +388,7 @@ public class LinearRegressionTest {
 
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         int actual = lR.getDegressOfFreedom();
         int expected = 8;
 
@@ -432,8 +400,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
         String a = "4.3352 - 5.5702\n";
         String b = "8.7609 - 9.9959\n";
@@ -469,8 +436,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
         String a = "4,3352 - 5,5702\n";
         String b = "8,7609 - 9,9959\n";
@@ -501,8 +467,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getTStudent(confidenceLevel);
         double expected = 1.9431802805661913;
 
@@ -514,8 +479,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         double actual = lR.getTStudent(confidenceLevel);
         double expected = 2.9431802805661913;
 
@@ -527,8 +491,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
         String a = "4.3352 - 5.5702\n";
         String b = "8.7609 - 9.9959";
@@ -543,8 +506,7 @@ public class LinearRegressionTest {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         double confidenceLevel = 0.95;
-        SimpleLinearRegression lR = new SimpleLinearRegression();
-        lR.setValuesSimpleLinearRegression(arrayX, arrayY);
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
         List<String> actual = lR.confidenceInterval(arrayX, confidenceLevel);
         String a = "4,3352 - 5,5702\n";
         String b = "8,7609 - 9,9959\n";
