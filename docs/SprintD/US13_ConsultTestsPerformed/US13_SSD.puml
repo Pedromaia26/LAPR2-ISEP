@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor "Clinical Chemistry Technologist" as CCT
+participant ":System" as S
+
+activate CCT
+CCT -> S: asks to consult the historical tests \nperformed by a particular client and its test results/details
+activate S
+S --> CCT: shows the list of clients registered in the system\n and asks to select one
+deactivate S
+CCT -> S: selects one client
+activate S
+S --> CCT: shows the tests already performed by the selected client\n and asks to choose one to check its details
+deactivate S
+loop
+CCT -> S: selects one
+activate S
+S --> CCT: shows the details for the chosen test
+deactivate S
+end
+
+
+deactivate CCT
+
+
+
+
+
+@enduml
