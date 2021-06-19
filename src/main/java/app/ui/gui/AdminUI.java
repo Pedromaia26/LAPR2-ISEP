@@ -57,6 +57,8 @@ public class AdminUI implements Initializable {
     private TextField histPoints;
     @FXML
     private DatePicker currentDay;
+    @FXML
+    private ComboBox parameter;
 
 
     private SendReportController controller = new SendReportController();
@@ -72,6 +74,7 @@ public class AdminUI implements Initializable {
     private ObservableList<String> dataNHS = FXCollections.observableArrayList("Days", "Weeks");
     private ObservableList<String> regressionModel = FXCollections.observableArrayList("Simple", "Multiple");
     private ObservableList<String> independentVariable = FXCollections.observableArrayList("Number of tests", "Mean age");
+    private ObservableList<String> pam = FXCollections.observableArrayList("a", "b");
 
     public AdminUI() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
     }
@@ -88,7 +91,8 @@ public class AdminUI implements Initializable {
         histPointsLabel.setVisible(false);
         Locale.setDefault(Locale.ENGLISH);
 
-
+        parameter.setItems(pam);
+        parameter.setValue("Please select one");
 
         dataComboBox.setItems(dataNHS);
         dataComboBox.setValue("Please select one");
