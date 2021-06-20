@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Laboratory Coordinator" as LC
+participant ":System" as S
+
+activate LC
+LC -> S: asks to have an overview off all the tests performed by Many Labs
+activate S
+S --> LC: shows all tests performed and requests\n the dates interval to analyse and the algorithm to be used
+deactivate S
+LC -> S: types the requested data
+activate S
+S --> LC: shows data and requests confirmation
+deactivate S
+LC -> S: confirms data
+activate S
+S --> LC: shows the graphs
+deactivate S
+
+deactivate LC
+
+@enduml

@@ -1,0 +1,106 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Laboratory Coordinator" as LC
+participant ":LCOverviewUI" as UI
+participant ":LCOverviewController" as CTRL
+participant ":Company" as ML
+participant "tStore\n:TestStore" as TSTORE
+participant "tMapper\n:TestMapper" as TMAPPER
+participant "testList:\nList<TestDTO>"
+participant "tList:\nList<Test>"
+participant "tListInInterval\n:List<Test>"
+participant "sequence\n:Sequence" as SEQ
+participant "sequenceList\n:List<Sequence>" as SEQLIST
+participant "sequenceList2\n:List<Sequence>" as SEQLIST2
+participant "diffList\n:List<Sequence"
+participant "graphs\n:Graphs" as GRAPHS
+participant "maxSum\n:<<interface>>MaxSum" as MS
+participant "intResult\n:int[]" as ARRAY
+participant "graph1\n:LineChart" as LINECHART1
+participant "graph2\n:LineChart" as LINECHART2
+participant "graph3\n:LineChart" as LINECHART3
+participant "graphDiffList\n:Graphs"
+participant "graphSequenceList\n:Graphs"
+participant "graphSequenceList2\n:Graphs"
+
+activate LC
+LC -> UI: asks to have an overview off all the tests performed by Many Labs
+activate UI
+UI -> CTRL: testList = getTests()
+activate CTRL
+
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: tList = getTestsList()
+activate TSTORE
+deactivate TSTORE
+CTRL -> TMAPPER: testList = toDto(tList)
+activate TMAPPER
+deactivate TMAPPER
+deactivate CTRL
+UI --> LC: shows all tests performed and requests\n the dates interval to analyse and the algorithm to be used
+deactivate UI
+LC -> UI: types the requested data
+activate UI
+UI --> LC: shows data and requests confirmation
+deactivate UI
+LC -> UI: confirms data
+activate UI
+UI -> CTRL:  getTestsInInterval(startDate, endDate)
+activate CTRL
+CTRL -> CTRL: tListInInterval = getTestsInInterval(startDate, endDate)
+activate CTRL
+deactivate CTRL
+CTRL -> CTRL: orderedList = orderedListInInterval(tListInInterval)
+activate CTRL
+CTRL -> SEQ**: create(date, num)
+deactivate CTRL
+CTRL -> SEQLIST: addToList(sequence)
+activate SEQLIST
+deactivate SEQLIST
+CTRL -> CTRL: tListInInterval = getTestsInInterval()
+activate CTRL
+deactivate CTRL
+CTRL -> CTRL: orderedList = orderedListInInterval(tListInInterval)
+activate CTRL
+CTRL -> SEQ**: create(date, num)
+deactivate CTRL
+CTRL -> SEQLIST2: addToList(sequence)
+activate SEQLIST2
+deactivate SEQLIST2
+CTRL -> SEQ: diffList = calcDiff(sequenceList, sequenceList2)
+activate SEQ
+deactivate SEQ
+CTRL -> GRAPHS: sendLists(diffList, sequenceList, sequenceList2)
+activate GRAPHS
+GRAPHS -> GRAPHS: maxSum = getMaxSum()
+activate GRAPHS
+deactivate GRAPHS
+GRAPHS -> MS: intResult = getMaxSum
+activate MS
+deactivate MS
+GRAPHS -> GRAPHS: graphDiffList = makeGraphDiffList(diffList)
+activate GRAPHS
+deactivate GRAPHS
+GRAPHS -> LINECHART1**: create(graphDiffList)
+GRAPHS -> GRAPHS: graphSequenceList = makeGraphSequenceList(sequenceList)
+activate GRAPHS
+deactivate GRAPHS
+GRAPHS -> LINECHART2**: create(graphSequenceList)
+GRAPHS -> GRAPHS: graphSequenceList2 = makeGraphSequenceList2(sequenceList2)
+activate GRAPHS
+deactivate GRAPHS
+GRAPHS -> LINECHART3**: create(graphSequenceList)
+
+UI --> LC: shows the graphs
+
+
+deactivate LC
+
+
+
+@enduml
