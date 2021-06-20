@@ -30,7 +30,9 @@ As a client, I want to access the application to view the results of the tests I
 >  
 > **Answer:** 
 
-
+> **Question:** "My group is assuming that the client only wants to see the validated tests. Do you want to see tests in other states and if that's the case say the state of the test and show only the information available for that state?
+>  
+> **Answer:** "The client should only see tests that have already been validated." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=9162#p12106]
 
 ### 1.3. Acceptance Criteria
 
