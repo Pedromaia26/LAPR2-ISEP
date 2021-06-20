@@ -33,7 +33,7 @@ public class AdminGUI {
         try {
 
 
-            closeGui();
+            closeGui1();
 
 
             Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("Admin.fxml"));
@@ -67,54 +67,54 @@ public class AdminGUI {
 
     public void registEmployee(ActionEvent actionEvent) throws IOException {
 
-        closeGui();
+        closeGui1();
 
         CreateEmployeeUI createEmployeeUI = new CreateEmployeeUI();
 
         createEmployeeUI.run();
 
-        returnToGui();
+        returnToGui1();
     }
 
 
     public void registLab(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui1();
 
         LaboratoryUI laboratoryUI=new LaboratoryUI();
         laboratoryUI.run();
 
-        returnToGui();
+        returnToGui1();
     }
 
     public void registTestType(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui1();
 
         TestTypeUI testTypeUI =new TestTypeUI();
         testTypeUI.run();
 
-        returnToGui();
+        returnToGui1();
     }
 
     public void registParameter(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui1();
 
         CreateParameterUI createParameterUI=new CreateParameterUI();
         createParameterUI.run();
 
-        returnToGui();
+        returnToGui1();
     }
 
 
     public void registParameterCategory(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui1();
 
         CreateParameterCategoryUI createParameterCategoryUI= new CreateParameterCategoryUI();
         createParameterCategoryUI.run();
 
-        returnToGui();
+        returnToGui1();
     }
 
-    public void returnToGui() throws IOException {
+    public void returnToGui1() throws IOException {
         Parent aaaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("AdminGUI.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(aaaaaa);
@@ -124,7 +124,7 @@ public class AdminGUI {
         stage.show();
     }
 
-    public void closeGui(){
+    public void closeGui1(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
         System.out.println("closed");

@@ -30,22 +30,22 @@ public class ReceptionistGUI {
     }
 
     public void RegistClient(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui4();
 
         RegistClientUI registClientUI = new RegistClientUI();
         registClientUI.run();
 
-        returnToGui();
+        returnToGui4();
     }
 
     public void registTest(ActionEvent actionEvent) throws IOException {
 
-        closeGui();
+        closeGui4();
 
         TestUI testUI = new TestUI();
         testUI.run();
 
-        returnToGui();
+        returnToGui4();
     }
 
     public void logout(MouseEvent mouseEvent) {
@@ -62,7 +62,7 @@ public class ReceptionistGUI {
         }
     }
 
-    public void returnToGui() throws IOException {
+    public void returnToGui4() throws IOException {
         Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("ReceptionistGUI.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(aaaaa);
@@ -72,7 +72,7 @@ public class ReceptionistGUI {
         stage2.show();
     }
 
-    public void closeGui(){
+    public void closeGui4(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
         System.out.println("closed");

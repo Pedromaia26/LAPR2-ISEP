@@ -1,10 +1,7 @@
 package app.ui.gui;
 
-import app.controller.AlterClientDataController;
 import app.controller.AuthController;
-import app.controller.ValidateWorkDoneController;
 import app.ui.console.ValidateWorkDoneUI;
-import com.sun.javafx.runtime.VersionInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +65,7 @@ public class LabCordController {
 
     public void overview(ActionEvent actionEvent) throws IOException {
         try {
-            closeGui();
+            closeGui2();
 
 
             Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("LBOverview.fxml"));
@@ -88,15 +85,15 @@ public class LabCordController {
 
     public void validateTest(ActionEvent actionEvent) throws IOException {
 
-        closeGui();
+        closeGui2();
         ValidateWorkDoneUI validateWorkDoneUI = new ValidateWorkDoneUI();
         validateWorkDoneUI.run();
 
-        returnToGui();
+        returnToGui2();
 
     }
 
-    public void returnToGui() throws IOException {
+    public void returnToGui2() throws IOException {
         Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(aaaaa);
@@ -106,7 +103,7 @@ public class LabCordController {
         stage2.show();
     }
 
-    public void closeGui(){
+    public void closeGui2(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
         System.out.println("closed");

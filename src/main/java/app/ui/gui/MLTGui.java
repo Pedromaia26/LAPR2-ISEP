@@ -30,15 +30,15 @@ public class MLTGui {
 
     public void recordSample(ActionEvent actionEvent) throws IOException {
 
-        closeGui();
+        closeGui3();
 
         RecordSampleUI recordSampleUI = new RecordSampleUI();
         recordSampleUI.run();
 
-        returnToGui();
+        returnToGui3();
     }
 
-    public void returnToGui() throws IOException {
+    public void returnToGui3() throws IOException {
         Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("MLTGui.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(aaaaa);
@@ -48,7 +48,7 @@ public class MLTGui {
         stage2.show();
     }
 
-    public void closeGui(){
+    public void closeGui3(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
 

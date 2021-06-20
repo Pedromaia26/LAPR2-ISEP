@@ -29,12 +29,12 @@ public class SDGui {
     }
 
     public void writeReport(ActionEvent actionEvent) throws IOException {
-        closeGui();
+        closeGui5();
 
         WriteReportUI writeReportUI = new WriteReportUI();
         writeReportUI.run();
 
-        returnToGui();
+        returnToGui5();
     }
 
     public void logout(MouseEvent mouseEvent) {
@@ -49,7 +49,7 @@ public class SDGui {
         }
     }
 
-    public void returnToGui() throws IOException {
+    public void returnToGui5() throws IOException {
         Parent bb = FXMLLoader.load(getClass().getClassLoader().getResource("SDGui.fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(bb);
@@ -59,7 +59,7 @@ public class SDGui {
         stage2.show();
     }
 
-    public void closeGui(){
+    public void closeGui5(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
 
