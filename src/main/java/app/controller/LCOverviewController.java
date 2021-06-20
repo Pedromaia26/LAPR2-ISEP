@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
@@ -23,7 +25,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class LCOverviewController implements Initializable{
-   // private static List<Sequence> diff;
+
 
     private TestStore testStore;
 
@@ -53,13 +55,18 @@ public class LCOverviewController implements Initializable{
 
     private List<Test> listTestsinValDateRange=new ArrayList<>();
 
+    private List<Test> listTestsinValitaionDateRange=new ArrayList<>();
+
     private List<Test> testValidatedList;
 
     private static List<Sequence> diff = new ArrayList<>();
 
     private static List<Sequence> testByRegDay = new ArrayList<>();
 
+    private static List<Sequence> testByAnalDay = new ArrayList<>();
+
     private static List<Sequence> testByValDay = new ArrayList<>();
+
 
     @FXML
     private ComboBox algorithms;
@@ -81,6 +88,11 @@ public class LCOverviewController implements Initializable{
     private static Date startDate;
 
     private static Date endDate;
+
+    private Stage stage;
+
+    @FXML
+    private AnchorPane anchorPane;
 
 
     public LCOverviewController() throws IllegalAccessException, ClassNotFoundException, InstantiationException, IOException, OutputException, ParseException, BarcodeException {
@@ -119,9 +131,10 @@ public class LCOverviewController implements Initializable{
 
                 verify30Min(test,2);
                 listTestsinValDateRange.add(test);
-                System.out.println(test.getResultRegist());
-                System.out.println(endDate);
-                System.out.println();
+            }
+            if ((test.getDate().toInstant().equals(startDate.toInstant()) || test.getDate().toInstant().equals(endDate.toInstant()) )|| (test.getDate().toInstant().isAfter(startDate.toInstant()) && test.getDate().toInstant().isBefore(endDate.toInstant()))){
+                verify30Min(test,3);
+                listTestsinValitaionDateRange.add(test);
             }
 
         }
@@ -131,10 +144,11 @@ public class LCOverviewController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
 
+        Locale.setDefault(Locale.UK);
 
 
         for(TestDTO testDTO : getTests()){
-            listView.getItems().add(testDTO.getCode());
+            listView.getItems().add(testDTO.getCode() + "-" + testDTO.getDate());
 
         }
 
@@ -157,9 +171,11 @@ public class LCOverviewController implements Initializable{
         try {
             List<Sequence> sequences = new ArrayList<>();
             List<Sequence> sequences2 = new ArrayList<>();
+            List<Sequence> sequences3 = new ArrayList<>();
 
             listTestsinRegDateRange = new ArrayList<>();
             listTestsinValDateRange = new ArrayList<>();
+            listTestsinValitaionDateRange=new ArrayList<>();
 
             diff = new ArrayList<>();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -168,7 +184,7 @@ public class LCOverviewController implements Initializable{
             endDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(endDateBox.getValue().format(formatter) + " " + endHour.getValue().toString() + ":" + endMinute.getValue().toString());
 
             getTestsInInterval();
-            System.out.println("b");
+
 
             int cVal = 0;
             int cNVal = 0;
@@ -272,15 +288,67 @@ public class LCOverviewController implements Initializable{
                 //diff.add((cVal-cNVal));
             }
 
+            i = 0;
+            cVal = 0;
+            cNVal = 0;
+            aData = new Date();
+            oData = new Date();
+
+            while (i < listTestsinValitaionDateRange.size() - 1) {
+
+                do {
+                    i++;
+                    if (listTestsinValitaionDateRange.get(i - 1).getFakeValidationDate() != null) {
+
+                        cNVal++;
+                        oData = listTestsinValitaionDateRange.get(i - 1).getFakeValidationDate();
+                        aData = listTestsinValitaionDateRange.get(i).getFakeValidationDate();
+
+
+                    }
+
+                /*f (listTests.get(i-1).getValidationDate() != null && listTests.get(i-1).getValidationDate().toString().equals(aData)) {
+                    cVal++;
+                }*/
+
+
+                } while (aData != null && aData.equals(oData) && i < listTestsinValitaionDateRange.size() - 1);
+                if (i == listTestsinValitaionDateRange.size() - 1) {
+                    i++;
+
+                    if (listTestsinValitaionDateRange.get(i - 1).getFakeValidationDate() != null) {
+
+                        cNVal++;
+                        lData = listTestsinValitaionDateRange.get(i - 1).getFakeValidationDate();
+                    }
+                    if (lData.equals(oData)) {
+                        sequences3.add(new Sequence(oData, cNVal));
+                    } else {
+                        sequences3.add(new Sequence(oData, cNVal - 1));
+                        sequences3.add(new Sequence(lData, 1));
+                    }
+
+                } else {
+                    sequences3.add(new Sequence(oData, cNVal));
+                }
+
+
+                cNVal = 0;
+
+                oData = aData;
+
+                //diff.add((cVal-cNVal));
+            }
+
 
             System.out.println(sequences);
 
             System.out.println(sequences2);
 
+            System.out.println(sequences3);
 
-            difference(sequences, sequences2);
+            difference(sequences, sequences2, sequences3);
             sortDiff();
-            System.out.println("b");
 
 
             System.out.println(diff);
@@ -303,12 +371,14 @@ public class LCOverviewController implements Initializable{
 
     }
 
-    public void difference(List<Sequence> sequences, List<Sequence> sequences2) throws ParseException {
-        testByValDay=new ArrayList<>();
+    public void difference(List<Sequence> sequences, List<Sequence> sequences2, List<Sequence> sequences3) throws ParseException {
+        testByAnalDay=new ArrayList<>();
         testByRegDay=new ArrayList<>();
+        testByValDay=new ArrayList<>();
 
         testByRegDay.addAll(sequences);
-        testByValDay.addAll(sequences2);
+        testByAnalDay.addAll(sort(sequences2));
+        testByValDay.addAll(sort(sequences3));
 
 
 
@@ -454,6 +524,24 @@ public class LCOverviewController implements Initializable{
         }
     }
 
+    public List<Sequence> sort(List<Sequence> sequences){
+
+        for (int i=0; i<sequences.size()-1;i++){
+
+            for (int j=0;j<sequences.size()-i-1;j++){
+
+                if (sequences.get(j+1).getDate().toInstant().isBefore(sequences.get(j).getDate().toInstant())){
+                    Sequence temp = sequences.get(j+1);
+                    sequences.set(j+1, sequences.get(j));
+                    sequences.set(j, temp);
+                }
+
+            }
+
+        }
+        return sequences;
+    }
+
     public void changeDate(ActionEvent actionEvent) {
 
         if (startDateBox.getValue()!=null && endDateBox.getValue()!=null && !algorithms.getSelectionModel().isEmpty() && !startMinute.getSelectionModel().isEmpty() && !startHour.getSelectionModel().isEmpty() && !endMinute.getSelectionModel().isEmpty() && !endHour.getSelectionModel().isEmpty()){
@@ -494,9 +582,14 @@ public class LCOverviewController implements Initializable{
         return testByRegDay;
     }
 
-    public static List<Sequence> getTestValbyDay() {
+    public static List<Sequence> getTestAnalbyDay() {
+        return testByAnalDay;
+    }
+
+    public static List<Sequence> getTestbyValDay() {
         return testByValDay;
     }
+
 
     public static String getAlgorithm(){
         if (algorithm.equals("Brute Force")){
@@ -549,28 +642,50 @@ public class LCOverviewController implements Initializable{
                 }
             }
             else {
-                if (test.getResultRegist().getMinutes()<end30min && test.getResultRegist().getMinutes()>=startMin){
-                    test.getFakeResultRegist().setMinutes(startMin);
+                if (num == 2) {
+                    if (test.getResultRegist().getMinutes() < end30min && test.getResultRegist().getMinutes() >= startMin) {
+                        test.getFakeResultRegist().setMinutes(startMin);
+                    } else {
+                        if (end30min > 59) {
+                            end30min = end30min - 60;
+                        }
+                        if (startMin > 0 && startMin < 30) {
+
+                            test.getFakeResultRegist().setHours(test.getResultRegist().getHours() - 1);
+                            test.getFakeResultRegist().setMinutes(end30min);
+
+                        } else {
+                            if (test.getResultRegist().getMinutes() < end30min) {
+                                test.getFakeResultRegist().setHours(test.getResultRegist().getHours() - 1);
+                                test.getFakeResultRegist().setMinutes(startMin);
+                            } else {
+                                test.getFakeResultRegist().setMinutes(end30min);
+                            }
+                        }
+                    }
                 }
                 else {
-                    if (end30min>59){
-                        end30min=end30min-60;
-                    }
-                    if (startMin>0 && startMin < 30){
-
-                        test.getFakeResultRegist().setHours(test.getResultRegist().getHours()-1);
-                        test.getFakeResultRegist().setMinutes(end30min);
-
-                    }
-                    else {
-                        if (test.getResultRegist().getMinutes()<end30min) {
-                            test.getFakeResultRegist().setHours(test.getResultRegist().getHours() - 1);
-                            test.getFakeResultRegist().setMinutes(startMin);
+                    if (test.getValidationDate().getMinutes() < end30min && test.getValidationDate().getMinutes() >= startMin) {
+                        test.getFakeValidationDate().setMinutes(startMin);
+                    } else {
+                        if (end30min > 59) {
+                            end30min = end30min - 60;
                         }
-                        else {
-                            test.getFakeResultRegist().setMinutes(end30min);
+                        if (startMin > 0 && startMin < 30) {
+
+                            test.getFakeValidationDate().setHours(test.getValidationDate().getHours() - 1);
+                            test.getFakeValidationDate().setMinutes(end30min);
+
+                        } else {
+                            if (test.getValidationDate().getMinutes() < end30min) {
+                                test.getFakeValidationDate().setHours(test.getValidationDate().getHours() - 1);
+                                test.getFakeValidationDate().setMinutes(startMin);
+                            } else {
+                                test.getFakeValidationDate().setMinutes(end30min);
+                            }
                         }
                     }
+
                 }
             }
 
@@ -582,5 +697,28 @@ public class LCOverviewController implements Initializable{
 
     public static Date getEndDate() {
         return endDate;
+    }
+
+    public void logout(MouseEvent mouseEvent) {
+        try {
+
+            stage = (Stage) anchorPane.getScene().getWindow();
+
+            System.out.println("closed");
+
+            stage.close();
+
+            Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
+            Stage stage2 = new Stage();
+            Scene scene2 = new Scene(update);
+            stage2.setTitle("MANY LABS");
+            stage2.setScene(scene2);
+            stage2.setResizable(false);
+
+
+            stage2.show();
+        }catch (Exception e){
+            System.out.println("Fail Going back");
+        }
     }
 }

@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CheckTestResultsUI">
     <children>
-        <Label layoutX="340.0" layoutY="14.0" text="Test Results" textAlignment="CENTER">
+        <Label layoutX="340.0" layoutY="20.0" text="Test Results" textAlignment="CENTER">
             <font>
                 <Font name="Calibri Bold" size="24.0" />
             </font>
         </Label>
         <Separator layoutY="62.0" prefHeight="5.0" prefWidth="800.0" />
-        <Label layoutY="64.0" prefHeight="17.0" prefWidth="800.0" style="-fx-background-color: lightblue;" />
+        <Label layoutY="64.0" prefHeight="17.0" prefWidth="800.0" style="-fx-background-color: #2D584F;" />
         <Separator layoutY="79.0" prefHeight="5.0" prefWidth="800.0" />
-        <Label layoutX="718.0" layoutY="444.0" onMouseClicked="#goBack" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #6700FAFF;" text="Go back">
+        <Label layoutX="718.0" layoutY="444.0" onMouseClicked="#goBack" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #2D584F;" text="Go back">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Label>
-      <ListView fx:id="listTests" layoutX="503.0" layoutY="139.0" prefHeight="234.0" prefWidth="246.0" />
-      <TableView fx:id="tableResults" layoutX="10.0" layoutY="138.0" prefHeight="106.0" prefWidth="477.0">
+      <ListView fx:id="listTests" layoutX="514.0" layoutY="138.0" prefHeight="234.0" prefWidth="246.0" style="-fx-border-color: #2D584F;" />
+      <TableView fx:id="tableResults" layoutX="10.0" layoutY="138.0" prefHeight="106.0" prefWidth="477.0" style="-fx-border-color: #2D584F;">
         <placeholder>
             <Label text="" />
         </placeholder>
@@ -31,7 +40,13 @@
             <Image url="@images/icon.png" />
          </image></ImageView>
       <Label fx:id="labelUserName" layoutX="52.0" layoutY="438.0" prefHeight="17.0" prefWidth="173.0" />
-      <Button fx:id="btnSelect" layoutX="586.0" layoutY="384.0" mnemonicParsing="false" onAction="#SelectTest" text="Check result" />
+      <Button fx:id="btnSelect" layoutX="586.0" layoutY="381.0" mnemonicParsing="false" onAction="#SelectTest" prefHeight="32.0" prefWidth="102.0" style="-fx-background-radius: 30; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Check result" textFill="#2d584f">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label layoutX="213.0" layoutY="275.0" text="Report">
          <font>
             <Font size="14.0" />

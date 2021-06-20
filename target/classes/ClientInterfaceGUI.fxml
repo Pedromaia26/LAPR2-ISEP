@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -34,10 +35,22 @@
             <Font name="Calibri Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="txtChangeName" disable="true" layoutX="449.0" layoutY="98.0" />
-      <TextField fx:id="txtChangeAddress" disable="true" layoutX="449.0" layoutY="180.0" />
-      <TextField fx:id="txtChangeSex" disable="true" layoutX="449.0" layoutY="274.0" />
-      <TextField fx:id="txtChangePN" disable="true" layoutX="449.0" layoutY="376.0" />
+      <TextField fx:id="txtChangeName" disable="true" layoutX="449.0" layoutY="98.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtChangeAddress" disable="true" layoutX="449.0" layoutY="180.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtChangeSex" disable="true" layoutX="449.0" layoutY="274.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtChangePN" disable="true" layoutX="449.0" layoutY="376.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Separator layoutY="62.0" prefHeight="5.0" prefWidth="687.0" />
       <Label layoutY="64.0" prefHeight="17.0" prefWidth="687.0" style="-fx-background-color: #2D584F;" />
       <Separator layoutY="79.0" prefHeight="5.0" prefWidth="687.0" />
@@ -45,76 +58,118 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="changeAddress" disable="true" layoutX="611.0" layoutY="179.0" mnemonicParsing="false" onAction="#UpdateAdress" style="-fx-border-color: #2D584F; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 3; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Update" textFill="#2d584f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="changeSex" disable="true" layoutX="611.0" layoutY="272.0" mnemonicParsing="false" onAction="#UpdateSex" style="-fx-border-color: #2D584F; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 3; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Update" textFill="#2d584f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="changePn" disable="true" layoutX="611.0" layoutY="374.0" mnemonicParsing="false" onAction="#UpdatePhoneNumer" style="-fx-border-color: #2D584F; -fx-background-radius: 30px; -fx-border-radius: 30; -fx-border-width: 3; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Update" textFill="#2d584f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Label layoutX="611.0" layoutY="439.0" onMouseClicked="#goback" prefHeight="22.0" prefWidth="62.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #2D584F;" text="Go back">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label layoutX="32.0" layoutY="89.0" prefHeight="24.0" prefWidth="185.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #2D584F;" text="Client Information">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
       <Label fx:id="showName" layoutX="52.0" layoutY="125.0" onMouseEntered="#mouseEnterName" onMouseExited="#mouseExitName" prefHeight="22.0" prefWidth="129.0" text="Name">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showAddress" layoutX="54.0" layoutY="157.0" onMouseEntered="#mouseEnterAddress" onMouseExited="#mouseExitAddress" prefHeight="24.0" prefWidth="320.0" text="Adress">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showSex" layoutX="54.0" layoutY="193.0" onMouseEntered="#mouseEnterSex" onMouseExited="#mouseExitSex" prefHeight="22.0" prefWidth="113.0" text="Sex">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showPN" layoutX="54.0" layoutY="227.0" onMouseEntered="#mouseEnterPN" onMouseExited="#mouseExitPN" prefHeight="22.0" prefWidth="138.0" text="Phone Number">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showCCN" layoutX="54.0" layoutY="261.0" onMouseEntered="#mouseEnterCCN" onMouseExited="#mouseExitCCN" prefHeight="22.0" prefWidth="223.0" text="CCN">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showTIN" layoutX="54.0" layoutY="299.0" onMouseEntered="#mouseEnterTIN" onMouseExited="#mouseExitTIN" prefHeight="22.0" prefWidth="138.0" text="TIN">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showBirth" layoutX="54.0" layoutY="333.0" onMouseEntered="#mouseEnterBirth" onMouseExited="#mouseExitBirth" prefHeight="22.0" prefWidth="138.0" text="Birth Date">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showNHS" layoutX="56.0" layoutY="367.0" onMouseEntered="#mouseEnterNHS" onMouseExited="#mouseExitNHS" prefHeight="22.0" prefWidth="223.0" text="NHS Code">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="showEmail" layoutX="59.0" layoutY="403.0" onMouseEntered="#mouseEnterEmail" onMouseExited="#mouseExitEmail" prefHeight="22.0" prefWidth="223.0" text="Email">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <Label fx:id="confirmSex" layoutX="390.0" layoutY="315.0" prefHeight="11.0" prefWidth="268.0">
          <font>

@@ -4,51 +4,244 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="732.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
+<AnchorPane prefHeight="993.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Graphs">
    <children>
-      <LineChart fx:id="graph" layoutX="50.0" layoutY="26.0" prefHeight="350.0" prefWidth="578.0">
+      <LineChart fx:id="graph" layoutX="50.0" layoutY="26.0" prefHeight="309.0" prefWidth="578.0" style="-fx-legend-visible: false;">
         <xAxis>
-          <CategoryAxis side="BOTTOM" fx:id="x" />
+          <CategoryAxis prefWidth="528.0" side="BOTTOM" fx:id="x">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
           <NumberAxis fx:id="y" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
         </yAxis>
       </LineChart>
-      <Label layoutX="710.0" layoutY="80.0" text="Number of Tests Registed:" />
-      <Label layoutX="656.0" layoutY="122.0" text="Number of tests already with results:" />
-      <Label layoutX="656.0" layoutY="166.0" text="Max Sum:" />
-      <Label fx:id="testReg" layoutX="891.0" layoutY="80.0" prefHeight="17.0" prefWidth="140.0" />
-      <Label fx:id="testVal" layoutX="891.0" layoutY="122.0" prefHeight="17.0" prefWidth="140.0" />
-      <Label fx:id="nClient" layoutX="730.0" layoutY="166.0" prefHeight="192.0" prefWidth="340.0" wrapText="true" />
-      <LineChart fx:id="graph1" layoutX="50.0" layoutY="388.0" prefHeight="299.0" prefWidth="340.0">
+      <Label layoutX="776.0" layoutY="80.0" text="Number of Tests Registed:" />
+      <Label layoutX="722.0" layoutY="105.0" text="Number of tests already with results:" />
+      <Label layoutX="867.0" layoutY="191.0" text="Max Sum:" />
+      <Label fx:id="testReg" layoutX="955.0" layoutY="80.0" prefHeight="17.0" prefWidth="267.0" />
+      <Label fx:id="testVal" layoutX="955.0" layoutY="105.0" prefHeight="17.0" prefWidth="267.0" />
+      <Label fx:id="nClient" layoutX="932.0" layoutY="181.0" prefHeight="118.0" prefWidth="346.0" wrapText="true" />
+      <LineChart fx:id="graph11" layoutX="60.0" layoutY="367.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
          <xAxis>
-            <CategoryAxis side="BOTTOM" fx:id="x1" />
+            <CategoryAxis side="BOTTOM" fx:id="x11">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont></CategoryAxis>
          </xAxis>
          <yAxis>
-            <NumberAxis fx:id="y1" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+            <NumberAxis fx:id="y11" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
          </yAxis>
       </LineChart>
-      <LineChart fx:id="graph2" layoutX="394.0" layoutY="388.0" prefHeight="299.0" prefWidth="316.0">
+      <LineChart fx:id="graph12" layoutX="369.0" layoutY="367.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
          <xAxis>
-            <CategoryAxis side="BOTTOM" fx:id="x2" />
+            <CategoryAxis side="BOTTOM" fx:id="x12">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont></CategoryAxis>
          </xAxis>
          <yAxis>
-            <NumberAxis fx:id="y2" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+            <NumberAxis fx:id="y12" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
          </yAxis>
       </LineChart>
-      <LineChart fx:id="graph3" layoutX="730.0" layoutY="388.0" prefHeight="299.0" prefWidth="316.0">
+      <LineChart fx:id="graph13" layoutX="647.0" layoutY="367.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
          <xAxis>
-            <CategoryAxis side="BOTTOM" fx:id="x3" />
+            <CategoryAxis side="BOTTOM" fx:id="x13">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont></CategoryAxis>
          </xAxis>
          <yAxis>
-            <NumberAxis fx:id="y3" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+            <NumberAxis fx:id="y13" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
          </yAxis>
       </LineChart>
-      <Label layoutX="701.0" layoutY="44.0" text="Number of Clients Registed:" />
-      <Label fx:id="numOfClients" layoutX="891.0" layoutY="44.0" prefHeight="17.0" prefWidth="140.0" />
-      <Label layoutX="709.0" layoutY="18.0" text="Number of Tests validated:" />
-      <Label fx:id="testValidated" layoutX="891.0" layoutY="18.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label layoutX="765.0" layoutY="53.0" text="Number of Clients Registed:" />
+      <Label fx:id="numOfClients" layoutX="955.0" layoutY="53.0" prefHeight="17.0" prefWidth="267.0" />
+      <Label layoutX="769.0" layoutY="27.0" text="Number of Tests validated:" />
+      <Label fx:id="testValidated" layoutX="955.0" layoutY="27.0" prefHeight="17.0" prefWidth="267.0" />
+      <LineChart fx:id="graph14" layoutX="971.0" layoutY="367.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x14">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y14" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph21" layoutX="52.0" layoutY="582.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x21">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y21" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph31" layoutX="52.0" layoutY="801.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x31">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y31" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph22" layoutX="361.0" layoutY="582.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x22">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y22" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph23" layoutX="645.0" layoutY="582.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x23">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y23" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph24" layoutX="969.0" layoutY="582.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x24">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y24" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph32" layoutX="361.0" layoutY="801.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x32">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y32" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph33" layoutX="647.0" layoutY="801.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x33">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y33" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <LineChart fx:id="graph34" layoutX="968.0" layoutY="801.0" prefHeight="192.0" prefWidth="267.0" style="-fx-legend-visible: false;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="x34">
+               <tickLabelFont>
+                  <Font name="System Bold" size="10.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y34" lowerBound="-100.0" prefHeight="329.0" prefWidth="28.0" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <Label layoutX="273.0" layoutY="16.0" text="Performance of the company">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="349.0" text="Tests Registed by days">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="436.0" layoutY="349.0" text="Tests Registed by weeks">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="722.0" layoutY="349.0" text="Tests Registed by month">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1044.0" layoutY="349.0" text="Tests Registed by year">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="572.0" text="Tests Analysed by days">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="436.0" layoutY="572.0" text="Tests Analysed by weeks">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="714.0" layoutY="573.0" text="Tests Analysed by month">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1042.0" layoutY="573.0" text="Tests Analysed by year">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="784.0" text="Tests Validated by days">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="784.0" text="Tests Validated by weeks">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="718.0" layoutY="784.0" text="Tests Validated by month">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1044.0" layoutY="784.0" text="Tests Validated by year">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="729.0" layoutY="135.0" text="Start Date of the Max Subsequence:" />
+      <Label layoutX="732.0" layoutY="164.0" text="End Date of the Max Subsequence:" />
+      <Label fx:id="startDateSub" layoutX="955.0" layoutY="135.0" prefHeight="17.0" prefWidth="267.0" />
+      <Label fx:id="endDateSub" layoutX="955.0" layoutY="164.0" prefHeight="17.0" prefWidth="267.0" />
+      <Separator layoutX="677.0" layoutY="-6.0" orientation="VERTICAL" prefHeight="325.0" prefWidth="11.0" />
+      <Separator layoutX="682.0" layoutY="316.0" prefHeight="7.0" prefWidth="605.0" />
    </children>
 </AnchorPane>

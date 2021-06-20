@@ -1,13 +1,17 @@
 package app.ui.gui;
 
 import app.controller.AlterClientDataController;
+import app.controller.App;
 import app.controller.AuthController;
+import app.domain.model.Company;
+import auth.AuthFacade;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -33,18 +37,33 @@ public class ClientMenuUI implements Initializable {
     private TextField welcome;
 
     @FXML
+    private Label name;
+
+    @FXML
     private AnchorPane anchorPane;
 
+    @FXML
+    private Label logout;
     Stage stage;
 
     private AuthController ctrl=new AuthController();
 
+    private AuthFacade authFacade;
+
+    private Company company;
+
     public ClientMenuUI() throws IllegalAccessException, ParseException, InstantiationException, IOException, OutputException, BarcodeException, ClassNotFoundException {
+        this.company=App.getInstance().getCompany();
+        this.authFacade= company.getAuthFacade();
+
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        welcome.setText("Welcome");
+
+        name.setText("Welcome "+authFacade.getCurrentUserSession().getUserId().toString());
+
     }
 
 
@@ -115,4 +134,5 @@ public class ClientMenuUI implements Initializable {
             System.out.println("Fail during logout");
         }
     }
+
 }

@@ -71,6 +71,8 @@ public class Test implements Serializable, Comparable<Test> {
      * An object of type Date used to record the date when a test was validated.
      */
     private Date validationDate;
+
+    private Date fakeValidationDate;
     /**
      * The report associated to each test.
      */
@@ -486,12 +488,16 @@ public class Test implements Serializable, Comparable<Test> {
     public void validateTest() throws IOException {
 
         validationDate = new Date();
+        this.fakeValidationDate=new Date();
+
         client.notifyClient();
     }
 
     public void validateTest(String data) throws IOException, ParseException {
 
-        validationDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);;
+        validationDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+        fakeValidationDate=new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+
         client.notifyClient();
 
     }
@@ -563,6 +569,10 @@ public class Test implements Serializable, Comparable<Test> {
 
     public Date getFakeResultRegist() {
         return fakeResultRegist;
+    }
+
+    public Date getFakeValidationDate() {
+        return fakeValidationDate;
     }
 }
 

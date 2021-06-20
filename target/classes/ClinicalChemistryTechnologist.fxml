@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.ClinicalChemTechUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.ClinicalChemTechUI">
    <children>
       <Label fx:id="client2" layoutX="130.0" layoutY="30.0" prefHeight="21.0" prefWidth="340.0" />
-      <Label alignment="CENTER" layoutX="95.0" layoutY="61.0" prefHeight="21.0" prefWidth="411.0" text="Please choose the client whose tests you want to check:" />
-      <TableView fx:id="tableView" layoutX="87.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0">
+      <Label alignment="CENTER" layoutX="95.0" layoutY="61.0" prefHeight="21.0" prefWidth="411.0" style="-fx-border-color: #2d584f; -fx-border-width: 0 0 2 0;" text="Please choose the client whose tests you want to check:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TableView fx:id="tableView" layoutX="87.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0" style="-fx-border-color: #2D584F;">
           <placeholder>
               <Label text="There are no clients with validated tests registered in the system." />
           </placeholder>
@@ -20,8 +25,26 @@
             <TableColumn fx:id="ccnColumn" prefWidth="157.0" text="CCN" />
         </columns>
       </TableView>
-      <Button fx:id="history" layoutX="347.0" layoutY="336.0" mnemonicParsing="false" onAction="#historyOnAction" prefHeight="31.0" prefWidth="205.0" text="Consult history of tests" />
-      <Button fx:id="sortTIN" layoutX="14.0" layoutY="312.0" mnemonicParsing="false" onAction="#sortByTinOnAction" text="Sort by TIN" />
-      <Button fx:id="sortNAME" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#sortByNameOnAction" text="Sort by Name" />
+      <Button fx:id="history" layoutX="347.0" layoutY="336.0" mnemonicParsing="false" onAction="#historyOnAction" prefHeight="31.0" prefWidth="205.0" style="-fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0); -fx-background-color: white; -fx-background-radius: 30;" text="Consult history of tests" textFill="#2d584f">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="sortTIN" layoutX="14.0" layoutY="317.0" mnemonicParsing="false" onAction="#sortByTinOnAction" prefHeight="25.0" prefWidth="95.0" style="-fx-background-radius: 30; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Sort by TIN" textFill="#2d584f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="sortNAME" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#sortByNameOnAction" prefHeight="25.0" prefWidth="95.0" style="-fx-background-radius: 30; -fx-background-color: white; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Sort by Name" textFill="#2d584f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>
