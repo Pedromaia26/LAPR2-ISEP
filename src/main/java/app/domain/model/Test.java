@@ -16,11 +16,17 @@ import java.util.*;
 public class Test implements Serializable, Comparable<Test> {
 
 
-
+    /**
+     * Data of sample regist.
+     */
     private Date sampleData;
-
+    /**
+     * Laboratory of a test.
+     */
     private Laboratory lab;
-
+    /**
+     * Doubles List that contains the results of a test.
+     */
     private List<Double> results;
     /**
      * String that contains the code of a test.
@@ -31,23 +37,31 @@ public class Test implements Serializable, Comparable<Test> {
      * The National Healthcare Service code.
      */
     private String nhsCode;
-
+    /**
+     * Date of date registration.
+     */
     private Date date;
-
+    /**
+     * The copy data used to create a sequence.
+     */
     private Date fakeDate;
 
     /**
      * The parameter of a given test.
      */
     private TestParameter tp;
-
+    /**
+     * metric of a given test.
+     */
     private String metric;
 
     /**
      * The lab order prescribed by a doctor that contains the type of tests and parameter of a test being analysed.
      */
     private LabOrder labOrder;
-
+    /**
+     * client of a test.
+     */
     private Client client;
 
     private Long tinNumber;
@@ -95,7 +109,10 @@ public class Test implements Serializable, Comparable<Test> {
         results = new ArrayList<>();
         testParameterResultList = new ArrayList<>();
     }
-
+    /**
+     * Counts the total of tests in the system.
+     * @return the next test code.
+     */
     public String createTestCode(Company company) {
 
         List<Test> tests = company.getTestStore().getTests();
@@ -172,6 +189,9 @@ public class Test implements Serializable, Comparable<Test> {
         this.lab=lab;
     }
 
+    /**
+     * Set the sample data
+     */
     public void setSampleData(String sampleData) throws ParseException {
         try {
             this.sampleData = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(sampleData);
@@ -310,7 +330,10 @@ public class Test implements Serializable, Comparable<Test> {
         }
         return true;
     }
-
+    /**
+     * Returns the client.
+     * @return the client.
+     */
     public Client getClient() {
         return client;
     }
@@ -413,7 +436,13 @@ public class Test implements Serializable, Comparable<Test> {
         String testPResult = compareValues(barcode);
         return testPResult;
     }
-
+    /**
+     * Adds a result to a parameter of a test, comparing the value received by parameter
+     * and the existing reference values provided by the external module.
+     *
+     * @param parameterCode the code of the parameter for which we pretend to add a result.
+     * @param result        the value obtained from a test parameter of a given client.
+     */
     public String addTestParameterResult(String barcode, String parameterCode, Double result, String metric, String data) throws ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException, OutputException, IOException, BarcodeException {
         checkResultRules(result);
         this.tp = getTestParameterFor(parameterCode);
@@ -424,7 +453,6 @@ public class Test implements Serializable, Comparable<Test> {
         this.fakeResultRegist=new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         String testPResult = compareValues(barcode);
         results.add(tp.getTpr().getValue());
-        System.out.println(results);
         return testPResult;
     }
 
@@ -472,9 +500,13 @@ public class Test implements Serializable, Comparable<Test> {
             throw new IllegalArgumentException("The result cannot be negative!");
     }
 
+    /**
+     * Select the right External module by config file .
+     * @return the right adapter.
+     */
+
     public ExternalModule getExternalModule() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Properties prop = App.getInstance().getprops();
-        System.out.println(labOrder.getTestType().getApi());
         String classaux = prop.getProperty(labOrder.getTestType().getApi());
         Class<?> oClass = Class.forName(classaux);
         return (ExternalModule) oClass.newInstance();
@@ -492,7 +524,9 @@ public class Test implements Serializable, Comparable<Test> {
 
         client.notifyClient();
     }
-
+    /**
+     * Mark the test as validated
+     */
     public void validateTest(String data) throws IOException, ParseException {
 
         validationDate = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
@@ -534,7 +568,10 @@ public class Test implements Serializable, Comparable<Test> {
     public Date getValidationDate() {
         return validationDate;
     }
-
+    /**
+     * Searches for the Samples with a specific barcode.
+     * @return the sample with specific barcode.
+     */
     public Sample getSampleByBarcode(String barcode) {
         for (Sample samp : sample) {
             if (barcode.equals(samp.getBarcode().getBarcodeNumber())) {
@@ -544,15 +581,28 @@ public class Test implements Serializable, Comparable<Test> {
         throw new IllegalArgumentException("There is no sample with such barcode!");
     }
 
+    /**
+     * Returns thelab
+     *
+     * @return the lab
+     */
     public Laboratory getLab() {
         return lab;
     }
 
-
+    /**
+     * Returns Test parameter list
+     *
+     * @return the Test parameter list
+     */
     public List<TestParameter> getTestParameterList() {
         return testParameterList;
     }
-
+    /**
+     * Returns the results
+     *
+     * @return the results
+     */
     public List<Double> getResults() {
         return results;
     }
@@ -562,15 +612,28 @@ public class Test implements Serializable, Comparable<Test> {
         return getDate().compareTo(test.getDate());
     }
 
-
+    /**
+     * Returns the copy data
+     *
+     * @return the copy data
+     */
     public Date getFakeDate() {
         return fakeDate;
     }
 
+    /**
+     * Returns the copy data of analyses
+     *
+     * @return the copy data of analyses
+     */
     public Date getFakeResultRegist() {
         return fakeResultRegist;
     }
-
+    /**
+     * Returns the copy data of validation
+     *
+     * @return the copy data of validation
+     */
     public Date getFakeValidationDate() {
         return fakeValidationDate;
     }
