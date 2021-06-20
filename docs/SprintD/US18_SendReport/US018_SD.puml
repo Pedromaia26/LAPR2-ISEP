@@ -258,7 +258,7 @@ UI -> CTRL: sendReport()
 activate CTRL
 CTRL -> REPORT: sendReportNHS()
 activate REPORT
-REPORT -> REPORT: reportNHS = reportApi()
+REPORT -> REPORT: reportNHS = report = reportApi()
 activate REPORT
 deactivate REPORT
 REPORT -> REPORTINTERFACE: writeUsingFileWriter(report)
