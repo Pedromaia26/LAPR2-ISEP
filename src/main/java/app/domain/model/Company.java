@@ -99,8 +99,16 @@ public class Company {
         this.testStore=new TestStore();
         Timer timer = new Timer();
         Date current = new Date();
-        current.setHours(17);
-        current.setMinutes(59);
+        if(current.getHours()<6){
+            current.setHours(6);
+            current.setMinutes(0);
+            current.setSeconds(0);
+        }else {
+            current.setHours(6);
+            current.setMinutes(0);
+            current.setSeconds(0);
+            current.setHours(current.getHours()+24);
+        }
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -113,7 +121,7 @@ public class Company {
                 }
             }
         };
-        timer.schedule(timerTask, current, 1000*2);
+        timer.schedule(timerTask, current, 86400000);
     }
     /**
      * Returns the designation.
