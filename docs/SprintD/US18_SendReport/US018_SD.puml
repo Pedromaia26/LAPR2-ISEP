@@ -1,0 +1,273 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Administrator" as ADM
+participant ":AdminUI" as UI
+participant ":SendReportController" as CTRL
+participant ":SimpleLinearRegression" as SLR
+participant ":MultiLinearRegression" as MLR
+participant "company:Company" as ML
+participant "testStore\n:TestStore" as TSTORE
+participant "covidTests\n:double[]"
+participant "positiveTests\n:double[]"
+participant "report\n:ReportNHS" as REPORT
+participant "reportNHS\n<<interface>>:ReportToNHS" as REPORTINTERFACE
+participant "positiveCasesToInterval\n:double[]"
+participant "covidTestsHp:\ndouble[]"
+participant "hPDays\n:List<Date>"
+participant "meanAge\n:double[]"
+participant "meanAgeHp\n:double[]"
+participant "performedTestsForHp\n:double[]"
+participant "hPWeeksInitial\n:List<Date>"
+participant "hPWeeksFinal\n: List<Date>"
+
+
+activate ADM
+
+ADM -> UI: starts the process of submitting a report to the NHS
+activate UI
+UI --> ADM: requests the current day
+deactivate UI
+ADM -> UI: types the current day
+activate UI
+UI --> ADM: asks to select the data the administrator\n wants to send to the NHS(days, weeks)
+deactivate UI
+ADM -> UI: selects one of them
+activate UI
+UI --> ADM: requests the number of historical points
+deactivate UI
+ADM -> UI: defines the number of historical points
+activate UI
+UI --> ADM: requests the dates interval to fit the regression model
+deactivate UI
+ADM -> UI: determines the dates interval
+activate UI
+UI -> CTRL: regressionModel = getLinearRegressionModel()
+activate CTRL
+alt SimpleLinearRegression
+CTRL -> SLR: regressionModel = getSlr()
+activate SLR
+deactivate SLR
+else MultipleLinearRegression
+CTRL -> MLR: regressionModel = getMlr()
+activate MLR
+deactivate MLR
+deactivate CTRL
+end
+UI --> ADM: shows the available regression models and asks to select one
+deactivate UI
+ADM -> UI: selects a regression model
+activate UI
+opt SimpleLinearRegression
+UI --> ADM: shows the available independent variables\n and asks to select one (number of tests, mean age)
+deactivate UI
+ADM -> UI: selects one of them
+activate UI
+UI --> ADM: requests the selection of the parameter for the hypothesis test
+deactivate UI
+ADM -> UI: selects one of them
+activate UI
+end
+UI --> ADM: requests the significance level
+deactivate UI
+ADM -> UI: types the significance level
+activate UI
+UI --> ADM: requests the confidence level
+deactivate UI
+ADM -> UI: types the confidence level
+activate UI
+alt SimpleLinearRegression && days && number of tests
+UI -> CTRL: getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: covidTests = covidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)
+activate REPORT
+deactivate REPORT
+CTRL -> TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: covidTestsHp = getTestForHp()
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPDays = getHPDays()
+activate TSTORE
+deactivate TSTORE
+CTRL -> REPORT: addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+else SimpleLinearRegression && days && mean age
+UI -> CTRL: getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: meanAge = meanAgeLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)
+activate REPORT
+deactivate REPORT
+CTRL -> TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerDay(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: meanAgeHp = getMeanAgeForHpDay(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPDays = getHPDays()
+activate TSTORE
+deactivate TSTORE
+CTRL -> REPORT:addConfLevel((positiveCasesToInterval , meanAgeHp, hPDays, cL/100)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+else SimpleLinearRegression && weeks && number of tests
+UI -> CTRL: getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: covidTests = covidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)
+activate REPORT
+deactivate REPORT
+CTRL -> TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: performedTestsForHp = getCovidTestsForWeekHp(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPWeeksInitial = gethPWeeksInitial()
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPWeeksFinal = gethPWeeksFinal()
+activate TSTORE
+deactivate TSTORE
+CTRL -> REPORT: addConfLevelForWeek(positiveCasesToInterval, performedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+else SimpleLinearRegression && weeks && mean age
+UI -> CTRL: getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: meanAge = meanAgeLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)
+activate REPORT
+deactivate REPORT
+CTRL -> TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: meanAgeHp = getMeanAgeForHPWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPDays = getHPDays()
+activate TSTORE
+deactivate TSTORE
+CTRL -> REPORT: addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+else MultipleLinearRegression && Days
+UI -> CTRL: sendReportMultilinearRegressionForDays(startDate, endDate, currentDate, hP, sL, cL)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: covidTests = covidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: meanAge = meanAgeLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+else MultipleLinearRegression && weeks
+UI -> CTRL: sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)
+activate CTRL
+CTRL -> ML: testStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> TSTORE: covidTests = covidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: positiveTests = positiveCovidTestsLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: meanAge = meanAgeLinearRegression(startDate, endDate)
+activate TSTORE
+deactivate TSTORE
+CTRL -> ML: report = createReportNHS()
+activate ML
+deactivate ML
+CTRL -> REPORT: createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
+activate REPORT
+deactivate REPORT
+deactivate CTRL
+end
+UI --> ADM: shows all data and requests for confirmation
+deactivate UI
+ADM -> UI: confirms all the data
+activate UI
+UI -> CTRL: sendReport()
+activate CTRL
+CTRL -> REPORT: sendReportNHS()
+activate REPORT
+REPORT -> REPORT: reportNHS = report = reportApi()
+activate REPORT
+deactivate REPORT
+REPORT -> REPORTINTERFACE: writeUsingFileWriter(report)
+activate REPORTINTERFACE
+deactivate REPORT
+deactivate REPORTINTERFACE
+deactivate CTRL
+UI --> ADM: informs operation success
+deactivate UI
+
+deactivate ADM
+@enduml

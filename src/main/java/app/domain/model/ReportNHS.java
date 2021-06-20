@@ -81,19 +81,16 @@ public class ReportNHS extends TimerTask {
 
     public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        regression.confidenceInterval(array, cL);
         for(int i=0;i<array.length; i++){
-            report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(array, cL).get(i) );
+            report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
-        sendReportNHS();
     }
 
     public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
-            report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(array, cL).get(i) );
+            report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
-        sendReportNHS();
     }
 
     public ReportToNHS reportApi() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -165,9 +162,27 @@ public class ReportNHS extends TimerTask {
         report += String.format("f > %.2f,(%d.%d)= %.3f\n", sL, 2, multilinearregression.getDegreesOfFreedom(), multilinearregression.fDistribution(sL));
         report += (multilinearregression.decision(sL));
 
-        sendReportNHS();
+        report += String.format("\n\n");
+
+        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
+
 
     }
+
+    public void addConfLevelForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        for(int i=0;i<array.length; i++){
+            report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", multilinearregression.predict(arrayToPredictx1[i], arrayToPredictx2[i]), multilinearregression.confidenceInterval(arrayToPredictx1, arrayToPredictx2, array, cL/100).get(i) );
+        }
+    }
+
+    public void addConfLevelForWeekForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        for(int i=0;i<array.length; i++){
+            report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", multilinearregression.predict(arrayToPredictx1[i], arrayToPredictx2[i]), multilinearregression.confidenceInterval(arrayToPredictx1, arrayToPredictx2, array, cL/100).get(i));
+        }
+    }
+
 
 }
 
