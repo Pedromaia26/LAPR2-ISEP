@@ -72,7 +72,7 @@ US16: As a laboratory coordinator, I want to have an overview of all the tests p
 
 **Alternative 1**
 
-![US005_SSD](US005_SSD.svg)
+![US016_SSD.svg](US016_SSD.svg)
 
 
 
@@ -138,7 +138,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US005_SD](US005_SD.svg)
+![US016_SD.svg](US016_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
