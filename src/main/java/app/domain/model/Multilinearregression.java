@@ -191,12 +191,12 @@ public class Multilinearregression {
 
     }
 
-    public double rQuadrado() {
+    public double r2() {
         return sqr() / sqt();
     }
 
-    public double rQuadradoAjustado() {
-        return (1-(((double)(matrixY.length-1)/(matrixY.length-matrixX[0].length))*(1-rQuadrado())));
+    public double r2Adjusted() {
+        return (1-(((double)(matrixY.length-1)/(matrixY.length-matrixX[0].length))*(1-r2())));
     }
 
     public double standardDeviation() {

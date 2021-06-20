@@ -92,7 +92,7 @@ public class MultilinearregressionTest {
         double[] arrayX2 = {7.0, 5.0, 9.0, 8.5, 9.5, 5.0, 3.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         Multilinearregression regression = new Multilinearregression(arrayX1, arrayX2, arrayY);
-        double actual = regression.rQuadrado();
+        double actual = regression.r2();
         double expected = 0.9855976905626183;
         Assert.assertEquals(actual, expected, 0);
     }
@@ -103,7 +103,7 @@ public class MultilinearregressionTest {
         double[] arrayX2 = {7.0, 5.0, 9.0, 8.5, 9.5, 5.0, 3.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         Multilinearregression regression = new Multilinearregression(arrayX1, arrayX2, arrayY);
-        double actual = regression.rQuadrado();
+        double actual = regression.r2();
         double expected = 0.235544;
         Assert.assertNotEquals(actual, expected, 0);
     }
@@ -114,7 +114,7 @@ public class MultilinearregressionTest {
         double[] arrayX2 = {7.0, 5.0, 9.0, 8.5, 9.5, 5.0, 3.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         Multilinearregression regression = new Multilinearregression(arrayX1, arrayX2, arrayY);
-        double actual = regression.rQuadradoAjustado();
+        double actual = regression.r2Adjusted();
         double expected = 0.9798367667876655;
         Assert.assertEquals(actual, expected, 0);
     }
@@ -125,7 +125,7 @@ public class MultilinearregressionTest {
         double[] arrayX2 = {7.0, 5.0, 9.0, 8.5, 9.5, 5.0, 3.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
         Multilinearregression regression = new Multilinearregression(arrayX1, arrayX2, arrayY);
-        double actual = regression.rQuadradoAjustado();
+        double actual = regression.r2Adjusted();
         double expected = 0.9876454;
         Assert.assertNotEquals(actual, expected, 0);
     }

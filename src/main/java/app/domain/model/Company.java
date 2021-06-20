@@ -1,13 +1,17 @@
 package app.domain.model;
 
+import app.controller.SendReportAutomaticController;
 import auth.AuthFacade;
 import auth.domain.store.UserRoleStore;
 import auth.domain.store.UserStore;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
+import java.util.*;
 
 /**
  *
@@ -93,6 +97,23 @@ public class Company {
         this.orgRole = new OrgRole();
         this.labOrderStore=new LabOrderStore();
         this.testStore=new TestStore();
+        Timer timer = new Timer();
+        Date current = new Date();
+        current.setHours(17);
+        current.setMinutes(59);
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    SendReportAutomaticController controller = new SendReportAutomaticController();
+                    controller.readProperties();
+                    controller.sendReport();
+                } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | OutputException | BarcodeException | ParseException | IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        timer.schedule(timerTask, current, 1000*2);
     }
     /**
      * Returns the designation.

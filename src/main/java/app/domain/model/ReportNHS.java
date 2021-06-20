@@ -50,7 +50,6 @@ public class ReportNHS extends TimerTask {
      */
     public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL, String parameter){
         regression = new SimpleLinearRegression(arr1, arr2);
-        report = "";
         report += "Regression model equation: \n";
         report += regression.getEquation();
         report += "\n";
@@ -80,7 +79,7 @@ public class ReportNHS extends TimerTask {
 
         report += ("\n\n\n-----------------------\n\n");
 
-        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
+
     }
 
     /**
@@ -88,6 +87,7 @@ public class ReportNHS extends TimerTask {
      */
     public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL*100, "intervals");
         for(int i=0;i<array.length; i++){
             report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
@@ -97,6 +97,7 @@ public class ReportNHS extends TimerTask {
      */
     public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL*100, "intervals");
         for(int i=0;i<array.length; i++){
             report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
@@ -157,6 +158,9 @@ public class ReportNHS extends TimerTask {
             report += String.format("\ns2: %.4f\n", regression.S2());
             report += String.format("\ntb: %.4f\n", regression.Tb());
             report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Tb()));
+        }else if(parameter.equals("ab")){
+            hypothesisTest("a", sL);
+            hypothesisTest("b", sL);
         }
     }
     /**
@@ -167,9 +171,9 @@ public class ReportNHS extends TimerTask {
         report += multilinearregression.toString();
         report += String.format("\n\n");
         report += String.format("//\nOther statistics");
-        report += String.format("R2 = %.4f\n", multilinearregression.rQuadrado());
-        report += String.format("R2adjusted = %.4f\n", multilinearregression.rQuadradoAjustado());
-        report += String.format("R = %.4f\n", Math.sqrt(multilinearregression.rQuadrado()));
+        report += String.format("R2 = %.4f\n", multilinearregression.r2());
+        report += String.format("R2adjusted = %.4f\n", multilinearregression.r2Adjusted());
+        report += String.format("R = %.4f\n", Math.sqrt(multilinearregression.r2()));
         report += String.format("//\nHypothesis tests for multilinearregression coefficient B1\nHO:B1=0 H1: B1<>0 \n");
         report += String.format("t_%.3f = %.3f\n", multilinearregression.obs(sL), multilinearregression.tStudent(sL));
         report += String.format("tB1 = %.3f\n", multilinearregression.Tb(1));
@@ -195,7 +199,7 @@ public class ReportNHS extends TimerTask {
 
         report += String.format("\n\n");
 
-        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
+
 
 
     }
@@ -204,6 +208,7 @@ public class ReportNHS extends TimerTask {
      */
     public void addConfLevelForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL*100, "intervals");
         for(int i=0;i<array.length; i++){
             report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", multilinearregression.predict(arrayToPredictx1[i], arrayToPredictx2[i]), multilinearregression.confidenceInterval(arrayToPredictx1, arrayToPredictx2, array, cL/100).get(i) );
         }
@@ -212,11 +217,22 @@ public class ReportNHS extends TimerTask {
      * add the confidance level by weks for multiple liner regression
      */
     public void addConfLevelForWeekForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL*100, "intervals");
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
             report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", multilinearregression.predict(arrayToPredictx1[i], arrayToPredictx2[i]), multilinearregression.confidenceInterval(arrayToPredictx1, arrayToPredictx2, array, cL/100).get(i));
         }
     }
+
+    public double getR2Simple(){
+        return regression.R2();
+    }
+
+    public void addStringToReport(String text){
+        report += text;
+    }
+
+
 
 
 }

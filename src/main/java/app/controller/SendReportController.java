@@ -21,8 +21,8 @@ public class SendReportController {
     private Company company;
     private TestStore testStore;
     private ReportNHS report;
-    private Timer timer = new Timer();
-    private ReportNHS autoReport;
+
+
 
 
     public SendReportController() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -44,7 +44,7 @@ public class SendReportController {
         List<Date> hPDays = testStore.getHPDays();
         report.addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100);
         report.sendReportNHS();
-        autoReport = new ReportNHS(report.getReport());
+        //autoReport = new ReportNHS(report.getReport());
         /*long delay = 120;
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 9);
