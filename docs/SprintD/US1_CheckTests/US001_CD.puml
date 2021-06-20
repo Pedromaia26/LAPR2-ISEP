@@ -1,0 +1,134 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+package "UI" {
+class CheckTestResultsUI
+}
+package "Controller" {
+class CheckTestResultsController
+}
+package "Mapper" {
+class TestMapper
+class TestParameterMapper
+class TestParameterResultMapper
+}
+package "Auth"{
+class AuthFacade
+class UserSession
+}
+package "Domain"{
+class Company
+class Test
+class TestStore
+class ReferenceValue
+class TestParameterResult
+class TestParameter
+}
+
+package "Dto"{
+class TestDTO
+class TestParameterResultDTO
+class TestParameterDTO
+}
+
+
+
+
+class CheckTestResultsController{
++getTests()
++getTestParameter(code)
++getResult(testParameter)
+}
+
+class AuthFacade{
++getCurrentUserSession()
+}
+
+class UserSession{
++getUserId()
+}
+
+class Company{
++getTestStore()
++getTest()
+}
+
+class Test{
++getTestParameterList()
+getTestParameterResult(testParameter)
+}
+
+
+class TestStore{
++getTestsByClient(id)
+}
+
+class TestMapper{
++toDto()
+}
+
+class TestParameterMapper{
++toDto()
+}
+
+class TestParameterResultMapper{
++toDto()
+}
+
+class ReferenceValue{
+    -double minimum
+    -double maximum
+    -String metric
+    }
+
+
+class TestDTO{
+-String code
+-Date date
+-Date validationDate
+-List<String> testParameterResultList
+}
+
+
+class TestParameterResultDTO{
+-double value
+-String metric
+}
+
+class TestParameterResult{
+-double value
+-String metric
+}
+
+class TestParameter{
+}
+
+class TestParameterDTO{
+}
+
+
+CheckTestResultsUI ..> CheckTestResultsController
+Company "1" --> "1" TestStore: uses
+CheckTestResultsController ..> TestParameterMapper
+CheckTestResultsController ..> TestParameterResultMapper
+TestParameterMapper ..> TestParameterDTO
+TestParameterResultMapper ..> TestParameterResultDTO
+TestStore "1" --> "1..*" Test: conducts
+TestParameterResult "1" --> "1" ReferenceValue: records
+TestParameter "1" --> "1" TestParameterResult: contains
+TestMapper ..> TestStore
+Test "1" --> "1..*" TestParameter: requests analysis of
+TestDTO ..> Test
+CheckTestResultsController ..> Company
+CheckTestResultsController ..> AuthFacade
+CheckTestResultsController ..> UserSession
+CheckTestResultsController ..> TestMapper
+Company ..> AuthFacade
+AuthFacade ..> UserSession
+TestParameterDTO ..> TestParameter
+TestParameterResultDTO ..> TestParameterResult
+CheckTestResultsController ..> TestStore
+
+@enduml

@@ -9,13 +9,26 @@ participant ":ClinicalChemTechController" as CTRL
 participant ":Company" as ML
 participant "cStore\n:ClientStore" as CSTORE
 participant "clientMapper\n:ClientMapper" as CMAPPER
+participant "sortingAlgorithm\n<<interface>>:SortingAlgorithms"
+participant "alg\n<<interface>>:SortingAlgorithms" as INTERFACE
 participant "client\n:Client" as CLIENT
+participant "test\n:Test" as T
+participant "tpMapper\n:TestParameterMapper" as TPMAPPER
 participant "testStore\n:TestStore" as TSTORE
 participant "tMapper\n:TestMapper" as TMAPPER
 participant "clientList\n:List<Client>"
 participant "tList\n:List<Test>" as TLIST
+participant "orderedClientList\n:List<ClientDTO>" as ORDCLIENTLIST
+participant "clientsDto\n:List<ClientDto>" as CDTO
+participant "tprMapper\n:TestParameterResultMapper" as TPRMAPPER
+participant "result\n:TestParameterResultDto"
+participant "testParameterList\n:List<TestParameter>"
+participant "tpr\n:TestParameterResult"
+participant "testParameters\n:TestParameterDTO"
+participant "testsDto\n:List<TestDTO>"
 
-participant "clientsDto\n:ClientDto" as CDTO
+
+
 
 activate CCT
 
@@ -33,7 +46,30 @@ CTRL -> CMAPPER: clientsDto = toDto(clientList)
 activate CMAPPER
 deactivate CMAPPER
 deactivate CTRL
-UI --> CCT: shows the list of clients registered in the system\n and asks to select one
+UI --> CCT: shows the list of clients registered in the system\n and asks to select a sorting method (by Tin or by Name)
+deactivate UI
+CCT -> UI: selects one method
+activate UI
+UI -> CTRL: sortingAlgorithm = getOrderingAlgorithms(clientsDto)
+activate CTRL
+CTRL -> CSTORE: sortingAlgorithm = getOrderingAlgorithms(clientsDto)
+activate CSTORE
+CSTORE -> CSTORE: alg = orderingAlgorithm()
+activate CSTORE
+deactivate CSTORE
+alt Tin
+CSTORE -> INTERFACE: orderedClientList = orderClientsByTin(clientsDto)
+activate INTERFACE
+deactivate INTERFACE
+else Name
+CSTORE ->  INTERFACE: orderedClientList = orderClientsByName(clientsDto)
+activate INTERFACE
+deactivate INTERFACE
+deactivate CSTORE
+end
+
+deactivate CTRL
+UI --> CCT: asks to select a client
 deactivate UI
 CCT -> UI: selects one client
 activate UI
@@ -56,6 +92,36 @@ UI --> CCT: shows the tests already performed by the selected client\n and asks 
 deactivate UI
 CCT -> UI: selects one
 activate UI
+UI -> CTRL: testParameters = getTestParameter(code)
+activate CTRL
+CTRL -> ML: test = getTest(client)
+activate ML
+deactivate ML
+CTRL -> T: testParameterList = getTestParameterList(code)
+activate T
+deactivate T
+CTRL -> TPMAPPER: testParameters = toDto(testParameterList)
+activate TPMAPPER
+deactivate TPMAPPER
+deactivate CTRL
+deactivate UI
+loop
+deactivate UI
+UI -> CTRL: result = getResult(testParameter)
+activate UI
+activate CTRL
+CTRL -> ML: test = getTest(client)
+activate ML
+deactivate ML
+CTRL -> T: tpr = getTestParameterResult(testParameter)
+activate T
+deactivate T
+CTRL -> TPRMAPPER: result = toDto(tpr)
+activate TPRMAPPER
+deactivate TPRMAPPER
+deactivate CTRL
+end
+
 UI --> CCT: shows the details for the chosen test
 deactivate UI
 

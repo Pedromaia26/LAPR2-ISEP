@@ -326,6 +326,32 @@ public class LinearRegressionTest {
     }
 
     @Test
+    public void decision3(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 88.0, 3.0, 3.0, 0.0, 2.0};
+        double significanceLevel = 0.05;
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        System.out.println(lR.decision(significanceLevel, lR.Tb()));
+        String actual = lR.decision(significanceLevel, lR.Tb());
+        String expected = "Reject HO";
+
+        assertNotEquals(actual, expected);
+
+    }
+    @Test
+    public void decision4() {
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 88.0, 3.0, 3.0, 0.0, 2.0};
+        double significanceLevel = 0.05;
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        String actual = lR.decision(significanceLevel, lR.Tb());
+        String expected = "No reject H0";
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
     public void getssr() {
         double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
         double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
@@ -515,5 +541,72 @@ public class LinearRegressionTest {
         expected.add(b);
 
         assertNotEquals(expected.get(0), actual.get(1));
+    }
+
+    @Test
+    public void ta(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
+        double confidenceLevel = 0.95;
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        double actual = lR.Ta();
+        double expected = -1.0306168562850109;
+        assertEquals(actual, expected, 0);
+    }
+
+    @Test
+    public void taNotEquals(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
+        double confidenceLevel = 0.95;
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        double actual = lR.Ta();
+        double expected = 89.24186;
+        assertNotEquals(actual, expected, 0);
+    }
+
+    @Test
+    public void getFDistribution(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        double actual = lR.getFDistribution(0.95);
+        double expected = 0.004273760000676983;
+
+        assertEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void getFDistributionNotEquals(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        double actual = lR.getFDistribution(0.95);
+        double expected = 7.254651;
+
+        assertNotEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void decisionAnova(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 4.0, 3.0, 3.0, 0.0, 2.0};
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        String actual = lR.decisionAnova(0.95);
+        String expected = "Reject HO\nThe regression model is significant.";
+
+        assertEquals(actual, expected);
+    }
+
+
+    @Test
+    public void decisionAnova2(){
+        double[] arrayX = {6.0, 11.0, 4.0, 5.0, 5.0, 3.0, 0.0, 2.0};
+        double[] arrayY = {5.0, 10.0, 2.0, 88.0, 3.0, 3.0, 0.0, 2.0};
+        SimpleLinearRegression lR = new SimpleLinearRegression(arrayX, arrayY);
+        String actual = lR.decisionAnova(0.95);
+        String expected = "Reject HO";
+
+        assertNotEquals(actual, expected);
     }
 }

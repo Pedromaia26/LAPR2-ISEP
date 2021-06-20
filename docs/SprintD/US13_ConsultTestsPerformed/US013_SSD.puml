@@ -14,12 +14,11 @@ CCT -> S: selects one client
 activate S
 S --> CCT: shows the tests already performed by the selected client\n and asks to choose one to check its details
 deactivate S
-loop
 CCT -> S: selects one
 activate S
 S --> CCT: shows the details for the chosen test
 deactivate S
-end
+
 
 
 deactivate CCT

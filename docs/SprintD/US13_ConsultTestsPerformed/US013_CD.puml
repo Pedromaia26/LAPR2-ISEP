@@ -1,0 +1,166 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+skinparam classAttributeIconSize 0
+
+package "UI"{
+class ClinicalChemTechUI
+}
+package "Controller" {
+class ClinicalChemTechController
+}
+package "Domain"{
+class Company
+class ClientStore
+interface SortingAlgorithms
+class TestStore
+class Client
+class Test
+class Parameter
+class TestParameterResult
+class TestParameter
+class ReferenceValue
+}
+
+package "Mapper" {
+class ClientMapper
+class TestMapper
+class TestParameterMapper
+class TestParameterResultMapper
+}
+
+package "DTO" {
+class ClientDTO
+class TestDTO
+class TestParameterResultDTO
+class TestParameterDTO
+}
+
+
+
+class ClinicalChemTechController{
++getClients()
++getOrderingAlgorithms(clientsDTO)
++getTestsForClientX(tin)
+}
+
+class Company{
++getClientStore()
++getTestStore()
+}
+
+class ReferenceValue{
+-double minimum
+-oduble maximum
+-String metric
+}
+
+class Parameter{
+-String code
+-String shortName
+-String description
+}
+
+class ClientStore{
++getClientList()
++getOrderingAlgorithms()
+}
+
+class ClientMapper{
++toDto()
+}
+
+class SortingAlgorithms{
++orderClientsByTin(clientsDTO)
++orderClientsByName(clientsDTO)
+}
+
+class TestStore{
++getTestsByClient(test)
+}
+
+class TestMapper{
++toDto()
+}
+
+
+class ClientDTO{
+-String ccn
+-long nhs
+-String birth
+-String sex
+-long tif
+-String email
+-String name
+-long phoneNumber
+-String address
+}
+
+class TestParameterMapper{
++toDto()
+}
+
+class Client{
+
+}
+
+class TestDTO{
+-String code
+-List<String> testParameterResultList
+-Date date
+-Date validationDate
+}
+class Test{
+}
+
+class TestParameterResult{
+}
+
+class TestParameterResultDTO{
+-String metric
+-double value
+}
+
+class TestParameter{
+}
+
+class TestParameterDTO{
+}
+
+class TestParameterResultMapper{
++toDto()
+}
+
+ClinicalChemTechUI ..> ClinicalChemTechController
+ClinicalChemTechController ..> Company
+ClinicalChemTechController ..> ClientStore
+ClinicalChemTechController ..> ClientMapper
+ClinicalChemTechController ..> TestStore
+ClinicalChemTechController ..> TestMapper
+ClinicalChemTechController ..> Test
+ClinicalChemTechController ..> TestParameterResultMapper
+ClinicalChemTechController ..> TestParameterMapper
+Company "1" --> "1" TestStore: uses
+Company "1" --> "1..*" Test: performs
+Company "1" --> "1" ClientStore: uses
+ClientMapper ..> ClientStore
+TestParameterMapper ..> TestParameterDTO
+TestParameterResultMapper ..> TestParameterResultDTO
+TestMapper ..> TestDTO
+Test "1" --> "1..*" TestParameter: requests analysis of
+TestParameter "1" --> "1"  TestParameterResult: contains
+TestParameter "*" --> "1" Parameter: refers to
+TestParameterResult "1" --> "1" ReferenceValue: records
+Test "1..*" --> "1" Client: requested by
+TestDTO ..> Test
+TestParameterDTO ..> TestParameter
+ClientMapper ..> ClientDTO
+ClientDTO ..> Client
+TestParameterResultDTO ..> TestParameterResult
+
+
+
+
+
+@enduml

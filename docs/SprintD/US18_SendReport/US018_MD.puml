@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company
+class Test
+class Admin
+
+
+class Company {
+-String designation
+}
+
+class Admin {
+}
+
+class Test{
+ -String code
+ -String nhsCode
+ -Date date
+ -Date validationDate
+}
+class ReportNHS{
+-String report
+-String api
+}
+
+interface ReportToNHS{
+}
+
+Company "1" --> "1..*" Admin: registers >
+Company "1" --> "*" Test: performs >
+Company "1" --> "*" ReportNHS: makes >
+ReportNHS "1" --> "1" ReportToNHS: makes use of >
+Test "*" --> "1" ReportNHS: gives rise >
+Admin "1..*" --> "1..*" ReportNHS: performs >
+
+
+
+@enduml

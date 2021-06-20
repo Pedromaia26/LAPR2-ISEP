@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1187.5px" preserveAspectRatio="none" style="width:1580px;height:1187px;" version="1.1" viewBox="0 0 1580 1187" width="1580px" zoomAndPan="magnify"><defs><filter height="300%" id="f18p4p91mc3547" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[9681dc6e01e10c6b4fe06895ae94f592]
+cluster UI--><polygon fill="#FFFFFF" filter="url(#f18p4p91mc3547)" points="811.25,7.5,836.25,7.5,845,37.0117,951.25,37.0117,951.25,132.5,811.25,132.5,811.25,7.5" style="stroke:#000000;stroke-width:1.875;"/><line style="stroke:#000000;stroke-width:1.875;" x1="811.25" x2="845" y1="37.0117" y2="37.0117"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="816.25" y="28.1665">UI</text><!--MD5=[1f2cfc53d9d308f53762fd0fcbaa4873]
+cluster Controller--><polygon fill="#FFFFFF" filter="url(#f18p4p91mc3547)" points="563.75,173.75,660,173.75,668.75,203.2617,1198.75,203.2617,1198.75,420,563.75,420,563.75,173.75" style="stroke:#000000;stroke-width:1.875;"/><line style="stroke:#000000;stroke-width:1.875;" x1="563.75" x2="668.75" y1="203.2617" y2="203.2617"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="88.75" x="568.75" y="194.4165">Controller</text><!--MD5=[ea5b5017dbea0b34f2db993a45ed3d27]
+cluster Adapter--><polygon fill="#FFFFFF" filter="url(#f18p4p91mc3547)" points="20,766.25,96.25,766.25,105,795.7617,242.5,795.7617,242.5,908.75,20,908.75,20,766.25" style="stroke:#000000;stroke-width:1.875;"/><line style="stroke:#000000;stroke-width:1.875;" x1="20" x2="105" y1="795.7617" y2="795.7617"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="68.75" x="25" y="786.9165">Adapter</text><!--MD5=[121a8bf1197281ab89ed693fab589f94]
+cluster Domain--><polygon fill="#FFFFFF" filter="url(#f18p4p91mc3547)" points="272.5,461.25,345,461.25,353.75,490.7617,1558.75,490.7617,1558.75,1178.75,272.5,1178.75,272.5,461.25" style="stroke:#000000;stroke-width:1.875;"/><line style="stroke:#000000;stroke-width:1.875;" x1="272.5" x2="353.75" y1="490.7617" y2="490.7617"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="65" x="277.5" y="481.9165">Domain</text><!--MD5=[ce5ba2aa1b14889a8bbee678eb648f66]
+class AdminUI--><rect codeLine="6" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="60" id="AdminUI" style="stroke:#A80036;stroke-width:1.875;" width="98.75" x="831.875" y="52.5"/><ellipse cx="850.625" cy="72.5" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M853.125,68.125 Q853.3789,67.5 853.6719,67.1875 Q853.9648,66.875 854.2969,66.875 Q854.8828,66.875 855.2539,67.2266 Q855.625,67.5781 855.625,68.3984 L855.625,70.3516 Q855.625,71.1719 855.2734,71.5234 Q854.9219,71.875 854.375,71.875 Q853.8867,71.875 853.5742,71.6602 Q853.2617,71.4453 853.125,70.8789 Q853.0664,70.4883 852.8516,70.2734 Q852.4609,69.8633 851.7578,69.6289 Q851.0547,69.375 850.3516,69.375 Q849.4727,69.375 848.7305,69.7266 Q848.0078,70.0781 847.4414,70.8594 Q846.875,71.6406 846.875,72.7148 L846.875,73.8672 Q846.875,75.1563 847.9297,76.0156 Q848.9844,76.875 850.8594,76.875 Q851.9727,76.875 852.7539,76.6211 Q853.2031,76.4844 853.7109,76.0352 Q854.043,75.7813 854.2188,75.7031 Q854.3945,75.625 854.6094,75.625 Q855.0195,75.625 855.3125,75.957 Q855.625,76.2695 855.625,76.7188 Q855.625,77.1484 855.1953,77.6563 Q854.5703,78.3984 853.5742,78.8086 Q852.2656,79.375 850.6641,79.375 Q848.7891,79.375 847.2852,78.6328 Q846.0742,78.0469 845.2148,76.7773 Q844.375,75.5078 844.375,74.0039 L844.375,72.6367 Q844.375,71.0742 845.1172,69.707 Q845.8789,68.3398 847.1875,67.6172 Q848.5156,66.875 850,66.875 Q850.8984,66.875 851.6797,67.1875 Q852.4609,67.5 853.125,68.125 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="58.75" x="868.125" y="78.6377">AdminUI</text><line style="stroke:#A80036;stroke-width:1.875;" x1="833.125" x2="929.375" y1="92.5" y2="92.5"/><line style="stroke:#A80036;stroke-width:1.875;" x1="833.125" x2="929.375" y1="102.5" y2="102.5"/><!--MD5=[50ac9e69813259232a9bd1cc58d89e3a]
+class SendReportController--><rect codeLine="24" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="181.0645" id="SendReportController" style="stroke:#A80036;stroke-width:1.875;" width="595" x="583.75" y="218.75"/><ellipse cx="800.9375" cy="238.75" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M803.4375,234.375 Q803.6914,233.75 803.9844,233.4375 Q804.2773,233.125 804.6094,233.125 Q805.1953,233.125 805.5664,233.4766 Q805.9375,233.8281 805.9375,234.6484 L805.9375,236.6016 Q805.9375,237.4219 805.5859,237.7734 Q805.2344,238.125 804.6875,238.125 Q804.1992,238.125 803.8867,237.9102 Q803.5742,237.6953 803.4375,237.1289 Q803.3789,236.7383 803.1641,236.5234 Q802.7734,236.1133 802.0703,235.8789 Q801.3672,235.625 800.6641,235.625 Q799.7852,235.625 799.043,235.9766 Q798.3203,236.3281 797.7539,237.1094 Q797.1875,237.8906 797.1875,238.9648 L797.1875,240.1172 Q797.1875,241.4063 798.2422,242.2656 Q799.2969,243.125 801.1719,243.125 Q802.2852,243.125 803.0664,242.8711 Q803.5156,242.7344 804.0234,242.2852 Q804.3555,242.0313 804.5313,241.9531 Q804.707,241.875 804.9219,241.875 Q805.332,241.875 805.625,242.207 Q805.9375,242.5195 805.9375,242.9688 Q805.9375,243.3984 805.5078,243.9063 Q804.8828,244.6484 803.8867,245.0586 Q802.5781,245.625 800.9766,245.625 Q799.1016,245.625 797.5977,244.8828 Q796.3867,244.2969 795.5273,243.0273 Q794.6875,241.7578 794.6875,240.2539 L794.6875,238.8867 Q794.6875,237.3242 795.4297,235.957 Q796.1914,234.5898 797.5,233.8672 Q798.8281,233.125 800.3125,233.125 Q801.2109,233.125 801.9922,233.4375 Q802.7734,233.75 803.4375,234.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="150" x="826.5625" y="244.8877">SendReportController</text><line style="stroke:#A80036;stroke-width:1.875;" x1="585" x2="1177.5" y1="258.75" y2="258.75"/><line style="stroke:#A80036;stroke-width:1.875;" x1="585" x2="1177.5" y1="268.75" y2="268.75"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="486.25" x="591.25" y="288.0237">+getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="591.25" y="305.3186">+getLinearRegressionModel()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="570" x="591.25" y="322.6135">+getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="496.25" x="591.25" y="339.9084">+getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="580" x="591.25" y="357.2034">+getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="535" x="591.25" y="374.4983">+sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="87.5" x="591.25" y="391.7932">+sendReport()</text><!--MD5=[59081f74a1d51a3f777847e515d96757]
+class Report2NHSAdapter--><rect codeLine="81" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="77.2949" id="Report2NHSAdapter" style="stroke:#A80036;stroke-width:1.875;" width="182.5" x="40" y="811.25"/><ellipse cx="59.875" cy="831.25" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M62.375,826.875 Q62.6289,826.25 62.9219,825.9375 Q63.2148,825.625 63.5469,825.625 Q64.1328,825.625 64.5039,825.9766 Q64.875,826.3281 64.875,827.1484 L64.875,829.1016 Q64.875,829.9219 64.5234,830.2734 Q64.1719,830.625 63.625,830.625 Q63.1367,830.625 62.8242,830.4102 Q62.5117,830.1953 62.375,829.6289 Q62.3164,829.2383 62.1016,829.0234 Q61.7109,828.6133 61.0078,828.3789 Q60.3047,828.125 59.6016,828.125 Q58.7227,828.125 57.9805,828.4766 Q57.2578,828.8281 56.6914,829.6094 Q56.125,830.3906 56.125,831.4648 L56.125,832.6172 Q56.125,833.9063 57.1797,834.7656 Q58.2344,835.625 60.1094,835.625 Q61.2227,835.625 62.0039,835.3711 Q62.4531,835.2344 62.9609,834.7852 Q63.293,834.5313 63.4688,834.4531 Q63.6445,834.375 63.8594,834.375 Q64.2695,834.375 64.5625,834.707 Q64.875,835.0195 64.875,835.4688 Q64.875,835.8984 64.4453,836.4063 Q63.8203,837.1484 62.8242,837.5586 Q61.5156,838.125 59.9141,838.125 Q58.0391,838.125 56.5352,837.3828 Q55.3242,836.7969 54.4648,835.5273 Q53.625,834.2578 53.625,832.7539 L53.625,831.3867 Q53.625,829.8242 54.3672,828.457 Q55.1289,827.0898 56.4375,826.3672 Q57.7656,825.625 59.25,825.625 Q60.1484,825.625 60.9297,825.9375 Q61.7109,826.25 62.375,826.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="140" x="77.625" y="837.3877">Report2NHSAdapter</text><line style="stroke:#A80036;stroke-width:1.875;" x1="41.25" x2="221.25" y1="851.25" y2="851.25"/><line style="stroke:#A80036;stroke-width:1.875;" x1="41.25" x2="221.25" y1="861.25" y2="861.25"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="167.5" x="47.5" y="880.5237">writeUsingFileWriter(report)</text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company--><rect codeLine="42" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="111.8848" id="Company" style="stroke:#A80036;stroke-width:1.875;" width="137.5" x="332.5" y="506.25"/><ellipse cx="365.3125" cy="526.25" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M367.8125,521.875 Q368.0664,521.25 368.3594,520.9375 Q368.6523,520.625 368.9844,520.625 Q369.5703,520.625 369.9414,520.9766 Q370.3125,521.3281 370.3125,522.1484 L370.3125,524.1016 Q370.3125,524.9219 369.9609,525.2734 Q369.6094,525.625 369.0625,525.625 Q368.5742,525.625 368.2617,525.4102 Q367.9492,525.1953 367.8125,524.6289 Q367.7539,524.2383 367.5391,524.0234 Q367.1484,523.6133 366.4453,523.3789 Q365.7422,523.125 365.0391,523.125 Q364.1602,523.125 363.418,523.4766 Q362.6953,523.8281 362.1289,524.6094 Q361.5625,525.3906 361.5625,526.4648 L361.5625,527.6172 Q361.5625,528.9063 362.6172,529.7656 Q363.6719,530.625 365.5469,530.625 Q366.6602,530.625 367.4414,530.3711 Q367.8906,530.2344 368.3984,529.7852 Q368.7305,529.5313 368.9063,529.4531 Q369.082,529.375 369.2969,529.375 Q369.707,529.375 370,529.707 Q370.3125,530.0195 370.3125,530.4688 Q370.3125,530.8984 369.8828,531.4063 Q369.2578,532.1484 368.2617,532.5586 Q366.9531,533.125 365.3516,533.125 Q363.4766,533.125 361.9727,532.3828 Q360.7617,531.7969 359.9023,530.5273 Q359.0625,529.2578 359.0625,527.7539 L359.0625,526.3867 Q359.0625,524.8242 359.8047,523.457 Q360.5664,522.0898 361.875,521.3672 Q363.2031,520.625 364.6875,520.625 Q365.5859,520.625 366.3672,520.9375 Q367.1484,521.25 367.8125,521.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="66.25" x="385.9375" y="532.3877">Company</text><line style="stroke:#A80036;stroke-width:1.875;" x1="333.75" x2="468.75" y1="546.25" y2="546.25"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="112.5" x="340" y="565.5237">-String designation</text><line style="stroke:#A80036;stroke-width:1.875;" x1="333.75" x2="468.75" y1="573.5449" y2="573.5449"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="95" x="340" y="592.8186">+getTestStore()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="122.5" x="340" y="610.1135">+createReportNHS()</text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
+class TestStore--><rect codeLine="48" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="267.5391" id="TestStore" style="stroke:#A80036;stroke-width:1.875;" width="365" x="292.5" y="716.25"/><ellipse cx="436.5625" cy="736.25" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M439.0625,731.875 Q439.3164,731.25 439.6094,730.9375 Q439.9023,730.625 440.2344,730.625 Q440.8203,730.625 441.1914,730.9766 Q441.5625,731.3281 441.5625,732.1484 L441.5625,734.1016 Q441.5625,734.9219 441.2109,735.2734 Q440.8594,735.625 440.3125,735.625 Q439.8242,735.625 439.5117,735.4102 Q439.1992,735.1953 439.0625,734.6289 Q439.0039,734.2383 438.7891,734.0234 Q438.3984,733.6133 437.6953,733.3789 Q436.9922,733.125 436.2891,733.125 Q435.4102,733.125 434.668,733.4766 Q433.9453,733.8281 433.3789,734.6094 Q432.8125,735.3906 432.8125,736.4648 L432.8125,737.6172 Q432.8125,738.9063 433.8672,739.7656 Q434.9219,740.625 436.7969,740.625 Q437.9102,740.625 438.6914,740.3711 Q439.1406,740.2344 439.6484,739.7852 Q439.9805,739.5313 440.1563,739.4531 Q440.332,739.375 440.5469,739.375 Q440.957,739.375 441.25,739.707 Q441.5625,740.0195 441.5625,740.4688 Q441.5625,740.8984 441.1328,741.4063 Q440.5078,742.1484 439.5117,742.5586 Q438.2031,743.125 436.6016,743.125 Q434.7266,743.125 433.2227,742.3828 Q432.0117,741.7969 431.1523,740.5273 Q430.3125,739.2578 430.3125,737.7539 L430.3125,736.3867 Q430.3125,734.8242 431.0547,733.457 Q431.8164,732.0898 433.125,731.3672 Q434.4531,730.625 435.9375,730.625 Q436.8359,730.625 437.6172,730.9375 Q438.3984,731.25 439.0625,731.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="66.25" x="462.1875" y="742.3877">TestStore</text><line style="stroke:#A80036;stroke-width:1.875;" x1="293.75" x2="656.25" y1="756.25" y2="756.25"/><line style="stroke:#A80036;stroke-width:1.875;" x1="293.75" x2="656.25" y1="766.25" y2="766.25"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="302.5" x="300" y="785.5237">+covidTestsLinearRegression(startDate, endDate)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="350" x="300" y="802.8186">+positiveCovidTestsLinearRegression(startDate, endDate)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="297.5" x="300" y="820.1135">+getPositiveCovidTestsPerWeek(currentDate, hP)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="98.75" x="300" y="837.4084">+getTestForHp()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="83.75" x="300" y="854.7034">+getHPDays()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="293.75" x="300" y="871.9983">+meanAgeLinearRegression(startDate, endDate)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="287.5" x="300" y="889.2932">+getPositiveCovidTestsPerDay(currentDate, hP)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="247.5" x="300" y="906.5881">+getMeanAgeForHpDay(currentDate, hP)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="267.5" x="300" y="923.8831">+getCovidTestsForWeekHp(currentDate, hP)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="121.25" x="300" y="941.178">+gethPWeeksInitial()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="120" x="300" y="958.4729">+gethPWeeksFinal()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="257.5" x="300" y="975.7678">+getMeanAgeForHpWeek(currentDate, hP)</text><!--MD5=[e7782590a7c561973da3493ba56a1e8f]
+class ReportNHS--><rect codeLine="63" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="250.2441" id="ReportNHS" style="stroke:#A80036;stroke-width:1.875;" width="837.5" x="701.25" y="725"/><ellipse cx="1075.3125" cy="745" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M1077.8125,740.625 Q1078.0664,740 1078.3594,739.6875 Q1078.6523,739.375 1078.9844,739.375 Q1079.5703,739.375 1079.9414,739.7266 Q1080.3125,740.0781 1080.3125,740.8984 L1080.3125,742.8516 Q1080.3125,743.6719 1079.9609,744.0234 Q1079.6094,744.375 1079.0625,744.375 Q1078.5742,744.375 1078.2617,744.1602 Q1077.9492,743.9453 1077.8125,743.3789 Q1077.7539,742.9883 1077.5391,742.7734 Q1077.1484,742.3633 1076.4453,742.1289 Q1075.7422,741.875 1075.0391,741.875 Q1074.1602,741.875 1073.418,742.2266 Q1072.6953,742.5781 1072.1289,743.3594 Q1071.5625,744.1406 1071.5625,745.2148 L1071.5625,746.3672 Q1071.5625,747.6563 1072.6172,748.5156 Q1073.6719,749.375 1075.5469,749.375 Q1076.6602,749.375 1077.4414,749.1211 Q1077.8906,748.9844 1078.3984,748.5352 Q1078.7305,748.2813 1078.9063,748.2031 Q1079.082,748.125 1079.2969,748.125 Q1079.707,748.125 1080,748.457 Q1080.3125,748.7695 1080.3125,749.2188 Q1080.3125,749.6484 1079.8828,750.1563 Q1079.2578,750.8984 1078.2617,751.3086 Q1076.9531,751.875 1075.3516,751.875 Q1073.4766,751.875 1071.9727,751.1328 Q1070.7617,750.5469 1069.9023,749.2773 Q1069.0625,748.0078 1069.0625,746.5039 L1069.0625,745.1367 Q1069.0625,743.5742 1069.8047,742.207 Q1070.5664,740.8398 1071.875,740.1172 Q1073.2031,739.375 1074.6875,739.375 Q1075.5859,739.375 1076.3672,739.6875 Q1077.1484,740 1077.8125,740.625 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="78.75" x="1100.9375" y="751.1377">ReportNHS</text><line style="stroke:#A80036;stroke-width:1.875;" x1="702.5" x2="1537.5" y1="765" y2="765"/><line style="stroke:#A80036;stroke-width:1.875;" x1="702.5" x2="1537.5" y1="775" y2="775"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="487.5" x="708.75" y="794.2737">+createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="441.25" x="708.75" y="811.5686">+addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="478.75" x="708.75" y="828.8635">+createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="432.5" x="708.75" y="846.1584">+addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="671.25" x="708.75" y="863.4534">+addConfLevelForWeek(positiveCasesToInterval, performedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="612.5" x="708.75" y="880.7483">+addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="478.75" x="708.75" y="898.0432">+createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="593.75" x="708.75" y="915.3381">+addConfLevelForMultiRegr(positiveCasesToInterval, covidTestsHp, meanAgeHp, hPDays, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="478.75" x="708.75" y="932.6331">+createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="822.5" x="708.75" y="949.928">+addConfLevelForWeekForMultiRegr(positiveCasesToInterval, perfomedTestsForHp, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="113.75" x="708.75" y="967.2229">+sendReportNHS()</text><!--MD5=[81164bbe8e5195468dfeb4ce11f58a69]
+class SimpleLinearRegression--><rect codeLine="34" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="77.2949" id="SimpleLinearRegression" style="stroke:#A80036;stroke-width:1.875;" width="213.75" x="514.375" y="523.75"/><ellipse cx="533.125" cy="543.75" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M535.625,539.375 Q535.8789,538.75 536.1719,538.4375 Q536.4648,538.125 536.7969,538.125 Q537.3828,538.125 537.7539,538.4766 Q538.125,538.8281 538.125,539.6484 L538.125,541.6016 Q538.125,542.4219 537.7734,542.7734 Q537.4219,543.125 536.875,543.125 Q536.3867,543.125 536.0742,542.9102 Q535.7617,542.6953 535.625,542.1289 Q535.5664,541.7383 535.3516,541.5234 Q534.9609,541.1133 534.2578,540.8789 Q533.5547,540.625 532.8516,540.625 Q531.9727,540.625 531.2305,540.9766 Q530.5078,541.3281 529.9414,542.1094 Q529.375,542.8906 529.375,543.9648 L529.375,545.1172 Q529.375,546.4063 530.4297,547.2656 Q531.4844,548.125 533.3594,548.125 Q534.4727,548.125 535.2539,547.8711 Q535.7031,547.7344 536.2109,547.2852 Q536.543,547.0313 536.7188,546.9531 Q536.8945,546.875 537.1094,546.875 Q537.5195,546.875 537.8125,547.207 Q538.125,547.5195 538.125,547.9688 Q538.125,548.3984 537.6953,548.9063 Q537.0703,549.6484 536.0742,550.0586 Q534.7656,550.625 533.1641,550.625 Q531.2891,550.625 529.7852,549.8828 Q528.5742,549.2969 527.7148,548.0273 Q526.875,546.7578 526.875,545.2539 L526.875,543.8867 Q526.875,542.3242 527.6172,540.957 Q528.3789,539.5898 529.6875,538.8672 Q531.0156,538.125 532.5,538.125 Q533.3984,538.125 534.1797,538.4375 Q534.9609,538.75 535.625,539.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="173.75" x="550.625" y="549.8877">SimpleLinearRegression</text><line style="stroke:#A80036;stroke-width:1.875;" x1="515.625" x2="726.875" y1="563.75" y2="563.75"/><line style="stroke:#A80036;stroke-width:1.875;" x1="515.625" x2="726.875" y1="573.75" y2="573.75"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="52.5" x="521.875" y="593.0237">+getSlr()</text><!--MD5=[9ba96d1365e70e830885c197f6567fa3]
+class MultipleLinearRegression--><rect codeLine="38" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="77.2949" id="MultipleLinearRegression" style="stroke:#A80036;stroke-width:1.875;" width="217.5" x="772.5" y="523.75"/><ellipse cx="791.25" cy="543.75" fill="#ADD1B2" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M793.75,539.375 Q794.0039,538.75 794.2969,538.4375 Q794.5898,538.125 794.9219,538.125 Q795.5078,538.125 795.8789,538.4766 Q796.25,538.8281 796.25,539.6484 L796.25,541.6016 Q796.25,542.4219 795.8984,542.7734 Q795.5469,543.125 795,543.125 Q794.5117,543.125 794.1992,542.9102 Q793.8867,542.6953 793.75,542.1289 Q793.6914,541.7383 793.4766,541.5234 Q793.0859,541.1133 792.3828,540.8789 Q791.6797,540.625 790.9766,540.625 Q790.0977,540.625 789.3555,540.9766 Q788.6328,541.3281 788.0664,542.1094 Q787.5,542.8906 787.5,543.9648 L787.5,545.1172 Q787.5,546.4063 788.5547,547.2656 Q789.6094,548.125 791.4844,548.125 Q792.5977,548.125 793.3789,547.8711 Q793.8281,547.7344 794.3359,547.2852 Q794.668,547.0313 794.8438,546.9531 Q795.0195,546.875 795.2344,546.875 Q795.6445,546.875 795.9375,547.207 Q796.25,547.5195 796.25,547.9688 Q796.25,548.3984 795.8203,548.9063 Q795.1953,549.6484 794.1992,550.0586 Q792.8906,550.625 791.2891,550.625 Q789.4141,550.625 787.9102,549.8828 Q786.6992,549.2969 785.8398,548.0273 Q785,546.7578 785,545.2539 L785,543.8867 Q785,542.3242 785.7422,540.957 Q786.5039,539.5898 787.8125,538.8672 Q789.1406,538.125 790.625,538.125 Q791.5234,538.125 792.3047,538.4375 Q793.0859,538.75 793.75,539.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="177.5" x="808.75" y="549.8877">MultipleLinearRegression</text><line style="stroke:#A80036;stroke-width:1.875;" x1="773.75" x2="988.75" y1="563.75" y2="563.75"/><line style="stroke:#A80036;stroke-width:1.875;" x1="773.75" x2="988.75" y1="573.75" y2="573.75"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="53.75" x="780" y="593.0237">+getMlr()</text><!--MD5=[26ed8a3815a8462541f6d39231742b73]
+class ReportToNHS--><rect codeLine="77" fill="#FEFECE" filter="url(#f18p4p91mc3547)" height="77.2949" id="ReportToNHS" style="stroke:#A80036;stroke-width:1.875;" width="182.5" x="660" y="1081.25"/><ellipse cx="699.5625" cy="1101.25" fill="#B4A7E5" rx="13.75" ry="13.75" style="stroke:#A80036;stroke-width:1.25;"/><path d="M700.8125,1097.5 L700.8125,1105 L703.3125,1105 L703.918,1105 L704.5625,1105.7813 L704.5625,1106.25 L704.5625,1106.7188 L703.918,1107.5 L703.3125,1107.5 L695.8125,1107.5 L695.207,1107.5 L694.5625,1106.7188 L694.5625,1106.25 L694.5625,1105.7813 L695.207,1105 L695.8125,1105 L698.3125,1105 L698.3125,1097.5 L695.8125,1097.5 L695.207,1097.5 L694.5625,1096.7188 L694.5625,1096.25 L694.5625,1095.7813 L695.207,1095 L695.8125,1095 L703.3125,1095 L703.918,1095 L704.5625,1095.7813 L704.5625,1096.25 L704.5625,1096.7188 L703.918,1097.5 L703.3125,1097.5 L700.8125,1097.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" lengthAdjust="spacing" textLength="96.25" x="721.6875" y="1107.3877">ReportToNHS</text><line style="stroke:#A80036;stroke-width:1.875;" x1="661.25" x2="841.25" y1="1121.25" y2="1121.25"/><line style="stroke:#A80036;stroke-width:1.875;" x1="661.25" x2="841.25" y1="1131.25" y2="1131.25"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="167.5" x="667.5" y="1150.5237">writeUsingFileWriter(report)</text><!--MD5=[307b0f5d79336d367e62a9678f2fac52]
+link AdminUI to SendReportController--><path codeLine="85" d="M881.25,112.625 C881.25,137.8 881.25,175.8125 881.25,211.65 " fill="none" id="AdminUI-to-SendReportController" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="881.25,218.3125,886.25,207.0625,881.25,212.0625,876.25,207.0625,881.25,218.3125" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[cfc780b2e1304c30106273c9889b9af0]
+link SendReportController to Company--><path codeLine="86" d="M583.6875,399.275 C551.6375,414.2875 520.5375,431.5375 492.5,451.25 C473.3875,464.6875 455.9875,483.1125 441.6375,501.05 " fill="none" id="SendReportController-to-Company" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="437.6625,506.0875,448.5566,500.3532,441.5341,501.1811,440.7063,494.1586,437.6625,506.0875" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[7f6cf7f175eae0af66201860de5de971]
+link Company to TestStore--><path codeLine="87" d="M415.5625,619.0375 C422.3125,645.1375 430.7125,677.5875 439.0375,709.7875 " fill="none" id="Company-to-TestStore" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="440.7125,716.225,442.7254,704.0796,439.1421,710.1755,433.0462,706.5922,440.7125,716.225" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="35" x="430" y="674.3689">uses</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="408.1479" y="644.9182">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="429.1232" y="702.5501">1</text><!--MD5=[f2d82d8a4e0088529ab749d41f612282]
+link Report2NHSAdapter to ReportToNHS--><path codeLine="88" d="M162.325,889.0375 C188.7375,918.8125 229.175,959.275 272.5,983.75 C386.75,1048.2875 534.0375,1083.775 634.9,1101.95 " fill="none" id="Report2NHSAdapter-to-ReportToNHS" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="636.6625,1093.3875,659.8125,1106.2625,633.675,1110.625,636.6625,1093.3875" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[2f7ae66cf2d3fb754b81619993ad0f16]
+link SendReportController to SimpleLinearRegression--><path codeLine="89" d="M788.4875,400.05 C746.5125,440.5125 698.875,486.425 665.2125,518.875 " fill="none" id="SendReportController-to-SimpleLinearRegression" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="660.35,523.5625,671.9189,519.3527,664.849,519.2242,664.9776,512.1543,660.35,523.5625" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[446a60c1b06b504b26ff86aa64aa3559]
+link SendReportController to MultipleLinearRegression--><path codeLine="90" d="M881.25,400.05 C881.25,439.85 881.25,484.925 881.25,517.275 " fill="none" id="SendReportController-to-MultipleLinearRegression" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="881.25,523.5625,886.25,512.3125,881.25,517.3125,876.25,512.3125,881.25,523.5625" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[b7706cf73b3faa84fb9a8731f881bc98]
+link SendReportController to TestStore--><path codeLine="91" d="M982.275,400.125 C994.5875,415.8625 1005.3375,433.075 1012.5,451.25 C1039.8,520.5125 1057.125,559.1625 1012.5,618.75 C920.1875,742.0125 820.0125,652.125 680,716.25 C674.625,718.7125 669.225,721.3 663.825,723.9875 " fill="none" id="SendReportController-to-TestStore" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="657.9625,726.95,670.2579,726.3281,663.5383,724.1264,665.74,717.4068,657.9625,726.95" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[3d066aaa4737336dcaf7293d74f9a01f]
+link ReportNHS to ReportToNHS--><path codeLine="92" d="M949.1125,975.2125 C898.475,1011.95 846.475,1049.6625 808.5,1077.225 " fill="none" id="ReportNHS-to-ReportToNHS" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="803,1081.2125,815.0424,1078.6544,808.0592,1077.5428,809.1708,1070.5596,803,1081.2125" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="97.5" x="881.25" y="1039.3689">makes use of</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="927.4917" y="1002.0182">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="804.6133" y="1067.4796">1</text><!--MD5=[5d1ba8b4682490980af139a2d8f64e72]
+link SendReportController to ReportNHS--><path codeLine="93" d="M1055.875,400.05 C1068.55,412 1079.8375,425.3 1088.75,440 C1138.9,522.75 1144.5875,632.9 1138.9125,718 " fill="none" id="SendReportController-to-ReportNHS" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1138.4375,724.6,1144.1975,713.7195,1138.8663,718.3647,1134.2211,713.0335,1138.4375,724.6" style="stroke:#A80036;stroke-width:1.25;"/><!--MD5=[1a560b33699bcbb6db0e496f6c13d252]
+link Company to ReportNHS--><path codeLine="94" d="M470.2375,607.2 C477.65,611.3 485.1625,615.2375 492.5,618.75 C570.925,656.3375 657.2125,691.625 740.05,722.7375 " fill="none" id="Company-to-ReportNHS" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="746,724.975,737.2075,716.3579,740.1443,722.7903,733.7119,725.7271,746,724.975" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="48.75" x="627.5" y="674.3689">makes</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="480.0956" y="608.8026">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="6.25" x="710.8764" y="711.5135">*</text><!--MD5=[55ca239f1c9053bd134249a549afe463]
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+package "UI" {
+class AdminUI
+}
+package "Controller" {
+class SendReportController
+}
+package "Adapter"{
+class Report2NHSAdapter
+}
+package "Domain" {
+class Company
+class TestStore
+class ReportNHS
+class SimpleLinearRegression
+class MultipleLinearRegression
+interface ReportToNHS
+}
+
+
+class SendReportController{
++getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getLinearRegressionModel()
++getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)
++sendReport()
+}
+
+class SimpleLinearRegression{
++getSlr()
+}
+
+class MultipleLinearRegression{
++getMlr()
+}
+
+class Company{
+-String designation
++getTestStore()
++createReportNHS()
+}
+
+class TestStore{
++covidTestsLinearRegression(startDate, endDate)
++positiveCovidTestsLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerWeek(currentDate, hP)
++getTestForHp()
++getHPDays()
++meanAgeLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerDay(currentDate, hP)
++getMeanAgeForHpDay(currentDate, hP)
++getCovidTestsForWeekHp(currentDate, hP)
++gethPWeeksInitial()
++gethPWeeksFinal()
++getMeanAgeForHpWeek(currentDate, hP)
+}
+
+class ReportNHS{
++createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100)
++createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, performedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForMultiRegr(positiveCasesToInterval, covidTestsHp, meanAgeHp, hPDays, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForWeekForMultiRegr(positiveCasesToInterval, perfomedTestsForHp, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++sendReportNHS()
+}
+
+interface ReportToNHS{
+writeUsingFileWriter(report)
+}
+
+class Report2NHSAdapter{
+writeUsingFileWriter(report)
+}
+
+AdminUI ..> SendReportController
+SendReportController ..> Company
+Company "1" - -> "1" TestStore: uses
+Report2NHSAdapter ..|> ReportToNHS
+SendReportController ..>  SimpleLinearRegression
+SendReportController ..>  MultipleLinearRegression
+SendReportController .> TestStore
+ReportNHS "1"- ->"1" ReportToNHS: makes use of
+SendReportController ..> ReportNHS
+Company "1" - -> "*" ReportNHS: makes
+
+
+
+
+@enduml
+
+@startuml
+
+skinparam classAttributeIconSize 0
+
+package "UI" {
+class AdminUI
+}
+package "Controller" {
+class SendReportController
+}
+package "Adapter"{
+class Report2NHSAdapter
+}
+package "Domain" {
+class Company
+class TestStore
+class ReportNHS
+class SimpleLinearRegression
+class MultipleLinearRegression
+interface ReportToNHS
+}
+
+
+class SendReportController{
++getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getLinearRegressionModel()
++getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)
++sendReport()
+}
+
+class SimpleLinearRegression{
++getSlr()
+}
+
+class MultipleLinearRegression{
++getMlr()
+}
+
+class Company{
+-String designation
++getTestStore()
++createReportNHS()
+}
+
+class TestStore{
++covidTestsLinearRegression(startDate, endDate)
++positiveCovidTestsLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerWeek(currentDate, hP)
++getTestForHp()
++getHPDays()
++meanAgeLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerDay(currentDate, hP)
++getMeanAgeForHpDay(currentDate, hP)
++getCovidTestsForWeekHp(currentDate, hP)
++gethPWeeksInitial()
++gethPWeeksFinal()
++getMeanAgeForHpWeek(currentDate, hP)
+}
+
+class ReportNHS{
++createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100)
++createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, performedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForMultiRegr(positiveCasesToInterval, covidTestsHp, meanAgeHp, hPDays, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForWeekForMultiRegr(positiveCasesToInterval, perfomedTestsForHp, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++sendReportNHS()
+}
+
+interface ReportToNHS{
+writeUsingFileWriter(report)
+}
+
+class Report2NHSAdapter{
+writeUsingFileWriter(report)
+}
+
+AdminUI ..> SendReportController
+SendReportController ..> Company
+Company "1" - -> "1" TestStore: uses
+Report2NHSAdapter ..|> ReportToNHS
+SendReportController ..>  SimpleLinearRegression
+SendReportController ..>  MultipleLinearRegression
+SendReportController .> TestStore
+ReportNHS "1"- ->"1" ReportToNHS: makes use of
+SendReportController ..> ReportNHS
+Company "1" - -> "*" ReportNHS: makes
+
+
+
+
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 09:49:39 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
