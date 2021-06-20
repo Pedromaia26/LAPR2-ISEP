@@ -1,0 +1,31 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class Client {
+  -citizenCard
+  -nhs
+  -tin
+  -birthday
+  -sex
+  -phoneNumber
+  -name
+}
+
+class User{
+  -name
+  -email
+  -password
+}
+
+
+
+Company "1" -- "*" Client : has  >
+Client "0..1" -- "1" User: relates to >
+@enduml
