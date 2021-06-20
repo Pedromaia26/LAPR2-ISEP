@@ -1,0 +1,75 @@
+@startuml
+package UI{
+    Class UpdateClientUI
+}
+package Controllers{
+    Class UpdateClientController
+}
+
+package Domain{
+    Class Company
+    Class Client
+    Class ClientStore
+}
+
+package DTO{
+    Class ClientDTO
+}
+
+package Mappers{
+    Class ClientMapper
+}
+
+package Auth{
+    Class AuthFacade
+    Class UserSession
+}
+
+UpdateClientUI ..> UpdateClientController
+UpdateClientUI ..> ClientDTO
+UpdateClientController..>Company
+UpdateClientController..>ClientDTO
+UpdateClientController..>ClientMapper
+UpdateClientController..>ClientStore
+UpdateClientController..>Client
+
+UpdateClientController : +getClient()
+UpdateClientController : +updateData(attribute, updateInformation)
+
+AuthFacade : +getCurrentUserSession()
+
+UserSession : +getUserId()
+
+ClientMapper : +toDto(client)
+
+Client : +setName(updateInformation)
+Client : +setAddress(updateInformation)
+Client : +setSex(updateInformation)
+Client : +setPhoneNumber(updateInformation)
+Client : -citizenCard
+Client : -nhs
+Client : -tin
+Client : -birthday
+Client : -sex
+Client : -phoneNumber
+Client : -name
+
+ClientDTO..>Client
+
+ClientStore : +changeName(client, updateInformation)
+ClientStore : +changeAddress(client, updateInformation)
+ClientStore : +changeSex(client, updateInformation)
+ClientStore : +changePhoneNumber(client, updateInformation)
+
+Company : +getAuthFacade()
+Company : +getClientStore()
+Company : -designation
+Company"1" --> "1"ClientStore: has
+
+ClientStore"1" --> "*"Client: has
+
+Company..>AuthFacade
+AuthFacade..>UserSession
+
+ClientMapper..>ClientDTO
+@enduml
