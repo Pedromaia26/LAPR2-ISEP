@@ -113,23 +113,11 @@ public class ClientMenuUI implements Initializable {
 
     public void logout(MouseEvent mouseEvent) {
         try {
-            ctrl.doLogout();
+            JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            stage = (Stage) anchorPane.getScene().getWindow();
+            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
-            System.out.println("closed");
-
-            stage.close();
-
-            Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-            Stage stage2 = new Stage();
-            Scene scene2 = new Scene(update, 600, 500);
-            stage2.setTitle("MANY LABS");
-            stage2.setScene(scene2);
-            stage2.setResizable(false);
-
-
-            stage2.show();
+            janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){
             System.out.println("Fail during logout");
         }

@@ -8,14 +8,14 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCordController">
    <children>
-      <Button layoutX="309.0" layoutY="231.0" mnemonicParsing="false" onAction="#overview" prefHeight="98.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #2D584F; -fx-border-radius: 40; -fx-border-width: 2; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Overview">
+      <Button layoutX="309.0" layoutY="288.0" mnemonicParsing="false" onAction="#overview" prefHeight="91.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #2D584F; -fx-border-radius: 40; -fx-border-width: 2; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Overview">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="btnFiles" layoutX="309.0" layoutY="93.0" mnemonicParsing="false" onAction="#toFilesCSV" prefHeight="98.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #2D584F; -fx-border-radius: 40; -fx-border-width: 2; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Import CSV files">
+      <Button fx:id="btnFiles" layoutX="309.0" layoutY="89.0" mnemonicParsing="false" onAction="#toFilesCSV" prefHeight="91.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #2D584F; -fx-border-radius: 40; -fx-border-width: 2; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Import CSV files">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -51,5 +51,13 @@
          </font>
       </Label>
       <Label layoutX="177.0" prefHeight="400.0" prefWidth="17.0" style="-fx-background-color: #2D584F;" />
+      <Button fx:id="validateTest" layoutX="309.0" layoutY="189.0" mnemonicParsing="false" onAction="#validateTest" prefHeight="91.0" prefWidth="144.0" style="-fx-background-radius: 40; -fx-border-color: #2D584F; -fx-border-radius: 40; -fx-border-width: 2; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 , 10.0);" text="Validate Test">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

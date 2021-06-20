@@ -42,8 +42,10 @@ public class TestDetailsUI implements Initializable {
         ObservableList<TestResultClient> testParameters = FXCollections.observableArrayList();
 
         for (TestParameterDto parameters: testDTO.getTestParameterList()){
-            System.out.println("ola");
-            testParameters.add(new TestResultClient(parameters, parameters.getTprdto()));
+            if (parameters.getTprdto()!=null) {
+                testParameters.add(new TestResultClient(parameters, parameters.getTprdto()));
+            }
+
         }
 
         for (TestResultClient t: testParameters){

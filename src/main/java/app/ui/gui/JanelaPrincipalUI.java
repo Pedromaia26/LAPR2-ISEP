@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -35,11 +36,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class JanelaPrincipalUI implements Initializable {
+public class JanelaPrincipalUI {
 
 
-    ClientMenuUI c = new ClientMenuUI();
-    ClientStore client;
 
     @FXML
     private Button cancelButton;
@@ -47,8 +46,6 @@ public class JanelaPrincipalUI implements Initializable {
     @FXML
     private Label loginMessage;
 
-    @FXML
-    private Button loginButton;
 
     @FXML
     private TextField username;
@@ -56,11 +53,7 @@ public class JanelaPrincipalUI implements Initializable {
     @FXML
     private TextField password;
 
-    @FXML
-    private ImageView userIcon;
 
-    @FXML
-    private ImageView passIcon;
 
     @FXML
     private BorderPane borderpane;
@@ -79,7 +72,6 @@ public class JanelaPrincipalUI implements Initializable {
 
     public void loginButtonOnAction(ActionEvent event) throws IOException {
 
-        //try {
         boolean success;
 
 
@@ -104,68 +96,52 @@ public class JanelaPrincipalUI implements Initializable {
                     stage.close();
 
                     if(role.getDescription().equalsIgnoreCase("CLIENT")) {
-                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("clientMenu.fxml"));
-                        Stage stage2 = new Stage();
-                        Scene scene2 = new Scene(aaaaa);
-                        stage2.setTitle("CLIENT MENU");
-                        stage2.setScene(scene2);
-                        stage2.setResizable(true);
-                        stage2.show();
+                        enter("clientMenu", "CLIENT");
+
                     } else if (role.getDescription().equalsIgnoreCase("LABORATORY COORDINATOR")){
-                            Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
-                            Stage stage2 = new Stage();
-                            Scene scene2 = new Scene(aaaaa);
-                            stage2.setTitle("LABORATORY COORDINATOR");
-                            stage2.setScene(scene2);
-                            stage2.setResizable(true);
-                            stage2.show();
+                        enter("LabCordinatorGUI", "LABORATORY COORDINATOR");
+
                     } else if (role.getDescription().equalsIgnoreCase("CLINICAL CHEMISTRY TECHNOLOGIST")){
-                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("ClinicalChemistryTechnologist.fxml"));
-                        Stage stage2 = new Stage();
-                        Scene scene2 = new Scene(aaaaa);
-                        stage2.setTitle("CLINICAL CHEMISTRY TECHNOLOGIST");
-                        stage2.setScene(scene2);
-                        stage2.setResizable(true);
-                        stage2.show();
+                        enter("CCTGUI", "CLINICAL CHEMISTRY TECHNOLOGIST");
+
                     } else if (role.getDescription().equalsIgnoreCase("ADMINISTRATOR")){
-                        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("Admin.fxml"));
-                        Stage stage2 = new Stage();
-                        Scene scene2 = new Scene(aaaaa);
-                        stage2.setTitle("ADMINISTRATOR");
-                        stage2.setScene(scene2);
-                        stage2.setResizable(true);
-                        stage2.show();
+                        enter("AdminGUI", "ADMINISTRATOR");
+                    } else if(role.getDescription().equalsIgnoreCase("SPECIALIST DOCTOR")){
+                        enter("SDGui", "SPECIALIST DOCTOR");
+                    }else if(role.getDescription().equalsIgnoreCase("RECEPTIONIST")){
+                        enter("ReceptionistGUI","RECEPTIONIST");
+                    }else if (role.getDescription().equalsIgnoreCase("MEDICAL LAB TECHNICIAN")){
+                        enter("MLTGui", "MEDICAL LAB TECHNICIAN");
                     }
+
                 } else {
                     loginMessage.setText("Invalid e-mail or password. Please try again!");
                 }
             }
-
-
-            /*if (!client.getClientList().isEmpty()) {
-                clientes.setText(client.getClientList().toString());
-            }else{ */
-
-            }
-       // }
-
-            //catch(Exception e) {
-                // Printing the wrapper exception:
-                // System.out.println("Wrapper exception: " + e);
-
-                // Printing the 'actual' exception:
-               // System.out.println("Underlying exception: " + e.getCause());
-
-
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
     }
 
-    public void verificateLogin(){
+    public void logout(AuthController ctrl, Stage stage, AnchorPane anchorPane){
+        ctrl.doLogout();
 
+        stage = (Stage) anchorPane.getScene().getWindow();
+
+        System.out.println("closed");
+
+        stage.close();
     }
+
+
+
+    public void enter(String fxml, String title) throws IOException {
+        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource(fxml+".fxml"));
+        Stage stage2 = new Stage();
+        Scene scene2 = new Scene(aaaaa);
+        stage2.setTitle(title);
+        stage2.setScene(scene2);
+        stage2.setResizable(true);
+        stage2.show();
+    }
+
 
 
     private UserRoleDTO selectsRole(List<UserRoleDTO> roles)

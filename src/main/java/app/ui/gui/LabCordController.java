@@ -2,6 +2,8 @@ package app.ui.gui;
 
 import app.controller.AlterClientDataController;
 import app.controller.AuthController;
+import app.controller.ValidateWorkDoneController;
+import app.ui.console.ValidateWorkDoneUI;
 import com.sun.javafx.runtime.VersionInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,24 +54,11 @@ public class LabCordController {
 
     public void logout(MouseEvent mouseEvent) throws IOException {
         try {
-            ctrl.doLogout();
+            JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            stage = (Stage) anchorPane.getScene().getWindow();
+            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
-            System.out.println("closed");
-
-            stage.close();
-
-
-            Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-            Stage stage2 = new Stage();
-            Scene scene2 = new Scene(update, 600, 500);
-            stage2.setTitle("MANY LABS");
-            stage2.setScene(scene2);
-            stage2.setResizable(true);
-
-
-            stage2.show();
+            janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){
             System.out.println("Fail during logout");
         }
@@ -78,12 +67,8 @@ public class LabCordController {
     }
 
     public void overview(ActionEvent actionEvent) throws IOException {
-       // try {
-            stage = (Stage) anchorPane.getScene().getWindow();
-
-            System.out.println("closed");
-
-            stage.close();
+        try {
+            closeGui();
 
 
             Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("LBOverview.fxml"));
@@ -95,9 +80,37 @@ public class LabCordController {
 
 
             stage2.show();
-       /* }catch (Exception e){
+        }catch (Exception e){
             System.out.println("Fail Opening the OverView window");
-        }*/
+        }
 
+    }
+
+    public void validateTest(ActionEvent actionEvent) throws IOException {
+
+        closeGui();
+        ValidateWorkDoneUI validateWorkDoneUI = new ValidateWorkDoneUI();
+        validateWorkDoneUI.run();
+
+        returnToGui();
+
+    }
+
+    public void returnToGui() throws IOException {
+        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("LabCordinatorGUI.fxml"));
+        Stage stage2 = new Stage();
+        Scene scene2 = new Scene(aaaaa);
+        stage2.setTitle("Receptionist");
+        stage2.setScene(scene2);
+        stage2.setResizable(true);
+        stage2.show();
+    }
+
+    public void closeGui(){
+        stage = (Stage) anchorPane.getScene().getWindow();
+
+        System.out.println("closed");
+
+        stage.close();
     }
 }

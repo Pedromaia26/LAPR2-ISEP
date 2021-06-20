@@ -55,25 +55,7 @@ public class TestsHistoryUI implements Initializable {
 
 
     public void initData(ClientDTO ccnClient) throws ClassNotFoundException, InstantiationException, IllegalAccessException, OutputException, BarcodeException, ParseException, IOException {
-        /*Company c = new Company("Many Labs");
 
-        ParameterCategory pc = new ParameterCategory("hemogram", "ioiia");
-        Parameter p = new Parameter("67899", "hemog", "hemoglobin values", pc);
-        List<ParameterCategory> pcList = new ArrayList<>();
-        pcList.add(pc);
-        List<Parameter> pList = new ArrayList<>();
-        pList.add(p);
-        TestType tt = new TestType("COVID-19", "swab", "12345", pcList);
-        List<TestType> ttList = new ArrayList<>();
-        ttList.add(tt);
-        Laboratory l = new Laboratory("001LR", "ExeterLaboratory", "Manchester", 11111111111L, 9811111111L, ttList);
-
-        LabOrder lO = new LabOrder(tt,pList);
-        Test t = new Test(c, client, "123456789098", lO, l);
-        this.test = t; */
-        //for (TestDTO testessss: t){
-          //  System.out.println(testessss);
-        //}
         clientTest.setText(ccnClient.getNameDto() + "'s tests" );
         testColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("validationDate"));
