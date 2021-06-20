@@ -80,7 +80,7 @@ activate GRAPHS
 GRAPHS -> GRAPHS: maxSum = getMaxSum()
 activate GRAPHS
 deactivate GRAPHS
-GRAPHS -> MS: intResult = getMaxSum
+GRAPHS -> MS: intResult = MaxSum(diffList))
 activate MS
 deactivate MS
 GRAPHS -> GRAPHS: graphDiffList = makeGraphDiffList(diffList)
@@ -94,7 +94,7 @@ GRAPHS -> LINECHART2**: create(graphSequenceList)
 GRAPHS -> GRAPHS: graphSequenceList2 = makeGraphSequenceList2(sequenceList2)
 activate GRAPHS
 deactivate GRAPHS
-GRAPHS -> LINECHART3**: create(graphSequenceList)
+GRAPHS -> LINECHART3**: create(graphSequenceList2)
 
 UI --> LC: shows the graphs
 

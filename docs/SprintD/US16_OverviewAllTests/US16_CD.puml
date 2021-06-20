@@ -1,0 +1,109 @@
+@startuml
+package "UI" {
+  Class LCOverviewUI
+}
+package "Controllers" {
+ Class LCOverviewController
+}
+package "Domain" {
+ Class Company
+Class TestStore
+Class Test
+Class Sequence
+Class Graph
+Interface MaxSum
+Class MaxSumAdapter1
+Class MaxSumAdapter2
+Class LineChart
+
+}
+package "Mapper" {
+Class TestMapper
+
+}
+package "Dto"{
+Class TestDTO
+}
+
+
+LCOverviewUI ..> LCOverviewController
+LCOverviewController..>Company
+LCOverviewController..>TestMapper
+LCOverviewController ..> Graph
+LCOverviewController ..> Sequence
+
+Graph "1..*" --> "1"MaxSum : makes use of
+
+MaxSumAdapter1 ..>MaxSum
+MaxSumAdapter2 ..>MaxSum
+
+Graph..>LineChart
+
+LCOverviewController..>TestStore
+
+LCOverviewUI ..> TestDTO
+
+
+
+
+
+
+
+
+LCOverviewController : +getTests()
+LCOverviewController : +getTestsInInterval(startDate, endDate)
+LCOverviewController : +orderedListInInterval(tListInInterval)
+
+
+Graph : +sendLists(diffList, sequenceList, sequenceList2)
+
+MaxSum : +int [] MaxSum(diffList)
+
+MaxSumAdapter2 : +int [] MaxSum(diffList)
+MaxSumAdapter1 : +int [] MaxSum(diffList)
+
+Graph : +makeGraphDiffList(diffList)
+Graph : +makeGraphSequenceList(sequenceList)
+Graph : +makeGraphSequenceList2(sequenceList2)
+
+LineChart : +create(graphDiffList)
+LineChart : +create(graphSequenceList)
+LineChart : +create(graphSequenceList2)
+
+
+
+Sequence : +Sequence(date, num);
+
+Company"1" -->"1" TestStore :has
+Company "1" -- "1..*" Graph : uses
+Company "1" -- "*" Sequence : has
+
+
+TestStore : +getTestsList()
+
+TestMapper ..> TestDTO
+TestDTO..> Test
+
+
+TestStore"1" -->"*"Test : Has
+
+TestMapper ..> TestStore
+
+
+
+TestMapper : +toDto(tList)
+
+
+
+
+Company : +getTestStore()
+
+
+Test : -code
+Test : -nhscode
+
+
+TestDTO : -code
+TestDTO : -nhscode
+
+@enduml
