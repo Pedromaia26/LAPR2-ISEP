@@ -68,4 +68,8 @@ public class MLTGui {
         }
 
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

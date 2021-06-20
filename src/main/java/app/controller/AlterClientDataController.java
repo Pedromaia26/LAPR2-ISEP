@@ -423,4 +423,8 @@ public class AlterClientDataController implements Initializable {
         confirmPN.setText("");
         confirmSex.setText("");
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

@@ -120,4 +120,7 @@ public class ClientMenuUI implements Initializable {
         }
     }
 
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

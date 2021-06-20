@@ -313,5 +313,7 @@ public class AdminUI implements Initializable {
     }
 
 
-
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

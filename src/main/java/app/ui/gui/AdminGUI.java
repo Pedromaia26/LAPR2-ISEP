@@ -131,4 +131,8 @@ public class AdminGUI {
 
         stage.close();
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

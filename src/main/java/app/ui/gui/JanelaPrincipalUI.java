@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.image.ImageView;
+import javafx.stage.StageStyle;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -136,6 +137,7 @@ public class JanelaPrincipalUI {
         Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource(fxml+".fxml"));
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(aaaaa);
+        stage2.initStyle(StageStyle.UNDECORATED);
         stage2.setTitle(title);
         stage2.setScene(scene2);
         stage2.setResizable(true);

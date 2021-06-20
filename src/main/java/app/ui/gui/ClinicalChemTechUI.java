@@ -145,4 +145,7 @@ public class ClinicalChemTechUI implements Initializable {
         return orderedClientList;
     }
 
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

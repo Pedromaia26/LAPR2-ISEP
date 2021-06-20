@@ -1,0 +1,165 @@
+The regression model fitted using data from the interval: 
+y = NaN + NaNx1 + NaNx2
+
+//
+Other statisticsR2 = NaN
+R2adjusted = NaN
+R = NaN
+//
+Hypothesis tests for multilinearregression coefficient B1
+HO:B1=0 H1: B1<>0 
+t_0,975 = 2,571
+tB1 = NaN
+Decision:
+No reject H0
+
+
+Hypothesis tests for multilinearregression coefficient B2
+HO:B2=0 H1: B2<>0 
+t_0,975 = 2,571
+tB2 = NaN
+Decision:
+No reject H0
+
+
+Significance model with Anova
+                df    SS              MS              F              
+Regression      2     NaN             NaN             NaN            
+Residual        5     NaN             NaN             
+Total           7     NaN            
+
+
+Decision : ff > 0,05,(2.5)= 5,786
+No reject H0
+The regression model is not significant.
+
+
+
+Day Table
+
+Date                                               Number of OBSERVED positive cases                  Number of ESTIMATED positive cases                 95% intervals                                         
+19/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+18/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+17/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+16/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+15/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+14/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+12/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+11/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+10/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+09/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+08/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+07/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+05/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+04/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+03/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+02/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+01/06/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+31/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+29/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+28/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+27/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+26/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+25/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+24/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+22/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+21/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+20/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+19/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+18/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+17/05/2021                                                      0,00                                                   NaN                                       NaN - NaN
+
+
+
+Week Table
+
+Date                                               Number of OBSERVED positive cases                  Number of ESTIMATED positive cases                 95% intervals                                         
+23/11/2020 - 28/11/2020                                            0,00                                                  NaN                                    NaN - NaN
+
+30/11/2020 - 05/12/2020                                            0,00                                                  NaN                                    NaN - NaN
+
+07/12/2020 - 12/12/2020                                            0,00                                                  NaN                                    NaN - NaN
+
+14/12/2020 - 19/12/2020                                            0,00                                                  NaN                                    NaN - NaN
+
+21/12/2020 - 26/12/2020                                            0,00                                                  NaN                                    NaN - NaN
+
+28/12/2020 - 02/01/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+04/01/2021 - 09/01/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+11/01/2021 - 16/01/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+18/01/2021 - 23/01/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+25/01/2021 - 30/01/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+01/02/2021 - 06/02/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+08/02/2021 - 13/02/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+15/02/2021 - 20/02/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+22/02/2021 - 27/02/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+01/03/2021 - 06/03/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+08/03/2021 - 13/03/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+15/03/2021 - 20/03/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+22/03/2021 - 27/03/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+29/03/2021 - 03/04/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+05/04/2021 - 10/04/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+12/04/2021 - 17/04/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+19/04/2021 - 24/04/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+26/04/2021 - 01/05/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+03/05/2021 - 08/05/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+10/05/2021 - 15/05/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+17/05/2021 - 22/05/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+24/05/2021 - 29/05/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+31/05/2021 - 05/06/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+07/06/2021 - 12/06/2021                                            0,00                                                  NaN                                    NaN - NaN
+
+14/06/2021 - 19/06/2021                                            0,00                                                  NaN                                    NaN - NaN
+

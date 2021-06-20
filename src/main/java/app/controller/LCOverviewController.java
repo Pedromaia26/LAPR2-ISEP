@@ -721,4 +721,8 @@ public class LCOverviewController implements Initializable{
             System.out.println("Fail Going back");
         }
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

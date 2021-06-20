@@ -79,4 +79,8 @@ public class ReceptionistGUI {
 
         stage.close();
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

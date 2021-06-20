@@ -135,4 +135,8 @@ public class CheckTestResultsUI implements Initializable {
         stage2.show();
 
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

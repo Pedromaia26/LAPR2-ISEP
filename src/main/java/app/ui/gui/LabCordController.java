@@ -110,4 +110,8 @@ public class LabCordController {
 
         stage.close();
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

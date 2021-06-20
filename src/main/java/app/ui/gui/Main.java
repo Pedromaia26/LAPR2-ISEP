@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.FileInputStream;
 
@@ -18,6 +19,7 @@ public class Main extends Application {
         primaryStage.setTitle("MANY LABS");
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.setResizable(true);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         root.getStylesheets().add("styles/styles.css");
 

@@ -4,6 +4,7 @@ import app.controller.App;
 import app.controller.LCOverviewController;
 import app.domain.model.*;
 import com.isep.mdis.Sum;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.CategoryAxis;
@@ -603,4 +604,7 @@ public class Graphs implements Initializable {
 
     }
 
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

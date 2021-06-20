@@ -85,4 +85,8 @@ public class CCTGui {
 
         stage.close();
     }
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }

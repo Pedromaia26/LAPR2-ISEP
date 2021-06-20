@@ -5,6 +5,7 @@ import app.mappers.dto.TestDTO;
 import app.mappers.dto.TestParameterDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -67,5 +68,7 @@ public class TestDetailsUI implements Initializable {
     }
 
 
-
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }
