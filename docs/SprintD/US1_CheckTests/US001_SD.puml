@@ -1,0 +1,101 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Client" as C
+participant ":CheckTestResultsUI" as UI
+participant ":CheckTestResultsController" as CTRL
+participant ":AuthFacade" as AUTH
+participant "us\n:UserSession" as US
+participant ":Company" as ML
+participant "test\n:Test" as T
+participant "tStore\n:TestStore" as STORE
+participant "tMapper\n:TestMapper" as MAP1
+participant "tpMapper\n:TestParameterMapper" as MAP3
+participant "tprMapper\n:TestParameterResultMapper" as MAP5
+participant "ref\n:ReferenceValue" as REF
+participant "clientTests\n:List<TestDTO>" as DTO1
+participant "em\n:ExternalModule" as EM
+participant "rvMapper:\nReferenceValueMapper" as RVMAPPER
+participant "referenceValue\n:ReferenceValueDTO"
+participant "result\n:TestParameterResultDTO" as RESULT
+participant "tpr\n:TestParameterResult"
+participant "listClientTests\n:List<Tests>"
+participant "testParameterList\n:TestParameter"
+participant "testParameters\n:List<TestParameterDTO>"
+activate C
+
+C -> UI: asks to show the results of previously performed tests
+activate UI
+UI -> CTRL: clientTests = getTests()
+activate CTRL
+CTRL -> AUTH: us = getCurrentUserSession()
+activate AUTH
+deactivate AUTH
+CTRL -> US: id = getUserId()
+activate US
+deactivate US
+CTRL -> ML: tStore = getTestStore()
+activate ML
+deactivate ML
+CTRL -> STORE: listClientTests = getTestsByClient(id)
+activate STORE
+deactivate STORE
+CTRL -> MAP1: clientTests = toDto(listClientTests)
+activate MAP1
+deactivate MAP1
+deactivate CTRL
+UI --> C: shows the list of already performed tests by the client\n and asks him to select one
+deactivate UI
+C -> UI: selects one test
+activate UI
+UI -> CTRL: testParameters = getTestParameter(code)
+activate CTRL
+CTRL -> ML: test = getTest()
+activate ML
+deactivate ML
+CTRL -> T: testParameterList = getTestParameterList()
+activate T
+deactivate T
+CTRL -> MAP3: testParameters = toDto(testParameterList)
+activate MAP3
+deactivate MAP3
+deactivate CTRL
+deactivate UI
+loop
+UI -> CTRL: referenceValue = getReferenceValue(testParameter)
+activate UI
+activate CTRL
+CTRL -> ML: test = getTest()
+activate ML
+deactivate ML
+CTRL -> T : em = getExternalModule()
+activate T
+deactivate T
+CTRL -> EM: ref = getReferenceValue(testParameter)
+activate EM
+deactivate EM
+CTRL -> RVMAPPER: referenceValue = toDto(refValue)
+activate RVMAPPER
+deactivate RVMAPPER
+deactivate CTRL
+deactivate UI
+UI -> CTRL: result = getResult(testParameter)
+activate UI
+activate CTRL
+CTRL -> ML: test = getTest()
+activate ML
+deactivate ML
+CTRL -> MAP5: tpr = getTestParameterResult(testParameter)
+activate MAP5
+deactivate MAP5
+CTRL -> RESULT: result = toDto(tpr)
+activate RESULT
+deactivate RESULT
+deactivate CTRL
+end
+UI --> C: shows the results associated\n with the test selected by the client
+deactivate UI
+
+@enduml
