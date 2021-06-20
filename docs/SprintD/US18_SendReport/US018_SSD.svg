@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1138.75px" preserveAspectRatio="none" style="width:687px;height:1138px;" version="1.1" viewBox="0 0 687 1138" width="687.5px" zoomAndPan="magnify"><defs><filter height="300%" id="f13216db07sikl" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="885.5469" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="74.375" y="124.5117"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="152.4512"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="58.3789" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="228.3301"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="324.6484"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="400.5273"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="476.4063"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="69.6289" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="552.2852"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="659.8535"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="46.6895" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="735.7324"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="820.3613"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="896.2402"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="972.1191"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="174.6973" style="stroke:#000000;stroke-width:2.5;" width="658.125" x="12.5" y="571.0352"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="112.0117" y2="1032.5586"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:5.0,5.0;" x1="615.625" x2="615.625" y1="112.0117" y2="1032.5586"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="103.75" x="25" y="108.1665">Administrator</text><ellipse cx="80.625" cy="18.75" fill="#FEFECE" filter="url(#f13216db07sikl)" rx="10" ry="10" style="stroke:#A80036;stroke-width:2.5;"/><path d="M80.625,28.75 L80.625,62.5 M64.375,38.75 L96.875,38.75 M80.625,62.5 L64.375,81.25 M80.625,62.5 L96.875,81.25 " fill="none" filter="url(#f13216db07sikl)" style="stroke:#A80036;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="103.75" x="25" y="1049.4751">Administrator</text><ellipse cx="80.625" cy="1065.8203" fill="#FEFECE" filter="url(#f13216db07sikl)" rx="10" ry="10" style="stroke:#A80036;stroke-width:2.5;"/><path d="M80.625,1075.8203 L80.625,1109.5703 M64.375,1085.8203 L96.875,1085.8203 M80.625,1109.5703 L64.375,1128.3203 M80.625,1109.5703 L96.875,1128.3203 " fill="none" filter="url(#f13216db07sikl)" style="stroke:#A80036;stroke-width:2.5;"/><rect fill="#FEFECE" filter="url(#f13216db07sikl)" height="39.5117" style="stroke:#A80036;stroke-width:1.875;" width="80" x="573.125" y="66.25"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="62.5" x="581.875" y="93.1665">:System</text><rect fill="#FEFECE" filter="url(#f13216db07sikl)" height="39.5117" style="stroke:#A80036;stroke-width:1.875;" width="80" x="573.125" y="1031.3086"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacing" textLength="62.5" x="581.875" y="1058.2251">:System</text><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="885.5469" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="74.375" y="124.5117"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="152.4512"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="58.3789" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="228.3301"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="324.6484"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="400.5273"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="476.4063"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="69.6289" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="552.2852"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="659.8535"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="46.6895" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="735.7324"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="820.3613"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="896.2402"/><rect fill="#FFFFFF" filter="url(#f13216db07sikl)" height="37.9395" style="stroke:#A80036;stroke-width:1.25;" width="12.5" x="609.375" y="972.1191"/><polygon fill="#A80036" points="594.375,147.4512,606.875,152.4512,594.375,157.4512,599.375,152.4512" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="152.4512" y2="152.4512"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="95.625" y="146.3806">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="373.75" x="109.375" y="146.3806">starts the process of submitting a report to the NHS</text><polygon fill="#A80036" points="100.625,185.3906,88.125,190.3906,100.625,195.3906,95.625,190.3906" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="190.3906" y2="190.3906"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="108.125" y="184.3201">2</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="176.25" x="121.875" y="184.3201">requests the current day</text><polygon fill="#A80036" points="594.375,223.3301,606.875,228.3301,594.375,233.3301,599.375,228.3301" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="228.3301" y2="228.3301"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="95.625" y="222.2595">3</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="153.75" x="109.375" y="222.2595">types the current day</text><polygon fill="#A80036" points="100.625,281.709,88.125,286.709,100.625,291.709,95.625,286.709" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="286.709" y2="286.709"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="108.125" y="270.4187">4</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="292.5" x="121.875" y="260.199">asks to select the data the administrator</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="287.5" x="126.875" y="280.6384">wants to send to the NHS(days, weeks)</text><polygon fill="#A80036" points="594.375,319.6484,606.875,324.6484,594.375,329.6484,599.375,324.6484" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="324.6484" y2="324.6484"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="95.625" y="318.5779">5</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="142.5" x="109.375" y="318.5779">selects one of them</text><polygon fill="#A80036" points="100.625,357.5879,88.125,362.5879,100.625,367.5879,95.625,362.5879" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="362.5879" y2="362.5879"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="108.125" y="356.5173">6</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="285" x="121.875" y="356.5173">requests the number of historical points</text><polygon fill="#A80036" points="594.375,395.5273,606.875,400.5273,594.375,405.5273,599.375,400.5273" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="400.5273" y2="400.5273"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="95.625" y="394.4568">7</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="273.75" x="109.375" y="394.4568">defines the number of historical points</text><polygon fill="#A80036" points="100.625,433.4668,88.125,438.4668,100.625,443.4668,95.625,438.4668" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="438.4668" y2="438.4668"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="108.125" y="432.3962">8</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="382.5" x="121.875" y="432.3962">requests the dates interval to fit the regression model</text><polygon fill="#A80036" points="594.375,471.4063,606.875,476.4063,594.375,481.4063,599.375,476.4063" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="476.4063" y2="476.4063"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="8.75" x="95.625" y="470.3357">9</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="207.5" x="109.375" y="470.3357">determines the dates interval</text><polygon fill="#A80036" points="100.625,509.3457,88.125,514.3457,100.625,519.3457,95.625,514.3457" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="514.3457" y2="514.3457"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="508.2751">10</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="447.5" x="130.625" y="508.2751">shows the available regression models and asks to select one</text><polygon fill="#A80036" points="594.375,547.2852,606.875,552.2852,594.375,557.2852,599.375,552.2852" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="552.2852" y2="552.2852"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="546.2146">11</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="195" x="118.125" y="546.2146">selects a regression model</text><path d="M12.5,571.0352 L88.75,571.0352 L88.75,581.0352 L76.25,593.5352 L12.5,593.5352 L12.5,571.0352 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.25;"/><rect fill="none" height="174.6973" style="stroke:#000000;stroke-width:2.5;" width="658.125" x="12.5" y="571.0352"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="20" x="31.25" y="589.1541">alt</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-weight="bold" lengthAdjust="spacing" textLength="57.5" x="107.5" y="587.8088">[Simple]</text><polygon fill="#A80036" points="100.625,616.9141,88.125,621.9141,100.625,626.9141,95.625,621.9141" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="621.9141" y2="621.9141"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="615.8435">12</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="470" x="130.625" y="615.8435">shows the available independent variables and asks to select one</text><polygon fill="#A80036" points="594.375,654.8535,606.875,659.8535,594.375,664.8535,599.375,659.8535" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="659.8535" y2="659.8535"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="653.783">13</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="142.5" x="118.125" y="653.783">selects one of them</text><polygon fill="#A80036" points="100.625,692.793,88.125,697.793,100.625,702.793,95.625,697.793" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="697.793" y2="697.793"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="691.7224">14</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="448.75" x="130.625" y="691.7224">requests the selection of the parameter for the hypothesis test</text><polygon fill="#A80036" points="594.375,730.7324,606.875,735.7324,594.375,740.7324,599.375,735.7324" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="735.7324" y2="735.7324"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="729.6619">15</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="142.5" x="118.125" y="729.6619">selects one of them</text><polygon fill="#A80036" points="100.625,777.4219,88.125,782.4219,100.625,787.4219,95.625,782.4219" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="782.4219" y2="782.4219"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="776.3513">16</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="216.25" x="130.625" y="776.3513">requests the significance level</text><polygon fill="#A80036" points="594.375,815.3613,606.875,820.3613,594.375,825.3613,599.375,820.3613" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="820.3613" y2="820.3613"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="814.2908">17</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="193.75" x="118.125" y="814.2908">types the significance level</text><polygon fill="#A80036" points="100.625,853.3008,88.125,858.3008,100.625,863.3008,95.625,858.3008" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="858.3008" y2="858.3008"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="852.2302">18</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="208.75" x="130.625" y="852.2302">requests the confidence level</text><polygon fill="#A80036" points="594.375,891.2402,606.875,896.2402,594.375,901.2402,599.375,896.2402" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="896.2402" y2="896.2402"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="890.1697">19</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="186.25" x="118.125" y="890.1697">types the confidence level</text><polygon fill="#A80036" points="100.625,929.1797,88.125,934.1797,100.625,939.1797,95.625,934.1797" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="93.125" x2="614.375" y1="934.1797" y2="934.1797"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="108.125" y="928.1091">20</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="317.5" x="130.625" y="928.1091">shows all data and requests for confirmation</text><polygon fill="#A80036" points="594.375,967.1191,606.875,972.1191,594.375,977.1191,599.375,972.1191" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="86.875" x2="601.875" y1="972.1191" y2="972.1191"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="95.625" y="966.0486">21</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="146.25" x="118.125" y="966.0486">confirms all the data</text><polygon fill="#A80036" points="94.375,1005.0586,81.875,1010.0586,94.375,1015.0586,89.375,1010.0586" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:2.0,2.0;" x1="86.875" x2="614.375" y1="1010.0586" y2="1010.0586"/><text fill="#000000" font-family="sans-serif" font-size="16.25" font-weight="bold" lengthAdjust="spacing" textLength="17.5" x="101.875" y="1003.988">22</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="190" x="124.375" y="1003.988">informs operation success</text><!--MD5=[cd6e066196f3e50d8951b436f6fec68b]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor "Administrator" as ADM
+participant ":System" as S
+
+activate ADM
+ADM -> S: starts the process of submitting a report to the NHS
+activate S
+S - -> ADM: requests the current day
+deactivate S
+ADM -> S: types the current day
+activate S
+S - -> ADM: asks to select the data the administrator\n wants to send to the NHS(days, weeks)
+deactivate S
+ADM -> S: selects one of them
+activate S
+S - -> ADM: requests the number of historical points
+deactivate S
+ADM -> S: defines the number of historical points
+activate S
+S - -> ADM: requests the dates interval to fit the regression model
+deactivate S
+ADM -> S: determines the dates interval
+activate S
+S - -> ADM: shows the available regression models and asks to select one
+deactivate S
+ADM -> S: selects a regression model
+activate S
+alt Simple
+S - -> ADM: shows the available independent variables and asks to select one
+deactivate S
+ADM -> S: selects one of them
+activate S
+S - -> ADM: requests the selection of the parameter for the hypothesis test
+deactivate S
+ADM -> S: selects one of them
+activate S
+end
+S - -> ADM: requests the significance level
+deactivate S
+ADM -> S: types the significance level
+activate S
+S - -> ADM: requests the confidence level
+deactivate S
+ADM -> S: types the confidence level
+activate S
+S - -> ADM: shows all data and requests for confirmation
+deactivate S
+ADM -> S: confirms all the data
+activate S
+S - -> ADM: informs operation success
+deactivate S
+
+deactivate ADM
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+@startuml
+
+autonumber
+actor "Administrator" as ADM
+participant ":System" as S
+
+activate ADM
+ADM -> S: starts the process of submitting a report to the NHS
+activate S
+S - -> ADM: requests the current day
+deactivate S
+ADM -> S: types the current day
+activate S
+S - -> ADM: asks to select the data the administrator\n wants to send to the NHS(days, weeks)
+deactivate S
+ADM -> S: selects one of them
+activate S
+S - -> ADM: requests the number of historical points
+deactivate S
+ADM -> S: defines the number of historical points
+activate S
+S - -> ADM: requests the dates interval to fit the regression model
+deactivate S
+ADM -> S: determines the dates interval
+activate S
+S - -> ADM: shows the available regression models and asks to select one
+deactivate S
+ADM -> S: selects a regression model
+activate S
+alt Simple
+S - -> ADM: shows the available independent variables and asks to select one
+deactivate S
+ADM -> S: selects one of them
+activate S
+S - -> ADM: requests the selection of the parameter for the hypothesis test
+deactivate S
+ADM -> S: selects one of them
+activate S
+end
+S - -> ADM: requests the significance level
+deactivate S
+ADM -> S: types the significance level
+activate S
+S - -> ADM: requests the confidence level
+deactivate S
+ADM -> S: types the confidence level
+activate S
+S - -> ADM: shows all data and requests for confirmation
+deactivate S
+ADM -> S: confirms all the data
+activate S
+S - -> ADM: informs operation success
+deactivate S
+
+deactivate ADM
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 09:49:39 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
