@@ -85,7 +85,7 @@ US16: As a laboratory coordinator, I want to have an overview of all the tests p
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US005_MD](US005_MD.svg)
+![US013_MD](US013_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -145,7 +145,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US005_CD](US005_CD.svg)
+![US013_CD](US013_CD.svg)
 
 # 4. Tests 
 
