@@ -66,7 +66,7 @@ As a laboratory coordinator, I want to import clinical tests from a CSV file.
 
 **Alternative 1**
 
-![US005_SSD](US005_SSD.svg)
+![US017_SSD](US017_SSD.svg)
 
 
 
@@ -132,7 +132,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US005_SD](US005_SD.svg)
+![US017_SD](US017_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
