@@ -91,7 +91,7 @@ public class JanelaPrincipalUI {
 
                     stage = (Stage) borderpane.getScene().getWindow();
 
-                    System.out.println("closed");
+
 
                     stage.close();
 
@@ -120,12 +120,12 @@ public class JanelaPrincipalUI {
             }
     }
 
-    public void logout(AuthController ctrl, Stage stage, AnchorPane anchorPane){
+    public static void logout(AuthController ctrl, Stage stage, AnchorPane anchorPane){
         ctrl.doLogout();
 
         stage = (Stage) anchorPane.getScene().getWindow();
 
-        System.out.println("closed");
+
 
         stage.close();
     }

@@ -51,7 +51,7 @@ public class MLTGui {
     public void closeGui(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
-        System.out.println("closed");
+
 
         stage.close();
     }
@@ -60,7 +60,7 @@ public class MLTGui {
         try {
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
             janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){

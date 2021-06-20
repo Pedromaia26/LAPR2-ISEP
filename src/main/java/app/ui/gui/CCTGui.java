@@ -32,16 +32,10 @@ public class CCTGui {
         try {
             closeGui();
 
-
-            Parent update = FXMLLoader.load(getClass().getClassLoader().getResource("ClinicalChemistryTechnologist.fxml"));
-            Stage stage2 = new Stage();
-            Scene scene2 = new Scene(update);
-            stage2.setTitle("Consult the tests");
-            stage2.setScene(scene2);
-            stage2.setResizable(true);
+            JanelaPrincipalUI janelaPrincipalUI= new JanelaPrincipalUI();
+            janelaPrincipalUI.enter("ClinicalChemistryTechnologist","Consult the tests");
 
 
-            stage2.show();
         }catch (Exception e){
             System.out.println("Fail Opening the OverView window");
         }
@@ -51,10 +45,12 @@ public class CCTGui {
 
     public void logout(MouseEvent mouseEvent) throws IOException {
         try {
+
+
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
+
+
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
-
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
-
             janelaPrincipalUI.enter("login", "Many Labs");
 
 
@@ -75,19 +71,17 @@ public class CCTGui {
     }
 
     public void returnToGui() throws IOException {
-        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("CCTGui.fxml"));
-        Stage stage2 = new Stage();
-        Scene scene2 = new Scene(aaaaa);
-        stage2.setTitle("Consult the tests");
-        stage2.setScene(scene2);
-        stage2.setResizable(true);
-        stage2.show();
+        Parent aa = FXMLLoader.load(getClass().getClassLoader().getResource("CCTGui.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(aa);
+        stage.setTitle("Consult the tests");
+        stage.setScene(scene);
+        stage.setResizable(true);
+        stage.show();
     }
 
     public void closeGui(){
         stage = (Stage) anchorPane.getScene().getWindow();
-
-        System.out.println("closed");
 
         stage.close();
     }

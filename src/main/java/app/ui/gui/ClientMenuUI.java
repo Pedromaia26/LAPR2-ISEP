@@ -71,8 +71,6 @@ public class ClientMenuUI implements Initializable {
 
         stage = (Stage) anchorPane.getScene().getWindow();
 
-        System.out.println("closed");
-
         stage.close();
 
 
@@ -84,8 +82,7 @@ public class ClientMenuUI implements Initializable {
         stage2.setTitle("Update");
         stage2.setScene(scene2);
         stage2.setResizable(false);
-
-        AlterClientDataController alterClientDataController = new AlterClientDataController();
+        
         stage2.show();
 
     }
@@ -94,7 +91,7 @@ public class ClientMenuUI implements Initializable {
 
         stage = (Stage) anchorPane.getScene().getWindow();
 
-        System.out.println("closed");
+
 
         stage.close();
 
@@ -115,7 +112,7 @@ public class ClientMenuUI implements Initializable {
         try {
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
             janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){

@@ -41,7 +41,7 @@ public class SDGui {
         try {
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
             janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){
@@ -50,9 +50,9 @@ public class SDGui {
     }
 
     public void returnToGui() throws IOException {
-        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("SDGui.fxml"));
+        Parent bb = FXMLLoader.load(getClass().getClassLoader().getResource("SDGui.fxml"));
         Stage stage2 = new Stage();
-        Scene scene2 = new Scene(aaaaa);
+        Scene scene2 = new Scene(bb);
         stage2.setTitle("Receptionist");
         stage2.setScene(scene2);
         stage2.setResizable(true);
@@ -62,7 +62,7 @@ public class SDGui {
     public void closeGui(){
         stage = (Stage) anchorPane.getScene().getWindow();
 
-        System.out.println("closed");
+
 
         stage.close();
     }

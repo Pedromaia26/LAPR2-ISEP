@@ -50,10 +50,11 @@ public class AdminGUI {
 
     public void logout(MouseEvent mouseEvent) {
         try {
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
 
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
+
 
             janelaPrincipalUI.enter("login", "Many Labs");
 
@@ -114,13 +115,13 @@ public class AdminGUI {
     }
 
     public void returnToGui() throws IOException {
-        Parent aaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("AdminGUI.fxml"));
-        Stage stage2 = new Stage();
-        Scene scene2 = new Scene(aaaaa);
-        stage2.setTitle("ADMINISTRATOR");
-        stage2.setScene(scene2);
-        stage2.setResizable(true);
-        stage2.show();
+        Parent aaaaaa = FXMLLoader.load(getClass().getClassLoader().getResource("AdminGUI.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(aaaaaa);
+        stage.setTitle("ADMINISTRATOR");
+        stage.setScene(scene);
+        stage.setResizable(true);
+        stage.show();
     }
 
     public void closeGui(){

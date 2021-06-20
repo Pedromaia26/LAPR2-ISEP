@@ -294,7 +294,6 @@ public class AdminUI implements Initializable {
 
             stage = (Stage) anchorPane.getScene().getWindow();
 
-            System.out.println("closed");
 
             stage.close();
 

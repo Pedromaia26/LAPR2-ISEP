@@ -50,9 +50,11 @@ public class ReceptionistGUI {
 
     public void logout(MouseEvent mouseEvent) {
         try {
+
+            JanelaPrincipalUI.logout(ctrl,stage,anchorPane);
             JanelaPrincipalUI janelaPrincipalUI = new JanelaPrincipalUI();
 
-            janelaPrincipalUI.logout(ctrl,stage,anchorPane);
+
 
             janelaPrincipalUI.enter("login", "Many Labs");
         }catch (Exception e){
