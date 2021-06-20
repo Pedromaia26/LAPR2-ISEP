@@ -6,9 +6,9 @@ autonumber
 actor "Client" as C
 participant ":CheckTestResultsUI" as UI
 participant ":CheckTestResultsController" as CTRL
-participant ":AuthFacade" as AUTH
-participant "us\n:UserSession" as US
 participant ":Company" as ML
+participant "auth\n:AuthFacade" as AUTH
+participant "us\n:UserSession" as US
 participant "test\n:Test" as T
 participant "tStore\n:TestStore" as STORE
 participant "tMapper\n:TestMapper" as MAP1
@@ -16,20 +16,22 @@ participant "tpMapper\n:TestParameterMapper" as MAP3
 participant "tprMapper\n:TestParameterResultMapper" as MAP5
 participant "ref\n:ReferenceValue" as REF
 participant "clientTests\n:List<TestDTO>" as DTO1
-participant "em\n:ExternalModule" as EM
-participant "rvMapper:\nReferenceValueMapper" as RVMAPPER
-participant "referenceValue\n:ReferenceValueDTO"
 participant "result\n:TestParameterResultDTO" as RESULT
 participant "tpr\n:TestParameterResult"
-participant "listClientTests\n:List<Tests>"
+participant "listClientTests\n:List<Test>"
 participant "testParameterList\n:TestParameter"
 participant "testParameters\n:List<TestParameterDTO>"
+participant "client\n:Client"
 activate C
+
 
 C -> UI: asks to show the results of previously performed tests
 activate UI
 UI -> CTRL: clientTests = getTests()
 activate CTRL
+CTRL -> ML: auth = getAuthFacade()
+activate ML
+deactivate ML
 CTRL -> AUTH: us = getCurrentUserSession()
 activate AUTH
 deactivate AUTH
@@ -50,12 +52,12 @@ UI --> C: shows the list of already performed tests by the client\n and asks him
 deactivate UI
 C -> UI: selects one test
 activate UI
-UI -> CTRL: testParameters = getTestParameter(code)
+UI -> CTRL: testParameters = getTestParameter(test)
 activate CTRL
 CTRL -> ML: test = getTest()
 activate ML
 deactivate ML
-CTRL -> T: testParameterList = getTestParameterList()
+CTRL -> T: testParameterList = getTestParameterList(test)
 activate T
 deactivate T
 CTRL -> MAP3: testParameters = toDto(testParameterList)
@@ -64,22 +66,6 @@ deactivate MAP3
 deactivate CTRL
 deactivate UI
 loop
-UI -> CTRL: referenceValue = getReferenceValue(testParameter)
-activate UI
-activate CTRL
-CTRL -> ML: test = getTest()
-activate ML
-deactivate ML
-CTRL -> T : em = getExternalModule()
-activate T
-deactivate T
-CTRL -> EM: ref = getReferenceValue(testParameter)
-activate EM
-deactivate EM
-CTRL -> RVMAPPER: referenceValue = toDto(refValue)
-activate RVMAPPER
-deactivate RVMAPPER
-deactivate CTRL
 deactivate UI
 UI -> CTRL: result = getResult(testParameter)
 activate UI
@@ -87,12 +73,12 @@ activate CTRL
 CTRL -> ML: test = getTest()
 activate ML
 deactivate ML
-CTRL -> MAP5: tpr = getTestParameterResult(testParameter)
+CTRL -> T: tpr = getTestParameterResult(testParameter)
+activate T
+deactivate T
+CTRL -> MAP5: result = toDto(tpr)
 activate MAP5
 deactivate MAP5
-CTRL -> RESULT: result = toDto(tpr)
-activate RESULT
-deactivate RESULT
 deactivate CTRL
 end
 UI --> C: shows the results associated\n with the test selected by the client

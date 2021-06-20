@@ -25,20 +25,20 @@ Test "1..*" --- "1" Client: requested by >
 Test "1..*" -- "1..*" Parameter: requests analysis of >
 
 class Company {
- -designation
+ -String designation
 }
 
-class Test {
- -code
- -nhsCode
- -date
- -validationDate
+class Test{
+ -String code
+ -String nhsCode
+ -Date date
+ -Date validationDate
 }
 
 class ReferenceValue{
- -maximum
- -minimum
- -metric
+ -double maximum
+ -double minimum
+ -String metric
 }
 
 class ExternalModule {
@@ -46,27 +46,30 @@ class ExternalModule {
 
 }
 
+
 class Client{
- -name
- -ccn
- -nhs
- -tin
- -birthDay
- -sex
- -phoneNumber
- -email
- -address
+ -String name
+ -String ccn
+ -long nhs
+ -long tin
+ -String birthDay
+ -String sex
+ -long phoneNumber
+ -String email
+ -String address
 }
 
+
 class Parameter{
--code
--shortName
--description
+-String code
+-String shortName
+-String description
 }
 
 class TestParameterResult{
--value
--metric
+-double value
+-String metric
 }
+
 
 @enduml
