@@ -1,4 +1,4 @@
-# US 005 - To consult the tests performed by a particular client
+# US 013 - To consult the tests performed by a particular client
 
 ## 1. Requirements Engineering
 
@@ -129,7 +129,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternative 1**
 
-![US013_SD.svg](US013_SD.svg)
+![US13_SD.svg](US13_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
