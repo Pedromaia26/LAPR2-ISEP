@@ -205,7 +205,7 @@ public class MultilinearregressionTest {
         String actual = regression.toString();
         String expected = "The regression model fitted using data from the interval: \n" +
                 "y = 0,83 + 0,96x1 + -0,25x2";
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected.toString().replace(",", "."), actual.toString().replace(",", "."));
     }
 
     @Test
@@ -217,7 +217,7 @@ public class MultilinearregressionTest {
         String actual = regression.toString();
         String expected = "The regression modell fitted using data from the interval: \n" +
                 "y = 0,83 + 0,98x1 + -0,25x2";
-        Assert.assertNotEquals(expected, actual);
+        assertNotEquals(expected.toString().replace(",", "."), actual.toString().replace(",", "."));
     }
 
     @Test
@@ -292,7 +292,7 @@ public class MultilinearregressionTest {
         expected.add("1,2964 - 3,6392\n");
         expected.add("-1,2223 - 1,4055\n");
         expected.add("0,9487 - 3,5574\n");
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected.toString().replace(",", "."), actual.toString().replace(",", "."));
     }
 
     @Test
@@ -311,7 +311,7 @@ public class MultilinearregressionTest {
         expected.add("1,2964 - 3,6392\n");
         expected.add("-1,2223 - 1,4055\n");
         expected.add("0,9487 - 3,5574\n");
-        Assert.assertNotEquals(actual, expected);
+        assertNotEquals(expected.toString().replace(",", "."), actual.toString().replace(",", "."));
     }
 
     @Test
