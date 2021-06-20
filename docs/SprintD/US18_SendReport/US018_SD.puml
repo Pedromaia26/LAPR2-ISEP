@@ -226,6 +226,21 @@ deactivate ML
 CTRL -> REPORT: createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
 activate REPORT
 deactivate REPORT
+CTRL ->TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerDay(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: covidTestsHp = getTestForHp(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL ->TSTORE: meanAgeHp = getMeanAgeForHpDay(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE:hPDays = getHPDays()
+activate TSTORE
+deactivate TSTORE
+CTRL -> REPORT: addConfLevelForMultiRegr(positiveCasesToInterval, covidTestsHp, meanAgeHp, hPDays, cL/100)
+activate REPORT
+deactivate REPORT
 deactivate CTRL
 else MultipleLinearRegression && weeks
 UI -> CTRL: sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)
@@ -248,6 +263,24 @@ deactivate ML
 CTRL -> REPORT: createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
 activate REPORT
 deactivate REPORT
+CTRL ->TSTORE: positiveCasesToInterval = getPositiveCovidTestsPerWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: perfomedTestsForHp = getCovidTestsForWeekHp(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: meanAgeHp = getMeanAgeForHPWeek(currentDate, hP)
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPWeeksInitial = gethPWeeksInitial()
+activate TSTORE
+deactivate TSTORE
+CTRL -> TSTORE: hPWeeksFinal = gethPWeeksFinal()
+activate TSTORE
+deactivate TSTORE
+CTRL ->REPORT: addConfLevelForWeekForMultiRegr(positiveCasesToInterval, perfomedTestsForHp, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
+activate REPORT
+deactivate REPORT
 deactivate CTRL
 end
 UI --> ADM: shows all data and requests for confirmation
@@ -258,7 +291,7 @@ UI -> CTRL: sendReport()
 activate CTRL
 CTRL -> REPORT: sendReportNHS()
 activate REPORT
-REPORT -> REPORT: reportNHS = report = reportApi()
+REPORT -> REPORT: report = reportApi()
 activate REPORT
 deactivate REPORT
 REPORT -> REPORTINTERFACE: writeUsingFileWriter(report)
