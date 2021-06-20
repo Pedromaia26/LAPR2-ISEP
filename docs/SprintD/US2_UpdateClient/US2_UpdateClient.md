@@ -40,7 +40,6 @@ As a client, I want to update my personal data.
 * **AC7** Phone number: 11 digit number
 * **AC8** The client cant be older than 150 years
 * **AC9** The name cant be longer than 35 characters
-* **AC10** The password______
 
 
 ### 1.4. Found out Dependencies
