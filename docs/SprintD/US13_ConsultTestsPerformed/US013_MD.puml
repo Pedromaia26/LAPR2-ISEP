@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company
+class Client
+class Test
+class TestParameter
+class TestParameterResult
+class Parameter
+
+Company "1" -> "*" Client: has >
+Test "1..*" -> "1" Client: requested by >
+Company "1" -> "1..*" Parameter: capable of analysing >
+(Test, Parameter) . TestParameter
+TestParameter "1" -> "1" TestParameterResult: contains >
+TestParameterResult "1" -> "1" ReferenceValue: records >
+ReferenceValue "1" -> "*" ExternalModule: provided by >
+Company "1" -> "*" Test: performs >
+Test "1..*" -> "1..*" Parameter: requests analysis of >
+
+class Company{
+-String designation
+}
+
+class Test{
+ -String code
+ -String nhsCode
+ -Date date
+ -Date validationDate
+}
+
+
+class Client{
+ -String name
+ -String ccn
+ -long nhs
+ -long tin
+ -String birthDay
+ -String sex
+ -long phoneNumber
+ -String email
+ -String address
+}
+
+class Parameter{
+-String code
+-String shortName
+-String description
+}
+
+class TestParameterResult{
+-double value
+-String metric
+}
+
+class ReferenceValue {
+-double minimum
+-double maximum
+-String metric
+}
+
+@enduml
