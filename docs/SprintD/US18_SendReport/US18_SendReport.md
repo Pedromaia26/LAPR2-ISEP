@@ -49,16 +49,10 @@ As an Administrator I want to send the Covid-19 report to the NHS at any time. I
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** The system should support several barcode APIs. The API to use is defined by configuration
-* **AC2:** A test can have more than one sample
-* **AC3:** A sample should only have one atribute, the barcode
-
+* **AC1:** 
 
 
 ### 1.4. Found out Dependencies
-
-
-* There is a dependency to "US004 Create a test to be registered" since at least a test must exist to record the sample.
 
 
 ### 1.5 Input and Output Data
@@ -66,8 +60,13 @@ As an Administrator I want to send the Covid-19 report to the NHS at any time. I
 
 **Input Data:**
 	
-* Selected data: Test.
-* Typed data: Number of samples
+* Selected data: day;
+				data to add to NHS report;
+				interval;
+* Typed data: number of historical points;
+		      regression model;
+			  significance level;
+			  confident level;
 
 **Output Data:**
 
@@ -82,8 +81,6 @@ As an Administrator I want to send the Covid-19 report to the NHS at any time. I
 
 
 ### 1.7 Other Relevant Remarks
-
-* The created task stays in a "not published" state in order to distinguish from "published" tasks.
 
 
 ## 2. OO Analysis
