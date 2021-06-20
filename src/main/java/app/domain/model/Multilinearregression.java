@@ -3,12 +3,16 @@ package app.domain.model;
 import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Multilinearregression {
 
     private double[][] matrixX, matrixXTransposed, matrixXTX,matrixXTXInverse,matrixYYT;
     private double[] matrixY, matrixXTY, matrixB, matrixXTYInverse, matrixYChapeu, cjj;
     private double sqt, y, sqr, f0, alpha;
     private int degreesOfFreedom;
+    private List<String> confidenceIntervals = new ArrayList<>();
 
     public Multilinearregression(double[] x1, double[] x2, double[] y) {
         if (x1.length!=y.length){
@@ -28,7 +32,7 @@ public class Multilinearregression {
         matrixB = multiplyBiArrayWithArray(matrixXTXInverse, matrixXTY);
         matrixYChapeu = multiplyBiArrayWithArray(matrixX, matrixB);
         this.cjj = cjj();
-        f0 = estatisticaDeTeste();
+        f0 = testStatsF();
 
         degreesOfFreedom = x1.length-(2+1);
 
@@ -195,7 +199,7 @@ public class Multilinearregression {
         return (1-(((double)(matrixY.length-1)/(matrixY.length-matrixX[0].length))*(1-rQuadrado())));
     }
 
-    public double desvioPadrão() {
+    public double standardDeviation() {
         return sqe() / (matrixY.length - matrixX[0].length);
     }
 
@@ -204,6 +208,22 @@ public class Multilinearregression {
         for (int i=0; i<matrixX.length; i++){
             xt = matrixX[i];
             double[] aux = multiplyBiArrayWithArray(xt, matrixXTXInverse);
+            for (int j=0; j<aux.length; j++){
+                cjj[i]+=aux[j]*xt[j];
+            }
+        }
+        return cjj;
+    }
+
+    private double[] cjj(double[] x1, double[] x2, double[] y) {
+        double[][] matrixXHP = matrixX(x1, x2);
+        double[][] matrixXTransposedHP = transpose(matrixXHP);
+        double[][] matrixXTXHP = matrixXXT(matrixXTransposedHP, matrixXHP);
+        double[][] matrixXTXInverseHP = invert(matrixXTXHP);
+        double[] xt, cjj = new double[y.length];
+        for (int i=0; i<matrixXHP.length; i++){
+            xt = matrixXHP[i];
+            double[] aux = multiplyBiArrayWithArray(xt, matrixXTXInverseHP);
             for (int j=0; j<aux.length; j++){
                 cjj[i]+=aux[j]*xt[j];
             }
@@ -223,9 +243,6 @@ public class Multilinearregression {
         return critTD;
     }
 
-    private double ychapeu(int index){
-        return matrixB[0]+matrixB[1]*matrixX[index][1]+matrixB[2]*matrixX[index][2];
-    }
 
     @Override
     public String toString() {
@@ -271,15 +288,14 @@ public class Multilinearregression {
         return temp;
     }
 
-    public double[][] intervalodeConfianca(int significancia){
-        this.alpha = 1-((double)significancia/100);
-        double[][] intervalos = new double[matrixY.length][2];
+    public List<String> confidenceInterval(double[] x1, double[] x2, double[] y, double cL){
+        this.alpha = 1-cL;
+        double[] cjjHP = cjj(x1, x2, y);
 
-        for (int i=0; i< matrixY.length; i++){
-            intervalos[i][0] = ychapeu(i)-(tStudent(alpha)*Math.sqrt(desvioPadrão()*(1+cjj[i])));
-            intervalos[i][1] = ychapeu(i)+(tStudent(alpha)*Math.sqrt(desvioPadrão()*(1+cjj[i])));
+        for (int i=0; i< x1.length; i++){
+            confidenceIntervals.add(String.format("%.4f - %.4f\n", predict(x1[i], x2[i])-(tStudent(alpha)*Math.sqrt(standardDeviation()*(1+cjjHP[i]))), predict(x1[i], x2[i])+(tStudent(alpha)*Math.sqrt(standardDeviation()*(1+cjjHP[i])))));
         }
-        return intervalos;
+        return confidenceIntervals;
     }
     public double mqr(){
         return sqr()/(double) (matrixX[0].length-1);
@@ -287,18 +303,17 @@ public class Multilinearregression {
     public double mqe(){
         return sqe()/(double) (matrixY.length-matrixX[0].length);
     }
-    public double estatisticaDeTeste(){
+    public double testStatsF(){
         return mqr()/mqe();
     }
 
     public double fDistribution(double sL){
         FDistribution fd= new FDistribution(matrixX[0].length-1,matrixY.length-matrixX[0].length);
-        double alphaFD= sL;
-        return fd.inverseCumulativeProbability(1- alphaFD);
+        return fd.inverseCumulativeProbability(1- sL);
     }
 
     public String decision(double sL){
-        if (estatisticaDeTeste()>fDistribution(sL)){
+        if (testStatsF()>fDistribution(sL)){
             return "Reject H0\nThe regression model is significant.";
         }else {
             return "No reject H0\nThe regression model is not significant.";
@@ -314,11 +329,14 @@ public class Multilinearregression {
     }
 
     public double Tb(int parameter){
-        return matrixB[parameter]/Math.sqrt((Math.pow(desvioPadrão(), 2)*cjj[parameter]));
+        return matrixB[parameter]/Math.sqrt((Math.pow(standardDeviation(), 2)*cjj[parameter]));
     }
 
     public int getDegreesOfFreedom(){
         return degreesOfFreedom;
     }
 
+    public double predict(double x1, double x2){
+       return (matrixB[0])+(matrixB[1]*x1)+(matrixB[2]*x2);
+    }
 }
