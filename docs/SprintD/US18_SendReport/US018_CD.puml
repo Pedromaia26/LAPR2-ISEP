@@ -1,0 +1,100 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+package "UI" {
+class AdminUI
+}
+package "Controller" {
+class SendReportController
+}
+package "Adapter"{
+class Report2NHSAdapter
+}
+package "Domain" {
+class Company
+class TestStore
+class ReportNHS
+class SimpleLinearRegression
+class MultipleLinearRegression
+interface ReportToNHS
+}
+
+
+class SendReportController{
++getReportForDays(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getLinearRegressionModel()
++getReportForDaysWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeks(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++getReportForWeeksWithMeanAge(startDate, endDate, currentDate, hP, sL, cL, parameterToHT)
++sendReportMultilinearRegressionForWeeks(startDate, endDate, currentDate, hP, sL, cL)
++sendReport()
+}
+
+class SimpleLinearRegression{
++getSlr()
+}
+
+class MultipleLinearRegression{
++getMlr()
+}
+
+class Company{
+-String designation
++getTestStore()
++createReportNHS()
+}
+
+class TestStore{
++covidTestsLinearRegression(startDate, endDate)
++positiveCovidTestsLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerWeek(currentDate, hP)
++getTestForHp()
++getHPDays()
++meanAgeLinearRegression(startDate, endDate)
++getPositiveCovidTestsPerDay(currentDate, hP)
++getMeanAgeForHpDay(currentDate, hP)
++getCovidTestsForWeekHp(currentDate, hP)
++gethPWeeksInitial()
++gethPWeeksFinal()
++getMeanAgeForHpWeek(currentDate, hP)
+}
+
+class ReportNHS{
++createLinearRegression(covidTests, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , covidTestsHp, hPDays, cL/100)
++createLinearRegression(meanAge, positiveTests, sL/100, cL, parameterToHT)
++addConfLevel(positiveCasesToInterval , meanAgeHp, hPDays, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, performedTestsForHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++addConfLevelForWeek(positiveCasesToInterval, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForMultiRegr(positiveCasesToInterval, covidTestsHp, meanAgeHp, hPDays, cL/100)
++createMultiLinearRegression(covidTests, positiveTests, meanAge, sL/100, cL)
++addConfLevelForWeekForMultiRegr(positiveCasesToInterval, perfomedTestsForHp, meanAgeHp, hPWeeksInitial, hPWeeksFinal, cL/100)
++sendReportNHS()
+}
+
+interface ReportToNHS{
+writeUsingFileWriter(report)
+}
+
+class Report2NHSAdapter{
+writeUsingFileWriter(report)
+}
+
+AdminUI ..> SendReportController
+SendReportController ..> Company
+Company "1" --> "1" TestStore: uses
+Report2NHSAdapter ..|> ReportToNHS
+SendReportController ..>  SimpleLinearRegression
+SendReportController ..>  MultipleLinearRegression
+SendReportController .> TestStore
+ReportNHS "1"-->"1" ReportToNHS: makes use of
+SendReportController ..> ReportNHS
+Company "1" --> "*" ReportNHS: makes
+
+
+
+
+@enduml
