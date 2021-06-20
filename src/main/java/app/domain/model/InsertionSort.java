@@ -6,7 +6,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class InsertionSort implements SortingAlgorithms{
-
+    /**
+     * Returns the list of clients ordered by tin using insertion sort.
+     * @return  list of clients.
+     */
     public List<ClientDTO> orderClientsByTin(List<ClientDTO> clients){
         for (int i = 1; i < clients.size(); i++) {
             long current = clients.get(i).getTifDto();
@@ -21,7 +24,10 @@ public class InsertionSort implements SortingAlgorithms{
 
         return clients;
     }
-
+    /**
+     * Returns the list of clients ordered by name using insertion sort.
+     * @return  list of clients.
+     */
     public List<ClientDTO> orderClientsByName(List<ClientDTO> clients){
         for (int i = 1; i < clients.size(); i++) {
             String current = clients.get(i).getNameDto();

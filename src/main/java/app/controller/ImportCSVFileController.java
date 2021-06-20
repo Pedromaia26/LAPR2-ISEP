@@ -104,7 +104,7 @@ public class ImportCSVFileController{
                 List<String> invalidParameters= new ArrayList<>();
 
 
-                System.out.println(Arrays.toString(header));
+
 
                 for (int i=1; i< header.length;i++){
 
@@ -114,14 +114,14 @@ public class ImportCSVFileController{
                             parameterstest.add(header[i]);
                             parametersIndextest.add(i);
                             i++;
-                            System.out.println(i);
+
                         }
 
                     }
 
                 }
 
-                System.out.println(parameterstest);
+
 
                 int j=0;
                 while (j<parameterstest.size()){
@@ -136,13 +136,14 @@ public class ImportCSVFileController{
                     j++;
                 }
 
-                System.out.println(invalidParameters);
+
 
 
                 while ((line = br.readLine()) != null)   //returns a Boolean value
                 {
                     try {
                         cont++;
+                        System.out.printf("Trying to create test number: %d\n", cont);
                         String[] tests = line.split(splitBy);    // use comma as separator
                         parameterCategory = new ArrayList<>();
 
@@ -154,6 +155,7 @@ public class ImportCSVFileController{
                         //System.out.println("Tests :[Code=" + tests[0] + ", NhsCode=" + tests[1] + ", LabID=" + tests[2] + ", CCN=" + tests[3] + ", NHS=" + tests[4] +", TIN=" + tests[5] +", BirthDay=" + tests[6] +", PN=" + tests[7] +", Name=" + tests[8] +", Email=" + tests[9] +", Address=" + tests[10] +", TestType=" + tests[11] + ", Category=" + tests[12] + ", HB000=" + tests[13] +", WBC00=" + tests[14] + ", PLT00=" + tests[15] + ", RBC00=" + tests[16] +", Category=" + tests[17] + ", HDL00=" + tests[18] +", Category=" + tests[19] + ", IgGAN=" + tests[20] +", TestRegDat=" + tests[21] + ", TestChemDate=" + tests[22] + ", TestDocDate=" + tests[23] +", TestValDate=" + tests[24] +"]");
 
                         this.testType = testTypeStore.getTestTypeByDescription(tests[11]);
+                        System.out.println("a");
 
                         j=0;
                         while (j<parameterCategorytest.size()){
@@ -183,7 +185,7 @@ public class ImportCSVFileController{
                             this.client = clientStore.getClientByEmail(tests[9]);
                         } else {
                             ClientDTO clientDTO = new ClientDTO((df.format(Long.parseLong(tests[3]))), Long.parseLong(tests[4]), tests[6], "Undifined", Long.parseLong(tests[5]), tests[9], tests[8], Long.parseLong(tests[7]), tests[10]);
-                            System.out.println("a");
+
                             this.client = clientStore.createNewClient(clientDTO);
                             if(clientStore.addNewClient(client)) {
                                 clientStore.addUser(company);
@@ -207,7 +209,7 @@ public class ImportCSVFileController{
 
 
                         j=0;
-                        System.out.println(parametersIndextest);
+
                         while (j<parameterstest.size()){
                             try {
                                 if (!tests[parametersIndextest.get(j)].equalsIgnoreCase("NA")) {
@@ -227,8 +229,8 @@ public class ImportCSVFileController{
                         if (!tests[parametersIndextest.get(parametersIndextest.size()-1)+3].equals("NA")) {
                             newtest.addReport("Default", tests[parametersIndextest.get(parametersIndextest.size()-1)+3]);
                         }
-                        System.out.println(tests[23]);
-                        System.out.println(newtest.getDate());
+
+
 
 
                         if (!tests[parametersIndextest.get(parametersIndextest.size()-1)+4].equals("NA")) {

@@ -220,7 +220,10 @@ public class EmployeeStore {
         }
         return false;
     }
-
+    /**
+     * Searches for the employee with a specific labid.
+     * @return the laboratory with specific labid.
+     */
     public Laboratory getEmpByEmail(String labid) {
         for (Employee lab : Employees) {
             if (labid.equals(String.valueOf(lab.getEmail())))
@@ -240,6 +243,9 @@ public class EmployeeStore {
         addUser(c);
     }
 
+    /**
+     * create a user
+     */
     public void addUser(Company c){
         for( Employee emp : Employees){
             c.getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), emp.getUserRole());
@@ -258,6 +264,9 @@ public class EmployeeStore {
         addUserSpecialistDoctor(c);
     }
 
+    /**
+     * create user
+     */
     public void addUserSpecialistDoctor(Company c){
         for( SpecialistDoctor emp : SpecialistDoctors){
             c.getAuthFacade().addUserWithRole(emp.getName(), String.valueOf(emp.getEmail()), emp.getPassword(), String.valueOf(emp.getUserRole()));

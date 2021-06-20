@@ -5,8 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Sequence {
+    /**
+     * Date that contains the date
+     */
     private Date date;
-
+    /**
+     * Int that contains the nuumber
+     */
     private int number;
 
     public Sequence(Date date, int number) throws ParseException {
@@ -23,11 +28,17 @@ public class Sequence {
                 ", number=" + number +
                 '}';
     }
-
+    /**
+     * Returns the date.
+     * @return the date.
+     */
     public Date getDate() {
         return date;
     }
-
+    /**
+     * Returns the number .
+     * @return the number.
+     */
     public int getNumber() {
         return number;
     }

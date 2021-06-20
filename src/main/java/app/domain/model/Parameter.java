@@ -105,35 +105,57 @@ public class Parameter implements Serializable {
     public String toString() {
         return String.format("Short Name: %s; Code: %s; Description: %s; Parameter Category: %s",shortName, code, description, category);
     }
-
+    /**
+     * Returns the code of parameter
+     * @return the code of parameter
+     */
     public String getCode() {
         return code;
     }
-
+    /**
+     * set the code of parameter.
+     */
     public void setCode(String code) {
         this.code = code;
     }
-
+    /**
+     * Returns the short name of parameter
+     * @return the short name of parameter
+     */
     public String getShortName() {
         return shortName;
     }
-
+    /**
+     * set the short name of parameter.
+     */
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
-
+    /**
+     * Returns the description of a parameter
+     * @return the description of a parameter
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * set the description of parameter.
+     */
     public void setDescription(String description) {
         this.description = description;
     }
-
+    /**
+     * Returns the category of a parameter
+     * @return the category of a parameter
+     */
     public ParameterCategory getCategory() {
         return category;
     }
 
+    /**
+     * set the category of parameter.
+     */
     public void setCategory(ParameterCategory category) {
         this.category = category;
     }

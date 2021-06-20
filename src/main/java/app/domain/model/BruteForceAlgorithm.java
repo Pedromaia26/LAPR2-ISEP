@@ -3,7 +3,10 @@ package app.domain.model;
 import java.util.Arrays;
 
 public class BruteForceAlgorithm {
-
+    /**
+     * Returns the Max sum of a sequence.
+     * @return  the Max sum of a sequence.
+     */
     public static int[] MaxSum(int[] array) {
 
 

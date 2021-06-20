@@ -37,13 +37,17 @@ public class ReportNHS extends TimerTask {
         this.report = report;
     }
 
-
+    /**
+     * Send the nhs report
+     */
 
     public void sendReportNHS() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         reportApi().writeUsingFileWriter(report);
     }
 
-
+    /**
+     * calculate and create the file of the linear regression
+     */
     public void createLinearRegression(double[] arr1, double[] arr2, double sL, double cL, String parameter){
         regression = new SimpleLinearRegression(arr1, arr2);
         report = "";
@@ -79,19 +83,29 @@ public class ReportNHS extends TimerTask {
         report += String.format("%-50s %-50s %-50s %.0f%% %-50s\n","Date", "Number of OBSERVED positive cases", "Number of ESTIMATED positive cases", cL, "intervals");
     }
 
+    /**
+     * add the confidance level
+     */
     public void addConfLevel(double[] array, double[] arrayToPredict, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
             report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
     }
-
+    /**
+     * add the confidance level for weeks
+     */
     public void addConfLevelForWeek(double[] array, double[] arrayToPredict, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
             report += String.format("%-10s - %-50s %7.2f  %43s %7.2f %45s\n", formatter.format(dateInitial.get(i)),formatter.format(dateFinal.get(i)), array[i], "", regression.predict(arrayToPredict[i]), regression.confidenceInterval(arrayToPredict, cL).get(i) );
         }
     }
+
+    /**
+     * Select the right report api by config file .
+     * @return the right adapter.
+     */
 
     public ReportToNHS reportApi() throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         Properties prop = App.getInstance().getprops();
@@ -100,18 +114,33 @@ public class ReportNHS extends TimerTask {
         return (ReportToNHS) oClass.newInstance();
     }
 
+    /**
+     * set the api
+     */
     public void setApi(String api){
         this.api = api;
     }
 
+    /**
+     * Return the api.
+     * @return the api.
+     */
     public String getApi(){
         return api;
     }
 
-
+    /**
+     * Return the Report.
+     * @return the Report.
+     */
     public String getReport(){
         return report;
     }
+
+
+    /**
+     *  Create and add the hypothesis tests to the file
+     */
 
     private void hypothesisTest(String parameter, double sL){
         if(parameter.equals("a")){
@@ -130,7 +159,9 @@ public class ReportNHS extends TimerTask {
             report += String.format("\nDecision:\n %s\n", regression.decision(sL, regression.Tb()));
         }
     }
-
+    /**
+     * calculate and create the file of the multiple linear regression
+     */
     public void createMultiLinearRegression(double[] arr1, double[] arr2, double[] arr3, double sL, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         multilinearregression = new Multilinearregression(arr1, arr2, arr3);
         report += multilinearregression.toString();
@@ -168,14 +199,18 @@ public class ReportNHS extends TimerTask {
 
 
     }
-
+    /**
+     * add the confidance level for multiple liner regression
+     */
     public void addConfLevelForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dates, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){
             report += String.format("%-60s %7.2f %45s %7.2f %48s\n", formatter.format(dates.get(i)), array[i], "", multilinearregression.predict(arrayToPredictx1[i], arrayToPredictx2[i]), multilinearregression.confidenceInterval(arrayToPredictx1, arrayToPredictx2, array, cL/100).get(i) );
         }
     }
-
+    /**
+     * add the confidance level by weks for multiple liner regression
+     */
     public void addConfLevelForWeekForMultiRegr(double[] array, double[] arrayToPredictx1, double[] arrayToPredictx2, List<Date> dateInitial, List<Date> dateFinal, double cL) throws OutputException, BarcodeException, ParseException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         for(int i=0;i<array.length; i++){

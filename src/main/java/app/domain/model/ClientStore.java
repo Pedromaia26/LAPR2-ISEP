@@ -152,7 +152,10 @@ public class ClientStore {
         }
         throw new IllegalArgumentException("There is no Sample with such barcode!");
     }
-
+    /**
+     * Searches for the client with a specific email.
+     * @return the client with specific email.
+     */
     public Client getClientByEmail(String email) {
         for (Client client : clientList) {
             if (email.equals(String.valueOf(client.getEmail())))
@@ -160,6 +163,11 @@ public class ClientStore {
         }
         throw new IllegalArgumentException("There is no Client with such Email!");
     }
+
+    /**
+     * Searches for the client with a specific ccn.
+     * @return true if found, false if not.
+     */
 
     public Boolean getClientByCcn(String ccn){
         for (Client client : clientList) {
@@ -170,6 +178,10 @@ public class ClientStore {
 
     }
 
+    /**
+     * Change the name of client.
+     */
+
     public void ChangeName(Client client, String name){
         if (name.length()>35)
             throw new IllegalArgumentException("Name cannot be longer then 35 characters");
@@ -178,7 +190,9 @@ public class ClientStore {
 
     }
 
-
+    /**
+     * Change the sex of client.
+     */
     public void ChangeSex(Client client, String sex){
 
         if(!sex.equalsIgnoreCase("MALE") && !sex.equalsIgnoreCase("FEMALE") && !sex.equalsIgnoreCase("UNDIFINED"))
@@ -187,12 +201,18 @@ public class ClientStore {
         client.setSex(sex);
 
     }
+    /**
+     * Change the phone number of client.
+     */
     public void ChangePN(Client client, long pn){
         if (String.valueOf(pn).length()!=11)
             throw new IllegalArgumentException("Phone Number must be 11 characters long");
         client.setPhoneNumber(pn);
 
     }
+    /**
+     * Change the address of client.
+     */
     public void ChangeAddress(Client client, String address){
 
         client.setAddress(address);
@@ -209,11 +229,20 @@ public class ClientStore {
         addUser(c);
     }
 
+    /**
+     * create a user.
+     */
+
     public void addUser(Company c){
         for( Client nc : clientList){
             c.getAuthFacade().addUserWithRole(nc.getName(),String.valueOf(nc.getEmail()),nc.getPassword(),"CLIENT");
         }
     }
+
+    /**
+     * Select the right sorting algorithm by config file .
+     * @return the right class.
+     */
 
     public SortingAlgorithms OrderingAlgorithm() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, OutputException, ParseException, BarcodeException {
         Properties prop = App.getInstance().getprops();
@@ -222,10 +251,17 @@ public class ClientStore {
         return  (SortingAlgorithms) oClass.newInstance();
     }
 
+    /**
+     * set the ordering algorithm.
+     */
     public void setOrderingAlgorithm(String orderingAlgorithm) {
         this.orderingAlgorithm = orderingAlgorithm;
     }
 
+    /**
+     * Get the ordering algorithm .
+     * @return the ordering algorithm.
+     */
     public String getOrderingAlgorithm(){
         return orderingAlgorithm;
     }

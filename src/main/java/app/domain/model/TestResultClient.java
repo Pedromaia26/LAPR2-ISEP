@@ -10,11 +10,17 @@ public class TestResultClient {
      * Short name of the parameter
      */
     private String shortName;
-
+    /**
+     * Double with the minimum value of the parameter
+     */
     private Double minimum;
-
+    /**
+     * Double with the maximum value of the parameter
+     */
     private Double maximum;
-
+    /**
+     * String with the code of the parameter
+     */
     private String code;
     /**
      * The value of a given parameter.
@@ -42,23 +48,45 @@ public class TestResultClient {
         value = tpresult.getValue();
         metric = tpresult.getMetric();
     }
-
+    /**
+     * Returns the short name
+     *
+     * @return the short name
+     */
     public String getShortName() {
         return shortName;
     }
-
+    /**
+     * Returns the minimum
+     *
+     * @return the minimum
+     */
     public Double getMinimum() {
         return minimum;
     }
-
+    /**
+     * Returns the maximum
+     *
+     * @return the maximum
+     */
     public Double getMaximum() {
         return maximum;
     }
 
+    /**
+     * Returns the Value
+     *
+     * @return the Value
+     */
     public Double getValue() {
         return value;
     }
 
+    /**
+     * Returns the Code
+     *
+     * @return the Code
+     */
     public String getCode() {
         return code;
     }
@@ -75,6 +103,12 @@ public class TestResultClient {
                 '}';
     }
 
+
+    /**
+     * Returns the Metric
+     *
+     * @return the metric
+     */
     public String getMetric() {
         return metric;
     }

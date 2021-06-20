@@ -282,39 +282,57 @@ public class Client implements Serializable {
         asd.close();
 
     }
-
+    /**
+     * set the email of client.
+     */
     public void setEmail(Email email) {
         this.email = email;
     }
-
+    /**
+     * set the phone number of client.
+     */
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
+    /**
+     * set the ccn of client.
+     */
     public void setCcn(String ccn) {
         this.ccn = ccn;
     }
-
+    /**
+     * set the nhs of client.
+     */
     public void setNhs(long nhs) {
         this.nhs = nhs;
     }
-
+    /**
+     * set the birth day of client.
+     */
     public void setBirth(String birth) {
         this.birth = birth;
     }
-
+    /**
+     * set the sex of client.
+     */
     public void setSex(String sex) {
         this.sex = sex;
     }
-
+    /**
+     * set the tin of client.
+     */
     public void setTif(long tif) {
         this.tif = tif;
     }
-
+    /**
+     * set the name of client.
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    /**
+     * set the address of client.
+     */
     public void setAddress(String address) {
         this.address = address;
     }

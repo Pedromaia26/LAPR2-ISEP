@@ -192,26 +192,49 @@ public class SimpleLinearRegression {
         return s.toString();
     }
 
+    /**
+     * Returns the Svar.
+     * @return the Svar.
+     */
     public double getSvar() {
         return svar;
     }
 
+    /**
+     * Returns the obs.
+     * @return the obs.
+     */
     public double obs(double sL){
         return 1-(sL/2);
     }
-
+    /**
+     * Returns the s2.
+     * @return the s2.
+     */
     public double S2() {
         return s2;
     }
 
+    /**
+     * Returns the tb.
+     * @return the tb.
+     */
     public double Tb() {
         return tb;
     }
-
+    /**
+     * Returns the ta.
+     * @return the ta.
+     */
     public double Ta() {
         return ta;
     }
 
+
+    /**
+     * Returns the String with the decision.
+     * @return the String with the decision.
+     */
     public String decision (double sL, double tParameter){
        // System.out.println(tDistribution.inverseCumulativeProbability(obs(sL)));
 
@@ -223,34 +246,48 @@ public class SimpleLinearRegression {
             return "No reject H0";
         }
     }
-
+    /**
+     * Returns the ssr.
+     * @return the ssr.
+     */
     public double getssr() {
         return ssr;
     }
-
+    /**
+     * Returns the rss.
+     * @return the rss.
+     */
     public double getRss() {
         return rss;
     }
-
+    /**
+     * Returns the degressoffreedom.
+     * @return the degressoffreedom.
+     */
     public int getDegressOfFreedom() {
         return degressOfFreedom;
     }
 
-//    public void decisionFDist(double sL){
-//        FDistribution fDistribution = new FDistribution(1, getDegressOfFreedom());;
-//        if(0>fDistribution.inverseCumulativeProbability(1-sL)){
-//            return ""
-//        }
-//    }
-
+    /**
+     * Returns the confidenceIntervals.
+     * @return the confidenceIntervals.
+     */
     public String getConfidenceIntervals() {
         return confidenceIntervals.toString();
     }
 
+    /**
+     * Returns the TStudent.
+     * @return the TStudent.
+     */
     public double getTStudent(double cL){
         return tDistribution.inverseCumulativeProbability(cL);
     }
 
+    /**
+     * Returns a list with the confidence interval.
+     * @return a list with the confidence interval.
+     */
     public List<String> confidenceInterval(double[] arrayX, double cL){
         double soma = 0;
         for (int i = 0; i < arrayX.length; i++) {
@@ -267,12 +304,19 @@ public class SimpleLinearRegression {
         }
         return confidenceIntervals;
     }
-
+    /**
+     * Returns the FDistribution.
+     * @return the FDistribution.
+     */
     public double getFDistribution(double sL){
         fDistribution = new FDistribution(1, degressOfFreedom);
         return fDistribution.inverseCumulativeProbability(1-sL);
     }
 
+    /**
+     * Returns the Anova.
+     * @return the Anova.
+     */
     public String decisionAnova(double sL){
         if((ssr/svar) > getFDistribution(sL)){
             return "Reject HO\nThe regression model is significant.";
@@ -280,6 +324,11 @@ public class SimpleLinearRegression {
             return "No reject H0\nThe regression model is not significant.";
         }
     }
+
+    /**
+     * Returns the Equation.
+     * @return the Equation.
+     */
 
     public String getEquation(){
         return String.format("y = %.2f x + %.2f", slope(), intercept());

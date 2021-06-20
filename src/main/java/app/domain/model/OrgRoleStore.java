@@ -38,7 +38,10 @@ public class OrgRoleStore {
     public List<OrgRole> getRoles(){
         return store;
     }
-
+    /**
+     * Searches for the org role with a specific designation.
+     * @return the org role with specific designation.
+     */
     public OrgRole getRoleByDesignation(String designation) {
         for (OrgRole role : store){
             if (role.getDesignation().equals(designation)){

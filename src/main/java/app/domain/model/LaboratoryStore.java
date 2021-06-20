@@ -62,11 +62,19 @@ public class LaboratoryStore {
         save();
         return true;
     }
-
+    /**
+     * Returns the list of a laboratorys.
+     * @return the list of a laboratorys.
+     */
     public List<Laboratory> getLaboratoryList() {
         return laboratoryList;
     }
 
+
+    /**
+     * Searches for the lab with a specific labid.
+     * @return the lab with specific labid.
+     */
     public Laboratory getLabByLabId(String labid){
 
         for (Laboratory lab: laboratoryList) {

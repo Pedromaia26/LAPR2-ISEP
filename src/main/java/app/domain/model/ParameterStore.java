@@ -65,10 +65,18 @@ public class ParameterStore {
         parameterList.add(parameter);
     }
 
+    /**
+     * Returns the list of a parameters
+     * @return the list of a parameters
+     */
+
     public List<Parameter> getParameterList (){
         return parameterList;
     }
-
+    /**
+     * Searches for the parameter with a specific code.
+     * @return the the parameter with a specific code.
+     */
     public Parameter getParameterByCode(String code) {
         for (Parameter tt: this.parameterList) {
             if (code.equals(tt.getCode()))

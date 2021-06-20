@@ -89,27 +89,45 @@ public class Laboratory implements Serializable {
         Laboratory laboratory = (Laboratory) o;
         return Objects.equals(name, laboratory.name) && Objects.equals(address, laboratory.address) && Objects.equals(listPC, laboratory.listPC);
     }
-
+    /**
+     * Returns the labid of a laboratory.
+     * @return the labid of a laboratory.
+     */
     public String getLaboratoryID() {
         return laboratoryID;
     }
-
+    /**
+     * Returns the name of a laboratory.
+     * @return the name of a laboratory.
+     */
     public String getName() {
         return name;
     }
-
+    /**
+     * Returns the address of a laboratory.
+     * @return the address of a laboratory.
+     */
     public String getAddress() {
         return address;
     }
-
+    /**
+     * Returns the phone number of a laboratory.
+     * @return the phone number of a laboratory.
+     */
     public long getPhoneNumber() {
         return phoneNumber;
     }
-
+    /**
+     * Returns the tin of a laboratory.
+     * @return the tin of a laboratory.
+     */
     public long getTinNumber() {
         return tinNumber;
     }
-
+    /**
+     * Returns the test types list of a laboratory.
+     * @return the test types list of a laboratory.
+     */
     public List<TestType> getListPC() {
         return listPC;
     }

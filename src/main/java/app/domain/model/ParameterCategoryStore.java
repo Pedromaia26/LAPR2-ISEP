@@ -106,7 +106,10 @@ public class ParameterCategoryStore {
     public void read(Company c){
         cat = (List<ParameterCategory>) (List<?>) ser.ler("parameterCategory.ser");
     }
-
+    /**
+     * Searches for the parameter category with a specific name.
+     * @return the the parameter category with a specific name.
+     */
     public ParameterCategory getParameterCategoryByDescription(String test) {
         for (ParameterCategory category : cat) {
             if (test.equals(category.getName()))

@@ -33,20 +33,33 @@ public class TestStore {
     /**
      * List that contains the tests to be reported.
      */
-    /*private List<Test> testsToBeReported;*/
 
     private List<Test> listTestsinRegDateRange;
 
+    /**
+     * List that contains the tests validated.
+     */
     private List<Test> listTestsinValDateRange;
 
+    /**
+     * String that contains the nhs report.
+     */
     private String reportNHS;
-
+    /**
+     * List that contains the hpdays.
+     */
     private List<Date> hPDays = new ArrayList<>();
-
+    /**
+     * List that contains the hpweeksInitial.
+     */
     private List<Date> hPWeeksInitial = new ArrayList<>();
-
+    /**
+     * List that contains the hpweeksFinal.
+     */
     private List<Date> hPWeeksFinal = new ArrayList<>();
-
+    /**
+     * List that contains the report weeks.
+     */
     private List<String> reportWeeks = new ArrayList<>();
 
 
@@ -123,7 +136,10 @@ public class TestStore {
 
         throw new IllegalArgumentException("There is no Test with such code!");
     }
-
+    /**
+     * Searches for the client with a specific email.
+     * @return the client with specific email.
+     */
     public List<Test> getTestsByClient(Email id){
         List<Test> list = new ArrayList<>();
         for (Test test: tests) {
@@ -165,7 +181,10 @@ public class TestStore {
     public void read(Company c){
         tests = (List<Test>) (List<?>) ser.ler("test.ser");
     }
-
+    /**
+     * Searches for the test with a specific client.
+     * @return the list of tests with specific client.
+     */
     public List<Test> getTestsByClient(Client c){
         List<Test> list = new ArrayList<>();
         for (Test test: tests) {
@@ -176,7 +195,10 @@ public class TestStore {
         return list;
 
     }
-
+    /**
+     * Counts the number of clients in a test list.
+     * @return number of clients.
+     */
     public int contNumberofClients(List<Test> tests){
         List<Client> clients=new ArrayList<>();
         for (Test test: tests){
@@ -187,7 +209,10 @@ public class TestStore {
 
         return clients.size();
     }
-
+    /**
+     * Counts the number of tests validated in a test list.
+     * @return number of tests validated.
+     */
     public int contNumberofTestValidated(List<Test> tests){
         int sum=0;
         for (Test test: tests){
@@ -201,7 +226,10 @@ public class TestStore {
     }
 
 
-
+    /**
+     * Gets the tests in the interval
+     * @return test list.
+     */
     public List<Test> getTestsInIntervalRegistDate(Date startDate, Date endDate){
         listTestsinRegDateRange = new ArrayList<>();
 
@@ -228,7 +256,10 @@ public class TestStore {
         return listTestsinRegDateRange;
     }
 
-
+    /**
+     * Gets the tests validated in the interval
+     * @return test list.
+     */
 
     public List<Test> getTestsInInterval(Date startDate, Date endDate){
 
@@ -246,7 +277,10 @@ public class TestStore {
         }
         return listTestsinValDateRange;
     }
-
+    /**
+     * Gets the Vector for the covid test linear regression
+     * @return test array.
+     */
     public double[] covidTestsLinearRegression(Date startDate, Date endDate){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
@@ -279,7 +313,10 @@ public class TestStore {
 
         return c;
     }
-
+    /**
+     * Gets the Vector for the covid test linear regression (Mean Age)
+     * @return test array.
+     */
     public double[] meanAgeLinearRegression(Date startDate, Date endDate){
         Calendar cal = Calendar.getInstance();
         cal.setTime(startDate);
@@ -310,7 +347,10 @@ public class TestStore {
         }
         return c;
     }
-
+    /**
+     * Gets the Vector for the covid test linear regression (Positive tests)
+     * @return test array.
+     */
     public double[] positiveCovidTestsLinearRegression(Date startDate, Date endDate) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Calendar cal = Calendar.getInstance();
@@ -351,7 +391,10 @@ public class TestStore {
         return c;
     }
 
-
+    /**
+     * Gets the Vector for the covid test linear regression per day(Positive tests)
+     * @return test array.
+     */
     public double[] getPositiveCovidTestsPerDay(Date currentDate, int hP){
         List<Date> dayList = new ArrayList<>();
         Calendar cal = Calendar.getInstance();
@@ -412,11 +455,17 @@ public class TestStore {
 
 
     }
-
+    /**
+     * Gets hp days
+     * @return hpdays.
+     */
     public List<Date> getHPDays(){
         return this.hPDays;
     }
-
+    /**
+     * Gets the Vector for the covid test linear regression per week(Positive tests)
+     * @return test array.
+     */
     public double[] getPositiveCovidTestsPerWeek(Date currentDate, int hP) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
@@ -437,24 +486,38 @@ public class TestStore {
 
         return c;
     }
-
+    /**
+     * calculate the new subtracted date
+     * @return test new date
+     */
     public static Date subtractDays(Date date, int days) {
-//        GregorianCalendar cal = new GregorianCalendar();
-//        cal.setTime(date);
-//        cal.add(Calendar.DATE, -days);
+
         Date dateAux = new Date(date.getTime());
         dateAux.setHours(dateAux.getHours()-(24*days));
 
         return dateAux;
     }
-
+    /**
+     * Gets hp weeks initial
+     * @return hp weeks initial.
+     */
     public List<Date> gethPWeeksInitial(){
         return hPWeeksInitial;
     }
 
+
+    /**
+     * Gets hp weeks final
+     * @return hp weeks final.
+     */
     public List<Date> gethPWeeksFinal(){
         return hPWeeksFinal;
     }
+
+    /**
+     * calculate the new adactive date
+     * @return test new date
+     */
 
     public static Date addDays(Date date, int days) {
         GregorianCalendar cal = new GregorianCalendar();
@@ -463,6 +526,11 @@ public class TestStore {
 
         return cal.getTime();
     }
+
+    /**
+     * Return the positive tests
+     * @return test positives
+     */
 
     public int getPositiveTests(Date startDate, Date endDate, Date date){
         int a = 0;
@@ -488,7 +556,10 @@ public class TestStore {
         return a;
 
     }
-
+    /**
+     * Return the positive tests per week
+     * @return test positives per weeks
+     */
     public int getPositivePerWeekTests(Date startDate, Date endDate){
         int a = 0;
         for (Test t: getTestsInIntervalRegistDate(startDate, endDate)){
@@ -506,7 +577,10 @@ public class TestStore {
         return a;
 
     }
-
+    /**
+     * Return the tests
+     * @return test
+     */
     public int getTests(Date startDate, Date endDate, Date date){
         int a = 0;
 
@@ -531,7 +605,10 @@ public class TestStore {
 
         return a;
         }
-
+    /**
+     * Return the mean age per day
+     * @return the mean age per day
+     */
         public double getMeanAgeForDay(Date startDate, Date endDate, Date date){
             int a = 0;
             double sumAge = 0;
@@ -559,6 +636,10 @@ public class TestStore {
             }
         }
 
+    /**
+     * Return the mean age hpday
+     * @return the mean age hpday
+     */
         public double[] getMeanAgeForHpDay(Date currentDate, int hP){
             List<Date> dayList = new ArrayList<>();
             Calendar cal = Calendar.getInstance();
@@ -615,7 +696,10 @@ public class TestStore {
 
             return c;
         }
-
+    /**
+     * Return the tests for hp
+     * @return test tests for hp
+     */
         public double[] getTestForHp(Date currentDate, int hP){
             List<Date> dayList = new ArrayList<>();
             Calendar cal = Calendar.getInstance();
@@ -672,7 +756,10 @@ public class TestStore {
 
             return c;
         }
-
+    /**
+     * Return the covid tests for weekHp
+     * @return the covid tests for weekHp
+     */
         public double[] getCovidTestsForWeekHp(Date currentDate, int hP){
             Calendar cal = Calendar.getInstance();
             cal.setTime(currentDate);
@@ -693,7 +780,10 @@ public class TestStore {
 
             return c;
         }
-
+    /**
+     * Return the covid tests for a week
+     * @return test covid tests for a week
+     */
         public int getCovidTestForAWeek(Date date, Date date2){
             int a = 0;
             for (Test t: getTestsInIntervalRegistDate(date, date2)){
@@ -706,7 +796,10 @@ public class TestStore {
 
             return a;
         }
-
+    /**
+     * Return the mean age hp week
+     * @return the mean age hp week
+     */
     public double[] getMeanAgeForHPWeek(Date currentDate, int hP) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
@@ -725,7 +818,10 @@ public class TestStore {
 
         return c;
     }
-
+    /**
+     * Return the mean age week
+     * @return the mean age week
+     */
     public double getMeanAgeForWeek(Date date1, Date date2){
         int a = 0;
         int sumAge = 0;
