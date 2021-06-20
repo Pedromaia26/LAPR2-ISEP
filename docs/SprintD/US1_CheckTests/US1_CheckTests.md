@@ -72,7 +72,7 @@ As a client, I want to access the application to view the results of the tests I
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US005_MD](US005_MD.svg)
+![US001_MD.svg](US001_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -132,7 +132,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US005_CD](US005_CD.svg)
+![US001_CD.svg](US001_CD.svg)
 
 # 4. Tests 
 
