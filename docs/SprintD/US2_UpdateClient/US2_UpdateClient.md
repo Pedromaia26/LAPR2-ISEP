@@ -20,14 +20,19 @@ As a client, I want to update my personal data.
 
 > **Question:** "Should the Client type in the attribute he/she wants to update or should he choose from a list?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8838#p11541]
 >  
-> **Answer:** 
+> **Answer:** "In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute."
+
+-
+
+> **Question:** "To update the attribute, should the Client type the previous data?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8838#p11541]
+>  
+> **Answer:** "In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute."
 
 -
 
 > **Question:** "What is the Data that the Client can update?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8838#p11541]
 >  
-> **Answer:** 
-
+> **Answer:** "In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute."
 
 ### 1.3. Acceptance Criteria
 
