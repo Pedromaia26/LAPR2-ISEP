@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
@@ -98,6 +99,7 @@ public class LabCordController {
         Stage stage2 = new Stage();
         Scene scene2 = new Scene(aaaaa);
         stage2.setTitle("Receptionist");
+        stage2.initStyle(StageStyle.UNDECORATED);
         stage2.setScene(scene2);
         stage2.setResizable(true);
         stage2.show();
