@@ -55,12 +55,8 @@ As a client, I want to update my personal data.
 **Input Data:**
 
 * Typed data:
- 	* Citizen card number,
-	* National Healthcare Service (NHS) number,
-	* Birth date,
 	* Sex,
-	* Tax Identification number (TIN),
-	* E-mail,
+	* Address,
 	* Name,
 	* Phone number.
 
@@ -103,35 +99,32 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |	... interacting with the actor? | CreateTaskUI   |  Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
-| 			  		 |	... coordinating the US? | CreateTaskController | Controller                             |
-| 			  		 |	... instantiating a new Task? | Organization   | Creator (Rule 1): in the DM Organization has a Task.   |
-| 			  		 | ... knowing the user using the system?  | UserSession  | IE: cf. A&A component documentation.  |
-| 			  		 |	... knowing to which organization the user belongs to? | Platform  | IE: has registed all Organizations |
-| 			  		 |							 | Organization   | IE: knows/has its own Employees|
-| 			  		 |							 | Employee  | IE: knows its own data (e.g. email) |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |	...saving the inputted data? | Task  | IE: object created in step 1 has its own data.  |
-| Step 4  		 |	...knowing the task categories to show? | Platform  | IE: Task Categories are defined by the Platform. |
-| Step 5  		 |	... saving the selected category? | Task  | IE: object created in step 1 is classified in one Category.  |
-| Step 6  		 |							 |             |                              |              
-| Step 7  		 |	... validating all data (local validation)? | Task | IE: owns its data.| 
-| 			  		 |	... validating all data (global validation)? | Organization | IE: knows all its tasks.| 
-| 			  		 |	... saving the created task? | Organization | IE: owns all its tasks.| 
-| Step 8  		 |	... informing operation success?| CreateTaskUI  | IE: is responsible for user interactions.  | 
+| Step 1  		 |	... interacting with the actor? | :AlterClientDataUI   |  **Pure Fabrication**: there is no reason to assign this responsibility to any existing class in the Domain Model.           |
+| 			  	|	... coordinating the US? | :AlterClientDataController |  **Controller**                            |
+| Step 2  		 |	... knowing the clients data | Client             | **IE** Knows its own data                              |
+|                |  ... knowing the store of clients | Client Store | **IE** Owns the existing clients      |
+|                |  ... process the data and convert it to dto | ClientMapper | **DTO**  So that the UI can't interact directly with the domain. |
+| Step 3  		 |	                                  |                              |                     |
+| Step 4  		 |	                                   |                |             |
+| Step 5  		 |	                                      |                             |           |
+| Step 6  		 |  ... process the data and convert it to dto	 | ClientMapper        |  **DTO**  So that the UI can't interact directly with the domain.                             |              
+| Step 7  		 |	... validating all data (local validation)? | Client | IE: owns its data.| 
+| 			     |	... validating all data (global validation)? | Client Store | IE: knows all the clients.| 
+| 			     |	... saving the changes? | Client | IE: owns its data.| 
+| Step 8  		 |	... informing operation success?| AlterClientDataUI  | IE: is responsible for user interactions.  | 
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Organization
- * Platform
- * Task
+ * Client
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * CreateTaskUI  
- * CreateTaskController
+ * AlterClientDataUI  
+ * AlterClientDataController
+ * Client Store
+ * Client Mapper
 
 
 ## 3.2. Sequence Diagram (SD)
@@ -144,7 +137,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US006_CD](US002_CD.svg)
+![US002_CD](US002_CD.svg)
 
 # 4. Tests 
 

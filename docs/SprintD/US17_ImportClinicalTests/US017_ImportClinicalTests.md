@@ -79,7 +79,7 @@ As a laboratory coordinator, I want to import clinical tests from a CSV file.
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US005_MD](US005_MD.svg)
+![US17_MD](US17_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -94,39 +94,57 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for...                     | Answer                        | Justification (with patterns)                                                                                                                                                                          |
 |:-------------  |:--------------------------------------------------------------- |:-----------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Step 1  		 | ... interacting with the actor?                                 | RecordSampleUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
-|                | ... coordinating the US?                                        | RecordSampleController        | **Controller**                                                                                                                                                                                         |
-| Step 2  		 | ... knowing the tests to show?                                  | TestStore                     | **Information Expert**: Owns the existing tests.                                                                                                                                                       |
-|                | ... knowing the test store                                      | Company                       | **Information Expert**: Knows the existing stores.                                                                                                                                                     |
-|                | ... process the data and convert it to dto                      | TestMapper                    | **DTO**: So that the UI can't interact directly with the domain.                                                                                                                                       |
-| Step 3  		 |                                                                 |                               |                                                                                                                                                                                                        |
+| Step 1  		 | ... interacting with the actor?                                 | ImportCSVFileUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
+|                | ... coordinating the US?                                        | ImportCSVFileController        | **Controller**                                                                                                                                                                                         |
+| Step 2  		 |                                   |                      |                                                                                                                                                     |
+| Step 3  		 | ... selecting the file           |  ImportCSVFileUI                             |  **IE** Responsible for user interactions                                                                                                                                                                                                  |
 | Step 4  		 |                                                                 |                               |                                                                                                                                                                                                        |
-| Step 5  		 | ... knowing the number of samples?                              | Test                          |**Information Expert**: knowing how many samples were collected.                                                                                                                                        |
-| 		         | ... instantiating a new Sample?                                 | Test                          | **Creator (R1)** and **HC+LC**: Applying the Creator (R1) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the test class                    |
-|        		 | ... validating all data (local validation)?                     | Sample                        | IE: owns its data.                                                                                                                                                                                     |
-|        		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
-|                | ... adapting the interface                                      | BarcodeAdapter                | **Protected variations**: Identify points of predicted variation or instability (variety of interfaces) and assign responsibilities (to the adapters) to create a stable interface around those points.|                                                                                             |
-| Step 6  		 |                                                                 |                               |                                                                                                                                                                                                        |
-| Step 7  		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
-|                | ... saving the sample?                                          | Test                          | IE: Test know its own data                                                                                                                                                                             |
-| Step 8  		 | ... informing operation success?                                | RecordSampleUI                | IE: is responsible for user interactions.                                                                                                                                                              |
+| Step 5  		 | ... Knows all the clients           |ClientStore | **Information Expert**: Owns the existing clients. 
+|                | ... Knows all the laboratorys              |  LaboratoryStore       | **Information Expert**: Owns the existing Labs.                                                                                                                           |
+|                | ...knows all the laborders           |      LabOrderStore                |**Information Expert**: Owns the existing LabOrders.         |
+|                | ... knows all the parameters             |     Parameter Store              |**Information Expert**: Owns the existing Parameters.           |
+|                | ... knows all the parameter category     |    parameterCategoryStore     |**Information Expert**: Owns the existing Parameter categorys.         |
+|                | ... knows all the test types        |    TestTypeStore                  | **Information Expert**: Owns the existing Test Types.           |
+|                |... Knows the client store               |  Company                    |  **Information Expert**: Knows the existing stores.                                                                             |
+|                | ...knows the laboratory store            |      Company                |**Information Expert**: Knows the existing stores. |
+|                | ... knows the laborder store             |     Company                 |**Information Expert**: Knows the existing stores. |
+|                | ... knows the parameter store            |    Company                  |**Information Expert**: Knows the existing stores. |
+|                | ... knows the test store                 |    Company                  |**Information Expert**: Knows the existing stores. |
+|                | ... knows the parameter category store   |    Company                  |**Information Expert**: Knows the existing stores. |
+|                | ... knows the test type store            |   Company                   |**Information Expert**: Knows the existing stores. |
+|                | ... knows the client data                |    Client                   |**IE** Knows its own data  |
+|                |... knows the laboratory data             |   Laboratory             |**IE** Knows its own data  |
+|                |... knows the laborder data               |   laborder            |**IE** Knows its own data  |
+|                |... knows the parameter data              |   Parameter              |**IE** Knows its own data  |
+|                |... knows the test data                   |   Test                |**IE** Knows its own data  |
+|                |... knows the parameter category data     | Parameter Category        |**IE** Knows its own data  |
+|                |... knows the test type data              |  TestType             |**IE** Knows its own data   |
+|Step 6  		 |  ... informing operation success?         |  ImportCSVFileUI                        |      IE: is responsible for user interactions.                                                                                                                                                                                                  |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Sample
- * Test
  * Company
+ * Client
+ * Laboratory
+ * LabOrder
+ * Parameter
+ * Test
+ * Parameter Category
+ * TestType
  
-
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * RecordSampleUI  
- * RecordSampleController
+ * ImportCSVFileUI  
+ * ImportCSVFileController
+ * ClientStore
+ * LaboratoryStore
+ * LabOrderStore
+ * ParameterStore
  * TestStore
- * TestMapper
- * BarcodeAdapter
+ * ParameterCategoryStore
+ * TestTypeStore
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -139,7 +157,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US005_CD](US005_CD.svg)
+![US005_CD](US017_CD.svg)
 
 # 4. Tests 
 

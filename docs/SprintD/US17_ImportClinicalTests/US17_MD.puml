@@ -1,0 +1,88 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Company {
+  -designation
+}
+
+class Employee {
+  -employeeId
+  -name
+  -address
+  -phoneNumber
+  -email
+  -socCode
+}
+
+
+
+class User{
+  -name
+  -email
+  -password
+}
+
+class Test{
+-code
+-NHScode
+}
+
+class Sample{
+
+-barcode
+}
+
+class TestType{
+
+-designation
+-description
+-internalCode
+
+}
+class LabOrder{
+-testType
+-Parameters
+}
+class Barcode{
+-upcCode
+}
+
+Company "1" -- "*" TestType : has>
+
+TestType "1" --"1" ExternalModule: makes use
+
+Company "1" -- "*" Parameter : has
+
+Parameter "1" -- "1" ParameterCategory: have
+
+Company "1" -- "*" Test: does>
+Test "1" -- "1" Sample : has>
+Test "*" -- "1" Employee : is performed by>
+Test "1" -- "1" TestType : is of>
+Employee "0..1" -- "1" User: relates to >
+Sample "*" -- "1..*" Employee : is recorded by>
+LabOrder "1" -- "1" Test : gives rise>
+
+Sample "1" -- "1" Barcode : has>
+
+Parameter "1" -- "1" TestParameterResult :contains>
+
+TestParameterResult "1" --"1" ReferenceValue : records>
+
+ReferenceValue "1" -- "1" ExternalModule : provided by>
+
+Barcode "1..*" -- "1" ApiBarcode : Obtained from>
+
+LabOrder "1" -- "1" TestType : has>
+
+Report "1" --"1" Test : created acording to>
+
+Employee "1" -- "1" Report : writes>
+
+Employee "1" -- "1" Report : validates>
+
+
+@enduml

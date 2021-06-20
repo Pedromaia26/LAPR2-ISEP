@@ -1,0 +1,207 @@
+@startuml
+package "UI" {
+  Class ImportCSVFileUI
+}
+package "Controllers" {
+ Class ImportCSVFileController
+}
+package "Domain" {
+ Class Company
+Class Sample
+Class TestStore
+Class ClientStore
+Class TestTypeStore
+Class ParameterCategoryStore
+Class ParameterStore
+Class LabOrderStore
+Class LaboratoryStore
+Class Test
+Class Client
+Class TestType
+Class ParameterCategory
+Class Parameter
+Class Laboratory
+Class LabOrder
+Class Report
+Interface ExternalModule
+Interface ApiBarcode
+}
+
+
+
+ImportCSVFileUI ..> ImportCSVFileController
+ImportCSVFileController..>Company
+ImportCSVFileController..>Sample
+ImportCSVFileController..>TestStore
+ImportCSVFileController..>ClientStore
+ImportCSVFileController..>TestTypeStore
+ImportCSVFileController..>ParameterStore
+ImportCSVFileController..>ParameterCategoryStore
+ImportCSVFileController..>LaboratoryStore
+ImportCSVFileController..>LabOrderStore
+
+
+
+Test"1" --> "*"TestType : is of
+
+TestType "*" --> "1" ExternalModule: makes use of
+
+Company"1" -->"1" TestStore :has
+Company "1" --> "1" ClientStore: has
+Company "1" --> "1" TestTypeStore: has
+Company "1" --> "1" LabOrderStore: has
+Company "1" --> "1" LaboratoryStore: has
+Company "1" --> "1" ParameterCategoryStore: has
+Company "1" --> "1" ParameterStore: has
+
+ClientStore "1" --> "*" Client : has
+TestTypeStore "1" --> "*" TestType : has
+LaboratoryStore "1" --> "*" Laboratory : has
+LabOrderStore "1" --> "*" LabOrder : has
+ParameterCategoryStore "1" --> "*" ParameterCategory : has
+ParameterStore "1" --> "*" Parameter : has
+
+Test "1" --> "1" Report : has
+
+
+
+
+
+
+
+
+ImportCSVFileController : +RecordNewSample(dto)
+ImportCSVFileController : +saveNewSample()
+ImportCSVFileController : +getTest()
+
+
+Test"1" -->"*" Sample: has
+
+
+TestStore : +getTestByTestTypeCode(testid)
+
+
+
+
+TestStore"1" -->"*"Test : Has
+
+
+
+Test "1" --> "1" LabOrder : has
+LabOrder : -testType
+LabOrder : -parameters
+
+
+
+
+Sample"1..*" -->"1"ApiBarcode : makes use of
+
+BarcodeAdapter  ..> ApiBarcode
+
+BarcodeAdapter --> BarcodeCreate
+
+
+ApiBarcode : +BarcodeCreate makeUPCABarcode()
+
+BarcodeAdapter : +BarcodeCreate makeUPCABarcode()
+
+BarcodeCreate : +BarcodeCreate(Object barcode, String barcodeNumber)
+BarcodeCreate : -barcode
+BarcodeCreate : -barcodeNumber
+
+
+Company : +getTestStore()
+Company : +getSampleStore()
+Company : +getClientStore()
+Company : +getParameterCategoryStore()
+Company : +getParameterStore()
+Company : +getTestTypeStore()
+Company : +getLabOrderStore()
+Company : +getLaboratoryStore()
+
+
+
+ParameterStore : +getParameterByCode(parameterstest)
+
+
+TestTypeStore : +getTestTypeByDescription(lsTests[11])
+
+ParameterCategoryStore : +getParameterCategoryByDescription(lsTests[x])
+
+LabOrderStore : +createLabOrder(testType, parameters)
+
+LabOrder : +create(testType, parameters)
+
+LaboratoryStore : +getLabByLabId(lsTests[2])
+
+ClientStore : +getClientByEmail(lsTests[9])
+
+TestStore : +createTest(company, client, lsTests[1], labOrder,\n laboratory, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+
+
+Test : +create(company, client, lsTests[1], labOrder,\n laboratory, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+
+
+Test : +RecordNewSample(company)
+
+Test : +SaveSample(sample, company, lsTests[parametersIndextest.get(parametersIndextest.size()-1)+1])
+
+
+Test : -r1
+
+Test : +addTestParameterResult(sample.getBarcode().getBarcodeNumber(), parameters.get(j).getCode(), Double.parseDouble(lsTests[parametersIndextest.get(j)].replace(",", ".")),\n newtest.getExternalModule().getReferenceValue(newtest.getTestParameterFor(parameters.get(j).getCode()).getParameter()).getMetric(), lsTests[parametersIndextest.get(parametersIndextest.size() - 1) + 2])
+
+Test : +saveTestParameterResult(r1)
+
+Test : +addReport("Default", lsTests[parametersIndextest.get(parametersIndextest.size()-1)+3])
+
+Report : +create("Default", lsTests[parametersIndextest.get(parametersIndextest.size()-1)+3])
+
+Test : +validateTest(lsTests[parametersIndextest.get(parametersIndextest.size()-1)+4])
+
+Client : +notifyClient()
+
+TestStore : +saveTest(newTest)
+
+
+Test : +RecordNewSample(tdo)
+Test : +validateNewSample(samp)
+Test : +saveNewSample(samp)
+Test : +addNewSample(samp)
+Test : -code
+Test : -nhscode
+
+
+ExternalModuleAdapter1..>ExternalModule
+
+ExternalModuleAdapter2..>ExternalModule
+
+ExternalModuleAdapter3..>ExternalModule
+
+ExternalModule : +ReferenceValue getReferenceValue(Parameter parameter)
+
+ExternalModuleAdapter1 : +ReferenceValue getReferenceValue(Parameter parameter)
+ExternalModuleAdapter2 : +ReferenceValue getReferenceValue(Parameter parameter)
+ExternalModuleAdapter3 : +ReferenceValue getReferenceValue(Parameter parameter)
+
+ExternalModuleAdapter1 --> ExternalModuleApi1
+ExternalModuleAdapter2 --> ExternalModuleApi2
+ExternalModuleAdapter3 --> ExternalModuleApi3
+
+
+SampleDTO : +getOrderid()
+
+
+
+SampleDTO : -orderid
+
+
+Sample : +Sample()
+Sample : +getBarcodecreator()
+Sample : -barcode
+
+
+
+
+
+@enduml

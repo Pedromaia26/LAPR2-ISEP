@@ -26,7 +26,7 @@ As a client, I want to access the application to view the results of the tests I
 >  
 > **Answer:** "The test registration date." - [link: https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8787]
 
-> **Question:** "The test’s results show only present the parameters value or the analysis of those values?"
+> **Question:** "The testï¿½s results show only present the parameters value or the analysis of those values?"
 >  
 > **Answer:** 
 
@@ -72,7 +72,7 @@ As a client, I want to access the application to view the results of the tests I
 
 ### 2.1. Relevant Domain Model Excerpt 
 
-![US005_MD](US005_MD.svg)
+![US005_MD](US001_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -87,39 +87,31 @@ n/a
 
 | Interaction ID | Question: Which class is responsible for...                     | Answer                        | Justification (with patterns)                                                                                                                                                                          |
 |:-------------  |:--------------------------------------------------------------- |:-----------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Step 1  		 | ... interacting with the actor?                                 | RecordSampleUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
-|                | ... coordinating the US?                                        | RecordSampleController        | **Controller**                                                                                                                                                                                         |
+| Step 1  		 | ... interacting with the actor?                                 | CheckTestResultsUI                | **Pure Fabrication**: none of the domain models classes had the responsability of interactiong with the user.                                                                                          |
+|                | ... coordinating the US?                                        | CheckTestResultsController        | **Controller**                                                                                                                                                                                         |
 | Step 2  		 | ... knowing the tests to show?                                  | TestStore                     | **Information Expert**: Owns the existing tests.                                                                                                                                                       |
 |                | ... knowing the test store                                      | Company                       | **Information Expert**: Knows the existing stores.                                                                                                                                                     |
 |                | ... process the data and convert it to dto                      | TestMapper                    | **DTO**: So that the UI can't interact directly with the domain.                                                                                                                                       |
 | Step 3  		 |                                                                 |                               |                                                                                                                                                                                                        |
-| Step 4  		 |                                                                 |                               |                                                                                                                                                                                                        |
-| Step 5  		 | ... knowing the number of samples?                              | Test                          |**Information Expert**: knowing how many samples were collected.                                                                                                                                        |
-| 		         | ... instantiating a new Sample?                                 | Test                          | **Creator (R1)** and **HC+LC**: Applying the Creator (R1) would be in the "Company". But, by applying HC + LC to the "Company", this transfers the responsibility to the test class                    |
-|        		 | ... validating all data (local validation)?                     | Sample                        | IE: owns its data.                                                                                                                                                                                     |
-|        		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
-|                | ... adapting the interface                                      | BarcodeAdapter                | **Protected variations**: Identify points of predicted variation or instability (variety of interfaces) and assign responsibilities (to the adapters) to create a stable interface around those points.|                                                                                             |
-| Step 6  		 |                                                                 |                               |                                                                                                                                                                                                        |
-| Step 7  		 | ... validating all data (global validation)?                    | Test                          | IE: owns its data.                                                                                                                                                                                     |
-|                | ... saving the sample?                                          | Test                          | IE: Test know its own data                                                                                                                                                                             |
-| Step 8  		 | ... informing operation success?                                | RecordSampleUI                | IE: is responsible for user interactions.                                                                                                                                                              |
-
+| Step 4  		 | ...storing the results.                                          | TestParameter                    | **Information Expert**: Owns the Results of itself.                                                                                                                                                                                                  |
+|                | ... process the data and convert it to dto                      | TestMapper                         |   **DTO**: So that the UI can't interact directly with the domain.                                                                                                             |
+|                | ... storing the test parameters                                 | Test                      |   **Information Expert**: Owns his own parameters.                        
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Sample
+
  * Test
  * Company
+ * Test Parameter
  
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
- * RecordSampleUI  
- * RecordSampleController
+ * CheckTestResultsUI  
+ * CheckTestResultsController
  * TestStore
  * TestMapper
- * BarcodeAdapter
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -132,7 +124,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **From alternative 1**
 
-![US005_CD](US005_CD.svg)
+![US001_CD](US001_CD.svg)
 
 # 4. Tests 
 
