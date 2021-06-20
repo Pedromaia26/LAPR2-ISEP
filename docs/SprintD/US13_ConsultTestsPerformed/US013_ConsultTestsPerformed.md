@@ -22,15 +22,21 @@ As a clinical chemistry technologist, I intend to consult the historical tests p
 
 **From the client clarifications:**
 
-> **Question:** "Which information does the clinical chemistry technology want to check in a test?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8844#p11548]
+> **Question:** "In US13 acceptance criteria, "The application must allow ordering the clients by TIN and by name...". What do you mean by that? Is there a priority in ordering between name and TIN?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=9246#p12176]
 >  
-> **Answer:** 
+> **Answer:** "The user can chose to sort the clients by name OR by TIN."
 
-> **Question:** "How does the clinical chemistry technologist choose the particular client?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=8834#p11537]
+> **Question:** "In the User Story 13, the Clinical Chemistry Technologist to "choose the target client" needs to type the name (or TIN number)? Or should be a list present with all the client's available and, after that, be possible to select one?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=9181#p12113]
 >  
-> **Answer:** 
+> **Answer:** "From the requirements introduced in the beginning of Sprint D: "The application must allow ordering the clients by TIN and by name to help the clinical chemistry technologist choose the target client". A sorted list should be presented to the clinical chemistry technologist."
 
+> **Question:** "In US13, the Clinical Chemistry Technologist, can select more than one client at once to view its historical test results?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=9178#p12112]
+>  
+> **Answer:** "No."
 
+> **Question:** "Moreover, will all the tests associated with the client be displayed or the clinical chemistry technologist will have also to select the tests he wants to see?" [link - https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=9178#p12112]
+>  
+> **Answer:** "After selecting one client, the application should show all the historical test results, of that client, to the Clinical Chemistry Technologist."
 
 ### 1.3. Acceptance Criteria
 
