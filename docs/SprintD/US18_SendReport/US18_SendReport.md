@@ -49,7 +49,7 @@ As an Administrator I want to send the Covid-19 report to the NHS at any time. I
 ### 1.3. Acceptance Criteria
 
 
-* **AC1:** 
+* **AC1:** The sunday day may not be consider as a work day;
 
 
 ### 1.4. Found out Dependencies
